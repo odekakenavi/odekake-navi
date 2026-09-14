@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
 <title>おでかけナビ 〜今日、子どもとどこ行く？〜</title>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HMLTN7373E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HMLTN7373E', {
+    'anonymize_ip': true,
+    'allow_google_signals': false
+  });
+</script>
 <meta name="description" content="関東1都6県・360件以上のおでかけスポットから、今日行ける場所をサクッと検索。雨の日でも大丈夫？お財布は？車なしでも行ける？を一目で確認できる、子連れのおでかけ探しアプリです。">
 
 <!-- OGP（LINE・X・Facebookなどでシェアされた時の表示）-->
@@ -262,8 +274,15 @@
   .compare-table td{line-height:1.5;}
 
   /* ---------- 詳細画面 ---------- */
+  .detail-header-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:2px;}
+  .detail-header-row .detail-name{margin:0;}
+  .detail-header-row .sheet-close{margin:0; flex:0 0 auto;}
   .detail-name{font-size:19px; font-weight:900; font-family:'Zen Maru Gothic',sans-serif; line-height:1.4; padding-right:10px;}
   .detail-area{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+  .detail-close-bottom{
+    width:100%; text-align:center; padding:13px; border:1.5px solid var(--line); background:#F1EADA;
+    border-radius:12px; font-size:13.5px; color:var(--ink); font-weight:700; cursor:pointer; margin-top:14px;
+  }
   .detail-photo{width:100%; height:110px; border-radius:12px; margin:10px 0;
     background:linear-gradient(135deg,#CFE3E9,#FCE3B8); display:flex; align-items:center; justify-content:center;
     font-size:34px;}
@@ -432,13 +451,17 @@
 const STORAGE_KEY = "odekakeNaviV2";
 // 📅 このデータの更新時点（施設を追加・修正した際にここも更新する）
 const APP_LAST_UPDATED = "2026年9月14日";
-// 🔗 asoview!アフィリエイトID（提携後にここへIDを設定すると、全リンクに自動でパラメータが付与される）
-// 例: const ASOVIEW_AFFILIATE_ID = "xxxxxxxx";
-const ASOVIEW_AFFILIATE_ID = "";
+// 🔗 バリューコマース経由のasoview!アフィリエイト設定
+// 承認が下りたら、管理画面の「広告リンク作成」で取得したリンクに含まれる
+// sid（サイトID）と pid（広告スペースID・asoview!提携プログラム用）をここに設定する。
+// 例: https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=1234567&pid=890123456&vc_url=...
+//                                                              ↑ここ         ↑ここ
+// 両方が空のうちは、これまで通り asoview.com への直リンクのまま動作する（挙動は変わらない）。
+const VC_SID = "";
+const VC_PID = "";
 function withAffiliateParam(url, provider){
-  if(provider === "asoview" && ASOVIEW_AFFILIATE_ID){
-    const sep = url.includes("?") ? "&" : "?";
-    return `${url}${sep}argument=${ASOVIEW_AFFILIATE_ID}`;
+  if(provider === "asoview" && VC_SID && VC_PID){
+    return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${VC_SID}&pid=${VC_PID}&vc_url=${encodeURIComponent(url)}`;
   }
   return url;
 }
@@ -448,7 +471,8 @@ const AGES = ["0-1歳","2-3歳","4-6歳","低学年","高学年"];
 const REGIONS = [
   {key:"all", label:"すべて"},
   {key:"東京", label:"東京"}, {key:"神奈川", label:"神奈川"}, {key:"埼玉", label:"埼玉"},
-  {key:"千葉", label:"千葉"}, {key:"茨城", label:"茨城"}, {key:"栃木", label:"栃木"}, {key:"群馬", label:"群馬"}
+  {key:"千葉", label:"千葉"}, {key:"茨城", label:"茨城"}, {key:"栃木", label:"栃木"}, {key:"群馬", label:"群馬"},
+  {key:"山梨", label:"山梨（近県）"}, {key:"静岡", label:"静岡（近県）"}, {key:"福島", label:"福島（近県）"}
 ];
 
 // ☔ 雨への強さ：4段階。数字が大きいほど雨に強い（屋内中心・天候を問わず楽しめる）
@@ -982,6 +1006,18 @@ function congestionCardLabel(spot){
   return `👥 土日午後 ${c.holidayPM}`;
 }
 
+// spot.region（"東京"「神奈川」など）を「東京都」「神奈川県」のような
+// 正式な都道府県名に変換する。area（市区町村名）と組み合わせて表示することで、
+// 「〇〇町」だけでは分かりにくい場所を「〇〇県〇〇町」と分かりやすくする。
+function fullPrefectureName(region){
+  if(!region) return "";
+  if(region==="東京") return "東京都";
+  return region + "県";
+}
+function fullAreaLabel(spot){
+  return fullPrefectureName(spot.region) + (spot.area||"");
+}
+
 function deriveCategory(spot){
   const text = (spot.name||"") + (spot.desc||"");
   if(text.includes("水族館")) return "水族館";
@@ -1233,6 +1269,7 @@ const SPOTS = [
  price:"大人2500円台／子供1200円台", parking:"yes", access:"小田急線「片瀬江ノ島」駅から徒歩3分",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"館内にレストラン・カフェあり。海沿いにも飲食店多数。",
  officialUrl:"https://www.enosui.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/122238/"}, recommendedBooking:"asoview",
  desc:"相模湾を望む立地で、屋内水族館と海辺散策を一度に楽しめる。イルカショーも人気。",
  tip:"帰りに江の島の海辺を歩けば、雨上がりでも1日プランになる。"},
 {region:"神奈川", name:"箱根（彫刻の森・ロープウェイ）", area:"箱根町", lat:35.2401, lng:139.0393,
@@ -1313,6 +1350,7 @@ const SPOTS = [
  price:"大人2000円台／子供1000円台", parking:"yes", access:"鹿島臨海鉄道「大洗」駅からバス約10分",
  baby:"授乳室・おむつ替えあり／ベビーカー貸出あり", lunch:"館内にレストラン・売店あり。",
  officialUrl:"https://www.aquaworld-oarai.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/154299/"}, recommendedBooking:"asoview",
  desc:"サメの飼育種類数が国内屈指。屋外の展望テラスから海を眺められるのも特徴。",
  tip:"授乳室・ベビーカー貸出ありで乳児連れも安心。"},
 {region:"栃木", name:"那須どうぶつ王国", area:"那須町", lat:37.0159, lng:139.9626,
@@ -1338,6 +1376,7 @@ const SPOTS = [
  price:"大人2900円台（マイカー入園料込み目安）", parking:"yes", access:"上信電鉄「上州富岡」駅からバス約20分（車が便利）",
  baby:"おむつ替えあり／車内中心でベビーカー不要な区間も", lunch:"園内にレストラン・売店あり。",
  officialUrl:"https://www.safari.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/154783/"}, recommendedBooking:"asoview",
  desc:"自家用車やサファリバスに乗ったまま動物を間近に見られる。車移動なので雨天でも楽しめる。",
  tip:"車内から見るスタイルなので、寝てしまった乳児がいても安心。"},
 
@@ -1692,6 +1731,7 @@ const SPOTS = [
  price:"大人1500円台／子供800円台", parking:"yes", access:"JR「成田」駅からバス30分",
  baby:"おむつ替えあり", lunch:"園内にレストランあり。",
  officialUrl:"https://www.yumebokujo.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/151188/"}, recommendedBooking:"asoview",
  desc:"乳搾りやポニー乗馬など牧場体験が豊富。芝そりゲレンデもあり体を動かして遊べる。",
  tip:"季節ごとのイベント（いちご狩りなど）もチェックしておくとお得。"},
 
@@ -3768,7 +3808,113 @@ const SPOTS = [
  officialUrl:null,
  bookingLinks:{asoview:"https://www.asoview.com/base/160870/"}, recommendedBooking:"asoview",
  desc:"千葉港のシンボルタワー。隣接する千葉ポートパークとセットで訪れやすい展望施設。",
- tip:"冬季はイルミネーションも開催。千葉ポートパークでの散策と合わせて1日楽しめる。"}
+ tip:"冬季はイルミネーションも開催。千葉ポートパークでの散策と合わせて1日楽しめる。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase2）：★★★最優先施設（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"東京", name:"あらかわ遊園", area:"荒川区西尾久", lat:35.753487, lng:139.758018,
+ ages:["0-1歳","2-3歳","4-6歳","低学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"入園料 大人800円／小学生200円（乗り物は別途、フリーパス大人1800円・小学生700円）", parking:"yes", access:"都電荒川線「荒川遊園地前」から徒歩3分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"園内に売店・軽食あり。周辺にも飲食店あり。",
+ officialUrl:"https://www.city.arakawa.tokyo.jp/yuuen/index.html",
+ desc:"都内唯一の区立遊園地。2022年に約30年ぶりの大規模リニューアル。観覧車やミニコースターの「のりもの広場」、ヤギ・ヒツジとふれあえる「どうぶつ広場」、雨の日でも遊べる屋内あそび場「わくわくパーク」がある。",
+ tip:"入園料が安く、アトラクションも未就学児向け中心なので小さな子ども連れでも安心。雨の日は屋内のわくわくパークが活躍する。"},
+{region:"東京", name:"チームラボプラネッツ TOKYO（豊洲）", area:"江東区豊洲", lat:35.64935, lng:139.789789,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人3800円台／小人（4〜12歳）1500円台／3歳以下無料", parking:"no", access:"ゆりかもめ「新豊洲駅」から徒歩1分",
+ baby:"水域を裸足で歩くエリアがあるためベビーカー入場不可／抱っこ紐推奨", lunch:"館内にカフェあり。隣接のららぽーと豊洲にも飲食店多数。",
+ officialUrl:"https://planets.teamlab.art/tokyo/jp/",
+ desc:"水に膝までつかりながら光のアート作品を体感する、身体ごと没入する美術館。訪日外国人にも大人気で、雨の日でも楽しめる屋内施設。",
+ tip:"裸足になり水に入るエリアがあるため、タオル・着替えを持参すると安心。小さすぎる子どもには水深がやや深く感じる場所もある。"},
+{region:"東京", name:"ナンジャタウン（サンシャインシティ）", area:"豊島区・池袋", lat:35.7295, lng:139.7191,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"ナンジャパスポート 大人4000円台／4-12歳3200円台（入園のみのナンジャエントリーは大人1000円）", parking:"yes", access:"東京メトロ有楽町線「東池袋駅」から徒歩3分／JR「池袋駅」から徒歩8分",
+ baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"ご当地餃子やデザートが楽しめるフードコーナーが充実。",
+ officialUrl:"https://sunshinecity.jp/namja/",
+ desc:"サンシャインシティ内にある完全屋内型テーマパーク。猫とふれあえる「ニャンジャタウン」や忍者の街「NINJATOWN」など、天候を気にせず一日中遊べる。",
+ tip:"雨の日の定番候補。サンシャイン水族館・展望台とあわせて訪れると1日たっぷり遊べる。"},
+{region:"神奈川", name:"よこはまコスモワールド", area:"横浜市中区・みなとみらい", lat:35.455174, lng:139.636832,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料（アトラクションごとに300円台〜900円台）", parking:"no", access:"みなとみらい線「みなとみらい駅」から徒歩2分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"みなとみらいエリアに飲食店多数。",
+ officialUrl:"https://cosmoworld.jp/",
+ desc:"高さ112.5mの大観覧車「コスモクロック21」がシンボルの都市型遊園地。小さな子ども向けの「キッズカーニバル・ゾーン」もあり、幅広い年齢で楽しめる。",
+ tip:"入園無料でアトラクションごとの支払いなので、予算に合わせて遊べる。専用駐車場がないため公共交通機関がおすすめ。"},
+{region:"神奈川", name:"箱根小涌園ユネッサン", area:"足柄下郡箱根町", lat:35.238, lng:139.048,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
+ price:"水着エリア 大人2500円台〜／子供1400円台〜（温泉エリアは別料金）", parking:"yes", access:"箱根登山バス・伊豆箱根バス「小涌園」バス停すぐ",
+ baby:"おむつ替えあり／未就学児は温泉エリア入場に制限がある場合あり", lunch:"館内にレストラン・軽食コーナーあり。",
+ officialUrl:"https://www.yunessun.com/",
+ desc:"水着を着て入れる温泉テーマパーク。ワイン風呂やコーヒー風呂など個性的な変わり湯が人気で、屋内エリアもあり雨の日でも一日中楽しめる。",
+ tip:"駐車場は2時間無料。プール気分で温泉に入れるので、温泉デビュー前の子どもとも一緒に楽しみやすい。"},
+{region:"茨城", name:"いばらきフラワーパーク", area:"石岡市", lat:36.212301, lng:140.169705,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["春","秋"],
+ price:"大人900円〜1800円（バラの見頃時期は高め）／小中学生300円〜600円／未就学児無料", parking:"yes", access:"JR「石岡駅」からバスで約30分（土日祝のみ運行、平日はタクシー）",
+ baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"園内にレストラン・カフェ・マーケットあり。",
+ officialUrl:"https://www.flowerpark.or.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/item/ticket/ticket0000005601/"},
+ desc:"2021年に「見る」から「感じる」フラワーパークへ全面リニューアル。約900品種9000株のバラをはじめ、季節の花を五感で楽しめる体験型アクティビティが年間100種類以上ある。",
+ tip:"アロマミストづくりや花摘み体験など、子どもと一緒に参加できるワークショップが豊富。バラの見頃（5月中旬〜6月・10〜11月中旬）は特に見応えがある。"},
+{region:"栃木", name:"大谷資料館", area:"宇都宮市大谷町", lat:36.5847, lng:139.8264,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人800円／小中学生400円", parking:"yes", access:"JR「宇都宮駅」西口からバスで約30分",
+ baby:"ベビーカーでの移動は坂・階段があり難しい場合あり", lunch:"隣接のカフェ「OYA MUSEUM ROCKSIDE MARKET」で軽食可。",
+ officialUrl:"https://www.oya909.co.jp/",
+ desc:"深さ30m、広さ2万平方mに及ぶ大谷石の巨大な地下採掘場跡。幻想的な空間は映画やミュージックビデオの撮影地としても有名で、非日常体験ができる。",
+ tip:"坑内は年間を通して8℃前後と肌寒いため、夏でも上着を持参するのがおすすめ。写真映えするスポットとして子どもも楽しめる。"},
+
+// ------------------------------------------------------------------
+// 🚗 近県（山梨・静岡・福島）：日帰り・1泊旅行向けの★★★施設
+// ------------------------------------------------------------------
+{region:"山梨", name:"富士急ハイランド", area:"富士吉田市", lat:35.487288, lng:138.780272,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
+ price:"入園無料（フリーパス 大人6000円台〜／小学生4400円台〜、日により変動）", parking:"yes", access:"富士急行線「富士急ハイランド駅」からすぐ",
+ baby:"おむつ替えあり／トーマスランドなど小さな子ども向けエリアあり", lunch:"園内にレストラン・フードコート多数。",
+ officialUrl:"https://www.fujiq.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/spot/19202cc3540060381/"},
+ desc:"世界トップレベルの絶叫マシンで有名なテーマパーク。「トーマスランド」など小さな子ども向けエリアも充実しており、家族全員で楽しめる。",
+ tip:"絶叫系だけでなく、幼児向けのトーマスランドや富士山の景色を楽しむエリアもあるので、家族の年齢構成に合わせて回り方を選べる。"},
+{region:"静岡", name:"富士サファリパーク", area:"裾野市須山", lat:35.259068, lng:138.811863,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人3200円／4歳〜中学生2000円／3歳以下無料", parking:"yes", access:"JR「御殿場駅」からバスで約35分",
+ baby:"おむつ替え・授乳室あり／マイカーでの周遊なら車内で過ごせる", lunch:"園内にレストラン・売店あり。",
+ officialUrl:"https://www.fujisafari.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/spot/22220cc3310040087/"},
+ desc:"富士山麓の標高850mに広がる日本最大級のサファリパーク。マイカーやジャングルバスに乗ったまま、ライオンやキリンなど約60種の動物を間近に観察できる。",
+ tip:"マイカー利用ならエサやりはできないが車内から周遊でき、寝てしまった乳児がいても安心。ふれあいゾーンは屋内施設もあり雨天でも楽しめる。"},
+{region:"静岡", name:"掛川花鳥園", area:"掛川市南西郷", lat:34.761704, lng:138.015363,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1800円／小学生900円／未就学児無料", parking:"yes", access:"JR「掛川駅」からバスで約10分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にレストランあり。",
+ officialUrl:"https://k-hana-tori.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/162138/"}, recommendedBooking:"asoview",
+ desc:"花と鳥にふれあえる全天候型のテーマパーク。フクロウやインコなどほとんどの鳥が檻の外にいて、餌やり体験もできる。冷暖房完備の大温室で天候を気にせず楽しめる。",
+ tip:"1日3回のバードショーは必見。屋内中心なので雨の日のおでかけ先としても優秀。"},
+{region:"静岡", name:"富士山こどもの国", area:"富士市桑崎", lat:35.25069, lng:138.770903,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["1日"],
+ price:"大人830円／中学生410円／小学生200円／小学生未満無料", parking:"yes", access:"新東名高速道路「新富士IC」から車で約25分",
+ baby:"おむつ替えあり／ベビーカーOK（一部未舗装路あり）", lunch:"園内にレストラン・ロッジあり。",
+ officialUrl:"https://www.kodomo.or.jp/",
+ desc:"富士山を望む約94haの広大な都市公園。「街」「水の国」「草原の国」の3エリアからなり、動物とのふれあいや水遊び、くもの巣ネットなどの冒険遊具で1日中遊べる。",
+ tip:"広大な敷地なので歩きやすい服装で。季節ごとにススキの迷路や雪遊びなど違った楽しみ方ができる。"},
+{region:"福島", name:"スパリゾートハワイアンズ", area:"いわき市常磐藤原町", lat:36.994039, lng:140.816077,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
+ price:"大人3570円台／小学生2250円台／幼児(3歳以上)1640円台（土日祝は割高）", parking:"yes", access:"JR「湯本駅」から無料送迎バスで約15分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"館内にレストラン・バイキングあり。",
+ officialUrl:"https://www.hawaiians.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/155503/"}, recommendedBooking:"asoview",
+ desc:"南国ムードの全天候型温水プールと多彩な温泉が楽しめる大型リゾート施設。フラダンスショーも人気で、1泊旅行の定番として親しまれている。",
+ tip:"プール・温泉ともに屋内中心なので雨天や真冬でも快適に過ごせる。ホテルと合わせて1泊で訪れるのがおすすめ。"},
+{region:"福島", name:"アクアマリンふくしま", area:"いわき市小名浜", lat:36.942908, lng:140.90136,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人1850円台／小中高生900円台／未就学児無料", parking:"yes", access:"JR「泉駅」からバスで約15分",
+ baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"館内にレストラン・カフェあり。",
+ officialUrl:"https://www.aquamarine.or.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/159952/"}, recommendedBooking:"asoview",
+ desc:"「潮目」をテーマにした東北最大級の環境水族館。親潮と黒潮が出会う海を再現した大水槽や、屋外の「わくわく・はじまりの森」で自然を感じながら学べる。",
+ tip:"屋内展示が中心で天候に左右されにくい。バックヤードツアーなど体験プログラムも充実している。"}
 ];
 // ==================================================================
 // アプリの状態（フィルター条件・お気に入り・比較など）
@@ -3803,7 +3949,20 @@ let state = {
 // ==================================================================
 window.dataLayer = window.dataLayer || [];
 function trackEvent(eventName, params){
-  try{ window.dataLayer.push(Object.assign({event: eventName}, params||{})); }catch(e){}
+  // Google Analytics 4へのイベント送信（try-catchでGA4エラーがアプリに影響しないようにする）
+  try{
+    if(window.gtag && typeof window.gtag === 'function'){
+      // gtag.jsが読み込まれている場合、gtag('event', ...)で直接送信
+      const gaParams = Object.assign({}, params||{});
+      window.gtag('event', eventName, gaParams);
+    } else if(window.dataLayer){
+      // フォールバック：dataLayerへ送信
+      window.dataLayer.push(Object.assign({event: eventName}, params||{}));
+    }
+  }catch(e){
+    /* GA4のエラーがアプリに影響しないようにする */
+  }
+  // ローカル集計（管理者向け）
   aggregateLocal(eventName, params||{});
 }
 
@@ -3842,15 +4001,29 @@ function aggregateLocal(eventName, params){
     case "view_app":
       analytics.pageViews++; break;
     case "view_facility":
-      if(params.facility) bumpCount(analytics.facilityViews, params.facility); break;
+      if(params.facility_name) bumpCount(analytics.facilityViews, params.facility_name);
+      else if(params.facility) bumpCount(analytics.facilityViews, params.facility);
+      break;
     case "search_facility":
       if(params.keyword) bumpCount(analytics.searchKeywords, params.keyword); break;
     case "use_filter":
       if(params.filter_type) bumpCount(analytics.filterUsage, `${params.filter_type}:${params.filter_value}`); break;
+    case "filter_change":
+      // GA4用のfilter_changeイベント（use_filterと同様に集計）
+      if(params.filter_type) bumpCount(analytics.filterUsage, `${params.filter_type}:${params.filter_value}`); break;
+    case "ticket_click":
     case "click_booking":
-      if(params.facility) bumpCount(analytics.bookingClicks, params.facility); break;
+      if(params.facility_name) bumpCount(analytics.bookingClicks, params.facility_name);
+      else if(params.facility) bumpCount(analytics.bookingClicks, params.facility);
+      break;
+    case "official_site_click":
     case "click_official_site":
-      if(params.facility) bumpCount(analytics.officialClicks, params.facility); break;
+      if(params.facility_name) bumpCount(analytics.officialClicks, params.facility_name);
+      else if(params.facility) bumpCount(analytics.officialClicks, params.facility);
+      break;
+    case "search_no_result":
+      // 検索0件は特別な集計対象にしない
+      break;
     case "view_car_access":
       analytics.accessViews.car++; break;
     case "view_train_access":
@@ -3862,10 +4035,44 @@ function aggregateLocal(eventName, params){
 // 施設閲覧・絞り込み利用は既存コードの呼び出し名を変えずに済むよう、
 // 薄いラッパーとして残す（内部的には trackEvent に一本化）。
 function trackView(name){
-  trackEvent("view_facility", {facility:name});
+  const spot = SPOTS.find(s => s.name === name);
+  if(spot){
+    const category = deriveCategory(spot);
+    trackEvent("view_facility", {
+      facility_name: name,
+      prefecture: spot.region,
+      category: category
+    });
+  } else {
+    trackEvent("view_facility", {facility_name: name});
+  }
 }
 function trackFilterUse(filterType, filterValue){
+  // ローカル集計用の互換性を保つため内部的には"use_filter"を使用
   trackEvent("use_filter", {filter_type:filterType||"unknown", filter_value:String(filterValue)});
+  // GA4へはfilter_changeイベントで送信
+  const filterName = getFilterName(filterType);
+  trackEvent("filter_change", {filter_type: filterName, filter_value: String(filterValue)});
+}
+
+// フィルタータイプを分かりやすい日本語に変換（GA4計測用）
+function getFilterName(filterType){
+  const filterMap = {
+    "mood": "今日の気分",
+    "region": "エリア",
+    "genre": "カテゴリ",
+    "rain": "雨の日",
+    "wallet": "お得度",
+    "mode": "移動手段",
+    "age": "子どもの年齢",
+    "duration": "所要時間",
+    "parking": "駐車場",
+    "activity": "発散度",
+    "seasons": "季節",
+    "holidays": "連休・休業",
+    "hideVisited": "訪問済み"
+  };
+  return filterMap[filterType] || filterType;
 }
 
 function loadPersisted(){
@@ -4533,14 +4740,21 @@ function officialLabel(spot){
 const BOOKING_PROVIDERS = {
   asoview: {label:"asoview!"},
   rakuten: {label:"楽天トラベル"},
-  jalan: {label:"じゃらん"}
+  jalan: {label:"じゃらん 遊び・体験予約"}
 };
 function getBookingInfo(spot){
   if(!spot.bookingLinks) return null;
   const links = spot.bookingLinks;
   const keys = Object.keys(links).filter(k=>links[k]);
   if(keys.length===0) return null;
-  // 基本方針：asoview!を第一候補とする。recommendedBookingの指定があればそちらを優先。
+  // チケット・予約リンクの優先順位：
+  // 1. recommendedBookingで明示的に指定されている場合はそれを優先
+  // 2. asoview!がある場合はそれを優先
+  // 3. 上記がない場合は利用可能な最初のサービス（じゃらんなど）を表示
+  // 
+  // 施設データの例：
+  // bookingLinks:{asoview:"https://...", jalan:"https://..."}, recommendedBooking:"asoview"
+  // bookingLinks:{jalan:"https://..."} ← asoviewなし、じゃらんがメインで表示される
   let mainKey = (spot.recommendedBooking && links[spot.recommendedBooking]) ? spot.recommendedBooking
     : (links.asoview ? "asoview" : keys[0]);
   const others = keys.filter(k=>k!==mainKey);
@@ -4593,6 +4807,10 @@ function render(){
     `<b>${filtered.length}</b> / ${SPOTS.length} スポット`;
 
   if(filtered.length===0){
+    // 検索キーワードがある場合に検索0件イベントを送信
+    if(state.keyword.trim()){
+      trackEvent("search_no_result", {});
+    }
     main.innerHTML = `<div class="empty">条件に合うスポットが見つかりません。<br>絞り込みを減らしてみてください。</div>`;
     return;
   }
@@ -4614,7 +4832,7 @@ function render(){
   }
 
   const regions = [...new Set(filtered.map(s=>s.region))];
-  const regionOrder = ["東京","神奈川","埼玉","千葉","茨城","栃木","群馬"];
+  const regionOrder = ["東京","神奈川","埼玉","千葉","茨城","栃木","群馬","山梨","静岡","福島"];
   regions.sort((a,b)=>regionOrder.indexOf(a)-regionOrder.indexOf(b));
 
   regions.forEach(region=>{
@@ -4744,7 +4962,7 @@ function buildCardSummary(spot){
       <div class="card-thumb">${genre.icon}</div>
       <div class="card-title-block">
         <div class="card-name">${spot.name}</div>
-        <div class="card-meta">${spot.area}　${genre.label}</div>
+        <div class="card-meta">${fullAreaLabel(spot)}　${genre.label}</div>
       </div>
     </div>
     ${seasonMatch ? `<div class="season-tag">${SEASON_EMOJI[currentSeason()]} ${currentSeason()}におすすめ</div>` : ""}
@@ -4802,9 +5020,11 @@ function openDetail(spot, silent){
 
   const sheet = document.getElementById("detailSheet");
   sheet.innerHTML = `
-    <button class="sheet-close" id="detailCloseBtn">×</button>
-    <div class="detail-name">${spot.name}</div>
-    <div class="detail-area">${spot.area}　${category}　${activityLabel}</div>
+    <div class="detail-header-row">
+      <div class="detail-name">${spot.name}</div>
+      <button class="sheet-close" id="detailCloseBtn">×</button>
+    </div>
+    <div class="detail-area">${fullAreaLabel(spot)}　${category}　${activityLabel}</div>
     <div class="detail-photo">${genreInfo(spot).icon}</div>
     <div class="detail-desc">${spot.desc}</div>
 
@@ -4884,7 +5104,7 @@ function openDetail(spot, silent){
     ${bookingInfo ? `
     <div class="detail-section">
       <h3>🎟️ チケット・予約</h3>
-      ${ASOVIEW_AFFILIATE_ID ? `<div class="pr-label">[PR] 対象リンクからの購入で運営者に紹介料が入る場合があります</div>` : ""}
+      ${(VC_SID && VC_PID) ? `<div class="pr-label">[PR] 対象リンクからの購入で運営者に紹介料が入る場合があります</div>` : ""}
       <div class="booking-recommend-label">おすすめ</div>
       <a class="booking-main-btn" href="${bookingInfo.mainUrl}" target="_blank" rel="noopener" data-act="booking-click" data-provider="${bookingInfo.mainKey}">${bookingInfo.mainLabel}でチケットを見る</a>
       ${bookingInfo.others.length>0 ? `
@@ -4902,6 +5122,7 @@ function openDetail(spot, silent){
       <button class="abtn ${isCompared?"on compared":""}" data-act="compare">⚖️ 比較に${isCompared?"追加済み":"追加"}</button>
       <a class="abtn link" href="${mapsUrl(spot)}" target="_blank" rel="noopener">🗺️ 地図アプリで開く</a>
     </div>
+    <button type="button" class="detail-close-bottom" id="detailCloseBtnBottom">閉じる</button>
   `;
   sheet.querySelector('[data-act="fav"]').onclick = ()=>toggleSet("favorites", spot.name);
   sheet.querySelector('[data-act="visited"]').onclick = ()=>toggleSet("visited", spot.name);
@@ -4911,9 +5132,9 @@ function openDetail(spot, silent){
     openDetail(spot, true);
   };
   const officialBtn = sheet.querySelector('[data-act="official-click"]');
-  if(officialBtn) officialBtn.addEventListener("click", ()=>trackEvent("click_official_site", {facility:spot.name}));
+  if(officialBtn) officialBtn.addEventListener("click", ()=>trackEvent("official_site_click", {facility_name:spot.name}));
   const bookingBtn = sheet.querySelector('[data-act="booking-click"]');
-  if(bookingBtn) bookingBtn.addEventListener("click", ()=>trackEvent("click_booking", {facility:spot.name, provider:bookingBtn.dataset.provider}));
+  if(bookingBtn) bookingBtn.addEventListener("click", ()=>trackEvent("ticket_click", {facility_name:spot.name, provider:bookingBtn.dataset.provider}));
   const othersToggle = sheet.querySelector("#bookingOthersToggle");
   if(othersToggle){
     othersToggle.onclick = ()=>{
@@ -4923,10 +5144,11 @@ function openDetail(spot, silent){
       othersToggle.textContent = isOpen ? "他の予約サイトを見る ▾" : "他の予約サイトを見る ▴";
     };
     sheet.querySelectorAll(".booking-other-link").forEach(a=>{
-      a.addEventListener("click", ()=>trackEvent("click_booking", {facility:spot.name, provider:a.dataset.provider}));
+      a.addEventListener("click", ()=>trackEvent("ticket_click", {facility_name:spot.name, provider:a.dataset.provider}));
     });
   }
   sheet.querySelector('#detailCloseBtn').onclick = ()=>closeSheetById("detailOverlay");
+  sheet.querySelector('#detailCloseBtnBottom').onclick = ()=>closeSheetById("detailOverlay");
 
   openSheet("detailOverlay");
   sheet.scrollTop = 0;
