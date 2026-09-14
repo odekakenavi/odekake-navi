@@ -296,6 +296,14 @@
   .go-block{background:#F5F0E4; border-radius:10px; padding:10px 12px; margin-bottom:8px;}
   .go-block .go-head{font-size:12.5px; font-weight:700; margin-bottom:4px;}
   .go-block .go-row{font-size:12px; color:var(--ink); line-height:1.7;}
+  .go-actions{display:flex; gap:8px; margin-top:4px;}
+  .go-action-btn{
+    flex:1; min-width:0; display:flex; align-items:center; justify-content:center; gap:4px;
+    padding:12px 6px; border-radius:10px; font-size:12.5px; font-weight:700; font-family:inherit;
+    text-decoration:none; text-align:center; min-height:44px; box-sizing:border-box; border:none; cursor:pointer;
+  }
+  .go-action-btn.map{background:var(--sun); color:#fff;}
+  .go-action-btn.transit{background:var(--coral); color:#fff;}
   .congestion-table{width:100%; border-collapse:collapse; font-size:11.5px; margin-top:4px;}
   .congestion-table th, .congestion-table td{border:1px solid var(--line); padding:6px 4px; text-align:center;}
   .congestion-table th{background:#F1EADA; font-weight:700; color:var(--ink-soft);}
@@ -1194,6 +1202,7 @@ const SPOTS = [
  price:"時間帯・年齢により4000〜6000円台", parking:"yes", access:"東京メトロ有楽町線・ゆりかもめ「豊洲」駅から徒歩約8分",
  baby:"授乳室あり／対象年齢が3歳〜のためベビーカー利用は少なめ", lunch:"館内にパビリオン内カフェあり。豊洲市場・ららぽーとも近い。",
  officialUrl:"https://www.kidzania.jp/tokyo/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/160196/"}, recommendedBooking:"asoview",
  desc:"約100種のお仕事・社会体験ができる屋内型施設。時間入れ替え制で1日がっつり滞在するタイプ。",
  tip:"人気の予約は争奪戦。開始直後の枠を狙うのがコツ。"},
 {region:"東京", name:"レゴランド・ディスカバリーセンター東京", area:"港区・お台場", lat:35.6260, lng:139.7756,
@@ -1202,6 +1211,7 @@ const SPOTS = [
  price:"2000〜3000円台（日時指定）", parking:"yes", access:"ゆりかもめ「お台場海浜公園」駅から徒歩約2分（りんかい線「東京テレポート」駅からは徒歩約5分）",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"併設デックス東京ビーチ内に飲食店多数。",
  officialUrl:"https://tokyo.legolanddiscoverycenter.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/151424/"}, recommendedBooking:"asoview",
  desc:"レゴブロックづくしの屋内施設。4Dシネマや小さめのライド系アトラクションもある。",
  tip:"大人だけの入場は不可、子ども同伴が条件。"},
 {region:"東京", name:"国立科学博物館", area:"台東区・上野公園", lat:35.7161, lng:139.7745,
@@ -1270,6 +1280,7 @@ const SPOTS = [
  price:"日時・年齢により7000円前後〜", parking:"no", access:"西武線「豊島園」駅から徒歩1分",
  baby:"おむつ替えあり／小さい子には長時間向き", lunch:"館内にカフェ・グレートホール風レストランあり。",
  officialUrl:"https://www.wbstudiotour.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/163469/"}, recommendedBooking:"asoview",
  desc:"映画の撮影セットや衣装を巡る没入型施設。原作を知っている小学校高学年〜が楽しめる内容。",
  tip:"未就学児にはやや退屈な場合あり。事前に日時指定チケットが必須。"},
 {region:"東京", name:"代々木公園", area:"渋谷区", lat:35.6702, lng:139.6944,
@@ -1388,6 +1399,7 @@ const SPOTS = [
  price:"大人1500円台／子供800円台", parking:"yes", access:"JR「君津」駅からバス約40分",
  baby:"おむつ替えあり／ベビーカーOK（一部坂道は不向き）", lunch:"園内にレストラン・ジンギスカン等の飲食施設多数。",
  officialUrl:"https://www.motherfarm.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/155314/"}, recommendedBooking:"asoview",
  desc:"動物とのふれあい、羊の追い込みショー、季節の花畑など高原ならではの開放感が魅力。",
  tip:"起伏のある高原なので、ベビーカーより抱っこ紐が向くエリアも。"},
 {region:"千葉", name:"鴨川シーワールド", area:"鴨川市", lat:35.1122, lng:140.1064,
@@ -1414,6 +1426,7 @@ const SPOTS = [
  price:"1台（乗員数分）3000円前後（人数不問）", parking:"yes", access:"公共交通は乏しく車移動が前提",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にレストラン・売店あり。",
  officialUrl:"https://www.tokyo-doitsumura.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/165016/"}, recommendedBooking:"asoview",
  desc:"広大な敷地に芝生・動物ふれあい・小さな乗り物が点在。混雑が少なめでのんびり過ごせる。",
  tip:"車移動が前提の立地。夜のイルミネーションは冬季限定。"},
 {region:"千葉", name:"谷津バラ園・谷津干潟公園", area:"習志野市", lat:35.6754, lng:140.0092,
@@ -1488,6 +1501,7 @@ const SPOTS = [
  price:"大人1500円台／子供600円台", parking:"yes", access:"京急線「鮫洲」駅から徒歩8分",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"館内に軽食コーナーあり。",
  officialUrl:"https://www.aquarium.gr.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/153443/"}, recommendedBooking:"asoview",
  desc:"大型水族館より小ぶりでゆったり回れる。イルカ・アシカショーもあり幼児連れでも疲れにくい。",
  tip:"海底トンネルは小さい子が怖がることもあるので様子を見ながら進むと◎。"},
 {region:"東京", name:"マクセル アクアパーク品川", area:"港区・品川駅前", lat:35.6280, lng:139.7402,
@@ -1770,6 +1784,7 @@ const SPOTS = [
  price:"大人2600円台／子供1400円台", parking:"yes", access:"JR「五井」駅からバス30分",
  baby:"おむつ替えあり", lunch:"園内にレストランあり。",
  officialUrl:"https://www.zounokuni.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150261/"}, recommendedBooking:"asoview",
  desc:"ゾウの絵画パフォーマンスやふれあい体験が名物のテーマパーク。動物との距離が近い。",
  tip:"ゾウさんショーの時間は事前にチェックして予定を組むのがおすすめ。"},
 {region:"千葉", name:"千葉県立幕張海浜公園", area:"千葉市美浜区", lat:35.6480, lng:140.0330,
@@ -1863,6 +1878,7 @@ const SPOTS = [
  price:"入園＋のりもの放題 大人3000円前後", parking:"yes", access:"東武伊勢崎線「加須」駅からバス20分",
  baby:"おむつ替えあり", lunch:"園内にレストランあり。",
  officialUrl:"https://www.musashinomura.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/164649/"}, recommendedBooking:"asoview",
  desc:"未就学児から乗れる乗り物が多い遊園地。動物ふれあいエリアやプールもある。",
  tip:"のりもの放題パスがあるので、何度も乗りたい未就学児連れにお得。"},
 {region:"埼玉", name:"所沢航空記念公園", area:"所沢市", lat:35.7920, lng:139.4640,
@@ -1918,6 +1934,7 @@ const SPOTS = [
  price:"大人5000円台／子供2600円台", parking:"yes", access:"東武「鬼怒川温泉」駅からバス20分",
  baby:"おむつ替えあり", lunch:"園内に飲食店多数。",
  officialUrl:"https://edowonderland.net/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150736/"}, recommendedBooking:"asoview",
  desc:"江戸時代の町並みを再現したテーマパーク。忍者ショーや変身体験が子どもに人気。",
  tip:"屋内の忍者からくり屋敷などもあり、雨の日でも一部楽しめる。"},
 {region:"栃木", name:"とちのきファミリーランド", area:"宇都宮市", lat:36.5750, lng:139.8580,
@@ -1954,6 +1971,7 @@ const SPOTS = [
  price:"大人2200円台／子供1000円台", parking:"no", access:"JR「川崎」駅直結",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"川崎ルフロン内・駅周辺に飲食店多数。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/156289/"}, recommendedBooking:"asoview",
  desc:"駅直結のビル内水族館で、天候に関係なく楽しめる。世界の淡水魚や熱帯魚の展示が中心。",
  tip:"屋内完結型なので雨の日のお出かけ先として重宝する。"},
 {region:"神奈川", name:"はまぎん こども宇宙科学館", area:"横浜市磯子区", lat:35.409, lng:139.621,
@@ -2523,6 +2541,7 @@ const SPOTS = [
  price:"大人1200円台（乗り物別途）", parking:"yes", access:"JR「宇都宮」駅からバス",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にレストラン・売店あり。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/150798/"}, recommendedBooking:"asoview",
  desc:"動物園と小さな遊園地が一体になったファミリー向け施設。",
  tip:"乗り物の種類が幼児向けに充実しており、家族全員で楽しみやすい。"},
 {region:"栃木", name:"那須フラワーワールド", area:"那須郡那須町", lat:37.01, lng:140.1,
@@ -2561,6 +2580,7 @@ const SPOTS = [
  price:"大人1300円台／子供700円台", parking:"yes", access:"JR「渋川」駅からバス",
  baby:"おむつ替えあり／ベビーカーOK（起伏あり）", lunch:"園内にレストラン・売店あり。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/150470/"}, recommendedBooking:"asoview",
  desc:"羊やヤギとのふれあい体験が楽しめる高原の牧場。犬のショーなども開催。",
  tip:"標高が高く夏でも涼しいので、避暑を兼ねたお出かけにも向く。"},
 {region:"群馬", name:"太田市運動公園", area:"太田市", lat:36.296, lng:139.372,
@@ -4161,6 +4181,7 @@ const SPOTS = [
  baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にレストラン・カフェあり。",
  officialUrl:"https://izushaboten.com/",
  bookingLinks:{asoview:"https://www.asoview.com/base/149993/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
  desc:"大室山のふもとに広がる動植物公園。約1500種のサボテン・多肉植物と、放し飼いのカピバラ・リスザルなど約140種の動物とふれあえる。冬季限定の「カピバラの露天風呂」が名物。",
  tip:"園内通路の一部に屋根があり雨天でも楽しめる。冬のカピバラ温泉は特に人気なので朝早めの訪問がおすすめ。"},
 {region:"長野", name:"地獄谷野猿公苑", area:"下高井郡山ノ内町平穏", lat:36.73265, lng:138.462137,
@@ -4180,6 +4201,7 @@ const SPOTS = [
  baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にフルーツパーラーあり。",
  officialUrl:"https://bananawani.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/150037/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
  desc:"温泉熱を利用してワニや熱帯植物を育てる動植物園。世界最多クラスのワニのコレクションのほか、日本で唯一のニシレッサーパンダ・アマゾンマナティーの展示も見どころ。園内の3分の2が屋根付きで雨の日も安心。",
  tip:"駅から徒歩1分と好アクセス。本園・分園間は無料シャトルバスで移動でき、全て回ると2〜2.5時間ほど楽しめる。"},
 {region:"静岡", name:"浜名湖パルパル", area:"浜松市西区舘山寺町", lat:34.764511, lng:137.617327,
@@ -4244,7 +4266,280 @@ const SPOTS = [
  baby:"ベビーカーOK（高低差少なめ）", lunch:"周辺に飲食店あり。",
  officialUrl:"https://ueda-kanko.or.jp/spot/uedajoseki_park/",
  desc:"真田昌幸が築城し、徳川の大軍を2度撃退した名城の跡地。現存する櫓や石垣、土塁から戦国時代の面影を感じられる。桜の名所としても知られ、公園内散策は無料で楽しめる。",
- tip:"駅から徒歩圏内でアクセスしやすい。桜の季節（4月上旬）は特に美しく、家族での歴史散策にぴったり。"}
+ tip:"駅から徒歩圏内でアクセスしやすい。桜の季節（4月上旬）は特に美しく、家族での歴史散策にぴったり。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase6）：伊豆エリア★5評価施設（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"静岡", name:"伊豆ぐらんぱる公園", area:"伊東市富戸", lat:34.913, lng:139.107,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"入園料 中学生以上1600円台／小学生1000円台／幼児(4歳以上)500円（土日祝は変動あり）", parking:"yes", access:"伊豆急行線「伊豆高原駅」から東海バスで約10分",
+ baby:"おむつ替えあり／無料遊具エリアは未就学児も遊びやすい", lunch:"園内にレストラン・売店あり。",
+ officialUrl:"https://www.granpal.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/152181/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"東京ドーム約5個分の広さを誇るアトラクション満載の公園。ジップラインや船型立体迷路、恐竜エリアをゴーカートで駆け抜けるアトラクションなど、幅広い年齢で楽しめる。無料の遊具エリアもあり、犬同伴もOK。",
+ tip:"秋〜夏にかけては夜の「伊豆高原グランイルミ」も開催（昼夜入替制・別料金）。無料遊具エリアだけでも小さな子どもは十分楽しめる。"},
+{region:"静岡", name:"下田海中水族館", area:"下田市", lat:34.666144, lng:138.945966,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"大人2000円台／4歳〜小学生1000円台", parking:"yes", access:"伊豆急行線「伊豆急下田」駅からバス約7分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"館内にレストラン・売店あり。",
+ officialUrl:"https://shimoda-aquarium.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150151/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"下田湾の入江をそのまま利用した珍しい海上水族館。イルカが間近に見られる海上ショーや、ウェットスーツを着てイルカと実際に触れ合えるプログラムが人気。",
+ tip:"イルカとのふれあいプログラムは事前予約がおすすめ。桟橋を歩いて渡る構造なのでベビーカーは折りたたみが必要な場面も。"},
+{region:"静岡", name:"体感型動物園 iZoo", area:"賀茂郡河津町", lat:34.73103, lng:138.994766,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人2500円台／小学生1500円台／未就学児無料（隣接KawaZooとの共通券あり）", parking:"yes", access:"伊豆急行線「河津」駅からタクシー約5分",
+ baby:"ベビーカーOK", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://izoo.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150168/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"日本最大級の爬虫類・両生類専門の動物園。ガラパゴスゾウガメへの騎乗記念撮影や、毒を持たない生き物とのふれあいコーナーなど、生き物との距離の近さが魅力。",
+ tip:"爬虫類が苦手な子には刺激が強い場合も。隣接の「体感型カエル館KawaZoo」との共通券がお得。"},
+{region:"静岡", name:"修善寺 虹の郷", area:"伊豆市修善寺", lat:34.97652, lng:138.905134,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"大人1200円台／小人(4歳〜小学生)600円台", parking:"yes", access:"伊豆箱根鉄道駿豆線「修善寺」駅から東海バスで約20分",
+ baby:"おむつ替えあり／起伏ありベビーカーは一部注意", lunch:"園内にレストラン・売店あり。",
+ officialUrl:"https://www.nijinosato.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/161184/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"英国村・カナダ村・日本庭園など6つのエリアからなる広大な自然公園。園内をイギリス製の本格SL「ロムニー鉄道」が走り、四季折々の花々も楽しめる。",
+ tip:"起伏が多いので歩きやすい靴で。紅葉シーズン（11月中旬〜12月下旬）のライトアップは特に人気で混雑する。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase7）：伊豆エリア★4評価施設（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"静岡", name:"伊豆パノラマパーク", area:"伊豆の国市長岡", lat:35.026575, lng:138.928436,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"ロープウェイ往復 中学生以上2500円台／小学生1400円台／3歳以上900円台", parking:"yes", access:"伊豆箱根鉄道駿豆線「伊豆長岡駅」からバスで約15分",
+ baby:"ベビーカーはロープウェイ乗車時に畳む必要あり", lunch:"山麓にレストラン、山頂に「碧テラス」カフェあり。",
+ officialUrl:"https://www.panoramapark.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150125/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"葛城山山頂までロープウェイで約7分の空中散歩。山頂の「碧テラス」からは富士山と駿河湾の大パノラマが広がり、水盤に景色が映り込む撮影スポットも人気。",
+ tip:"ハイキングコースで山頂まで登ることもできる（片道のみロープウェイ利用も可）。愛犬も一緒に乗車できる。"},
+{region:"静岡", name:"伊豆・三津シーパラダイス", area:"沼津市内浦", lat:35.019539, lng:138.895989,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人2600円台／4歳〜小学生1300円台", parking:"yes", access:"伊豆箱根鉄道駿豆線「伊豆長岡駅」からバスで約25分",
+ baby:"おむつ替えあり／ベビーカーOK／キッズコーナーあり", lunch:"館内にレストランあり。",
+ officialUrl:"https://www.seaparadise.co.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/154687/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"日本で初めてイルカを飼育した歴史ある水族館。セイウチの迫力の食事タイムや、コツメカワウソとのふれあいなど生き物との距離の近さが魅力。富士山を背景にしたイルカショーも見どころ。",
+ tip:"屋内エリアも充実しており雨の日でも楽しめる。小さな子ども向けのキッズコーナーもあり幅広い年齢で楽しめる。"},
+{region:"静岡", name:"小室山公園", area:"伊東市川奈", lat:34.939232, lng:139.13111,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料（観光リフト往復 大人1000円／小学生100円）", parking:"yes", access:"伊豆急行線「川奈駅」から徒歩約20分",
+ baby:"ベビーカーは山頂エリアの一部で不向き", lunch:"山頂にカフェ「Cafe・321」あり。",
+ officialUrl:"https://itospa.com/spot/detail_54008.html",
+ desc:"標高321mの小室山を中心とした公園。恐竜のオブジェが点在する「恐竜広場」は子どもに人気で、レトロな一人乗りリフトで山頂まで登れば360度の絶景が広がる。春のつつじ（10万本）も見どころ。",
+ tip:"リフトで登って恐竜広場のある「ジュラシックコース」を歩いて下るのがおすすめの周り方。入園・駐車場は基本無料。"},
+{region:"静岡", name:"伊豆アニマルキングダム", area:"賀茂郡東伊豆町稲取", lat:34.796964, lng:139.039637,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"平日：大人2500円台／子供1250円台（土日祝・繁忙期は変動）", parking:"yes", access:"伊豆急行線「伊豆稲取駅」からバスで約10分",
+ baby:"おむつ替えあり／ベビーカー台数に限りあり", lunch:"園内にレストランあり。",
+ officialUrl:"https://izu-animal-kingdom.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150150/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"「アニキン」の愛称で親しまれる動物園・遊園地の複合施設。放し飼いに近い形で動物を観察できる「ウォーキングサファリ」やホワイトタイガーへの餌やり体験、観覧車などのアトラクションもあり1日中楽しめる。",
+ tip:"動物エリア中心なら2〜3時間、遊園地も含めるなら5〜6時間が目安。事前のWeb前売りチケットが割安。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase8）：伊豆エリア★4評価施設（続き）
+// ------------------------------------------------------------------
+{region:"静岡", name:"姫の沢公園", area:"熱海市伊豆山", lat:35.117505, lng:139.05148,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"入園無料", parking:"yes", access:"JR「熱海駅」からバスで約25分",
+ baby:"ベビーカーはアスレチックコース内は不向き", lunch:"周辺に飲食店は少なめ。軽食の持参がおすすめ。",
+ officialUrl:"https://www.seibu-la.co.jp/himenosawa/",
+ desc:"山の斜面を利用した自然豊かな公園。約3.5kmのアスレチックコース（50ポイント）が2コースあり、小学生高学年から挑戦できる本格コースと、小さな子ども向けの「アスレチック広場」に分かれている。春のツツジ（7万5千本）も見事。",
+ tip:"元気なら本格Aコース、小さな子ども連れなら「アスレチック広場」付近だけでも十分楽しめる。日本の都市公園100選にも選ばれている。"},
+{region:"静岡", name:"酪農王国オラッチェ", area:"田方郡函南町丹那", lat:35.103467, lng:139.014676,
+ ages:["0-1歳","2-3歳","4-6歳","低学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料（体験・レストランは別途）", parking:"yes", access:"伊豆箱根鉄道「大場駅」からタクシーで約18分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"レストランあり（土日祝のみ営業）。手ぶらBBQも可能。",
+ officialUrl:"https://www.town.kannami.shizuoka.jp/soshiki/1013/1/2/745.html",
+ bookingLinks:{asoview:"https://www.asoview.com/base/151646/"}, recommendedBooking:"asoview",
+ desc:"箱根山麓の丹那盆地にある観光牧場。ヒツジ・ヤギ・ウシなどへの餌やりや乳搾り・バター作り体験ができる。濃厚な「オラッチェソフトクリーム」も名物。夏期限定のとうもろこし畑迷路も人気。",
+ tip:"入園無料で気軽に立ち寄れる。レストランは土日祝のみ営業なので、平日訪問時は軽食の持参がおすすめ。"},
+{region:"静岡", name:"かねふく めんたいパーク伊豆", area:"田方郡函南町", lat:35.075276, lng:138.925951,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"入館無料", parking:"yes", access:"伊豆箱根鉄道駿豆線「伊豆仁田駅」から徒歩約20分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"フードコーナーで明太子グルメ（おにぎり・パスタ等）あり。",
+ officialUrl:"https://mentai-park.com/izu/",
+ desc:"博多明太子の老舗「かねふく」が運営する明太子専門テーマパーク。ガラス越しの無料工場見学や、すべり台・ボルダリングで遊べる「タラピヨキッズランド」があり、雨の日でも楽しめる。富士山を望む足湯コーナーも。",
+ tip:"入館無料で、道の駅伊豆ゲートウェイ函南に隣接しているため車での立ち寄りに便利。キッズランドは荷物になりがちなドライブ休憩にぴったり。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase9）：伊豆エリア★3〜4評価施設
+// ------------------------------------------------------------------
+{region:"静岡", name:"体感型カエル館 KawaZoo", area:"賀茂郡河津町梨本", lat:34.794063, lng:138.934696,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1000円台／小学生500円台／未就学児無料（iZooとの共通券あり）", parking:"yes", access:"伊豆急行線「河津駅」からタクシーで約13分",
+ baby:"ベビーカーOK", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://kawazoo.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/159597/"}, recommendedBooking:"asoview",
+ overnightRecommended:true, hotelArea:"izu",
+ desc:"日本最大級のカエル専門施設。世界各国の珍しいカエル約120種2000匹を展示し、施設の90%が全天候型室内展示のため雨の日でも安心。姉妹施設「iZoo」との共通券もある。",
+ tip:"苦手な人には刺激的だが、カエル好きの子どもには探す楽しみもある小さめの施設。iZooと合わせて訪れるのがおすすめ。"},
+{region:"静岡", name:"プレジャーアリーナ（伊豆赤沢温泉）", area:"伊東市赤沢", lat:34.895, lng:139.118,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"平日900円台／土日祝1400円台（4歳以上、乳幼児無料）", parking:"yes", access:"伊豆急行線「伊豆高原駅」から無料送迎バスで約15分",
+ baby:"未就学児無料／ベビーカーOK", lunch:"併設カフェ「ガブットリア」あり。",
+ officialUrl:"https://www.izuakazawa.jp/",
+ desc:"2026年4月開業の伊豆エリア最大級の屋内アミューズメント施設。全長14m×20mの全天候型エアアスレチックや高さ5mのビッグスライダー、屋外のネットアスレチックがあり、雨の日でも思い切り体を動かして遊べる。",
+ tip:"新しくきれいな施設で、キッズスペース付きカフェもあるため小さな子ども連れでも安心。混雑時は公式サイトで待ち時間を確認するのがおすすめ。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase10）：伊豆エリア★3評価施設
+// ------------------------------------------------------------------
+{region:"静岡", name:"伊豆テディベア・ミュージアム", area:"伊東市八幡野", lat:34.877732, lng:139.111591,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1800円台／中高生1200円台／小学生1000円台", parking:"yes", access:"伊豆急行線「伊豆高原駅」から徒歩約10分",
+ baby:"ベビーカーOK", lunch:"併設のクッキーショップ・ティールームあり。",
+ officialUrl:"https://www.teddynet.co.jp/izu/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/149985/"}, recommendedBooking:"asoview",
+ desc:"常時1000体ほどのテディベアを展示する専門ミュージアム。テディベア史上最高額で落札された「テディガール」など貴重なアンティークベアや、世界のアーティストによる作品を鑑賞できる。となりのトトロ関連の展示コーナーも人気。",
+ tip:"抱っこできる程度の小型犬なら同伴可能。駅から徒歩圏内でアクセスしやすい。"},
+{region:"静岡", name:"大室山登山リフト", area:"伊東市池", lat:34.907628, lng:139.096752,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"往復 大人1000円台／小学生500円台", parking:"yes", access:"伊豆急行線「伊豆高原駅」からバスで約24分",
+ baby:"未就学児は保護者同伴。徒歩登山は禁止のためリフト利用必須", lunch:"麓に売店・食堂あり。",
+ officialUrl:"http://omuroyama.com/",
+ desc:"標高580mの大室山山頂まで約6分の観光リフトで登る。山頂の噴火口を一周する「お鉢めぐり」（約1km）からは富士山や伊豆七島を望む360度の絶景が広がる。毎年2月には山全体を燃やす「山焼き」が行われる。",
+ tip:"小型・中型犬も同乗可能。強風時は運休することがあるため、訪問前に運行状況の確認がおすすめ。"},
+{region:"静岡", name:"伊豆海洋公園", area:"伊東市富戸", lat:34.885711, lng:139.13216,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏"],
+ price:"夏期限定磯プール：大人1700円台／小学生1000円台／幼児(3歳以上)500円台", parking:"yes", access:"伊豆急行線「伊豆高原駅」からバスで約9分",
+ baby:"おむつ替えあり", lunch:"バーベキューエリアあり（要予約）。",
+ officialUrl:"https://izuoceanpark.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/158973/"}, recommendedBooking:"asoview",
+ desc:"ダイビングスポットとして有名な公園。夏期限定で海水をくみ上げた「磯プール」がオープンし、すべり台や「ちびっ子あじのつかみどり」などのイベントも開催。城ヶ崎海岸の絶景ロケーションも魅力。",
+ tip:"磯プールは夏季限定なので訪問時期に注意。城ヶ崎海岸の散策と合わせて楽しめる。"},
+{region:"静岡", name:"城ヶ崎海岸（門脇吊橋）", area:"伊東市富戸", lat:34.879, lng:139.128,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"散策無料（吊橋通行も無料）", parking:"yes", access:"伊豆急行線「城ヶ崎海岸駅」から徒歩約30分",
+ baby:"崖沿いの遊歩道のためベビーカー・小さな子どもは注意が必要", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://itospa.com/spot/detail_54002.html",
+ desc:"大室山の噴火でできた溶岩海岸。全長48m・高さ23mの「門脇つり橋」はスリル満点の絶景スポットで、門脇埼灯台の展望台からは伊豆七島や天城連山を望むパノラマが楽しめる。全長約9kmのハイキングコースが整備されている。",
+ tip:"断崖沿いの道が多いため、小さな子どもは手をつなぐなど安全に注意。駐車場は伊東市門脇駐車場（15分無料）が便利。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase11）：日光・那須エリア（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"栃木", name:"日光東照宮", area:"日光市山内", lat:36.758077, lng:139.598836,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人1600円台／小・中学生550円台", parking:"yes", access:"東武日光線「東武日光」駅からバスで約7分",
+ baby:"石段・砂利道が多くベビーカーは不向き", lunch:"参道周辺に飲食店多数。",
+ officialUrl:"https://www.toshogu.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/104575/"}, recommendedBooking:"asoview",
+ desc:"徳川家康を祀る世界文化遺産の神社。国宝の「陽明門」や、左甚五郎作と伝わる「眠り猫」など見どころが多い。国宝8棟・重要文化財34棟が並ぶ豪華絢爛な社殿群は圧巻。",
+ tip:"境内は石段が多いため歩きやすい靴で。音声ガイド（子ども用あり）を借りると歴史が分かりやすい。"},
+{region:"栃木", name:"戦場ヶ原", area:"日光市中宮祠", lat:36.776673, lng:139.441837,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"散策無料", parking:"yes", access:"東武日光線「東武日光」駅からバスで約70分",
+ baby:"未舗装の木道もありベビーカー不向き", lunch:"三本松茶屋など拠点に飲食店あり。",
+ officialUrl:"https://www.nikko-kankou.org/features/66",
+ desc:"標高約1400mに広がる約400haの湿原。男体山を背景に自然研究路（約2時間のハイキングコース）が整備され、350種の植物と多くの野鳥が観察できる。6月〜8月のワタスゲ、9〜10月の草紅葉が見頃。",
+ tip:"周辺は車の乗り入れ禁止区間があり、低公害バスの利用が便利。歩きやすい靴と防寒着の準備がおすすめ。"},
+{region:"栃木", name:"湯滝", area:"日光市湯元", lat:36.796205, lng:139.428455,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"見学無料", parking:"yes", access:"東武日光線「東武日光」駅からバスで約75分（湯滝入口下車、徒歩5分）",
+ baby:"観瀑台までは階段ありベビーカー不向き", lunch:"湯滝レストハウスあり。",
+ officialUrl:"https://www.nikko-kankou.org/spot/115",
+ desc:"奥日光三名瀑の一つ。高さ約70m・長さ約110mの滝を、目の前の観瀑台から間近に眺められる。戦場ヶ原ハイキングコースの起点にもなっている。",
+ tip:"戦場ヶ原とセットで訪れるのが定番。紅葉シーズン（10月上旬〜中旬）は特に人気で混雑する。"},
+{region:"栃木", name:"那須野が原公園", area:"那須塩原市千本松", lat:36.921, lng:139.935,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"入園無料（ファミリープール・アスレチック等は有料）", parking:"yes", access:"JR「西那須野」駅からタクシーで約15分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"園内に売店あり。",
+ officialUrl:"https://www.park-tochigi.com/nasunogahara/",
+ desc:"面積57haの県北最大級の公園。芝生広場、そり遊び広場、夏季限定のファミリープール、フィールドアスレチック、展望塔「サンサンタワー」など施設が充実。オートキャンプ場も併設。",
+ tip:"入園自体は無料なので、まずは芝生広場やそり遊び広場だけでも十分楽しめる。夏はファミリープールが人気。"},
+{region:"栃木", name:"日光だいや川公園", area:"日光市瀬川", lat:36.7336, lng:139.6684,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料（フィールドアスレチックは大人310円／小中学生150円）", parking:"yes", access:"JR日光線「今市」駅からタクシーで約10分",
+ baby:"おむつ替えあり／ちびっこ広場は未就学児も遊びやすい", lunch:"レストラン「だいやの森」・地元野菜の直売所あり。",
+ officialUrl:"https://www.nikko-kankou.org/houjin/spot/883",
+ desc:"大谷川沿いの広域公園。地域の生き物をモチーフにしたフィールドアスレチック（小学生以上向け）のほか、未就学児向けの「ちびっこ広場」もある。日光東照宮の1/10模型を展示する「だいや体験館」（見学無料）も併設。",
+ tip:"アスレチックは小学生以上が対象だが、ちびっこ広場は小さな子どもでも遊べる。桜の名所としても知られる（3月下旬〜5月上旬）。"},
+{region:"栃木", name:"那須の森の空中アスレチック NOZARU", area:"那須郡那須町高久乙", lat:37.065643, lng:139.966779,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"ノザルコース（130cm以上）大人4600円台〜／子ザルコース（110cm以上）1000円台〜", parking:"yes", access:"JR「黒磯」駅からバス約55分（季節運行）",
+ baby:"身長制限があり未就学児には不向きな場合あり", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://nozaru.jp/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/151258/"}, recommendedBooking:"asoview",
+ desc:"那須の森と地形をそのまま活かした日本最大級の空中アスレチック。地上10mを超える木々の間に設置されたアクティビティをクリアしていく本格コース「ノザル」と、小さな子ども向けの「子ザル」コースがある。全長100m以上のジップラインも爽快。",
+ tip:"身長制限があるため、事前に公式サイトで対象年齢・身長を確認するのがおすすめ。犬同伴も可能。"},
+{region:"栃木", name:"巨大迷路パラディアム", area:"日光市柄倉", lat:36.7478, lng:139.5748,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人800円台〜／子供500円台", parking:"yes", access:"東武鬼怒川線「鬼怒川温泉」駅からバスで約20分",
+ baby:"未就学児には難易度が高く、ベビーカーには不向き", lunch:"周辺（日光江戸村隣接）に飲食店あり。",
+ officialUrl:"https://kyodaimeiro-paradeiamu.com/",
+ desc:"1987年開業、面積約3500平方mの本格的な巨大迷路。高さ2mの板塀で作られたコース内の4つのチェックポイントを回りゴールを目指す。平均クリアタイムは約50分。ミニパターゴルフも併設。",
+ tip:"日光江戸村のすぐ隣にあるためセットで訪れやすい。雨天時は足元が滑りやすくなるため注意。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase12）：伊豆エリア最終3施設
+// ------------------------------------------------------------------
+{region:"静岡", name:"道の駅 伊豆ゲートウェイ函南", area:"田方郡函南町塚本", lat:35.075617, lng:138.925706,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"入場無料（飲食・お土産は別途）", parking:"yes", access:"伊豆箱根鉄道駿豆線「伊豆仁田駅」からバスで約15分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"レストラン・カフェ・コンビニあり。",
+ officialUrl:"https://www.izugateway.com/",
+ desc:"伊豆半島の玄関口にある道の駅。地元野菜やお土産のショップ、レストラン、観光案内所が揃う。隣接するかねふくめんたいパーク伊豆・伊豆わさびミュージアムと合わせて楽しめる複合エリア。富士山を望む展望テラスもある。",
+ tip:"隣接施設と合わせて半日過ごせる。ドライブ休憩に立ち寄るだけでも、富士山ビューの展望テラスは一見の価値あり。"},
+{region:"静岡", name:"東京ラスク 伊豆ファクトリー", area:"伊豆市市山", lat:34.901707, lng:138.925423,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"見学無料（お土産は別途）", parking:"yes", access:"伊豆箱根鉄道駿豆線「修善寺駅」からバスで約30分",
+ baby:"ベビールーム完備／バウンサー・おもちゃ・絵本あり", lunch:"無料カフェコーナー（コーヒー・お茶）あり。",
+ officialUrl:"https://www.tokyorusk.co.jp/blogs/topics/izufactory",
+ desc:"ラスク専門店「東京ラスク」の工場直売店。ガラス越しに製造工程を無料見学でき、キッズルームも完備。「コロコロラスク作り」体験教室も開催され、自由研究にもおすすめ。",
+ tip:"ベビールームやキッズスペースがあり赤ちゃん連れでも安心。修善寺と天城峠の中間に位置し、ドライブ休憩にも便利。"},
+{region:"静岡", name:"市民の森 浮橋", area:"伊豆の国市浮橋", lat:35.02, lng:138.963,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料", parking:"yes", access:"伊豆箱根鉄道駿豆線「大仁駅」から車で約15分",
+ baby:"未舗装の森のためベビーカーは不向き", lunch:"施設内に売店なし。弁当持参がおすすめ。",
+ officialUrl:"https://www.city.izunokuni.shizuoka.jp/tosikei/shisetsu/kouen/016.html",
+ desc:"旧大仁町の町政50周年を記念して整備された約15haの自然公園。小川での水遊びや虫取り、木製遊具のあるアスレチック広場、展望台などがあり、森林浴やバードウォッチングにも最適。",
+ tip:"施設内に売店がないため、お弁当・飲み物・虫取り網を持参すると存分に楽しめる。道幅が狭い区間があるので運転に注意。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase13）：熱海・湯河原・箱根エリア（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"神奈川", name:"箱根園水族館", area:"足柄下郡箱根町元箱根", lat:35.212255, lng:139.00913,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1500円台／4歳〜小学生750円台", parking:"yes", access:"箱根登山バス・伊豆箱根バス「箱根園」バス停すぐ",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"箱根園内にレストラン・売店あり。",
+ officialUrl:"https://www.hakonenavi.jp/spot/1236",
+ bookingLinks:{asoview:"https://www.asoview.com/base/150403/"}, recommendedBooking:"asoview",
+ desc:"海抜723m、日本一標高の高い場所にある水族館。世界中の魚450種3万2千匹を展示し、バイカルアザラシ広場のパフォーマンスショーが人気。富士山と芦ノ湖を望む絶好のロケーション。",
+ tip:"こじんまりとした規模で幼児〜小学生にちょうど良いボリューム。芦ノ湖の遊覧船・箱根園ドライブインとあわせて訪れやすい。"},
+{region:"神奈川", name:"大涌谷", area:"足柄下郡箱根町仙石原", lat:35.243705, lng:139.019607,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"見学無料（黒たまご別売、ロープウェイは別料金）", parking:"yes", access:"箱根ロープウェイ「大涌谷駅」下車すぐ",
+ baby:"火山ガスのため長時間滞在は避ける／ベビーカーOKな範囲は限定的", lunch:"「大涌谷くろたまご館」にバイキングレストラン・売店あり。",
+ officialUrl:"https://owakudani.com/",
+ desc:"3000年前の水蒸気爆発でできた活火山エリア。今も噴気が立ち上る荒々しい景観が広がる。温泉池で茹でた名物「黒たまご」（1個食べると寿命が7年延びると言われる）が人気。箱根ロープウェイの車窓からの景色も見どころ。",
+ tip:"火山ガスの影響で立ち入り規制がかかる場合があるため、訪問前に公式サイトで最新の運行状況を確認するのがおすすめ。"},
+{region:"静岡", name:"熱海城", area:"熱海市曽我山", lat:35.086381, lng:139.078661,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人1200円台／小中学生650円台／幼児(3〜6歳)500円台", parking:"yes", access:"JR「熱海駅」からバスで約13分",
+ baby:"エレベーターなし階段中心のためベビーカーは不向き", lunch:"レストラン「ヒルトップテラス」あり。",
+ officialUrl:"https://atamijyo.com/",
+ desc:"錦ヶ浦の山頂に建つ観光用の城。天守閣展望台からは相模湾360度のパノラマが楽しめる。無料のゲームコーナーや足湯、隣接の「熱海トリックアート迷宮館」もあり、天候を気にせず楽しめる。",
+ tip:"地下の無料ゲームコーナー（太鼓の達人等）は子どもに人気。トリックアート迷宮館との共通券がお得。"},
+{region:"神奈川", name:"幕山公園（湯河原梅林）", area:"足柄下郡湯河原町", lat:35.148, lng:139.076,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["春"],
+ price:"入園無料（梅の宴期間中は入園200円）", parking:"yes", access:"JR「湯河原駅」からバスで約15分",
+ baby:"おむつ替えあり／園内は起伏あり", lunch:"梅の宴期間中は出店あり。普段は近隣で調達推奨。",
+ officialUrl:"https://www.yugawara.or.jp/sightseeing/657/",
+ desc:"標高626mの幕山ふもとに広がる自然公園。2月上旬〜3月中旬の「梅の宴」では約4000本の紅白梅が山肌を彩る。新崎川沿いにフィールドアスレチックもあり、4月〜10月はバーベキューも楽しめる。",
+ tip:"梅の見頃期間はライトアップや出店で賑わう。アスレチックやハイキングコースもあり、梅以外のシーズンも自然散策で楽しめる。"}
 ];
 // ==================================================================
 // アプリの状態（フィルター条件・お気に入り・比較など）
@@ -5288,6 +5583,28 @@ const FAMILY_HOTELS = {
       note: "湖畔の落ち着いた立地で、和室タイプの客室もありリーズナブル。口コミでもコストパフォーマンスの良さが評価されている。",
       bookingLinks: { rakuten: "", jalan: "" }
     }
+  ],
+  izu: [
+    {
+      name: "伊豆グランヴィレッジ グランピング",
+      area: "伊東（富戸）",
+      lat: 34.909, lng: 139.101,
+      label: "赤ちゃん連れ向け",
+      features: ["👶 赤ちゃん・子連れ歓迎", "🍽️ バイキング", "🚗 駐車場あり"],
+      score: 8,
+      note: "0歳から宿泊可能なグランピング施設。伊豆ぐらんぱる公園の目の前という立地で、BBQ食べ放題・飲み放題付きプランが中心。",
+      bookingLinks: { rakuten: "", jalan: "" }
+    },
+    {
+      name: "ホテルハーヴェスト天城高原",
+      area: "伊豆市天城高原",
+      lat: 34.87, lng: 139.02,
+      label: "キッズ充実",
+      features: ["🧸 キッズスペースあり", "🍽️ バイキング", "🛁 貸切風呂・家族風呂", "🚗 駐車場あり"],
+      score: 8,
+      note: "標高900mの高原リゾート。伊豆エリア最大級の屋内キッズルーム「リゾッチャIZU」があり、雨の日でも宿泊者は無料で利用できる。",
+      bookingLinks: { rakuten: "", jalan: "" }
+    }
   ]
 };
 function getFamilyHotels(spot){
@@ -5360,6 +5677,17 @@ function getNearbyCombos(spot){
 
 function mapsUrl(spot){
   return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(spot.name + " " + spot.area);
+}
+// 🚃 現在地→施設の公共交通ルート検索URL（Google Maps）。
+// destinationパラメータのみ指定し、originは省略することで
+// Google Maps側が自動的に「現在地」を起点にする（位置情報の許可はユーザー側の操作）。
+// 緯度経度があればそれを使い、なければ施設名＋エリアで検索するため、
+// 今後施設が増えても・データが多少欠けていてもエラーにならない汎用実装。
+function transitDirectionsUrl(spot){
+  const destination = (typeof spot.lat === "number" && typeof spot.lng === "number")
+    ? `${spot.lat},${spot.lng}`
+    : (spot.name + " " + (spot.area||""));
+  return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(destination) + "&travelmode=transit";
 }
 function officialLink(spot){
   return spot.officialUrl || ("https://www.google.com/search?q=" + encodeURIComponent(spot.name + " 公式"));
@@ -5711,6 +6039,10 @@ function openDetail(spot, silent){
         ${transitRow}
         <div class="go-row">最寄り：${spot.access}</div>
       </div>
+      <div class="go-actions">
+        <a class="go-action-btn map" href="${mapsUrl(spot)}" target="_blank" rel="noopener">📍 地図・ナビ</a>
+        <a class="go-action-btn transit" href="${transitDirectionsUrl(spot)}" target="_blank" rel="noopener">🚃 電車で行く</a>
+      </div>
     </div>
 
     <div class="detail-section">
@@ -5805,7 +6137,6 @@ function openDetail(spot, silent){
       <button class="abtn ${isVisited?"on visited":""}" data-act="visited">✅ 行った</button>
       <button class="abtn ${isExcluded?"on excluded":""}" data-act="exclude">🚫 除外</button>
       <button class="abtn ${isCompared?"on compared":""}" data-act="compare">⚖️ 比較に${isCompared?"追加済み":"追加"}</button>
-      <a class="abtn link" href="${mapsUrl(spot)}" target="_blank" rel="noopener">🗺️ 地図アプリで開く</a>
     </div>
     <button type="button" class="detail-close-bottom" id="detailCloseBtnBottom">閉じる</button>
   `;
