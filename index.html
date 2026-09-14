@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-<title>おでかけナビ 〜今日、子どもとどこ行く？〜</title>
+<title>おでかけナビ 〜今日は、子どもとどこ行く？〜</title>
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMLTN7373E"></script>
@@ -16,21 +16,21 @@
     'allow_google_signals': false
   });
 </script>
-<meta name="description" content="関東1都6県・360件以上のおでかけスポットから、今日行ける場所をサクッと検索。雨の日でも大丈夫？お財布は？車なしでも行ける？を一目で確認できる、子連れのおでかけ探しアプリです。">
+<meta name="description" content="子どもと楽しめるお出かけスポットを、年齢・天気・料金・距離・行き方などから探せます。">
 
 <!-- OGP（LINE・X・Facebookなどでシェアされた時の表示）-->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="おでかけナビ">
-<meta property="og:title" content="おでかけナビ 〜今日、子どもとどこ行く？〜">
-<meta property="og:description" content="関東1都6県・360件以上のおでかけスポットから、今日行ける場所をサクッと検索。雨の日でも大丈夫？お財布は？車なしでも行ける？を一目で確認できます。">
+<meta property="og:title" content="おでかけナビ 〜今日は、子どもとどこ行く？〜">
+<meta property="og:description" content="子どもと楽しめるお出かけスポットを、年齢・天気・料金・距離・行き方などから探せます。">
 <meta property="og:image" content="og-image.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://odekakenavi.github.io/odekake-navi/">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="おでかけナビ 〜今日、子どもとどこ行く？〜">
-<meta name="twitter:description" content="関東1都6県・360件以上のおでかけスポットから、今日行ける場所をサクッと検索できます。">
+<meta name="twitter:title" content="おでかけナビ 〜今日は、子どもとどこ行く？〜">
+<meta name="twitter:description" content="子どもと楽しめるお出かけスポットを、年齢・天気・料金・距離・行き方などから探せます。">
 <meta name="twitter:image" content="og-image.png">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -341,13 +341,87 @@
   .booking-others-list{display:flex; flex-direction:column; gap:6px; margin-top:6px;}
   .booking-others-list .booking-other-link{width:100%; text-align:center; justify-content:center;}
 
+  /* ---------- 🏨 子連れで泊まるなら（遠方施設のみ表示・Phase3追加） ---------- */
+  .hotel-section-intro{font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:8px;}
+  .hotel-toggle-btn{
+    display:block; width:100%; text-align:center; padding:11px; border-radius:10px;
+    background:#EFE9DA; border:1.5px solid var(--line); color:var(--ink); font-size:12.5px;
+    font-weight:700; cursor:pointer;
+  }
+  .hotel-toggle-btn.open{background:#F1EADA;}
+  .hotel-list{display:flex; flex-direction:column; gap:10px; margin-top:10px;}
+  .hotel-card{background:#F5F0E4; border-radius:12px; padding:11px 12px; border:1px solid var(--line);}
+  .hotel-card-label{
+    display:inline-block; font-size:10.5px; font-weight:700; color:#a13c22; background:#F7DCD3;
+    padding:2px 8px; border-radius:999px; margin-bottom:6px;
+  }
+  .hotel-card-name{font-size:13.5px; font-weight:700; color:var(--ink); margin-bottom:4px;}
+  .hotel-card-features{display:flex; flex-wrap:wrap; gap:5px; margin-bottom:6px;}
+  .hotel-feature-chip{font-size:10.5px; background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:3px 8px; color:var(--ink);}
+  .hotel-card-distance{font-size:11px; color:var(--ink-soft); margin-bottom:8px;}
+  .hotel-card-book-btn{
+    display:block; text-align:center; padding:9px; border-radius:9px; background:var(--sun);
+    color:#fff; font-size:12px; font-weight:700; text-decoration:none;
+  }
+  .hotel-card-book-pending{
+    display:block; text-align:center; padding:9px; border-radius:9px; background:#E7DFCF;
+    color:var(--ink-soft); font-size:11.5px;
+  }
+
+  /* ---------- 🎯 迷ったらこれ（Phase4追加） ---------- */
+  .decide-chip{
+    flex:0 0 auto; padding:8px 13px; border-radius:999px; background:#F1EADA; color:var(--ink);
+    font-size:12px; font-weight:700; border:1.5px solid var(--line); cursor:pointer; white-space:nowrap;
+  }
+  .decide-chip.active{background:var(--coral); border-color:var(--coral); color:#fff;}
+  .decide-results{padding:0 16px; margin-top:8px;}
+  .decide-result-card{
+    display:flex; align-items:center; gap:10px; background:var(--paper); border:1px solid var(--line);
+    border-radius:10px; padding:9px 11px; margin-bottom:6px; cursor:pointer;
+  }
+  .decide-result-icon{font-size:20px; flex:0 0 auto;}
+  .decide-result-body{flex:1; min-width:0;}
+  .decide-result-name{font-size:12.5px; font-weight:700; color:var(--ink);}
+  .decide-result-genre{font-size:10.5px; color:var(--ink-soft); margin-top:1px;}
+  .decide-empty{font-size:11.5px; color:var(--ink-soft); padding:8px 2px;}
+
+  /* ---------- ⏱️ おすすめ滞在時間（Phase4追加） ---------- */
+  .detail-stay-time{
+    font-size:12px; font-weight:700; color:var(--ink); background:#F1EADA; display:inline-block;
+    padding:5px 11px; border-radius:999px; margin-top:8px;
+  }
+
+  /* ---------- 🗺️ この近くで一緒に楽しむなら（Phase4追加） ---------- */
+  .nearby-combo-card{
+    display:flex; align-items:center; gap:10px; background:#F5F0E4; border:1px solid var(--line);
+    border-radius:10px; padding:10px 11px; margin-bottom:8px; cursor:pointer;
+  }
+  .nearby-combo-icon{font-size:22px; flex:0 0 auto;}
+  .nearby-combo-body{flex:1; min-width:0;}
+  .nearby-combo-reason{font-size:10.5px; font-weight:700; color:#a13c22; margin-bottom:2px;}
+  .nearby-combo-name{font-size:13px; font-weight:700; color:var(--ink);}
+  .nearby-combo-dist{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+
+  /* ---------- 🌤 天気予報（Phase5追加） ---------- */
+  .weather-forecast{display:flex; gap:6px; margin-top:4px;}
+  .weather-day{flex:1; background:#F5F0E4; border-radius:10px; padding:8px 4px; text-align:center; min-width:0;}
+  .weather-day-label{font-size:10.5px; color:var(--ink-soft); font-weight:700; margin-bottom:3px;}
+  .weather-day-icon{font-size:19px; line-height:1.2;}
+  .weather-day-cond{font-size:9.5px; color:var(--ink-soft); margin-top:1px;}
+  .weather-day-temp{font-size:11px; color:var(--ink); margin-top:3px; font-weight:700;}
+  .weather-day-temp .lo{color:var(--ink-soft); font-weight:500;}
+  .weather-day-pop{font-size:10.5px; color:var(--sun); font-weight:700; margin-top:3px;}
+  .weather-day-pop.high{color:var(--coral);}
+  .weather-loading, .weather-error{font-size:11.5px; color:var(--ink-soft); padding:6px 2px;}
+  .weather-note{font-size:10px; color:var(--ink-soft); margin-top:6px; line-height:1.5;}
+
 </style>
 </head>
 <body>
 
 <header>
   <h1><span>おでかけナビ</span></h1>
-  <p>今日、子どもとどこ行く？ 〜雨でも大丈夫？お財布は？車なしでも行ける？をサクッと確認〜</p>
+  <p>今日は、子どもとどこ行く？</p>
   <span class="disclaimer">※料金・駐車場・混雑・所要時間はすべて目安です。訪問前に公式サイトをご確認ください</span>
   <div class="save-note">⭐お気に入り・行った記録・郵便番号はこの端末（ブラウザ）に自動保存されます　<button id="resetBtn">保存データをリセット</button></div>
 </header>
@@ -377,6 +451,13 @@
     <span>🔍 詳しく絞り込む</span>
     <span class="badge-count" id="filterBadgeCount" style="display:none;"></span>
   </button>
+</div>
+
+<!-- 🎯 迷ったらこれ！（目的別のおすすめ導線・Phase4追加） -->
+<div id="decideWrap">
+  <div class="recent-title">🎯 迷ったらこれ！</div>
+  <div class="recent-chips" id="decideChips"></div>
+  <div class="decide-results" id="decideResults" style="display:none;"></div>
 </div>
 
 <!-- 行きたい一覧・比較する -->
@@ -3833,6 +3914,7 @@ const SPOTS = [
  price:"大人3800円台／小人（4〜12歳）1500円台／3歳以下無料", parking:"no", access:"ゆりかもめ「新豊洲駅」から徒歩1分",
  baby:"水域を裸足で歩くエリアがあるためベビーカー入場不可／抱っこ紐推奨", lunch:"館内にカフェあり。隣接のららぽーと豊洲にも飲食店多数。",
  officialUrl:"https://planets.teamlab.art/tokyo/jp/",
+ stayTime:{minMinutes:120, maxMinutes:150},
  desc:"水に膝までつかりながら光のアート作品を体感する、身体ごと没入する美術館。訪日外国人にも大人気で、雨の日でも楽しめる屋内施設。",
  tip:"裸足になり水に入るエリアがあるため、タオル・着替えを持参すると安心。小さすぎる子どもには水深がやや深く感じる場所もある。"},
 {region:"東京", name:"ナンジャタウン（サンシャインシティ）", area:"豊島区・池袋", lat:35.7295, lng:139.7191,
@@ -3870,6 +3952,7 @@ const SPOTS = [
  price:"大人800円／小中学生400円", parking:"yes", access:"JR「宇都宮駅」西口からバスで約30分",
  baby:"ベビーカーでの移動は坂・階段があり難しい場合あり", lunch:"隣接のカフェ「OYA MUSEUM ROCKSIDE MARKET」で軽食可。",
  officialUrl:"https://www.oya909.co.jp/",
+ stayTime:{minMinutes:30, maxMinutes:60},
  desc:"深さ30m、広さ2万平方mに及ぶ大谷石の巨大な地下採掘場跡。幻想的な空間は映画やミュージックビデオの撮影地としても有名で、非日常体験ができる。",
  tip:"坑内は年間を通して8℃前後と肌寒いため、夏でも上着を持参するのがおすすめ。写真映えするスポットとして子どもも楽しめる。"},
 
@@ -3882,6 +3965,8 @@ const SPOTS = [
  baby:"おむつ替えあり／トーマスランドなど小さな子ども向けエリアあり", lunch:"園内にレストラン・フードコート多数。",
  officialUrl:"https://www.fujiq.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/spot/19202cc3540060381/"},
+ overnightRecommended:true, hotelArea:"yamanashi",
+ stayTime:{minMinutes:360, maxMinutes:480},
  desc:"世界トップレベルの絶叫マシンで有名なテーマパーク。「トーマスランド」など小さな子ども向けエリアも充実しており、家族全員で楽しめる。",
  tip:"絶叫系だけでなく、幼児向けのトーマスランドや富士山の景色を楽しむエリアもあるので、家族の年齢構成に合わせて回り方を選べる。"},
 {region:"静岡", name:"富士サファリパーク", area:"裾野市須山", lat:35.259068, lng:138.811863,
@@ -4115,6 +4200,7 @@ const SPOTS = [
  price:"有料エリア（清流の里）大人600円／小中学生240円（花畑・農園エリアは無料）", parking:"yes", access:"東富士五湖道路「山中湖IC」から約5分",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"食事処「花庵」でうどん・そば・ソフトクリームあり。",
  officialUrl:"http://www.hananomiyakokouen.jp/",
+ overnightRecommended:true, hotelArea:"yamanashi",
  desc:"富士山を望む約30万平方mの花の公園。チューリップ、ヒマワリ、コスモスなど季節の花畑が広がり、水遊具広場や溶岩樹型の観察施設もある。12月〜1月中旬はダイヤモンド富士も見られる。",
  tip:"無料の花畑・農園エリアだけでも十分楽しめる。水遊具広場は小さな子どもに人気なので夏場は着替えを持参すると良い。"},
 {region:"山梨", name:"河口湖 音楽と森の美術館", area:"南都留郡富士河口湖町", lat:35.522414, lng:138.768648,
@@ -4122,6 +4208,7 @@ const SPOTS = [
  price:"大人1500円台／大高生1100円台／小中学生800円台", parking:"yes", access:"富士急行線「河口湖駅」から周遊バスで約26分",
  baby:"ベビーカーOK", lunch:"園内にレストラン・カフェあり。",
  officialUrl:"https://kawaguchikomusicforest.jp/",
+ overnightRecommended:true, hotelArea:"yamanashi",
  desc:"旧称「河口湖オルゴールの森美術館」。世界的に貴重なオルゴールや自動演奏楽器の実演が楽しめる音楽テーマパーク。ヨーロッパ風の庭園から富士山を望め、オルゴール手作り体験もできる。",
  tip:"屋内展示と庭園を行き来できる構成で雨天でも楽しみやすい。オリジナルオルゴール作り体験は子どもへのお土産にもなる。"},
 {region:"山梨", name:"西湖いやしの里根場", area:"南都留郡富士河口湖町西湖", lat:35.503482, lng:138.65968,
@@ -4130,6 +4217,7 @@ const SPOTS = [
  price:"大人500円／小中学生250円（体験は別料金）", parking:"yes", access:"富士急行線「河口湖駅」から周遊バスで約40分",
  baby:"おむつ替えあり／ベビーカーOK（一部段差あり）", lunch:"食事処で「ほうとう」など郷土料理あり。",
  officialUrl:"https://www.saikoiyashinosatonenba.jp/",
+ overnightRecommended:true, hotelArea:"yamanashi",
  desc:"茅葺き屋根の古民家約20棟を復元した集落型の文化体験施設。陶芸や万華鏡作りなどの工芸体験、忍者衣装の着付け体験ができ、富士山を背景にした絶景の撮影スポットとしても人気。",
  tip:"忍者・武将衣装での記念撮影は子どもも喜ぶ人気体験。春の桜、秋の紅葉シーズンは特に美しい。"},
 
@@ -4357,6 +4445,139 @@ function haversineKm(lat1,lng1,lat2,lng2){
 function estimateMinutes(km){
   if(km<=15) return km/25*60;
   return (15/25*60) + (km-15)/55*60;
+}
+
+// ==================================================================
+// 🌤 施設ごとの天気予報（Phase5追加）
+// ------------------------------------------------------------------
+// ・API: Open-Meteo（https://open-meteo.com/）
+//   - APIキー不要・登録不要・CORS対応・file://からのfetchも可能
+//   - 無料枠は「非商用利用」向け（公式規約より）。当サイトはアフィリエイト
+//     リンクを含むため、将来的にアクセス数が増える場合は商用利用規約の
+//     確認・有料プランの検討を推奨（コメントとして明記しておく）。
+// ・APIアクセスを抑えるため、以下を徹底する：
+//   - 施設詳細を開いた時にその施設の天気「だけ」を取得する（一覧の一括取得はしない）
+//   - 緯度経度を丸めたキーでlocalStorageにキャッシュし、一定時間（既定60分）
+//     以内の再アクセスはAPIを呼ばずキャッシュを返す
+//   - 近接施設（緯度経度が同程度）はキャッシュを共有できるようキーを丸める
+// ・fetchWeatherForSpot() の中身だけを差し替えれば、将来的に自前のサーバー
+//   キャッシュ（例: /api/weather?lat=..&lng=..）へ移行しやすい構造にしている。
+// ==================================================================
+const WEATHER_CACHE_KEY = "odekake_weather_cache_v1";
+const WEATHER_CACHE_TTL_MS = 60 * 60 * 1000; // 60分。天気予報の更新頻度に対して十分な長さ
+const WEATHER_DAY_LABELS = ["今日","明日","明後日"];
+
+// WMO Weather interpretation codes（Open-Meteoが採用する国際標準コード）の
+// うち代表的なものだけを簡易マッピング。未知のコードは絵文字なしで表示する。
+const WMO_WEATHER_MAP = {
+  0:{icon:"☀️",label:"晴れ"}, 1:{icon:"🌤",label:"ほぼ晴れ"}, 2:{icon:"⛅",label:"晴れ時々曇り"}, 3:{icon:"☁️",label:"曇り"},
+  45:{icon:"🌫",label:"霧"}, 48:{icon:"🌫",label:"霧"},
+  51:{icon:"🌦",label:"小雨"}, 53:{icon:"🌦",label:"小雨"}, 55:{icon:"🌧",label:"雨"},
+  56:{icon:"🌧",label:"みぞれ"}, 57:{icon:"🌧",label:"みぞれ"},
+  61:{icon:"🌧",label:"雨"}, 63:{icon:"🌧",label:"雨"}, 65:{icon:"🌧",label:"強い雨"},
+  66:{icon:"🌧",label:"みぞれ"}, 67:{icon:"🌧",label:"みぞれ"},
+  71:{icon:"❄️",label:"雪"}, 73:{icon:"❄️",label:"雪"}, 75:{icon:"❄️",label:"大雪"}, 77:{icon:"❄️",label:"雪"},
+  80:{icon:"🌦",label:"にわか雨"}, 81:{icon:"🌦",label:"にわか雨"}, 82:{icon:"🌧",label:"激しいにわか雨"},
+  85:{icon:"🌨",label:"にわか雪"}, 86:{icon:"🌨",label:"にわか雪"},
+  95:{icon:"⛈",label:"雷雨"}, 96:{icon:"⛈",label:"雷雨（雹）"}, 99:{icon:"⛈",label:"雷雨（雹）"}
+};
+function weatherCodeInfo(code){
+  return WMO_WEATHER_MAP[code] || {icon:"🌡", label:"不明"};
+}
+
+function loadWeatherCache(){
+  try{
+    const raw = localStorage.getItem(WEATHER_CACHE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  }catch(e){ return {}; }
+}
+function saveWeatherCache(cache){
+  try{ localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(cache)); }catch(e){ /* 保存できなくても機能は継続 */ }
+}
+// 緯度経度を小数点2桁（約1km四方）に丸めてキャッシュキーにする。
+// これにより、近接する施設同士でキャッシュを共有でき、APIアクセスをさらに抑えられる。
+function weatherCacheKey(lat,lng){
+  return `${Math.round(lat*100)/100},${Math.round(lng*100)/100}`;
+}
+
+// Open-Meteoのレスポンス（daily配列）を、表示しやすい3日分の配列に変換する
+function parseWeatherResponse(json){
+  const d = json && json.daily;
+  if(!d || !Array.isArray(d.time)) return null;
+  const len = Math.min(3, d.time.length);
+  const days = [];
+  for(let i=0;i<len;i++){
+    const info = weatherCodeInfo(d.weather_code ? d.weather_code[i] : undefined);
+    days.push({
+      label: WEATHER_DAY_LABELS[i] || d.time[i],
+      icon: info.icon,
+      cond: info.label,
+      tempMax: d.temperature_2m_max ? Math.round(d.temperature_2m_max[i]) : null,
+      tempMin: d.temperature_2m_min ? Math.round(d.temperature_2m_min[i]) : null,
+      pop: (d.precipitation_probability_max && d.precipitation_probability_max[i]!=null) ? Math.round(d.precipitation_probability_max[i]) : null
+    });
+  }
+  return days;
+}
+
+// 施設の天気予報を取得する（キャッシュ優先・APIエラー時はnullを返す）。
+// この関数の中身だけを差し替えれば、将来的に自前のサーバーキャッシュに移行できる。
+async function fetchWeatherForSpot(spot){
+  if(typeof spot.lat !== "number" || typeof spot.lng !== "number") return null;
+  const key = weatherCacheKey(spot.lat, spot.lng);
+  const cache = loadWeatherCache();
+  const cached = cache[key];
+  if(cached && (Date.now() - cached.fetchedAt) < WEATHER_CACHE_TTL_MS){
+    return cached.data; // キャッシュが有効な間はAPIへ再アクセスしない
+  }
+  try{
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lng}`
+      + `&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
+      + `&timezone=Asia%2FTokyo&forecast_days=3`;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error("weather fetch failed: " + res.status);
+    const json = await res.json();
+    const days = parseWeatherResponse(json);
+    if(!days) throw new Error("unexpected weather response: " + JSON.stringify(json).slice(0,200));
+    cache[key] = { fetchedAt: Date.now(), data: days };
+    saveWeatherCache(cache);
+    return days;
+  }catch(e){
+    // デバッグ用にコンソールへ詳細を残す（画面表示はこれまで通りシンプルに保つ）
+    console.warn("[天気予報] 取得に失敗しました:", e);
+    return null; // サイト全体を止めず、呼び出し側で「取得できませんでした」を表示させる
+  }
+}
+
+// 詳細画面の #weatherForecastBody に非同期で天気を描画する
+async function loadWeatherIntoDetail(spot){
+  const bodyBefore = document.getElementById("weatherForecastBody");
+  if(!bodyBefore) return;
+  const days = await fetchWeatherForSpot(spot);
+  // 取得中に別の施設の詳細へ切り替わっていた場合は書き込まない（誤表示防止）
+  const bodyNow = document.getElementById("weatherForecastBody");
+  if(!bodyNow || bodyNow !== bodyBefore) return;
+  if(!days){
+    const isFileProtocol = location.protocol === "file:";
+    bodyNow.innerHTML = isFileProtocol
+      ? `<div class="weather-error">天気情報を取得できませんでした。お使いのブラウザが file:// からの通信をブロックしている可能性があります（詳しくはチャットの回答をご確認ください）。</div>`
+      : `<div class="weather-error">天気情報を取得できませんでした。公式サイト等でご確認ください。</div>`;
+    return;
+  }
+  bodyNow.innerHTML = `
+    <div class="weather-forecast">
+      ${days.map(d => `
+        <div class="weather-day">
+          <div class="weather-day-label">${d.label}</div>
+          <div class="weather-day-icon">${d.icon}</div>
+          <div class="weather-day-cond">${d.cond}</div>
+          <div class="weather-day-temp">${d.tempMax!=null ? d.tempMax+"℃" : "--"} <span class="lo">/ ${d.tempMin!=null ? d.tempMin+"℃" : "--"}</span></div>
+          <div class="weather-day-pop ${d.pop!=null && d.pop>=50 ? "high" : ""}">☔${d.pop!=null ? d.pop+"%" : "--"}</div>
+        </div>
+      `).join("")}
+    </div>
+    <div class="weather-note">気象データ：Open-Meteo。実際の天気は変わる場合があるため、訪問前に最新の予報をご確認ください。</div>
+  `;
 }
 
 // ==================================================================
@@ -4958,12 +5179,185 @@ function matches(spot){
   return true;
 }
 
+// ==================================================================
+// 🎯 迷ったらこれ！（Phase4追加）
+// ------------------------------------------------------------------
+// ・目的地を決めていない人向けの、目的別ショートカット。
+// ・判定はすべて既存のderive系関数・既存データ項目の再利用のみで行い、
+//   AIによる主観的な「おすすめ度」のようなものは持ち込まない。
+// ・候補は、現在ユーザーが設定している検索・絞り込み条件（matches()）
+//   の範囲内から選ぶ。該当が少ない場合のみ全件から選び直す。
+// ==================================================================
+const DECIDE_CATEGORIES = [
+  {key:"cost", label:"💰 コスパ重視", desc:"できるだけ安く、子どもが楽しめる場所"},
+  {key:"activity", label:"🏃 体を動かしたい", desc:"子どもが思い切り遊べる場所"},
+  {key:"rain", label:"☔ 雨の日でも安心", desc:"室内中心で楽しめる場所"},
+  {key:"youngkids", label:"👶 小さい子連れにおすすめ", desc:"幼児でも楽しみやすい場所"},
+  {key:"siblings", label:"👨‍👩‍👧‍👦 兄弟みんな楽しめる", desc:"年齢差がある子どもでも楽しみやすい場所"}
+];
+const YOUNG_AGE_KEYS = ["0-1歳","2-3歳","4-6歳"];
+const OLDER_AGE_KEYS = ["低学年","高学年"];
+function matchesDecideCategory(spot, key){
+  switch(key){
+    case "cost":
+      // 既存のお財布へのやさしさ判定（4段階）をそのまま利用
+      return deriveWalletLevel(spot) >= 3;
+    case "activity":{
+      // 既存の発散度判定＋既存ジャンル分類の組み合わせのみで判断
+      const cat = deriveCategory(spot);
+      const isActiveGenre = cat==="公園" || cat==="遊園地・テーマパーク";
+      const text = (spot.name||"") + (spot.desc||"");
+      const hasActiveHint = /アスレチック|プール|水遊び/.test(text);
+      return deriveActivityLevel(spot)==="active" && (isActiveGenre || hasActiveHint);
+    }
+    case "rain":
+      // 既存の雨の日レベル（4=雨の日でもOKと明記）をそのまま利用
+      return deriveRainLevel(spot) === 4;
+    case "youngkids":
+      // 既存の対象年齢データをそのまま利用
+      return YOUNG_AGE_KEYS.some(a=>spot.ages.includes(a)) && (spot.ages.includes("0-1歳") || spot.ages.includes("2-3歳"));
+    case "siblings":
+      // 既存の対象年齢データが「幼児〜高学年」まで幅広くカバーしている場合のみ対象とする
+      return YOUNG_AGE_KEYS.some(a=>spot.ages.includes(a)) && OLDER_AGE_KEYS.some(a=>spot.ages.includes(a)) && spot.ages.length>=4;
+    default:
+      return false;
+  }
+}
+// 現在の検索・絞り込み条件（matches()）を尊重しつつ候補を抽出する。
+// 条件が厳しすぎて該当0件の場合のみ、全件から選び直す。
+function pickDecideSpots(key){
+  let pool = SPOTS.filter(matches).filter(s=>matchesDecideCategory(s, key));
+  if(pool.length===0){
+    pool = SPOTS.filter(s=>matchesDecideCategory(s, key));
+  }
+  // カテゴリに応じて、既存の指標で「より当てはまる」順に並べる
+  if(key==="cost") pool = [...pool].sort((a,b)=>deriveWalletLevel(b)-deriveWalletLevel(a));
+  else if(key==="rain") pool = [...pool].sort((a,b)=>deriveRainLevel(b)-deriveRainLevel(a));
+  else if(key==="activity") pool = [...pool].sort((a,b)=>deriveActivityStars(b)-deriveActivityStars(a));
+  return pool.slice(0,4);
+}
+
 function weatherClass(spot){
   if(spot.weather.includes("晴れ") && spot.weather.includes("雨")) return "";
   if(spot.weather.includes("晴れ")) return "w-晴れ";
   if(spot.weather.includes("雨")) return "w-雨";
   return "";
 }
+
+// ==================================================================
+// 🏨 子連れ向けホテル情報（Phase3追加：遠方施設のみに表示）
+// ------------------------------------------------------------------
+// ・施設データ（SPOTS）とは完全に独立したデータ構造。
+// ・overnightRecommended:true かつ hotelArea が設定されている施設の
+//   詳細画面だけに、対応するエリアのホテルを最大3件表示する。
+// ・2026年9月、山梨エリアを対象に、公式サイト・旅行会社サイト等の
+//   公開情報から「子連れ設備が明記されている宿」のみを調査・厳選。
+//   確認できなかった設備は記載していない。
+// ・bookingLinksは現時点でアフィリエイト提携が未確定のため空欄。
+//   ValueCommerce等の承認が取れ次第、URLを設定する想定。
+// ==================================================================
+const FAMILY_HOTELS = {
+  yamanashi: [
+    {
+      name: "ホテルマウント富士",
+      area: "山中湖",
+      lat: 35.434482, lng: 138.854836,
+      label: "キッズ充実",
+      features: ["🧸 キッズスペースあり", "🏊 プールあり", "🍽️ バイキング", "🛁 貸切風呂・家族風呂", "🚗 駐車場あり"],
+      score: 9,
+      note: "ダイニング併設のキッズルームがあり、週末は子ども連れに人気の和洋中ブッフェも。展望露天風呂や屋内プールも完備。",
+      bookingLinks: { rakuten: "", jalan: "" }
+    },
+    {
+      name: "パノラマイン山中湖",
+      area: "山中湖",
+      lat: 35.4155, lng: 138.868,
+      label: "赤ちゃん連れ向け",
+      features: ["🧸 キッズスペースあり", "🍼 ベビー用品貸出", "👶 赤ちゃん・子連れ歓迎", "🚗 駐車場あり"],
+      score: 8,
+      note: "おむつが取れていない乳児向けの専用浴槽・バスチェアを用意。テニスコートや卓球台もあり、家族で体を動かして遊べる。",
+      bookingLinks: { rakuten: "", jalan: "" }
+    },
+    {
+      name: "サニーデリゾート",
+      area: "河口湖（大石）",
+      lat: 35.535, lng: 138.720,
+      label: "コスパ重視",
+      features: ["🛏️ 和室・和洋室あり", "💰 添い寝しやすい", "🚗 駐車場あり"],
+      score: 7,
+      note: "湖畔の落ち着いた立地で、和室タイプの客室もありリーズナブル。口コミでもコストパフォーマンスの良さが評価されている。",
+      bookingLinks: { rakuten: "", jalan: "" }
+    }
+  ]
+};
+function getFamilyHotels(spot){
+  if(!spot.overnightRecommended || !spot.hotelArea) return [];
+  return (FAMILY_HOTELS[spot.hotelArea] || []).slice(0, 3);
+}
+function hotelDistanceLabel(spot, hotel){
+  if(typeof spot.lat !== "number" || typeof hotel.lat !== "number") return "";
+  const km = haversineKm(spot.lat, spot.lng, hotel.lat, hotel.lng);
+  return `📍 この施設から約${Math.round(km)}km`;
+}
+
+// ==================================================================
+// ⏱️ おすすめ滞在時間（Phase4追加）
+// ------------------------------------------------------------------
+// ・spot.stayTime が個別に設定されている施設だけ表示する。
+// ・360件（現400件）すべてに機械的な目安値を割り当てることはせず、
+//   公式サイトや複数の情報源で滞在時間の目安が確認できた施設のみ設定。
+// ・表記は既存の formatMinutes() を再利用し、新しい書式ロジックを
+//   重複して作らないようにする。
+// ==================================================================
+function deriveStayTimeLabel(spot){
+  if(!spot.stayTime || typeof spot.stayTime.minMinutes !== "number" || typeof spot.stayTime.maxMinutes !== "number") return null;
+  return `⏱️ おすすめ滞在時間：${formatMinutes(spot.stayTime.minMinutes)}〜${formatMinutes(spot.stayTime.maxMinutes)}`;
+}
+
+// ==================================================================
+// 🗺️ この近くで一緒に楽しむなら（Phase4追加。旧「セットおでかけ」
+// 「近くのおすすめ」はここに統合し、重複表示しない）
+// ------------------------------------------------------------------
+// ・距離は既存の haversineKm() をそのまま再利用（外部API不使用）。
+// ・現在の施設と「異なるジャンル」の施設を優先し、同じジャンルの
+//   施設が並ばないようにする。
+// ・理由ラベルは、行き先ジャンルから機械的に決まる定型文のみを使い、
+//   AIが個別に理由を作文することはしない。
+// ==================================================================
+const NEARBY_RADIUS_KM = 20; // この範囲内だけを「近く」の候補とする
+const NEARBY_REASON_BY_GENRE = {
+  "動物園": "🐘 動物園で一緒に楽しむなら",
+  "牧場": "🍓 近くで体験するなら",
+  "水族館": "🐠 水族館で一緒に楽しむなら",
+  "博物館・科学館": "☔ 雨の日の候補なら",
+  "遊園地・テーマパーク": "🎡 もっと遊ぶなら",
+  "公園": "🌳 さらに体を動かすなら",
+  "おでかけスポット": "📍 こちらもおすすめ"
+};
+function nearbyReasonLabel(genreKey){
+  return NEARBY_REASON_BY_GENRE[genreKey] || "📍 こちらもおすすめ";
+}
+function getNearbyCombos(spot){
+  if(typeof spot.lat !== "number" || typeof spot.lng !== "number") return [];
+  const currentGenre = deriveCategory(spot);
+  const candidates = SPOTS
+    .filter(s => s.name !== spot.name && typeof s.lat==="number" && typeof s.lng==="number")
+    .map(s => ({ spot:s, km: haversineKm(spot.lat, spot.lng, s.lat, s.lng), genre: deriveCategory(s) }))
+    .filter(c => c.km <= NEARBY_RADIUS_KM)
+    .sort((a,b) => a.km - b.km);
+
+  const picked = [];
+  const usedGenres = new Set();
+  for(const c of candidates){
+    if(picked.length >= 3) break;
+    if(c.genre === currentGenre) continue; // ①違うジャンルを優先
+    if(usedGenres.has(c.genre)) continue;  // ②同じジャンルの重複を避ける
+    picked.push(c);
+    usedGenres.add(c.genre);
+  }
+  return picked;
+}
+
 function mapsUrl(spot){
   return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(spot.name + " " + spot.area);
 }
@@ -5244,6 +5638,9 @@ function openDetail(spot, silent){
   const isCompared = state.compareSet.has(spot.name);
   const parkingLevel = parkingDetail.stars>=4 ? 4 : parkingDetail.stars>=3 ? 3 : parkingDetail.stars>=2 ? 2 : 1;
   const bookingInfo = getBookingInfo(spot);
+  const familyHotels = getFamilyHotels(spot);
+  const nearbyCombos = getNearbyCombos(spot);
+  const stayTimeLabel = deriveStayTimeLabel(spot);
 
   let carRow = "", transitRow = "";
   const canTrain = hasTrainAccess(spot);
@@ -5269,6 +5666,7 @@ function openDetail(spot, silent){
     <div class="detail-area">${fullAreaLabel(spot)}　${category}　${activityLabel}</div>
     <div class="detail-photo">${genreInfo(spot).icon}</div>
     <div class="detail-desc">${spot.desc}</div>
+    ${stayTimeLabel ? `<div class="detail-stay-time">${stayTimeLabel}</div>` : ""}
 
     <div class="detail-section">
       <h3>☔ 今日行きやすい？</h3>
@@ -5292,6 +5690,13 @@ function openDetail(spot, silent){
       <div class="detail-eval">
         <span class="stars">${activityStarsLabel(spot)}</span>
         <span class="comment">${activityLabel}</span>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>🌤 天気予報</h3>
+      <div id="weatherForecastBody">
+        <div class="weather-loading">天気予報を取得しています…</div>
       </div>
     </div>
 
@@ -5357,6 +5762,44 @@ function openDetail(spot, silent){
       ` : ""}
     </div>` : ""}
 
+    ${familyHotels.length>0 ? `
+    <div class="detail-section">
+      <h3>🏨 子連れで泊まるなら</h3>
+      <div class="hotel-section-intro">🧸 キッズスペース・子連れ歓迎などを重視して厳選</div>
+      <button type="button" class="hotel-toggle-btn" id="hotelToggleBtn">このエリアのおすすめホテルを見る（${familyHotels.length}件）</button>
+      <div class="hotel-list" id="hotelList" style="display:none;">
+        ${familyHotels.map(h => `
+          <div class="hotel-card">
+            <div class="hotel-card-label">${h.label}</div>
+            <div class="hotel-card-name">🏨 ${h.name}（${h.area}）</div>
+            <div class="hotel-card-features">
+              ${h.features.map(f=>`<span class="hotel-feature-chip">${f}</span>`).join("")}
+            </div>
+            <div class="hotel-card-distance">${hotelDistanceLabel(spot, h)}</div>
+            ${(h.bookingLinks && (h.bookingLinks.rakuten || h.bookingLinks.jalan)) ? `
+              ${(VC_SID && VC_PID) ? `<div class="pr-label">[PR] 対象リンクからの予約で運営者に紹介料が入る場合があります</div>` : ""}
+              <a class="hotel-card-book-btn" href="${h.bookingLinks.rakuten || h.bookingLinks.jalan}" target="_blank" rel="noopener" data-act="hotel-booking-click" data-hotel-name="${h.name}" data-hotel-area="${h.area}" data-booking-site="${h.bookingLinks.rakuten ? "rakuten" : "jalan"}">予約サイトを見る</a>
+            ` : `<div class="hotel-card-book-pending">予約サイトのご案内は準備中です</div>`}
+          </div>
+        `).join("")}
+      </div>
+    </div>` : ""}
+
+    ${nearbyCombos.length>0 ? `
+    <div class="detail-section">
+      <h3>🗺️ この近くで一緒に楽しむなら</h3>
+      ${nearbyCombos.map(c => `
+        <div class="nearby-combo-card" data-act="nearby-combo" data-name="${c.spot.name.replace(/"/g,'&quot;')}" data-genre="${c.genre}" data-km="${Math.round(c.km)}">
+          <div class="nearby-combo-icon">${genreInfo(c.spot).icon}</div>
+          <div class="nearby-combo-body">
+            <div class="nearby-combo-reason">${nearbyReasonLabel(c.genre)}</div>
+            <div class="nearby-combo-name">${c.spot.name}</div>
+            <div class="nearby-combo-dist">📍 この施設から約${Math.round(c.km)}km</div>
+          </div>
+        </div>
+      `).join("")}
+    </div>` : ""}
+
     <div class="action-row" style="margin-top:14px;">
       <button class="abtn ${isFav?"on":""}" data-act="fav">❤️ 行きたい</button>
       <button class="abtn ${isVisited?"on visited":""}" data-act="visited">✅ 行った</button>
@@ -5389,8 +5832,46 @@ function openDetail(spot, silent){
       a.addEventListener("click", ()=>trackEvent("ticket_click", {facility_name:spot.name, provider:a.dataset.provider}));
     });
   }
+  // 🏨 子連れで泊まるなら（アコーディオン開閉・GA4計測）
+  const hotelToggleBtn = sheet.querySelector("#hotelToggleBtn");
+  if(hotelToggleBtn){
+    hotelToggleBtn.onclick = ()=>{
+      const list = document.getElementById("hotelList");
+      const isOpen = list.style.display !== "none";
+      if(!isOpen){
+        trackEvent("hotel_section_open", {related_facility: spot.name});
+      }
+      list.style.display = isOpen ? "none" : "flex";
+      hotelToggleBtn.textContent = isOpen ? `このエリアのおすすめホテルを見る（${familyHotels.length}件）` : "おすすめホテルを閉じる ▲";
+      hotelToggleBtn.classList.toggle("open", !isOpen);
+    };
+    sheet.querySelectorAll('[data-act="hotel-booking-click"]').forEach(a=>{
+      a.addEventListener("click", ()=>trackEvent("hotel_booking_click", {
+        hotel_name: a.dataset.hotelName,
+        hotel_area: a.dataset.hotelArea,
+        booking_site: a.dataset.bookingSite,
+        related_facility: spot.name
+      }));
+    });
+  }
+  // 🗺️ この近くで一緒に楽しむなら（クリックで既存の詳細表示機能を再利用）
+  sheet.querySelectorAll('[data-act="nearby-combo"]').forEach(card=>{
+    card.addEventListener("click", ()=>{
+      const destSpot = SPOTS.find(s=>s.name===card.dataset.name);
+      if(!destSpot) return;
+      trackEvent("nearby_combo_click", {
+        source_facility: spot.name,
+        destination_facility: destSpot.name,
+        distance_km: card.dataset.km,
+        destination_category: card.dataset.genre
+      });
+      openDetail(destSpot); // 既存の詳細表示機能をそのまま利用（新しい遷移方式は作らない）
+    });
+  });
   sheet.querySelector('#detailCloseBtn').onclick = ()=>closeSheetById("detailOverlay");
   sheet.querySelector('#detailCloseBtnBottom').onclick = ()=>closeSheetById("detailOverlay");
+
+  loadWeatherIntoDetail(spot); // 🌤 この施設の天気だけを非同期取得（一覧の一括取得はしない）
 
   openSheet("detailOverlay");
   sheet.scrollTop = 0;
@@ -5419,6 +5900,60 @@ document.getElementById("resetBtn").onclick = ()=>{
   render();
 };
 
+// ------------------------------------------------------------------
+// 🎯 迷ったらこれ！のチップ構築・クリック処理（Phase4追加）
+// ------------------------------------------------------------------
+let activeDecideKey = null;
+function buildDecideChips(){
+  const el = document.getElementById("decideChips");
+  el.innerHTML = "";
+  DECIDE_CATEGORIES.forEach(cat=>{
+    const c = document.createElement("div");
+    c.className = "decide-chip" + (activeDecideKey===cat.key ? " active" : "");
+    c.textContent = cat.label;
+    c.onclick = ()=>onDecideChipClick(cat.key);
+    el.appendChild(c);
+  });
+}
+function onDecideChipClick(key){
+  const resultsEl = document.getElementById("decideResults");
+  if(activeDecideKey===key){
+    // 同じカテゴリをもう一度押したら閉じる
+    activeDecideKey = null;
+    resultsEl.style.display = "none";
+    buildDecideChips();
+    return;
+  }
+  activeDecideKey = key;
+  buildDecideChips();
+  trackEvent("recommendation_category_click", {category:key});
+
+  const spots = pickDecideSpots(key);
+  resultsEl.innerHTML = "";
+  if(spots.length===0){
+    resultsEl.innerHTML = `<div class="decide-empty">条件に合うスポットが見つかりませんでした。</div>`;
+  } else {
+    spots.forEach(spot=>{
+      const card = document.createElement("div");
+      card.className = "decide-result-card";
+      const genre = genreInfo(spot);
+      card.innerHTML = `
+        <div class="decide-result-icon">${genre.icon}</div>
+        <div class="decide-result-body">
+          <div class="decide-result-name">${spot.name}</div>
+          <div class="decide-result-genre">${genre.label}　${spot.area}</div>
+        </div>
+      `;
+      card.onclick = ()=>{
+        trackEvent("recommendation_category_click", {category:key, facility_name:spot.name});
+        openDetail(spot);
+      };
+      resultsEl.appendChild(card);
+    });
+  }
+  resultsEl.style.display = "block";
+}
+
 // ==================================================================
 // 初期化
 // ==================================================================
@@ -5426,6 +5961,7 @@ loadAnalytics();
 const persisted = loadPersisted(); // localStorageの読み込みは1回だけ行い、使い回す
 applyPersisted(persisted);
 pickDiscovery(); // 「新しいおでかけ先を発見」の初期ピックアップ（render()内で毎回選び直さない）
+buildDecideChips(); // 🎯 迷ったらこれ！のチップ初期構築
 render();
 trackEvent("view_app", {}); // ①アプリ全体の閲覧数
 </script>
