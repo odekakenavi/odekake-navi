@@ -222,6 +222,12 @@
   .card-area{font-size:11px; color:var(--ink-soft); margin-top:2px;}
 
   .card-top-row{display:flex; gap:10px; align-items:flex-start; padding-right:26px;}
+  .card-quick-actions{flex:0 0 auto; display:flex; gap:4px;}
+  .card-quick-btn{
+    border:1px solid var(--line); background:var(--paper); border-radius:8px; width:30px; height:30px;
+    font-size:14px; line-height:1; cursor:pointer; opacity:.55;
+  }
+  .card-quick-btn.on{opacity:1; background:#FDEDE6; border-color:var(--coral);}
   .card-thumb{flex:0 0 auto; width:40px; height:40px; border-radius:10px; background:#F1EADA;
     display:flex; align-items:center; justify-content:center; font-size:20px;}
   .card-title-block{flex:1; min-width:0;}
@@ -328,9 +334,18 @@
   .fav-item .fi-main{flex:1; cursor:pointer;}
   .fav-item .fi-name{font-size:13.5px; font-weight:700;}
   .fav-item .fi-area{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+  .fav-item .fi-actions{display:flex; flex-direction:column; gap:6px; flex:0 0 auto;}
+  .fav-item .fi-plan{border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:6px 10px; font-size:10.5px; font-weight:700; cursor:pointer; white-space:nowrap;}
+  .fav-item .fi-plan.on{background:#FDEDE6; border-color:var(--coral); color:var(--coral);}
   .fav-item .fi-remove{border:none; background:#F1EADA; color:var(--ink-soft); border-radius:8px; padding:6px 10px; font-size:11px; font-weight:700; cursor:pointer;}
 
   /* ---------- 🗓 プラン（Phase33：今回実際に行く場所） ---------- */
+  .plan-tabs{display:flex; gap:6px; margin-bottom:12px;}
+  .plan-tab-btn{
+    flex:1; padding:9px 4px; border-radius:9px; border:1.5px solid var(--line); background:var(--paper);
+    color:var(--ink-soft); font-size:12px; font-weight:700; cursor:pointer;
+  }
+  .plan-tab-btn.active{background:var(--coral); border-color:var(--coral); color:#fff;}
   .plan-empty{text-align:center; padding:30px 10px; color:var(--ink-soft); font-size:12.5px; line-height:1.7;}
   .plan-item{background:#F5F0E4; border-radius:12px; padding:11px 12px; border:1px solid var(--line); margin-bottom:10px;}
   .plan-item-head{display:flex; align-items:center; gap:8px; margin-bottom:4px;}
@@ -572,15 +587,6 @@
   <div class="chips" id="zipCandidateChips"></div>
 </div>
 
-<!-- 🎯 迷ったら「今日どこ行く？」（3問診断・代表機能） -->
-<div class="diag-entry-section">
-  <div class="diag-entry-card">
-    <div class="diag-entry-title">🎯 迷ったら「今日どこ行く？」</div>
-    <div class="diag-entry-desc">3問答えるだけで、今日おすすめのおでかけ先をBEST5で提案します</div>
-    <button class="diag-entry-btn" id="diagnosisOpenBtn">🎯 3問で探す</button>
-  </div>
-</div>
-
 <!-- ② 今日はどうする？（最重要エリア。旧「迷ったらこれ！」はここに統合） -->
 <div class="mood-section">
   <div class="mood-title-row">
@@ -609,6 +615,16 @@
     <span>🔍 もっと詳しく絞り込む</span>
     <span class="badge-count" id="filterBadgeCount" style="display:none;"></span>
   </button>
+</div>
+
+<!-- 🎯 迷ったら「今日どこ行く？」（3問診断）。条件を絞ってもなお迷ったときの最終手段として、
+     「もっと詳しく絞り込む」の後ろに配置する -->
+<div class="diag-entry-section">
+  <div class="diag-entry-card">
+    <div class="diag-entry-title">🎯 迷ったら「今日どこ行く？」</div>
+    <div class="diag-entry-desc">3問答えるだけで、今日おすすめのおでかけ先をBEST5で提案します</div>
+    <button class="diag-entry-btn" id="diagnosisOpenBtn">🎯 3問で探す</button>
+  </div>
 </div>
 
 <!-- 行きたい一覧・プラン・比較する（絞り込みと検索結果の間＝プランに追加した直後に
@@ -699,7 +715,7 @@
 <script>
 const STORAGE_KEY = "odekakeNaviV2";
 // 📅 このデータの更新時点（施設を追加・修正した際にここも更新する）
-const APP_LAST_UPDATED = "2026年9月14日";
+const APP_LAST_UPDATED = "2026年9月16日"; // 日本時間での最終更新日（更新の都度この値を書き換える）
 // 🔗 バリューコマース経由のasoview!アフィリエイト設定
 // 承認が下りたら、管理画面の「広告リンク作成」で取得したリンクに含まれる
 // sid（サイトID）と pid（広告スペースID・asoview!提携プログラム用）をここに設定する。
@@ -6078,6 +6094,74 @@ const SPOTS_ONSEN_SPA_6 = [
 SPOTS.push(...SPOTS_ONSEN_SPA_6);
 
 // ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：♨️ 温泉・スパ カテゴリー拡充（第5弾）
+// ------------------------------------------------------------------
+const SPOTS_ONSEN_SPA_7 = [
+{region:"東京", name:"東京豊洲 万葉倶楽部", area:"江東区豊洲", lat:35.6443, lng:139.7810,
+ genre:"温泉・スパ",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人2,000円台〜（時間帯・曜日により変動）", parking:"yes", access:"ゆりかもめ「市場前」駅から徒歩約6分／東京メトロ・都営地下鉄「豊洲」駅から無料送迎バスあり",
+ baby:"授乳室・おむつ替え台あり／離乳食持ち込み可", lunch:"館内に食事処あり。",
+ officialUrl:"https://www.manyo.co.jp/toyosu/",
+ stayTime:{minMinutes:180, maxMinutes:360},
+ desc:"24時間営業の大型温浴リゾート。露天風呂や岩盤浴など多彩な湯処に加え、授乳室・おむつ替え台が完備され、離乳食の持ち込みも可能。豊洲市場やアーバンドックららぽーと豊洲にも近く、買い物や食事と組み合わせやすい。",
+ tip:"授乳室・おむつ替え台があるため乳児連れでも利用しやすい。深夜料金や休憩室の有無は事前に公式サイトで確認を。"},
+{region:"神奈川", name:"横浜みなとみらい 万葉倶楽部", area:"横浜市中区新港", lat:35.4560, lng:139.6382,
+ genre:"温泉・スパ",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人2,000円台〜（時間帯・曜日により変動）", parking:"yes", access:"みなとみらい線「みなとみらい」駅から徒歩約5分／横浜駅西口から無料シャトルバスあり",
+ baby:"離乳食持ち込み可", lunch:"館内に食事処あり。",
+ officialUrl:"https://www.manyo.co.jp/yokohama/",
+ stayTime:{minMinutes:180, maxMinutes:360},
+ desc:"熱海温泉・湯河原温泉の源泉を毎日運ぶ24時間営業の大型温浴施設。露天風呂や展望足湯庭園など6種類以上の湯処があり、みなとみらいの観光の合間に立ち寄りやすい。赤ちゃん向けの専用設備の記載はないため、乳児連れは事前に館内設備を確認するのがおすすめ。",
+ tip:"横浜駅西口から無料シャトルバスがあり、車がなくてもアクセスしやすい。"},
+{region:"埼玉", name:"おふろcafé ハレニワの湯", area:"熊谷市久保島", lat:36.1710, lng:139.3449,
+ genre:"温泉・スパ",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人1,500〜2,000円程度（時間帯により変動）", parking:"yes", access:"関越自動車道「東松山IC」または「花園IC」から車で約20〜30分",
+ baby:"授乳室・おむつ替え台あり／おむつが外れていない子もスイムパンツ着用でキッズ風呂を利用可", lunch:"レストラン「ハレニワ食堂」・カフェあり。",
+ officialUrl:"https://ofurocafe-hareniwa.com/",
+ stayTime:{minMinutes:180, maxMinutes:360},
+ desc:"「おふろcafé」シリーズの中でも特に子連れ設備が充実した温浴施設。おむつの取れていない子でも入れるキッズ風呂、デジタルボールプールなどのキッズパーク、ファミリーラウンジ（レストランの注文をしながら子どもを見守れる）があり、授乳室・おむつ替え台も完備。最大23時間滞在可能。",
+ tip:"キッズパークやキッズ風呂があるため、未就学児連れでも一日中飽きずに過ごしやすい。深夜（2時〜5時）は別途深夜料金がかかる点に注意。"}
+];
+SPOTS.push(...SPOTS_ONSEN_SPA_7);
+
+// ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：♨️ 温泉・スパ カテゴリー拡充（第6弾）
+// ------------------------------------------------------------------
+const SPOTS_ONSEN_SPA_8 = [
+{region:"神奈川", name:"小田原お堀端 万葉の湯", area:"小田原市栄町", lat:35.2543, lng:139.1572,
+ genre:"温泉・スパ",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人1,500円台〜（時間帯により変動）", parking:"yes", access:"小田原駅から徒歩約5分",
+ baby:"おむつ替え台あり／離乳食持ち込み可", lunch:"お食事処・宴会メニューが充実。",
+ officialUrl:null,
+ stayTime:{minMinutes:120, maxMinutes:240},
+ desc:"湯河原温泉をタンクローリーで毎日直送する24時間営業の日帰り温泉。ひのき風呂や露天風呂、貸切風呂があり、おむつ替え台の設置や離乳食の持ち込みにも対応。小田原駅から徒歩圏で観光の合間に立ち寄りやすい。",
+ tip:"お食事・宴会メニューが充実しているため、食事もセットで楽しみたい家族向き。"},
+{region:"埼玉", name:"ビオリゾート ホテル＆スパ オーパークおごせ", area:"入間郡越生町上野", lat:35.9466, lng:139.2948,
+ genre:"温泉・スパ",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"大人3,000円前後〜（プランにより変動）", parking:"yes", access:"関越自動車道「鶴ヶ島IC」から車で約30分",
+ baby:"授乳室・おむつ替え台あり／おむつが外れていない子も専用スイミングパンツ着用で水着スパを利用可", lunch:"森のレストラン「MORINIWA」あり。子ども向けデジタルコンテンツ・座椅子席も完備。",
+ officialUrl:"https://www.biotherapy-cure-resort.com/opark-ogose/",
+ stayTime:{minMinutes:180, maxMinutes:360},
+ desc:"森に囲まれた複合型リゾート。年中水着で利用できる男女共用スパには浅瀬エリアがあり、おむつが外れていない子も専用スイミングパンツで利用可能。浮き輪の貸し出しや週末の泡バズーカーイベントもあり、未就学児から大人まで一緒に楽しめる。授乳室・おむつ替え台完備、宿泊も可能。",
+ tip:"子ども向けデジタルコンテンツや座椅子席のあるレストランがあるため、小さな子ども連れでも食事がしやすい。"},
+{region:"埼玉", name:"西武秩父駅前温泉 祭の湯", area:"秩父市野坂町", lat:35.9906, lng:139.0838,
+ genre:"温泉・スパ",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1,300円台〜（時間帯により変動）", parking:"yes", access:"西武秩父線「西武秩父」駅直結",
+ baby:"授乳室・おむつ替え台あり", lunch:"フードコート「呑喰処 祭の宴」に9店舗あり（ラーメン・そば・アイス等）。お土産屋も併設。",
+ officialUrl:"https://www.chichibu-matsurinoyu.com/",
+ stayTime:{minMinutes:90, maxMinutes:180},
+ desc:"西武秩父駅に直結した複合型温泉施設。岩風呂・花見湯・寝ころび湯など4種類の露天風呂と内湯5種を完備し、授乳室・おむつ替え台もあり。フードコートやお土産屋も充実しており、秩父観光の行き帰りに電車でも立ち寄りやすい。",
+ tip:"駅直結のため車がなくてもアクセスしやすい。秩父観光や長瀞ライン下りと組み合わせるのもおすすめ。"}
+];
+SPOTS.push(...SPOTS_ONSEN_SPA_8);
+
+// ------------------------------------------------------------------
 // 📌 追加候補リスト（Phase31）：🐮 牧場・ふれあい カテゴリー拡充（第4弾）
 // ------------------------------------------------------------------
 const SPOTS_RANCH_4 = [
@@ -6109,6 +6193,53 @@ const SPOTS_FRUIT_4 = [
 ];
 SPOTS.push(...SPOTS_FRUIT_4);
 
+// ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：🍓 果物狩り・収穫体験 カテゴリー拡充
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_5 = [
+{region:"山梨", name:"一古園", area:"甲州市勝沼町等々力", lat:35.6677, lng:138.7110,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏","秋"],
+ price:"品目・時期により変動（食べ放題プランあり）", parking:"yes", access:"中央自動車道「勝沼IC」から車で約10分",
+ baby:"トイレ・更衣室等の設備なし（要問合せ）", lunch:"ぶどう棚の下でほうとう・バーベキューが楽しめる。",
+ officialUrl:null,
+ stayTime:{minMinutes:90, maxMinutes:150},
+ desc:"8品種のぶどうを栽培する観光農園。ぶどう棚の下で山梨名物「ほうとう」やバーベキューを楽しめ、家族・グループ向けの食事プランが人気。",
+ tip:"園内にトイレ等の設備がないため、訪問前に道の駅等で済ませておくのがおすすめ。"},
+{region:"山梨", name:"グレープガーデン 安全農園", area:"山梨市", lat:35.6504, lng:138.7221,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏","秋"],
+ price:"桃・ぶどう食べ放題（品種・時期により変動）", parking:"yes", access:"中央自動車道「勝沼IC」から車で約10分",
+ baby:"トイレ・売店あり", lunch:"売店あり。",
+ officialUrl:null,
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"山梨県知事認定エコファーマーが育てる桃・ぶどうの食べ放題農園（収穫体験は不可、食べ放題のみ）。トイレ・売店を完備。",
+ tip:"収穫体験ではなく食べ放題のみの提供のため、その点を理解した上での訪問がおすすめ。"},
+{region:"山梨", name:"ぶどう狩りの自由園", area:"甲州市勝沼町等々力", lat:35.6650, lng:138.7250,
+ genre:"果物狩り・収穫体験",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏","秋"],
+ price:"入園無料（もぎ取り・食べ放題は別途、品種により変動）", parking:"yes", access:"中央自動車道「勝沼IC」から車で約5分",
+ baby:"ペット同伴可",
+ officialUrl:"https://jiyuuen.jimdofree.com/",
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"32種類のぶどうを栽培する観光農園。入園無料・予約不要で、もぎ取りコースと食べ放題コースから選べる。8月〜10月営業。",
+ tip:"入園無料・予約不要なので、ふらっと立ち寄りやすい。品種が豊富なので食べ比べも楽しめる。"},
+{region:"埼玉", name:"大附みかん山", area:"比企郡ときがわ町大附", lat:35.9450, lng:139.2500,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["秋","冬"],
+ price:"入園料（幼児・小学生等で設定、要問合せ）", parking:"yes", access:"関越自動車道「東松山IC」から車で約30分",
+ baby:"ペット同伴可（要問合せ）",
+ officialUrl:null,
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"ときがわ町大附地区の山あいに広がるみかん園群。スカイツリーや関東平野を見渡す景色を眺めながら温州みかん・福みかん等を狩れる。10月中旬〜12月下旬営業。",
+ tip:"複数のみかん園が集まるエリアのため、事前に営業している園を電話等で確認してから訪れるのがおすすめ。"}
+];
+SPOTS.push(...SPOTS_FRUIT_5);
+
 // ==================================================================
 // アプリの状態（フィルター条件・お気に入り・比較など）
 // ==================================================================
@@ -6122,7 +6253,8 @@ let state = {
   recentlyViewed:[], // 施設名の配列。新しいものが先頭
   compareMode:false, compareSet:new Set(), // ⚖️ 比較機能（最大3件）
   sortMode:"recommend", // "recommend"（おすすめ順） / "near"（近い順）
-  plan:[] // 🗓 プラン（今回実際に行く場所）。施設名の配列。並び順＝追加順（ユーザーが入れ替え可）
+  plans:[[], [], []], // 🗓 プラン（今回実際に行く場所）。タブ3枚分の施設名配列。並び順＝追加順（ユーザーが入れ替え可）
+  activePlanTab:0 // 現在表示中のプランタブ（0〜2）
 };
 
 // ==================================================================
@@ -6287,7 +6419,8 @@ function savePersisted(){
       zipRaw: state.zipRaw || "",
       zipLabel: state.zipLabel || "",
       recentlyViewed: state.recentlyViewed,
-      plan: state.plan || []
+      plans: state.plans || [[],[],[]],
+      activePlanTab: state.activePlanTab || 0
     }));
   }catch(e){ /* localStorage unavailable (例：プライベートブラウズ) - 保存せず続行 */ }
 }
@@ -6300,7 +6433,15 @@ function applyPersisted(p){
   state.recentlyViewed = p.recentlyViewed || [];
   state.zipRaw = p.zipRaw || "";
   state.zipLabel = p.zipLabel || "";
-  state.plan = Array.isArray(p.plan) ? p.plan : [];
+  if(Array.isArray(p.plans)){
+    state.plans = [0,1,2].map(i=>Array.isArray(p.plans[i]) ? p.plans[i] : []);
+  } else if(Array.isArray(p.plan)){
+    // 旧バージョン（タブ導入前）のデータ互換：単一プランをタブAに引き継ぐ
+    state.plans = [p.plan, [], []];
+  } else {
+    state.plans = [[],[],[]];
+  }
+  state.activePlanTab = (typeof p.activePlanTab==="number" && p.activePlanTab>=0 && p.activePlanTab<=2) ? p.activePlanTab : 0;
 }
 
 function haversineKm(lat1,lng1,lat2,lng2){
@@ -6927,15 +7068,21 @@ function renderFavSheet(){
   if(spots.length===0){
     bodyHtml = `<div class="fav-empty">まだ「行きたい」に登録した場所がありません。<br>気になるスポットの詳細画面から ❤️ 行きたい ボタンで追加できます。</div>`;
   } else {
-    bodyHtml = spots.map(s=>`
+    bodyHtml = spots.map(s=>{
+      const planned = isInPlan(s.name);
+      return `
       <div class="fav-item">
         <div class="fi-main" data-name="${escapeAttr(s.name)}">
           <div class="fi-name">${s.name}</div>
           <div class="fi-area">${s.area}</div>
         </div>
-        <button class="fi-remove" data-remove="${escapeAttr(s.name)}">削除</button>
+        <div class="fi-actions">
+          <button class="fi-plan ${planned?'on':''}" data-plan="${escapeAttr(s.name)}">${planned ? "🗓 追加済み" : "🗓 プランに追加"}</button>
+          <button class="fi-remove" data-remove="${escapeAttr(s.name)}">削除</button>
+        </div>
       </div>
-    `).join("");
+    `;
+    }).join("");
   }
   sheet.innerHTML = `
     <button class="sheet-close" id="favCloseBtn">×</button>
@@ -6958,6 +7105,15 @@ function renderFavSheet(){
       render();
     };
   });
+  sheet.querySelectorAll(".fi-plan").forEach(btn=>{
+    btn.onclick = (e)=>{
+      e.stopPropagation();
+      const name = btn.dataset.plan;
+      if(isInPlan(name)) removeFromPlan(name); else addToPlan(name);
+      renderFavSheet();
+      render();
+    };
+  });
 }
 document.getElementById("favListBtn").onclick = ()=>{
   renderFavSheet();
@@ -6972,88 +7128,100 @@ document.getElementById("favListBtn").onclick = ()=>{
 // 順番付きで管理する、明確に別の機能として実装する。
 // 既存のlocalStorage保存（loadPersisted/savePersisted）にそのまま相乗り。
 // ==================================================================
-function isInPlan(name){ return state.plan.includes(name); }
+function currentPlan(){ return state.plans[state.activePlanTab]; }
+function planTotalCount(){ return state.plans.reduce((sum,arr)=>sum+arr.length, 0); }
+function isInPlan(name){ return currentPlan().includes(name); }
 function addToPlan(name){
-  if(state.plan.includes(name)) return;
-  state.plan.push(name);
+  const arr = currentPlan();
+  if(arr.includes(name)) return;
+  arr.push(name);
   savePersisted();
-  trackEvent("plan_add", {facility_name:name, plan_count:state.plan.length});
+  trackEvent("plan_add", {facility_name:name, plan_tab:state.activePlanTab+1, plan_count:arr.length});
 }
 function removeFromPlan(name){
-  const idx = state.plan.indexOf(name);
+  const arr = currentPlan();
+  const idx = arr.indexOf(name);
   if(idx<0) return;
-  state.plan.splice(idx,1);
+  arr.splice(idx,1);
   savePersisted();
-  trackEvent("plan_remove", {facility_name:name, plan_count:state.plan.length});
+  trackEvent("plan_remove", {facility_name:name, plan_tab:state.activePlanTab+1, plan_count:arr.length});
 }
 function movePlanItem(index, dir){ // dir: -1=上へ, +1=下へ
+  const arr = currentPlan();
   const to = index+dir;
-  if(to<0 || to>=state.plan.length) return;
-  const arr = state.plan;
+  if(to<0 || to>=arr.length) return;
   [arr[index], arr[to]] = [arr[to], arr[index]];
   savePersisted();
-  trackEvent("plan_reorder", {plan_count:state.plan.length});
+  trackEvent("plan_reorder", {plan_tab:state.activePlanTab+1, plan_count:arr.length});
   renderPlanSheet();
 }
 
-// スポット間の移動時間の目安（既存のestimateMinutes・deriveCarMinutesの考え方を再利用）
+// スポット間の移動時間の目安。トップの「🚗車で行く／🚃電車・バスで行く」の条件をそのまま参照する
+// （既存のestimateMinutes・deriveTransitMinutesの考え方を再利用。個別のspot.carMinutesOverride等は
+//  出発地からの距離専用のため、プラン内スポット間の移動には直線距離からの概算のみを使う）。
 function planLegInfo(spotA, spotB){
   if(typeof spotA.lat!=="number" || typeof spotB.lat!=="number") return null;
   const km = haversineKm(spotA.lat, spotA.lng, spotB.lat, spotB.lng);
-  return { km, minutes: estimateMinutes(km) };
+  if(state.mode==="transit"){
+    return { km, minutes: Math.round(estimateMinutes(km) * 1.6 + 15), mode:"transit" };
+  }
+  return { km, minutes: Math.round(estimateMinutes(km)), mode:"car" };
 }
-// プラン内スポットの「おすすめ滞在時間」を分単位のおおまかな数値に変換（既存のderiveStayTime系を再利用）
-function planStayMinutesRange(spot){
+// プラン内スポットの「おすすめ滞在時間」の目安（分）。幅が広くなりすぎないよう中央値を採用する
+function planStayMinutesMid(spot){
   if(spot.stayTime && typeof spot.stayTime.minMinutes==="number"){
-    return { min:spot.stayTime.minMinutes, max:spot.stayTime.maxMinutes };
+    return Math.round((spot.stayTime.minMinutes + spot.stayTime.maxMinutes) / 2);
   }
   const bucket = deriveStayTimeBucket(spot);
-  const table = {
-    "1時間以内": {min:30, max:60},
-    "1〜2時間": {min:60, max:120},
-    "2〜4時間": {min:120, max:240},
-    "4時間以上": {min:240, max:360}
-  };
-  return table[bucket] || {min:90, max:150}; // 判断材料がない場合の中間的な目安
+  const table = { "1時間以内": 45, "1〜2時間": 90, "2〜4時間": 180, "4時間以上": 270 };
+  return table[bucket] || 120; // 判断材料がない場合の中間的な目安
 }
 // プラン全体のサマリー（合計滞在時間・合計移動時間・「回りやすい／少し忙しい」の目安）を計算
 function computePlanSummary(spots){
-  let stayMin=0, stayMax=0, moveMin=0;
+  let stayMid=0, moveMin=0;
   const legs = [];
   for(let i=0;i<spots.length;i++){
-    const r = planStayMinutesRange(spots[i]);
-    stayMin += r.min; stayMax += r.max;
+    stayMid += planStayMinutesMid(spots[i]);
     if(i>0){
       const leg = planLegInfo(spots[i-1], spots[i]);
       legs.push(leg);
       if(leg) moveMin += leg.minutes;
     }
   }
-  const totalMin = stayMin + moveMin;
-  const totalMax = stayMax + moveMin;
-  // 目安：3カ所程度・移動込みで実質7〜8時間以内なら「比較的回りやすい」、それを超えると「少し忙しい」
+  const totalMid = stayMid + moveMin;
+  // 目安：3カ所程度・移動込みで実質6時間以内なら「比較的回りやすい」、それを超えると徐々に「忙しい」
   // （3カ所という件数だけで判断せず、滞在時間・移動時間の実際の合計で判断する）
   let advisory = null;
   if(spots.length>=2){
-    if(totalMax<=480) advisory = {level:"easy", text:"🙂 比較的回りやすいプランです。"};
-    else if(totalMax<=600) advisory = {level:"busy", text:"⏰ やや詰め込み気味です。無理のないペースで回りましょう。"};
+    if(totalMid<=360) advisory = {level:"easy", text:"🙂 比較的回りやすいプランです。"};
+    else if(totalMid<=480) advisory = {level:"busy", text:"⏰ やや詰め込み気味です。無理のないペースで回りましょう。"};
     else advisory = {level:"busy", text:"⚠️ 少し忙しいプランです。1カ所減らすか、日程を分けるのがおすすめです。"};
   }
-  return { stayMin, stayMax, moveMin, legs, advisory };
+  return { stayMid, moveMin, legs, advisory };
 }
 
+const PLAN_TAB_LABELS = ["プランA", "プランB", "プランC"];
 function renderPlanSheet(){
   const sheet = document.getElementById("planSheet");
-  const names = state.plan;
+  const names = currentPlan();
   const spots = names.map(n=>SPOTS.find(s=>s.name===n)).filter(Boolean);
+  const tabsHtml = `
+    <div class="plan-tabs">
+      ${PLAN_TAB_LABELS.map((label,i)=>`
+        <button type="button" class="plan-tab-btn ${state.activePlanTab===i?'active':''}" data-tab="${i}">
+          ${label}${state.plans[i].length>0 ? ` (${state.plans[i].length})` : ""}
+        </button>
+      `).join("")}
+    </div>
+  `;
   let bodyHtml;
   if(spots.length===0){
-    bodyHtml = `<div class="plan-empty">まだプランに追加した場所がありません。<br>スポット詳細画面の「🗓 プランに追加」から、今回実際に行く場所を選んでください。<br>（目安は1日3カ所程度です）</div>`;
+    bodyHtml = `<div class="plan-empty">まだ${PLAN_TAB_LABELS[state.activePlanTab]}に追加した場所がありません。<br>スポット詳細画面の「🗓 プランに追加」から、今回実際に行く場所を選んでください。<br>（目安は1日3カ所程度です）</div>`;
   } else {
     const summary = computePlanSummary(spots);
     const itemsHtml = spots.map((s,i)=>{
       const leg = i>0 ? summary.legs[i-1] : null;
-      const legHtml = leg ? `<div class="plan-leg">🚗 前のスポットから約${Math.round(leg.km)}km・${formatMinutes(leg.minutes)}</div>` : "";
+      const legHtml = leg ? `<div class="plan-leg">${leg.mode==="transit"?"🚃":"🚗"} 前のスポットから約${Math.round(leg.km)}km・${formatMinutes(leg.minutes)}</div>` : "";
       const stayLabel = deriveStayTimeLabel(s);
       return `
         ${legHtml}
@@ -7076,8 +7244,8 @@ function renderPlanSheet(){
     const summaryHtml = `
       <div class="plan-summary">
         <div class="plan-summary-row"><span>スポット数</span><b>${spots.length}カ所</b></div>
-        <div class="plan-summary-row"><span>合計滞在時間の目安</span><b>${formatMinutes(summary.stayMin)}〜${formatMinutes(summary.stayMax)}</b></div>
-        ${summary.moveMin>0 ? `<div class="plan-summary-row"><span>合計移動時間の目安</span><b>約${formatMinutes(summary.moveMin)}</b></div>` : ""}
+        <div class="plan-summary-row"><span>合計滞在時間の目安</span><b>約${formatMinutes(summary.stayMid)}</b></div>
+        ${summary.moveMin>0 ? `<div class="plan-summary-row"><span>合計移動時間の目安（${state.mode==="transit"?"🚃電車・バス":"🚗車"}）</span><b>約${formatMinutes(summary.moveMin)}</b></div>` : ""}
         ${summary.advisory ? `<div class="plan-advisory ${summary.advisory.level}">${summary.advisory.text}</div>` : ""}
       </div>
     `;
@@ -7085,15 +7253,23 @@ function renderPlanSheet(){
   }
   sheet.innerHTML = `
     <button class="sheet-close" id="planCloseBtn">×</button>
-    <div class="sheet-title">🗓 今回のおでかけプラン（${spots.length}件）</div>
+    <div class="sheet-title">🗓 今回のおでかけプラン</div>
+    ${tabsHtml}
     ${bodyHtml}
-    ${spots.length>0 ? `<button type="button" class="plan-share-btn" id="planShareBtn">↗ このプランを共有する</button>` : ""}
+    ${spots.length>0 ? `<button type="button" class="plan-share-btn" id="planShareBtn">↗ ${PLAN_TAB_LABELS[state.activePlanTab]}を共有する</button>` : ""}
   `;
   document.getElementById("planCloseBtn").onclick = ()=>closeSheetById("planOverlay");
+  sheet.querySelectorAll(".plan-tab-btn").forEach(btn=>{
+    btn.onclick = ()=>{
+      state.activePlanTab = Number(btn.dataset.tab);
+      savePersisted();
+      renderPlanSheet();
+    };
+  });
   sheet.querySelectorAll(".plan-item-main").forEach(el=>{
     el.onclick = ()=>{
       const spot = SPOTS.find(s=>s.name===el.dataset.name);
-      if(spot){ closeSheetById("planOverlay"); openDetail(spot); }
+      if(spot){ openDetail(spot); }
     };
   });
   sheet.querySelectorAll(".plan-item-remove").forEach(btn=>{
@@ -7126,13 +7302,18 @@ document.getElementById("planListBtn").onclick = ()=>{
 // ・スポット単体は「?spot=施設名」、プランは「?plan=施設名|施設名|…」
 //   というURLパラメータのみで状態を復元する（サーバー・DBは使わない）。
 // ==================================================================
-const SITE_BASE_URL = "https://odekakenavi.github.io/odekake-navi/";
+// 共有URLは実際に開いているページのURL（オリジン＋パス）を使う。
+// ハードコードしたドメインだと実際の公開URLと食い違い、共有相手には無効なリンクとして
+// 届いてしまう（ブラウザや共有先アプリが検索結果を出してしまう不具合の原因になる）。
+function siteBaseUrl(){
+  return window.location.origin + window.location.pathname;
+}
 function spotShareUrl(spot){
-  return `${SITE_BASE_URL}?spot=${encodeURIComponent(spot.name)}`;
+  return `${siteBaseUrl()}?spot=${encodeURIComponent(spot.name)}`;
 }
 function planShareUrl(spots){
   const names = spots.map(s=>s.name).join("|");
-  return `${SITE_BASE_URL}?plan=${encodeURIComponent(names)}`;
+  return `${siteBaseUrl()}?plan=${encodeURIComponent(names)}`;
 }
 async function shareOrCopy(shareData, fallbackText, eventName, eventParams){
   try{
@@ -7186,7 +7367,7 @@ function applySharedStateFromUrl(){
       const names = planParam.split("|").map(s=>s.trim()).filter(Boolean);
       const found = names.filter(n=>SPOTS.some(s=>s.name===n));
       if(found.length>0){
-        state.plan = found;
+        state.plans[state.activePlanTab] = found;
         savePersisted();
         trackEvent("plan_share_url_open", {plan_count: found.length});
         // 開いてすぐプラン画面を見せる（家族が送られてきたURLを開いた時に迷わないように）
@@ -7445,7 +7626,7 @@ const FAMILY_HOTELS = {
       features: ["🧸 キッズルームあり", "🍽️ バイキング", "🐟 ドクターフィッシュ体験", "🚗 駐車場あり"],
       score: 8,
       note: "約200万坪の高原リゾート。館内にゲームコーナーやキッズルームがあり、夏はカヌーやファミリーキャニオニングなど親子で楽しめるアクティビティが充実。子ども向け食事メニューも月齢別に対応。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad348796/", yahooTravel: "https://travel.yahoo.co.jp/00000921/", ikyu: "https://www.ikyu.com/00000921/" }
     },
     {
       name: "水上温泉 みなかみホテルジュラク",
@@ -7455,7 +7636,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 渓流沿いの大浴場3つ", "🍽️ 和洋中50種バイキング", "🚗 無料駐車場（約250台）", "🚃 水上駅から無料送迎あり"],
       score: 7,
       note: "利根川を望む水上温泉街のリゾートホテル。渓流沿いの3つの大浴場でゆったり湯めぐりでき、シェフが目の前で仕上げるバイキングも好評。駅から無料送迎バスがありアクセスも良い。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad342078/", yahooTravel: "https://travel.yahoo.co.jp/00030790/", ikyu: "" }
     },
     {
       name: "ホテル湯の陣",
@@ -7465,7 +7646,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 大浴場・露天風呂", "🎮 ゲームコーナー・卓球", "🎤 カラオケルーム", "🚗 駐車場あり"],
       score: 7,
       note: "谷川岳のふもと、みなかみの自然を満喫できる立地。館内にゲームコーナーやカラオケルーム、卓球など無料で楽しめる設備が多く、コストを抑えつつ家族で過ごす時間を作りやすい。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad315400/", yahooTravel: "https://travel.yahoo.co.jp/00900995/", ikyu: "" }
     }
   ],
   kusatsu: [
@@ -7477,7 +7658,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 大浴場・展望風呂", "🍽️ バイキング", "🚗 駐車場あり"],
       score: 8,
       note: "草津の温泉街を見下ろす高台に立つリゾートホテル。大浴場からの眺めがよく、朝食は地元食材を使ったビュッフェが人気。湯畑までは徒歩圏内。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad378442/", yahooTravel: "https://travel.yahoo.co.jp/00002933/", ikyu: "https://www.ikyu.com/00002933/" }
     },
     {
       name: "草津温泉 ホテルヴィレッジ",
@@ -7487,7 +7668,7 @@ const FAMILY_HOTELS = {
       features: ["🧗 空中アスレチック（森のステージ）", "🏊 温泉プール テルメテルメ（幼児用あり）", "🌲 森の迷路", "🚗 駐車場あり"],
       score: 8,
       note: "広い敷地に空中アスレチックやアーチェリー、パターゴルフなど体を動かせる設備が充実したリゾートホテル。幼児用プールもある温泉プール「テルメテルメ」は、雨の日でも家族で楽しめる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad323154/", yahooTravel: "https://travel.yahoo.co.jp/00030757/", ikyu: "" }
     },
     {
       name: "草津温泉 ホテル櫻井",
@@ -7497,7 +7678,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 大浴場・湯上り処キッズスペース", "🎮 ゲームコーナー", "🏊 夏季限定ガーデンプール", "🥁 湯もみ・和太鼓ショー無料"],
       score: 7,
       note: "湯畑エリアに近く観光しやすい立地。大浴場前にキッズスペース、2階にゲームコーナーがあり子どもも飽きずに過ごせる。夏季はガーデンプールも開放され、湯もみショーも無料で楽しめる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad310401/", yahooTravel: "https://travel.yahoo.co.jp/00002446/", ikyu: "" }
     }
   ],
   nasu: [
@@ -7509,7 +7690,7 @@ const FAMILY_HOTELS = {
       features: ["🧸 キッズ・ベビールームあり", "🏊 室内温水プール", "🍽️ バイキング", "🍼 離乳食対応", "🚗 駐車場あり"],
       score: 9,
       note: "「ファミリーの聖地」を掲げるリゾートホテル。ベビー・キッズ向けの専用ルームや室内温水プール、そば打ち体験、ツリートレッキングなど、子どもと過ごす時間を前提にした設備が充実。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad339312/", yahooTravel: "https://travel.yahoo.co.jp/00002444/", ikyu: "https://www.ikyu.com/00002444/" }
     },
     {
       name: "グランドメルキュール那須高原リゾート＆スパ",
@@ -7519,7 +7700,7 @@ const FAMILY_HOTELS = {
       features: ["👶 ウェルカムベビーの宿認定", "🧸 屋内キッズスペース・屋外アスレチック", "🏊 夏季ガーデンプール", "🛁 温泉大浴場"],
       score: 8,
       note: "「ウェルカムベビーの宿」認定で赤ちゃん連れでも安心。屋内キッズスペースと屋外アスレチック、夏季はキッズ用も含むガーデンプールがあり、天候や年齢を問わず家族で楽しめる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad335440/", yahooTravel: "https://travel.yahoo.co.jp/00003135/", ikyu: "https://www.ikyu.com/00003135/" }
     },
     {
       name: "ホテルサンバレー那須",
@@ -7529,7 +7710,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 3種の天然温泉大浴場", "🍽️ 旬の食材バイキング", "🏊 夏季屋外温泉プール（別料金）", "🚗 駐車場あり"],
       score: 7,
       note: "9つの宿泊棟が点在する那須高原奥地の総合リゾート。旬の食材を使ったバイキングと湯めぐりが自慢で、幅広い予算の部屋タイプから選べるためコストを抑えやすい。※本館は2026年中のリニューアルに向けて工事中のため、予約時に営業館の確認がおすすめ。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad331120/", yahooTravel: "https://travel.yahoo.co.jp/00030794/", ikyu: "" }
     }
   ],
   oarai: [
@@ -7541,7 +7722,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 温泉大浴場", "🍽️ バイキング", "🚗 駐車場あり"],
       score: 7,
       note: "アクアワールド茨城県大洗水族館まで徒歩約3分のファミリー歓迎の温泉宿。海の幸を使った食事と大洗観光のしやすさが魅力。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad338393/", yahooTravel: "https://travel.yahoo.co.jp/00900726/", ikyu: "" }
     },
     {
       name: "大洗ホテル",
@@ -7551,7 +7732,7 @@ const FAMILY_HOTELS = {
       features: ["🧸 キッズルーム・プレイルーム（2025年11月新設）", "🏊 夏季シーサイドプール（幼児用あり）", "🍽️ オールインクルーシブ（食事・ドリンク・アクティビティ込み）", "🛁 大浴場"],
       score: 8,
       note: "太平洋を望むオーシャンリゾートホテル。2025年11月に新設されたキッズルーム・プレイルームがあり、夏季は幼児用の浅瀬もあるシーサイドプールも楽しめる。宿泊料金に食事・ドリンク・館内アクティビティが含まれるオールインクルーシブで、追加費用を気にせず過ごせる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad328561/", yahooTravel: "https://travel.yahoo.co.jp/00030726/", ikyu: "" }
     },
     {
       name: "亀の井ホテル 大洗",
@@ -7561,7 +7742,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 天然温泉・露天風呂", "🌅 太平洋と那珂川を望む高台の眺望", "🚗 無料駐車場・無料送迎バス", "🍽️ 海鮮料理"],
       score: 7,
       note: "2025年7月にリニューアルオープンした、太平洋と那珂川を一望できる高台の宿。天然温泉の大浴場や露天風呂付客室もあり、大洗駅からの無料送迎バスも利用できるためアクセスも良い。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad316205/", yahooTravel: "https://travel.yahoo.co.jp/00003420/", ikyu: "https://www.ikyu.com/00003420/" }
     }
   ],
   karuizawa: [
@@ -7573,7 +7754,7 @@ const FAMILY_HOTELS = {
       features: ["🧗 アスレチック・ツリートレッキング隣接", "🧸 ファミリールームあり", "🛍️ プリンスショッピングプラザ直結", "🚗 駐車場あり"],
       score: 8,
       note: "隣接する「ネイチャーキッズ 森の家」でクライミングや昆虫採集、サファリツアーなど子連れで遊べるプログラムが充実。2段ベッド付きのファミリールームやおもちゃの無料レンタルもあり、軽井沢駅・プリンスショッピングプラザ直結でアクセスも良い。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad304427/", yahooTravel: "https://travel.yahoo.co.jp/00002630/", ikyu: "https://www.ikyu.com/00002630/" }
     },
     {
       name: "ホテルハーヴェスト軽井沢",
@@ -7583,17 +7764,17 @@ const FAMILY_HOTELS = {
       features: ["🏊 屋内プールあり", "🧸 キッズルームあり", "🍽️ バイキング", "🌳 軽井沢タリアセン隣接", "🚗 駐車場あり"],
       score: 8,
       note: "屋内プールとキッズルームを完備し、天候を気にせず子どもと過ごせるリゾートホテル。隣接する軽井沢タリアセンへの散策もしやすく、駅からは少し離れる分、静かな環境で家族水入らずの時間を過ごせる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad397412/", yahooTravel: "https://travel.yahoo.co.jp/00002651/", ikyu: "https://www.ikyu.com/00002651/" }
     },
     {
       name: "軽井沢倶楽部ホテル軽井沢1130",
-      area: "軽井沢町（旧軽井沢）",
+      area: "嬬恋村（北軽井沢・標高1130m）",
       lat: 36.354, lng: 138.643,
       label: "コスパ重視",
-      features: ["🛏️ ファミリールームあり", "🍽️ 和洋バイキング", "🚗 駐車場あり", "🚶 旧軽井沢銀座まで徒歩圏"],
+      features: ["🛏️ ファミリールームあり", "🍽️ 和洋バイキング", "🏊 屋内温水プール（comoriパーク）", "🚗 駐車場あり"],
       score: 7,
-      note: "旧軽井沢エリアの散策拠点として使いやすい立地で、ファミリー向けの広めの客室が揃う。高級リゾートホテルほど値が張らず、朝食バイキングや駐車場も含めたコストパフォーマンスの良さで選びやすい一軒。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      note: "北軽井沢・標高1130mの高原リゾート。水温約29度の屋内温水プール「comoriパーク」は浅めのジェットバスもあり水遊びデビューの小さな子でも安心。高級リゾートホテルほど値が張らず、朝食バイキングや駐車場も含めたコストパフォーマンスの良さで選びやすい一軒。",
+      booking: { jalan: "https://www.jalan.net/yad330060/", yahooTravel: "https://travel.yahoo.co.jp/00000420/", ikyu: "" }
     }
   ],
   nikko: [
@@ -7605,7 +7786,7 @@ const FAMILY_HOTELS = {
       features: ["🏊 屋内プール（通年）", "🛁 鬼怒川一望の水着スパ「おぷーろ」", "🎪 キッズランド", "🍽️ オールインクルーシブバイキング"],
       score: 8,
       note: "駅から徒歩3分。1年中遊べる屋内プールと、鬼怒川の渓谷美を一望できる水着で入れる「おぷーろ」があり、天候を気にせず子どもと過ごせる。食べ放題・飲み放題込みのオールインクルーシブスタイルも家族旅行に使いやすい。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad321978/", yahooTravel: "https://travel.yahoo.co.jp/00901936/", ikyu: "" }
     },
     {
       name: "鬼怒川温泉ホテル ニューおおるり",
@@ -7615,7 +7796,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 大浴場・露天風呂（鬼怒川眺望）", "🍽️ バイキング", "🚗 駐車場あり", "🎮 ゲームコーナー"],
       score: 7,
       note: "客室から鬼怒川の渓谷を望める、鬼怒川温泉の定番ファミリーホテル。大浴場・露天風呂からも四季の渓谷美が楽しめ、館内のゲームコーナーで子どもも退屈せずに過ごせる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad393512/", yahooTravel: "https://travel.yahoo.co.jp/00913689/", ikyu: "" }
     },
     {
       name: "大江戸温泉物語 Premium 鬼怒川観光ホテル",
@@ -7625,7 +7806,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 大浴場・露天風呂", "🍽️ バイキング（飲み放題付きプランあり）", "🚗 駐車場あり"],
       score: 7,
       note: "全国展開の「大江戸温泉物語」グループのホテルで、飲み放題付きバイキングなどコストパフォーマンスの良いプランが揃う。鬼怒川温泉街に立地し、日光江戸村・東武ワールドスクウェアへのアクセスも良い。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad343637/", yahooTravel: "https://travel.yahoo.co.jp/00903901/", ikyu: "" }
     }
   ],
   atami: [
@@ -7637,7 +7818,7 @@ const FAMILY_HOTELS = {
       features: ["🏊 屋内・屋外プール（夏季）", "🧸 キッズスペースあり", "🍽️ バイキング", "🛁 大浴場・露天風呂"],
       score: 8,
       note: "熱海の海沿いに立つ大型リゾートホテル。夏季は屋外プールも営業し、キッズスペースやゲームコーナーもあるため、雨天でも館内で子どもを飽きさせない。熱海サンビーチまで徒歩圏内。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad317924/", yahooTravel: "https://travel.yahoo.co.jp/00001018/", ikyu: "" }
     },
     {
       name: "亀の井ホテル 熱海",
@@ -7647,7 +7828,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 大浴場・露天風呂", "🍽️ 90種の和洋中ビュッフェ（キッズコーナーあり）", "🚗 駐車場あり", "🌅 熱海市街・海を望む高台"],
       score: 7,
       note: "熱海の街と海を見晴らす高台に立つホテル。90種におよぶ和洋中ビュッフェにはキッズコーナーもあり、握り寿司や麺コーナーなど子どもが食べやすいメニューも充実。塩化物温泉の大浴場・露天風呂でゆったり過ごせる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad343766/", yahooTravel: "https://travel.yahoo.co.jp/00003425/", ikyu: "" }
     },
     {
       name: "熱海ホテルパイプのけむり",
@@ -7657,7 +7838,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 貸切風呂あり（天然温泉）", "👶 赤ちゃんにやさしい泉質", "🛏️ 家族向けトリプル・フォースルーム", "🚗 駐車場あり"],
       score: 7,
       note: "小さな子ども連れでも周囲を気にせず入れる貸切風呂を用意。赤ちゃんの肌にもやさしい塩化物泉で、家族向けのコンパクトな客室タイプも選べるため、コストを抑えつつ温泉を楽しみたい家族に向く。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad328328/", yahooTravel: "https://travel.yahoo.co.jp/00906668/", ikyu: "" }
     }
   ],
   hakone: [
@@ -7669,7 +7850,7 @@ const FAMILY_HOTELS = {
       features: ["🏊 ユネッサン＆森の湯 滞在中入り放題", "👶 ウェルカムベビーの宿認定", "🍽️ ビュッフェ（離乳食対応）", "🚗 駐車場あり"],
       score: 9,
       note: "温泉テーマパーク「箱根小涌園ユネッサン」に隣接し、チェックイン前後も含め滞在中は何度でも入り放題。ウェルカムベビーの宿に認定されており、離乳食付きビュッフェやレンタル備品も充実。プール好きの子どもがいる家族に特におすすめ。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad322559/", yahooTravel: "https://travel.yahoo.co.jp/00003020/", ikyu: "" }
     },
     {
       name: "湯本富士屋ホテル",
@@ -7679,17 +7860,17 @@ const FAMILY_HOTELS = {
       features: ["🧸 絵本・大型積み木のキッズルーム（本館2階）", "🛁 大浴場・露天風呂", "🚗 駐車場あり", "🚶 箱根湯本駅徒歩3分"],
       score: 8,
       note: "箱根湯本駅から徒歩3分という好立地。本館2階に絵本や大きなスポンジ積み木で遊べるキッズルーム（予約不要）があり、部屋で子どもが飽きたときの気分転換にちょうどよい。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad328838/", yahooTravel: "https://travel.yahoo.co.jp/00000208/", ikyu: "https://www.ikyu.com/00000208/" }
     },
     {
       name: "ホテル南風荘",
-      area: "箱根町（奥湯本・滝通り温泉郷）",
+      area: "箱根町湯本茶屋（奥湯本）",
       lat: 35.228, lng: 139.095,
       label: "コスパ重視",
       features: ["🏊 夏季幼児プール付き屋外プール", "🎨 寄木細工コースター作り等の体験企画", "🎤 カラオケ・卓球", "🚗 駐車場あり"],
       score: 7,
-      note: "箱根湯本駅からバス7分、徒歩3分の奥湯本エリア。夏休みは幼児プール付きの屋外プールが登場するほか、季節ごとに寄木細工コースター作りなど子ども向け体験企画があり、リピーターも多い。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      note: "箱根湯本駅から有料巡回バスで約7分の奥湯本エリア。夏休みは幼児プール付きの屋外プールが登場するほか、季節ごとに寄木細工コースター作りなど子ども向け体験企画があり、リピーターも多い。",
+      booking: { jalan: "https://www.jalan.net/yad385995/", yahooTravel: "https://travel.yahoo.co.jp/00030789/", ikyu: "" }
     }
   ],
   yugawara: [
@@ -7701,7 +7882,7 @@ const FAMILY_HOTELS = {
       features: ["👶 ベビープラン充実", "🍼 B型ベビーカー・調乳ポット等の無料貸出", "🛁 貸切露天風呂（子ども用おもちゃ貸出あり）", "🍽️ キッズメニューあり"],
       score: 8,
       note: "ベビー・ファミリープランに力を入れる宿で、ベビーカーや調乳ポットなど貸出備品が充実。貸切露天風呂では子ども用おもちゃも借りられ、赤ちゃん連れでも周囲を気にせずゆったり過ごせる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad301473/", yahooTravel: "", ikyu: "" }
     },
     {
       name: "青巒荘",
@@ -7710,8 +7891,8 @@ const FAMILY_HOTELS = {
       label: "子連れ歓迎",
       features: ["🧸 通年利用できるキッズルーム（滑り台・電動レール）", "🍽️ 部屋食", "🛁 貸切露天風呂・落差38mの滝を望む野天風呂", "👶 紙おむつ等アメニティ充実"],
       score: 7,
-      note: "創業80年の老舗宿。通年利用できるキッズルームには滑り台や電動レールがあり、食事は部屋食のため周囲を気にせずゆっくり過ごせる。落差38mの滝を望む仙境野天風呂も見どころ。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      note: "もうじき創業100年、奥湯河原最古の宿。通年利用できるキッズルームには滑り台や電動レールがあり、食事は部屋食のため周囲を気にせずゆっくり過ごせる。落差38mの滝を望む仙境野天風呂も見どころ。",
+      booking: { jalan: "https://www.jalan.net/yad328710/", yahooTravel: "https://travel.yahoo.co.jp/00909035/", ikyu: "" }
     },
     {
       name: "フォレストリゾート ゆがわら 水の香里",
@@ -7721,7 +7902,7 @@ const FAMILY_HOTELS = {
       features: ["🧸 キッズルーム・ゲームコーナー・カラオケ", "🛁 大浴場・展望露天風呂（自家源泉）", "🍽️ 部屋食プランあり", "🚗 駐車場あり"],
       score: 7,
       note: "湯河原駅からバス11分、千歳川沿いにたたずむ宿。キッズルーム・ゲームコーナー・カラオケなど館内で子どもと楽しめる設備が揃い、和室・和洋室・洋室から予算に応じて選べる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad340855/", yahooTravel: "https://travel.yahoo.co.jp/00900140/", ikyu: "" }
     }
   ],
   odawara: [
@@ -7733,7 +7914,7 @@ const FAMILY_HOTELS = {
       features: ["🏊 屋内外10種のプール「バーデゾーン」（全天候型・1歳から利用可）", "🛁 天然温泉大浴場", "🎳 ボウリング場・パターゴルフ", "🍽️ 朝食ビュッフェ"],
       score: 8,
       note: "小田原と真鶴の中間、標高183mに立つ全室オーシャンビューのリゾートホテル。屋内外10種のプールは全天候型で1歳から利用でき、雨の日でも家族で遊べる。ボウリング場やパターゴルフなど大人も楽しめる設備も充実。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad330192/", yahooTravel: "https://travel.yahoo.co.jp/00000770/", ikyu: "https://www.ikyu.com/00000770/" }
     },
     {
       name: "天成園 小田原駅 別館",
@@ -7743,7 +7924,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 箱根湯本から毎日運ぶ天然温泉大浴場", "🚪 家族風呂4室", "♨️ 最上階に無料の展望足湯庭園", "🚶 小田原駅直結"],
       score: 8,
       note: "小田原駅直結の複合施設「ミナカ小田原」内にあるコンパクトシティホテル。大浴場には箱根湯本の温泉を毎日運んでおり、プライベートに使える家族風呂が4室あるため小さな子ども連れでも周囲を気にせず入浴できる。最上階の展望足湯庭園（無料）も観光の合間に立ち寄りやすい。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad384718/", yahooTravel: "https://travel.yahoo.co.jp/00913585/", ikyu: "" }
     },
     {
       name: "東横INN小田原駅東口",
@@ -7753,7 +7934,7 @@ const FAMILY_HOTELS = {
       features: ["🍽️ 無料の朝食バイキング", "👶 小学生以下は添い寝無料", "🚶 小田原駅徒歩3分", "🚗 駐車場あり（有料）"],
       score: 6,
       note: "小田原駅から徒歩3分とアクセスが良く、無料の朝食バイキングが好評のビジネスホテル。小学生以下の添い寝は無料で、シンプルに費用を抑えて箱根・小田原観光の拠点にしたい家族に向く。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad383120/", yahooTravel: "https://travel.yahoo.co.jp/00910232/", ikyu: "" }
     }
   ],
   boso: [
@@ -7765,7 +7946,7 @@ const FAMILY_HOTELS = {
       features: ["🧸 キッズスペース・お子様向け遊具の丘", "🏊 屋外ガーデンプール（キッズ用の浅瀬あり）", "👶 ウェルカムベビー認定", "🍽️ オールインクルーシブ（食事・ドリンク込み）"],
       score: 8,
       note: "南房総国定公園・大房岬にある全197室のリゾートホテル。子ども向けの遊具の丘や、浅瀬のあるキッズ用ガーデンプールがあり、宿泊料金に夕朝食・ドリンク・温泉が含まれるオールインクルーシブで滞在中の追加出費を気にせず過ごせる。大房岬自然公園にも隣接。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad375140/", yahooTravel: "https://travel.yahoo.co.jp/00003136/", ikyu: "https://www.ikyu.com/00003136/" }
     },
     {
       name: "鴨川グランドホテル",
@@ -7775,7 +7956,7 @@ const FAMILY_HOTELS = {
       features: ["🏊 プールあり", "🧺 コインランドリー完備（水着・衣類の洗濯に便利）", "🛁 大浴場・展望風呂", "🚗 駐車場あり"],
       score: 7,
       note: "鴨川シーワールドにほど近いリゾートホテル。プール利用後の水着や衣類を洗える館内コインランドリーがあり、子連れの荷物問題を解消しやすい。太平洋を望む大浴場でゆったり過ごせる。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad343712/", yahooTravel: "https://travel.yahoo.co.jp/00030840/", ikyu: "" }
     },
     {
       name: "白浜温泉 南国ホテル",
@@ -7785,7 +7966,7 @@ const FAMILY_HOTELS = {
       features: ["🛁 自家源泉の大浴場・露天風呂・貸切風呂", "🍽️ 和洋中バイキング（アルコール飲み放題付き）", "🎤 カラオケ・卓球無料", "🚗 駐車場あり"],
       score: 7,
       note: "伊東園ホテルズ系列の南房総・白浜温泉の宿。房総では希少な自家源泉の温泉を大浴場・露天風呂で楽しめ、夕食は飲み放題付きのバイキング。カラオケ・卓球も無料で使え、コストを抑えつつ賑やかに過ごしたい家族に向く。野島埼灯台まで車で約5分。",
-      booking: { jalan: "", yahooTravel: "", ikyu: "" }
+      booking: { jalan: "https://www.jalan.net/yad314616/", yahooTravel: "https://travel.yahoo.co.jp/00900978/", ikyu: "" }
     }
   ]
 };
@@ -7803,7 +7984,7 @@ function hotelDistanceLabel(spot, hotel){
 // 🏨 予約サイト選択UI（Phase32）
 // ・ホテルデータ（名前・特徴・おすすめ理由）と、予約サイト名・URL・表示文言を分離。
 // ・hotel.booking.jalan / yahooTravel / ikyu にURLを設定するだけで動作する構造。
-// ・URLが空の予約サイトは「予約リンク準備中」と表示し、架空のURLは絶対に生成しない。
+// ・URLが空の予約サイトはボタン枠ごと非表示にする（架空のURLは絶対に生成しない）。
 // ・ValueCommerce等で正式なアフィリエイトリンクを発行後、hotel.bookingにURLを入れるだけでOK。
 // ------------------------------------------------------------------
 const HOTEL_BOOKING_SITES = [
@@ -7815,8 +7996,8 @@ function hotelBookingOptionsHtml(spot, hotel){
   const booking = hotel.booking || {};
   return HOTEL_BOOKING_SITES.map(site=>{
     const url = booking[site.key];
-    if(url){
-      return `<a class="hotel-booking-option ${site.key}" href="${url}" target="_blank" rel="noopener"
+    if(!url) return ""; // このサイトに未掲載（または未設定）の場合は枠ごと非表示にする
+    return `<a class="hotel-booking-option ${site.key}" href="${url}" target="_blank" rel="noopener"
         data-act="hotel-booking-click" data-hotel-name="${hotel.name}" data-hotel-area="${hotel.area}" data-booking-site="${site.key}">
         <span class="hotel-booking-option-icon">${site.icon}</span>
         <span class="hotel-booking-option-text">
@@ -7825,14 +8006,6 @@ function hotelBookingOptionsHtml(spot, hotel){
         </span>
         <span class="hotel-booking-option-arrow">›</span>
       </a>`;
-    }
-    return `<div class="hotel-booking-option-pending">
-      <span class="hotel-booking-option-icon">${site.icon}</span>
-      <span class="hotel-booking-option-text">
-        <span class="hotel-booking-option-name">${site.label}</span>
-        <span class="hotel-booking-option-desc">予約リンク準備中</span>
-      </span>
-    </div>`;
   }).join("");
 }
 
@@ -8201,7 +8374,6 @@ async function renderDiagnosisResults(){
       const spot = SPOTS.find(s=>s.name===card.dataset.name);
       if(!spot) return;
       trackEvent("diagnosis_result_click", {facility_name: spot.name});
-      closeDiagnosis();
       openDetail(spot);
     };
   });
@@ -8426,7 +8598,7 @@ function render(){
   favCountLabel.textContent = state.favorites.size>0 ? `(${state.favorites.size})` : "";
 
   const planCountLabel = document.getElementById("planCountLabel");
-  planCountLabel.textContent = state.plan.length>0 ? `(${state.plan.length})` : "";
+  planCountLabel.textContent = planTotalCount()>0 ? `(${planTotalCount()})` : "";
 
   document.querySelectorAll(".sort-toggle-btn").forEach(btn=>{
     btn.classList.toggle("active", btn.dataset.sort===state.sortMode);
@@ -8615,6 +8787,8 @@ function buildCardSummary(spot){
   }
 
   const seasonMatch = spot.seasons && spot.seasons.includes(currentSeason());
+  const isFavQuick = state.favorites.has(spot.name);
+  const isPlannedQuick = isInPlan(spot.name);
   card.innerHTML = `
     ${state.compareMode ? `<div class="compare-pick ${state.compareSet.has(spot.name)?'picked':''}">✓</div>` : ""}
     <div class="card-top-row">
@@ -8622,6 +8796,10 @@ function buildCardSummary(spot){
       <div class="card-title-block">
         <div class="card-name">${spot.name}</div>
         <div class="card-meta">${fullAreaLabel(spot)}　${genre.label}</div>
+      </div>
+      <div class="card-quick-actions">
+        <button type="button" class="card-quick-btn ${isFavQuick?'on':''}" data-quick="fav" title="行きたい">❤️</button>
+        <button type="button" class="card-quick-btn ${isPlannedQuick?'on':''}" data-quick="plan" title="プランに追加">🗓</button>
       </div>
     </div>
     ${seasonMatch ? `<div class="season-tag">${SEASON_EMOJI[currentSeason()]} ${currentSeason()}におすすめ</div>` : ""}
@@ -8633,6 +8811,15 @@ function buildCardSummary(spot){
     </div>
     <div class="card-go-row">${goHtml}</div>
   `;
+  card.querySelector('[data-quick="fav"]').onclick = (e)=>{
+    e.stopPropagation();
+    toggleSet("favorites", spot.name);
+  };
+  card.querySelector('[data-quick="plan"]').onclick = (e)=>{
+    e.stopPropagation();
+    if(isInPlan(spot.name)) removeFromPlan(spot.name); else addToPlan(spot.name);
+    render();
+  };
   card.onclick = ()=>{
     if(state.compareMode) toggleCompareSpot(spot.name);
     else openDetail(spot);
@@ -8644,6 +8831,9 @@ function buildCardSummary(spot){
 // 詳細画面：基本情報／今日行きやすい？／お財布／発散度／行き方／駐車場／混雑／アクション
 // ------------------------------------------------------------------
 function openDetail(spot, silent){
+  // 診断結果やプラン一覧など、他のシートを開いたまま詳細を開くケースがあるため、
+  // 詳細画面のオーバーレイをDOM末尾に移動して必ず最前面に表示されるようにする。
+  document.body.appendChild(document.getElementById("detailOverlay"));
   if(!silent){
     trackView(spot.name);
     state.recentlyViewed = [spot.name, ...state.recentlyViewed.filter(n=>n!==spot.name)].slice(0,10);
@@ -8928,7 +9118,7 @@ function openDetail(spot, silent){
   loadWeatherIntoDetail(spot); // 🌤 この施設の天気だけを非同期取得（一覧の一括取得はしない）
 
   openSheet("detailOverlay");
-  sheet.scrollTop = 0;
+  if(!silent) sheet.scrollTop = 0; // ボタン操作による再描画（silent）ではスクロール位置を保持する
 }
 function closeDetail(){
   closeSheetById("detailOverlay");
@@ -8938,6 +9128,8 @@ function closeDetail(){
 // リセットボタン（保存データ＋画面上の絞り込み条件をすべて初期化）
 // ==================================================================
 document.getElementById("resetBtn").onclick = ()=>{
+  const ok = confirm("保存されている「行きたい」「行った」「郵便番号」「プラン」などの端末データをすべて削除します。よろしいですか？");
+  if(!ok) return;
   try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
   resetFilters();
   state.favorites = new Set();
@@ -8949,8 +9141,16 @@ document.getElementById("resetBtn").onclick = ()=>{
   searchClearBtnEl.classList.remove("show");
   state.compareMode = false;
   state.compareSet = new Set();
+  state.homeLoc = null;
+  state.zipRaw = "";
+  state.zipLabel = "";
+  state.zipCandidates = null;
+  state.plans = [[], [], []];
+  state.activePlanTab = 0;
+  document.getElementById("zipInput").value = "";
   document.getElementById("compareBanner").style.display = "none";
   document.getElementById("compareToggleBtn").classList.remove("active");
+  renderHomeZip();
   render();
 };
 
@@ -8998,6 +9198,17 @@ document.getElementById("conditionResetBtn").onclick = ()=>{
 document.getElementById("diagnosisOpenBtn").onclick = openDiagnosis;
 document.querySelectorAll(".sort-toggle-btn").forEach(btn=>{
   btn.onclick = ()=>{
+    if(btn.dataset.sort==="near" && !state.homeLoc){
+      // 出発地（郵便番号・地名）が未入力のまま「近い順」を押した場合は、
+      // 入力欄へ案内してそちらを促す（並び替え自体はまだ実行しない）
+      const zipSection = document.querySelector(".home-location-section");
+      const zipInput = document.getElementById("zipInput");
+      state.zipLabel = "👆 郵便番号または地名を入力すると「近い順」で並び替えられます";
+      renderHomeZip();
+      if(zipSection) zipSection.scrollIntoView({behavior:"smooth", block:"start"});
+      if(zipInput) zipInput.focus();
+      return;
+    }
     state.sortMode = btn.dataset.sort;
     trackEvent("sort_mode_change", {mode: state.sortMode});
     render();
