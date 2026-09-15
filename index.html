@@ -362,6 +362,8 @@
     font-size:12px; font-weight:700; cursor:pointer; border:1px solid var(--line);
   }
   .plan-item-remove{border:none; background:#F1EADA; color:var(--ink-soft); border-radius:8px; padding:5px 9px; font-size:10.5px; font-weight:700; cursor:pointer; margin-top:6px;}
+  .plan-item-move-row{display:flex; gap:4px; flex-wrap:wrap; margin-top:6px;}
+  .plan-item-move-btn{border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:5px 9px; font-size:10.5px; font-weight:700; cursor:pointer;}
   .plan-leg{display:flex; align-items:center; gap:6px; padding:4px 0 4px 30px; font-size:11px; color:var(--ink-soft);}
   .plan-summary{background:var(--paper); border-radius:12px; padding:12px; margin:4px 0 14px; border:1px solid var(--line);}
   .plan-summary-row{display:flex; justify-content:space-between; font-size:12px; color:var(--ink); padding:3px 0;}
@@ -557,6 +559,7 @@
   .weather-day-pop{font-size:10.5px; color:var(--sun); font-weight:700; margin-top:3px;}
   .weather-day-pop.high{color:var(--coral);}
   .weather-loading, .weather-error{font-size:11.5px; color:var(--ink-soft); padding:6px 2px;}
+  .weather-updated{font-size:10.5px; color:var(--ink-soft); margin-top:8px;}
   .weather-note{font-size:10px; color:var(--ink-soft); margin-top:6px; line-height:1.5;}
 
 </style>
@@ -5691,20 +5694,22 @@ const SPOTS_FRUIT = [
 {region:"群馬", name:"果実の里 原田農園", area:"沼田市横塚町", lat:36.650, lng:139.050,
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
- seasons:["春","夏","秋"],
+ seasons:["冬","春","夏","秋"],
  price:"品目・時期により変動（いちご狩り等は1,500〜2,500円程度）", parking:"yes", access:"関越自動車道「沼田IC」から車ですぐ",
  baby:"おむつ替えは要問合せ／ベビーカーは一部通路のみ利用可", lunch:"直売所での軽食程度。周辺に飲食店あり。",
  officialUrl:"http://www.harada-nouen.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/995/"},
  stayTime:{minMinutes:90, maxMinutes:150},
  desc:"いちご（11月上旬〜6月上旬）、さくらんぼ（5月末〜）、桃・ぶどう・りんご（夏〜秋）と、ほぼ通年で何かしらの味覚狩りが楽しめる観光農園。関越道沼田ICから近く立ち寄りやすい。",
  tip:"品目により営業時期が大きく異なるため、訪問前に公式サイトで「今何が狩れるか」を確認するのがおすすめ。"},
 {region:"栃木", name:"いちごの里", area:"小山市大川島", lat:36.300, lng:139.830,
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
- seasons:["冬","春","夏"],
+ seasons:["冬","春","夏","秋"],
  price:"品目・時期により変動（いちご狩りは30分食べ放題制など）", parking:"yes", access:"東北自動車道「佐野藤岡IC」または「栃木IC」から車",
  baby:"おむつ替えは要問合せ", lunch:"併設のレストラン・カフェあり。",
  officialUrl:"https://itigo.co.jp/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000210896/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"いちご（12月〜5月）、さくらんぼ（5月下旬〜6月上旬）、桃（6月下旬〜9月下旬）、ブルーベリー・ぶどう（夏〜秋）と季節ごとに味覚狩りが楽しめる観光農園。レストラン・カフェも併設。",
  tip:"いちご狩りは早い時期ほど食べ頃の実が多い傾向。時間制のプランが多いので予約時間に余裕を持って到着するのがおすすめ。"}
@@ -5859,6 +5864,7 @@ const SPOTS_FRUIT_2 = [
  price:"いちご狩り 1,200〜1,700円程度（時期により変動、予約不要・時間無制限食べ放題）", parking:"yes", access:"北関東自動車道「鉾田IC」から車で約20分",
  baby:"おむつ替えは要問合せ", lunch:"直売所での軽食程度。",
  officialUrl:"https://www.fukasaku-ichigo.com/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000202461/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"茨城いちごグランプリ金賞受賞歴もある人気のいちご農園。予約不要・時間無制限食べ放題で、1月中旬〜4月に楽しめる。メロン・さつまいもなど他の農産物の直売所や季節のスイーツ店も併設。",
  tip:"予約不要・時間無制限が魅力だが、赤いいちごがなくなり次第当日受付が早期終了することがあるので午前中の来園がおすすめ。"},
@@ -5869,16 +5875,18 @@ const SPOTS_FRUIT_2 = [
  price:"平日 大人2,400円台／小学生1,700円台／3歳以上1,400円台（3歳未満無料、休日は割高）", parking:"yes", access:"常磐自動車道「常総IC」から車で約2分",
  baby:"通路が広くベビーカー・車椅子でも入園可", lunch:"併設カフェ「GRANBERRY」でいちごスイーツあり。",
  officialUrl:"https://granberry-ichigo.jp/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000202036/"},
  stayTime:{minMinutes:60, maxMinutes:90},
  desc:"いちごの栽培棚が宙に浮いて上下する「リフト式高設栽培」を採用した、国内最大規模クラスの空中いちご園。全面シート張りで通路も広く、車椅子やベビーカーでの入園もしやすい。12月下旬〜5月下旬営業。",
  tip:"制限時間40分の食べ放題制（要事前予約）。IC降りてすぐの好立地で、雨の日でも屋内中心で楽しめる。"},
 {region:"群馬", name:"みなかみフルーツランド モギトーレ", area:"利根郡みなかみ町（新治地区）", lat:36.6892, lng:138.9422,
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
- seasons:["春","夏","秋"],
+ seasons:["冬","春","夏","秋"],
  price:"品目により1,800〜2,000円程度（いちご・さくらんぼ・ぶどう・りんご等）", parking:"yes", access:"関越自動車道「月夜野IC」から車で約15分",
  baby:"おむつ替えは要問合せ", lunch:"BBQ・ケーキセット等のメニューあり。",
  officialUrl:"https://www.mogitore.jp/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000202829/"},
  overnightRecommended:true, hotelArea:"minakami",
  stayTime:{minMinutes:90, maxMinutes:150},
  desc:"いちご・さくらんぼ・ブルーベリー・プラム・ぶどう・りんごと、季節ごとに6種類の果物狩りが楽しめる観光農園（旧称「ドールランドみなかみ」から改称・リニューアル）。近隣の入浴施設とのセット券もある。",
@@ -5890,6 +5898,7 @@ const SPOTS_FRUIT_2 = [
  price:"大人1,500〜2,500円程度／小学生1,000〜1,500円程度（時期・品種により変動）", parking:"yes", access:"横浜新道「戸塚IC」から車で約10〜15分／JR「戸塚」駅からバス「影取」下車徒歩2〜3分",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"直売所で購入した果物をその場でどうぞ。",
  officialUrl:"https://www.s-kajuen.com/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000183272/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"横浜市内にありながら、ぶどう・梨・いちじく・柿・みかん・キウイと8月上旬から12月中旬まで旬の味覚狩りが楽しめる果樹園。減農薬栽培で子どもにも安心。駐車場50台、授乳室・おむつ替えスペースも完備。",
  tip:"横浜市街地から近くアクセスしやすいのが強み。品目により収穫時期が異なるため、訪問前に公式サイトでカレンダーを確認するのがおすすめ。"}
@@ -5998,6 +6007,22 @@ const SPOTS_POOL_3 = [
 SPOTS.push(...SPOTS_POOL_3);
 
 // ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：🏊 プール・水遊び カテゴリー拡充
+// ------------------------------------------------------------------
+const SPOTS_POOL_4 = [
+{region:"神奈川", name:"金沢プール（リネツ金沢）", area:"横浜市金沢区幸浦", lat:35.3350, lng:139.6280,
+ genre:"プール・水遊び",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人600円／子ども300円", parking:"yes", access:"シーサイドライン「並木中央駅」「幸浦駅」「金沢八景駅」から徒歩15分",
+ baby:"幼児プールあり",
+ officialUrl:"https://yokohama-wp.com/kanazawa",
+ stayTime:{minMinutes:120, maxMinutes:240},
+ desc:"横浜市が運営する通年利用できる屋内プール。25mプール、ウォータースライダーのある児童プール、幼児プールまで揃い、料金もリーズナブル。サウナや軽運動コーナー、海の見えるカフェレストランも併設。",
+ tip:"市営のため料金が安く、雨の日や冬でも利用できる貴重な屋内プール。毎月第4火曜と年末年始が休館日。"}
+];
+SPOTS.push(...SPOTS_POOL_4);
+
+// ------------------------------------------------------------------
 // 📌 追加候補リスト（Phase30）：🌲 アスレチック・アウトドア カテゴリー拡充（第3弾）
 // ------------------------------------------------------------------
 const SPOTS_OUTDOOR_3 = [
@@ -6023,6 +6048,78 @@ const SPOTS_OUTDOOR_3 = [
 SPOTS.push(...SPOTS_OUTDOOR_3);
 
 // ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：🌲 アスレチック・アウトドア カテゴリー拡充
+// ------------------------------------------------------------------
+const SPOTS_OUTDOOR_4 = [
+{region:"栃木", name:"那須の森の空中アスレチック『NOZARU』", area:"那須郡那須町高久乙", lat:37.0640, lng:139.9648,
+ genre:"アスレチック・アウトドア",
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人から子どもまで楽しめる料金設定（コースにより変動）", parking:"yes", access:"那須ICから車で約15分",
+ baby:"ロッカー・更衣室あり／初心者向け「コザルコース」あり",
+ officialUrl:null,
+ stayTime:{minMinutes:120, maxMinutes:180},
+ desc:"那須の森をそのまま利用した日本最大級の空中アスレチック。最大100m超えのジップラインが爽快な「ノザルコース」と、初心者・小さな子ども向けの「コザルコース」があり、自分のペースで自由に回れる。",
+ tip:"冬季休業期間があるため訪問前に営業状況を確認するのがおすすめ。"},
+{region:"千葉", name:"Sport & Do Resort リソルの森 フォレストアドベンチャー・ターザニア", area:"長生郡長柄町", lat:35.4775, lng:140.2443,
+ genre:"アスレチック・アウトドア",
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"アクティビティ数・コースにより変動", parking:"yes", access:"東京から車で約60分",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:null,
+ stayTime:{minMinutes:120, maxMinutes:240},
+ desc:"専用ハーネスを着用して樹から樹へ移動する自然共生型アドベンチャーパーク。施設内に65のアクティビティがあり、家族・カップル・友達みんなで楽しめる。",
+ tip:"原則木曜定休（時期により異なる）。東京から車で約60分とアクセスしやすい。"},
+{region:"埼玉", name:"長瀞 古沢園（魚つかみ取り体験）", area:"秩父郡長瀞町井戸", lat:36.1051, lng:139.1185,
+ genre:"アスレチック・アウトドア",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"990円〜（対象年齢制限なし、BBQオプションあり）", parking:"yes", access:"関越自動車道「花園IC」から車で約20分",
+ baby:"対象年齢制限なし",
+ officialUrl:null,
+ stayTime:{minMinutes:30, maxMinutes:90},
+ desc:"湧き水を使った魚つかみ取り体験ができる長瀞の釣り堀。対象年齢の制限がなく、水深50cm程度のため小さな子どもでも挑戦しやすい。とった魚を使ったBBQオプションもあり、長瀞観光と組み合わせやすい。",
+ tip:"水に入るため必ずタオルを持参し、水深50cm程度に入れる服装で訪れるのがおすすめ。無料駐車場30台あり。"},
+{region:"千葉", name:"九十九里海釣りセンター", area:"山武郡九十九里町", lat:35.5145, lng:140.4390,
+ genre:"アスレチック・アウトドア",
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"料金は要問合せ（カップル・ファミリー・初心者向け）", parking:"yes", access:"九十九里町内、車でのアクセス推奨",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:null,
+ stayTime:{minMinutes:90, maxMinutes:150},
+ desc:"関東最大級の、陸上で海の魚が釣れる釣り堀。マダイなど季節の魚を放流しており、初心者・ファミリーでも気軽に釣りを楽しめる。",
+ tip:"陸上の釣り堀のため、本格的な海釣りが初めての家族でも安心して挑戦しやすい。"},
+{region:"東京", name:"アメリカキャンプ村", area:"西多摩郡奥多摩町海沢", lat:35.8002, lng:139.1174,
+ genre:"アスレチック・アウトドア",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"デイキャンプ・宿泊プランにより変動", parking:"yes", access:"八王子ICから滝山街道・吉野街道経由で約60分",
+ baby:"畳の部屋があるログハウス宿泊プランあり",
+ officialUrl:"https://www.americacampmura.jp/",
+ stayTime:{minMinutes:180, maxMinutes:360},
+ desc:"東京都心から約1時間半、奥多摩にあるキャンプ場。バーベキュー、キャンプファイヤー、アスレチック、釣り堀など、日帰り・宿泊どちらでも家族で楽しめる設備が揃う。",
+ tip:"毎週水・木曜定休（7・8月、祝日を除く）のため訪問日に注意。デイキャンプでの日帰り利用も可能。"},
+{region:"神奈川", name:"海の公園", area:"横浜市金沢区海の公園", lat:35.3300, lng:139.6250,
+ genre:"アスレチック・アウトドア",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ seasons:["春","夏"],
+ price:"入園無料（駐車場・BBQ等の設備利用は有料）", parking:"yes", access:"シーサイドライン「海の公園柴口」「海の公園南口」「八景島」各駅から徒歩2分",
+ baby:"車椅子対応トイレあり",
+ officialUrl:null,
+ stayTime:{minMinutes:120, maxMinutes:240},
+ desc:"横浜市内で唯一海水浴場を持つ公園。約1kmの砂浜と広い芝生広場があり、春から初夏にかけてはアサリなどの潮干狩りが楽しめる。バーベキュー場もあり、口コミでは子連れ評価4.0と評判が良い。",
+ tip:"潮干狩りシーズンの休日は駐車場が朝から満車になることがあるため、早めの到着がおすすめ。隣接する八景島シーパラダイスと合わせて訪れるのも良い。"},
+{region:"千葉", name:"金田海岸", area:"木更津市北浜町", lat:35.4100, lng:139.9130,
+ genre:"アスレチック・アウトドア",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["春","夏"],
+ price:"入場料1,600円前後（1人2kgまで無料、駐車場無料）", parking:"yes", access:"木更津金田ICから車で約5分",
+ baby:"駐車場近くトイレもきれいと口コミにあり",
+ officialUrl:null,
+ stayTime:{minMinutes:120, maxMinutes:240},
+ desc:"4月上旬から7月中旬まで潮干狩りが楽しめる海岸。駐車場が近く無料で、口コミでも「子連れにはおすすめ」と評判が良い。隣接する龍宮城スパホテル三日月で潮干狩り後に日帰り入浴もできる。",
+ tip:"潮見表を確認してから訪れるのがおすすめ。早めに行って浜辺でBBQを楽しむ家族連れも多い。"}
+];
+SPOTS.push(...SPOTS_OUTDOOR_4);
+
+// ------------------------------------------------------------------
 // 📌 追加候補リスト（Phase30）：🍓 果物狩り・収穫体験 カテゴリー拡充（第3弾）
 // ------------------------------------------------------------------
 const SPOTS_FRUIT_3 = [
@@ -6033,6 +6130,7 @@ const SPOTS_FRUIT_3 = [
  price:"いちご狩り 30分食べ放題（料金は公式サイト要確認）、ぶどう・しいたけ狩りは別料金", parking:"yes", access:"西武秩父線「横瀬」駅から送迎バスあり",
  baby:"おむつ替えは要問合せ", lunch:"溶岩バーベキュー、そば・うどん手打ち体験（要予約）あり。",
  officialUrl:"http://www.komatsuzawa.co.jp/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000206690/"},
  stayTime:{minMinutes:120, maxMinutes:240},
  desc:"いちご・ぶどう・しいたけ狩りを中心に、マス釣り・マスつかみ取り、ヤギやコイ・カモへの餌やり、ミニハイキングコース、そば・うどん打ち体験まで楽しめる複合型レジャー農園。いちご狩りは12月〜6月中旬、30分食べ放題。",
  tip:"横瀬駅から送迎バスがあり電車でもアクセスしやすい。果物狩りだけでなく釣りや体験メニューも豊富なので、1日がっつり遊ぶ計画がおすすめ。"},
@@ -6043,6 +6141,7 @@ const SPOTS_FRUIT_3 = [
  price:"いちご狩り・ブルーベリー狩り（1時間食べ放題、料金は公式サイト要確認）", parking:"yes", access:"千葉都市モノレール「桜木」駅からバス、または車でのアクセス",
  baby:"子ども用の椅子・テーブルあり／車椅子対応トイレあり", lunch:"直売所あり。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/160147/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"いちご狩り・ブルーベリー狩りが楽しめる観光農園（例年6月上旬〜8月下旬、1時間食べ放題）。子ども用の椅子・テーブル、車椅子対応トイレなど、小さな子や高齢者への配慮が行き届いている。",
  tip:"設備面のバリアフリー配慮が手厚いため、ベビーカーや車椅子連れの家族にもおすすめ。"},
@@ -6053,6 +6152,7 @@ const SPOTS_FRUIT_3 = [
  price:"ぶどう狩り・梨狩り 大人900円台／3歳〜未就学児500円台／3歳未満無料（時間内食べ放題）", parking:"yes", access:"新京成電鉄「くぬぎ山」駅から徒歩約8分",
  baby:"おむつ替えは要問合せ", lunch:"飲食物の持ち込み可（要予約でBBQも可）。",
  officialUrl:"https://nasigari.com/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000184858/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"梨とぶどうの食べ放題が楽しめるアットホームな観光農園。開園期間は8月上旬〜10月上旬で、時間無制限〜90分程度の食べ放題プランがある。駅から徒歩8分と電車でもアクセスしやすく、飲食物の持ち込みも可能。",
  tip:"新京成電鉄「くぬぎ山」駅から徒歩8分と電車で行きやすいのが強み。梨狩りエリアとぶどう狩りエリアは別々なので、両方楽しみたい場合は順番に案内してもらう。"}
@@ -6187,6 +6287,7 @@ const SPOTS_FRUIT_4 = [
  price:"2,950円程度（小学生以上、時期・年齢により変動、40分食べ放題）", parking:"yes", access:"富津館山道路「富浦IC」から車で約30分",
  baby:"バリアフリー設計でベビーカー・車椅子OK", lunch:"直売所あり。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/spot/spot0000010832/", jalan:"https://www.jalan.net/kankou/spt_guide000000203720/"}, recommendedBooking:"jalan",
  stayTime:{minMinutes:60, maxMinutes:90},
  desc:"太陽熱消毒を行う高設栽培のいちご農園。地上約1mの栽培床のため腰を屈めずに摘み取れ、ハウス内はバリアフリー設計でベビーカーや車椅子でも通行しやすい。12月〜ゴールデンウィーク頃まで営業。",
  tip:"高設栽培・バリアフリー設計のため、小さな子や高齢の家族と一緒でも楽な姿勢でいちご狩りができる。"}
@@ -6204,6 +6305,7 @@ const SPOTS_FRUIT_5 = [
  price:"品目・時期により変動（食べ放題プランあり）", parking:"yes", access:"中央自動車道「勝沼IC」から車で約10分",
  baby:"トイレ・更衣室等の設備なし（要問合せ）", lunch:"ぶどう棚の下でほうとう・バーベキューが楽しめる。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/162210/"},
  stayTime:{minMinutes:90, maxMinutes:150},
  desc:"8品種のぶどうを栽培する観光農園。ぶどう棚の下で山梨名物「ほうとう」やバーベキューを楽しめ、家族・グループ向けの食事プランが人気。",
  tip:"園内にトイレ等の設備がないため、訪問前に道の駅等で済ませておくのがおすすめ。"},
@@ -6214,6 +6316,7 @@ const SPOTS_FRUIT_5 = [
  price:"桃・ぶどう食べ放題（品種・時期により変動）", parking:"yes", access:"中央自動車道「勝沼IC」から車で約10分",
  baby:"トイレ・売店あり", lunch:"売店あり。",
  officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/159885/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"山梨県知事認定エコファーマーが育てる桃・ぶどうの食べ放題農園（収穫体験は不可、食べ放題のみ）。トイレ・売店を完備。",
  tip:"収穫体験ではなく食べ放題のみの提供のため、その点を理解した上での訪問がおすすめ。"},
@@ -6224,6 +6327,7 @@ const SPOTS_FRUIT_5 = [
  price:"入園無料（もぎ取り・食べ放題は別途、品種により変動）", parking:"yes", access:"中央自動車道「勝沼IC」から車で約5分",
  baby:"ペット同伴可",
  officialUrl:"https://jiyuuen.jimdofree.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/spot/spot0000011306/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"32種類のぶどうを栽培する観光農園。入園無料・予約不要で、もぎ取りコースと食べ放題コースから選べる。8月〜10月営業。",
  tip:"入園無料・予約不要なので、ふらっと立ち寄りやすい。品種が豊富なので食べ比べも楽しめる。"},
@@ -6234,11 +6338,223 @@ const SPOTS_FRUIT_5 = [
  price:"入園料（幼児・小学生等で設定、要問合せ）", parking:"yes", access:"関越自動車道「東松山IC」から車で約30分",
  baby:"ペット同伴可（要問合せ）",
  officialUrl:null,
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000219124/"},
  stayTime:{minMinutes:60, maxMinutes:120},
  desc:"ときがわ町大附地区の山あいに広がるみかん園群。スカイツリーや関東平野を見渡す景色を眺めながら温州みかん・福みかん等を狩れる。10月中旬〜12月下旬営業。",
  tip:"複数のみかん園が集まるエリアのため、事前に営業している園を電話等で確認してから訪れるのがおすすめ。"}
 ];
 SPOTS.push(...SPOTS_FRUIT_5);
+
+// ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：🍓 果物狩り・収穫体験 カテゴリー拡充（第2弾）
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_6 = [
+{region:"埼玉", name:"ぶどう工房OIKOS", area:"秩父市周辺", lat:35.9800, lng:139.0700,
+ genre:"果物狩り・収穫体験",
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏","秋"],
+ price:"シャインマスカット30分食べ放題等（品種により変動）", parking:"yes", access:"秩父市内、西武秩父線「西武秩父」駅周辺から車",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:null,
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000193882/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"秩父エリアでシャインマスカットなど人気品種のぶどう狩りが楽しめる観光農園。例年9月中旬から開園。口コミでは7〜12歳の子ども連れの利用が多い。",
+ tip:"シャインマスカットなど人気品種は早めの時期に売り切れることがあるため、開園直後の来園がおすすめ。"},
+{region:"千葉", name:"ガイヤファーム（横田ファーム）", area:"大網白里市周辺", lat:35.5200, lng:140.3200,
+ genre:"果物狩り・収穫体験",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ seasons:["冬","春","夏","秋"],
+ price:"品目・時期により変動（いちご・ぶどう・さつまいも等）", parking:"yes", access:"千葉東金道路「大宮IC」から車で約10分",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:null,
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000192375/"},
+ stayTime:{minMinutes:90, maxMinutes:180},
+ desc:"千葉東金道路「大宮IC」から約10分の総合観光農園。季節ごとにいちご狩り・ぶどう狩り・さつまいも掘りなど複数の収穫体験ができる。",
+ tip:"季節によって狩れる作物が変わる総合農園のため、訪問前に公式SNS等で開催中の収穫体験を確認するのがおすすめ。"}
+];
+SPOTS.push(...SPOTS_FRUIT_6);
+
+// ------------------------------------------------------------------
+// 📌 ユーザー提供リスト（Phase34）：🍓 果物狩り・収穫体験 カテゴリー拡充（第3弾）
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_7 = [
+{region:"神奈川", name:"the BERRY YOKOHAMA", area:"横浜市戸塚区汲沢町", lat:35.3941, lng:139.5055,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["冬","春"],
+ price:"品種・時期により変動", parking:"yes", access:"横浜市戸塚区内、車でのアクセス推奨",
+ baby:"トイレあり",
+ officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/163431/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"香りと味にこだわったいちごを栽培する観光農園。横浜市内という都市近郊の立地で、遠出せずにいちご狩りを楽しみたい家族に向く。",
+ tip:"営業は月・水・金定休のため、訪問前に営業日を確認するのがおすすめ。"},
+{region:"神奈川", name:"永島農園", area:"横浜市金沢区", lat:35.3350, lng:139.6200,
+ genre:"果物狩り・収穫体験",
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["秋","冬"],
+ price:"品目・時期により変動", parking:"yes", access:"横浜市金沢区内、車でのアクセス推奨",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:null,
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000211932/"},
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"横浜市金沢区にある都市近郊型の観光農園。きのこ狩りをはじめとした本格的な農業体験ができ、都心からもアクセスしやすい。",
+ tip:"果物狩りというよりきのこ狩り・農業体験が中心の施設。訪問前に実施中の体験内容を確認するのがおすすめ。"},
+{region:"栃木", name:"アグリーンパーク 宇都宮ぶどうの杜", area:"宇都宮市", lat:36.4800, lng:139.9500,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏","秋"],
+ price:"品種・時期により変動", parking:"yes", access:"「宇都宮上三川IC」から車で約20分",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:null,
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000229294/"},
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"宇都宮市内でぶどう狩りが楽しめる観光農園。ICから近くアクセスしやすい立地。",
+ tip:"品種によって食べ頃時期が異なるため、訪問前に狩れる品種を確認するのがおすすめ。"},
+{region:"埼玉", name:"芋掘り観光 川越いも山田園", area:"川越市", lat:35.9400, lng:139.4400,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["秋"],
+ price:"品種・時期により変動", parking:"yes", access:"西武新宿線「本川越駅」からバス（今福中台行き「今福中台」下車徒歩2分）／関越自動車道「川越IC」から車で約10分",
+ baby:"おむつ替えは要問合せ",
+ officialUrl:"https://yamadaen.net/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_11201cb3512094481/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"天保9年創業、180年以上の歴史を持つ川越のさつまいも農園。さつまいものみを専門に栽培しており、例年9月中旬から掘り尽くすまでの期間限定で芋掘り体験ができる。",
+ tip:"営業時間は9:30〜16:00。例年9月中旬〜11月上旬頃が目安だが、収穫状況により早く受付終了することもあるため訪問前に営業状況を確認するのがおすすめ。"},
+{region:"神奈川", name:"相模原ミヤコブルーベリー狩り園", area:"相模原市緑区大島", lat:35.5779, lng:139.3235,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏"],
+ price:"品種・時期により変動", parking:"yes", access:"相模原市緑区内、車でのアクセス推奨",
+ baby:"トイレあり",
+ officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/158126/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"養液栽培で育てたブルーベリーを狩れる観光農園。「安全栽培でお子様も安心」を掲げており、6月上旬〜8月中旬に営業。",
+ tip:"定休日が月・火のため、訪問前に営業日を確認するのがおすすめ。"},
+{region:"神奈川", name:"みどりやファーム", area:"秦野市落合", lat:35.3887, lng:139.2316,
+ genre:"果物狩り・収穫体験",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ seasons:["冬","春"],
+ price:"いちご狩り（最大7品種食べ放題、時期により変動）", parking:"yes", access:"東名高速道路「秦野中井IC」から車で約15分",
+ baby:"トイレあり",
+ officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/159608/"},
+ stayTime:{minMinutes:90, maxMinutes:180},
+ desc:"2021年オープンの観光農園。最大7品種食べ放題のいちご狩りに加え、テラスでの手ぶらBBQ、ヤギとのふれあい、貸し農園まで楽しめる複合型施設。",
+ tip:"いちご狩りだけでなくヤギとのふれあいやBBQも一緒に楽しめるため、半日〜1日しっかり遊べる。"},
+{region:"千葉", name:"山万ユーカリファーム", area:"佐倉市青菅", lat:35.7456, lng:140.1431,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["冬","春","秋"],
+ price:"いちご狩り30分食べ放題（平日限定プランあり）", parking:"yes", access:"ユーカリが丘周辺、車でのアクセス推奨",
+ baby:"トイレあり",
+ officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/base/162431/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"6種類のいちごの食べ比べができる観光農園。芋掘り・さつまいも掘りも実施しており、季節によって複数の収穫体験が楽しめる。",
+ tip:"いちご狩りは平日限定プランがあるため、訪問可能な曜日を事前に確認するのがおすすめ。"}
+];
+SPOTS.push(...SPOTS_FRUIT_7);
+
+// ------------------------------------------------------------------
+// 📌 追加調査（Phase35）：🍓 果物狩り・収穫体験 カテゴリー拡充（第4弾）
+// 東京都のおでかけ需要が高いにもかかわらず果物狩りが1件もなかったため、
+// 電車でアクセスできる施設を中心に追加。
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_8 = [
+{region:"東京", name:"空飛ぶいちご東京", area:"府中市分梅町", lat:35.6570, lng:139.4790,
+ genre:"果物狩り・収穫体験",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ seasons:["冬","春"],
+ price:"90分摘み取りプラン 小学生以上1,500〜1,800円（入園＋いちご200gまで込み）／小学生未満入園無料", parking:"no", access:"JR南武線「西府駅」から徒歩約7分／京王線「分倍河原駅」から徒歩約12分",
+ baby:"車椅子・ベビーカーで自由に摘み取り可能", lunch:"ソフトドリンク飲み放題付き。",
+ officialUrl:"https://fuchu-ichigogari.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/161217/", jalan:"https://www.jalan.net/kankou/spt_guide000000223548/"}, recommendedBooking:"jalan",
+ stayTime:{minMinutes:90, maxMinutes:120},
+ desc:"東京都内では珍しい、電車で行けるいちご狩り農園。いちごが空中に吊るされた空中栽培のため、しゃがまずに摘み取れ、車椅子やベビーカーでも通路を自由に移動できる。駐車場はないため電車でのアクセスが基本。",
+ tip:"駐車場がないため車での来園はできない。西府駅・分倍河原駅から徒歩圏内なので、電車移動中心の家族に向く。予約は埋まりやすいので早めの確保がおすすめ。"},
+{region:"東京", name:"相原ブルーベリー農園", area:"町田市相原町", lat:35.6070, lng:139.3480,
+ genre:"果物狩り・収穫体験",
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏"],
+ price:"収穫量に応じた従量制（無農薬）", parking:"yes", access:"JR横浜線「相原駅」からバスまたは徒歩",
+ baby:"平坦な園内でベビーカー可",
+ officialUrl:"http://www2.tba.t-com.ne.jp/aiharabb-nouen/",
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"町田市立相原中央公園に隣接する無農薬ブルーベリー農園。園内が平坦で小さな子ども連れやお年寄りにも安全。摘み取り後は隣の公園の芝生広場やお花畑でお弁当を広げて1日過ごす家族も多い。例年6月上旬〜8月下旬営業。",
+ tip:"隣接する相原中央公園と組み合わせれば、ブルーベリー狩り＋公園遊びで半日〜1日過ごせる。周辺にはハイキングコースもあり、森林浴を楽しみながらの摘み取りも可能。"}
+];
+SPOTS.push(...SPOTS_FRUIT_8);
+
+// ------------------------------------------------------------------
+// 📌 追加調査（Phase35）：🍓 果物狩り・収穫体験 カテゴリー拡充（第5弾）
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_9 = [
+{region:"東京", name:"小さな大橋農園", area:"八王子市谷野町", lat:35.6650, lng:139.2950,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏","秋"],
+ price:"ミニトマト狩り 30分食べ放題＋お土産付き（要予約・完全予約制）", parking:"yes", access:"八王子ICから車で約3分／JR「八王子駅」北口からバス約10分「天神前」下車徒歩3分",
+ baby:"通路にシートが敷かれ歩きやすい", lunch:"開園中は直売所での購入も可能。",
+ officialUrl:"http://chisana-ohashifarm.com/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000225385/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"農薬・化学肥料不使用、東京都エコ農作物認定制度で最高ランク「エコ100」を取得したミニトマト狩り農園。6品種のミニトマトを30分食べ放題で楽しめ、トンネル栽培のため日陰で収穫体験ができる。口コミ評価5.0の人気農園。",
+ tip:"完全予約制・雨天中止の場合があるため、訪問前に予約状況・天候を確認するのがおすすめ。秋にはさつまいも掘りも開催。"}
+];
+SPOTS.push(...SPOTS_FRUIT_9);
+
+// ------------------------------------------------------------------
+// 📌 追加調査（Phase36）：🍓 果物狩り・収穫体験 カテゴリー拡充（第6弾）
+// これまでのラインナップは「いちご」「ぶどう」に偏っていたため、
+// 梨・りんごなど手薄だった品目を優先して追加。
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_10 = [
+{region:"千葉", name:"千葉中央観光農園", area:"千葉市若葉区小倉町", lat:35.6350, lng:140.1580,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["秋"],
+ price:"要問合せ（品種・時期により変動）", parking:"yes", access:"京葉道路「貝塚IC」から約3.5km",
+ baby:"子供用の椅子・テーブルあり／車椅子用水洗トイレ完備", lunch:"直売あり。",
+ officialUrl:null,
+ bookingLinks:{asoview:"https://www.asoview.com/spot/12104cb3510079142/"},
+ stayTime:{minMinutes:60, maxMinutes:120},
+ desc:"千葉市若葉区小倉町の森にあるのどかな観光農園。8月中旬〜9月下旬は梨狩り（長寿・幸水・豊水・新高など）、ぶどう狩り、栗拾い、さつまいも掘りと複数の収穫体験を1カ所でまとめて楽しめる。子供用の椅子・テーブルや車椅子用トイレも完備。",
+ tip:"梨・ぶどう・栗・さつまいもと、1回の訪問で複数の収穫体験を組み合わせられるのが強み。品種により狩れる時期が短いため、訪問前に開催状況の確認がおすすめ。"},
+{region:"栃木", name:"荒牧りんご園", area:"宇都宮市石那田町", lat:36.6550, lng:139.8650,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["秋"],
+ price:"入園無料（りんごは600円/kg程度）", parking:"yes", access:"東北自動車道「宇都宮IC」から車で約10分",
+ baby:"おむつ替えは要問合せ", lunch:"りんごジュースの試飲あり。",
+ officialUrl:"http://www.kanjuku100.com/",
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_09201cb3510078531/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"70年以上の歴史を持つ、関東随一の経営規模を誇るりんご園。約20品種を減農薬栽培しており、9月中旬〜12月上旬に完熟りんご狩りが楽しめる。入園無料で、搾りたてのりんごジュースの試飲もできる。",
+ tip:"入園無料でりんごの代金のみ（重さ量り売り）なので、味見しながら好きな分だけ買える気軽さが魅力。日光街道沿いでアクセスしやすい。"}
+];
+SPOTS.push(...SPOTS_FRUIT_10);
+
+// ------------------------------------------------------------------
+// 📌 追加調査（Phase37）：🍓 果物狩り・収穫体験 カテゴリー拡充（第7弾）
+// さくらんぼ狩りの単独施設が0件だったため追加。
+// ------------------------------------------------------------------
+const SPOTS_FRUIT_11 = [
+{region:"群馬", name:"小野フルーツ園", area:"沼田市横塚町", lat:36.6480, lng:139.0530,
+ genre:"果物狩り・収穫体験",
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏"],
+ price:"さくらんぼ狩り 大人30分1,500円程度／ブルーベリー狩り 30分300円程度", parking:"yes", access:"関越自動車道「沼田IC」から車で約5分",
+ baby:"水道・アルコール消毒あり", lunch:"休憩スペースで麦茶のサービスあり。",
+ officialUrl:null,
+ bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000189004/"},
+ stayTime:{minMinutes:60, maxMinutes:90},
+ desc:"佐藤錦・正光錦などのさくらんぼ狩りが楽しめる家族経営のアットホームな農園。脚立を使えば高い位置の実も収穫でき、裏手にはブルーベリー畑もあり2種類の味覚狩りを一度に楽しめる。6月中旬〜7月上旬頃が目安。",
+ tip:"口コミ評価が高く、オーナーが園内やさくらんぼの種類を丁寧に案内してくれるアットホームな雰囲気。さくらんぼ狩りとブルーベリー狩りを両方楽しむのがおすすめ。"}
+];
+SPOTS.push(...SPOTS_FRUIT_11);
 
 // ==================================================================
 // アプリの状態（フィルター条件・お気に入り・比較など）
@@ -6472,7 +6788,7 @@ function estimateMinutes(km){
 //   キャッシュ（例: /api/weather?lat=..&lng=..）へ移行しやすい構造にしている。
 // ==================================================================
 const WEATHER_CACHE_KEY = "odekake_weather_cache_v1";
-const WEATHER_CACHE_TTL_MS = 60 * 60 * 1000; // 60分。天気予報の更新頻度に対して十分な長さ
+const WEATHER_CACHE_TTL_MS = 3 * 60 * 60 * 1000; // 3時間。この間隔内の再アクセスはAPIを呼ばずキャッシュを使う
 const WEATHER_DAY_LABELS = ["今日","明日","明後日"];
 
 // WMO Weather interpretation codes（Open-Meteoが採用する国際標準コード）の
@@ -6506,6 +6822,24 @@ function saveWeatherCache(cache){
 // これにより、近接する施設同士でキャッシュを共有でき、APIアクセスをさらに抑えられる。
 function weatherCacheKey(lat,lng){
   return `${Math.round(lat*100)/100},${Math.round(lng*100)/100}`;
+}
+// キャッシュに保存されている「最後に取得した時刻」を取得する（表示用）
+function getWeatherFetchedAt(spot){
+  if(typeof spot.lat !== "number" || typeof spot.lng !== "number") return null;
+  const key = weatherCacheKey(spot.lat, spot.lng);
+  const cache = loadWeatherCache();
+  const cached = cache[key];
+  return cached ? cached.fetchedAt : null;
+}
+// 取得時刻を「M月D日 H:MM更新」の形式に整形する（日本時間）
+function formatWeatherUpdatedAt(fetchedAt){
+  if(!fetchedAt) return "";
+  const d = new Date(fetchedAt);
+  const parts = new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo", month:"numeric", day:"numeric", hour:"2-digit", minute:"2-digit", hour12:false
+  }).formatToParts(d);
+  const get = (type)=> parts.find(p=>p.type===type)?.value || "";
+  return `${get("month")}月${get("day")}日 ${get("hour")}:${get("minute")}更新`;
 }
 
 // Open-Meteoのレスポンス（daily配列）を、表示しやすい3日分の配列に変換する
@@ -6584,6 +6918,7 @@ async function loadWeatherIntoDetail(spot){
         </div>
       `).join("")}
     </div>
+    <div class="weather-updated">🕒 ${formatWeatherUpdatedAt(getWeatherFetchedAt(spot))}（3時間ごとに更新）</div>
     <div class="weather-note">気象データ：Open-Meteo。実際の天気は変わる場合があるため、訪問前に最新の予報をご確認ください。</div>
   `;
 }
@@ -7155,6 +7490,18 @@ function movePlanItem(index, dir){ // dir: -1=上へ, +1=下へ
   trackEvent("plan_reorder", {plan_tab:state.activePlanTab+1, plan_count:arr.length});
   renderPlanSheet();
 }
+// 🗓 プランA/B/Cの間でスポットを移動する（現在のタブから削除し、移動先タブに追加）
+function moveItemToTab(name, toTabIndex){
+  if(toTabIndex===state.activePlanTab) return;
+  const fromArr = currentPlan();
+  const idx = fromArr.indexOf(name);
+  if(idx<0) return;
+  fromArr.splice(idx,1);
+  const toArr = state.plans[toTabIndex];
+  if(!toArr.includes(name)) toArr.push(name);
+  savePersisted();
+  trackEvent("plan_move_tab", {facility_name:name, from_tab:state.activePlanTab+1, to_tab:toTabIndex+1});
+}
 
 // スポット間の移動時間の目安。トップの「🚗車で行く／🚃電車・バスで行く」の条件をそのまま参照する
 // （既存のestimateMinutes・deriveTransitMinutesの考え方を再利用。個別のspot.carMinutesOverride等は
@@ -7238,6 +7585,9 @@ function renderPlanSheet(){
             </div>
           </div>
           <button type="button" class="plan-item-remove" data-remove="${escapeAttr(s.name)}">プランから外す</button>
+          <div class="plan-item-move-row">
+            ${PLAN_TAB_LABELS.map((label,ti)=> ti!==state.activePlanTab ? `<button type="button" class="plan-item-move-btn" data-move="${escapeAttr(s.name)}" data-totab="${ti}">${label}へ移動</button>` : "").join("")}
+          </div>
         </div>
       `;
     }).join("");
@@ -7285,6 +7635,17 @@ function renderPlanSheet(){
   });
   sheet.querySelectorAll("[data-down]").forEach(btn=>{
     btn.onclick = (e)=>{ e.stopPropagation(); movePlanItem(Number(btn.dataset.down), 1); };
+  });
+  sheet.querySelectorAll("[data-move]").forEach(btn=>{
+    btn.onclick = (e)=>{
+      e.stopPropagation();
+      const toTab = Number(btn.dataset.totab);
+      moveItemToTab(btn.dataset.move, toTab);
+      state.activePlanTab = toTab; // 移動先のタブに切り替えて、どこに移動したか分かるようにする
+      savePersisted();
+      renderPlanSheet();
+      render();
+    };
   });
   const shareBtn = document.getElementById("planShareBtn");
   if(shareBtn) shareBtn.onclick = ()=>sharePlan(spots);
@@ -8833,7 +9194,9 @@ function buildCardSummary(spot){
 function openDetail(spot, silent){
   // 診断結果やプラン一覧など、他のシートを開いたまま詳細を開くケースがあるため、
   // 詳細画面のオーバーレイをDOM末尾に移動して必ず最前面に表示されるようにする。
-  document.body.appendChild(document.getElementById("detailOverlay"));
+  // ただし、ボタン操作による再描画（silent）では再配置しない（要素の移動でスクロール位置が
+  // リセットされてしまう不具合を防ぐため）。
+  if(!silent) document.body.appendChild(document.getElementById("detailOverlay"));
   if(!silent){
     trackView(spot.name);
     state.recentlyViewed = [spot.name, ...state.recentlyViewed.filter(n=>n!==spot.name)].slice(0,10);
@@ -9023,7 +9386,7 @@ function openDetail(spot, silent){
     <div class="action-row" style="margin-top:14px;">
       <button class="abtn ${isFav?"on":""}" data-act="fav">❤️ 行きたい</button>
       <button class="abtn ${isPlanned?"on":""}" data-act="plan">🗓 ${isPlanned?"プラン追加済み":"プランに追加"}</button>
-      <button class="abtn link" data-act="share">↗ 共有</button>
+      <button class="abtn" data-act="share">↗ 共有</button>
       <button class="abtn ${isVisited?"on visited":""}" data-act="visited">✅ 行った</button>
       <button class="abtn ${isExcluded?"on excluded":""}" data-act="exclude">🚫 除外</button>
       <button class="abtn ${isCompared?"on compared":""}" data-act="compare">⚖️ 比較に${isCompared?"追加済み":"追加"}</button>
