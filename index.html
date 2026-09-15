@@ -73,6 +73,12 @@
   /* ---------- ① 今日の気分・条件から探す（ムードショートカット） ---------- */
   .mood-section{padding:14px 16px 4px;}
   .mood-title{font-size:13px; font-weight:700; margin:0 0 8px 2px; display:flex; align-items:center; gap:6px;}
+  .mood-title-row{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .mood-title-row .mood-title{margin-bottom:8px;}
+  .mood-reset-btn{
+    flex:0 0 auto; border:1px solid var(--line); background:var(--paper); color:var(--ink-soft);
+    font-size:10.5px; font-weight:700; border-radius:999px; padding:5px 10px; cursor:pointer; margin-bottom:8px;
+  }
   .mood-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
   .mood-btn{
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
@@ -251,6 +257,13 @@
     color:#fff; font-size:12.5px; font-weight:700; cursor:pointer;
   }
   .zip-status{font-size:11px; color:var(--ink-soft); margin-top:6px; min-height:14px;}
+  .zip-hint{font-size:11px; color:var(--ink-soft); margin-top:8px; line-height:1.6;}
+  .fgroup-sub{opacity:.85;}
+  .fgroup-sub .fgroup-head{border-bottom-style:dashed; font-weight:700;}
+
+  /* ---------- 📍 どこから行く？（ホーム最上部・UI整理） ---------- */
+  .home-location-section{padding:2px 16px 14px;}
+  .home-location-label{font-size:13px; font-weight:900; color:var(--ink); margin-bottom:6px; display:flex; align-items:center; gap:5px;}
 
   .reset-filters-btn{width:100%; text-align:center; padding:12px; border:none; background:#F1EADA;
     border-radius:12px; font-size:13px; color:var(--ink); font-weight:700; cursor:pointer; margin-top:6px;}
@@ -434,18 +447,32 @@
   <div class="save-note">⭐お気に入り・行った記録・郵便番号はこの端末（ブラウザ）に自動保存されます　<button id="resetBtn">保存データをリセット</button></div>
 </header>
 
-<!-- ② 今日の気分・条件から探す -->
+<!-- ① どこから行く？（郵便番号での近い順検索。位置情報の取得は強制しない） -->
+<div class="home-location-section">
+  <div class="home-location-label">📍 どこから行く？</div>
+  <div class="zip-row">
+    <input type="text" id="zipInput" placeholder="郵便番号または地名（例：100-0001／横浜）" maxlength="20">
+    <button id="zipBtn">近い順</button>
+  </div>
+  <div class="zip-status" id="zipStatus"></div>
+  <div class="chips" id="zipCandidateChips"></div>
+</div>
+
+<!-- ② 今日はどうする？（最重要エリア。旧「迷ったらこれ！」はここに統合） -->
 <div class="mood-section">
-  <div class="mood-title">🧭 今日の気分・条件から探す</div>
+  <div class="mood-title-row">
+    <div class="mood-title">🧭 今日はどうする？</div>
+    <button class="mood-reset-btn" id="conditionResetBtn">🔄 条件をリセット</button>
+  </div>
   <div class="mood-grid">
-    <button class="mood-btn" data-mood="rain"><span class="ic">🌧</span><span>雨でも安心</span></button>
-    <button class="mood-btn" data-mood="wallet"><span class="ic">💰</span><span>お財布にやさしい</span></button>
-    <button class="mood-btn" data-mood="active"><span class="ic">🏃</span><span>たくさん発散</span></button>
-    <button class="mood-btn" data-mood="short"><span class="ic">⏱</span><span>サクッと遊ぶ</span></button>
+    <button class="mood-btn" data-mood="rain"><span class="ic">☔</span><span>雨でも安心</span></button>
+    <button class="mood-btn" data-mood="wallet"><span class="ic">💰</span><span>安く遊ぶ</span></button>
+    <button class="mood-btn" data-mood="active"><span class="ic">🏃</span><span>たくさん遊ぶ</span></button>
+    <button class="mood-btn" data-mood="short"><span class="ic">⏱</span><span>短時間で遊ぶ</span></button>
   </div>
 </div>
 
-<!-- ③ キーワード検索（補助） -->
+<!-- キーワード検索（補助） -->
 <div class="search-section">
   <div class="search-box">
     <input type="text" id="keywordInput" placeholder="キーワードで探す（例：横浜／動物／無料／水遊び）" autocomplete="off">
@@ -453,25 +480,12 @@
   </div>
 </div>
 
-<!-- ④ 詳しく絞り込む -->
+<!-- ③ 必要ならもっと詳しく絞り込む（第2段階） -->
 <div class="filter-open-row">
   <button class="filter-open-btn" id="openFilterBtn">
-    <span>🔍 詳しく絞り込む</span>
+    <span>🔍 もっと詳しく絞り込む</span>
     <span class="badge-count" id="filterBadgeCount" style="display:none;"></span>
   </button>
-</div>
-
-<!-- 🎯 迷ったらこれ！（目的別のおすすめ導線・Phase4追加） -->
-<div id="decideWrap">
-  <div class="recent-title">🎯 迷ったらこれ！</div>
-  <div class="recent-chips" id="decideChips"></div>
-  <div class="decide-results" id="decideResults" style="display:none;"></div>
-</div>
-
-<!-- 行きたい一覧・比較する -->
-<div class="tools-row">
-  <button class="tool-btn" id="favListBtn">❤️ 行きたい <span class="cnt" id="favCountLabel"></span></button>
-  <button class="tool-btn" id="compareToggleBtn">⚖️ 比較する</button>
 </div>
 
 <div class="compare-banner" id="compareBanner" style="display:none;">
@@ -484,6 +498,10 @@
 
 <div class="result-count" id="resultCount"></div>
 
+<!-- ④ 検索結果 -->
+<main id="main"></main>
+
+<!-- 検索結果を見たあとの「発見」系（検索の入口ではないため結果の下に配置） -->
 <div id="discoveryWrap">
   <div class="recent-title discovery-title">🔍 新しいおでかけ先を発見 <button class="discovery-refresh" id="discoveryRefreshBtn">🔄 別の場所</button></div>
   <div class="recent-chips" id="discoveryChips"></div>
@@ -499,8 +517,11 @@
   <div class="recent-chips" id="recentChips"></div>
 </div>
 
-<!-- ⑤ おすすめ・検索結果 -->
-<main id="main"></main>
+<!-- 行きたい一覧・比較する（検索の入口ではないため最後に配置） -->
+<div class="tools-row">
+  <button class="tool-btn" id="favListBtn">❤️ 行きたい <span class="cnt" id="favCountLabel"></span></button>
+  <button class="tool-btn" id="compareToggleBtn">⚖️ 比較する</button>
+</div>
 
 <footer>
   行く前に最新の営業時間・料金・休園日・駐車場状況・設備情報は必ず公式サイトでご確認ください。距離は直線距離からの概算で、実際の道路事情により前後します。
@@ -4539,7 +4560,325 @@ const SPOTS = [
  baby:"おむつ替えあり／園内は起伏あり", lunch:"梅の宴期間中は出店あり。普段は近隣で調達推奨。",
  officialUrl:"https://www.yugawara.or.jp/sightseeing/657/",
  desc:"標高626mの幕山ふもとに広がる自然公園。2月上旬〜3月中旬の「梅の宴」では約4000本の紅白梅が山肌を彩る。新崎川沿いにフィールドアスレチックもあり、4月〜10月はバーベキューも楽しめる。",
- tip:"梅の見頃期間はライトアップや出店で賑わう。アスレチックやハイキングコースもあり、梅以外のシーズンも自然散策で楽しめる。"}
+ tip:"梅の見頃期間はライトアップや出店で賑わう。アスレチックやハイキングコースもあり、梅以外のシーズンも自然散策で楽しめる。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase14）：箱根・小田原エリア（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"神奈川", name:"箱根ロープウェイ", area:"足柄下郡箱根町（早雲山〜桃源台）", lat:35.246428, lng:139.035628,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"早雲山〜桃源台 片道 中学生以上1550円／小学生780円（区間により変動）", parking:"yes", access:"箱根登山ケーブルカー「早雲山駅」からすぐ",
+ baby:"全線バリアフリーでベビーカーごと乗車可", lunch:"早雲山駅「cu-mo箱根」、大涌谷駅に飲食店あり。",
+ officialUrl:"https://www.hakonenavi.jp/hakone-ropeway/",
+ desc:"早雲山駅から大涌谷駅を経て桃源台駅まで結ぶ全長約4kmのロープウェイ。日本一の乗車人数を誇り、ギネス世界記録にも認定。大涌谷の噴煙地や、晴れた日は富士山・芦ノ湖の絶景を空中散歩しながら楽しめる。",
+ tip:"全線バリアフリーでベビーカーのまま乗車可能。火山ガスの影響やメンテナンスで運休することがあるため、訪問前に公式サイトで運行状況の確認がおすすめ。"},
+{region:"神奈川", name:"箱根海賊船", area:"足柄下郡箱根町（芦ノ湖）", lat:35.23803, lng:138.994736,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"桃源台〜元箱根港 片道 中学生以上1200円台／小学生600円台（区間により変動）", parking:"yes", access:"箱根登山バス「桃源台」バス停からすぐ",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"桃源台・元箱根港周辺に飲食店あり。",
+ officialUrl:"https://www.hakonenavi.jp/hakone-kankosen/",
+ desc:"中世ヨーロッパの帆船戦艦をモデルにした観光船で芦ノ湖を周遊。船内には3Dアートや海賊のオブジェなど子どもも楽しめる装飾があり、湖上から箱根神社の水中鳥居や富士山を望むことができる。",
+ tip:"揺れが少なく小さな子どもでも安心して乗船できる。箱根ロープウェイ・登山鉄道と組み合わせた周遊コースが人気。"},
+{region:"神奈川", name:"鈴廣かまぼこ博物館", area:"小田原市風祭", lat:35.245308, lng:139.128916,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"入館無料（かまぼこ・ちくわ手づくり体験教室は要予約・有料）", parking:"yes", access:"箱根登山電車「風祭駅」から徒歩すぐ（駅直結）",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"かまぼこの里内にレストラン・カフェ・土産店多数。",
+ officialUrl:"https://www.kamaboko.com/museum/",
+ desc:"かまぼこの歴史や製法を体験型展示で学べるミュージアム。ガラス越しの職人の実演見学に加え、かまぼこ・ちくわの手づくり体験教室（要予約）が人気。駅直結でアクセスも良く、雨の日の立ち寄りにも便利。",
+ tip:"体験教室は人気のため早めの予約がおすすめ。見学だけなら入館無料で気軽に立ち寄れる。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase15）：箱根・小田原・熱海・湯河原エリア（続き）
+// ------------------------------------------------------------------
+{region:"神奈川", name:"小田原城NINJA館", area:"小田原市城内（小田原城址公園内）", lat:35.2560, lng:139.1540,
+ ages:["2-3歳","4-6歳","低学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人310円／中学生・小学生100円", parking:"yes", access:"JR・小田急線「小田原」駅から徒歩10分",
+ baby:"館内ベビーカー移動は不可（外に置く形）", lunch:"小田原城址公園内・周辺に飲食店あり。",
+ officialUrl:"https://odawaracastle.com/ninja/",
+ desc:"小田原城址公園内にある忍者テーマの体験型施設。北条氏に仕えた「風魔忍者」をモチーフに、忍術体験ゾーンや敵と対決する実戦ゾーンなど、触れて動かして楽しめる展示が中心。幼児〜小学校低学年にちょうど良いボリューム。",
+ tip:"小田原城の見学とセットで訪れやすい。入場料が安く、雨の日の小田原観光の候補にもなる。"},
+{region:"神奈川", name:"箱根強羅公園", area:"足柄下郡箱根町強羅", lat:35.243, lng:139.043,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人650円／小学生以下無料", parking:"yes", access:"箱根登山ケーブルカー「公園下駅」から徒歩1分",
+ baby:"おむつ替えあり／ベビーカー入館は一部不可エリアあり", lunch:"園内にカフェ・レストランあり。",
+ officialUrl:"https://www.hakonenavi.jp/gorapark/",
+ desc:"1914年開園、日本初のフランス式整型庭園。バラ園（春・秋見頃）やあじさい、四季の花々に加え、吹きガラス・陶芸・ハーブ体験ができる「箱根クラフトハウス」も園内に併設。小学生以下は入園無料で家族で訪れやすい。",
+ tip:"箱根クラフトハウスでのものづくり体験は事前予約がおすすめ。箱根フリーパス等を持っていれば入園無料になる。"},
+{region:"静岡", name:"熱海サンビーチ", area:"熱海市東海岸町", lat:35.098548, lng:139.077132,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["夏"],
+ price:"利用無料（海水浴期間：例年7月中旬〜8月下旬）", parking:"yes", access:"JR「熱海」駅から徒歩約15分",
+ baby:"おむつ替えあり／ビーチ内に多目的トイレあり", lunch:"海岸沿いの遊歩道に飲食店多数。",
+ officialUrl:"https://www.ataminews.gr.jp/features/34",
+ desc:"熱海市街地にあるヤシ並木の白い砂浜が続くメインビーチ。防波堤があり波が穏やかで、子連れ・ファミリーに人気。海水浴期間中はシャワー・ロッカーも完備。夜は幻想的なライトアップが行われる。",
+ tip:"駅から徒歩圏内でアクセスしやすい。海水浴シーズン以外も遊歩道の散策スポットとして楽しめる。"},
+{region:"静岡", name:"ACAO FOREST", area:"熱海市上多賀", lat:35.079998, lng:139.072512,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人2500円台〜／小学生1000円台（季節により変動）", parking:"yes", access:"JR「熱海」駅からバスで約15分",
+ baby:"園内頂上まで無料シャトルバスあり／ベビーカーOK", lunch:"カフェ「COEDA HOUSE」、ピッツェリアあり。",
+ officialUrl:"https://acaoforest.jp/",
+ desc:"相模湾を見下ろす20万坪の丘陵地に広がる13のテーマガーデン。バラやハーブなど四季折々の花々に加え、隈研吾氏設計のカフェや、ハーブ石けんづくりなどの手作り体験も楽しめる。頂上まで無料シャトルバスがあり、小さな子どもや高齢者でも安心。",
+ tip:"広大な敷地のため、行きはシャトルバスで頂上へ、帰りは散策しながら下るのがおすすめの回り方。"},
+{region:"神奈川", name:"万葉公園", area:"足柄下郡湯河原町宮上", lat:35.145271, lng:139.074475,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料（惣湯テラス等の施設利用は別途）", parking:"yes", access:"JR「湯河原」駅からバスで約15分",
+ baby:"おむつ替えあり／渓流沿いの散策路は一部起伏あり", lunch:"カフェ「玄関テラス」あり。",
+ officialUrl:"https://www.yugawara.or.jp/sightseeing/722/",
+ desc:"湯河原温泉の中心部、千歳川沿いに広がる緑地公園。日本の歴史公園100選に選ばれ、約85種の万葉植物や散策路、滝を眺めながらのんびり過ごせる。カフェを併設した「玄関テラス」も整備され、散策の休憩にも便利。",
+ tip:"紅葉シーズン（11月中旬〜12月上旬）は渓流沿いのモミジが見事。温泉街散策と合わせて訪れやすい。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase16）：熱海・小田原・真鶴エリア（続き）
+// ------------------------------------------------------------------
+{region:"静岡", name:"熱海トリックアート迷宮館", area:"熱海市曽我山（熱海城隣接）", lat:35.086471, lng:139.078234,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1200円台／小中学生650円台／3〜6歳500円台（熱海城との共通券あり）", parking:"yes", access:"JR「熱海」駅からバスで約13分",
+ baby:"ベビーカーOK", lunch:"熱海城側にレストランあり。",
+ officialUrl:"https://atamijyo.com/trickart/",
+ desc:"熱海城に隣接するトリックアート美術館。平面の絵が立体的に見える約50点の作品が並び、恐竜やジョーズ等をテーマにした作品で記念撮影を楽しめる。写真の撮り方をスタッフが教えてくれるサービスもあり、雨の日でも楽しめる屋内施設。",
+ tip:"熱海城との共通券がお得。撮影のコツを教えてもらえるので、家族写真を楽しく残せる。"},
+{region:"静岡", name:"マリンスパあたみ", area:"熱海市和田浜南町", lat:35.093, lng:139.075,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1300円台／小中学生650円台／3歳〜未就学児400円台／3歳未満300円台", parking:"yes", access:"JR「熱海」駅からバスで約10分",
+ baby:"3歳未満向け料金あり／おむつ替えあり", lunch:"館内にレストラン「シーガル」あり。手ぶらBBQテラスも。",
+ officialUrl:"https://www.marinespa.com/",
+ desc:"熱海の温泉を利用した全天候型の水着で入るスパ施設。高低差約8mのウォータースライダーや流水プール、幼児用プールに加え、水着のまま入れる健康温泉浴室も。屋内中心のため天候を気にせず1年中楽しめる。",
+ tip:"隣接の市営和田浜駐車場が割引対象。水遊び用おむつOKの3歳未満向け料金もあり赤ちゃん連れでも利用しやすい。"},
+{region:"神奈川", name:"小田原フラワーガーデン", area:"小田原市久野", lat:35.280646, lng:139.128378,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"入園無料（トロピカルドーム温室のみ大人200円／小中学生100円）", parking:"yes", access:"伊豆箱根鉄道大雄山線「飯田岡駅」から徒歩約20分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"テイクアウトカフェ「ハイビスカス」あり。",
+ officialUrl:"https://www.kanagawaparks.com/odawarafg/",
+ desc:"熱帯・亜熱帯植物が茂る「トロピカルドーム温室」が目玉の植物公園。屋外には約500本の梅林やバラ園、花しょうぶ池があり、夏季限定の「おどる噴水」は子どもに人気。入園自体は無料で気軽に立ち寄れる。",
+ tip:"温室は雨の日でも楽しめる貴重なスポット。夏の噴水広場は水遊び感覚で子どもが喜ぶので、着替えを持参すると良い。"},
+{region:"神奈川", name:"真鶴岬・三ツ石", area:"足柄下郡真鶴町", lat:35.140, lng:139.145,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"見学無料", parking:"yes", access:"JR「真鶴」駅からバスで約13分（終点「ケープ真鶴」下車）",
+ baby:"岩場・遊歩道中心のためベビーカーは不向き", lunch:"複合施設「ケープ真鶴」に喫茶・売店あり。",
+ officialUrl:"https://www.kanagawa-kankou.or.jp/spot/1687",
+ desc:"相模湾に突き出た真鶴半島の先端にある景勝地。シンボルの巨岩「三ツ石」は干潮時には歩いて渡ることができ、磯遊びスポットとしても人気。樹齢350年以上のクロマツなど原生林の中の遊歩道も整備されている。",
+ tip:"三ツ石まで渡る場合は滑りやすい岩場のため運動靴が必須。干潮時間を事前に確認して訪れるのがおすすめ。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase17）：御殿場・裾野・山中湖エリア（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"静岡", name:"遊園地 ぐりんぱ", area:"裾野市須山", lat:35.290971, lng:138.782635,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"入園料 中学生以上1900円台／4歳〜小学生1000円台（乗り物・アスレチックは別途）", parking:"yes", access:"JR「御殿場」駅からバスで約40分",
+ baby:"おむつ替えあり／屋内おもちゃエリアあり", lunch:"園内にレストラン・売店あり。",
+ officialUrl:"https://www.grinpa.com/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/152539/"}, recommendedBooking:"asoview",
+ desc:"富士山2合目、標高1200mの高原にあるアスレチック中心のテーマパーク。水上アスレチック「カッパ大作戦」や、忍者修行アトラクション「忍びの掟」など体を動かす仕掛けが豊富。屋内には1000点以上のおもちゃで遊べるエリアもあり雨の日でも楽しめ、犬同伴も可能。",
+ tip:"標高が高く夏でも涼しいので避暑を兼ねたお出かけに最適。冬季は休園期間があるため訪問前の確認がおすすめ。"},
+{region:"静岡", name:"御殿場高原 時之栖", area:"御殿場市神山", lat:35.235483, lng:138.925556,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"敷地内入場無料（温泉・アクティビティは施設ごとに有料）", parking:"yes", access:"JR御殿場線「岩波駅」から車で約5分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"地ビールレストラン「グランテーブル」、バイキング「麦畑」など多数。",
+ officialUrl:"https://www.tokinosumika.com/",
+ desc:"富士山を望む10万坪の複合リゾート。天然温泉「気楽坊」、御殿場高原ビールのレストラン、ボウリングなどのアクティビティが揃う。冬季のイルミネーション「ひかりのすみか」は特に有名で、宿泊施設も多彩に揃う。",
+ tip:"御殿場駅から無料シャトルバスが出ており車がなくてもアクセスしやすい。冬のイルミネーション期間は特に混雑する。"},
+{region:"山梨", name:"山中湖交流プラザ きらら", area:"南都留郡山中湖村平野", lat:35.418, lng:138.858,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入場無料", parking:"yes", access:"東富士五湖道路「山中湖IC」から約5分",
+ baby:"おむつ替えあり／ベビーカーOK、天然芝の広場でのびのび過ごせる", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://lake-yamanakako.com/spot/10350",
+ overnightRecommended:true, hotelArea:"yamanashi",
+ desc:"富士山と山中湖を望む湖畔の複合公園。天然芝の広場や子ども向け遊具、野外劇場「ひびき」などがあり、思い思いに過ごせる。近くには山中湖遊覧船「白鳥の湖」の乗り場もあり、湖上散策と組み合わせやすい。",
+ tip:"広々とした芝生広場はボール遊びやピクニックにぴったり。富士山ビュースポットとしても人気で、ダイヤモンド富士が見える時期もある。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase18）：御殿場エリア（続き）
+// ------------------------------------------------------------------
+{region:"静岡", name:"御殿場プレミアム・アウトレット", area:"御殿場市深沢", lat:35.307337, lng:138.964662,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"入場無料（買い物代は別途）", parking:"yes", access:"JR「御殿場」駅から無料シャトルバスで約10分",
+ baby:"授乳室6箇所・おむつ替え・ベビーカー貸出あり", lunch:"フードコート・レストラン多数。",
+ officialUrl:"https://www.premiumoutlets.co.jp/gotemba/",
+ desc:"富士山を望む国内最大級のアウトレットモール。ヒルサイドのミニ遊園地（メリーゴーランド・観覧車）や屋外プレイグラウンド、レゴ・サンリオ等のキッズ向け店舗もあり、買い物と遊びを両立できる。授乳室・ベビーカー貸出など子連れ設備も充実。",
+ tip:"広大な敷地のため、目的のエリア（West／East／Hill Side）を絞って回るのがおすすめ。雨の日でも屋根付き通路があり楽しめる。"},
+{region:"静岡", name:"秩父宮記念公園", area:"御殿場市東田中", lat:35.289548, lng:138.951248,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人300円／小中学生150円（御殿場市民は無料）", parking:"yes", access:"JR「御殿場」駅からバスで約10分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にカフェあり。",
+ officialUrl:"https://www.chichibunomiya.jp/",
+ desc:"秩父宮両殿下の御別邸跡地を整備した約18,000坪の庭園。桜・紅葉など四季折々の山野草や花々を楽しめ、築約300年の茅葺き記念館では両殿下の愛用品を展示。芝生エリアが多く、ベビーカーでのんびり散策しやすい。",
+ tip:"御殿場ICから車で約3分とアクセスが良く、ドライブ途中に立ち寄りやすい。御殿場市民は入園無料。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase20）：山梨エリア（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"山梨", name:"山梨県笛吹川フルーツ公園", area:"山梨市江曽原", lat:35.702013, lng:138.66439,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
+ price:"入園無料（一部施設は有料）", parking:"yes", access:"中央自動車道「一宮御坂IC」または「勝沼IC」から車で約30分",
+ baby:"授乳室（完全個室5部屋）・おむつ替えベッド等が充実／ベビーカーOK", lunch:"展望レストラン「星屑レストランガイア」、売店「サン・ヴェルジェ」あり。",
+ officialUrl:"https://fuefukigawafp.co.jp/",
+ desc:"甲府盆地を見下ろす高台にあるフルーツテーマパーク。全天候型のガラスドーム「わんぱくドーム」には大型ネット遊具があり雨の日でも安心。夏は水遊びできる屋外の「アクアアスレチック」、夜は新日本三大夜景に選ばれた甲府盆地の夜景も楽しめる。",
+ tip:"ベビー休憩室が非常に充実しているため赤ちゃん連れでも安心。ロードトレインで広い園内を移動できる。"},
+{region:"山梨", name:"富士すばるランド", area:"南都留郡富士河口湖町", lat:35.457755, lng:138.759762,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"大人1500円台／4歳〜小学生900円台（12〜3月は割引）", parking:"yes", access:"富士急行線「河口湖駅」から無料送迎バスあり",
+ baby:"ベビーカーは屋外の自然地形エリアで一部不向き", lunch:"園内にBBQ施設あり。",
+ officialUrl:"https://fujisan.ne.jp/pages/277/",
+ desc:"富士山麓・標高1000mの高原にある自然体験型テーマパーク。ツリーハウスやロープネットを使った「どんぐりコース」、ハーネスで空中散歩する「ロールグライダー」など、自然の地形を生かしたアトラクションが充実。愛犬同伴OKでドッグランも完備。",
+ tip:"標高が高く夏でも涼しい。犬と一緒に遊べるエリアが充実しているため、愛犬家のファミリーにもおすすめ。"},
+{region:"山梨", name:"山梨県立科学館（愛宕山こどもの国）", area:"甲府市愛宕町", lat:35.669244, lng:138.580231,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人520円／小中高生220円／未就学児無料", parking:"yes", access:"JR「甲府」駅からバスで約15分",
+ baby:"小さい子向けの「あそびの部屋」あり（ハイハイ赤ちゃんも快適）", lunch:"「レストランサイエンスシップ」あり（入館不要で利用可）。",
+ officialUrl:"https://www.kagakukan.pref.yamanashi.jp/",
+ desc:"愛宕山こどもの国内にある、船の形が目印の体験型科学館「サイエンスシップ」。プラネタリウム「スペースシアター」や実験工作室、小さな子向けの「あそびの部屋」もある。周辺は自然豊かな「愛宕山こどもの国」としてアスレチックや遊歩道の散策も楽しめる。",
+ tip:"毎週土曜日とこどもの日は高校生以下入館無料。展望テラスから富士山と甲府盆地を一望できる。"},
+{region:"山梨", name:"山梨県立富士湧水の里水族館", area:"南都留郡忍野村", lat:35.455569, lng:138.824003,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人420円／小中学生200円／未就学児無料", parking:"yes", access:"東富士五湖道路「山中湖IC」から車で約5分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"「さかな公園」内に軽食可能なエリアあり。",
+ officialUrl:"https://www.morinonakano-suizokukan.com/",
+ desc:"通称「森の中の水族館。」。富士山の湧水を使った、海のない山梨県唯一の淡水魚専門水族館。二重回遊水槽では大小さまざまな川魚が泳ぐ様子を観察でき、周囲の「さかな公園」には遊具や池もあり水族館とセットで楽しめる。",
+ tip:"規模は大きくないため30〜60分ほどで見て回れる。周辺の「さかな公園」の遊具で体を動かすのと組み合わせやすい。"},
+{region:"山梨", name:"ハイジの村（フラワーセンター）", area:"北杜市明野町", lat:35.781138, lng:138.464154,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["春","夏","秋"],
+ price:"高校生以上710円／中学生・小学生360円（季節により変動）", parking:"yes", access:"中央自動車道「須玉IC」から車で約10分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"レストラン「ボルケーノ」でチーズフォンデュ等あり。",
+ officialUrl:"https://www.hokuto-kanko.jp/spot/haiji_no_mura/",
+ desc:"アニメ「アルプスの少女ハイジ」の世界観をイメージした県立フラワーセンター。日照時間日本一と言われる高原にあり、チューリップやバラなど季節の花々が園内を彩る。遊具や日帰り温泉「クララの湯」も併設。",
+ tip:"標高800m付近にあり八ヶ岳・南アルプスの展望が良い。花の見頃シーズン（春〜秋）に訪れるのがおすすめ。"},
+{region:"山梨", name:"万力公園（万葉の森・ふれあい動物広場）", area:"山梨市万力", lat:35.697, lng:138.685,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料（ふれあい動物広場も無料）", parking:"yes", access:"JR「山梨市」駅から徒歩約10分",
+ baby:"授乳室・おむつ替え台あり／ベビーカーOK", lunch:"バーベキュー広場あり（要予約）。",
+ officialUrl:"http://www.yamanashi-fruitpark.co.jp/manriki-kouen/",
+ desc:"笛吹川沿いに広がる約14haの都市公園。中央にある「ふれあい動物広場」は無料でカピバラ・アライグマ・シカ・ヤギなど約20〜40種の動物を間近に見られる。芝生広場やピクニック広場もあり、駅から徒歩圏内でアクセスしやすい。",
+ tip:"入園・動物広場ともに無料で気軽に立ち寄れる。春の桜、初夏のホタル観賞イベントも人気。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase21）：山梨エリア（続き）
+// ------------------------------------------------------------------
+{region:"山梨", name:"白州・尾白の森名水公園べるが", area:"北杜市白州町", lat:35.799594, lng:138.313014,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ seasons:["夏"],
+ price:"公園入場無料（尾白の湯・体験メニューは有料）", parking:"yes", access:"中央自動車道「須玉IC」から車で約20分",
+ baby:"おむつ替えあり／親水公園は乳幼児でも安心の浅い水遊び場", lunch:"森のレストランあり。BBQ場も利用可（要予約）。",
+ officialUrl:"https://www.verga.info/",
+ bookingLinks:{asoview:"https://www.asoview.com/base/154219/"}, recommendedBooking:"asoview",
+ desc:"名水百選の尾白川と豊かな森に囲まれた発見型自然公園。浅瀬でウォータースライダーのように遊べる「尾白川えん堤」や、赤ちゃん・幼児向けの浅い「親水公園」で水遊びができる。日帰り温泉「尾白の湯」やキャンプ場も併設。",
+ tip:"夏の水遊びが特に人気。親水公園は小さな子ども向け、尾白川えん堤は少し大きい子ども向けと、年齢に応じて遊び分けられる。"},
+{region:"山梨", name:"忍野 しのびの里", area:"南都留郡忍野村", lat:35.457077, lng:138.818467,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"通行手形（入園料）大人1800円台（忍者ショー・からくり屋敷・アスレチック込み）", parking:"yes", access:"東富士五湖道路「山中湖IC」から車で約6分",
+ baby:"庭園エリアはベビーカーOK／アスレチックは対象年齢あり", lunch:"食事処あり。足湯も利用可。",
+ officialUrl:"https://www.yamanashi-kankou.jp/kankou/spot/shinobi_oshino.html",
+ bookingLinks:{asoview:"https://www.asoview.com/base/152418/"}, recommendedBooking:"asoview",
+ desc:"忍野八海近くにある忍者テーマパーク。本格忍者ショーや「からくり屋敷」、7つのアスレチックからなる「忍術皆伝の道」、手裏剣道場などで忍者になりきって遊べる。富士山を望む日本庭園や足湯もあり、忍野八海とセットで訪れやすい。",
+ tip:"忍者衣装に着替えて回れば服も汚れず一石二鳥。忍野八海から徒歩15分ほどの立地でセット観光しやすい。"},
+{region:"山梨", name:"山梨県富士川クラフトパーク", area:"南巨摩郡身延町", lat:35.418593, lng:138.437239,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ seasons:["春","秋"],
+ price:"入園無料（美術館等は別途）", parking:"yes", access:"中部横断自動車道「増穂IC」から車で約30分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"道の駅みのぶ・レストランあり。",
+ officialUrl:"https://www.kirienomori.jp/",
+ desc:"東京ドーム約11個分の広さを誇る大規模公園。大型遊具のある「砦遊具広場」、植栽でできた巨大迷路、水遊びできる大噴水、バラ園などがあり一日中楽しめる。切り絵専門の美術館や道の駅も併設し、BBQ場・カヌー場もある。",
+ tip:"広大なため歩きやすい服装で。バラの見頃（春・秋）やメタセコイア並木の紅葉（11月）も見応えがある。"},
+{region:"山梨", name:"山梨県立まきば公園", area:"北杜市大泉町", lat:35.922125, lng:138.408226,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["春","夏","秋"],
+ price:"入園無料", parking:"yes", access:"中央自動車道「長坂IC」から車で約20分",
+ baby:"おむつ替えあり／ベビーカーOK（一部牧草地は不向き）", lunch:"レストラン「まきばの館」あり。",
+ officialUrl:"https://www.hokuto-kanko.jp/spot/makiba_park/",
+ desc:"標高1100〜1200mの高原にある県立八ヶ岳牧場の一部を開放した公園。牧草地では放し飼いの羊やヤギとふれあえ、八ヶ岳・南アルプスを望む大パノラマも魅力。4月下旬〜11月上旬の期間限定開園。",
+ tip:"開園期間が4月20日頃〜11月10日頃までと限定的なので訪問前に要確認。標高が高く夏でも涼しい。"},
+{region:"山梨", name:"鳴沢氷穴", area:"南都留郡鳴沢村", lat:35.474539, lng:138.666651,
+ ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"大人350円／小学生200円", parking:"yes", access:"富士急行線「河口湖駅」からバスで約30分",
+ baby:"身長100cm未満の子供は入洞不可／ベビーカー不可（階段・狭い通路）", lunch:"周辺に売店あり。",
+ officialUrl:"https://www.mtfuji-cave.com/contents/ice_cave/",
+ desc:"国の天然記念物に指定された溶岩洞窟。総延長153mの竪穴環状形の洞内には、年間を通して氷柱が見られる。青木ヶ原樹海の中にあり、足場・照明が整備されているため手軽に見学できる。",
+ tip:"洞内は最大20℃前後の気温差があり天井が低い箇所（91cm）もあるため、上着と歩きやすい靴が必須。身長100cm未満の子どもは入洞できないので事前確認を。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase22）：山梨エリア（続き）
+// ------------------------------------------------------------------
+{region:"山梨", name:"河口湖猿まわし劇場", area:"南都留郡富士河口湖町河口", lat:35.520, lng:138.775,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"大人1500円台／中高生1000円台／子供750円台（2歳以下無料）", parking:"yes", access:"富士急行線「河口湖駅」から車で約10分",
+ baby:"2歳以下は鑑賞無料／車椅子・ベビーカーのまま観覧可", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://www.monkey-suo.com/fuji/",
+ desc:"655人収容の全天候型専用劇場で、伝統芸能「猿まわし」を鑑賞できる。竹馬や太鼓など人間顔負けの芸を披露するお猿さんの演技に子どもも大人も引き込まれる。屋内劇場のため雨の日でも安心して楽しめ、公演後はお猿さんとの記念撮影も。",
+ tip:"2歳以下は無料なので赤ちゃん連れでも気軽に立ち寄れる。屋根付きの全天候型施設で、雨の日の河口湖観光の候補にぴったり。"},
+{region:"山梨", name:"小瀬スポーツ公園", area:"甲府市小瀬町", lat:35.622293, lng:138.587183,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ seasons:["春","秋"],
+ price:"公園内は無料（プール・アイスアリーナ等の施設利用は別途）", parking:"yes", access:"JR「甲府」駅からバスで約30分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"園内に売店・コンビニあり。",
+ officialUrl:"https://www.yamanashi-kankou.jp/kankou/spot/p1_5035.html",
+ desc:"陸上競技場・野球場・プール・アイスアリーナなどを備えた山梨県内最大級の総合スポーツ公園。サッカーJ1ヴァンフォーレ甲府のホームスタジアムとしても知られる。広い芝生広場もあり、春は約550本の桜が咲く花見の名所としても人気。",
+ tip:"芝生広場は入場無料でのびのび過ごせる。桜の見頃時期（4月上旬）はライトアップも行われ特に賑わう。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase23）：房総半島エリア（2026年9月調査分）
+// ------------------------------------------------------------------
+{region:"千葉", name:"大房岬自然公園", area:"南房総市富浦町", lat:35.038906, lng:139.812765,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
+ price:"入園無料（キャンプ場等の有料施設あり）", parking:"yes", access:"富津館山道路「富浦IC」から車で約10分",
+ baby:"おむつ替えあり／遊歩道は一部アップダウンあり", lunch:"周辺に飲食店あり。",
+ officialUrl:"https://www.mboso-etoko.jp/mboso_map/detail.php?poi=2",
+ desc:"東京湾に突き出た標高80mの岬を整備した自然公園。三浦半島や富士山も望める展望台からの眺めが見事で、約4.2kmの遊歩道では磯遊びやバードウォッチングも楽しめる。250本の桜など四季の花も見どころ。キャンプ場も併設。",
+ tip:"遊歩道はクイズラリー形式で楽しむこともでき、子どもも飽きずに歩ける。要塞跡が点在し歴史探検気分も味わえる。"},
+{region:"千葉", name:"渚の駅たてやま", area:"館山市館山", lat:34.98979, lng:139.854788,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"海辺の広場等は入館無料（一部有料施設あり）", parking:"yes", access:"富津館山道路「富浦IC」から車で約15分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"「館山なぎさ食堂」「海のマルシェたてやま」あり。",
+ officialUrl:"https://tateyamacity.com/archives/10505",
+ desc:"館山港にある交流拠点施設。館山湾の生き物と出会える無料の「海辺の広場」、房総の漁業文化を紹介する「渚の博物館」、さかなクンギャラリー、館山湾を一望できる展望デッキなどがあり、お土産・食事スポットも充実。",
+ tip:"海辺の広場は無料で気軽に立ち寄れる。館山城のある城山公園も徒歩圏内でセットで訪れやすい。"},
+{region:"千葉", name:"道の駅とみうら枇杷倶楽部", area:"南房総市富浦町", lat:35.098, lng:139.858,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
+ seasons:["春"],
+ price:"施設利用無料（いちご狩り・びわ狩りは有料）", parking:"yes", access:"富津館山道路「富浦IC」から車で約2分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"カフェでびわソフト・びわカレー等の名物メニューあり。",
+ officialUrl:"https://www.biwakurabu.jp/",
+ desc:"全国道の駅グランプリで最優秀賞を受賞した南房総の観光拠点。特産の房州びわを使ったソフトクリームやグッズが人気で、1月〜5月上旬はいちご狩り、5〜6月はびわ狩りも体験できる。2〜3月には一面の菜の花畑が広がる。",
+ tip:"いちご狩り・びわ狩りの体験は時期が限定的なので訪問時期を要確認。ドライブ休憩がてら気軽に立ち寄れる。"},
+{region:"千葉", name:"鋸山ロープウェー・日本寺", area:"富津市金谷", lat:35.193, lng:139.826,
+ ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"ロープウェー往復 大人950円台／小人450円台（日本寺拝観料 大人700円／小人400円は別途）", parking:"yes", access:"JR内房線「浜金谷駅」から徒歩約8分",
+ baby:"日本寺境内は階段が多くベビーカー不向き（700段の階段あり）", lunch:"山麓駅周辺・金谷港周辺に飲食店あり。",
+ officialUrl:"https://www.mt-nokogiri.co.jp/",
+ desc:"東京湾を一望する鋸山山頂へ約4分で登れるロープウェー。山頂に隣接する日本寺では、断崖絶壁の展望スポット「地獄のぞき」や、日本最大級の磨崖仏「百尺観音」、総高31mの石大仏などの迫力ある景観が楽しめる。",
+ tip:"日本寺境内は階段や山道が多く700段の石段もあるため、歩きやすい靴で。小学生以上の元気な子ども向け。"},
+
+// ------------------------------------------------------------------
+// 📌 追加候補リスト（Phase24）：館山・南房総エリア（続き）
+// ------------------------------------------------------------------
+{region:"千葉", name:"館山城・城山公園", area:"館山市館山", lat:34.980712, lng:139.856708,
+ ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ seasons:["春"],
+ price:"公園は無料（館山城・博物館は大人400円／小中高生200円）", parking:"yes", access:"JR「館山」駅からバスで約10分",
+ baby:"天守閣までは坂道でベビーカーは不向き", lunch:"茶屋「里見茶屋」あり。",
+ officialUrl:"https://tateyamacastle.jp/",
+ desc:"戦国大名・里見氏の居城跡を整備した公園。山頂の館山城（八犬伝博物館）からは館山湾や富士山を望める。椿・梅・桜・ツツジなど四季の花が楽しめる花の名所でもあり、日本庭園や茶室も併設。",
+ tip:"公園自体は無料で気軽に散策できる。天守閣からの眺めは絶景だが坂道が多いので歩きやすい靴で。"},
+{region:"千葉", name:"野島埼灯台・野島崎公園", area:"南房総市白浜町", lat:34.901703, lng:139.88835,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"灯台参観寄付金 中学生以上300円（小学生以下無料）", parking:"yes", access:"JR「館山」駅からバスで約35分",
+ baby:"公園内はベビーカーOK／灯台内はらせん階段のため不可", lunch:"周辺に飲食店・道の駅あり。",
+ officialUrl:"https://www.mboso-etoko.jp/mboso_map/detail.php?poi=52",
+ desc:"房総半島最南端に立つ、日本で2番目に古い洋式灯台。国の登録有形文化財に指定され、らせん階段を上った展望台からは太平洋と伊豆諸島まで見渡せる。周辺の野島崎公園には「最南端の碑」や遊歩道があり、夕日・初日の出スポットとしても人気。",
+ tip:"小学生以下は参観無料。灯台に登らなくても公園散策だけで最南端の雰囲気を楽しめる。"},
+{region:"千葉", name:"館山野鳥の森", area:"館山市大神宮", lat:34.955, lng:139.827,
+ ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料", parking:"yes", access:"JR「館山」駅からバスで約20分",
+ baby:"探鳥道は未舗装でベビーカー不向き", lunch:"周辺に飲食店は少なめ。",
+ officialUrl:"https://www.pref.chiba.lg.jp/rj-nanbu/nanbu/tateyamayachou/index.html",
+ desc:"房総半島最南端にある県立の自然公園。「日本森林浴の森100選」に選ばれた22haの森に探鳥道が整備され、100種類以上の野鳥が観察できる。「ふれあい野鳥館」では双眼鏡の無料貸し出しやジオラマ展示もあり、隣接する安房神社とあわせて訪れやすい。",
+ tip:"ふれあい野鳥館は無料で気軽に立ち寄れる。展望台からは富士山や伊豆大島も望める好条件の日もある。"},
+{region:"千葉", name:"なみはらくじらパーク", area:"南房総市和田町", lat:35.13, lng:140.20,
+ ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
+ price:"入園無料", parking:"yes", access:"JR「和田浦」駅から車で約5分",
+ baby:"おむつ替えあり／ベビーカーOK", lunch:"キッチンカーが出る日あり。",
+ officialUrl:"https://www.city.minamiboso.chiba.jp/0000022054.html",
+ desc:"2025年4月、旧小学校跡地にオープンした南房総エリア最大級の公園。名物の「くじらの親子のすべり台」やアスレチック遊具、ふわふわドーム、広い芝生広場があり、和田地区の伝統であるくじら文化にちなんだ名称が付けられている。",
+ tip:"2025年オープンの新しい公園でとても綺麗。駐車場も60台以上と広く利用しやすい。"}
 ];
 // ==================================================================
 // アプリの状態（フィルター条件・お気に入り・比較など）
@@ -4548,7 +4887,7 @@ let state = {
   region:"all", genre:"all", rain:new Set(), wallet:new Set(), mode:"car",
   ages:new Set(), duration:"all", parking:"all", activity:"all",
   seasons:new Set(), holidays:new Set(),
-  hideVisited:false, keyword:"",
+  hideVisited:false, keyword:"", filterSiblings:false,
   favorites:new Set(), visited:new Set(), excluded:new Set(),
   homeLoc:null, zipRaw:"", zipLabel:"", zipCandidates:null,
   recentlyViewed:[], // 施設名の配列。新しいものが先頭
@@ -5041,21 +5380,28 @@ function buildHolidayChipsInto(containerId){
 }
 const OTHER_ITEMS = [
   {key:"rain", label:"🌧 雨の日でも安心"},
-  {key:"wallet", label:"💰 お財布にやさしい"},
-  {key:"active", label:"🏃 たくさん発散"},
+  {key:"wallet", label:"💰 安く遊べる"},
+  {key:"active", label:"🏃 たくさん遊ぶ"},
   {key:"short", label:"⏱ 短時間で楽しめる"},
+  {key:"siblings", label:"👨‍👩‍👧‍👦 兄弟みんな楽しめる"},
   {key:"hideVisited", label:"✅ 行った場所を隠す"}
 ];
 function buildOtherChipsInto(containerId){
   const el = document.getElementById(containerId);
   el.innerHTML = "";
   OTHER_ITEMS.forEach(item=>{
-    const active = item.key==="hideVisited" ? state.hideVisited : isMoodActive(item.key);
+    const active = item.key==="hideVisited" ? state.hideVisited
+      : item.key==="siblings" ? state.filterSiblings
+      : isMoodActive(item.key);
     const c = document.createElement("div");
     c.className = "chip" + (active ? " active" : "");
     c.textContent = item.label;
     c.onclick = ()=>{
       if(item.key==="hideVisited") state.hideVisited = !state.hideVisited;
+      else if(item.key==="siblings"){
+        state.filterSiblings = !state.filterSiblings;
+        trackEvent("recommendation_category_click", {category:"siblings"}); // 旧「迷ったらこれ！」から引き継いだ計測
+      }
       else applyMoodToggle(item.key);
       trackFilterUse("other", item.key);
       afterFilterChange();
@@ -5068,19 +5414,14 @@ function renderFilterSheet(){
   const sheet = document.getElementById("filterSheet");
   sheet.innerHTML = `
     <button class="sheet-close" id="filterCloseBtn">×</button>
-    <div class="sheet-title">🔍 詳しく絞り込む</div>
+    <div class="sheet-title">🔍 もっと詳しく絞り込む</div>
 
     <div class="fgroup">
       <div class="fgroup-head">📍 場所</div>
       <div class="frow">
         <div class="frow-label">エリア</div>
         <div class="chips" id="fRegionChips"></div>
-        <div class="zip-row">
-          <input type="text" id="zipInput" placeholder="郵便番号で近い順に（例：100-0001）" maxlength="8">
-          <button id="zipBtn">近い順</button>
-        </div>
-        <div class="zip-status" id="zipStatus"></div>
-        <div class="chips" id="zipCandidateChips"></div>
+        <div class="zip-hint">📍 郵便番号での「近い順」検索は、ホーム画面の最上部から設定できます。</div>
       </div>
     </div>
 
@@ -5097,18 +5438,6 @@ function renderFilterSheet(){
     </div>
 
     <div class="fgroup">
-      <div class="fgroup-head">📅 季節・連休</div>
-      <div class="frow">
-        <div class="frow-label">季節</div>
-        <div class="chips" id="fSeasonChips"></div>
-      </div>
-      <div class="frow">
-        <div class="frow-label">長期休み</div>
-        <div class="chips" id="fHolidayChips"></div>
-      </div>
-    </div>
-
-    <div class="fgroup">
       <div class="fgroup-head">🚗🚃 移動</div>
       <div class="frow">
         <div class="frow-label">行き方</div>
@@ -5121,9 +5450,21 @@ function renderFilterSheet(){
     </div>
 
     <div class="fgroup">
-      <div class="fgroup-head">✨ その他</div>
+      <div class="fgroup-head">✨ その他の条件</div>
       <div class="frow">
         <div class="chips" id="fOtherChips"></div>
+      </div>
+    </div>
+
+    <div class="fgroup fgroup-sub">
+      <div class="fgroup-head">📅 季節・連休（補助的な条件）</div>
+      <div class="frow">
+        <div class="frow-label">季節</div>
+        <div class="chips" id="fSeasonChips"></div>
+      </div>
+      <div class="frow">
+        <div class="frow-label">長期休み</div>
+        <div class="chips" id="fHolidayChips"></div>
       </div>
     </div>
 
@@ -5141,16 +5482,9 @@ function renderFilterSheet(){
     p=>p.key==="yes" ? " p-yes" : "", "parking");
   buildOtherChipsInto("fOtherChips");
 
-  const zipInput = document.getElementById("zipInput");
-  const zipStatus = document.getElementById("zipStatus");
-  zipInput.value = state.zipRaw || "";
-  zipStatus.textContent = state.zipLabel || "";
-  document.getElementById("zipBtn").onclick = onZipSubmit;
-  buildZipCandidateChips();
-
   document.getElementById("filterCloseBtn").onclick = closeFilterModal;
   document.getElementById("filterApplyBtn").onclick = closeFilterModal;
-  document.getElementById("filterResetBtn").onclick = ()=>{ resetFilters(); afterFilterChange(); };
+  document.getElementById("filterResetBtn").onclick = ()=>{ resetFilters(); renderHomeZip(); afterFilterChange(); };
   document.getElementById("filterResultCount").textContent = SPOTS.filter(matches).length;
 }
 // 絞り込みモーダル内でチップを押すたびに、モーダル自身と背後の一覧の両方を更新する
@@ -5160,42 +5494,96 @@ function afterFilterChange(){
 }
 // 上3桁だけでは複数の市区町村・町にまたがってしまうエリアについては、
 // candidates（候補地点の配列）を選んでもらってから起点を決める。
+// 入力が数字のみなら郵便番号として、それ以外（都道府県名・市区町村名等）は
+// 地名として既存のZIP3_MASTERラベルから検索する（新しいデータは追加しない）。
 function onZipSubmit(){
   const inputEl = document.getElementById("zipInput");
-  const raw = inputEl.value.replace(/[^0-9]/g,"");
+  const rawInput = inputEl.value.trim();
   state.zipRaw = inputEl.value;
   state.zipCandidates = null;
-  if(raw.length!==7){
-    state.zipLabel = "7桁の郵便番号を入力してください（例：1000001）";
-    afterFilterChange();
+
+  if(!rawInput){
+    state.zipLabel = "郵便番号（7桁）または都道府県・市区町村名を入力してください";
+    afterZipChange();
     return;
   }
-  const code3 = raw.slice(0,3);
-  const hit = lookupZip3(code3);
-  if(!hit){
-    state.zipLabel = "対応エリア外の郵便番号です（関東地方の郵便番号をご入力ください）";
-    afterFilterChange();
+
+  const digitsOnly = rawInput.replace(/[^0-9]/g,"");
+  const isNumericInput = /^[0-9０-９\-‐ー]+$/.test(rawInput); // 数字・ハイフンのみで構成されているか
+
+  if(isNumericInput){
+    // ---- 郵便番号として検索（既存ロジック） ----
+    if(digitsOnly.length!==7){
+      state.zipLabel = "7桁の郵便番号を入力してください（例：1000001）。地名でも検索できます";
+      afterZipChange();
+      return;
+    }
+    const code3 = digitsOnly.slice(0,3);
+    const hit = lookupZip3(code3);
+    if(!hit){
+      state.zipLabel = "対応エリア外の郵便番号です（関東・近県の郵便番号をご入力ください）";
+      afterZipChange();
+      return;
+    }
+    if(hit.candidates && hit.candidates.length > 1){
+      state.zipCandidates = hit.candidates;
+      state.zipLabel = "このエリアは範囲が広いため、お近くの市区町村を選んでください👇";
+      afterZipChange();
+      return;
+    }
+    const point = hit.candidates ? hit.candidates[0] : hit;
+    state.homeLoc = {lat:point.lat, lng:point.lng};
+    state.zipLabel = `${hit.label} 付近を起点に、近い順に並び替えました（郵便番号の上3桁による概算）`;
+    savePersisted();
+    afterZipChange();
     return;
   }
-  if(hit.candidates && hit.candidates.length > 1){
-    // このエリアはブレが大きいため、近いほうの市区町村を選んでもらう
-    state.zipCandidates = hit.candidates;
-    state.zipLabel = "このエリアは範囲が広いため、お近くの市区町村を選んでください👇";
-    afterFilterChange();
+
+  // ---- 都道府県名・市区町村名などの地名として検索 ----
+  const found = searchPlaceName(rawInput);
+  if(found.length===0){
+    state.zipLabel = "該当する地名が見つかりませんでした。郵便番号（7桁）か、都道府県・市区町村名でお試しください";
+    afterZipChange();
     return;
   }
-  const point = hit.candidates ? hit.candidates[0] : hit;
-  state.homeLoc = {lat:point.lat, lng:point.lng};
-  state.zipLabel = `${hit.label} 付近を起点に、近い順に並び替えました（郵便番号の上3桁による概算）`;
-  savePersisted();
-  afterFilterChange();
+  if(found.length===1){
+    state.homeLoc = {lat:found[0].lat, lng:found[0].lng};
+    state.zipLabel = `${found[0].label} 付近を起点に、近い順に並び替えました`;
+    savePersisted();
+    afterZipChange();
+    return;
+  }
+  // 複数ヒットした場合は候補から選んでもらう（郵便番号の候補選択と同じUIを再利用）
+  state.zipCandidates = found.slice(0, 8);
+  state.zipLabel = `「${rawInput}」に近い候補が複数あります。お近くを選んでください👇`;
+  afterZipChange();
+}
+// 都道府県名・市区町村名などのフリーテキストを、既存のZIP3_MASTERラベルから
+// 部分一致で検索する。新しい地名データベースは追加せず、既存データを再利用する。
+function searchPlaceName(query){
+  const results = [];
+  const seen = new Set();
+  ZIP3_MASTER.forEach(r=>{
+    if(r.candidates){
+      r.candidates.forEach(c=>{
+        if(c.label.includes(query)){
+          const key = c.label + c.lat + c.lng;
+          if(!seen.has(key)){ seen.add(key); results.push({label:c.label, lat:c.lat, lng:c.lng}); }
+        }
+      });
+    } else if(r.label && r.label.includes(query)){
+      const key = r.label + r.lat + r.lng;
+      if(!seen.has(key)){ seen.add(key); results.push({label:r.label, lat:r.lat, lng:r.lng}); }
+    }
+  });
+  return results;
 }
 function selectZipCandidate(cand){
   state.homeLoc = {lat:cand.lat, lng:cand.lng};
   state.zipCandidates = null;
-  state.zipLabel = `${cand.label} 付近を起点に、近い順に並び替えました（郵便番号の上3桁による概算）`;
+  state.zipLabel = `${cand.label} 付近を起点に、近い順に並び替えました`;
   savePersisted();
-  afterFilterChange();
+  afterZipChange();
 }
 function buildZipCandidateChips(){
   const el = document.getElementById("zipCandidateChips");
@@ -5223,6 +5611,7 @@ function resetFilters(){
   state.seasons = new Set();
   state.holidays = new Set();
   state.hideVisited = false;
+  state.filterSiblings = false;
   state.homeLoc = null;
   state.zipRaw = "";
   state.zipLabel = "";
@@ -5250,6 +5639,7 @@ function countActiveFilters(){
   if(state.activity!=="all") n++;
   if(state.seasons.size>0 || state.holidays.size>0) n++; // 「季節・連休」は1項目として数える
   if(state.hideVisited) n++;
+  if(state.filterSiblings) n++;
   return n;
 }
 
@@ -5469,67 +5859,26 @@ function matches(spot){
     if(![...state.holidays].some(h=>eh.includes(h))) return false;
   }
   if(state.hideVisited && state.visited.has(spot.name)) return false;
+  if(state.filterSiblings && !isSiblingsFriendly(spot)) return false;
   if(state.excluded.has(spot.name)) return false;
   if(!matchesKeyword(spot, state.keyword)) return false;
   return true;
 }
 
 // ==================================================================
-// 🎯 迷ったらこれ！（Phase4追加）
+// 👨‍👩‍👧‍👦 兄弟みんな楽しめる（判定ロジック）
 // ------------------------------------------------------------------
-// ・目的地を決めていない人向けの、目的別ショートカット。
-// ・判定はすべて既存のderive系関数・既存データ項目の再利用のみで行い、
-//   AIによる主観的な「おすすめ度」のようなものは持ち込まない。
-// ・候補は、現在ユーザーが設定している検索・絞り込み条件（matches()）
-//   の範囲内から選ぶ。該当が少ない場合のみ全件から選び直す。
+// ・「詳しく絞り込む」の その他 チップから使う判定。
+// ・既存の対象年齢データが「幼児〜高学年」まで幅広くカバーしている
+//   施設だけを対象とする（根拠のない主観的なおすすめ度は使わない）。
+// ・以前は「🎯迷ったらこれ！」という別入口で提供していたが、
+//   「🧭今日はどうする？」と役割が重複していたため統合した
+//   （💰安く遊ぶ／🏃たくさん遊ぶ／☔雨でも安心 は既存のmoodショートカットに統一）。
 // ==================================================================
-const DECIDE_CATEGORIES = [
-  {key:"cost", label:"💰 コスパ重視", desc:"できるだけ安く、子どもが楽しめる場所"},
-  {key:"activity", label:"🏃 体を動かしたい", desc:"子どもが思い切り遊べる場所"},
-  {key:"rain", label:"☔ 雨の日でも安心", desc:"室内中心で楽しめる場所"},
-  {key:"youngkids", label:"👶 小さい子連れにおすすめ", desc:"幼児でも楽しみやすい場所"},
-  {key:"siblings", label:"👨‍👩‍👧‍👦 兄弟みんな楽しめる", desc:"年齢差がある子どもでも楽しみやすい場所"}
-];
 const YOUNG_AGE_KEYS = ["0-1歳","2-3歳","4-6歳"];
 const OLDER_AGE_KEYS = ["低学年","高学年"];
-function matchesDecideCategory(spot, key){
-  switch(key){
-    case "cost":
-      // 既存のお財布へのやさしさ判定（4段階）をそのまま利用
-      return deriveWalletLevel(spot) >= 3;
-    case "activity":{
-      // 既存の発散度判定＋既存ジャンル分類の組み合わせのみで判断
-      const cat = deriveCategory(spot);
-      const isActiveGenre = cat==="公園" || cat==="遊園地・テーマパーク";
-      const text = (spot.name||"") + (spot.desc||"");
-      const hasActiveHint = /アスレチック|プール|水遊び/.test(text);
-      return deriveActivityLevel(spot)==="active" && (isActiveGenre || hasActiveHint);
-    }
-    case "rain":
-      // 既存の雨の日レベル（4=雨の日でもOKと明記）をそのまま利用
-      return deriveRainLevel(spot) === 4;
-    case "youngkids":
-      // 既存の対象年齢データをそのまま利用
-      return YOUNG_AGE_KEYS.some(a=>spot.ages.includes(a)) && (spot.ages.includes("0-1歳") || spot.ages.includes("2-3歳"));
-    case "siblings":
-      // 既存の対象年齢データが「幼児〜高学年」まで幅広くカバーしている場合のみ対象とする
-      return YOUNG_AGE_KEYS.some(a=>spot.ages.includes(a)) && OLDER_AGE_KEYS.some(a=>spot.ages.includes(a)) && spot.ages.length>=4;
-    default:
-      return false;
-  }
-}
-// 現在の検索・絞り込み条件（matches()）を尊重しつつ候補を抽出する。
-// 条件が厳しすぎて該当0件の場合のみ、全件から選び直す。
-function pickDecideSpots(key){
-  let pool = SPOTS.filter(matches).filter(s=>matchesDecideCategory(s, key));
-  if(pool.length===0){
-    pool = SPOTS.filter(s=>matchesDecideCategory(s, key));
-  }
-  // カテゴリに応じて、既存の指標で「より当てはまる」順に並べる
-  if(key==="cost") pool = [...pool].sort((a,b)=>deriveWalletLevel(b)-deriveWalletLevel(a));
-  else if(key==="rain") pool = [...pool].sort((a,b)=>deriveRainLevel(b)-deriveRainLevel(a));
-  else if(key==="activity") pool = [...pool].sort((a,b)=>deriveActivityStars(b)-deriveActivityStars(a));
-  return pool.slice(0,4);
+function isSiblingsFriendly(spot){
+  return YOUNG_AGE_KEYS.some(a=>spot.ages.includes(a)) && OLDER_AGE_KEYS.some(a=>spot.ages.includes(a)) && spot.ages.length>=4;
 }
 
 function weatherClass(spot){
@@ -5618,17 +5967,55 @@ function hotelDistanceLabel(spot, hotel){
 }
 
 // ==================================================================
-// ⏱️ おすすめ滞在時間（Phase4追加）
+// ⏱️ おすすめ滞在時間（Phase19：再設計）
 // ------------------------------------------------------------------
-// ・spot.stayTime が個別に設定されている施設だけ表示する。
-// ・360件（現400件）すべてに機械的な目安値を割り当てることはせず、
-//   公式サイトや複数の情報源で滞在時間の目安が確認できた施設のみ設定。
-// ・表記は既存の formatMinutes() を再利用し、新しい書式ロジックを
-//   重複して作らないようにする。
+// ・従来はspot.stayTime（個別に裏取りした正確な分単位データ）がある
+//   施設だけ表示していたが、対象が3件のみで機能として弱かったため、
+//   既存の「ジャンル」「所要時間（半日／1日）」という2つの確定済み
+//   データから、根拠のある範囲で大まかな目安（4段階）を補って表示する。
+// ・優先順位：①個別に裏取りした正確なstayTimeがあればそれを最優先
+//   ②なければジャンル＋所要時間から導ける場合だけ4段階の目安を表示
+//   ③判断材料がなければ何も表示しない（推測で埋めない）。
+// ・4段階は「1時間以内／1〜2時間／2〜4時間／4時間以上」に統一し、
+//   既存の絞り込み（半日で楽しめる＝duration"半日"／1日がっつり＝
+//   duration"1日"）と矛盾しないようにする。
 // ==================================================================
+function deriveStayTimeBucket(spot){
+  const genre = deriveCategory(spot);
+  const dur = spot.duration || [];
+  const fullDay = dur.includes("1日");
+  const halfDay = dur.includes("半日");
+
+  // 大型テーマパーク・遊園地：1日表記があれば4時間以上、それ以外は2〜4時間
+  if(genre === "遊園地・テーマパーク") return fullDay ? "4時間以上" : "2〜4時間";
+
+  // 動物園・水族館・牧場：じっくり見て回ると2〜4時間が標準的
+  if(genre === "動物園" || genre === "水族館" || genre === "牧場"){
+    return fullDay && !halfDay ? "4時間以上" : "2〜4時間";
+  }
+
+  // 博物館・科学館：展示中心のため1〜2時間が目安
+  if(genre === "博物館・科学館") return "1〜2時間";
+
+  // 公園：遊具の有無や規模により変わるため、既存の所要時間区分から判断
+  if(genre === "公園"){
+    if(fullDay) return "4時間以上";
+    if(halfDay) return "2〜4時間";
+    return "1〜2時間"; // 半日／1日どちらの指定もない、展望・散策中心の小規模な公園
+  }
+
+  // その他（ジャンルが多様すぎるため、根拠のある判断ができない）
+  return null;
+}
 function deriveStayTimeLabel(spot){
-  if(!spot.stayTime || typeof spot.stayTime.minMinutes !== "number" || typeof spot.stayTime.maxMinutes !== "number") return null;
-  return `⏱️ おすすめ滞在時間：${formatMinutes(spot.stayTime.minMinutes)}〜${formatMinutes(spot.stayTime.maxMinutes)}`;
+  // ①個別に裏取りした正確なデータがあれば最優先
+  if(spot.stayTime && typeof spot.stayTime.minMinutes === "number" && typeof spot.stayTime.maxMinutes === "number"){
+    return `⏱️ おすすめ滞在時間：${formatMinutes(spot.stayTime.minMinutes)}〜${formatMinutes(spot.stayTime.maxMinutes)}`;
+  }
+  // ②なければジャンル・所要時間から導ける範囲で大まかな目安を表示
+  const bucket = deriveStayTimeBucket(spot);
+  if(!bucket) return null;
+  return `⏱️ おすすめ滞在：${bucket}（目安）`;
 }
 
 // ==================================================================
@@ -5654,21 +6041,105 @@ const NEARBY_REASON_BY_GENRE = {
 function nearbyReasonLabel(genreKey){
   return NEARBY_REASON_BY_GENRE[genreKey] || "📍 こちらもおすすめ";
 }
+// ==================================================================
+// 🗺️ おでかけエリア判定（Phase19：おすすめロジック再精査）
+// ------------------------------------------------------------------
+// ・施設データに新しいフィールドを追加するのではなく、既存の region /
+//   area（市区町村等のテキスト）から「おでかけエリア」を導出する。
+//   400件超の施設ひとつひとつに手作業でタグ付けするのではなく、
+//   既存データを最大限再利用する方針（他のderive系関数と同じ考え方）。
+// ・目的は「直線距離が近い」だけでなく「実際に一緒に回りやすいか」の
+//   判定材料を増やすこと。特に東京湾のように、直線距離は近くても
+//   陸路での行き来が現実的でない境界をまたぐ組み合わせを避ける。
+// ==================================================================
+function deriveRecommendArea(spot){
+  const area = spot.area || "";
+  const region = spot.region || "";
+
+  if(region === "千葉"){
+    if(/富津|君津/.test(area)) return "富津・君津";
+    if(/木更津/.test(area)) return "木更津";
+    if(/館山/.test(area)) return "館山";
+    if(/鴨川|南房総|勝浦|いすみ|夷隅|大多喜|白浜/.test(area)) return "房総南部";
+    if(/銚子|茂原|山武|香取|成田|栄町/.test(area)) return "房総北部";
+    return "東京湾東岸"; // 浦安・船橋・市川・習志野・千葉市・松戸・柏・野田・佐倉など
+  }
+
+  if(region === "神奈川"){
+    if(/横須賀|三浦|逗子|葉山/.test(area)) return "三浦・横須賀";
+    if(/横浜/.test(area)) return "横浜";
+    if(/川崎/.test(area)) return "川崎";
+    if(/箱根/.test(area)) return "箱根";
+    if(/小田原/.test(area)) return "小田原";
+    if(/湯河原|真鶴/.test(area)) return "湯河原";
+    if(/藤沢|鎌倉|茅ヶ崎|平塚|大磯|二宮|江の島|江ノ島/.test(area)) return "湘南";
+    return "その他"; // 相模原・厚木・大和・座間・秦野・伊勢原など内陸エリア
+  }
+
+  if(region === "静岡"){
+    if(/熱海/.test(area)) return "熱海";
+    if(/御殿場|裾野|三島|沼津|函南/.test(area)) return "御殿場・裾野";
+    if(/伊東|下田|河津|伊豆の国|伊豆市|賀茂郡/.test(area)) return "伊豆東部";
+    return "その他"; // 掛川・浜松・富士市など伊豆から離れたエリア
+  }
+
+  if(region === "山梨") return "山梨";
+
+  return "その他";
+}
+// 東京湾をはさみ、直線距離は近くても陸路での周遊が現実的でない組み合わせ。
+// （富津・君津/木更津/房総 ⇔ 横浜/川崎/湘南/三浦・横須賀）
+const BAY_EAST_AREAS = ["木更津","富津・君津","房総北部","房総南部","館山"];
+const BAY_WEST_AREAS = ["横浜","川崎","湘南","三浦・横須賀"];
+// 簡易的な隣接エリアマップ（陸路で自然につながる方向を優先するための補助情報）
+const AREA_ADJACENCY = {
+  "横浜":["川崎","湘南"], "川崎":["横浜"], "湘南":["横浜","三浦・横須賀","小田原"],
+  "三浦・横須賀":["湘南","横浜"],
+  "木更津":["富津・君津","東京湾東岸"], "富津・君津":["木更津","房総北部"],
+  "房総北部":["富津・君津","東京湾東岸","房総南部"], "房総南部":["房総北部","館山"], "館山":["房総南部"],
+  "東京湾東岸":["木更津","房総北部"],
+  "箱根":["小田原","湯河原","御殿場・裾野"], "小田原":["箱根","湯河原","湘南"], "湯河原":["箱根","小田原","熱海"],
+  "熱海":["湯河原","伊豆東部"], "伊豆東部":["熱海","御殿場・裾野"],
+  "山梨":["御殿場・裾野"], "御殿場・裾野":["山梨","箱根","伊豆東部"]
+};
+// エリア相性スコア：3=同じエリア、2=隣接エリア、1=それ以外、-1=東京湾をはさむため非対応
+function areaCompatibility(areaA, areaB){
+  if(areaA === areaB) return 3;
+  if((BAY_EAST_AREAS.includes(areaA) && BAY_WEST_AREAS.includes(areaB)) ||
+     (BAY_WEST_AREAS.includes(areaA) && BAY_EAST_AREAS.includes(areaB))){
+    return -1;
+  }
+  if(AREA_ADJACENCY[areaA] && AREA_ADJACENCY[areaA].includes(areaB)) return 2;
+  return 1;
+}
+
 function getNearbyCombos(spot){
   if(typeof spot.lat !== "number" || typeof spot.lng !== "number") return [];
   const currentGenre = deriveCategory(spot);
+  const currentArea = deriveRecommendArea(spot);
   const candidates = SPOTS
     .filter(s => s.name !== spot.name && typeof s.lat==="number" && typeof s.lng==="number")
-    .map(s => ({ spot:s, km: haversineKm(spot.lat, spot.lng, s.lat, s.lng), genre: deriveCategory(s) }))
+    .map(s => {
+      const area = deriveRecommendArea(s);
+      return {
+        spot:s,
+        km: haversineKm(spot.lat, spot.lng, s.lat, s.lng),
+        genre: deriveCategory(s),
+        area,
+        compat: areaCompatibility(currentArea, area)
+      };
+    })
+    .filter(c => c.compat >= 0)              // 東京湾をはさむ等、一緒に回りにくい組み合わせは除外
     .filter(c => c.km <= NEARBY_RADIUS_KM)
-    .sort((a,b) => a.km - b.km);
+    // ①エリア相性（同じエリア＞隣接エリア＞その他）を最優先し、同点内では②距離が近い順
+    .sort((a,b) => (b.compat - a.compat) || (a.km - b.km));
 
   const picked = [];
   const usedGenres = new Set();
   for(const c of candidates){
     if(picked.length >= 3) break;
-    if(c.genre === currentGenre) continue; // ①違うジャンルを優先
-    if(usedGenres.has(c.genre)) continue;  // ②同じジャンルの重複を避ける
+    if(c.genre === currentGenre) continue; // ③違うジャンルを優先
+    if(usedGenres.has(c.genre)) continue;  // ④同じジャンルの重複を避ける
     picked.push(c);
     usedGenres.add(c.genre);
   }
@@ -6232,57 +6703,23 @@ document.getElementById("resetBtn").onclick = ()=>{
 };
 
 // ------------------------------------------------------------------
-// 🎯 迷ったらこれ！のチップ構築・クリック処理（Phase4追加）
+// 📍 どこから行く？（ホーム最上部の郵便番号セクション）
 // ------------------------------------------------------------------
-let activeDecideKey = null;
-function buildDecideChips(){
-  const el = document.getElementById("decideChips");
-  el.innerHTML = "";
-  DECIDE_CATEGORIES.forEach(cat=>{
-    const c = document.createElement("div");
-    c.className = "decide-chip" + (activeDecideKey===cat.key ? " active" : "");
-    c.textContent = cat.label;
-    c.onclick = ()=>onDecideChipClick(cat.key);
-    el.appendChild(c);
-  });
+// 以前は「🔍詳しく絞り込む」の中にあった郵便番号入力を、
+// UI整理により常時見える位置（ホーム最上部）に移動。
+// ロジック（onZipSubmit・selectZipCandidate等）は既存のまま再利用する。
+function renderHomeZip(){
+  const zipInput = document.getElementById("zipInput");
+  const zipStatus = document.getElementById("zipStatus");
+  if(!zipInput || !zipStatus) return;
+  zipInput.value = state.zipRaw || "";
+  zipStatus.textContent = state.zipLabel || "";
+  buildZipCandidateChips();
 }
-function onDecideChipClick(key){
-  const resultsEl = document.getElementById("decideResults");
-  if(activeDecideKey===key){
-    // 同じカテゴリをもう一度押したら閉じる
-    activeDecideKey = null;
-    resultsEl.style.display = "none";
-    buildDecideChips();
-    return;
-  }
-  activeDecideKey = key;
-  buildDecideChips();
-  trackEvent("recommendation_category_click", {category:key});
-
-  const spots = pickDecideSpots(key);
-  resultsEl.innerHTML = "";
-  if(spots.length===0){
-    resultsEl.innerHTML = `<div class="decide-empty">条件に合うスポットが見つかりませんでした。</div>`;
-  } else {
-    spots.forEach(spot=>{
-      const card = document.createElement("div");
-      card.className = "decide-result-card";
-      const genre = genreInfo(spot);
-      card.innerHTML = `
-        <div class="decide-result-icon">${genre.icon}</div>
-        <div class="decide-result-body">
-          <div class="decide-result-name">${spot.name}</div>
-          <div class="decide-result-genre">${genre.label}　${spot.area}</div>
-        </div>
-      `;
-      card.onclick = ()=>{
-        trackEvent("recommendation_category_click", {category:key, facility_name:spot.name});
-        openDetail(spot);
-      };
-      resultsEl.appendChild(card);
-    });
-  }
-  resultsEl.style.display = "block";
+// 郵便番号の変更は、詳しく絞り込むシートではなくホーム画面側の要素だけを更新すればよい
+function afterZipChange(){
+  renderHomeZip();
+  render();
 }
 
 // ==================================================================
@@ -6292,7 +6729,17 @@ loadAnalytics();
 const persisted = loadPersisted(); // localStorageの読み込みは1回だけ行い、使い回す
 applyPersisted(persisted);
 pickDiscovery(); // 「新しいおでかけ先を発見」の初期ピックアップ（render()内で毎回選び直さない）
-buildDecideChips(); // 🎯 迷ったらこれ！のチップ初期構築
+document.getElementById("zipBtn").onclick = onZipSubmit;
+document.getElementById("zipInput").addEventListener("keydown", e=>{ if(e.key==="Enter") onZipSubmit(); });
+document.getElementById("conditionResetBtn").onclick = ()=>{
+  // 🔄 トップ画面から、検索条件（今日はどうする？／詳しく絞り込む／どこから行く？）を
+  // まとめてリセットする。お気に入り・行った記録など「保存データ」は対象外
+  // （それらはheaderの「保存データをリセット」ボタンで別途対応する）。
+  resetFilters();
+  renderHomeZip();
+  render();
+};
+renderHomeZip();
 render();
 trackEvent("view_app", {}); // ①アプリ全体の閲覧数
 </script>
