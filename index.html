@@ -232,14 +232,15 @@
   }
   .compare-pick.picked{background:var(--coral); border-color:var(--coral); color:#fff;}
 
-  .card-name{font-size:15px; font-weight:700; line-height:1.4; padding-right:26px;}
-  .card-area{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+  .card-name{font-size:15px; font-weight:700; line-height:1.4; word-break:break-word;}
+  .card-area{font-size:11px; color:var(--ink-soft); margin-top:2px; word-break:break-word;}
 
-  .card-top-row{display:flex; gap:10px; align-items:flex-start; padding-right:26px;}
-  .card-quick-actions{flex:0 0 auto; display:flex; gap:4px;}
+  .card-top-row{display:flex; gap:8px; align-items:flex-start;}
+  .card-title-block{flex:1; min-width:0; display:flex; flex-direction:column;}
+  .card-quick-actions{flex:0 0 auto; display:flex; gap:4px; margin-top:-4px;}
   .card-quick-btn{
-    border:1px solid var(--line); background:var(--paper); border-radius:8px; width:30px; height:30px;
-    font-size:14px; line-height:1; cursor:pointer; opacity:.55;
+    border:1px solid var(--line); background:var(--paper); border-radius:8px; width:36px; height:36px; min-width:36px; min-height:36px;
+    font-size:16px; line-height:1; cursor:pointer; opacity:.55; display:flex; align-items:center; justify-content:center; padding:0;
   }
   .card-quick-btn.on{opacity:1; background:#FDEDE6; border-color:var(--coral);}
   .card-thumb{flex:0 0 auto; width:40px; height:40px; border-radius:10px; background:#F1EADA;
@@ -298,11 +299,12 @@
   .sheet-overlay{position:fixed; inset:0; background:rgba(62,143,176,.38); z-index:100; display:none;
     align-items:flex-end; justify-content:center;}
   .sheet-overlay.open{display:flex;}
-  .sheet{background:var(--paper); width:100%; max-width:560px; max-height:92vh; overflow-y:scroll;
-    border-radius:18px 18px 0 0; padding:16px 16px calc(20px + env(safe-area-inset-bottom));
+  .sheet{background:var(--paper); width:100%; max-width:560px; max-height:calc(100vh - env(safe-area-inset-top) - 20px); overflow-y:scroll;
+    border-radius:18px 18px 0 0; padding:calc(16px + env(safe-area-inset-top)) 16px calc(20px + env(safe-area-inset-bottom));
+    margin-top:env(safe-area-inset-top);
     -webkit-overflow-scrolling:touch; overscroll-behavior:contain;}
   .sheet-close{display:block; margin:0 0 10px auto; width:34px; height:34px; border-radius:50%; border:none;
-    background:#F1EADA; color:var(--ink); font-size:16px; cursor:pointer;}
+    background:#F1EADA; color:var(--ink); font-size:16px; cursor:pointer; min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center;}
   .sheet-title{font-size:17px; font-weight:900; font-family:'Zen Maru Gothic',sans-serif; margin-bottom:10px;}
 
   /* ---------- 絞り込みモーダル ---------- */
@@ -340,6 +342,22 @@
   }
   .zip-status{font-size:11px; color:var(--ink-soft); margin-top:6px; min-height:14px;}
   .zip-hint{font-size:11px; color:var(--ink-soft); margin-top:8px; line-height:1.6;}
+
+  /* ---------- 📍 現在地から探す（Geolocation） ---------- */
+  .geo-row{display:flex; gap:6px; align-items:center;}
+  .geo-btn{
+    flex:1; padding:10px 12px; border-radius:10px; border:1.5px solid var(--sun); background:var(--paper);
+    color:var(--sun); font-size:12.5px; font-weight:700; cursor:pointer;
+  }
+  .geo-btn.active{background:var(--sun); color:#fff; border-color:var(--sun);}
+  .geo-btn:disabled{opacity:.6; cursor:default;}
+  .geo-clear-btn{
+    flex:0 0 auto; padding:10px 12px; border-radius:10px; border:1.5px solid var(--line); background:var(--paper);
+    color:var(--ink-soft); font-size:11.5px; font-weight:700; cursor:pointer;
+  }
+  .geo-status{font-size:11px; color:var(--ink-soft); margin-top:6px; min-height:14px;}
+  .geo-status-error{color:var(--coral);}
+  .geo-distance-note{font-size:10.5px; color:var(--ink-soft);}
   .visitdate-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
   .visitdate-row input[type="date"]{
     padding:8px 10px; border-radius:9px; border:1.5px solid var(--line); background:var(--paper);
@@ -371,10 +389,10 @@
   .fav-item .fi-remove{border:none; background:#F1EADA; color:var(--ink-soft); border-radius:8px; padding:6px 10px; font-size:11px; font-weight:700; cursor:pointer;}
 
   /* ---------- 🗓 プラン（Phase33：今回実際に行く場所） ---------- */
-  .plan-tabs{display:flex; gap:6px; margin-bottom:12px;}
+  .plan-tabs{display:flex; gap:6px; margin-bottom:12px; min-height:40px; align-items:center;}
   .plan-tab-btn{
     flex:1; padding:9px 4px; border-radius:9px; border:1.5px solid var(--line); background:var(--paper);
-    color:var(--ink-soft); font-size:12px; font-weight:700; cursor:pointer;
+    color:var(--ink-soft); font-size:12px; font-weight:700; cursor:pointer; min-height:38px; display:flex; align-items:center; justify-content:center;
   }
   .plan-tab-btn.active{background:var(--coral); border-color:var(--coral); color:#fff;}
   .plan-empty{text-align:center; padding:30px 10px; color:var(--ink-soft); font-size:12.5px; line-height:1.7;}
@@ -423,9 +441,9 @@
   .compare-table td{line-height:1.5;}
 
   /* ---------- 詳細画面 ---------- */
-  .detail-header-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:2px;}
-  .detail-header-row .detail-name{margin:0;}
-  .detail-header-row .sheet-close{margin:0; flex:0 0 auto;}
+  .detail-header-row{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:2px; padding-top:8px;}
+  .detail-header-row .detail-name{margin:0; flex:1; min-width:0; word-break:break-word;}
+  .detail-header-row .sheet-close{margin:0; flex:0 0 auto; width:40px; height:40px; min-width:44px; min-height:44px;}
   .detail-name{font-size:19px; font-weight:900; font-family:'Zen Maru Gothic',sans-serif; line-height:1.4; padding-right:10px;}
   .detail-area{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
   .detail-close-bottom{
@@ -460,10 +478,10 @@
   .congestion-table th{background:#F1EADA; font-weight:700; color:var(--ink-soft);}
   .congestion-note{font-size:10.5px; color:var(--ink-soft); margin-top:6px;}
   .detail-info-grid{display:flex; flex-direction:column; gap:4px; margin:6px 0; padding:8px 10px; background:#F5F0E4; border-radius:8px;}
-  .info-row{display:flex; gap:6px; font-size:11.5px; color:var(--ink);}
-  .info-row .ico{flex:0 0 auto; width:16px;}
-  .info-row .lbl{flex:0 0 auto; color:var(--ink-soft); width:44px;}
-  .info-row .val{flex:1;}
+  .info-row{display:flex; gap:6px; font-size:11.5px; color:var(--ink); align-items:flex-start;}
+  .info-row .ico{flex:0 0 auto; width:16px; flex-shrink:0;}
+  .info-row .lbl{flex:0 0 auto; color:var(--ink-soft); width:48px; flex-shrink:0; white-space:nowrap;}
+  .info-row .val{flex:1; min-width:0; word-break:break-word;}
   .tip{font-size:11.5px; color:#7a5a3a; background:#FBF0DC; border-radius:8px; padding:7px 10px; line-height:1.6; margin-bottom:9px;}
   .tip b{color:var(--coral);}
   .parking-detail-note{font-size:11px; color:var(--ink-soft); margin-top:6px; line-height:1.6;}
@@ -624,6 +642,11 @@
      footerではなくheader直下に配置して見つけやすくする） -->
 <div class="home-location-section">
   <div class="home-location-label">📍 どこから行く？</div>
+  <div class="geo-row">
+    <button id="geoBtn" class="geo-btn" type="button">📍 現在地から探す</button>
+    <button id="geoClearBtn" class="geo-clear-btn" type="button" style="display:none;">解除</button>
+  </div>
+  <div class="geo-status" id="geoStatus"></div>
   <div class="zip-row">
     <input type="text" id="zipInput" placeholder="郵便番号または地名（例：100-0001／横浜）" maxlength="20">
     <button id="zipBtn">近い順</button>
@@ -7443,12 +7466,18 @@ SPOTS.push(...SPOTS_FRUIT_12);
 // アプリの状態（フィルター条件・お気に入り・比較など）
 // ==================================================================
 let state = {
-  region:"all", genre:"all", rain:new Set(), wallet:new Set(), mode:"car",
+  region:new Set(), genre:new Set(), rain:new Set(), wallet:new Set(), mode:"car",
   ages:new Set(), duration:"all", parking:"all", activity:"all",
   seasons:new Set(), holidays:new Set(),
   hideVisited:false, keyword:"", filterSiblings:false, waterPlay:false, visitDate:"",
   favorites:new Set(), visited:new Set(), excluded:new Set(),
   homeLoc:null, zipRaw:"", zipLabel:"", zipCandidates:null,
+  // 📍 現在地から探す（Geolocation API）関連。既存の郵便番号／地名検索（zipRaw/zipLabel）とは
+  // 別の入力経路として扱い、state.homeLoc は「現在有効な出発地」を指す共通フィールドのまま再利用する。
+  homeLocSource:null, // "zip"（郵便番号・地名） / "geo"（現在地） / null（未設定）
+  geoStatus:"idle", // "idle" | "loading" | "success" | "denied" | "error" | "unavailable"
+  geoErrorMsg:"",
+  zipHomeLocBackup:null, // 現在地に切り替える直前の郵便番号／地名の検索状態（解除時に復元するため）
   recentlyViewed:[], // 施設名の配列。新しいものが先頭
   compareMode:false, compareSet:new Set(), // ⚖️ 比較機能（最大3件）
   sortMode:"recommend", // "recommend"（おすすめ順） / "near"（近い順）
@@ -7612,13 +7641,22 @@ function loadPersisted(){
 }
 function savePersisted(){
   try{
+    // 📍 現在地（Geolocation）の緯度経度はこの端末に保存しない（プライバシー配慮のため、
+    // 毎回取り直す設計）。現在地モード中に他の保存処理（お気に入り等）が走った場合も、
+    // 直前の郵便番号／地名の検索状態（あれば）を代わりに保存する。
+    const isGeo = state.homeLocSource === "geo";
+    const persistHomeLoc = isGeo ? (state.zipHomeLocBackup ? state.zipHomeLocBackup.loc : null) : state.homeLoc;
+    const persistZipRaw = isGeo ? (state.zipHomeLocBackup ? state.zipHomeLocBackup.raw : "") : state.zipRaw;
+    const persistZipLabel = isGeo ? (state.zipHomeLocBackup ? state.zipHomeLocBackup.label : "") : state.zipLabel;
     localStorage.setItem(STORAGE_KEY, JSON.stringify({
       favorites:[...state.favorites],
       visited:[...state.visited],
       excluded:[...state.excluded],
-      homeLoc: state.homeLoc,
-      zipRaw: state.zipRaw || "",
-      zipLabel: state.zipLabel || "",
+      region: [...state.region],
+      genre: [...state.genre],
+      homeLoc: persistHomeLoc,
+      zipRaw: persistZipRaw || "",
+      zipLabel: persistZipLabel || "",
       recentlyViewed: state.recentlyViewed,
       plans: state.plans || [[],[],[]],
       activePlanTab: state.activePlanTab || 0
@@ -7630,7 +7668,9 @@ function applyPersisted(p){
   state.favorites = new Set(p.favorites||[]);
   state.visited = new Set(p.visited||[]);
   state.excluded = new Set(p.excluded||[]);
-  if(p.homeLoc) state.homeLoc = p.homeLoc;
+  state.region = new Set(p.region||[]);
+  state.genre = new Set(p.genre||[]);
+  if(p.homeLoc){ state.homeLoc = p.homeLoc; state.homeLocSource = "zip"; }
   state.recentlyViewed = p.recentlyViewed || [];
   state.zipRaw = p.zipRaw || "";
   state.zipLabel = p.zipLabel || "";
@@ -7654,6 +7694,13 @@ function haversineKm(lat1,lng1,lat2,lng2){
 function estimateMinutes(km){
   if(km<=15) return km/25*60;
   return (15/25*60) + (km-15)/55*60;
+}
+// 距離の見やすい表示（1km未満は「○○m」、1km以上は「○○.○km」）。
+// あくまでhaversineKm()による直線距離であり、道路距離ではない点に注意。
+function formatDistance(km){
+  if(km==null || isNaN(km)) return "";
+  if(km < 1) return `${Math.round(km*1000)}m`;
+  return `${km.toFixed(1)}km`;
 }
 
 // ==================================================================
@@ -7931,6 +7978,36 @@ function buildSimpleChips(containerId, items, isActiveFn, onClickFn, extraClassF
     el.appendChild(c);
   });
 }
+function buildRegionChipsInto(containerId){
+  const el = document.getElementById(containerId);
+  el.innerHTML = "";
+  REGIONS.forEach(region=>{
+    const c = document.createElement("div");
+    c.className = "chip" + (state.region.has(region.key) ? " active" : "");
+    c.textContent = region.label;
+    c.onclick = ()=>{
+      if(state.region.has(region.key)) state.region.delete(region.key); else state.region.add(region.key);
+      trackFilterUse("region", region.key);
+      afterFilterChange();
+    };
+    el.appendChild(c);
+  });
+}
+function buildGenreChipsInto(containerId){
+  const el = document.getElementById(containerId);
+  el.innerHTML = "";
+  GENRES.forEach(genre=>{
+    const c = document.createElement("div");
+    c.className = "chip" + (state.genre.has(genre.key) ? " active" : "");
+    c.textContent = genre.label;
+    c.onclick = ()=>{
+      if(state.genre.has(genre.key)) state.genre.delete(genre.key); else state.genre.add(genre.key);
+      trackFilterUse("genre", genre.key);
+      afterFilterChange();
+    };
+    el.appendChild(c);
+  });
+}
 function buildAgeChipsInto(containerId){
   const el = document.getElementById(containerId);
   el.innerHTML = "";
@@ -8020,7 +8097,7 @@ function renderFilterSheet(){
       <div class="frow">
         <div class="frow-label">エリア</div>
         <div class="chips" id="fRegionChips"></div>
-        <div class="zip-hint">📍 郵便番号での「近い順」検索は、ホーム画面の最上部から設定できます。</div>
+        <div class="zip-hint">📍 「現在地から探す」や郵便番号での「近い順」検索は、ホーム画面の最上部から設定できます。</div>
       </div>
     </div>
 
@@ -8081,9 +8158,10 @@ function renderFilterSheet(){
 
     <button class="reset-filters-btn" id="filterResetBtn">🔄 絞り込み条件をリセット</button>
     <button class="filter-apply-btn" id="filterApplyBtn">この条件で見る（<span id="filterResultCount">0</span>件）</button>
+    <button class="detail-close-bottom" id="filterCloseBtnBottom">戻る</button>
   `;
 
-  buildSimpleChips("fRegionChips", REGIONS, r=>state.region===r.key, r=>state.region=r.key, null, "region");
+  buildRegionChipsInto("fRegionChips");
   const visitDateInput = document.getElementById("fVisitDate");
   if(visitDateInput){
     visitDateInput.onchange = (e)=>{
@@ -8101,7 +8179,7 @@ function renderFilterSheet(){
       renderFilterSheet();
     };
   }
-  buildSimpleChips("fGenreChips", GENRES, g=>state.genre===g.key, g=>state.genre=g.key, null, "genre");
+  buildGenreChipsInto("fGenreChips");
   buildAgeChipsInto("fAgeChips");
   buildSeasonChipsInto("fSeasonChips");
   buildHolidayChipsInto("fHolidayChips");
@@ -8112,6 +8190,7 @@ function renderFilterSheet(){
 
   document.getElementById("filterCloseBtn").onclick = closeFilterModal;
   document.getElementById("filterApplyBtn").onclick = closeFilterModal;
+  document.getElementById("filterCloseBtnBottom").onclick = closeFilterModal;
   document.getElementById("filterResetBtn").onclick = ()=>{ resetFilters(); renderHomeZip(); afterFilterChange(); };
   document.getElementById("filterResultCount").textContent = SPOTS.filter(matches).length;
 }
@@ -8129,6 +8208,11 @@ function onZipSubmit(){
   const rawInput = inputEl.value.trim();
   state.zipRaw = inputEl.value;
   state.zipCandidates = null;
+  // 郵便番号・地名を明示的に検索した場合は、現在地モードより優先する
+  // （現在地との混同を避けるため、現在地の状態・退避データはクリアする）
+  state.geoStatus = "idle";
+  state.geoErrorMsg = "";
+  state.zipHomeLocBackup = null;
 
   if(!rawInput){
     state.zipLabel = "郵便番号（7桁）または都道府県・市区町村名を入力してください";
@@ -8161,6 +8245,7 @@ function onZipSubmit(){
     }
     const point = hit.candidates ? hit.candidates[0] : hit;
     state.homeLoc = {lat:point.lat, lng:point.lng};
+    state.homeLocSource = "zip";
     state.zipLabel = `${hit.label} 付近を起点に、近い順に並び替えました（郵便番号の上3桁による概算）`;
     savePersisted();
     afterZipChange();
@@ -8176,6 +8261,7 @@ function onZipSubmit(){
   }
   if(found.length===1){
     state.homeLoc = {lat:found[0].lat, lng:found[0].lng};
+    state.homeLocSource = "zip";
     state.zipLabel = `${found[0].label} 付近を起点に、近い順に並び替えました`;
     savePersisted();
     afterZipChange();
@@ -8208,6 +8294,10 @@ function searchPlaceName(query){
 }
 function selectZipCandidate(cand){
   state.homeLoc = {lat:cand.lat, lng:cand.lng};
+  state.homeLocSource = "zip";
+  state.geoStatus = "idle";
+  state.geoErrorMsg = "";
+  state.zipHomeLocBackup = null;
   state.zipCandidates = null;
   state.zipLabel = `${cand.label} 付近を起点に、近い順に並び替えました`;
   savePersisted();
@@ -8226,26 +8316,100 @@ function buildZipCandidateChips(){
     el.appendChild(c);
   });
 }
+// ------------------------------------------------------------------
+// 📍 現在地から探す（Geolocation API）
+// 既存の「郵便番号／地名から探す」とは別入口として、ブラウザの現在地を取得する。
+// 取得に成功した場合のみ、既存の出発地フィールド（state.homeLoc）を現在地に切り替えて
+// 距離計算・近い順ソート・行き方表示などの既存ロジックをそのまま再利用する。
+// 位置情報が使えない・拒否された場合も、既存の検索機能（郵便番号・地名・通常検索）は
+// 一切変更せずそのまま利用できる。
+// ------------------------------------------------------------------
+function requestCurrentLocation(){
+  if(!("geolocation" in navigator)){
+    state.geoStatus = "unavailable";
+    state.geoErrorMsg = "この端末・ブラウザでは現在地を取得できません";
+    trackEvent("geo_location_unavailable", {});
+    renderHomeZip();
+    return;
+  }
+  state.geoStatus = "loading";
+  state.geoErrorMsg = "";
+  renderHomeZip();
+  navigator.geolocation.getCurrentPosition(
+    pos=>{
+      // 現在地に切り替える直前の郵便番号／地名の検索状態を退避しておき、
+      // 「現在地を解除」した時に元の検索条件へ戻せるようにする
+      if(state.homeLocSource !== "geo"){
+        state.zipHomeLocBackup = { loc: state.homeLoc, raw: state.zipRaw, label: state.zipLabel };
+      }
+      state.homeLoc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      state.homeLocSource = "geo";
+      state.geoStatus = "success";
+      state.geoErrorMsg = "";
+      state.zipCandidates = null;
+      // 現在地の緯度経度はこの端末に保存しない（毎回取り直す。プライバシー配慮のため
+      // savePersisted()はあえて呼ばない＝郵便番号側の保存データには影響しない）
+      resetTodayWeatherKindCache();
+      trackEvent("geo_location_success", {});
+      renderHomeZip();
+      render();
+      ensureTodayWeatherKind().then(()=>render());
+    },
+    err=>{
+      // err.code: 1=PERMISSION_DENIED, 2=POSITION_UNAVAILABLE, 3=TIMEOUT
+      if(err.code === 1){
+        state.geoStatus = "denied";
+        state.geoErrorMsg = "位置情報の利用が許可されていません。ブラウザ・端末の設定から位置情報の利用を許可してください";
+      } else if(err.code === 2){
+        state.geoStatus = "unavailable";
+        state.geoErrorMsg = "現在地を取得できませんでした（電波状況などをご確認ください）";
+      } else {
+        state.geoStatus = "error";
+        state.geoErrorMsg = "現在地の取得に時間がかかりすぎました。もう一度お試しください";
+      }
+      trackEvent("geo_location_error", {code: err.code});
+      renderHomeZip();
+    },
+    { enableHighAccuracy:true, timeout:15000, maximumAge:0 }
+  );
+}
+// 現在地モードを解除し、直前の郵便番号／地名の検索状態があればそれに戻す
+function clearCurrentLocation(){
+  if(state.zipHomeLocBackup){
+    state.homeLoc = state.zipHomeLocBackup.loc;
+    state.zipRaw = state.zipHomeLocBackup.raw || "";
+    state.zipLabel = state.zipHomeLocBackup.label || "";
+    state.homeLocSource = state.homeLoc ? "zip" : null;
+  } else {
+    state.homeLoc = null;
+    state.homeLocSource = null;
+  }
+  state.zipHomeLocBackup = null;
+  state.geoStatus = "idle";
+  state.geoErrorMsg = "";
+  resetTodayWeatherKindCache();
+  trackEvent("geo_location_clear", {});
+  renderHomeZip();
+  render();
+  ensureTodayWeatherKind().then(()=>render());
+}
+
 function resetFilters(){
-  state.region = "all";
-  state.genre = "all";
-  state.rain = new Set();
-  state.wallet = new Set();
-  state.mode = "car";
+  // 「どこから行く？」「今日はどうする？」の設定は保持する
+  state.region = new Set();
+  state.genre = new Set();
+  // state.rain / state.wallet / state.activity は保持（「今日はどうする？」）
+  // state.mode は保持（「今日はどうする？」）
   state.ages = new Set();
   state.duration = "all";
   state.parking = "all";
-  state.activity = "all";
   state.seasons = new Set();
   state.holidays = new Set();
   state.hideVisited = false;
   state.filterSiblings = false;
   state.waterPlay = false;
   state.visitDate = "";
-  state.homeLoc = null;
-  state.zipRaw = "";
-  state.zipLabel = "";
-  state.zipCandidates = null;
+  // state.homeLoc / state.homeLocSource / state.geoStatus 等は保持（「どこから行く？」）
   savePersisted();
 }
 function openFilterModal(){
@@ -8259,8 +8423,8 @@ document.getElementById("openFilterBtn").onclick = openFilterModal;
 
 function countActiveFilters(){
   let n = 0;
-  if(state.region!=="all") n++;
-  if(state.genre!=="all") n++;
+  if(state.region.size>0) n++;
+  if(state.genre.size>0) n++;
   if(state.rain.size>0) n++;
   if(state.wallet.size>0) n++;
   if(state.ages.size>0) n++;
@@ -8309,8 +8473,10 @@ function renderTermsSheet(){
       <p>お問い合わせフォームでいただいた内容は、お問い合わせへの対応目的以外には使用しません。</p>
       <p style="margin-top:14px; color:var(--ink-soft); font-size:11px;">最終更新：${APP_LAST_UPDATED}</p>
     </div>
+    <button class="detail-close-bottom" id="termsCloseBtnBottom">戻る</button>
   `;
   document.getElementById("termsCloseBtn").onclick = ()=>closeSheetById("termsOverlay");
+  document.getElementById("termsCloseBtnBottom").onclick = ()=>closeSheetById("termsOverlay");
 }
 document.getElementById("termsOpenBtn").onclick = ()=>{
   renderTermsSheet();
@@ -8346,8 +8512,10 @@ function renderFavSheet(){
     <button class="sheet-close" id="favCloseBtn">×</button>
     <div class="sheet-title">❤️ 行きたい一覧（${spots.length}件）</div>
     ${bodyHtml}
+    <button class="detail-close-bottom" id="favCloseBtnBottom">戻る</button>
   `;
   document.getElementById("favCloseBtn").onclick = ()=>closeSheetById("favOverlay");
+  document.getElementById("favCloseBtnBottom").onclick = ()=>closeSheetById("favOverlay");
   sheet.querySelectorAll(".fi-main").forEach(el=>{
     el.onclick = ()=>{
       const spot = SPOTS.find(s=>s.name===el.dataset.name);
@@ -8495,8 +8663,7 @@ const PLAN_TAB_LABELS = ["プランA", "プランB", "プランC"];
 const PLAN_TRIP_MODES = [
   {key:"roundtrip", label:"🔁 往復"},
   {key:"outboundOnly", label:"🌙 行きのみ（宿泊）"},
-  {key:"returnOnly", label:"🌅 帰りのみ（宿泊からの帰り）"},
-  {key:"noHomeLegs", label:"🏨 行き帰りなし（連泊2日目等）"}
+  {key:"returnOnly", label:"🌅 帰りのみ（宿泊からの帰り）"}
 ];
 function renderPlanSheet(){
   const sheet = document.getElementById("planSheet");
@@ -8533,7 +8700,7 @@ function renderPlanSheet(){
     const homeLegOutHtml = showOutLeg ? (
       summary.homeLegOut
         ? `<div class="plan-leg plan-leg-home">🏠 出発地から約${Math.round(summary.homeLegOut.km)}km・${formatMinutes(summary.homeLegOut.minutes)}（${summary.homeLegOut.mode==="transit"?"🚃電車・バス":"🚗車"}）</div>`
-        : `<div class="plan-leg plan-leg-home plan-leg-nohome">🏠 出発地（郵便番号・地名）が未設定です。トップの「近い順」から設定すると、出発地からの移動時間も表示されます。</div>`
+        : `<div class="plan-leg plan-leg-home plan-leg-nohome">🏠 出発地（現在地・郵便番号・地名）が未設定です。トップの「近い順」から設定すると、出発地からの移動時間も表示されます。</div>`
     ) : "";
     const homeLegReturnHtml = showReturnLeg
       ? (summary.homeLegReturn
@@ -8582,8 +8749,10 @@ function renderPlanSheet(){
     ${tabsHtml}
     ${bodyHtml}
     ${spots.length>0 ? `<button type="button" class="plan-share-btn" id="planShareBtn">🖼️ ${PLAN_TAB_LABELS[state.activePlanTab]}を画像で共有</button>` : ""}
+    <button class="detail-close-bottom" id="planCloseBtnBottom">戻る</button>
   `;
   document.getElementById("planCloseBtn").onclick = ()=>closeSheetById("planOverlay");
+  document.getElementById("planCloseBtnBottom").onclick = ()=>closeSheetById("planOverlay");
   sheet.querySelectorAll(".plan-tab-btn").forEach(btn=>{
     btn.onclick = ()=>{
       state.activePlanTab = Number(btn.dataset.tab);
@@ -8946,13 +9115,13 @@ function compareCellValue(label, spot){
     case "発散度": return activityStarsLabel(spot);
     case "短時間向き": return spot.duration.includes("半日") ? "◎ 半日でOK" : "1日じっくり型";
     case "車での移動時間": {
-      if(!state.homeLoc) return "郵便番号未設定";
+      if(!state.homeLoc) return "出発地未設定";
       const km = haversineKm(state.homeLoc.lat, state.homeLoc.lng, spot.lat, spot.lng);
       return `約${formatMinutes(deriveCarMinutes(spot, km))}（目安）`;
     }
     case "電車での移動時間": {
       if(!hasTrainAccess(spot)) return "公共交通：行きにくい";
-      if(!state.homeLoc) return "郵便番号未設定";
+      if(!state.homeLoc) return "出発地未設定";
       const km = haversineKm(state.homeLoc.lat, state.homeLoc.lng, spot.lat, spot.lng);
       return `約${formatMinutes(deriveTransitMinutes(spot, km))}（目安）`;
     }
@@ -8973,8 +9142,10 @@ function renderCompareSheet(){
       <button class="sheet-close" id="compareCloseBtn">×</button>
       <div class="sheet-title">⚖️ 比較する</div>
       <div class="compare-empty">比較するスポットを2件以上選んでください。</div>
+      <button class="detail-close-bottom" id="compareCloseBtnBottom">戻る</button>
     `;
     document.getElementById("compareCloseBtn").onclick = ()=>closeSheetById("compareOverlay");
+    document.getElementById("compareCloseBtnBottom").onclick = ()=>closeSheetById("compareOverlay");
     return;
   }
   const headerCells = spots.map(s=>`<th>${s.name}</th>`).join("");
@@ -8992,8 +9163,10 @@ function renderCompareSheet(){
       </table>
     </div>
     <div class="parking-detail-note">※すべて目安です。訪問前に公式サイトをご確認ください。</div>
+    <button class="detail-close-bottom" id="compareCloseBtnBottom">戻る</button>
   `;
   document.getElementById("compareCloseBtn").onclick = ()=>closeSheetById("compareOverlay");
+  document.getElementById("compareCloseBtnBottom").onclick = ()=>closeSheetById("compareOverlay");
 }
 
 // ==================================================================
@@ -9001,8 +9174,8 @@ function renderCompareSheet(){
 // ==================================================================
 function matches(spot){
   // 条件を何も選んでいない場合は全件表示する（絞り込みは「選んだ時だけ」効く）
-  if(state.region!=="all" && spot.region!==state.region) return false;
-  if(state.genre!=="all" && deriveCategory(spot)!==state.genre) return false;
+  if(state.region.size>0 && !state.region.has(spot.region)) return false;
+  if(state.genre.size>0 && !state.genre.has(deriveCategory(spot))) return false;
   if(state.rain.size>0){
     const lvl = deriveRainLevel(spot);
     const ok = [...state.rain].some(key=>{
@@ -9885,8 +10058,10 @@ function renderDiagnosisQuestion(index){
         </button>
       `).join("")}
     </div>
+    <button class="detail-close-bottom" id="diagnosisCloseBtnBottom">戻る</button>
   `;
   sheet.querySelector("#diagnosisCloseBtn").onclick = closeDiagnosis;
+  sheet.querySelector("#diagnosisCloseBtnBottom").onclick = closeDiagnosis;
   sheet.querySelectorAll(".diag-option-card").forEach(btn=>{
     btn.onclick = ()=>{
       diagnosisAnswers[q.key] = btn.dataset.value;
@@ -9908,8 +10083,10 @@ async function renderDiagnosisResults(){
       <div class="diag-loading-spinner">🔎</div>
       <div>あなたに合うお出かけ先を探しています…</div>
     </div>
+    <button class="detail-close-bottom" id="diagnosisCloseBtnBottom" style="margin-top:20px;">戻る</button>
   `;
   sheet.querySelector("#diagnosisCloseBtn").onclick = closeDiagnosis;
+  sheet.querySelector("#diagnosisCloseBtnBottom").onclick = closeDiagnosis;
 
   const weatherKind = await ensureTodayWeatherKind();
   const ctx = {
@@ -9947,8 +10124,10 @@ async function renderDiagnosisResults(){
       }).join("")}
     </div>
     <button class="diag-retry-btn" id="diagnosisRetryBtn">🔄 もう一度3問で探す</button>
+    <button class="detail-close-bottom" id="diagnosisCloseBtnBottom">戻る</button>
   `;
   sheet.querySelector("#diagnosisCloseBtn").onclick = closeDiagnosis;
+  sheet.querySelector("#diagnosisCloseBtnBottom").onclick = closeDiagnosis;
   sheet.querySelector("#diagnosisRetryBtn").onclick = ()=>{ diagnosisAnswers = {}; renderDiagnosisQuestion(0); };
   sheet.querySelectorAll(".diag-result-card").forEach(card=>{
     card.onclick = ()=>{
@@ -10098,19 +10277,35 @@ function getNearbyCombos(spot){
   return picked;
 }
 
+// 📍 地図・ナビ：現在地（Geolocation）が取得済みの場合は「現在地→施設」の
+// ルート検索リンクにする。未取得の場合は従来通り施設単体の検索リンクのまま
+// （既存の「郵便番号／地名」による出発地はカーナビ的な厳密ルートの起点にはせず、
+// 従来の挙動を維持する＝混同を避けるため）。
 function mapsUrl(spot){
+  if(state.homeLocSource === "geo" && state.homeLoc){
+    const destination = (typeof spot.lat === "number" && typeof spot.lng === "number")
+      ? `${spot.lat},${spot.lng}`
+      : (spot.name + " " + (spot.area||""));
+    return "https://www.google.com/maps/dir/?api=1"
+      + "&origin=" + encodeURIComponent(`${state.homeLoc.lat},${state.homeLoc.lng}`)
+      + "&destination=" + encodeURIComponent(destination);
+  }
   return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(spot.name + " " + spot.area);
 }
 // 🚃 現在地→施設の公共交通ルート検索URL（Google Maps）。
-// destinationパラメータのみ指定し、originは省略することで
-// Google Maps側が自動的に「現在地」を起点にする（位置情報の許可はユーザー側の操作）。
+// Geolocationで現在地を取得済みならその座標をoriginに明示し、未取得の場合は
+// 従来通りoriginを省略してGoogle Maps側に「現在地」を自動判定させる。
 // 緯度経度があればそれを使い、なければ施設名＋エリアで検索するため、
 // 今後施設が増えても・データが多少欠けていてもエラーにならない汎用実装。
 function transitDirectionsUrl(spot){
   const destination = (typeof spot.lat === "number" && typeof spot.lng === "number")
     ? `${spot.lat},${spot.lng}`
     : (spot.name + " " + (spot.area||""));
-  return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(destination) + "&travelmode=transit";
+  let url = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(destination) + "&travelmode=transit";
+  if(state.homeLocSource === "geo" && state.homeLoc){
+    url += "&origin=" + encodeURIComponent(`${state.homeLoc.lat},${state.homeLoc.lng}`);
+  }
+  return url;
 }
 function officialLink(spot){
   return spot.officialUrl || ("https://www.google.com/search?q=" + encodeURIComponent(spot.name + " 公式"));
@@ -10212,7 +10407,7 @@ function render(){
   // 📍 近い順：出発地が未設定の場合は無理に並べず、設定を促す案内を出す
   if(state.sortMode==="near"){
     if(!state.homeLoc){
-      main.innerHTML = `<div class="empty">📍 出発地を設定すると近い順で表示できます。<br>ホーム画面上部の「どこから行く？」から郵便番号や地名を入力してください。</div>`;
+      main.innerHTML = `<div class="empty">📍 出発地を設定すると近い順で表示できます。<br>ホーム画面上部の「どこから行く？」から「現在地から探す」を押すか、郵便番号や地名を入力してください。</div>`;
       return;
     }
     const sorted = [...filtered].sort((a,b)=>
@@ -10353,14 +10548,15 @@ function buildCardSummary(spot){
     const km = haversineKm(state.homeLoc.lat, state.homeLoc.lng, spot.lat, spot.lng);
     const carMin = deriveCarMinutes(spot, km);
     const transitMin = canTrain ? deriveTransitMinutes(spot, km) : null;
+    const distBadge = `<span class="parking-mini">${state.homeLocSource==="geo" ? "📍" : "🏠"} ${formatDistance(km)}</span>`;
     if(state.mode==="car"){
-      goHtml = `<span>🚗 約${formatMinutes(carMin)}（目安）</span><span class="parking-mini">🅿️ ${parkingDetail.available ? parkingDetail.priceShort : "なし"}</span>`;
+      goHtml = `<span>🚗 約${formatMinutes(carMin)}（目安）</span>${distBadge}<span class="parking-mini">🅿️ ${parkingDetail.available ? parkingDetail.priceShort : "なし"}</span>`;
     } else if(state.mode==="transit"){
       goHtml = canTrain
-        ? `<span>🚃 約${formatMinutes(transitMin)}（目安）</span><span class="parking-mini">🚶 ${walkFromStationLabel(spot)}</span>`
-        : `<span>🚃 公共交通：行きにくい</span>`;
+        ? `<span>🚃 約${formatMinutes(transitMin)}（目安）</span>${distBadge}<span class="parking-mini">🚶 ${walkFromStationLabel(spot)}</span>`
+        : `<span>🚃 公共交通：行きにくい</span>${distBadge}`;
     } else {
-      goHtml = `<span>🚗${formatMinutes(carMin)}${canTrain ? "・🚃"+formatMinutes(transitMin) : "・🚃行きにくい"}</span><span class="parking-mini">🅿️ ${parkingDetail.available ? "あり" : "なし"}</span>`;
+      goHtml = `<span>🚗${formatMinutes(carMin)}${canTrain ? "・🚃"+formatMinutes(transitMin) : "・🚃行きにくい"}</span>${distBadge}<span class="parking-mini">🅿️ ${parkingDetail.available ? "あり" : "なし"}</span>`;
     }
   } else {
     if(state.mode==="car"){
@@ -10445,18 +10641,22 @@ function openDetail(spot, silent){
   const nearbyCombos = getNearbyCombos(spot);
   const stayTimeLabel = deriveStayTimeLabel(spot);
 
-  let carRow = "", transitRow = "";
+  let carRow = "", transitRow = "", geoDistanceNote = "";
   const canTrain = hasTrainAccess(spot);
   if(state.homeLoc){
     const km = haversineKm(state.homeLoc.lat,state.homeLoc.lng,spot.lat,spot.lng);
-    carRow = `<div class="go-row">車で約${formatMinutes(deriveCarMinutes(spot, km))}（目安・自宅から約${Math.round(km)}km）</div>`;
+    const originLabel = state.homeLocSource === "geo" ? "現在地" : "自宅";
+    carRow = `<div class="go-row">車で約${formatMinutes(deriveCarMinutes(spot, km))}（目安・${originLabel}から約${formatDistance(km)}）</div>`;
     transitRow = canTrain
       ? `<div class="go-row">電車・バスで約${formatMinutes(deriveTransitMinutes(spot, km))}（目安・乗換や待ち時間を含む）</div>`
       : `<div class="go-row">🚃 公共交通：行きにくいエリアです（車での来場がおすすめ）</div>`;
+    if(state.homeLocSource === "geo"){
+      geoDistanceNote = `<div class="go-row geo-distance-note">📍 現在地から約${formatDistance(km)}（直線距離の目安です。実際の道路距離・所要時間とは異なります）</div>`;
+    }
   } else {
-    carRow = `<div class="go-row">郵便番号を入力すると、自宅からの目安時間が表示されます。</div>`;
+    carRow = `<div class="go-row">📍現在地から探す、または郵便番号を入力すると、出発地からの目安時間が表示されます。</div>`;
     transitRow = canTrain
-      ? `<div class="go-row">郵便番号を入力すると、自宅からの目安時間が表示されます。</div>`
+      ? `<div class="go-row">📍現在地から探す、または郵便番号を入力すると、出発地からの目安時間が表示されます。</div>`
       : `<div class="go-row">🚃 公共交通：行きにくいエリアです（車での来場がおすすめ）</div>`;
   }
 
@@ -10515,6 +10715,7 @@ function openDetail(spot, silent){
         ${transitRow}
         <div class="go-row">最寄り：${spot.access}</div>
       </div>
+      ${geoDistanceNote}
       <div class="go-actions">
         <a class="go-action-btn map" href="${mapsUrl(spot)}" target="_blank" rel="noopener">📍 地図・ナビ</a>
         <a class="go-action-btn transit" href="${transitDirectionsUrl(spot)}" target="_blank" rel="noopener">🚃 電車で行く</a>
@@ -10753,6 +10954,10 @@ document.getElementById("resetBtn").onclick = ()=>{
   state.compareMode = false;
   state.compareSet = new Set();
   state.homeLoc = null;
+  state.homeLocSource = null;
+  state.geoStatus = "idle";
+  state.geoErrorMsg = "";
+  state.zipHomeLocBackup = null;
   state.zipRaw = "";
   state.zipLabel = "";
   state.zipCandidates = null;
@@ -10780,6 +10985,30 @@ function renderHomeZip(){
   zipInput.value = state.zipRaw || "";
   zipStatus.textContent = state.zipLabel || "";
   buildZipCandidateChips();
+
+  // 📍 現在地から探す：ボタンの見た目・案内文を状態に応じて切り替える
+  const geoBtn = document.getElementById("geoBtn");
+  const geoClearBtn = document.getElementById("geoClearBtn");
+  const geoStatusEl = document.getElementById("geoStatus");
+  if(!geoBtn || !geoClearBtn || !geoStatusEl) return;
+  const isGeoActive = state.homeLocSource === "geo";
+  geoBtn.classList.toggle("active", isGeoActive);
+  geoClearBtn.style.display = isGeoActive ? "" : "none";
+
+  let geoMsg = "", geoMsgClass = "geo-status";
+  if(state.geoStatus === "loading"){
+    geoMsg = "📍 現在地を取得しています…";
+  } else if(isGeoActive && state.geoStatus === "success"){
+    geoMsg = "📍 現在地から検索中（直線距離の目安で近い順・距離を計算しています）";
+  } else if(state.geoStatus === "denied" || state.geoStatus === "error" || state.geoStatus === "unavailable"){
+    geoMsg = "⚠️ " + state.geoErrorMsg;
+    geoMsgClass += " geo-status-error";
+  }
+  geoStatusEl.textContent = geoMsg;
+  geoStatusEl.className = geoMsgClass;
+  geoBtn.disabled = state.geoStatus === "loading";
+  geoBtn.textContent = state.geoStatus === "loading" ? "📍 取得中…"
+    : isGeoActive ? "📍 現在地から検索中" : "📍 現在地から探す";
 }
 // 郵便番号の変更は、詳しく絞り込むシートではなくホーム画面側の要素だけを更新すればよい
 function afterZipChange(){
@@ -10798,6 +11027,8 @@ applyPersisted(persisted);
 pickDiscovery(); // 「新しいおでかけ先を発見」の初期ピックアップ（render()内で毎回選び直さない）
 document.getElementById("zipBtn").onclick = onZipSubmit;
 document.getElementById("zipInput").addEventListener("keydown", e=>{ if(e.key==="Enter") onZipSubmit(); });
+document.getElementById("geoBtn").onclick = requestCurrentLocation;
+document.getElementById("geoClearBtn").onclick = clearCurrentLocation;
 document.getElementById("conditionResetBtn").onclick = ()=>{
   // 🔄 トップ画面から、検索条件（今日はどうする？／詳しく絞り込む／どこから行く？）を
   // まとめてリセットする。お気に入り・行った記録など「保存データ」は対象外
@@ -10816,7 +11047,7 @@ document.querySelectorAll(".sort-toggle-btn").forEach(btn=>{
       // 入力欄へ案内してそちらを促す（並び替え自体はまだ実行しない）
       const zipSection = document.querySelector(".home-location-section");
       const zipInput = document.getElementById("zipInput");
-      state.zipLabel = "👆 郵便番号または地名を入力すると「近い順」で並び替えられます";
+      state.zipLabel = "👆 現在地から探すか、郵便番号または地名を入力すると「近い順」で並び替えられます";
       renderHomeZip();
       if(zipSection) zipSection.scrollIntoView({behavior:"smooth", block:"start"});
       if(zipInput) zipInput.focus();
