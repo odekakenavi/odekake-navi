@@ -282,6 +282,11 @@
 
   .season-tag{display:inline-block; font-size:10px; font-weight:700; color:#B5651D; background:#FBEEDD;
     padding:2px 8px; border-radius:999px; margin-bottom:4px;}
+  .visitdate-badge-row{margin-bottom:4px;}
+  .visitdate-badge{display:inline-block; font-size:10px; font-weight:700; padding:2px 8px; border-radius:999px;}
+  .visitdate-badge.open{color:#3D6B2C; background:#DCEBD1;}
+  .visitdate-badge.closed{color:#a33b2c; background:#F8DAD3;}
+  .visitdate-badge.unknown{color:var(--ink-soft); background:#F1EADA;}
 
   .badge{font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap;}
   .badge.lv-4{background:#DCEBD1; color:#3D6B2C;}
@@ -335,6 +340,12 @@
   }
   .zip-status{font-size:11px; color:var(--ink-soft); margin-top:6px; min-height:14px;}
   .zip-hint{font-size:11px; color:var(--ink-soft); margin-top:8px; line-height:1.6;}
+  .visitdate-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .visitdate-row input[type="date"]{
+    padding:8px 10px; border-radius:9px; border:1.5px solid var(--line); background:var(--paper);
+    font-size:13px; color:var(--ink); font-family:inherit;
+  }
+  .visitdate-clear{border:none; background:#F1EADA; color:var(--ink-soft); border-radius:8px; padding:7px 10px; font-size:11.5px; font-weight:700; cursor:pointer;}
   .fgroup-sub{opacity:.85;}
   .fgroup-sub .fgroup-head{border-bottom-style:dashed; font-weight:700;}
 
@@ -385,6 +396,14 @@
   .plan-item-move-row{display:flex; gap:4px; flex-wrap:wrap; margin-top:6px;}
   .plan-item-move-btn{border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:5px 9px; font-size:10.5px; font-weight:700; cursor:pointer;}
   .plan-leg{display:flex; align-items:center; gap:6px; padding:4px 0 4px 30px; font-size:11px; color:var(--ink-soft);}
+  .plan-leg-home{font-weight:700; color:var(--ink); padding-left:4px;}
+  .plan-leg-nohome{font-weight:400; color:var(--ink-soft); font-size:10.5px; line-height:1.5;}
+  .plan-tripmode-row{display:flex; flex-direction:column; gap:6px; margin-bottom:12px;}
+  .plan-tripmode-btn{
+    padding:9px 10px; border-radius:9px; border:1.5px solid var(--line); background:var(--paper);
+    color:var(--ink); font-size:12px; font-weight:700; cursor:pointer; text-align:center;
+  }
+  .plan-tripmode-btn.active{background:var(--coral); border-color:var(--coral); color:#fff;}
   .plan-summary{background:var(--paper); border-radius:12px; padding:12px; margin:4px 0 14px; border:1px solid var(--line);}
   .plan-summary-row{display:flex; justify-content:space-between; font-size:12px; color:var(--ink); padding:3px 0;}
   .plan-summary-row b{font-weight:800;}
@@ -423,6 +442,8 @@
   .detail-eval .badge{font-size:13px; padding:4px 11px;}
   .detail-eval .stars{font-size:14px; letter-spacing:1px; color:var(--yellow);}
   .cost-line{font-size:12px; color:var(--ink); margin-top:4px;}
+  .cost-line-main{font-size:15px; font-weight:700; margin-top:2px;}
+  .detail-eval-sub{margin-top:10px; opacity:.75; transform:scale(0.92); transform-origin:left center;}
   .go-block{background:#F5F0E4; border-radius:10px; padding:10px 12px; margin-bottom:8px;}
   .go-block .go-head{font-size:12.5px; font-weight:700; margin-bottom:4px;}
   .go-block .go-row{font-size:12px; color:var(--ink); line-height:1.7;}
@@ -802,6 +823,121 @@ const PARKINGS = [
   {key:"yes", label:"🅿️ 駐車場あり"},
   {key:"no", label:"駐車場なし・少なめ"}
 ];
+
+// ==================================================================
+// 🕒 営業時間・定休日（任意項目）
+// ------------------------------------------------------------------
+// ・spot.businessHours / spot.closedDays 等が未設定の施設は「不明」として扱い、
+//   検索結果から除外しない（休業と誤判定しない）。憶測でのデータ補完は行わない。
+// ・データ形式（既存構造に合わせて最小限で追加）：
+//   businessHours: {mon:"09:00-17:00", tue:"...", wed:"...", thu:"...", fri:"...",
+//                    sat:"...", sun:"...", holiday:"09:00-18:00"（任意・祝日用）}
+//   closedDays: ["火曜日","第2水曜日","年末年始"] のような定休日の説明（判定にも一部使用、
+//                「第2水曜日」等の特殊パターンは判定はできないため表示用の参考情報として扱う）
+//   seasonalHours: [{start:"MM-DD", end:"MM-DD", hours:{mon:"...", ...}}]（季節営業、任意）
+//   temporaryClosures: [{start:"YYYY-MM-DD", end:"YYYY-MM-DD", reason:"..."}]（臨時休業、任意）
+//   businessHoursNote: "営業時間は曜日・時期により異なります"（複雑で構造化しきれない場合の代替表示）
+// ==================================================================
+const WEEKDAY_KEYS = ["sun","mon","tue","wed","thu","fri","sat"];
+const WEEKDAY_LABELS_JA = {sun:"日",mon:"月",tue:"火",wed:"水",thu:"木",fri:"金",sat:"土"};
+// 祝日判定用の固定リスト（2026年・2027年分。運用上は年が変わるごとに更新が必要）
+const JP_HOLIDAYS = new Set([
+  // 2026年
+  "2026-01-01","2026-01-12","2026-02-11","2026-02-23","2026-03-20","2026-04-29",
+  "2026-05-03","2026-05-04","2026-05-05","2026-05-06","2026-07-20","2026-08-11",
+  "2026-09-21","2026-09-22","2026-09-23","2026-10-12","2026-11-03","2026-11-23",
+  // 2027年
+  "2027-01-01","2027-01-11","2027-02-11","2027-02-23","2027-03-21","2027-04-29",
+  "2027-05-03","2027-05-04","2027-05-05","2027-07-19","2027-08-11","2027-09-20",
+  "2027-09-23","2027-10-11","2027-11-03","2027-11-23"
+]);
+function toISODate(d){
+  const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,"0"), day=String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${day}`;
+}
+function isJapaneseHoliday(d){ return JP_HOLIDAYS.has(toISODate(d)); }
+// <input type="date">の値（"YYYY-MM-DD"）をDateに変換する。不正な値ならnull
+function parseVisitDate(str){
+  if(!str) return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str);
+  if(!m) return null;
+  const d = new Date(Number(m[1]), Number(m[2])-1, Number(m[3]));
+  return isNaN(d.getTime()) ? null : d;
+}
+// その日の曜日キー（祝日ならholidayを優先。ただしspotにholiday欄が無ければ通常の曜日で判定）
+function businessHoursKeyForDate(spot, d){
+  const wd = WEEKDAY_KEYS[d.getDay()];
+  if(isJapaneseHoliday(d) && spot.businessHours && spot.businessHours.holiday) return "holiday";
+  return wd;
+}
+// 指定日が、施設に登録された「季節限定営業」「臨時休業」期間に該当するかを見る
+function findSeasonalHoursForDate(spot, d){
+  if(!Array.isArray(spot.seasonalHours)) return null;
+  const mmdd = String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  return spot.seasonalHours.find(s=> mmdd>=s.start && mmdd<=s.end) || null;
+}
+function findTemporaryClosureForDate(spot, d){
+  if(!Array.isArray(spot.temporaryClosures)) return null;
+  const iso = toISODate(d);
+  return spot.temporaryClosures.find(c=> iso>=c.start && iso<=c.end) || null;
+}
+// 指定日の営業状況を判定する。戻り値：
+//   {status:"open", hours:"09:00-17:00"} / {status:"closed", reason:"..."} / {status:"unknown"}
+function getBusinessStatusForDate(spot, d){
+  if(!spot.businessHours && !Array.isArray(spot.temporaryClosures)) return {status:"unknown"};
+  // 臨時休業が最優先
+  const closure = findTemporaryClosureForDate(spot, d);
+  if(closure) return {status:"closed", reason: closure.reason || "臨時休業"};
+  if(!spot.businessHours) return {status:"unknown"};
+  // 季節営業の指定があればそちらを優先
+  const seasonal = findSeasonalHoursForDate(spot, d);
+  const hoursSource = seasonal ? seasonal.hours : spot.businessHours;
+  const key = businessHoursKeyForDate(spot, d);
+  const hours = hoursSource[key];
+  if(!hours || hours==="定休日" || hours==="休" || hours==="closed"){
+    return {status:"closed", reason: spot.closedDays && spot.closedDays.length ? spot.closedDays.join("・") : "定休日"};
+  }
+  return {status:"open", hours};
+}
+// 「今日」を指定している場合のみ、現在時刻も加味した状態文言を返す
+function getNowStatusLabel(spot){
+  const now = new Date();
+  const st = getBusinessStatusForDate(spot, now);
+  if(st.status==="unknown") return null;
+  if(st.status==="closed") return `本日は休業（${st.reason}）`;
+  const m = st.hours.match(/^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/);
+  if(!m) return `本日営業 ${st.hours}`;
+  const openMin = Number(m[1])*60+Number(m[2]), closeMin = Number(m[3])*60+Number(m[4]);
+  const nowMin = now.getHours()*60+now.getMinutes();
+  if(nowMin<openMin) return `本日営業 ${st.hours}（営業開始前）`;
+  if(nowMin>=closeMin) return `本日は終了しました（${st.hours}）`;
+  return `営業中（本日 ${st.hours}）`;
+}
+// 施設カード・診断結果等で使う「営業時間の一言表示」。曜日ごとに違う場合は代表的な形にまとめる。
+function businessHoursSummaryLabel(spot){
+  if(spot.businessHoursNote) return spot.businessHoursNote;
+  if(!spot.businessHours) return null;
+  const bh = spot.businessHours;
+  const weekdays = [bh.mon,bh.tue,bh.wed,bh.thu,bh.fri];
+  const weekend = [bh.sat,bh.sun];
+  const allSame = [bh.mon,bh.tue,bh.wed,bh.thu,bh.fri,bh.sat,bh.sun].every(v=>v===bh.mon);
+  if(allSame && bh.mon) return `営業時間　${bh.mon}`;
+  const weekdaysSame = weekdays.every(v=>v===bh.mon) && bh.mon;
+  const weekendSame = weekend.every(v=>v===bh.sat) && bh.sat;
+  if(weekdaysSame && weekendSame) return `月〜金　${bh.mon}／土日祝　${bh.sat}`;
+  return "営業時間は曜日・時期により異なります";
+}
+// カード・詳細画面共通：「行く日」を指定している場合のバッジ表示（未指定、または情報がなく判定不能な場合は空文字）
+function visitDateBadgeHtml(spot){
+  if(!state.visitDate) return "";
+  const d = parseVisitDate(state.visitDate);
+  if(!d) return "";
+  const label = `${d.getMonth()+1}/${d.getDate()}`;
+  const st = getBusinessStatusForDate(spot, d);
+  if(st.status==="open") return `<span class="visitdate-badge open">✓ ${label}は営業</span>`;
+  if(st.status==="closed") return `<span class="visitdate-badge closed">✕ ${label}は休業（${st.reason}）</span>`;
+  return ""; // 情報がない施設は何も表示しない（不明バッジは出さない）
+}
 // 📅 季節・連休：施設ごとに seasons:["春","夏","秋","冬","通年"] / holidays:["年末年始","GW","夏休み"] を
 // シンプルな配列だけで持つ。未設定の施設は seasons:["通年"] とみなし、常におすすめ対象に含める。
 // あくまで「その時期におすすめ」という目安であり、営業日・営業時間を保証するものではない。
@@ -1175,6 +1311,38 @@ function parsePriceYen(price){
   if(m) return parseInt(m[1].replace(/,/g,""),10);
   return null;
 }
+// 料金文字列から「大人○円／子ども○円」等の区分別金額を実際に抽出する。
+// 見つからない区分は結果に含めない（推測で埋めない）。あくまでテキストに実際に
+// 書かれている数字だけを拾う簡易パーサーであり、複雑な料金体系は完全には拾いきれない。
+const PRICE_BREAKDOWN_PATTERNS = [
+  [/大人[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "adult", "大人"],
+  [/一般[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "adult", "一般"],
+  [/(?:子ども|子供)[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "child", "子ども"],
+  [/小学生[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "elementary", "小学生"],
+  [/中学生[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "juniorHigh", "中学生"],
+  [/高校生[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "highSchool", "高校生"],
+  [/幼児[^0-9円]{0,6}([0-9]{1,3}(?:,[0-9]{3})*|[0-9]{3,6})\s*円/, "infant", "幼児"]
+];
+const PRICE_FREE_PATTERNS = [
+  [/未就学児\s*無料/, "infant"],
+  [/(?:3|３)歳(?:未満|以下)\s*無料/, "infant"],
+  [/(?:4|４)歳未満\s*無料/, "infant"],
+  [/小学生以下\s*無料/, "elementary"],
+  [/中学生以下\s*無料/, "juniorHigh"]
+];
+function parsePriceBreakdown(price){
+  const result = {};
+  if(!price) return result;
+  PRICE_BREAKDOWN_PATTERNS.forEach(([re,key])=>{
+    if(result[key]!==undefined) return;
+    const m = price.match(re);
+    if(m) result[key] = parseInt(m[1].replace(/,/g,""),10);
+  });
+  PRICE_FREE_PATTERNS.forEach(([re,key])=>{
+    if(re.test(price)) result[key] = 0;
+  });
+  return result;
+}
 function deriveWalletLevel(spot){
   if(spot.walletLevel) return spot.walletLevel; // 個別に裏取りした値があれば最優先（congestionと同じ仕組み）
   const yen = parsePriceYen(spot.price);
@@ -1207,13 +1375,39 @@ function deriveActivityStars(spot){
 }
 function activityStarsLabel(spot){ return starString(deriveActivityStars(spot), 5); }
 
+// 「大人2人＋子ども1人」等の家族料金を、実際にテキストから読み取れた金額だけで計算する。
+// 大人・子ども区分のどちらかでも実際の数字が読み取れない場合は、推測で埋めずに何も返さない。
 function estimateFamilyCost(spot){
-  const yen = parsePriceYen(spot.price);
-  if(yen === 0) return "入園無料（施設内の一部有料設備を除く）";
-  if(yen === null) return "施設により異なります。公式サイトでご確認ください。";
-  // ざっくり大人2人+子ども1人（子どもは大人の6割程度）の目安
-  const total = Math.round((yen*2 + yen*0.6) / 100) * 100;
-  return `大人2人＋子ども1人で ${total.toLocaleString()}円前後（目安）`;
+  const bd = parsePriceBreakdown(spot.price);
+  const adult = bd.adult;
+  const childCandidates = [bd.elementary, bd.child, bd.infant].filter(v=>v!==undefined);
+  if(adult!==undefined && childCandidates.length>0){
+    const child = childCandidates[0];
+    const total = adult*2 + child;
+    return `大人2人＋子ども1人で ${total.toLocaleString()}円（実際の料金表記から計算・目安）`;
+  }
+  const yenAll = parsePriceYen(spot.price);
+  if(yenAll === 0) return "入園無料（施設内の一部有料設備を除く）";
+  return null; // 推測で埋めずに非表示にする
+}
+// 一覧カード用の簡潔な料金表示。「大人○円／子ども○円」の形を優先し、
+// それが取れない場合は元の料金テキストを短く切って表示、情報が無ければ「料金情報要確認」。
+// ※「入園無料（フリーパス等は別途有料）」のような施設で誤って「無料」とだけ出さないよう、
+//   区分別の金額（大人・子ども等）が拾えた場合はそちらを優先する。
+function priceCardSnippet(spot){
+  const price = spot.price;
+  if(!price) return "料金情報要確認";
+  const bd = parsePriceBreakdown(price);
+  const parts = [];
+  if(bd.adult!==undefined) parts.push(`大人${bd.adult.toLocaleString()}円`);
+  const childVal = bd.elementary!==undefined ? bd.elementary : (bd.child!==undefined ? bd.child : bd.infant);
+  const childLabel = bd.elementary!==undefined ? "小学生" : (bd.child!==undefined ? "子ども" : "幼児");
+  if(childVal!==undefined) parts.push(`${childLabel}${childVal===0 ? "無料" : childVal.toLocaleString()+"円"}`);
+  if(parts.length>0) return parts.join("／");
+  // 区分別の金額が拾えない場合のみ「入園無料」等の判定にフォールバック
+  const yenAll = parsePriceYen(price);
+  if(yenAll === 0) return "無料";
+  return price.length>40 ? price.slice(0,40)+"…" : price;
 }
 
 // 🚗🚃 移動時間はあくまで目安。spot.carMinutesOverride / transitMinutesOverride が
@@ -1418,6 +1612,8 @@ const SPOTS = [
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  congestion:{weekdayAM:"○ 普通", weekdayPM:"○ 普通", holidayAM:"▲ 混雑しやすい", holidayPM:"△ やや混雑"},
  price:"大人600円／中学生以下 無料", parking:"no", access:"JR「上野」駅から徒歩5分",
+ businessHours:{mon:"定休日", tue:"09:30-17:00", wed:"09:30-17:00", thu:"09:30-17:00", fri:"09:30-17:00", sat:"09:30-17:00", sun:"09:30-17:00", holiday:"09:30-17:00"},
+ closedDays:["月曜日（祝日の場合は翌平日、要確認）","年末年始（12/29〜1/1）"],
  baby:"おむつ替え・授乳室あり／ベビーカーOK（一部坂道）", lunch:"園内に売店・軽食あり。不忍池周辺にも飲食店多数。",
  officialUrl:"https://www.tokyo-zoo.net/zoo/ueno/",
  verifiedAt:"2026年9月16日",
@@ -1432,6 +1628,8 @@ const SPOTS = [
  price:"大人2600円台／子供1300円台", parking:"yes", access:"東京メトロ有楽町線「東池袋」駅から徒歩約3分（JR・東京メトロ・西武線・東武線「池袋」駅からは徒歩約8分）",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"サンシャインシティ内にフードコート・レストラン多数。",
  officialUrl:"https://sunshinecity.jp/aquarium/",
+ businessHoursNote:"原則年中無休。営業時間は季節・曜日により変動（詳細は公式サイトの営業カレンダーを要確認）",
+ temporaryClosures:[{start:"2026-11-12", end:"2026-11-12", reason:"設備メンテナンスによる休館"}],
  bookingLinks:{asoview:"https://www.asoview.com/base/152308/"}, recommendedBooking:"asoview",
  desc:"ビルの屋上という立地で、天候に左右されず楽しめる都会型水族館。ペンギンの空飛ぶ姿が名物。",
  tip:"授乳室・おむつ替えスペースあり。ベビーカーOK。"},
@@ -1470,6 +1668,8 @@ const SPOTS = [
  price:"大人630円／高校生以下 無料", parking:"no", access:"JR「上野」駅から徒歩5分",
  baby:"おむつ替え・授乳室あり", lunch:"館内レストランあり。上野公園周辺にも飲食店多数。",
  officialUrl:"https://www.kahaku.go.jp/",
+ businessHours:{mon:"定休日", tue:"09:00-17:00", wed:"09:00-17:00", thu:"09:00-17:00", fri:"09:00-20:00", sat:"09:00-20:00", sun:"09:00-17:00", holiday:"09:00-17:00"},
+ closedDays:["毎週月曜日（日・月曜日が祝日の場合は火曜日、要確認）","年末年始（12/28〜1/1）"],
  verifiedAt:"2026年9月16日",
  bookingLinks:{asoview:"https://www.asoview.com/base/155157/"},
  desc:"恐竜の骨格標本から宇宙・人体まで、展示のスケールが大きい。じっくり読む子は1日でも足りない。",
@@ -1480,6 +1680,8 @@ const SPOTS = [
  price:"公園無料／水族園 大人700円・中学生以下無料", parking:"yes", access:"JR「葛西臨海公園」駅から徒歩5分",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"園内レストハウスあり。芝生でお弁当を広げる家族も多い。",
  officialUrl:"https://www.tokyo-zoo.net/zoo/kasai/",
+ businessHoursNote:"公園部分は常時開放。水族園は9:30〜17:00（入園16:00まで）",
+ closedDays:["水族園のみ：毎週水曜日（祝日の場合は翌平日、要確認）・年末年始（公園部分は無休）"],
  desc:"大観覧車、広い芝生の公園、マグロが回遊する水族園が一体になったエリア。夏（例年7〜8月）は観覧車そばの芝生広場で約3万本のひまわりが咲き、観覧車とのコラボ景観が楽しめる。",
  tip:"公園部分は日陰が少なめ。夏は帽子・水分を多めに。"},
 {region:"東京", name:"国営昭和記念公園", area:"立川市", lat:35.7059, lng:139.4103,
@@ -1522,6 +1724,8 @@ const SPOTS = [
  price:"大人600円／中学生以下 無料", parking:"yes", access:"京王線「多摩動物公園」駅から徒歩1分",
  baby:"おむつ替えあり／ベビーカー可（一部急坂は注意）", lunch:"園内にレストラン・売店あり。",
  officialUrl:"https://www.tokyo-zoo.net/zoo/tama/",
+ businessHours:{mon:"09:30-17:00", tue:"09:30-17:00", wed:"定休日", thu:"09:30-17:00", fri:"09:30-17:00", sat:"09:30-17:00", sun:"09:30-17:00", holiday:"09:30-17:00"},
+ closedDays:["毎週水曜日（祝日の場合は翌平日、要確認）","年末年始（12/29〜1/1）"],
  verifiedAt:"2026年9月16日",
  bookingLinks:{asoview:"https://www.asoview.com/base/161721/"},
  stayTime:{minMinutes:180, maxMinutes:300},
@@ -1532,6 +1736,8 @@ const SPOTS = [
  stayTime:{minMinutes:150, maxMinutes:240},
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"▲ 混雑しやすい", holidayPM:"▲ 混雑しやすい"},
  price:"大人1600円台／子供600円台", parking:"no", access:"ニューシャトル「鉄道博物館」駅から徒歩1分",
+ businessHours:{mon:"10:00-17:00", tue:"定休日", wed:"10:00-17:00", thu:"10:00-17:00", fri:"10:00-17:00", sat:"10:00-17:00", sun:"10:00-17:00", holiday:"10:00-17:00"},
+ closedDays:["毎週火曜日","年末年始"],
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"館内にレストラン・フードコートあり。",
  officialUrl:"https://www.railway-museum.jp/",
  verifiedAt:"2026年9月16日",
@@ -1611,6 +1817,8 @@ const SPOTS = [
  price:"入場無料／水族館4施設共通券は5000円前後", parking:"yes", access:"シーサイドライン「八景島」駅から徒歩2分",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"島内にレストラン・フードコート多数。",
  officialUrl:"https://www.seaparadise.co.jp/",
+ businessHours:{mon:"10:00-17:00", tue:"10:00-17:00", wed:"10:00-17:00", thu:"10:00-17:00", fri:"10:00-17:00", sat:"10:00-18:00", sun:"10:00-18:00", holiday:"10:00-18:00"},
+ businessHoursNote:"島全体は年中無休。上記は水族館の目安時間で、アトラクション等は施設ごとに営業時間が異なります",
  bookingLinks:{asoview:"https://www.asoview.com/base/150064/"}, recommendedBooking:"asoview",
  desc:"水族館・遊園地・海辺の散策が一体になった島全体がテーマパーク。屋内水族館は雨でも安心。",
  tip:"島まで距離があるため、小さい子はベビーカー必須。"},
@@ -1639,6 +1847,8 @@ const SPOTS = [
  price:"大人2500円台／子供1200円台", parking:"yes", access:"小田急線「片瀬江ノ島」駅から徒歩3分",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"館内にレストラン・カフェあり。海沿いにも飲食店多数。",
  officialUrl:"https://www.enosui.com/",
+ businessHoursNote:"基本9:00〜17:00、原則年中無休（季節・イベントにより変動）",
+ temporaryClosures:[{start:"2026-01-19", end:"2026-01-25", reason:"施設メンテナンスのため休館"}],
  bookingLinks:{asoview:"https://www.asoview.com/base/122238/"}, recommendedBooking:"asoview",
  desc:"相模湾を望む立地で、屋内水族館と海辺散策を一度に楽しめる。イルカショーも人気。",
  tip:"帰りに江の島の海辺を歩けば、雨上がりでも1日プランになる。"},
@@ -1683,6 +1893,25 @@ const SPOTS = [
  price:"大人3000円台／子供1600円台", parking:"yes", access:"JR「安房鴨川」駅からバス約10分",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"館内にレストラン・カフェ複数あり。",
  officialUrl:"https://www.kamogawa-seaworld.jp/",
+ businessHoursNote:"9:00〜17:00が目安（季節・繁忙期により変動）",
+ temporaryClosures:[
+   {start:"2026-01-07", end:"2026-01-08", reason:"休館日"},
+   {start:"2026-01-14", end:"2026-01-14", reason:"休館日"},
+   {start:"2026-01-20", end:"2026-01-22", reason:"休館日"},
+   {start:"2026-01-28", end:"2026-01-28", reason:"休館日"},
+   {start:"2026-02-04", end:"2026-02-04", reason:"休館日"},
+   {start:"2026-02-18", end:"2026-02-18", reason:"休館日"},
+   {start:"2026-02-25", end:"2026-02-25", reason:"休館日"},
+   {start:"2026-04-08", end:"2026-04-09", reason:"休館日"},
+   {start:"2026-04-15", end:"2026-04-15", reason:"休館日"},
+   {start:"2026-04-22", end:"2026-04-22", reason:"休館日"},
+   {start:"2026-05-13", end:"2026-05-13", reason:"休館日"},
+   {start:"2026-05-20", end:"2026-05-20", reason:"休館日"},
+   {start:"2026-05-27", end:"2026-05-27", reason:"休館日"},
+   {start:"2026-12-02", end:"2026-12-02", reason:"休館日"},
+   {start:"2026-12-09", end:"2026-12-09", reason:"休館日"},
+   {start:"2026-12-15", end:"2026-12-17", reason:"休館日"}
+ ],
  overnightRecommended:true, hotelArea:"boso",
  bookingLinks:{asoview:"https://www.asoview.com/base/150955/"}, recommendedBooking:"asoview",
  desc:"シャチのパフォーマンスが名物の海沿い水族館。屋外スタジアム席と屋内展示の両方あり。",
@@ -1995,6 +2224,8 @@ const SPOTS = [
  price:"大人800円／高校生以下 無料", parking:"yes", access:"相鉄線「鶴ケ峰」駅などからバス15分",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"園内にレストランあり。",
  officialUrl:"http://www.hama-midorinokyokai.or.jp/zoo/zoorasia/",
+ businessHours:{mon:"09:30-16:30", tue:"定休日", wed:"09:30-16:30", thu:"09:30-16:30", fri:"09:30-16:30", sat:"09:30-16:30", sun:"09:30-16:30", holiday:"09:30-16:30"},
+ closedDays:["毎週火曜日（祝日の場合は翌平日、要確認）","年末年始（12/29〜1/1）"],
  verifiedAt:"2026年9月16日",
  bookingLinks:{asoview:"https://www.asoview.com/base/155067/"},
  stayTime:{minMinutes:240, maxMinutes:360},
@@ -2160,6 +2391,9 @@ const SPOTS = [
  price:"大人510円／中学生以下 無料", parking:"yes", access:"東武東上線「森林公園」駅からバス15分",
  baby:"おむつ替えあり", lunch:"園内にレストランあり。",
  officialUrl:"https://www.parks.or.jp/sczoo/",
+ businessHours:{mon:"定休日", tue:"09:30-17:00", wed:"09:30-17:00", thu:"09:30-17:00", fri:"09:30-17:00", sat:"09:30-17:00", sun:"09:30-17:00", holiday:"09:30-17:00"},
+ seasonalHours:[{start:"11-15", end:"01-31", hours:{mon:"定休日", tue:"09:30-16:30", wed:"09:30-16:30", thu:"09:30-16:30", fri:"09:30-16:30", sat:"09:30-16:30", sun:"09:30-16:30", holiday:"09:30-16:30"}}],
+ closedDays:["毎週月曜日（祝日の場合は開園）","年末年始（12/30〜1/1）"],
  verifiedAt:"2026年9月16日",
  bookingLinks:{asoview:"https://www.asoview.com/base/163051/"},
  stayTime:{minMinutes:150, maxMinutes:240},
@@ -7212,14 +7446,16 @@ let state = {
   region:"all", genre:"all", rain:new Set(), wallet:new Set(), mode:"car",
   ages:new Set(), duration:"all", parking:"all", activity:"all",
   seasons:new Set(), holidays:new Set(),
-  hideVisited:false, keyword:"", filterSiblings:false, waterPlay:false,
+  hideVisited:false, keyword:"", filterSiblings:false, waterPlay:false, visitDate:"",
   favorites:new Set(), visited:new Set(), excluded:new Set(),
   homeLoc:null, zipRaw:"", zipLabel:"", zipCandidates:null,
   recentlyViewed:[], // 施設名の配列。新しいものが先頭
   compareMode:false, compareSet:new Set(), // ⚖️ 比較機能（最大3件）
   sortMode:"recommend", // "recommend"（おすすめ順） / "near"（近い順）
   plans:[[], [], []], // 🗓 プラン（今回実際に行く場所）。タブ3枚分の施設名配列。並び順＝追加順（ユーザーが入れ替え可）
-  activePlanTab:0 // 現在表示中のプランタブ（0〜2）
+  activePlanTab:0, // 現在表示中のプランタブ（0〜2）
+  planTripModes:["roundtrip","roundtrip","roundtrip"], // タブ(プランA/B/C)ごとの行き帰り設定
+  planTripModeManualFlags:[false,false,false] // タブごとに「手動で選び直したか」。trueの間は宿泊施設を見ても自動で上書きしない
 };
 
 // ==================================================================
@@ -7789,6 +8025,18 @@ function renderFilterSheet(){
     </div>
 
     <div class="fgroup">
+      <div class="fgroup-head">📅 行く日</div>
+      <div class="frow">
+        <div class="frow-label">日付</div>
+        <div class="visitdate-row">
+          <input type="date" id="fVisitDate" value="${state.visitDate||""}">
+          ${state.visitDate ? `<button type="button" class="visitdate-clear" id="fVisitDateClear">日付をクリア</button>` : ""}
+        </div>
+        <div class="zip-hint">指定すると、その日が定休日など「明確に休業」とわかる施設のみ一覧から除外します。営業時間が未登録の施設は除外されません。</div>
+      </div>
+    </div>
+
+    <div class="fgroup">
       <div class="fgroup-head">🏞 施設</div>
       <div class="frow">
         <div class="frow-label">ジャンル</div>
@@ -7836,6 +8084,23 @@ function renderFilterSheet(){
   `;
 
   buildSimpleChips("fRegionChips", REGIONS, r=>state.region===r.key, r=>state.region=r.key, null, "region");
+  const visitDateInput = document.getElementById("fVisitDate");
+  if(visitDateInput){
+    visitDateInput.onchange = (e)=>{
+      state.visitDate = e.target.value || "";
+      trackFilterUse("visitDate", state.visitDate || "cleared");
+      afterFilterChange();
+      renderFilterSheet(); // クリアボタンの表示切り替えのため再描画
+    };
+  }
+  const visitDateClearBtn = document.getElementById("fVisitDateClear");
+  if(visitDateClearBtn){
+    visitDateClearBtn.onclick = ()=>{
+      state.visitDate = "";
+      afterFilterChange();
+      renderFilterSheet();
+    };
+  }
   buildSimpleChips("fGenreChips", GENRES, g=>state.genre===g.key, g=>state.genre=g.key, null, "genre");
   buildAgeChipsInto("fAgeChips");
   buildSeasonChipsInto("fSeasonChips");
@@ -7976,6 +8241,7 @@ function resetFilters(){
   state.hideVisited = false;
   state.filterSiblings = false;
   state.waterPlay = false;
+  state.visitDate = "";
   state.homeLoc = null;
   state.zipRaw = "";
   state.zipLabel = "";
@@ -8005,6 +8271,7 @@ function countActiveFilters(){
   if(state.hideVisited) n++;
   if(state.filterSiblings) n++;
   if(state.waterPlay) n++;
+  if(state.visitDate) n++;
   return n;
 }
 
@@ -8120,6 +8387,8 @@ document.getElementById("favListBtn").onclick = ()=>{
 // 既存のlocalStorage保存（loadPersisted/savePersisted）にそのまま相乗り。
 // ==================================================================
 function currentPlan(){ return state.plans[state.activePlanTab]; }
+function currentPlanTripMode(){ return state.planTripModes[state.activePlanTab]; }
+function isCurrentPlanTripModeManual(){ return state.planTripModeManualFlags[state.activePlanTab]; }
 function planTotalCount(){ return state.plans.reduce((sum,arr)=>sum+arr.length, 0); }
 function isInPlan(name){ return currentPlan().includes(name); }
 function addToPlan(name){
@@ -8170,6 +8439,11 @@ function planLegInfo(spotA, spotB){
   }
   return { km, minutes: Math.round(estimateMinutes(km)), mode:"car" };
 }
+// 出発地（state.homeLoc）⇔スポット間の移動時間。郵便番号・地名が未設定の場合はnullを返す
+function homeLegInfo(spot){
+  if(!state.homeLoc || typeof spot.lat!=="number") return null;
+  return planLegInfo(state.homeLoc, spot);
+}
 // プラン内スポットの「おすすめ滞在時間」の目安（分）。幅が広くなりすぎないよう中央値を採用する
 function planStayMinutesMid(spot){
   if(spot.stayTime && typeof spot.stayTime.minMinutes==="number"){
@@ -8180,7 +8454,10 @@ function planStayMinutesMid(spot){
   return table[bucket] || 120; // 判断材料がない場合の中間的な目安
 }
 // プラン全体のサマリー（合計滞在時間・合計移動時間・「回りやすい／少し忙しい」の目安）を計算
-function computePlanSummary(spots){
+// tripMode: "roundtrip"（往復）/ "outboundOnly"（行きのみ・宿泊予定）/
+//           "returnOnly"（帰りのみ・宿泊からの最終日等）/ "noHomeLegs"（行き帰りなし・連泊2日目等）
+function computePlanSummary(spots, tripMode){
+  tripMode = tripMode || currentPlanTripMode() || "roundtrip";
   let stayMid=0, moveMin=0;
   const legs = [];
   for(let i=0;i<spots.length;i++){
@@ -8189,6 +8466,17 @@ function computePlanSummary(spots){
       const leg = planLegInfo(spots[i-1], spots[i]);
       legs.push(leg);
       if(leg) moveMin += leg.minutes;
+    }
+  }
+  let homeLegOut = null, homeLegReturn = null;
+  if(spots.length>0){
+    if(tripMode==="roundtrip" || tripMode==="outboundOnly"){
+      homeLegOut = homeLegInfo(spots[0]);
+      if(homeLegOut) moveMin += homeLegOut.minutes;
+    }
+    if(tripMode==="roundtrip" || tripMode==="returnOnly"){
+      homeLegReturn = homeLegInfo(spots[spots.length-1]);
+      if(homeLegReturn) moveMin += homeLegReturn.minutes;
     }
   }
   const totalMid = stayMid + moveMin;
@@ -8200,14 +8488,27 @@ function computePlanSummary(spots){
     else if(totalMid<=480) advisory = {level:"busy", text:"⏰ やや詰め込み気味です。無理のないペースで回りましょう。"};
     else advisory = {level:"busy", text:"⚠️ 少し忙しいプランです。1カ所減らすか、日程を分けるのがおすすめです。"};
   }
-  return { stayMid, moveMin, legs, advisory };
+  return { stayMid, moveMin, legs, homeLegOut, homeLegReturn, tripMode, advisory };
 }
 
 const PLAN_TAB_LABELS = ["プランA", "プランB", "プランC"];
+const PLAN_TRIP_MODES = [
+  {key:"roundtrip", label:"🔁 往復"},
+  {key:"outboundOnly", label:"🌙 行きのみ（宿泊）"},
+  {key:"returnOnly", label:"🌅 帰りのみ（宿泊からの帰り）"},
+  {key:"noHomeLegs", label:"🏨 行き帰りなし（連泊2日目等）"}
+];
 function renderPlanSheet(){
   const sheet = document.getElementById("planSheet");
   const names = currentPlan();
   const spots = names.map(n=>SPOTS.find(s=>s.name===n)).filter(Boolean);
+  // 宿泊向け施設（overnightRecommended）がプランに含まれていて、まだ手動でモードを
+  // 選んでいなければ「行きのみ」を自動デフォルトにする（毎回切り替える手間を減らす）。タブごとに判定。
+  if(!isCurrentPlanTripModeManual()){
+    const hasOvernightSpot = spots.some(s=>s.overnightRecommended);
+    state.planTripModes[state.activePlanTab] = hasOvernightSpot ? "outboundOnly" : "roundtrip";
+  }
+  const tripMode = currentPlanTripMode();
   const tabsHtml = `
     <div class="plan-tabs">
       ${PLAN_TAB_LABELS.map((label,i)=>`
@@ -8221,10 +8522,27 @@ function renderPlanSheet(){
   if(spots.length===0){
     bodyHtml = `<div class="plan-empty">まだ${PLAN_TAB_LABELS[state.activePlanTab]}に追加した場所がありません。<br>スポット詳細画面の「🗓 プランに追加」から、今回実際に行く場所を選んでください。<br>（目安は1日3カ所程度です）</div>`;
   } else {
-    const summary = computePlanSummary(spots);
+    const summary = computePlanSummary(spots, tripMode);
+    const tripModeHtml = `
+      <div class="plan-tripmode-row">
+        ${PLAN_TRIP_MODES.map(m=>`<button type="button" class="plan-tripmode-btn ${tripMode===m.key?'active':''}" data-tripmode="${m.key}">${m.label}</button>`).join("")}
+      </div>
+    `;
+    const showOutLeg = (tripMode==="roundtrip" || tripMode==="outboundOnly");
+    const showReturnLeg = (tripMode==="roundtrip" || tripMode==="returnOnly");
+    const homeLegOutHtml = showOutLeg ? (
+      summary.homeLegOut
+        ? `<div class="plan-leg plan-leg-home">🏠 出発地から約${Math.round(summary.homeLegOut.km)}km・${formatMinutes(summary.homeLegOut.minutes)}（${summary.homeLegOut.mode==="transit"?"🚃電車・バス":"🚗車"}）</div>`
+        : `<div class="plan-leg plan-leg-home plan-leg-nohome">🏠 出発地（郵便番号・地名）が未設定です。トップの「近い順」から設定すると、出発地からの移動時間も表示されます。</div>`
+    ) : "";
+    const homeLegReturnHtml = showReturnLeg
+      ? (summary.homeLegReturn
+          ? `<div class="plan-leg plan-leg-home">🏠 出発地まで約${Math.round(summary.homeLegReturn.km)}km・${formatMinutes(summary.homeLegReturn.minutes)}（${summary.homeLegReturn.mode==="transit"?"🚃電車・バス":"🚗車"}）</div>`
+          : "")
+      : "";
     const itemsHtml = spots.map((s,i)=>{
       const leg = i>0 ? summary.legs[i-1] : null;
-      const legHtml = leg ? `<div class="plan-leg">${leg.mode==="transit"?"🚃":"🚗"} 前のスポットから約${Math.round(leg.km)}km・${formatMinutes(leg.minutes)}</div>` : "";
+      const legHtml = (i===0) ? homeLegOutHtml : (leg ? `<div class="plan-leg">${leg.mode==="transit"?"🚃":"🚗"} 前のスポットから約${Math.round(leg.km)}km・${formatMinutes(leg.minutes)}</div>` : "");
       const stayLabel = deriveStayTimeLabel(s);
       return `
         ${legHtml}
@@ -8245,6 +8563,7 @@ function renderPlanSheet(){
             ${PLAN_TAB_LABELS.map((label,ti)=> ti!==state.activePlanTab ? `<button type="button" class="plan-item-move-btn" data-move="${escapeAttr(s.name)}" data-totab="${ti}">${label}へ移動</button>` : "").join("")}
           </div>
         </div>
+        ${i===spots.length-1 ? homeLegReturnHtml : ""}
       `;
     }).join("");
     const summaryHtml = `
@@ -8255,7 +8574,7 @@ function renderPlanSheet(){
         ${summary.advisory ? `<div class="plan-advisory ${summary.advisory.level}">${summary.advisory.text}</div>` : ""}
       </div>
     `;
-    bodyHtml = summaryHtml + itemsHtml;
+    bodyHtml = tripModeHtml + summaryHtml + itemsHtml;
   }
   sheet.innerHTML = `
     <button class="sheet-close" id="planCloseBtn">×</button>
@@ -8301,6 +8620,13 @@ function renderPlanSheet(){
       savePersisted();
       renderPlanSheet();
       render();
+    };
+  });
+  sheet.querySelectorAll("[data-tripmode]").forEach(btn=>{
+    btn.onclick = ()=>{
+      state.planTripModes[state.activePlanTab] = btn.dataset.tripmode;
+      state.planTripModeManualFlags[state.activePlanTab] = true; // 手動選択後は、宿泊施設の有無で自動上書きしない
+      renderPlanSheet();
     };
   });
   const shareBtn = document.getElementById("planShareBtn");
@@ -8427,7 +8753,8 @@ async function generateSpotShareImage(spot){
 async function generatePlanShareImage(spots){
   const summary = computePlanSummary(spots);
   const legLines = spots.length>0 ? spots.length - 1 : 0; // 経路の説明行の数（施設と施設の間）
-  const H = 260 + spots.length*130 + legLines*36 + 140;
+  const homeLegLines = (summary.homeLegOut ? 1 : 0) + (summary.homeLegReturn ? 1 : 0);
+  const H = 260 + spots.length*130 + legLines*36 + homeLegLines*36 + 140;
   const canvas = document.createElement("canvas");
   const W = 900;
   canvas.width = W; canvas.height = H;
@@ -8458,12 +8785,18 @@ async function generatePlanShareImage(spots){
   y += 50;
 
   spots.forEach((s,i)=>{
-    // 前のスポットからの移動時間（工程）
+    // 前のスポットからの移動時間（工程）、1カ所目の前は出発地からの移動時間
     if(i>0 && summary.legs[i-1]){
       const leg = summary.legs[i-1];
       ctx.font = "22px sans-serif";
       ctx.fillStyle = "#6b6259";
       ctx.fillText(`${leg.mode==="transit"?"🚃":"🚗"} 前のスポットから約${Math.round(leg.km)}km・${formatMinutes(leg.minutes)}`, 96, y);
+      y += 36;
+    }
+    if(i===0 && summary.homeLegOut){
+      ctx.font = "22px sans-serif";
+      ctx.fillStyle = "#2B2620";
+      ctx.fillText(`🏠 出発地から約${Math.round(summary.homeLegOut.km)}km・${formatMinutes(summary.homeLegOut.minutes)}`, 96, y);
       y += 36;
     }
     const genre = genreInfo(s);
@@ -8486,6 +8819,12 @@ async function generatePlanShareImage(spots){
     ctx.fillText(metaLine, 115, y+56);
     y += 130;
   });
+  if(summary.homeLegReturn){
+    ctx.font = "22px sans-serif";
+    ctx.fillStyle = "#2B2620";
+    ctx.fillText(`🏠 出発地まで約${Math.round(summary.homeLegReturn.km)}km・${formatMinutes(summary.homeLegReturn.minutes)}`, 96, y);
+    y += 36;
+  }
 
   drawShareFooter(ctx, W, H);
   return new Promise(resolve => canvas.toBlob(resolve, "image/png"));
@@ -8696,6 +9035,14 @@ function matches(spot){
   }
   if(state.excluded.has(spot.name)) return false;
   if(!matchesKeyword(spot, state.keyword)) return false;
+  if(state.visitDate){
+    const d = parseVisitDate(state.visitDate);
+    if(d){
+      const st = getBusinessStatusForDate(spot, d);
+      // 明確に「休業」と判定できる施設だけ除外する。不明な施設は残す。
+      if(st.status==="closed") return false;
+    }
+  }
   return true;
 }
 
@@ -10042,10 +10389,11 @@ function buildCardSummary(spot){
       </div>
     </div>
     ${seasonMatch ? `<div class="season-tag">${SEASON_EMOJI[currentSeason()]} ${currentSeason()}におすすめ</div>` : ""}
+    ${visitDateBadgeHtml(spot) ? `<div class="visitdate-badge-row">${visitDateBadgeHtml(spot)}</div>` : ""}
     <div class="card-feature">${spot.tip}</div>
     <div class="card-eval-row">
       <span>${rain.label}</span>
-      <span>💰 ${wallet.symbol}</span>
+      <span>💰 ${priceCardSnippet(spot)}</span>
       <span>${congestionCardLabel(spot)}</span>
     </div>
     <div class="card-go-row">${goHtml}</div>
@@ -10131,13 +10479,14 @@ function openDetail(spot, silent){
     </div>
 
     <div class="detail-section">
-      <h3>💰 お得感</h3>
-      <div class="detail-eval">
+      <h3>💰 料金</h3>
+      <div class="cost-line cost-line-main">${spot.price ? spot.price : "料金情報なし（公式サイト等でご確認ください）"}</div>
+      ${estimateFamilyCost(spot) ? `<div class="cost-line">${estimateFamilyCost(spot)}</div>` : ""}
+      <div class="detail-eval detail-eval-sub">
         <span class="badge lv-${wallet.level}">${wallet.badge}</span>
         <span class="stars">${walletStars(wallet.level)}</span>
       </div>
-      <div class="cost-line">料金：${spot.price}</div>
-      <div class="cost-line">${estimateFamilyCost(spot)}</div>
+      <div class="parking-detail-note">※料金は変更される場合があります。お出かけ前に${spot.officialUrl ? `<a href="${spot.officialUrl}" target="_blank" rel="noopener">公式サイト</a>` : "公式サイト等"}でご確認ください。</div>
     </div>
 
     <div class="detail-section">
@@ -10181,6 +10530,26 @@ function openDetail(spot, silent){
       ${parkingDetail.available ? `<div class="cost-line">料金：${parkingDetail.priceLabel}</div>` : ""}
       <div class="parking-detail-note">${parkingDetail.note}</div>
     </div>
+
+    ${businessHoursSummaryLabel(spot) ? `
+    <div class="detail-section">
+      <h3>🕒 営業時間・定休日</h3>
+      ${(() => {
+        const bhLabel = businessHoursSummaryLabel(spot);
+        const todayIso = toISODate(new Date());
+        const isTodayOrUnset = !state.visitDate || state.visitDate===todayIso;
+        const nowLabel = isTodayOrUnset ? getNowStatusLabel(spot) : null;
+        const visitLabel = state.visitDate ? visitDateBadgeHtml(spot) : "";
+        return `
+          <div class="cost-line">${bhLabel}</div>
+          ${spot.closedDays && spot.closedDays.length ? `<div class="cost-line">定休日　${spot.closedDays.join("・")}</div>` : ""}
+          ${nowLabel ? `<div class="cost-line" style="font-weight:700;">${nowLabel}</div>` : ""}
+          ${visitLabel ? `<div style="margin-top:6px;">${visitLabel}</div>` : ""}
+          <div class="parking-detail-note">※営業時間・定休日は変更される場合があります。お出かけ前に${spot.officialUrl ? `<a href="${spot.officialUrl}" target="_blank" rel="noopener">公式サイト</a>` : "公式サイト等"}でご確認ください。</div>
+        `;
+      })()}
+    </div>
+    ` : ""}
 
     <div class="detail-section">
       <h3>👥 混雑の目安</h3>
@@ -10389,6 +10758,8 @@ document.getElementById("resetBtn").onclick = ()=>{
   state.zipCandidates = null;
   state.plans = [[], [], []];
   state.activePlanTab = 0;
+  state.planTripModes = ["roundtrip","roundtrip","roundtrip"];
+  state.planTripModeManualFlags = [false,false,false];
   document.getElementById("zipInput").value = "";
   document.getElementById("compareBanner").style.display = "none";
   document.getElementById("compareToggleBtn").classList.remove("active");
