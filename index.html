@@ -328,6 +328,13 @@
     border-radius:18px 18px 0 0; padding:max(28px, calc(16px + env(safe-area-inset-top))) 16px calc(20px + env(safe-area-inset-bottom));
     margin-top:env(safe-area-inset-top);
     -webkit-overflow-scrolling:touch; overscroll-behavior:contain;}
+  @supports (height: 100dvh){
+    /* ChromeなどのモバイルブラウザではURLバーの表示/非表示でビューポート高さが変わるため、
+       それを正しく反映するdvh（動的ビューポート単位）を優先して使う。
+       100vhのままだと「アドレスバーが出ている時」に実際より大きい高さで計算され、
+       シートの上部（施設名や×ボタン）がアドレスバーの裏に隠れて見切れることがある。 */
+    .sheet{max-height:calc(100dvh - env(safe-area-inset-top) - 20px);}
+  }
   .sheet-close{display:block; margin:0 0 10px auto; width:34px; height:34px; border-radius:50%; border:none;
     background:#F1EADA; color:var(--ink); font-size:16px; cursor:pointer; min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center;}
   .sheet-title{font-size:17px; font-weight:900; font-family:'Zen Maru Gothic',sans-serif; margin-bottom:10px;}
@@ -11267,14 +11274,23 @@ applySharedStateFromUrl(); // 🗓↗ 共有URL（?spot= / ?plan=）から状態
 document.getElementById("headerShareBtn").onclick = async ()=>{
   const url = window.location.href;
   const text = "おでかけナビ 〜今日は、子どもとどこ行く？〜";
+  
   if(navigator.share){
+    // Web Share API 対応：Line・メール等で共有できる
     try{
-      await navigator.share({url, text});
+      await navigator.share({
+        title: "おでかけナビ",
+        text: text,
+        url: url
+      });
+      // 共有成功時のログ（開発者向け）
+      console.log("Share API: 共有されました");
     }catch(e){
-      // ユーザーが共有をキャンセルした場合など
+      // ユーザーが共有をキャンセルした場合（エラーではない）
+      console.log("Share API: キャンセルされました");
     }
   } else {
-    // Web Share API が利用できない場合はURLをコピー
+    // Web Share API 非対応：URLをコピー
     try{
       await navigator.clipboard.writeText(url);
       alert("URLをコピーしました");
