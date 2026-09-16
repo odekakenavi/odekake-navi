@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<!-- 悪意あるスクリプトの混入対策（CSP）：script-src/connect-srcを、実際に使っている
+     ドメインだけに限定する。インラインのscript/styleタグでサイト全体を構成しているため
+     'unsafe-inline' は許可せざるを得ないが、外部ドメインの許可リストを絞ることで、
+     「許可していない外部サイトへスクリプトを読み込む／データを送信する」動きは防げる。 -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://aml.valuecommerce.com;
+  style-src 'self' 'unsafe-inline';
+  connect-src 'self' https://api.open-meteo.com https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://aml.valuecommerce.com https://ck.jp.ap.valuecommerce.com;
+  img-src 'self' data:;
+  frame-ancestors 'self';
+  base-uri 'self';
+  form-action 'self';
+">
 <title>おでかけナビ 〜今日は、子どもとどこ行く？〜</title>
 
 <!-- Google Analytics 4 -->
@@ -8411,7 +8425,9 @@ async function generateSpotShareImage(spot){
   return new Promise(resolve => canvas.toBlob(resolve, "image/png"));
 }
 async function generatePlanShareImage(spots){
-  const H = 260 + spots.length*130 + 140;
+  const summary = computePlanSummary(spots);
+  const legLines = spots.length>0 ? spots.length - 1 : 0; // 経路の説明行の数（施設と施設の間）
+  const H = 260 + spots.length*130 + legLines*36 + 140;
   const canvas = document.createElement("canvas");
   const W = 900;
   canvas.width = W; canvas.height = H;
@@ -8426,11 +8442,15 @@ async function generatePlanShareImage(spots){
   ctx.fillText("🗓 今日のおでかけプラン", 50, y);
   y += 70;
 
-  const summary = computePlanSummary(spots);
   ctx.font = "26px sans-serif";
   ctx.fillStyle = "#6b6259";
   ctx.fillText(`${spots.length}カ所／滞在時間の目安 約${formatMinutes(summary.stayMid)}`, 50, y);
-  y += 50;
+  y += 42;
+  if(summary.moveMin>0){
+    ctx.fillText(`${state.mode==="transit"?"🚃 電車・バス":"🚗 車"}での移動時間の目安 約${formatMinutes(summary.moveMin)}`, 50, y);
+    y += 42;
+  }
+  y += 8;
 
   ctx.strokeStyle = "#E7DFCF";
   ctx.lineWidth = 2;
@@ -8438,6 +8458,14 @@ async function generatePlanShareImage(spots){
   y += 50;
 
   spots.forEach((s,i)=>{
+    // 前のスポットからの移動時間（工程）
+    if(i>0 && summary.legs[i-1]){
+      const leg = summary.legs[i-1];
+      ctx.font = "22px sans-serif";
+      ctx.fillStyle = "#6b6259";
+      ctx.fillText(`${leg.mode==="transit"?"🚃":"🚗"} 前のスポットから約${Math.round(leg.km)}km・${formatMinutes(leg.minutes)}`, 96, y);
+      y += 36;
+    }
     const genre = genreInfo(s);
     // 番号丸
     ctx.fillStyle = "#E2603A";
@@ -8453,7 +8481,9 @@ async function generatePlanShareImage(spots){
     wrapCanvasText(ctx, `${genre.icon} ${flowerEmoji(s) ? flowerEmoji(s)+" " : ""}${s.name}`, 115, y+16, W-165, 40, 1);
     ctx.font = "24px sans-serif";
     ctx.fillStyle = "#6b6259";
-    ctx.fillText(fullAreaLabel(s), 115, y+56);
+    const stayLabel = deriveStayTimeLabel(s);
+    const metaLine = stayLabel ? `${fullAreaLabel(s)}　${stayLabel.replace("⏱️ おすすめ滞在時間：","⏱️ ").replace("⏱️ おすすめ滞在：","⏱️ ")}` : fullAreaLabel(s);
+    ctx.fillText(metaLine, 115, y+56);
     y += 130;
   });
 
