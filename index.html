@@ -40,6 +40,42 @@
 <meta property="og:image" content="og-image.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://odekakenavi.github.io/odekake-navi/">
+<link rel="canonical" href="https://odekakenavi.github.io/odekake-navi/" id="canonicalLink">
+
+<!-- ==================================================================
+     🔗 施設ごとの独立URL対応（GitHub Pages用のSPAリダイレクト復元）
+     ------------------------------------------------------------------
+     GitHub Pagesは /kanagawa/yokohama/xxx/ のような実在しないパスへの
+     直接アクセスを404.htmlで受ける。404.html側でパスをクエリ文字列に
+     変換してこのページへリダイレクトしてくるので、ここで元のパスに
+     復元する（"spa-github-pages" として知られる手法）。
+     既存の ?spot= / ?plan= 共有URLの仕組みとは別パラメータ（?redirect=）
+     を使うため、共存しても衝突しない。
+     ================================================================== -->
+<script>
+(function(l){
+  try{
+    // APP_BASE_PATHの計算は本体スクリプト側（後方）で行うが、下の404リダイレクト復元で
+    // history.replaceStateによりlocation.pathnameが書き換わった「後」に本体スクリプトが
+    // 実行されるため、ここで書き換え前（＝本来のアプリのベースパス）を保存しておく。
+    window.__ODEKAKE_BASE_PATH__ = l.pathname;
+    if(l.search.indexOf("?redirect=") === 0 || l.search.indexOf("&redirect=") !== -1){
+      var params = new URLSearchParams(l.search);
+      var restoredPath = params.get("redirect");
+      var origSearch = params.get("origSearch");
+      if(restoredPath){
+        params.delete("redirect");
+        params.delete("origSearch");
+        var rest = origSearch ? origSearch.replace(/~and~/g, "&") : "";
+        var qs = params.toString();
+        var extra = [rest, qs].filter(Boolean).join("&");
+        var newUrl = l.pathname.replace(/\/$/, "") + restoredPath + (extra ? "?" + extra : "") + l.hash;
+        window.history.replaceState(null, null, newUrl);
+      }
+    }
+  }catch(e){ /* 復元に失敗してもアプリ本体の起動は止めない */ }
+}(window.location));
+</script>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -75,7 +111,7 @@
     border-bottom:1px solid var(--line);
     display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
   }
-  header > div:first-child{flex:1;}
+  header > div.header-info{flex:1;}
   header h1{margin:0 0 4px; font-size:20px; font-weight:900; letter-spacing:.02em; line-height:1.4;}
   header h1 span{color:var(--coral);}
   .header-share-btn{
@@ -85,6 +121,48 @@
     border-radius:8px; gap:4px; transition:all 0.2s; font-weight:700;
   }
   .header-share-btn:hover{background:#F5F0E8; color:var(--coral); border-color:var(--coral);}
+  /* ☰ ハンバーガーメニュー（既存ヘッダーの機能・レイアウトは変更せず、先頭に1項目追加するだけ） */
+  .hamburger-btn{
+    flex:0 0 auto; border:1px solid var(--line); background:var(--paper); padding:6px 10px;
+    cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;
+    width:auto; height:auto; min-width:44px; min-height:44px; color:var(--ink);
+    border-radius:8px; transition:all 0.2s;
+  }
+  .hamburger-btn:hover{background:#F5F0E8; border-color:var(--coral);}
+  .drawer-overlay{
+    position:fixed; inset:0; background:rgba(43,38,32,.45); z-index:300;
+    opacity:0; pointer-events:none; transition:opacity 0.2s;
+  }
+  .drawer-overlay.open{opacity:1; pointer-events:auto;}
+  .drawer-panel{
+    position:fixed; top:0; left:0; bottom:0; width:82%; max-width:340px;
+    background:var(--cream); z-index:301; box-shadow:2px 0 16px rgba(0,0,0,.18);
+    transform:translateX(-100%); transition:transform 0.25s ease;
+    overflow-y:auto; padding:16px 0 40px;
+  }
+  .drawer-panel.open{transform:translateX(0);}
+  .drawer-header{display:flex; align-items:center; justify-content:space-between; padding:4px 16px 14px; border-bottom:1px solid var(--line);}
+  .drawer-title{font-size:17px; font-weight:900; color:var(--ink);}
+  .drawer-close-btn{border:none; background:transparent; font-size:22px; cursor:pointer; color:var(--ink-soft); width:40px; height:40px; border-radius:8px;}
+  .drawer-close-btn:hover{background:#F5F0E8;}
+  .drawer-section{padding:14px 16px 4px;}
+  .drawer-section-title{font-size:13px; font-weight:700; color:var(--ink-soft); margin-bottom:8px;}
+  .drawer-link-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .drawer-link, .drawer-genre-btn{
+    display:block; background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:10px 12px; text-decoration:none; color:var(--ink); font-size:13.5px; font-weight:700;
+    cursor:pointer; text-align:left; width:100%; font-family:inherit;
+  }
+  .drawer-link:hover, .drawer-genre-btn:hover{border-color:var(--coral); background:#FFF6EF;}
+  .drawer-season-row{display:flex; flex-direction:column; gap:8px;}
+  .drawer-season-link{
+    display:flex; align-items:center; gap:8px; background:var(--paper); border:1px solid var(--line);
+    border-radius:10px; padding:10px 12px; text-decoration:none; color:var(--ink); font-size:13.5px; font-weight:700;
+    cursor:pointer; text-align:left; width:100%; font-family:inherit;
+  }
+  .drawer-season-link:hover{border-color:var(--coral); background:#FFF6EF;}
+  .drawer-season-link.current{border-color:var(--coral); background:#FFF1E6;}
+  .drawer-divider{border:none; border-top:1px solid var(--line); margin:14px 16px 0;}
   .scroll-top-btn{position:fixed; bottom:20px; right:20px; z-index:40; width:56px; height:64px; border-radius:12px; border:none; background:var(--paper); box-shadow:0 2px 8px rgba(0,0,0,.12); cursor:pointer; display:none; flex-direction:column; align-items:center; justify-content:center; opacity:0.7; transition:opacity 0.2s; font-size:11px; font-weight:700; color:var(--ink-soft); min-width:56px; min-height:64px; padding:4px 2px; line-height:1.3;}
   .scroll-top-btn:hover{opacity:1;}
   .scroll-top-btn.show{display:flex;}
@@ -362,6 +440,35 @@
   .chip.w-rain.active{background:var(--rain); border-color:var(--rain); color:#fff;}
   .chip.w-both.active{background:var(--both); border-color:var(--both); color:#fff;}
   .chip.p-yes.active{background:#4F7942; border-color:#4F7942; color:#fff;}
+
+  /* 🏷 現在適用中の絞り込み条件（ワンタップで解除できるチップ表示） */
+  .active-conditions-bar{
+    display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+    padding:8px 16px 4px; margin:-4px 0 8px;
+  }
+  .active-conditions-label{font-size:12px; color:var(--ink-soft); font-weight:700; margin-right:2px;}
+  .condition-chip{
+    display:inline-flex; align-items:center; gap:5px; background:var(--ink); color:var(--cream);
+    border-radius:999px; padding:6px 8px 6px 14px; font-size:12.5px; font-weight:700; white-space:nowrap;
+  }
+  .condition-chip button{
+    background:rgba(255,255,255,.18); border:none; color:var(--cream); width:20px; height:20px;
+    border-radius:50%; cursor:pointer; font-size:13px; line-height:1; display:flex; align-items:center; justify-content:center;
+  }
+  .condition-chip button:hover{background:rgba(255,255,255,.32);}
+  .conditions-clear-all{
+    font-size:12px; color:var(--coral); background:none; border:none; cursor:pointer; font-weight:700;
+    text-decoration:underline; padding:6px 4px;
+  }
+
+  /* 🐼 カテゴリ特集バナー：ジャンルが1つだけ選ばれている時に「特集ページ」として見せる */
+  .featured-banner{
+    margin:0 16px 10px; padding:16px; border-radius:14px;
+    background:linear-gradient(135deg, #FFF6EF 0%, #FCE3B8 100%);
+    border:1px solid #F0D9AE;
+  }
+  .featured-banner-title{font-size:19px; font-weight:900; margin:0 0 6px; color:var(--ink);}
+  .featured-banner-intro{font-size:13px; color:var(--ink-soft); margin:0; line-height:1.6;}
 
   .zip-row{display:flex; gap:6px; align-items:center; margin-top:8px;}
   .zip-row input{
@@ -664,7 +771,8 @@
 <body>
 
 <header>
-  <div>
+  <button id="hamburgerBtn" class="hamburger-btn" type="button" aria-label="メニューを開く">☰</button>
+  <div class="header-info">
     <h1><span>おでかけナビ</span></h1>
     <p>今日は、子どもとどこ行く？</p>
     <span class="disclaimer">※料金・駐車場・混雑・所要時間はすべて目安です。訪問前に公式サイトをご確認ください</span>
@@ -672,6 +780,30 @@
   </div>
   <button class="header-share-btn" id="headerShareBtn" title="URLを共有する">🔗 共有</button>
 </header>
+
+<!-- ☰ ハンバーガーメニュー：地域・季節・目的から探す新しい入口。
+     既存の検索・絞り込み・お気に入り等のUI/ロジックには一切触れない。 -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer-panel" id="drawerPanel" aria-label="サイトメニュー">
+  <div class="drawer-header">
+    <span class="drawer-title">🧭 メニュー</span>
+    <button class="drawer-close-btn" id="drawerCloseBtn" type="button" aria-label="メニューを閉じる">×</button>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-section-title">🗾 地域から探す</div>
+    <div class="drawer-link-grid" id="drawerRegionGrid"></div>
+  </div>
+  <hr class="drawer-divider">
+  <div class="drawer-section">
+    <div class="drawer-section-title">🎯 目的から探す</div>
+    <div class="drawer-link-grid" id="drawerGenreGrid"></div>
+  </div>
+  <hr class="drawer-divider">
+  <div class="drawer-section">
+    <div class="drawer-section-title">季節から探す</div>
+    <div class="drawer-season-row" id="drawerSeasonRow"></div>
+  </div>
+</nav>
 
 <!-- 行きたい一覧・プラン・比較する（プランは「追加してすぐ確認したい」機能のため、
      footerではなくheader直下に配置して見つけやすくする） -->
@@ -750,6 +882,8 @@
   <button class="sort-toggle-btn" data-sort="recommend">🎯 おすすめ順</button>
   <button class="sort-toggle-btn" data-sort="near">📍 近い順</button>
 </div>
+<div class="featured-banner" id="featuredBanner" style="display:none;"></div>
+<div class="active-conditions-bar" id="activeConditionsBar" style="display:none;"></div>
 <div class="result-count" id="resultCount"></div>
 
 <!-- ④ 検索結果 -->
@@ -1034,13 +1168,20 @@ const SEASON_EMOJI = {"春":"🌸","夏":"☀️","秋":"🍁","冬":"❄️"};
 function effectiveSeasons(spot){
   return (spot.seasons && spot.seasons.length) ? spot.seasons : ["通年"];
 }
-// 3〜5月:春 / 6〜8月:夏 / 9〜11月:秋 / 12〜2月:冬 というシンプルな判定のみ（祝日等の複雑な判定は行わない）
+// おでかけナビ独自の季節期間（月日の境界で判定）：
+// 春 2/22〜5/20／夏 5/21〜8/20／秋 8/21〜11/20／冬 11/21〜2/21
 function currentSeason(){
-  const m = new Date().getMonth()+1;
-  if(m>=3 && m<=5) return "春";
-  if(m>=6 && m<=8) return "夏";
-  if(m>=9 && m<=11) return "秋";
-  return "冬";
+  const now = new Date();
+  const md = (now.getMonth()+1) * 100 + now.getDate(); // 例: 9/17 → 917
+  if(md >= 221 && md <= 520) return "春";
+  if(md >= 521 && md <= 820) return "夏";
+  if(md >= 821 && md <= 1120) return "秋";
+  return "冬"; // 11/21〜12/31 および 1/1〜2/20
+}
+// 🌸 「季節から探す」で季節を1つだけ選んでいる場合は、それを「おすすめする季節」として優先する。
+// 選んでいない場合のみ、暦上の「今の季節」を使う（選択中の季節と違う季節のおすすめが出るのを防ぐ）
+function effectiveDisplaySeason(){
+  return (state.seasons && state.seasons.size===1) ? [...state.seasons][0] : currentSeason();
 }
 // 🏃 遊び方：施設のジャンル・特徴から自動判定した大まかな傾向（実測ではなく目安）
 const ACTIVITY_LEVELS = [
@@ -1068,6 +1209,25 @@ const GENRES = [
   {key:"花の名所", label:"🌼 花の名所"},
   {key:"おでかけスポット", label:"📍 その他"}
 ];
+// 🐼 カテゴリ特集バナー用の一言紹介文（ジャンルの一般的な特徴のみ。施設ごとの説明は創作しない）
+const CATEGORY_INTRO = {
+  "動物園": "親子で楽しめるおすすめ動物園を集めました。動物とのふれあいや、ベビーカーでも回りやすいスポットが中心です。",
+  "牧場": "動物とのふれあいや乳搾りなどの体験ができる牧場を集めました。広い敷地でのびのび過ごせます。",
+  "水族館": "雨の日でも楽しめる水族館を集めました。室内中心で、ショーが見られる施設もあります。",
+  "博物館・科学館": "見て・触れて学べる博物館・科学館を集めました。天候を気にせず過ごせます。",
+  "遊園地・テーマパーク": "乗り物やアトラクションが楽しめる遊園地・テーマパークを集めました。1日がっつり遊べます。",
+  "公園": "広い芝生や遊具で遊べる公園を集めました。無料で楽しめるスポットも多くあります。",
+  "温泉・スパ": "家族でゆっくり過ごせる温泉・スパを集めました。日帰り利用ができる施設が中心です。",
+  "室内遊び場": "天候を気にせず遊べる室内遊び場を集めました。小さなお子さまとのお出かけにおすすめです。",
+  "プール・水遊び": "夏に楽しめるプール・水遊びスポットを集めました。屋内プールも含まれます。",
+  "アスレチック・アウトドア": "体をたくさん動かせるアスレチック・アウトドアスポットを集めました。着替えを持って行くと安心です。",
+  "キャンプ場・グランピング": "自然の中で過ごせるキャンプ場・グランピング施設を集めました。日帰り利用ができる施設もあります。",
+  "釣り堀・魚つかみ取り": "釣りや魚つかみ取りが体験できるスポットを集めました。初めてのお子さまでも楽しめます。",
+  "スケート・ボウリング": "体を動かして楽しめるスケート・ボウリング施設を集めました。天候を気にせず遊べます。",
+  "果物狩り・収穫体験": "季節の果物狩り・収穫体験ができるスポットを集めました。旬の時期をチェックしてお出かけください。",
+  "花の名所": "季節の花を楽しめるスポットを集めました。散策やピクニックにもおすすめです。",
+  "おでかけスポット": "上記のカテゴリに当てはまらない、その他のお出かけスポットを集めました。"
+};
 // 比較機能で表示する項目
 const COMPARE_ROWS = [
   "雨の日への強さ","お財布にやさしい度","発散度","短時間向き",
@@ -1809,7 +1969,7 @@ const SPOTS = [
  stayTime:{minMinutes:180, maxMinutes:300},
  desc:"ライオンバスやアフリカ園など、上野より広々とゆったり見て回れる動物園。",
  tip:"起伏があるのでベビーカーより抱っこ紐が楽な区間も。"},
-{region:"東京", name:"鉄道博物館", area:"さいたま市大宮（東京から30分圏）", lat:35.9061, lng:139.6330,
+{region:"埼玉", name:"鉄道博物館", area:"さいたま市大宮", lat:35.9061, lng:139.6330,
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
  stayTime:{minMinutes:150, maxMinutes:240},
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"▲ 混雑しやすい", holidayPM:"▲ 混雑しやすい"},
@@ -7518,6 +7678,1353 @@ const SPOTS_FRUIT_12 = [
 SPOTS.push(...SPOTS_FRUIT_12);
 
 // ==================================================================
+// 🔗 施設ごとの一意URL（slug）
+// ------------------------------------------------------------------
+// 都道府県・市区町村はローマ字化し、施設名は「①公式サイトのURLから読み取れる
+// 場合はそれを利用（公式表記に合わせる）→②カタカナのみの施設名は機械的に
+// ローマ字化（読みが一意に決まるので推測ではない）→③どちらもできない場合は
+// 既存の安全な日本語slugにフォールバック」という優先順位で決定する。
+// 存在しない読み方を推測して作ることはしない。
+// ==================================================================
+const PREF_SLUG = {
+  "東京":"tokyo", "神奈川":"kanagawa", "埼玉":"saitama", "千葉":"chiba",
+  "茨城":"ibaraki", "栃木":"tochigi", "群馬":"gunma",
+  "山梨":"yamanashi", "静岡":"shizuoka", "福島":"fukushima", "長野":"nagano"
+};
+const CITY_ROMAJI = {
+  "千葉|佐倉市": "sakura",
+  "千葉|千葉市中央区": "chiba-chuo",
+  "千葉|千葉市稲毛区": "chiba-inage",
+  "千葉|千葉市緑区": "chiba-midori",
+  "千葉|千葉市美浜区": "chiba-mihama",
+  "千葉|千葉市花見川区": "chiba-hanamigawa",
+  "千葉|千葉市若葉区": "chiba-wakaba",
+  "千葉|南房総市": "minamiboso",
+  "千葉|印旛郡栄町": "sakae",
+  "千葉|印西市": "inzai",
+  "千葉|君津市": "kimitsu",
+  "千葉|大網白里市": "oamishirasato",
+  "千葉|夷隅郡大多喜町": "otaki",
+  "千葉|安房郡鋸南町": "kyonan",
+  "千葉|富津市": "futtsu",
+  "千葉|富里市": "tomisato",
+  "千葉|山武市": "sanmu",
+  "千葉|山武郡九十九里町": "kujukuri",
+  "千葉|山武郡芝山町": "shibayama",
+  "千葉|市原市": "ichihara",
+  "千葉|市川市": "ichikawa",
+  "千葉|成田市": "narita",
+  "千葉|木更津市": "kisarazu",
+  "千葉|松戸市": "matsudo",
+  "千葉|柏市": "kashiwa",
+  "千葉|流山市": "nagareyama",
+  "千葉|浦安市": "urayasu",
+  "千葉|習志野市": "narashino",
+  "千葉|船橋市": "funabashi",
+  "千葉|茂原市": "mobara",
+  "千葉|袖ケ浦市": "sodegaura",
+  "千葉|野田市": "noda",
+  "千葉|銚子市": "choshi",
+  "千葉|長生郡長柄町": "nagara",
+  "千葉|館山市": "tateyama",
+  "千葉|香取市": "katori",
+  "千葉|鴨川市": "kamogawa",
+  "埼玉|さいたま市": "saitama-city",
+  "埼玉|さいたま市中央区": "saitama-chuo",
+  "埼玉|さいたま市北区": "saitama-kita",
+  "埼玉|さいたま市南区": "saitama-minami",
+  "埼玉|さいたま市大宮区": "saitama-omiya",
+  "埼玉|さいたま市岩槻区": "saitama-iwatsuki",
+  "埼玉|さいたま市緑区": "saitama-midori",
+  "埼玉|さいたま市西区": "saitama-nishi",
+  "埼玉|上尾市": "ageo",
+  "埼玉|久喜市": "kuki",
+  "埼玉|入間郡越生町": "ogose",
+  "埼玉|加須市": "kazo",
+  "埼玉|北本市": "kitamoto",
+  "埼玉|北葛飾郡杉戸町": "sugito",
+  "埼玉|南埼玉郡宮代町": "miyashiro",
+  "埼玉|坂戸市": "sakado",
+  "埼玉|大里郡寄居町": "yorii",
+  "埼玉|宮代町": "miyashiro",
+  "埼玉|川口市": "kawaguchi",
+  "埼玉|川越市": "kawagoe",
+  "埼玉|幸手市": "satte",
+  "埼玉|戸田市": "toda",
+  "埼玉|所沢市": "tokorozawa",
+  "埼玉|日高市": "hidaka",
+  "埼玉|春日部市": "kasukabe",
+  "埼玉|東松山市": "higashimatsuyama",
+  "埼玉|比企郡ときがわ町": "tokigawa",
+  "埼玉|滑川町": "namegawa",
+  "埼玉|熊谷市": "kumagaya",
+  "埼玉|狭山市": "sayama",
+  "埼玉|秩父市": "chichibu",
+  "埼玉|秩父郡東秩父村": "higashichichibu",
+  "埼玉|秩父郡横瀬町": "yokoze",
+  "埼玉|秩父郡長瀞町": "nagatoro",
+  "埼玉|羽生市": "hanyu",
+  "埼玉|草加市": "soka",
+  "埼玉|行田市": "gyoda",
+  "埼玉|越谷市": "koshigaya",
+  "埼玉|飯能市": "hanno",
+  "埼玉|鴻巣市": "konosu",
+  "山梨|北杜市": "hokuto",
+  "山梨|南巨摩郡身延町": "minobu",
+  "山梨|南都留郡富士河口湖町": "fujikawaguchiko",
+  "山梨|南都留郡山中湖村": "yamanakako",
+  "山梨|南都留郡忍野村": "oshino",
+  "山梨|南都留郡鳴沢村": "narusawa",
+  "山梨|富士吉田市": "fujiyoshida",
+  "山梨|山梨市": "yamanashi-city",
+  "山梨|甲州市": "koshu",
+  "山梨|甲府市": "kofu",
+  "東京|あきる野市": "akiruno",
+  "東京|世田谷区": "setagaya",
+  "東京|中野区": "nakano",
+  "東京|八王子市": "hachioji",
+  "東京|北区": "kita",
+  "東京|千代田区": "chiyoda",
+  "東京|台東区": "taito",
+  "東京|品川区": "shinagawa",
+  "東京|墨田区": "sumida",
+  "東京|多摩市": "tama",
+  "東京|大田区": "ota",
+  "東京|小金井市": "koganei",
+  "東京|府中市": "fuchu",
+  "東京|文京区": "bunkyo",
+  "東京|新宿区": "shinjuku",
+  "東京|日野市": "hino",
+  "東京|杉並区": "suginami",
+  "東京|東久留米市": "higashikurume",
+  "東京|東大和市": "higashiyamato",
+  "東京|板橋区": "itabashi",
+  "東京|武蔵野市": "musashino",
+  "東京|江戸川区": "edogawa",
+  "東京|江東区": "koto",
+  "東京|渋谷区": "shibuya",
+  "東京|港区": "minato",
+  "東京|町田市": "machida",
+  "東京|稲城市": "inagi",
+  "東京|立川市": "tachikawa",
+  "東京|練馬区": "nerima",
+  "東京|荒川区": "arakawa",
+  "東京|葛飾区": "katsushika",
+  "東京|西多摩郡奥多摩町": "okutama",
+  "東京|西東京市": "nishitokyo",
+  "東京|調布市": "chofu",
+  "東京|豊島区": "toshima",
+  "東京|足立区": "adachi",
+  "栃木|下野市": "shimotsuke",
+  "栃木|佐野市": "sano",
+  "栃木|大田原市": "otawara",
+  "栃木|宇都宮市": "utsunomiya",
+  "栃木|小山市": "oyama",
+  "栃木|日光市": "nikko",
+  "栃木|栃木市": "tochigi-city",
+  "栃木|真岡市": "moka",
+  "栃木|矢板市": "yaita",
+  "栃木|芳賀郡茂木町": "motegi",
+  "栃木|足利市": "ashikaga",
+  "栃木|那須塩原市": "nasushiobara",
+  "栃木|那須町": "nasu",
+  "栃木|那須郡那須町": "nasu",
+  "神奈川|三浦市": "miura",
+  "神奈川|中郡二宮町": "ninomiya",
+  "神奈川|中郡大磯町": "oiso",
+  "神奈川|伊勢原市": "isehara",
+  "神奈川|厚木市": "atsugi",
+  "神奈川|大和市": "yamato",
+  "神奈川|小田原市": "odawara",
+  "神奈川|川崎市中原区": "kawasaki-nakahara",
+  "神奈川|川崎市多摩区": "kawasaki-tama",
+  "神奈川|川崎市宮前区": "kawasaki-miyamae",
+  "神奈川|川崎市川崎区": "kawasaki-kawasaki",
+  "神奈川|川崎市幸区": "kawasaki-saiwai",
+  "神奈川|川崎市高津区": "kawasaki-takatsu",
+  "神奈川|川崎市麻生区": "kawasaki-asao",
+  "神奈川|平塚市": "hiratsuka",
+  "神奈川|座間市": "zama",
+  "神奈川|愛甲郡愛川町": "aikawa",
+  "神奈川|横浜市": "yokohama-city",
+  "神奈川|横浜市中区": "yokohama-naka",
+  "神奈川|横浜市保土ケ谷区": "yokohama-hodogaya",
+  "神奈川|横浜市南区": "yokohama-minami",
+  "神奈川|横浜市戸塚区": "yokohama-totsuka",
+  "神奈川|横浜市旭区": "yokohama-asahi",
+  "神奈川|横浜市栄区": "yokohama-sakae",
+  "神奈川|横浜市港北区": "yokohama-kohoku",
+  "神奈川|横浜市港南区": "yokohama-konan",
+  "神奈川|横浜市磯子区": "yokohama-isogo",
+  "神奈川|横浜市神奈川区": "yokohama-kanagawa",
+  "神奈川|横浜市緑区": "yokohama-midori",
+  "神奈川|横浜市西区": "yokohama-nishi",
+  "神奈川|横浜市都筑区": "yokohama-tsuzuki",
+  "神奈川|横浜市金沢区": "yokohama-kanazawa",
+  "神奈川|横浜市青葉区": "yokohama-aoba",
+  "神奈川|横浜市鶴見区": "yokohama-tsurumi",
+  "神奈川|横須賀市": "yokosuka",
+  "神奈川|海老名市": "ebina",
+  "神奈川|相模原市中央区": "sagamihara-chuo",
+  "神奈川|相模原市南区": "sagamihara-minami",
+  "神奈川|相模原市緑区": "sagamihara-midori",
+  "神奈川|秦野市": "hadano",
+  "神奈川|箱根町": "hakone",
+  "神奈川|茅ヶ崎市": "chigasaki",
+  "神奈川|藤沢市": "fujisawa",
+  "神奈川|足柄上郡松田町": "matsuda",
+  "神奈川|足柄上郡開成町": "kaisei",
+  "神奈川|足柄下郡湯河原町": "yugawara",
+  "神奈川|足柄下郡真鶴町": "manazuru",
+  "神奈川|足柄下郡箱根町": "hakone",
+  "神奈川|鎌倉市": "kamakura",
+  "神奈川|高座郡寒川町": "samukawa",
+  "福島|いわき市": "iwaki",
+  "群馬|みどり市": "midori-city",
+  "群馬|利根郡みなかみ町": "minakami",
+  "群馬|利根郡川場村": "kawaba",
+  "群馬|前橋市": "maebashi",
+  "群馬|吾妻郡嬬恋村": "tsumagoi",
+  "群馬|吾妻郡草津町": "kusatsu",
+  "群馬|吾妻郡長野原町": "naganohara",
+  "群馬|多野郡上野村": "ueno-village",
+  "群馬|太田市": "ota-city",
+  "群馬|安中市": "annaka",
+  "群馬|富岡市": "tomioka",
+  "群馬|桐生市": "kiryu",
+  "群馬|沼田市": "numata",
+  "群馬|渋川市": "shibukawa",
+  "群馬|甘楽郡下仁田町": "shimonita",
+  "群馬|甘楽郡甘楽町": "kanra",
+  "群馬|藤岡市": "fujioka",
+  "群馬|高崎市": "takasaki",
+  "茨城|かすみがうら市": "kasumigaura",
+  "茨城|つくば市": "tsukuba",
+  "茨城|ひたちなか市": "hitachinaka",
+  "茨城|久慈郡大子町": "daigo",
+  "茨城|取手市": "toride",
+  "茨城|古河市": "koga",
+  "茨城|土浦市": "tsuchiura",
+  "茨城|坂東市": "bando",
+  "茨城|大洗町": "oarai",
+  "茨城|守谷市": "moriya",
+  "茨城|常総市": "joso",
+  "茨城|常陸太田市": "hitachiota",
+  "茨城|日立市": "hitachi",
+  "茨城|東茨城郡大洗町": "oarai",
+  "茨城|水戸市": "mito",
+  "茨城|牛久市": "ushiku",
+  "茨城|猿島郡五霞町": "goka",
+  "茨城|猿島郡境町": "sakai",
+  "茨城|石岡市": "ishioka",
+  "茨城|稲敷市": "inashiki",
+  "茨城|笠間市": "kasama",
+  "茨城|鉾田市": "hokota",
+  "茨城|高萩市": "takahagi",
+  "茨城|鹿嶋市": "kashima",
+  "長野|上水内郡信濃町": "shinano",
+  "長野|上田市": "ueda",
+  "長野|下高井郡山ノ内町": "yamanouchi",
+  "長野|佐久市": "saku",
+  "長野|北佐久郡軽井沢町": "karuizawa",
+  "長野|北安曇郡小谷村": "otari",
+  "長野|小県郡長和町": "nagawa",
+  "長野|松本市": "matsumoto",
+  "長野|長野市": "nagano-city",
+  "静岡|下田市": "shimoda",
+  "静岡|伊東市": "ito",
+  "静岡|伊豆の国市": "izunokuni",
+  "静岡|伊豆市": "izu-city",
+  "静岡|富士宮市": "fujinomiya",
+  "静岡|富士市": "fuji-city",
+  "静岡|御殿場市": "gotemba",
+  "静岡|掛川市": "kakegawa",
+  "静岡|沼津市": "numazu",
+  "静岡|浜松市": "hamamatsu",
+  "静岡|熱海市": "atami",
+  "静岡|田方郡函南町": "kannami",
+  "静岡|裾野市": "susono",
+  "静岡|賀茂郡東伊豆町": "higashiizu",
+  "静岡|賀茂郡河津町": "kawazu",
+};
+function slugifyPart(text){
+  if(!text) return "";
+  return String(text)
+    .trim()
+    .replace(/[・\s\u3000\/]+/g, "-")
+    .replace(/[?#%"'<>\\]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+// 市区町村の「基礎自治体」部分だけを抜き出す（大字・町字以下の詳細は含めない）。
+// 政令指定都市（横浜市・川崎市・さいたま市・千葉市・相模原市）は「市＋区」まで、
+// 郡がある場合は「郡名を除いた町村名」まで、それ以外は最初の市区町村までを使う。
+const DESIGNATED_CITIES = ["横浜市","川崎市","さいたま市","千葉市","相模原市"];
+function baseMunicipality(area){
+  if(!area) return area;
+  for(const dc of DESIGNATED_CITIES){
+    if(area.indexOf(dc) === 0){
+      const m = area.match(new RegExp("^" + dc + ".+?区"));
+      return m ? m[0] : dc;
+    }
+  }
+  if(area.indexOf("郡") !== -1){
+    const m = area.match(/^.+?郡.+?(?:町|村)/);
+    if(m) return m[0];
+  }
+  const m = area.match(/^.+?(?:市|区|町|村)/);
+  return m ? m[0] : area;
+}
+function cityRomajiSlug(region, area){
+  const cityText = (area || "").split("・")[0] || area || "";
+  const base = baseMunicipality(cityText);
+  const romaji = CITY_ROMAJI[region + "|" + base];
+  if(romaji) return romaji;
+  return slugifyPart(base) || "spot"; // 対応表にない場合は安全な日本語slugにフォールバック
+}
+
+// ------------------------------------------------------------------
+// 公式サイトのURLから、意味のある英字slugを抜き出す（例：
+// https://www.tokyo-zoo.net/zoo/ueno/ → "ueno"）。
+// 「index」「top」「都道府県名」等、施設固有とは言えない一般的な語は
+// 候補から除外する（該当施設が無いのにヒットして誤解を招くのを防ぐため）。
+// ------------------------------------------------------------------
+const URL_SLUG_BLACKLIST = new Set([
+  "index","top","home","ja","jp","en","about","news","spot","facility",
+  "park","zoo","aquarium","museum","www","default","main","info","site",
+  "tokyo","osaka","nagoya","yokohama","kanagawa","chiba","saitama",
+  "ibaraki","tochigi","gunma","kanto","japan","shop","event","access",
+  "map","guide","area","branch","store","factory","brewery","features",
+  "sightseeing","detail","city","kankou","enjoy","izu","tour","facilities",
+  "outline","gaiyo","annai","kanko","navi","ec","reserve","booking"
+]);
+const PREF_ROMAJI_WORDS = new Set(["tokyo","kanagawa","saitama","chiba","ibaraki","tochigi","gunma","yamanashi","shizuoka","fukushima","nagano"]);
+const URL_SLUG_ALWAYS_REJECT = new Set(["kankou","kanko","gaiyo","annai"]);
+function isValidUrlSlugCandidate(cand){
+  if(!cand) return false;
+  const c = cand.toLowerCase();
+  if(!/^[a-z0-9][a-z0-9-]{2,}$/.test(c)) return false;
+  if(URL_SLUG_BLACKLIST.has(c)) return false;
+  const parts = c.split("-");
+  if(parts.some(p=>URL_SLUG_ALWAYS_REJECT.has(p))) return false;
+  if(parts.every(p=>URL_SLUG_BLACKLIST.has(p) || PREF_ROMAJI_WORDS.has(p))) return false;
+  if(/^[0-9]+$/.test(c)) return false;
+  return true;
+}
+function slugFromOfficialUrl(url){
+  if(!url) return null;
+  let u;
+  try{ u = new URL(url); }catch(e){ return null; }
+  const pathSegs = u.pathname.split("/").filter(Boolean);
+  const candidates = pathSegs.slice().reverse().map(seg=>seg.replace(/\.(html?|php|aspx?)$/i, ""));
+  for(const cand of candidates){
+    if(isValidUrlSlugCandidate(cand)) return cand.toLowerCase();
+  }
+  const TLD_WORDS = new Set(["jp","com","net","org","co","go","ne","or","ac","info"]);
+  const hostParts = (u.hostname || "").toLowerCase().split(".").filter(h=>h && h!=="www" && !TLD_WORDS.has(h));
+  for(const cand of hostParts){
+    if(isValidUrlSlugCandidate(cand)) return cand.toLowerCase();
+  }
+  return null;
+}
+
+// ------------------------------------------------------------------
+// カタカナのみの施設名を機械的にヘボン式ローマ字へ変換する。
+// カタカナの読みは一意に決まるため、これは「推測」ではなく決定的な変換。
+// 漢字・ひらがなを含む名称には使わない（読みが一意に決まらないため）。
+// ------------------------------------------------------------------
+const KATAKANA_MAP = {
+  "ア":"a","イ":"i","ウ":"u","エ":"e","オ":"o",
+  "カ":"ka","キ":"ki","ク":"ku","ケ":"ke","コ":"ko",
+  "ガ":"ga","ギ":"gi","グ":"gu","ゲ":"ge","ゴ":"go",
+  "サ":"sa","シ":"shi","ス":"su","セ":"se","ソ":"so",
+  "ザ":"za","ジ":"ji","ズ":"zu","ゼ":"ze","ゾ":"zo",
+  "タ":"ta","チ":"chi","ツ":"tsu","テ":"te","ト":"to",
+  "ダ":"da","ヂ":"ji","ヅ":"zu","デ":"de","ド":"do",
+  "ナ":"na","ニ":"ni","ヌ":"nu","ネ":"ne","ノ":"no",
+  "ハ":"ha","ヒ":"hi","フ":"fu","ヘ":"he","ホ":"ho",
+  "バ":"ba","ビ":"bi","ブ":"bu","ベ":"be","ボ":"bo",
+  "パ":"pa","ピ":"pi","プ":"pu","ペ":"pe","ポ":"po",
+  "マ":"ma","ミ":"mi","ム":"mu","メ":"me","モ":"mo",
+  "ヤ":"ya","ユ":"yu","ヨ":"yo",
+  "ラ":"ra","リ":"ri","ル":"ru","レ":"re","ロ":"ro",
+  "ワ":"wa","ヲ":"o","ン":"n","ヴ":"vu"
+};
+const YOUON_MAP = {
+  "キャ":"kya","キュ":"kyu","キョ":"kyo","ギャ":"gya","ギュ":"gyu","ギョ":"gyo",
+  "シャ":"sha","シュ":"shu","ショ":"sho","ジャ":"ja","ジュ":"ju","ジョ":"jo",
+  "チャ":"cha","チュ":"chu","チョ":"cho","ニャ":"nya","ニュ":"nyu","ニョ":"nyo",
+  "ヒャ":"hya","ヒュ":"hyu","ヒョ":"hyo","ビャ":"bya","ビュ":"byu","ビョ":"byo",
+  "ピャ":"pya","ピュ":"pyu","ピョ":"pyo","ミャ":"mya","ミュ":"myu","ミョ":"myo",
+  "リャ":"rya","リュ":"ryu","リョ":"ryo",
+  "ファ":"fa","フィ":"fi","フェ":"fe","フォ":"fo",
+  "ウィ":"wi","ウェ":"we","ウォ":"wo",
+  "ティ":"ti","ディ":"di","トゥ":"tu","ドゥ":"du",
+  "チェ":"che","シェ":"she","ジェ":"je",
+  "ツァ":"tsa","ツェ":"tse","ツォ":"tso","クヮ":"kwa","グヮ":"gwa"
+};
+function isKatakanaOnly(name){
+  for(const ch of name){
+    if("・ー ｰ\u3000".indexOf(ch) !== -1) continue;
+    if(/^[a-zA-Z0-9\-&'.]$/.test(ch)) continue;
+    const code = ch.codePointAt(0);
+    if(code >= 0x30A0 && code <= 0x30FF) continue;
+    return false;
+  }
+  return true;
+}
+function katakanaToRomaji(text){
+  const out = [];
+  const chars = Array.from(text);
+  const n = chars.length;
+  let i = 0;
+  while(i < n){
+    const ch = chars[i];
+    if(ch === "ッ" && i+1 < n){
+      const two = chars[i+1] + (chars[i+2]||"");
+      const one = chars[i+1];
+      const nextRoma = YOUON_MAP[two] || KATAKANA_MAP[one];
+      if(nextRoma && "aiueo".indexOf(nextRoma[0]) === -1){
+        out.push(nextRoma[0]);
+      }
+      i += 1;
+      continue;
+    }
+    const two = ch + (chars[i+1]||"");
+    if(YOUON_MAP[two]){
+      out.push(YOUON_MAP[two]);
+      i += 2;
+      continue;
+    }
+    if(ch === "ー"){
+      if(out.length && out[out.length-1]){
+        const last = out[out.length-1];
+        out.push(last[last.length-1]);
+      }
+      i += 1;
+      continue;
+    }
+    if(KATAKANA_MAP[ch] !== undefined){
+      out.push(KATAKANA_MAP[ch]);
+      i += 1;
+      continue;
+    }
+    if(ch === "・" || ch === " " || ch === "\u3000"){
+      out.push("-");
+      i += 1;
+      continue;
+    }
+    if(/^[a-zA-Z0-9\-]$/.test(ch)){
+      out.push(ch.toLowerCase());
+      i += 1;
+      continue;
+    }
+    return null; // 未対応の文字（漢字・ひらがな等）が含まれる場合は変換しない
+  }
+  return out.join("").replace(/-+/g, "-");
+}
+function facilitySlugAndMethod(spot){
+  const urlCand = slugFromOfficialUrl(spot.officialUrl);
+  if(urlCand) return {slug: urlCand, method: "url"};
+  if(isKatakanaOnly(spot.name)){
+    const r = katakanaToRomaji(spot.name);
+    if(r){
+      const cleaned = r.replace(/^-|-$/g, "");
+      if(cleaned.length >= 2) return {slug: cleaned, method: "katakana"};
+    }
+  }
+  return {slug: slugifyPart(spot.name) || "spot", method: "japanese"};
+}
+// ------------------------------------------------------------------
+// 🔤 手動で確認・指定されたURL（施設名→slug）の優先マップ。
+// 機械的な自動判定（公式URL→カタカナ変換→日本語フォールバック）で
+// 英字化できなかった施設について、人が確認した正式なアルファベットslugを
+// ここに追加していく運用にする。ここに登録されている施設は最優先で使われ、
+// 未登録の施設（今後新しく追加される施設を含む）は従来通り自動判定される。
+const SLUG_OVERRIDES = {
+  "上野動物園": "tokyo/taito/ueno",
+  "サンシャイン水族館": "tokyo/toshima/sunshinecity",
+  "すみだ水族館": "tokyo/sumida/sumida-aquarium",
+  "キッザニア東京": "tokyo/koto/kidzania",
+  "レゴランド・ディスカバリーセンター東京": "tokyo/minato/legolanddiscoverycenter",
+  "国立科学博物館": "tokyo/taito/kahaku",
+  "葛西臨海公園・水族園": "tokyo/edogawa/kasai",
+  "国営昭和記念公園": "tokyo/tachikawa/showakinen-koen",
+  "サンリオピューロランド": "tokyo/tama/puroland",
+  "よみうりランド": "tokyo/inagi/yomiuriland",
+  "多摩動物公園": "tokyo/hino/tama",
+  "鉄道博物館": "saitama/saitama-city/railway-museum",
+  "ハリー・ポッター スタジオツアー東京": "tokyo/nerima/wbstudiotour",
+  "代々木公園": "tokyo/shibuya/yoyogi",
+  "光が丘公園": "tokyo/nerima/hikarigaoka",
+  "舎人公園": "tokyo/adachi/toneri",
+  "国営武蔵丘陵森林公園": "saitama/namegawa/shinrinkoen",
+  "東武動物公園": "saitama/miyashiro/tobuzoo",
+  "大宮公園": "saitama/saitama-omiya/omiya-park",
+  "智光山公園こども動物園": "saitama/sayama/chikozan-park-childrens-zoo",
+  "横浜・八景島シーパラダイス": "kanagawa/yokohama-kanazawa/seaparadise",
+  "アンパンマンこどもミュージアム＆モール横浜": "kanagawa/yokohama-nishi/yokohama-anpanman",
+  "カップヌードルミュージアム横浜": "kanagawa/yokohama-city/cupnoodles-museum",
+  "新江ノ島水族館": "kanagawa/fujisawa/enosui",
+  "箱根（彫刻の森・ロープウェイ）": "kanagawa/hakone/hakone-oam",
+  "山下公園": "kanagawa/yokohama-naka/yamashita-park",
+  "東京ディズニーランド／シー": "chiba/urayasu/tokyodisneyresort",
+  "マザー牧場": "chiba/futtsu/motherfarm",
+  "鴨川シーワールド": "chiba/kamogawa/kamogawa-seaworld",
+  "ふなばしアンデルセン公園": "chiba/funabashi/andersen",
+  "東京ドイツ村": "chiba/sodegaura/tokyo-doitsumura",
+  "谷津バラ園・谷津干潟公園": "chiba/narashino/yatsu-rose-garden-yatsu-higata-park",
+  "国営ひたち海浜公園": "ibaraki/hitachinaka/hitachikaihin",
+  "アクアワールド茨城県大洗水族館": "ibaraki/oarai/aquaworld-oarai",
+  "那須どうぶつ王国": "tochigi/nasu/nasu-oukoku",
+  "東武ワールドスクウェア": "tochigi/nikko/tobuws",
+  "群馬サファリパーク": "gunma/tomioka/safari",
+  "井の頭恩賜公園": "tokyo/musashino/inokashira",
+  "井の頭自然文化園": "tokyo/musashino/inokashira-2",
+  "しながわ水族館": "tokyo/shinagawa/shinagawa-aquarium",
+  "マクセル アクアパーク品川": "tokyo/minato/aqua-park",
+  "東京ジョイポリス": "tokyo/minato/tokyo-joypolis",
+  "日本科学未来館": "tokyo/koto/miraikan",
+  "東京都水の科学館": "tokyo/koto/mizunokagaku",
+  "東京おもちゃ美術館": "tokyo/shinjuku/ttm",
+  "池袋防災館": "tokyo/toshima/hp-ikebukurobousai",
+  "本所防災館": "tokyo/sumida/hp-honjyoboudai",
+  "立川防災館": "tokyo/tachikawa/hp-tatikawaboudai",
+  "東京ドームシティアトラクションズ": "tokyo/bunkyo/attraction",
+  "東京サマーランド": "tokyo/akiruno/summerland",
+  "高尾山": "tokyo/hachioji/takaotozan",
+  "多摩六都科学館": "tokyo/nishitokyo/tamarokuto",
+  "板橋区立熱帯環境植物館": "tokyo/itabashi/itabashi-botanical-garden",
+  "砧公園": "tokyo/setagaya/kinuta",
+  "木場公園": "tokyo/koto/kiba",
+  "城南島海浜公園": "tokyo/ota/jonanjima",
+  "アネビートリムパーク 稲城": "tokyo/inagi/aneby-trim-park-inagi",
+  "キドキドあそびのせかい アリオ北砂店": "tokyo/koto/kidokid-ario-kitasuna",
+  "板橋区立こども動物園": "tokyo/itabashi/itabashi-childrens-zoo",
+  "夢の島公園・熱帯植物館": "tokyo/koto/yumenoshima",
+  "蘆花恒春園": "tokyo/setagaya/roka",
+  "水元公園": "tokyo/katsushika/mizumoto",
+  "篠崎公園": "tokyo/edogawa/shinozaki",
+  "城北中央公園": "tokyo/itabashi/johoku",
+  "国営東京臨海広域防災公園（そなエリア東京）": "tokyo/koto/sonaarea",
+  "よこはま動物園ズーラシア": "kanagawa/yokohama-asahi/zoorasia",
+  "横浜市立野毛山動物園": "kanagawa/yokohama-nishi/nogeyama-zoo",
+  "こどもの国": "kanagawa/yokohama-aoba/kodomonokuni",
+  "藤子・F・不二雄ミュージアム": "kanagawa/kawasaki-tama/fujiko-museum",
+  "生田緑地（かわさき宙と緑の科学館）": "kanagawa/kawasaki-tama/ikuta-ryokuchi-kawasaki-science-museum",
+  "三菱みなとみらい技術館": "kanagawa/yokohama-nishi/mitsubishi-minatomirai-industrial-museum",
+  "コニカミノルタ プラネタリアYOKOHAMA": "kanagawa/yokohama-nishi/planetaria",
+  "東芝未来科学館": "kanagawa/kawasaki-saiwai/toshiba-mirai-kagakukan",
+  "相模川ふれあい科学館 アクアリウムさがみはら": "kanagawa/sagamihara-chuo/sagamigawa-fureai-science-museum-aquarium-sagamihara",
+  "小田原城址公園": "kanagawa/odawara/odawaracastle",
+  "千葉市動物公園": "chiba/chiba-wakaba/chiba-zoo",
+  "市原ぞうの国": "chiba/ichihara/zounokuni",
+  "千葉県立幕張海浜公園": "chiba/chiba-mihama/makuhari-kaihin-park",
+  "松戸市21世紀の森と広場": "chiba/matsudo/matsudo-21st-century-forest-and-park",
+  "富津公園": "chiba/futtsu/futtsu-park",
+  "市川市動植物園": "chiba/ichikawa/ichikawa-zoological-and-botanical-gardens",
+  "袖ケ浦海浜公園": "chiba/sodegaura/sodegaura-kaihin-park",
+  "佐倉草ぶえの丘": "chiba/sakura/sakura-kusabue-no-oka",
+  "成田ゆめ牧場": "chiba/narita/yumebokujo",
+  "西武園ゆうえんち": "saitama/tokorozawa/seibuen",
+  "埼玉県こども動物自然公園": "saitama/higashimatsuyama/sczoo",
+  "川口市グリーンセンター": "saitama/kawaguchi/kawaguchi-green-center",
+  "さいたま水族館": "saitama/hanyu/saitama-suizoku",
+  "むさしの村": "saitama/kazo/musashinomura",
+  "所沢航空記念公園": "saitama/tokorozawa/tokorozawa-aviation-memorial-park",
+  "川越水上公園": "saitama/kawagoe/kawagoe-water-park",
+  "茨城県自然博物館": "ibaraki/bando/ibaraki-nature-museum",
+  "かみね動物園": "ibaraki/hitachi/kamine-zoo",
+  "つくばエキスポセンター": "ibaraki/tsukuba/expocenter",
+  "那須ハイランドパーク": "tochigi/nasu/nasuhighlandpark",
+  "日光江戸村": "tochigi/nikko/edowonderland",
+  "とちのきファミリーランド": "tochigi/utsunomiya/tochinoki-family-land",
+  "群馬県立ぐんまこどもの国": "gunma/ota-city/gunma-childrens-land",
+  "桐生が岡動物園・遊園地": "gunma/kiryu/kiryu-gaoka-zoo-amusement-park",
+  "前橋市中央児童遊園（るなぱあく）": "gunma/maebashi/lunapark",
+  "カワスイ 川崎水族館": "kanagawa/kawasaki-saiwai/kawasu-kawasaki-aquarium",
+  "はまぎん こども宇宙科学館": "kanagawa/yokohama-isogo/hamagin-space-science-center",
+  "原鉄道模型博物館": "kanagawa/yokohama-nishi/hara-model-railway-museum",
+  "川崎市子ども夢パーク": "kanagawa/kawasaki-takatsu/yumepark",
+  "東高根森林公園": "kanagawa/kawasaki-miyamae/higashitakane-forest-park",
+  "等々力緑地": "kanagawa/kawasaki-nakahara/todoroki-ryokuchi",
+  "夢見ヶ崎動物公園": "kanagawa/kawasaki-saiwai/yumemigasaki-zoo",
+  "三ツ池公園": "kanagawa/yokohama-tsurumi/mitsuike-park",
+  "四季の森公園": "kanagawa/yokohama-midori/shikinomori-park",
+  "横浜市こども自然公園（大池公園）": "kanagawa/yokohama-asahi/yokohama-childrens-nature-park-oike-park",
+  "舞岡公園": "kanagawa/yokohama-totsuka/maioka-park",
+  "根岸森林公園": "kanagawa/yokohama-naka/negishi-forest-park",
+  "横浜公園": "kanagawa/yokohama-naka/yokohama-park",
+  "岸根公園": "kanagawa/yokohama-kohoku/kishine-park",
+  "新横浜公園": "kanagawa/yokohama-kohoku/shinyokohama-park",
+  "県立三ツ沢公園": "kanagawa/yokohama-kanagawa/mitsuzawa-park",
+  "引地川親水公園": "kanagawa/fujisawa/hikijigawa-shinsui-park",
+  "辻堂海浜公園（湘南海岸公園）": "kanagawa/fujisawa/tsujido-kaihin-park-shonan-kaigan-park",
+  "鎌倉海浜公園": "kanagawa/kamakura/kamakura-kaihin-park",
+  "荒崎公園": "kanagawa/yokosuka/arasaki-park",
+  "相模原公園": "kanagawa/sagamihara-minami/sagamihara-park",
+  "七沢森林公園": "kanagawa/atsugi/nanasawa-forest-park",
+  "厚木市子ども科学館": "kanagawa/atsugi/atsugi-city-childrens-science-museum",
+  "茅ヶ崎里山公園": "kanagawa/chigasaki/chigasaki-satoyama-park",
+  "平塚市総合公園": "kanagawa/hiratsuka/hiratsuka-city-general-park",
+  "湘南平": "kanagawa/hiratsuka/shonan-daira",
+  "県立生命の星・地球博物館": "kanagawa/odawara/kanagawa-prefectural-museum-of-natural-history",
+  "泉の森": "kanagawa/yamato/izumi-no-mori",
+  "県立座間谷戸山公園": "kanagawa/zama/zama-yatoyama-park",
+  "神奈川県立フラワーセンター大船植物園": "kanagawa/kamakura/kanagawa-prefectural-ofuna-flower-center",
+  "くりはま花の国": "kanagawa/yokosuka/kurihama-flower-park",
+  "秦野戸川公園": "kanagawa/hadano/hadano-togawa-park",
+  "三溪園": "kanagawa/yokohama-naka/sankeien",
+  "海老名運動公園": "kanagawa/ebina/ebina-sports-park",
+  "寒川町一之宮公園": "kanagawa/samukawa/samukawa-ichinomiya-park",
+  "大磯城山公園": "kanagawa/oiso/oiso-shiroyama-park",
+  "富士見公園": "kanagawa/kawasaki-kawasaki/fujimi-park",
+  "保土ケ谷公園": "kanagawa/yokohama-hodogaya/hodogaya-park",
+  "中原平和公園": "kanagawa/kawasaki-nakahara/nakahara-peace-park",
+  "花菜ガーデン": "kanagawa/hiratsuka/kana-garden",
+  "大和ゆとりの森": "kanagawa/yamato/yamato-yutori-no-mori",
+  "追浜公園": "kanagawa/yokosuka/oppama-park",
+  "三笠公園": "kanagawa/yokosuka/mikasa-park",
+  "駒沢オリンピック公園": "tokyo/setagaya/komazawa-olympic-park",
+  "神代植物公園": "tokyo/chofu/jindai-botanical-garden",
+  "六義園": "tokyo/bunkyo/rikugien",
+  "小石川後楽園": "tokyo/bunkyo/koishikawa-korakuen",
+  "お台場海浜公園": "tokyo/minato/odaiba-kaihin-park",
+  "有明親水海浜公園": "tokyo/koto/ariake-shinsui-kaihin-park",
+  "石神井公園": "tokyo/nerima/shakujii-park",
+  "善福寺公園": "tokyo/suginami/zenpukuji-park",
+  "平和の森公園": "tokyo/nakano/heiwajima-park",
+  "東京都立野川公園": "tokyo/chofu/nogawa-park",
+  "浮間公園": "tokyo/kita/ukima-park",
+  "羽根木公園": "tokyo/setagaya/hanegi-park",
+  "埼玉県立川の博物館": "saitama/yorii/saitama-river-museum",
+  "秩父ミューズパーク": "saitama/chichibu/chichibu-muse-park",
+  "さきたま古墳公園": "saitama/gyoda/sakitama-kofun-park",
+  "彩湖・道満グリーンパーク": "saitama/toda/saiko-doman-green-park",
+  "加須はなさき公園": "saitama/kazo/kazo-hanasaki-park",
+  "岩槻城址公園": "saitama/saitama-iwatsuki/iwatsuki-castle-ruins-park",
+  "羽生水郷公園": "saitama/hanyu/hanyu-suigo-park",
+  "熊谷スポーツ文化公園": "saitama/kumagaya/kumagaya-sports-culture-park",
+  "千葉ポートパーク": "chiba/chiba-chuo/chiba-port-park",
+  "稲毛海浜公園": "chiba/chiba-mihama/inage-kaihin-park",
+  "手賀沼公園": "chiba/kashiwa/teganuma-park",
+  "柏の葉公園": "chiba/kashiwa/kashiwanoha-park",
+  "犬吠埼": "chiba/choshi/choshi-inubosaki",
+  "茂原公園": "chiba/mobara/mobara-park",
+  "房総のむら": "chiba/sakae/boso-no-mura",
+  "偕楽園": "ibaraki/mito/kairakuen",
+  "千波公園": "ibaraki/mito/senba-park",
+  "竜神大吊橋": "ibaraki/hitachiota/ryujin-otsuribashi",
+  "大洗サンビーチ": "ibaraki/oarai/oarai-sun-beach",
+  "笠間芸術の森公園": "ibaraki/kasama/kasama-geijutsu-no-mori-park",
+  "筑波山": "ibaraki/tsukuba/mount-tsukuba",
+  "とちぎわんぱく公園（栃木県子ども総合科学館）": "tochigi/moka/tochigi-wanpaku-park",
+  "宇都宮動物園": "tochigi/utsunomiya/utsunomiya-zoo",
+  "那須フラワーワールド": "tochigi/nasu/nasu-flower-world",
+  "井頭公園": "tochigi/moka/igashira-park",
+  "中禅寺湖・華厳の滝": "tochigi/nikko/lake-chuzenji-kegon-falls",
+  "高崎公園": "gunma/takasaki/takasaki-park",
+  "伊香保グリーン牧場": "gunma/shibukawa/ikaho-green-bokujo",
+  "太田市運動公園": "gunma/ota-city/ota-city-sports-park",
+  "敷島公園": "gunma/maebashi/shikishima-park",
+  "ぐんま昆虫の森": "gunma/kiryu/gunma-insect-forest",
+  "飛鳥山公園": "tokyo/kita/asakayama-park",
+  "江戸東京たてもの園": "tokyo/koganei/edo-tokyo-open-air-architectural-museum",
+  "都立小金井公園": "tokyo/koganei/koganei-park",
+  "東京都立野鳥公園": "tokyo/ota/tokyo-port-wild-bird-park",
+  "ガスの科学館": "tokyo/koto/gas-science-museum",
+  "消防博物館": "tokyo/shinjuku/fire-museum",
+  "科学技術館": "tokyo/chiyoda/science-museum",
+  "東京都虹の下水道館": "tokyo/koto/tokyo-rainbow-sewerage-museum",
+  "国立科学博物館附属自然教育園": "tokyo/minato/institute-for-nature-study",
+  "多摩森林科学園": "tokyo/hachioji/tama-forest-science-garden",
+  "江の島岩屋": "kanagawa/fujisawa/enoshima-iwaya",
+  "横須賀市自然・人文博物館": "kanagawa/yokosuka/yokosuka-city-museum",
+  "ソレイユの丘": "kanagawa/yokosuka/soleil-no-oka",
+  "川崎大師公園": "kanagawa/kawasaki-kawasaki/kawasaki-daishi-park",
+  "しんゆり公園": "kanagawa/kawasaki-asao/shinyuri-park",
+  "磯子海浜公園": "kanagawa/yokohama-isogo/isogo-kaihin-park",
+  "富岡総合公園": "kanagawa/yokohama-kanazawa/tomioka-general-park",
+  "あーすぷらざ（地球市民かながわプラザ）": "kanagawa/yokohama-sakae/earth-plaza-kanagawa-plaza",
+  "震生湖": "kanagawa/hadano/shinseiko",
+  "大山ケーブルカー": "kanagawa/isehara/oyama-cable-car",
+  "松田山ハーブガーデン": "kanagawa/matsuda/matsudayama-herb-garden",
+  "開成町あじさいの里": "kanagawa/kaisei/kaisei-hydrangea-village",
+  "三崎港 うらり": "kanagawa/miura/misaki-port-urari",
+  "座間市芹沢公園": "kanagawa/zama/zama-serizawa-park",
+  "二宮町吾妻山公園": "kanagawa/ninomiya/ninomiya-azumayama-park",
+  "さいたま市大宮盆栽美術館": "saitama/saitama-kita/saitama-omiya-bonsai-art-museum",
+  "青少年宇宙科学館": "saitama/saitama-omiya/youth-space-science-museum",
+  "三橋総合公園": "saitama/saitama-nishi/mitsuhashi-general-park",
+  "権現堂公園": "saitama/satte/gongendo-park",
+  "川口市立グリーンセンター": "saitama/kawaguchi/kawaguchi-city-green-center",
+  "羊山公園": "saitama/chichibu/hitsujiyama-park",
+  "長瀞岩畳": "saitama/nagatoro/nagatoro-iwadatami",
+  "平成の森公園": "saitama/hanno/heisei-no-mori-park",
+  "ムーミンバレーパーク": "saitama/hanno/metsa-hanno",
+  "上尾丸山公園": "saitama/ageo/ageo-maruyama-park",
+  "北本自然観察公園": "saitama/kitamoto/kitamoto-nature-observation-park",
+  "サイボクファーム": "saitama/hidaka/saibokufaamu",
+  "こうのとり伝説の郷": "saitama/konosu/konotori-densetsu-no-sato",
+  "与野公園": "saitama/saitama-chuo/yono-park",
+  "荒川総合運動公園": "saitama/kumagaya/arakawa-general-sports-park",
+  "千葉県立現代産業科学館": "chiba/ichikawa/chiba-museum-of-science-and-industry",
+  "佐倉城址公園": "chiba/sakura/sakura-castle-ruins-park",
+  "国立歴史民俗博物館": "chiba/sakura/national-museum-of-japanese-history",
+  "大多喜城": "chiba/otaki/otaki-castle",
+  "濃溝の滝・亀岩の洞窟": "chiba/kimitsu/nomizo-falls-kameiwa-cave",
+  "高滝湖": "chiba/ichihara/takataki-lake",
+  "千葉市科学館（きぼーる）": "chiba/chiba-chuo/chiba-city-science-museum-qiball",
+  "白浜フラワーパーク": "chiba/minamiboso/shirahama-flower-park",
+  "清水公園": "chiba/noda/shimizu-park",
+  "太田山公園（きみさらずタワー）": "chiba/kisarazu/otayama-park-kimisarazu-tower",
+  "水戸市森林公園": "ibaraki/mito/mito-city-forest-park",
+  "洞峰公園": "ibaraki/tsukuba/doho-park",
+  "上高津貝塚ふるさと歴史の広場": "ibaraki/tsuchiura/kamitakatsu-shell-mound-historical-park",
+  "水海道あすなろの里": "ibaraki/joso/mitsukaido-asanaro-no-sato",
+  "牛久大仏": "ibaraki/ushiku/ushiku-daibutsu",
+  "笠間つつじ公園": "ibaraki/kasama/kasama-tsutsuji-park",
+  "鹿島神宮": "ibaraki/kashima/kashima-jingu",
+  "西山公園": "ibaraki/hitachiota/nishiyama-park",
+  "花貫渓谷": "ibaraki/takahagi/hananuki-keikoku",
+  "袋田の滝": "ibaraki/daigo/fukuroda-falls",
+  "那須岳ロープウェイ": "tochigi/nasu/nasudake-ropeway",
+  "千本松牧場": "tochigi/nasushiobara/senbonmatsu-bokujo",
+  "みかも山公園": "tochigi/tochigi-city/mikamo-yama-park",
+  "小山総合運動公園": "tochigi/oyama/oyama-general-sports-park",
+  "日光猿軍団": "tochigi/nikko/nikko-sarugundan",
+  "県民の森": "tochigi/yaita/kenmin-no-mori",
+  "りんどう湖ファミリー牧場": "tochigi/nasu/rindo-lake-family-ranch",
+  "南ヶ丘牧場": "tochigi/nasu/minamigaoka-ranch",
+  "出流原弁天池": "tochigi/sano/izuruhara-benten-pond",
+  "那須平成の森": "tochigi/nasu/nasu-heisei-no-mori",
+  "富岡製糸場": "gunma/tomioka/tomioka-silk-mill",
+  "谷川岳ロープウェイ": "gunma/minakami/tanigawadake-ropeway",
+  "川場田園プラザ": "gunma/kawaba/kawaba-denen-plaza",
+  "沼田公園": "gunma/numata/numata-park",
+  "ららん藤岡": "gunma/fujioka/laran-fujioka",
+  "碓氷峠鉄道文化むら": "gunma/annaka/usui-toge-railway-culture-village",
+  "群馬の森（県立近代美術館）": "gunma/takasaki/gunma-no-mori-modern-art-museum",
+  "渋川スカイランドパーク": "gunma/shibukawa/shibukawa-skyland-park",
+  "水道山公園": "gunma/kiryu/suidoyama-park",
+  "蒔田公園": "kanagawa/yokohama-minami/maita-park",
+  "久良岐公園": "kanagawa/yokohama-konan/kuraki-park",
+  "根岸交通公園": "kanagawa/yokosuka/negishi",
+  "金沢自然公園": "kanagawa/yokohama-kanazawa/kanazawa-nature-park",
+  "東扇島東公園": "kanagawa/kawasaki-kawasaki/higashi-ogishima-higashi-park",
+  "大井ふ頭中央海浜公園": "tokyo/shinagawa/oi-futo-central-seaside-park",
+  "東綾瀬公園": "tokyo/adachi/higashi-ayase-park",
+  "東京都立辰巳の森海浜公園": "tokyo/koto/tatsumi-no-mori-seaside-park",
+  "赤塚公園": "tokyo/itabashi/akatsuka-park",
+  "二子玉川公園": "tokyo/setagaya/futakotamagawa-park",
+  "しらこばと水上公園": "saitama/koshigaya/shirakobato-suijo-park",
+  "大凧公園": "saitama/kasukabe/odako-park",
+  "大宮第二公園": "saitama/saitama-omiya/omiya-daini-park",
+  "浦安市高洲海浜公園": "chiba/urayasu/urayasu-takasu-kaihin-park",
+  "昭和の森": "chiba/chiba-midori/showa-no-mori",
+  "大洲防災公園": "chiba/ichikawa/ozu-disaster-prevention-park",
+  "東京あそびマーレ": "tokyo/hachioji/tokyo-asobimare",
+  "警察博物館": "tokyo/shinagawa/welcome",
+  "がすてなーに ガスの科学館": "tokyo/koto/gas-kagakukan",
+  "JICA地球ひろば": "tokyo/shinjuku/hiroba",
+  "地下鉄博物館": "tokyo/edogawa/chikahaku",
+  "ギャラクシティ": "tokyo/adachi/galaxcity",
+  "ハピピランド横浜アソビル店": "kanagawa/yokohama-nishi/hapipiland",
+  "キッズランドUS mini 東京浅草店": "tokyo/taito/kidsland-us",
+  "ファンタジーキッズリゾート クロスガーデン多摩店": "tokyo/tama/fantasykids",
+  "ザキッズ お台場デックス東京ビーチ店": "tokyo/minato/the-kids-odaiba-decks-tokyo-beach",
+  "CROSPO 八王子店": "tokyo/hachioji/hachioji",
+  "あそびパークPLUS みなとみらい東急スクエア店": "kanagawa/yokohama-nishi/asobipark",
+  "筑波宇宙センター（JAXA）": "ibaraki/tsukuba/tsukuba",
+  "こんにゃくパーク": "gunma/kanra/konnyaku-park",
+  "キッコーマン もの知りしょうゆ館": "chiba/noda/kikkoman",
+  "栃木県なかがわ水遊園": "tochigi/otawara/tochigi-nakagawa",
+  "東京タワー": "tokyo/minato/tokyotower",
+  "東京スカイツリー": "tokyo/sumida/tokyo-skytree",
+  "ミニチュアミュージアム スモールワールズ": "tokyo/koto/smallworlds",
+  "うんこミュージアム TOKYO": "tokyo/minato/unko-museum",
+  "東京国立博物館": "tokyo/taito/tnm",
+  "さがみ湖MORI MORI": "kanagawa/sagamihara-midori/sagamiko-resort",
+  "箱根ガラスの森美術館": "kanagawa/hakone/hakone-garasunomori",
+  "横浜イングリッシュガーデン": "kanagawa/yokohama-nishi/y-eg",
+  "アニタッチみなとみらい": "kanagawa/yokohama-nishi/anitouch-minatomirai",
+  "狭山スキー場": "saitama/tokorozawa/seibu-leisure",
+  "カンドゥー幕張": "chiba/chiba-mihama/makuhari",
+  "航空科学博物館": "chiba/shibayama/aeromuseum",
+  "蓮沼ウォーターガーデン": "chiba/sanmu/watergarden",
+  "つくばわんわんランド": "ibaraki/ishioka/wanwan",
+  "かみねレジャーランド": "ibaraki/hitachi/facility-03",
+  "大洗マリンタワー": "ibaraki/oarai/oarai-marine-tower",
+  "モビリティリゾートもてぎ": "tochigi/motegi/mobilityresort",
+  "那須サファリパーク": "tochigi/nasu/nasu-safari-park",
+  "那須ワールドモンキーパーク": "tochigi/nasu/nasu-world-monkey-park",
+  "那須テディベア・ミュージアム": "tochigi/nasu/nasu-teddy-bear-museum",
+  "那須オルゴール美術館": "tochigi/nasu/nasu-music-box-museum",
+  "那須ステンドグラス美術館": "tochigi/nasu/nasu-stained-glass-museum",
+  "那須とりっくあーとぴあ": "tochigi/nasu/nasu-trick-art-pia",
+  "とりっくあーとぴあ日光": "tochigi/nikko/trick-art-pia-nikko",
+  "軽井沢おもちゃ王国": "gunma/tsumagoi/karuizawa",
+  "世界の名犬牧場": "gunma/maebashi/meiken-bokujo",
+  "三日月村": "gunma/midori-city/mikazuki-mura",
+  "サントリー〈天然水のビール工場〉東京・武蔵野": "tokyo/fuchu/musashino",
+  "コカ・コーラ多摩工場見学": "tokyo/higashikurume/coca-cola-tama-factory-tour",
+  "JAL工場見学 SKY MUSEUM": "tokyo/ota/jal-sky-museum",
+  "キリンビール横浜工場": "kanagawa/yokohama-tsurumi/experience",
+  "崎陽軒横浜工場見学": "kanagawa/yokohama-tsuzuki/kiyoken-yokohama-factory-tour",
+  "森永製菓鶴見工場見学": "kanagawa/yokohama-tsurumi/morinaga-turumi-factory-tour",
+  "グリコピア・イースト": "saitama/kitamoto/east",
+  "明治なるほどファクトリー坂戸": "saitama/sakado/kounan",
+  "ロッテ浦和工場見学": "saitama/saitama-minami/lotte-urawa-factory-tour",
+  "サッポロビール千葉工場": "chiba/funabashi/sapporobeer",
+  "キリンビール取手工場": "ibaraki/toride/toride",
+  "アサヒビール茨城工場 スーパードライミュージアム": "ibaraki/moriya/asahibeer",
+  "キユーピー五霞工場": "ibaraki/goka/entertainment",
+  "カルビー清原工場": "tochigi/utsunomiya/kiyohara",
+  "お菓子の城 那須ハートランド": "tochigi/nasu/okashinoshiro",
+  "めんたいパーク群馬": "gunma/kanra/mentai-park",
+  "SUBARUビジターセンター": "gunma/ota-city/subarubijitaasentaa",
+  "H-NACヒューナックアクアパーク水郷": "ibaraki/tsuchiura/h-nac-hunac-aquapark-suigo",
+  "萩中公園プール": "tokyo/ota/haginaka-park-pool",
+  "引地台温水プール": "kanagawa/yamato/hikichidai-indoor-pool",
+  "上尾市健康プラザ わくわくランド": "saitama/ageo/ageo-health-plaza-wakuwaku-land",
+  "こてはし温水プール": "chiba/chiba-hanamigawa/kotehashi-indoor-pool",
+  "フォレスパ大子": "ibaraki/daigo/forespa-daigo",
+  "ふれあい館温水プール": "tochigi/shimotsuke/fureaikan-indoor-pool",
+  "カリビアンビーチ": "gunma/kiryu/karibianbiichi",
+  "あしかがフラワーパーク": "tochigi/ashikaga/ashikaga",
+  "GunmaFlowerPark＋（ぐんまフラワーパーク）": "gunma/maebashi/flower-park",
+  "千鳥ヶ淵緑道": "tokyo/chiyoda/chidorigafuchi-greenway",
+  "熊谷桜堤": "saitama/kumagaya/kumagaya-sakuranotei",
+  "妙義山": "gunma/tomioka/myogi-san",
+  "サンシャイン60展望台 てんぼうパーク": "tokyo/toshima/observatory",
+  "コニカミノルタプラネタリウム“満天” in Sunshine City": "tokyo/toshima/manten",
+  "川口市立科学館": "saitama/kawaguchi/kawaguchi-science",
+  "江の島シーキャンドル（展望灯台）": "kanagawa/fujisawa/enoshima-seacandle",
+  "千葉ポートタワー": "chiba/chiba-chuo/chiba-port-tower",
+  "あらかわ遊園": "tokyo/arakawa/yuuen",
+  "チームラボプラネッツ TOKYO（豊洲）": "tokyo/koto/planets",
+  "ナンジャタウン（サンシャインシティ）": "tokyo/toshima/namja",
+  "よこはまコスモワールド": "kanagawa/yokohama-naka/cosmoworld",
+  "箱根小涌園ユネッサン": "kanagawa/hakone/yunessun",
+  "いばらきフラワーパーク": "ibaraki/ishioka/flowerpark",
+  "大谷資料館": "tochigi/utsunomiya/oya909",
+  "富士急ハイランド": "yamanashi/fujiyoshida/fujiq",
+  "富士サファリパーク": "shizuoka/susono/fujisafari",
+  "掛川花鳥園": "shizuoka/kakegawa/k-hana-tori",
+  "富士山こどもの国": "shizuoka/fuji-city/kodomo",
+  "スパリゾートハワイアンズ": "fukushima/iwaki/hawaiians",
+  "アクアマリンふくしま": "fukushima/iwaki/aquamarine",
+  "足立区生物園": "tokyo/adachi/seibutuen",
+  "江戸川区自然動物園（行船公園）": "tokyo/edogawa/gyousen",
+  "印刷博物館": "tokyo/bunkyo/printing-museum",
+  "深川江戸資料館": "tokyo/koto/fukagawa",
+  "パナソニックセンター東京（AkeruE）": "tokyo/koto/center-tokyo",
+  "川崎市立日本民家園": "kanagawa/kawasaki-tama/nihonminkaen",
+  "小田原こどもの森公園わんぱくらんど": "kanagawa/odawara/wanpakuland",
+  "観音崎公園": "kanagawa/yokosuka/kannonzaki",
+  "川崎市青少年科学館（かわさき宙と緑の科学館）": "kanagawa/kawasaki-tama/nature-kawasaki",
+  "海ほたるパーキングエリア": "chiba/kisarazu/umihotaru",
+  "水郷佐原あやめパーク": "chiba/katori/ayamepark",
+  "佐倉ふるさと広場": "chiba/sakura/furusato",
+  "小江戸川越（蔵造りの町並み）": "saitama/kawagoe/koedo",
+  "大宮花の丘農林公苑": "saitama/saitama-nishi/hananooka",
+  "筑波実験植物園": "ibaraki/tsukuba/tbg",
+  "草津温泉 湯畑周辺": "gunma/kusatsu/kusatsu-onsen",
+  "伊香保温泉 石段街": "gunma/shibukawa/ikaho-onsen-stone-steps",
+  "伊豆シャボテン動物公園": "shizuoka/ito/izushaboten",
+  "地獄谷野猿公苑": "nagano/yamanouchi/jigokudani-yaenkoen",
+  "熱川バナナワニ園": "shizuoka/higashiizu/bananawani",
+  "浜名湖パルパル": "shizuoka/hamamatsu/pal2",
+  "山中湖 花の都公園": "yamanashi/yamanakako/hananomiyakokouen",
+  "河口湖 音楽と森の美術館": "yamanashi/fujikawaguchiko/kawaguchikomusicforest",
+  "西湖いやしの里根場": "yamanashi/fujikawaguchiko/saikoiyashinosatonenba",
+  "戸隠民俗館・忍者からくり屋敷": "nagano/nagano-city/togakushi-ninja",
+  "松本市アルプス公園": "nagano/matsumoto/alpspark",
+  "上田城跡公園": "nagano/ueda/ueda-castle-ruins-park",
+  "伊豆ぐらんぱる公園": "shizuoka/ito/granpal",
+  "下田海中水族館": "shizuoka/shimoda/shimoda-aquarium",
+  "体感型動物園 iZoo": "shizuoka/kawazu/izoo",
+  "修善寺 虹の郷": "shizuoka/izu-city/nijinosato",
+  "伊豆パノラマパーク": "shizuoka/izunokuni/panoramapark",
+  "伊豆・三津シーパラダイス": "shizuoka/numazu/mitosea",
+  "小室山公園": "shizuoka/ito/itospa",
+  "伊豆アニマルキングダム": "shizuoka/higashiizu/izu-animal-kingdom",
+  "姫の沢公園": "shizuoka/atami/himenosawa",
+  "酪農王国オラッチェ": "shizuoka/kannami/soshiki",
+  "かねふく めんたいパーク伊豆": "shizuoka/kannami/mentai-park",
+  "体感型カエル館 KawaZoo": "shizuoka/kawazu/kawazoo",
+  "プレジャーアリーナ（伊豆赤沢温泉）": "shizuoka/ito/izuakazawa",
+  "伊豆テディベア・ミュージアム": "shizuoka/ito/teddynet",
+  "大室山登山リフト": "shizuoka/ito/omuroyama",
+  "伊豆海洋公園": "shizuoka/ito/izuoceanpark",
+  "城ヶ崎海岸（門脇吊橋）": "shizuoka/ito/itospa-2",
+  "日光東照宮": "tochigi/nikko/toshogu",
+  "戦場ヶ原": "tochigi/nikko/senjogahara",
+  "湯滝": "tochigi/nikko/yutaki-falls",
+  "那須野が原公園": "tochigi/nasushiobara/nasunogahara",
+  "日光だいや川公園": "tochigi/nikko/houjin",
+  "那須の森の空中アスレチック NOZARU": "tochigi/nasu/nozaru",
+  "巨大迷路パラディアム": "tochigi/nikko/kyodaimeiro-paradeiamu",
+  "道の駅 伊豆ゲートウェイ函南": "shizuoka/kannami/izugateway",
+  "東京ラスク 伊豆ファクトリー": "shizuoka/izu-city/izufactory",
+  "市民の森 浮橋": "shizuoka/izunokuni/kouen",
+  "箱根園水族館": "kanagawa/hakone/hakonenavi",
+  "大涌谷": "kanagawa/hakone/owakudani",
+  "熱海城": "shizuoka/atami/atamijyo",
+  "幕山公園（湯河原梅林）": "kanagawa/yugawara/yugawara",
+  "箱根ロープウェイ": "kanagawa/hakone/hakone-ropeway",
+  "箱根海賊船": "kanagawa/hakone/hakone-kankosen",
+  "鈴廣かまぼこ博物館": "kanagawa/odawara/kamaboko",
+  "小田原城NINJA館": "kanagawa/odawara/ninja",
+  "箱根強羅公園": "kanagawa/hakone/gorapark",
+  "熱海サンビーチ": "shizuoka/atami/ataminews",
+  "ACAO FOREST": "shizuoka/atami/acaoforest",
+  "万葉公園": "kanagawa/yugawara/yugawara-2",
+  "熱海トリックアート迷宮館": "shizuoka/atami/trickart",
+  "マリンスパあたみ": "shizuoka/atami/marinespa",
+  "小田原フラワーガーデン": "kanagawa/odawara/odawarafg",
+  "真鶴岬・三ツ石": "kanagawa/manazuru/manazuru-misaki-mitsuishi",
+  "遊園地 ぐりんぱ": "shizuoka/susono/grinpa",
+  "御殿場高原 時之栖": "shizuoka/gotemba/tokinosumika",
+  "山中湖交流プラザ きらら": "yamanashi/yamanakako/lake-yamanakako",
+  "御殿場プレミアム・アウトレット": "shizuoka/gotemba/gotemba",
+  "秩父宮記念公園": "shizuoka/gotemba/chichibunomiya",
+  "山梨県笛吹川フルーツ公園": "yamanashi/yamanashi-city/fuefukigawafp",
+  "富士すばるランド": "yamanashi/fujikawaguchiko/pages",
+  "山梨県立科学館（愛宕山こどもの国）": "yamanashi/kofu/kagakukan",
+  "山梨県立富士湧水の里水族館": "yamanashi/oshino/morinonakano-suizokukan",
+  "ハイジの村（フラワーセンター）": "yamanashi/hokuto/heidi-village-flower-center",
+  "万力公園（万葉の森・ふれあい動物広場）": "yamanashi/yamanashi-city/manriki-kouen",
+  "白州・尾白の森名水公園べるが": "yamanashi/hokuto/verga",
+  "忍野 しのびの里": "yamanashi/oshino/oshino-shinobinosato",
+  "山梨県富士川クラフトパーク": "yamanashi/minobu/kirienomori",
+  "山梨県立まきば公園": "yamanashi/hokuto/yamanashi-makiba-park",
+  "鳴沢氷穴": "yamanashi/narusawa/contents",
+  "河口湖猿まわし劇場": "yamanashi/fujikawaguchiko/fuji",
+  "小瀬スポーツ公園": "yamanashi/kofu/kose-sports-park",
+  "大房岬自然公園": "chiba/minamiboso/mboso-etoko",
+  "渚の駅たてやま": "chiba/tateyama/archives",
+  "道の駅とみうら枇杷倶楽部": "chiba/minamiboso/biwakurabu",
+  "鋸山ロープウェー・日本寺": "chiba/futtsu/mt-nokogiri",
+  "館山城・城山公園": "chiba/tateyama/tateyamacastle",
+  "野島埼灯台・野島崎公園": "chiba/minamiboso/mboso-etoko-2",
+  "館山野鳥の森": "chiba/tateyama/tateyamayachou",
+  "なみはらくじらパーク": "chiba/minamiboso/minamiboso",
+  "諏訪峡": "gunma/minakami/enjoy-minakami",
+  "道の駅 みなかみ水紀行館": "gunma/minakami/enjoy-minakami-2",
+  "矢瀬親水公園（道の駅 月夜野矢瀬親水公園）": "gunma/minakami/michinoeki-yaze",
+  "赤谷湖記念公園": "gunma/minakami/akaya-lake-memorial-park",
+  "湯桧曽公園": "gunma/minakami/yubiso-park",
+  "裏見の滝": "gunma/minakami/urami-falls",
+  "西の河原公園": "gunma/kusatsu/sainokawara-park",
+  "西の河原露天風呂": "gunma/kusatsu/sainokawara-rotenburo",
+  "草津熱帯圏": "gunma/kusatsu/kusatsu-tropical-wonderland",
+  "草津温泉 大滝乃湯": "gunma/kusatsu/kusatsu-onsen-otakinoyu",
+  "熱乃湯（湯もみと踊りショー）": "gunma/kusatsu/netsu-no-yu-yumomi-show",
+  "草津温泉スキー場 天狗山プレイゾーン": "gunma/kusatsu/kusatsu-ski-resort-tenguyama-play-zone",
+  "鬼押出し園": "gunma/tsumagoi/onioshidashi-park",
+  "佐久平ハイウェイオアシス パラダ": "nagano/saku/sakudaira-highway-oasis-parada",
+  "sakumo佐久市子ども未来館": "nagano/saku/sakumo-saku-childrens-museum",
+  "道の駅 ヘルシーテラス佐久南": "nagano/saku/michi-no-eki-healthy-terrace-saku-minami",
+  "佐久市天体観測施設 うすだスタードーム": "nagano/saku/usuda-star-dome",
+  "ぴんころ地蔵": "nagano/saku/pinkoro-jizo",
+  "国史跡 龍岡城跡（五稜郭）": "nagano/saku/tatsuoka-castle-ruins-goryokaku",
+  "軽井沢タリアセン": "nagano/karuizawa/karuizawa-taliesin",
+  "白糸の滝": "nagano/karuizawa/shiraito-falls",
+  "ムーゼの森（軽井沢絵本の森美術館・エルツおもちゃ博物館）": "nagano/karuizawa/musee-forest-karuizawa-picture-book-and-toy-museums",
+  "ハルニレテラス": "nagano/karuizawa/harunireterasu",
+  "軽井沢・プリンスショッピングプラザ": "nagano/karuizawa/karuizawa-prince-shopping-plaza",
+  "軽井沢レイクガーデン": "nagano/karuizawa/karuizawa-lake-garden",
+  "雲場池": "nagano/karuizawa/kumoba-pond",
+  "日光田母沢御用邸記念公園": "tochigi/nikko/nikko-tamozawa-imperial-villa-memorial-park",
+  "さかなと森の観察園": "tochigi/nikko/fish-and-forest-observation-garden",
+  "鬼怒川ライン下り": "tochigi/nikko/kinugawa-river-cruise",
+  "日光 花いちもんめ": "tochigi/nikko/nikko-hana-ichimonme",
+  "宝石探し トレジャーストーンパーク": "tochigi/nasu/treasure-stone-park",
+  "塩原温泉 湯っ歩の里": "tochigi/nasushiobara/shiobara-onsen-yuppo-no-sato",
+  "コジマ子どもサイエンスパーク（栃木県子ども総合科学館）": "tochigi/utsunomiya/kojima-childrens-science-park",
+  "大谷公園（平和観音）": "tochigi/utsunomiya/otani-park-heiwa-kannon",
+  "大洗磯前神社": "ibaraki/oarai/oarai-isosakijinja",
+  "かねふく めんたいパーク大洗": "ibaraki/oarai/ooarai",
+  "笠間稲荷神社": "ibaraki/kasama/kasama-inari-jinja",
+  "筑波山神社": "ibaraki/tsukuba/tsukubasan-jinja",
+  "霞ヶ浦総合公園": "ibaraki/tsuchiura/kasumigaura-general-park",
+  "こもれび 森のイバライド": "ibaraki/inashiki/komorebi-mori-no-ibaraido",
+  "日立シビックセンター": "ibaraki/hitachi/hitachi-civic-center",
+  "道の駅 奥久慈だいご": "ibaraki/daigo/michi-no-eki-okukuji-daigo",
+  "ASOBooN in 川口ハイウェイオアシス": "saitama/kawaguchi/kawaguchi-highwayoasis",
+  "トーベ・ヤンソンあけぼの子どもの森公園": "saitama/hanno/akebono",
+  "宝登山小動物公園・長瀞ラインくだり": "saitama/nagatoro/hodosan",
+  "大崎公園（こども動物園）": "saitama/saitama-midori/osaki-park",
+  "さいたま市岩槻人形博物館": "saitama/saitama-iwatsuki/ningyo-muse",
+  "スパジアムジャポン": "tokyo/higashikurume/spadium-japon",
+  "かすかべ湯元温泉": "saitama/kasukabe/kasukabeonsen",
+  "万葉の湯 町田": "tokyo/machida/machida",
+  "竜泉寺の湯 八王子みなみ野店": "tokyo/hachioji/hachioji-2",
+  "極楽湯 千葉稲毛店": "chiba/chiba-inage/chibainage",
+  "東京湯楽城": "chiba/tomisato/chi-hotelsresorts",
+  "天然温泉 湯～ねる 新習志野店": "chiba/narashino/yuneru-shinnarashino",
+  "おふろcafé utatane": "saitama/saitama-kita/ofurocafe-utatane",
+  "龍宮城スパ・ホテル三日月": "chiba/kisarazu/mikazuki",
+  "東武スーパープール": "saitama/miyashiro/pool",
+  "フォレストアドベンチャー・よこはま": "kanagawa/yokohama-aoba/foret-aventure",
+  "フォレストアドベンチャー・小田原": "kanagawa/odawara/foret-aventure",
+  "フォレストアドベンチャー・秩父": "saitama/chichibu/foret-aventure",
+  "フォレストアドベンチャー・つくば": "ibaraki/tsukuba/foret-aventure",
+  "フォレストアドベンチャー・上野": "gunma/ueno-village/foret-aventure",
+  "果実の里 原田農園": "gunma/numata/harada-nouen",
+  "いちごの里": "tochigi/oyama/itigo",
+  "服部牧場": "kanagawa/aikawa/hattori-ranch",
+  "ダチョウ王国 石岡ファーム": "ibaraki/ishioka/dacho",
+  "RAKU SPA 鶴見": "kanagawa/yokohama-tsurumi/tsurumi",
+  "横濱スパヒルズ 竜泉寺の湯": "kanagawa/yokohama-asahi/tsurugamine",
+  "湯楽の里 松戸店": "chiba/matsudo/matsudo",
+  "大江戸温泉物語 君津の森": "chiba/kimitsu/ooedo-onsen-monogatari-kimitsu-no-mori",
+  "熊谷天然温泉 花湯スパリゾート": "saitama/kumagaya/hanayuspa",
+  "日産ウォーターパーク": "kanagawa/yokohama-kohoku/waterpark",
+  "大磯ロングビーチ": "kanagawa/oiso/oiso",
+  "ロマンの森共和国": "chiba/kimitsu/roman-no-mori-republic",
+  "こもれび森のイバライド": "ibaraki/inashiki/ibaraido",
+  "ネーブルパーク": "ibaraki/koga/navelpark",
+  "深作農園": "ibaraki/hokota/fukasaku-ichigo",
+  "グランベリー大地": "ibaraki/joso/granberry-ichigo",
+  "みなかみフルーツランド モギトーレ": "gunma/minakami/mogitore",
+  "FRUIT PARK YOKOHAMA 芝口果樹園": "kanagawa/yokohama-totsuka/s-kajuen",
+  "彩の国ふれあい牧場": "saitama/higashichichibu/fureaibokujyou",
+  "森林ノ牧場": "tochigi/nasu/shinrinno",
+  "神津牧場": "gunma/shimonita/kouzubokujyo",
+  "スパメッツァおおたか 竜泉寺の湯": "chiba/nagareyama/spametsa-otaka-ryusenji-no-yu",
+  "極楽湯 横浜芹が谷店": "kanagawa/yokohama-konan/serigaya",
+  "天然温泉 湯花楽 厚木店": "kanagawa/atsugi/yunohana-atsugi",
+  "おふろの王様 大井町店": "tokyo/shinagawa/ofuro-no-osama-oimachi",
+  "東京荻窪天然温泉 なごみの湯": "tokyo/suginami/nagomino-yu",
+  "富津公園ジャンボプール": "chiba/futtsu/futtsu-park-jumbo-pool",
+  "金沢プール（リネツ金沢）": "kanagawa/yokohama-kanazawa/kanazawa",
+  "フィールドアスレチック 横浜つくし野コース": "kanagawa/yokohama-midori/tsukushino",
+  "ツリークロスアドベンチャー 厚木・七沢": "kanagawa/atsugi/treecross-advtr",
+  "那須の森の空中アスレチック『NOZARU』": "tochigi/nasu/nozaru-nasu",
+  "Sport & Do Resort リソルの森 フォレストアドベンチャー・ターザニア": "chiba/nagara/resol-no-mori-tarzania",
+  "長瀞 古沢園（魚つかみ取り体験）": "saitama/nagatoro/nagatoro-furusawaya",
+  "九十九里海釣りセンター": "chiba/kujukuri/kujukuri-sea-fishing-center",
+  "アメリカキャンプ村": "tokyo/okutama/americacampmura",
+  "海の公園": "kanagawa/yokohama-kanazawa/umi-no-park",
+  "金田海岸": "chiba/kisarazu/kaneda-kaigan",
+  "たんばらスキーパーク「たんばランド」": "gunma/numata/tambara",
+  "軽井沢スノーパーク キッズパーク": "gunma/naganohara/karuizawa-snowpark",
+  "黒姫高原スノーパーク「黒姫ファミリーパーク」": "nagano/shinano/kurohime-kogen",
+  "白馬コルチナスキー場 キッズパーク・雪あそびパーク": "nagano/otari/ski",
+  "スノーパーク イエティ": "shizuoka/susono/yeti-resort",
+  "あそびのせかい コクーンシティさいたま新都心店": "saitama/saitama-omiya/kidokid",
+  "BIG HOPガーデンモール印西": "chiba/inzai/bighop",
+  "ゆうあいひろば": "tochigi/utsunomiya/jidokan",
+  "タイトーFステーション前橋リリカ店 キッズパーク": "gunma/maebashi/shoplist",
+  "高滝湖グランピングリゾート": "chiba/ichihara/takatakiko-glamping",
+  "ノーラ名栗": "saitama/hanno/nolla-naguri",
+  "市ヶ谷フィッシュセンター": "tokyo/shinjuku/ichigaya-fc",
+  "みのげマス釣りセンター": "kanagawa/hadano/minogemasu",
+  "夕やけ小やけふれあいの里": "tokyo/hachioji/yuyakekoyake",
+  "清里ポニー牧場": "yamanashi/hokuto/kiyosato-pony-ranch",
+  "まかいの牧場": "shizuoka/fujinomiya/makaino",
+  "鷹山ファミリー牧場": "nagano/nagawa/takayama-family-ranch",
+  "房総十字園": "chiba/ichihara/boso-jujien",
+  "津久井浜観光農園 みかん狩組合": "kanagawa/yokosuka/tsukuihama-mikan-picking",
+  "東大和スケートセンター（BIGBOX東大和）": "tokyo/higashiyamato/iceskate",
+  "横浜銀行アイスアリーナ": "kanagawa/yokohama-kanagawa/yokohama-icearena",
+  "座間市ひまわり畑": "kanagawa/zama/zama-sunflower-fields",
+  "巾着田曼珠沙華公園": "saitama/hidaka/kinchakuda",
+  "仙石原すすき草原": "kanagawa/hakone/sengokuhara-susuki-grassland",
+  "河口湖 大石公園": "yamanashi/fujikawaguchiko/lake-kawaguchiko-oishi-park",
+  "明治神宮外苑いちょう並木": "tokyo/minato/meijijingugaien",
+  "江月水仙ロード": "chiba/kyonan/ezuki-suisen-road",
+  "河津桜（河津町）": "shizuoka/kawazu/kawazuzakura",
+  "三浦海岸・小松ヶ池の河津桜": "kanagawa/miura/miura-kaigan-komatsugaike-kawazuzakura",
+  "青毛堀川の河津桜（久喜市）": "saitama/kuki/aoge-bori-river-kawazuzakura",
+  "行徳野鳥観察舎周辺の河津桜（市川市）": "chiba/ichikawa/gyotoku-wild-bird-observation-area-kawazuzakura",
+  "小松沢レジャー農園": "saitama/yokoze/komatsuzawa",
+  "ドラゴンファーム": "chiba/chiba-wakaba/doragonfaamu",
+  "初清園": "chiba/matsudo/nasigari",
+  "杉戸天然温泉 雅楽の湯": "saitama/sugito/utanoyu",
+  "竜泉寺の湯 草加・谷塚店": "saitama/soka/souka",
+  "御老公の湯 境店": "ibaraki/sakai/goroko-no-yu-sakai",
+  "東京豊洲 万葉倶楽部": "tokyo/koto/toyosu",
+  "横浜みなとみらい 万葉倶楽部": "kanagawa/yokohama-naka/manyo",
+  "おふろcafé ハレニワの湯": "saitama/kumagaya/ofurocafe-hareniwa",
+  "小田原お堀端 万葉の湯": "kanagawa/odawara/odawara-ohoribata-manyo-no-yu",
+  "ビオリゾート ホテル＆スパ オーパークおごせ": "saitama/ogose/opark-ogose",
+  "西武秩父駅前温泉 祭の湯": "saitama/chichibu/chichibu-matsurinoyu",
+  "榎本牧場": "saitama/ageo/enoboku",
+  "白浜いちご狩りセンター": "chiba/minamiboso/shirahama-strawberry-picking-center",
+  "一古園": "yamanashi/koshu/ichikoen",
+  "グレープガーデン 安全農園": "yamanashi/yamanashi-city/grape-garden-anzai-farm",
+  "ぶどう狩りの自由園": "yamanashi/koshu/jiyuuen",
+  "大附みかん山": "saitama/tokigawa/ozo-mikan-yama",
+  "ぶどう工房OIKOS": "saitama/chichibu/budou-kobo-oikos",
+  "ガイヤファーム（横田ファーム）": "chiba/oamishirasato/gaiya-farm-yokota-farm",
+  "the BERRY YOKOHAMA": "kanagawa/yokohama-totsuka/the-berry-yokohama",
+  "永島農園": "kanagawa/yokohama-kanazawa/nagashima-farm",
+  "アグリーンパーク 宇都宮ぶどうの杜": "tochigi/utsunomiya/agreen-park-utsunomiya-budou-no-mori",
+  "芋掘り観光 川越いも山田園": "saitama/kawagoe/yamadaen",
+  "相模原ミヤコブルーベリー狩り園": "kanagawa/sagamihara-midori/sagamihara-miyako-blueberry-farm",
+  "みどりやファーム": "kanagawa/hadano/midoriya-farm",
+  "山万ユーカリファーム": "chiba/sakura/yamaman-yukari-farm",
+  "空飛ぶいちご東京": "tokyo/fuchu/fuchu-ichigogari",
+  "相原ブルーベリー農園": "tokyo/machida/aiharabb-nouen",
+  "小さな大橋農園": "tokyo/hachioji/chisana-ohashifarm",
+  "千葉中央観光農園": "chiba/chiba-wakaba/chiba-chuo-tourist-farm",
+  "荒牧りんご園": "tochigi/utsunomiya/kanjuku100",
+  "小野フルーツ園": "gunma/numata/ono-fruit-farm",
+  "悴田梨園": "gunma/takasaki/kajita-pear-farm",
+  "福田グリーン農園": "ibaraki/kasumigaura/fukuda-green-farm",
+};
+function buildFacilitySlug(spot){
+  if(SLUG_OVERRIDES[spot.name]) return SLUG_OVERRIDES[spot.name];
+  const pref = PREF_SLUG[spot.region] || slugifyPart(spot.region) || "other";
+  const city = cityRomajiSlug(spot.region, spot.area);
+  const fac = facilitySlugAndMethod(spot).slug;
+  return `${pref}/${city}/${fac}`;
+}
+// slug ⇄ 施設 の相互引き当て。まれに重複した場合は "-2" "-3" ... を付けて
+// 必ず一意になるようにする（表示中のSPOTS順で決定的）。
+const SPOT_SLUG = new Map();
+const SLUG_TO_SPOT = new Map();
+(function buildSlugIndex(){
+  const used = new Set();
+  SPOTS.forEach(spot=>{
+    const base = buildFacilitySlug(spot);
+    let candidate = base;
+    let n = 2;
+    while(used.has(candidate)){
+      candidate = `${base}-${n}`;
+      n++;
+    }
+    used.add(candidate);
+    SPOT_SLUG.set(spot, candidate);
+    SLUG_TO_SPOT.set(candidate, spot);
+  });
+})();
+function spotSlug(spot){ return SPOT_SLUG.get(spot) || ""; }
+function spotBySlug(slug){ return SLUG_TO_SPOT.get(slug) || null; }
+
+// ==================================================================
+// 🧭 施設ページのルーティング（履歴操作・SEO用タグの動的更新）
+// ------------------------------------------------------------------
+// ・既存のUI・検索・お気に入り等の動作は一切変更しない。
+// ・URLの変更やSEOタグの更新に失敗しても、アプリ本体は止めない（try/catchで保護）。
+// ==================================================================
+// GitHub Pages（https://odekakenavi.github.io/odekake-navi/）のようにサブパス配下で
+// 公開されている場合でも動くよう、起動時（＝まだpushStateしていない時点）の
+// location.pathnameからアプリのベースパスを求める。
+const APP_BASE_PATH = (function(){
+  try{
+    // 404.htmlからのリダイレクト復元でlocation.pathnameが書き換わっている場合に備え、
+    // <head>で書き換え前に保存しておいた本来のベースパスがあればそちらを優先する。
+    const p = window.__ODEKAKE_BASE_PATH__ || window.location.pathname;
+    return p.endsWith("/") ? p : p.replace(/[^/]*$/, "");
+  }catch(e){ return "/"; }
+})();
+// file://で開いてのローカル確認時は実在するパスが変わるとファイルが開けなくなるため、
+// pushState/replaceStateによるURL書き換えは行わない（GitHub Pages等の通常配信時のみ有効）。
+const ROUTING_ENABLED = (function(){
+  try{ return window.location.protocol !== "file:"; }catch(e){ return false; }
+})();
+const DEFAULT_PAGE_TITLE = document.title;
+const DEFAULT_PAGE_DESCRIPTION = (document.querySelector('meta[name="description"]') || {}).content || "";
+let __suppressHistoryPush = false; // popstate経由でopenDetailを呼ぶ時、履歴を二重に積まないためのフラグ
+
+function setMetaContent(selector, content){
+  try{
+    let el = document.querySelector(selector);
+    if(!el){
+      el = document.createElement("meta");
+      const propMatch = selector.match(/property="([^"]+)"/);
+      const nameMatch = selector.match(/name="([^"]+)"/);
+      if(propMatch) el.setAttribute("property", propMatch[1]);
+      else if(nameMatch) el.setAttribute("name", nameMatch[1]);
+      else return;
+      document.head.appendChild(el);
+    }
+    el.setAttribute("content", content);
+  }catch(e){}
+}
+function setCanonicalHref(href){
+  try{
+    let el = document.getElementById("canonicalLink") || document.querySelector('link[rel="canonical"]');
+    if(!el){
+      el = document.createElement("link");
+      el.setAttribute("rel", "canonical");
+      el.id = "canonicalLink";
+      document.head.appendChild(el);
+    }
+    el.setAttribute("href", href);
+  }catch(e){}
+}
+function removeBreadcrumbJsonLd(){
+  const el = document.getElementById("breadcrumbJsonLd");
+  if(el) el.remove();
+}
+// パンくず（BreadcrumbList構造化データ）。将来、都道府県ページ・市区町村ページを
+// 追加する際にそのままURLを差し込めるよう、階層（おでかけナビ→都道府県→市区町村→施設名）は
+// 今のうちから表現しておく（今回、地域ページ自体は作らない）。
+// 地域ページ（都道府県・市区町村ページ）が存在する都道府県。
+// 今回は神奈川県のみ試作のため、パンくずへのリンク付与もここだけに限定する。
+const REGIONS_WITH_HUB_PAGES = new Set(["東京","神奈川","埼玉","千葉","茨城","栃木","群馬","山梨","静岡","福島","長野"]);
+function cleanCityDisplayName(jpName){
+  const m = jpName.match(/^.+郡(.+)$/);
+  return m ? m[1] : jpName;
+}
+function setBreadcrumbJsonLdForSpot(spot){
+  try{
+    removeBreadcrumbJsonLd();
+    const origin = window.location.origin;
+    const home = origin + APP_BASE_PATH;
+    const rawCityLabel = (spot.area || "").split("・")[0] || spot.area || "";
+    const hasHub = REGIONS_WITH_HUB_PAGES.has(spot.region);
+    const prefSlugPart = hasHub ? spotSlug(spot).split("/")[0] : null;
+    const citySlugPart = hasHub ? spotSlug(spot).split("/")[1] : null;
+    const cityLabel = hasHub ? cleanCityDisplayName(baseMunicipality(rawCityLabel)) : rawCityLabel;
+    const items = [{name:"おでかけナビ", url:home}];
+    if(spot.region){
+      const prefEntry = {name: fullPrefectureName(spot.region)};
+      if(hasHub && prefSlugPart) prefEntry.url = home + prefSlugPart + "/";
+      items.push(prefEntry);
+    }
+    if(cityLabel){
+      const cityEntry = {name: cityLabel};
+      if(hasHub && prefSlugPart && citySlugPart) cityEntry.url = home + prefSlugPart + "/" + citySlugPart + "/";
+      items.push(cityEntry);
+    }
+    items.push({name: spot.name, url: home + spotSlug(spot) + "/"});
+    const ld = {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement": items.map((it, i)=>{
+        const entry = {"@type":"ListItem", "position": i+1, "name": it.name};
+        if(it.url) entry.item = it.url;
+        return entry;
+      })
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "breadcrumbJsonLd";
+    script.textContent = JSON.stringify(ld);
+    document.head.appendChild(script);
+  }catch(e){}
+}
+// 施設ごとのtitle・descriptionを生成する（不自然なキーワードの詰め込みはしない）
+function buildSpotMetaDescription(spot){
+  const area = fullAreaLabel(spot);
+  let base = `${spot.name}（${area}）の子連れお出かけ情報。`;
+  if(spot.desc) base += spot.desc;
+  if(base.length > 120) base = base.slice(0, 120) + "…";
+  return base;
+}
+function updateSeoTagsForSpot(spot){
+  try{
+    const title = `${spot.name}｜子連れお出かけ情報｜おでかけナビ`;
+    const desc = buildSpotMetaDescription(spot);
+    const canonicalHref = window.location.origin + APP_BASE_PATH + spotSlug(spot) + "/";
+    document.title = title;
+    setMetaContent('meta[name="description"]', desc);
+    setMetaContent('meta[property="og:title"]', title);
+    setMetaContent('meta[property="og:description"]', desc);
+    setMetaContent('meta[property="og:url"]', canonicalHref);
+    setMetaContent('meta[name="twitter:title"]', title);
+    setMetaContent('meta[name="twitter:description"]', desc);
+    setCanonicalHref(canonicalHref);
+    setBreadcrumbJsonLdForSpot(spot);
+  }catch(e){}
+}
+function resetSeoTags(){
+  try{
+    document.title = DEFAULT_PAGE_TITLE;
+    setMetaContent('meta[name="description"]', DEFAULT_PAGE_DESCRIPTION);
+    setMetaContent('meta[property="og:title"]', DEFAULT_PAGE_TITLE);
+    setMetaContent('meta[property="og:description"]', DEFAULT_PAGE_DESCRIPTION);
+    setMetaContent('meta[property="og:url"]', window.location.origin + APP_BASE_PATH);
+    setMetaContent('meta[name="twitter:title"]', DEFAULT_PAGE_TITLE);
+    setMetaContent('meta[name="twitter:description"]', DEFAULT_PAGE_DESCRIPTION);
+    setCanonicalHref(window.location.origin + APP_BASE_PATH);
+    removeBreadcrumbJsonLd();
+  }catch(e){}
+}
+// 現在のURLが「このアプリのベースパス＋施設slug」の形になっているかを判定する
+function currentUrlIsSpotPage(){
+  try{
+    const p = window.location.pathname;
+    return p.length > APP_BASE_PATH.length && p.indexOf(APP_BASE_PATH) === 0;
+  }catch(e){ return false; }
+}
+// 施設を開いた時にURL・SEOタグを更新する（ユーザー操作による遷移の場合のみ履歴に積む）
+function pushSpotUrl(spot){
+  try{
+    if(ROUTING_ENABLED){
+      const path = APP_BASE_PATH + spotSlug(spot) + "/";
+      if(!__suppressHistoryPush && window.location.pathname !== path){
+        history.pushState({odekakeSpotSlug: spotSlug(spot)}, "", path + window.location.search);
+      }
+    }
+    updateSeoTagsForSpot(spot);
+  }catch(e){}
+}
+// URLからslugを取り出し、該当する施設があれば返す（無ければnull＝404扱い）
+function parseSpotSlugFromLocation(){
+  try{
+    const p = window.location.pathname;
+    if(p.indexOf(APP_BASE_PATH) !== 0) return null;
+    let rest = p.slice(APP_BASE_PATH.length).replace(/\/+$/, "");
+    if(!rest) return null;
+    return decodeURIComponent(rest);
+  }catch(e){ return null; }
+}
+// アプリ起動時：URLが施設ページの形なら、その施設の詳細を開いた状態で起動する。
+// 該当する施設が見つからない場合（存在しないslug＝404）は、画面を壊さず一覧TOPに留める。
+function initRoutingFromLocation(){
+  try{
+    if(!ROUTING_ENABLED) return;
+    const slug = parseSpotSlugFromLocation();
+    if(!slug) return;
+    const spot = spotBySlug(slug);
+    if(spot){
+      __suppressHistoryPush = true;
+      history.replaceState({odekakeSpotSlug: slug}, "", window.location.pathname + window.location.search);
+      setTimeout(()=>{ openDetail(spot); __suppressHistoryPush = false; }, 0);
+    } else {
+      // 存在しない施設slug：真っ白にせず、トップ一覧の状態のままURLだけベースに戻す
+      history.replaceState({}, "", APP_BASE_PATH + window.location.search);
+    }
+  }catch(e){ /* 復元に失敗してもトップ一覧は表示され続ける */ }
+}
+// ブラウザの「戻る／進む」操作に対応する
+window.addEventListener("popstate", (e)=>{
+  try{
+    if(!ROUTING_ENABLED) return;
+    const slug = (e.state && e.state.odekakeSpotSlug) || parseSpotSlugFromLocation();
+    if(slug){
+      const spot = spotBySlug(slug);
+      if(spot){
+        __suppressHistoryPush = true;
+        openDetail(spot);
+        __suppressHistoryPush = false;
+        return;
+      }
+    }
+    // 施設ページ以外に戻った場合は詳細シートを閉じてSEOタグを戻す
+    closeSheetById("detailOverlay");
+    resetSeoTags();
+  }catch(e){}
+});
+// 詳細を閉じる時：施設ページのURLだったらベースURLに戻す（× ボタン・下部の戻るボタン共通）
+function closeDetailAndResetUrl(){
+  closeSheetById("detailOverlay");
+  try{
+    if(ROUTING_ENABLED && currentUrlIsSpotPage()){
+      history.pushState({}, "", APP_BASE_PATH + window.location.search);
+      resetSeoTags();
+    }
+  }catch(e){}
+}
+
+// ==================================================================
 // アプリの状態（フィルター条件・お気に入り・比較など）
 // ==================================================================
 let state = {
@@ -7946,7 +9453,11 @@ function closeSheetById(overlayId){
   unlockScroll();
 }
 document.querySelectorAll(".sheet-overlay").forEach(ov=>{
-  ov.addEventListener("click", (e)=>{ if(e.target===ov) closeSheetById(ov.id); });
+  ov.addEventListener("click", (e)=>{
+    if(e.target!==ov) return;
+    if(ov.id === "detailOverlay") closeDetailAndResetUrl();
+    else closeSheetById(ov.id);
+  });
 });
 
 // ==================================================================
@@ -8493,6 +10004,104 @@ function closeFilterModal(){
 }
 document.getElementById("openFilterBtn").onclick = openFilterModal;
 
+// 🏷 現在適用中の絞り込み条件を一覧上部にチップで表示し、ワンタップで解除できるようにする。
+// 既存の state 各フィールドをそのまま読み書きするだけで、新しい状態管理は増やさない。
+function buildActiveConditionChips(){
+  const chips = [];
+  state.region.forEach(r=>{
+    const info = REGIONS.find(x=>x.key===r);
+    chips.push({label: info ? info.label : r, remove: ()=>{ state.region.delete(r); afterFilterChange(); }});
+  });
+  state.genre.forEach(g=>{
+    const info = GENRES.find(x=>x.key===g);
+    chips.push({label: info ? info.label : g, remove: ()=>{ state.genre.delete(g); afterFilterChange(); }});
+  });
+  state.ages.forEach(a=>{
+    chips.push({label: a, remove: ()=>{ state.ages.delete(a); afterFilterChange(); }});
+  });
+  state.seasons.forEach(s=>{
+    const info = SEASON_FILTERS.find(x=>x.key===s);
+    chips.push({label: info ? info.label : s, remove: ()=>{ state.seasons.delete(s); afterFilterChange(); }});
+  });
+  state.holidays.forEach(h=>{
+    const info = HOLIDAY_FILTERS.find(x=>x.key===h);
+    chips.push({label: info ? info.label : h, remove: ()=>{ state.holidays.delete(h); afterFilterChange(); }});
+  });
+  if(state.rain.size>0){
+    const lvl = [...state.rain][0];
+    const info = RAIN_LEVELS.find(r=>r.level===lvl);
+    chips.push({label: info ? info.label : "雨の日条件", remove: ()=>{ state.rain.clear(); afterFilterChange(); }});
+  }
+  if(state.wallet.size>0){
+    const lvl = [...state.wallet][0];
+    const info = WALLET_LEVELS.find(w=>w.level===lvl);
+    chips.push({label: info ? info.label : "お財布条件", remove: ()=>{ state.wallet.clear(); afterFilterChange(); }});
+  }
+  if(state.duration!=="all"){
+    const info = DURATIONS.find(d=>d.key===state.duration);
+    chips.push({label: info ? info.label : state.duration, remove: ()=>{ state.duration="all"; afterFilterChange(); }});
+  }
+  if(state.parking!=="all"){
+    const info = PARKINGS.find(p=>p.key===state.parking);
+    chips.push({label: info ? info.label : state.parking, remove: ()=>{ state.parking="all"; afterFilterChange(); }});
+  }
+  if(state.activity!=="all"){
+    const info = ACTIVITY_LEVELS.find(a=>a.key===state.activity);
+    chips.push({label: info ? info.label : state.activity, remove: ()=>{ state.activity="all"; afterFilterChange(); }});
+  }
+  if(state.hideVisited) chips.push({label:"✅ 行った場所を隠す", remove: ()=>{ state.hideVisited=false; afterFilterChange(); }});
+  if(state.filterSiblings) chips.push({label:"👨‍👩‍👧‍👦 兄弟みんな楽しめる", remove: ()=>{ state.filterSiblings=false; afterFilterChange(); }});
+  if(state.waterPlay) chips.push({label:"💦 水遊びしたい", remove: ()=>{ state.waterPlay=false; afterFilterChange(); }});
+  if(state.visitDate) chips.push({label:"📅 "+state.visitDate, remove: ()=>{ state.visitDate=""; afterFilterChange(); }});
+  return chips;
+}
+// 🐼 カテゴリ特集バナー：ジャンルが1つだけ絞り込まれている時、通常の検索結果と区別できるよう
+// 「特集ページ」として見せる。新しい状態は追加せず、既存の state.genre を読むだけ。
+function renderFeaturedBanner(resultCount){
+  const banner = document.getElementById("featuredBanner");
+  if(state.genre.size!==1){ banner.style.display = "none"; banner.innerHTML = ""; return; }
+  const key = [...state.genre][0];
+  const info = GENRES.find(g=>g.key===key);
+  if(!info){ banner.style.display = "none"; banner.innerHTML = ""; return; }
+  const intro = CATEGORY_INTRO[key] || "";
+  banner.style.display = "block";
+  banner.innerHTML =
+    `<div class="featured-banner-title">${info.label}特集</div>` +
+    (intro ? `<p class="featured-banner-intro">${intro}</p>` : "");
+}
+function renderActiveConditions(){
+  const bar = document.getElementById("activeConditionsBar");
+  const chips = buildActiveConditionChips();
+  if(chips.length===0){ bar.style.display = "none"; bar.innerHTML = ""; return; }
+  bar.style.display = "flex";
+  bar.innerHTML = "";
+  const label = document.createElement("span");
+  label.className = "active-conditions-label";
+  label.textContent = "現在の条件：";
+  bar.appendChild(label);
+  chips.forEach(({label:text, remove})=>{
+    const chip = document.createElement("span");
+    chip.className = "condition-chip";
+    const textSpan = document.createElement("span");
+    textSpan.textContent = text;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = "×";
+    btn.setAttribute("aria-label", text + "を解除");
+    btn.onclick = remove;
+    chip.appendChild(textSpan);
+    chip.appendChild(btn);
+    bar.appendChild(chip);
+  });
+  if(chips.length>=2){
+    const clearAll = document.createElement("button");
+    clearAll.type = "button";
+    clearAll.className = "conditions-clear-all";
+    clearAll.textContent = "すべて解除";
+    clearAll.onclick = ()=>{ document.getElementById("conditionResetBtn").click(); };
+    bar.appendChild(clearAll);
+  }
+}
 function countActiveFilters(){
   let n = 0;
   if(state.region.size>0) n++;
@@ -10121,7 +11730,7 @@ function personalAdjustScore(spot){
 function seasonCompatScore(spot){
   const eff = effectiveSeasons(spot);
   if(eff.includes("通年")) return 2; // 季節指定なし（通年）は無難に小さくプラス
-  const inSeason = eff.includes(currentSeason());
+  const inSeason = eff.includes(effectiveDisplaySeason());
   // 🌸花の名所は「今しか見頃じゃない」度合いが強いジャンルのため、
   // 他ジャンルより季節適合の影響を大きくし、おすすめ順に反映されやすくする。
   if(spot.genre === "花の名所") return inSeason ? 18 : -12;
@@ -10164,7 +11773,7 @@ function diagnosisReasonTags(spot, ctx, parts){
   const bucket = deriveStayTimeBucket(spot);
   if(bucket==="2〜4時間" || bucket==="4時間以上" || (spot.duration||[]).includes("半日")) tags.push("⏱️ 半日しっかり遊べます");
   if(deriveActivityLevel(spot)==="active") tags.push("🏃 体を動かせます");
-  if(effectiveSeasons(spot).includes(currentSeason())) tags.push(`${SEASON_EMOJI[currentSeason()]} 今の季節におすすめ`);
+  if(effectiveSeasons(spot).includes(effectiveDisplaySeason())) tags.push(`${SEASON_EMOJI[effectiveDisplaySeason()]} 今の季節におすすめ`);
   if(state.favorites.has(spot.name)) tags.push("❤️ お気に入り済み");
   return tags.slice(0,4);
 }
@@ -10575,6 +12184,7 @@ function render(){
   const badge = document.getElementById("filterBadgeCount");
   if(n>0){ badge.style.display = "inline-block"; badge.textContent = `${n}件`; }
   else { badge.style.display = "none"; }
+  renderActiveConditions();
 
   const favCountLabel = document.getElementById("favCountLabel");
   favCountLabel.textContent = state.favorites.size>0 ? `(${state.favorites.size})` : "";
@@ -10595,6 +12205,7 @@ function render(){
   const filtered = SPOTS.filter(matches);
   document.getElementById("resultCount").innerHTML =
     `<b>${filtered.length}</b> / ${SPOTS.length} スポット`;
+  renderFeaturedBanner(filtered.length);
 
   if(filtered.length===0){
     // 検索キーワードがある場合に検索0件イベントを送信
@@ -10694,7 +12305,7 @@ function buildSeasonalStrip(){
   const wrap = document.getElementById("seasonalWrap");
   const titleEl = document.getElementById("seasonalTitle");
   const el = document.getElementById("seasonalChips");
-  const season = currentSeason();
+  const season = effectiveDisplaySeason();
   const spots = SPOTS.filter(s => s.seasons && s.seasons.includes(season));
   if(spots.length===0){ wrap.style.display = "none"; return; }
   wrap.style.display = "block";
@@ -10769,7 +12380,7 @@ function buildCardSummary(spot){
     }
   }
 
-  const seasonMatch = spot.seasons && spot.seasons.includes(currentSeason());
+  const seasonMatch = spot.seasons && spot.seasons.includes(effectiveDisplaySeason());
   const isFavQuick = state.favorites.has(spot.name);
   const isPlannedQuick = isInPlan(spot.name);
   card.innerHTML = `
@@ -10785,7 +12396,7 @@ function buildCardSummary(spot){
         <button type="button" class="card-quick-btn ${isPlannedQuick?'on':''}" data-quick="plan" title="プランに追加">🗓</button>
       </div>
     </div>
-    ${seasonMatch ? `<div class="season-tag">${SEASON_EMOJI[currentSeason()]} ${currentSeason()}におすすめ</div>` : ""}
+    ${seasonMatch ? `<div class="season-tag">${SEASON_EMOJI[effectiveDisplaySeason()]} ${effectiveDisplaySeason()}におすすめ</div>` : ""}
     ${visitDateBadgeHtml(spot) ? `<div class="visitdate-badge-row">${visitDateBadgeHtml(spot)}</div>` : ""}
     <div class="card-feature">${spot.tip}</div>
     <div class="card-eval-row">
@@ -10825,6 +12436,7 @@ function openDetail(spot, silent){
     state.recentlyViewed = [spot.name, ...state.recentlyViewed.filter(n=>n!==spot.name)].slice(0,10);
     savePersisted();
   }
+  pushSpotUrl(spot); // 🔗 施設ごとの一意URL・SEOタグを更新（silentな再描画でもパスが同じなら履歴は増えない）
   const rain = rainInfo(deriveRainLevel(spot));
   const wallet = walletInfo(deriveWalletLevel(spot));
   const parkingDetail = deriveParkingDetail(spot);
@@ -11125,8 +12737,8 @@ function openDetail(spot, silent){
       openDetail(destSpot); // 既存の詳細表示機能をそのまま利用（新しい遷移方式は作らない）
     });
   });
-  sheet.querySelector('#detailCloseBtn').onclick = ()=>closeSheetById("detailOverlay");
-  sheet.querySelector('#detailCloseBtnBottom').onclick = ()=>closeSheetById("detailOverlay");
+  sheet.querySelector('#detailCloseBtn').onclick = ()=>closeDetailAndResetUrl();
+  sheet.querySelector('#detailCloseBtnBottom').onclick = ()=>closeDetailAndResetUrl();
 
   loadWeatherIntoDetail(spot); // 🌤 この施設の天気だけを非同期取得（一覧の一括取得はしない）
 
@@ -11134,7 +12746,7 @@ function openDetail(spot, silent){
   if(!silent) sheet.scrollTop = 0; // ボタン操作による再描画（silent）ではスクロール位置を保持する
 }
 function closeDetail(){
-  closeSheetById("detailOverlay");
+  closeDetailAndResetUrl();
 }
 
 // ==================================================================
@@ -11226,6 +12838,102 @@ loadAnalytics();
 const persisted = loadPersisted(); // localStorageの読み込みは1回だけ行い、使い回す
 applyPersisted(persisted);
 pickDiscovery(); // 「新しいおでかけ先を発見」の初期ピックアップ（render()内で毎回選び直さない）
+
+// ------------------------------------------------------------------
+// ☰ ハンバーガーメニュー（地域・季節・目的から探す）
+// 既存の検索・絞り込み・お気に入り等の状態やロジックには一切触れない、
+// 独立した新しい入口として追加する。
+// ------------------------------------------------------------------
+// 現在データが十分に存在する地域を優先して表示（全国データが増えたら追加すればよい構造）
+const DRAWER_PREFS = [
+  {region:"神奈川", label:"神奈川"}, {region:"東京", label:"東京"},
+  {region:"千葉", label:"千葉"}, {region:"埼玉", label:"埼玉"},
+  {region:"山梨", label:"山梨"}, {region:"群馬", label:"群馬"},
+  {region:"栃木", label:"栃木"}, {region:"茨城", label:"茨城"}
+];
+const SEASON_EN_SLUG = {"春":"spring", "夏":"summer", "秋":"autumn", "冬":"winter"};
+
+function buildDrawerMenu(){
+  const regionGrid = document.getElementById("drawerRegionGrid");
+  regionGrid.innerHTML = "";
+  DRAWER_PREFS.forEach(({region, label})=>{
+    const prefSlug = PREF_SLUG[region];
+    if(!prefSlug) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "drawer-link";
+    btn.textContent = "🗾 " + label;
+    btn.onclick = ()=>{
+      // 既存の state.region をそのまま使い、その都道府県だけに絞り込む
+      // （新しいページへは移動せず、アプリ内でそのまま結果を表示する）
+      state.region = new Set([region]);
+      trackFilterUse("region", region);
+      closeDrawer();
+      afterFilterChange();
+      document.getElementById("main").scrollIntoView({behavior:"smooth", block:"start"});
+    };
+    regionGrid.appendChild(btn);
+  });
+
+  const seasonRow = document.getElementById("drawerSeasonRow");
+  seasonRow.innerHTML = "";
+  const nowSeason = currentSeason();
+  ["春","夏","秋","冬"].forEach(season=>{
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "drawer-season-link" + (season===nowSeason ? " current" : "");
+    btn.innerHTML = `<span>${SEASON_EMOJI[season]}</span><span>${season}のお出かけ${season===nowSeason ? "　今の季節" : ""}</span>`;
+    btn.onclick = ()=>{
+      // 既存の state.seasons をそのまま使い、その季節だけに絞り込む
+      // （新しいページへは移動せず、アプリ内でそのまま結果を表示する）
+      state.seasons = new Set([season]);
+      trackFilterUse("season", season);
+      closeDrawer();
+      afterFilterChange();
+      document.getElementById("main").scrollIntoView({behavior:"smooth", block:"start"});
+    };
+    seasonRow.appendChild(btn);
+  });
+
+  const genreGrid = document.getElementById("drawerGenreGrid");
+  genreGrid.innerHTML = "";
+  GENRES.filter(g=>g.key!=="all").forEach(g=>{
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "drawer-genre-btn";
+    btn.textContent = g.label;
+    btn.onclick = ()=>{
+      // 既存の「もっと詳しく絞り込む」と同じ state.genre をそのまま使う
+      // （新しいページ・新しい状態管理は作らず、既存の仕組みを再利用する）
+      state.genre = new Set([g.key]);
+      trackFilterUse("genre", g.key);
+      closeDrawer();
+      afterFilterChange();
+      document.getElementById("main").scrollIntoView({behavior:"smooth", block:"start"});
+    };
+    genreGrid.appendChild(btn);
+  });
+}
+function openDrawer(){
+  const overlay = document.getElementById("drawerOverlay");
+  const panel = document.getElementById("drawerPanel");
+  if(!overlay.classList.contains("open")){
+    lockScroll(); // 既存シート（詳細／絞り込み等）と同じ仕組みでスクロールを固定する
+    overlay.classList.add("open");
+    panel.classList.add("open");
+  }
+}
+function closeDrawer(){
+  document.getElementById("drawerOverlay").classList.remove("open");
+  document.getElementById("drawerPanel").classList.remove("open");
+  unlockScroll();
+}
+buildDrawerMenu();
+document.getElementById("hamburgerBtn").onclick = openDrawer;
+document.getElementById("drawerCloseBtn").onclick = closeDrawer;
+document.getElementById("drawerOverlay").onclick = closeDrawer;
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeDrawer(); });
+
 document.getElementById("zipBtn").onclick = onZipSubmit;
 document.getElementById("zipInput").addEventListener("keydown", e=>{ if(e.key==="Enter") onZipSubmit(); });
 document.getElementById("geoBtn").onclick = requestCurrentLocation;
@@ -11266,7 +12974,8 @@ renderHomeZip();
 render();
 ensureTodayWeatherKind().then(()=>render()); // 🎯おすすめ順のため、起動時に今日の天気を1回だけ取得
 trackEvent("view_app", {}); // ①アプリ全体の閲覧数
-applySharedStateFromUrl(); // 🗓↗ 共有URL（?spot= / ?plan=）から状態を復元（あれば）
+initRoutingFromLocation(); // 🔗 施設ごとの一意URL（/都道府県/市区町村/施設名/）から状態を復元（あれば）
+if(!ROUTING_ENABLED || !currentUrlIsSpotPage()) applySharedStateFromUrl(); // 🗓↗ 共有URL（?spot= / ?plan=）から状態を復元（施設URLでの起動時は二重に開かない）
 
 // ==================================================================
 // ↗ URLを共有する（ヘッダー共有ボタン）
