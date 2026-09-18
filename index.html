@@ -279,11 +279,11 @@
   }
 
   /* ---------- ツールバー（行きたい・比較する） ---------- */
-  .tools-row{display:flex; gap:8px; padding:10px 16px 8px;}
+  .tools-row{display:flex; gap:6px; padding:10px 16px 8px;}
   .tool-btn{
-    flex:1; display:flex; align-items:center; justify-content:center; gap:5px;
-    padding:9px 8px; border-radius:11px; border:1.5px solid var(--line); background:var(--paper);
-    font-size:12px; font-weight:700; color:var(--ink); cursor:pointer;
+    flex:1; display:flex; align-items:center; justify-content:center; gap:3px;
+    padding:9px 4px; border-radius:11px; border:1.5px solid var(--line); background:var(--paper);
+    font-size:11.5px; font-weight:700; color:var(--ink); cursor:pointer; white-space:nowrap;
   }
   .tool-btn.active{background:var(--ink); color:var(--cream); border-color:var(--ink);}
   .tool-btn .cnt{color:var(--coral); font-weight:900;}
@@ -316,7 +316,8 @@
     border-radius:12px; padding:13px 13px 11px; position:relative;}
   .card.w-晴れ{border-left-color:var(--sun);}
   .card.w-雨{border-left-color:var(--rain);}
-  .card.is-visited{opacity:.55;}
+  /* 🆕 ユーザー要望により「行った」施設のグレーアウト（半透明化）は廃止。
+     代わりにカード末尾へ最終訪問日バッジ（.card-visit-summary）を表示する。 */
   .card.in-compare{outline:2px solid var(--coral); outline-offset:-2px;}
 
   .compare-pick{
@@ -395,6 +396,14 @@
   .visitdate-badge.open{color:#3D6B2C; background:#DCEBD1;}
   .visitdate-badge.closed{color:#a33b2c; background:#F8DAD3;}
   .visitdate-badge.unknown{color:var(--ink-soft); background:#F1EADA;}
+  .card-visit-summary{margin-top:8px; font-size:11px; color:var(--green); font-weight:700; display:flex; align-items:center; gap:4px;}
+  .detail-visit-history{margin-top:10px; padding-top:10px; border-top:1px dashed var(--line);}
+  .detail-visit-history-title{font-size:12.5px; font-weight:700; color:var(--green); margin-bottom:6px;}
+  .detail-visit-history-list{display:flex; flex-wrap:wrap; gap:6px;}
+  .detail-visit-date-link{
+    border:1px solid var(--green); background:var(--paper); color:var(--green); font-size:12px; font-weight:700;
+    border-radius:999px; padding:5px 12px; cursor:pointer;
+  }
 
   .badge{font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap;}
   .badge.lv-4{background:#DCEBD1; color:#3D6B2C;}
@@ -766,6 +775,52 @@
   .spot-verified-note{font-size:10.5px; color:var(--ink-soft); margin-top:10px; text-align:right;}
   .weather-note{font-size:10px; color:var(--ink-soft); margin-top:6px; line-height:1.5;}
 
+  /* 🆕 お出かけカレンダー・履歴（既存デザイントーンを踏術し、必要最小限のCSSのみ追加） */
+  .calendar-month-row{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;}
+  .calendar-month-nav{border:1px solid var(--line); background:var(--paper); border-radius:8px; padding:6px 14px; font-size:15px; color:var(--ink); cursor:pointer; min-width:40px; min-height:36px;}
+  .calendar-month-label{font-family:'Zen Maru Gothic',sans-serif; font-size:16px; font-weight:700;}
+  .calendar-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:3px; margin-bottom:6px;}
+  .calendar-dow{text-align:center; font-size:11px; color:var(--ink-soft); padding:4px 0; font-weight:700;}
+  .calendar-day{
+    position:relative; aspect-ratio:1/1; min-height:38px; border:1px solid var(--line); border-radius:8px;
+    background:var(--paper); display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+    padding:3px 2px 4px; cursor:pointer; font-size:12px; color:var(--ink);
+  }
+  .calendar-day.empty{border:none; background:transparent; cursor:default;}
+  .calendar-day.today{border-color:var(--coral); border-width:2px;}
+  .calendar-day.selected{background:#FCEFE7; border-color:var(--coral);}
+  .calendar-day-num{font-weight:700;}
+  .calendar-day-dots{display:flex; gap:2px; margin-top:2px; flex-wrap:wrap; justify-content:center;}
+  .calendar-dot{width:6px; height:6px; border-radius:50%;}
+  .calendar-dot.visit{background:var(--green);}
+  .calendar-dot.plan{background:var(--sun);}
+  .calendar-day-detail{
+    margin:10px 0 16px; padding:12px; border:1px solid var(--line); border-radius:10px; background:#FBF7EF;
+  }
+  .calendar-day-detail-title{font-weight:700; margin-bottom:6px;}
+  .calendar-day-detail-empty{color:var(--ink-soft); font-size:13px;}
+  .calendar-visit-item{display:flex; align-items:center; justify-content:space-between; gap:6px; padding:6px 0; border-bottom:1px dashed var(--line);}
+  .calendar-visit-item:last-child{border-bottom:none;}
+  .calendar-visit-name{font-size:13.5px;}
+  .calendar-visit-del{border:none; background:none; color:var(--ink-soft); font-size:12px; cursor:pointer; padding:4px;}
+  .calendar-visit-applyplan{border:1px solid var(--sun); background:#fff; color:var(--sun); font-size:11px; border-radius:6px; padding:4px 8px; cursor:pointer; font-weight:700;}
+  .calendar-visit-applyplan:disabled{border-color:var(--line); color:var(--ink-soft); cursor:default; background:var(--paper);}
+  .calendar-plan-item{font-size:13px; color:var(--sun); font-weight:700; padding:4px 0;}
+  .calendar-legend{display:flex; gap:14px; font-size:11.5px; color:var(--ink-soft); margin-bottom:10px;}
+  .calendar-legend-item{display:flex; align-items:center; gap:4px;}
+  .calendar-section-title{font-weight:700; font-size:15px; margin:18px 0 8px; font-family:'Zen Maru Gothic',sans-serif;}
+  .history-month-group{margin-bottom:12px;}
+  .history-month-label{font-weight:700; font-size:13.5px; color:var(--ink-soft); margin-bottom:4px;}
+  .history-item-row{font-size:13.5px; padding:3px 0 3px 6px; border-left:2px solid var(--green);}
+  .history-empty{color:var(--ink-soft); font-size:13px; padding:8px 0;}
+  .visit-add-row{margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .visit-add-row input[type="date"]{border:1px solid var(--line); border-radius:6px; padding:6px 8px; font-size:13px; font-family:inherit;}
+  .visit-add-btn{border:1px solid var(--green); background:var(--green); color:#fff; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:700; cursor:pointer;}
+  .visit-added-note{font-size:12px; color:var(--green); font-weight:700;}
+  .plan-visit-row{margin-top:10px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .plan-date-input{border:1px solid var(--line); border-radius:6px; padding:6px 8px; font-size:13px; font-family:inherit;}
+  .plan-visit-btn{border:1.5px solid var(--sun); background:var(--paper); color:var(--sun); border-radius:8px; padding:8px 12px; font-size:13px; font-weight:700; cursor:pointer;}
+
 </style>
 
 <!-- ValueCommerce LinkSwitch：対象ECサイトへのリンクを自動でアフィリエイトリンクに変換 -->
@@ -872,6 +927,7 @@
 <div class="tools-row">
   <button class="tool-btn" id="favListBtn">❤️ 行きたい <span class="cnt" id="favCountLabel"></span></button>
   <button class="tool-btn" id="planListBtn">🗓 プラン <span class="cnt" id="planCountLabel"></span></button>
+  <button class="tool-btn" id="calendarOpenBtn">📅 記録 <span class="cnt" id="visitCountLabel"></span></button>
   <button class="tool-btn" id="compareToggleBtn">⚖️ 比較する</button>
 </div>
 
@@ -962,6 +1018,11 @@
 <!-- 比較モーダル -->
 <div class="sheet-overlay" id="compareOverlay">
   <div class="sheet" id="compareSheet"></div>
+</div>
+
+<!-- 🆕 お出かけカレンダー・履歴（既存のお気に入り・プラン・比較とは別の独立したシート） -->
+<div class="sheet-overlay" id="calendarOverlay">
+  <div class="sheet" id="calendarSheet"></div>
 </div>
 
 <!-- 🎯「今日どこ行く？」診断モーダル -->
@@ -9438,7 +9499,16 @@ let state = {
   plans:[[], [], []], // 🗓 プラン（今回実際に行く場所）。タブ3枚分の施設名配列。並び順＝追加順（ユーザーが入れ替え可）
   activePlanTab:0, // 現在表示中のプランタブ（0〜2）
   planTripModes:["roundtrip","roundtrip","roundtrip"], // タブ(プランA/B/C)ごとの行き帰り設定
-  planTripModeManualFlags:[false,false,false] // タブごとに「手動で選び直したか」。trueの間は宿泊施設を見ても自動で上書きしない
+  planTripModeManualFlags:[false,false,false], // タブごとに「手動で選び直したか」。trueの間は宿泊施設を見ても自動で上書きしない
+  // 🆕 お出かけカレンダー・履歴機能（既存のvisited(Setの真偽値)とは別物）
+  // visits: 実際に行った記録。{facilityId, facilityName, date(YYYY-MM-DD), memo, duration, cost, satisfaction, photo}
+  //   facilityId は現状アプリ全体で施設名(name)をキーに使っているため、それに合わせている。
+  //   将来クラウド化する際は「施設情報」と「ユーザーの訪問履歴(visits)」が分離された構造のまま移行しやすい。
+  visits:[],
+  // planDates: プランタブ(A/B/C)ごとの「実施予定日」（任意設定・未設定はnull）。カレンダーの「予定」表示に使う。
+  planDates:[null,null,null],
+  calendarMonth:null, // カレンダーで表示中の年月（"YYYY-MM"）。null=今月
+  calendarSelectedDate:null // カレンダーで選択中の日付（YYYY-MM-DD）。その日の詳細を表示するために使う
 };
 
 // ==================================================================
@@ -9613,7 +9683,9 @@ function savePersisted(){
       zipLabel: persistZipLabel || "",
       recentlyViewed: state.recentlyViewed,
       plans: state.plans || [[],[],[]],
-      activePlanTab: state.activePlanTab || 0
+      activePlanTab: state.activePlanTab || 0,
+      visits: state.visits || [],
+      planDates: state.planDates || [null,null,null]
     }));
   }catch(e){ /* localStorage unavailable (例：プライベートブラウズ) - 保存せず続行 */ }
 }
@@ -9637,7 +9709,126 @@ function applyPersisted(p){
     state.plans = [[],[],[]];
   }
   state.activePlanTab = (typeof p.activePlanTab==="number" && p.activePlanTab>=0 && p.activePlanTab<=2) ? p.activePlanTab : 0;
+  // 🆕 既存データに存在しない場合でも壊れないようフォールバック
+  state.visits = Array.isArray(p.visits) ? p.visits : [];
+  state.planDates = Array.isArray(p.planDates) ? [0,1,2].map(i=>p.planDates[i]||null) : [null,null,null];
 }
+
+// ==================================================================
+// 🆕 お出かけカレンダー・履歴機能（Phase．９）
+// ------------------------------------------------------------------
+// 「行きたい」（favorites）、「プラン」（plans）、「共有」とは別の概念として、
+// 「実際に行ったお出かけ」を日付付きで記録するvisitsを扱う。既存のプラン/行きたいの
+// データ構造・保存ロジックには一切手を加えない。
+// 「プランに入れた＝行った」とは扱わず、ユーザーが明示的に「行った」と操作した場合のみ記録する。
+function todayISODate(){
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,"0");
+  const day = String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${day}`;
+}
+function formatDateJP(iso){
+  if(!iso) return "";
+  const [y,m,d] = iso.split("-").map(Number);
+  return `${y}年${m}月${d}日`;
+}
+// visitを１件追加する。既存のstate.visited（ブーリアンの「行った」フラグ）も一致させておく（
+// 既存のhideVisitedフィルターやおすすめ度調整の挙動は変えない）。
+function addVisit(facilityName, dateIso, memo){
+  if(!facilityName || !dateIso) return;
+  state.visits.push({
+    facilityId: facilityName, // 現状アプリ全体が施設名をキーに使っているためそれに合わせる
+    facilityName: facilityName,
+    date: dateIso,
+    memo: memo || ""
+    // 将来拡張用（今回は未入力でもよい）： duration, cost, satisfaction, photo
+  });
+  state.visited.add(facilityName);
+  removeFromAllPlans(facilityName); // 行ったとして記録した施設は、どのプランタブに入っていても自動的に外す（記録済み=もう予定ではないため）
+  savePersisted();
+}
+// 指定した施設を、プランA/B/Cのどのタブに入っていても全て削除する（既存のremoveFromPlanは現在のタブしか見ないため、こちらは別関数として用意）
+function removeFromAllPlans(name){
+  let removedAny = false;
+  state.plans.forEach((arr,i)=>{
+    const idx = arr.indexOf(name);
+    if(idx>=0){
+      arr.splice(idx,1);
+      removedAny = true;
+      clearPlanDateIfEmpty(i); // 🆕 プランが空になったら、そのタブの「実施予定日」もカレンダーから消す（予定・markが残るバグを防ぐ）
+      trackEvent("plan_remove", {facility_name:name, plan_tab:i+1, plan_count:arr.length, reason:"recorded_visit"});
+    }
+  });
+  return removedAny;
+}
+// 指定タブのプランが空になっていれば、そのタブの実施予定日（planDates）も合わせてクリアする。
+// 「カレンダー上の予定ドットが、プランを削除・記録変換しても消えない」不具合を防ぐため。
+function clearPlanDateIfEmpty(tabIndex){
+  if(state.plans[tabIndex] && state.plans[tabIndex].length===0){
+    state.planDates[tabIndex] = null;
+  }
+}
+function removeVisitAt(index){
+  if(index<0 || index>=state.visits.length) return;
+  const removed = state.visits[index];
+  state.visits.splice(index,1);
+  // 🆕 この施設の記録が1件もなくなった場合は、記録機能が自動で付けた「✅ 行った」フラグも一緒に外す
+  // （フラグだけが残って「記録を消したのにカードや詳細画面には行った印が残る」状態を防ぐ）
+  if(removed && !state.visits.some(v=>v.facilityName===removed.facilityName)){
+    state.visited.delete(removed.facilityName);
+  }
+  savePersisted();
+}
+function visitsOnDate(dateIso){
+  return state.visits.filter(v=>v.date===dateIso);
+}
+// 施設名での訪問記録一覧を「新しい順」で返す。カード（直近2回）と詳細ページ（全件羅列）の両方がこれを元に作る。
+function visitRecordsForFacility(name){
+  return state.visits.filter(v=>v.facilityName===name).sort((a,b)=> b.date.localeCompare(a.date));
+}
+// カレンダーの日付（YYYY-MM-DD）をカード用の短い表記に（今年ならM/D、他の年ならYYYY/M/D）。
+function formatShortDate(iso){
+  const [y,m,d] = iso.split("-").map(Number);
+  const thisYear = new Date().getFullYear();
+  return y===thisYear ? `${m}/${d}` : `${y}/${m}/${d}`;
+}
+// 施設カード（トップページ一覧）の末尾に入れる、コンパクトな訪問サマリー。
+// 何回行っても一行のまま：1～2回ならその日付をそのまま、 3回以上なら直近2回分＋総回数を表示。
+function cardVisitSummaryHtml(spot){
+  const list = visitRecordsForFacility(spot.name);
+  if(list.length===0) return "";
+  const latestTwo = list.slice(0,2).map(v=>formatShortDate(v.date)).join("・");
+  const extra = list.length>=3 ? `（計${list.length}回）` : "";
+  return `<div class="card-visit-summary">✅ ${latestTwo}${extra}</div>`;
+}
+// 施設詳細ページの末尾に入れる、全訪問日の羅列。各日付はタップするとその日の記録（カレンダー）ページに飛べる。
+function detailVisitHistoryHtml(spot){
+  const list = visitRecordsForFacility(spot.name);
+  if(list.length===0) return "";
+  const dateLinks = list.map(v=>`<button type="button" class="detail-visit-date-link" data-jump-date="${v.date}">${formatShortDate(v.date)}</button>`).join("");
+  return `<div class="detail-visit-history">
+    <div class="detail-visit-history-title">✅ これまでの訪問日（${list.length}回）</div>
+    <div class="detail-visit-history-list">${dateLinks}</div>
+  </div>`;
+}
+// 日付リンクタップ時：施設詳細を閉じて、カレンダーのその日の記録ページへ移動する。
+function jumpToCalendarDate(dateIso){
+  closeDetailAndResetUrl();
+  state.calendarMonth = dateIso.slice(0,7);
+  state.calendarSelectedDate = dateIso;
+  renderCalendarSheet();
+  openSheet("calendarOverlay");
+}
+// 記録(履歴)から逆にプランへ適用（ハンバーガースポットの施設名でSPOTSを引き、現在アクティブなプランタブに追加する）
+function applyVisitToPlan(facilityName){
+  const spot = SPOTS.find(s=>s.name===facilityName);
+  if(!spot) return false;
+  if(isInPlan(facilityName)) return false; // すでに現在タブにあれば何もしない
+  addToPlan(facilityName);
+  return true;
+}
+
 
 function haversineKm(lat1,lng1,lat2,lng2){
   const R=6371, toRad=d=>d*Math.PI/180;
@@ -10784,6 +10975,7 @@ function removeFromPlan(name){
   const idx = arr.indexOf(name);
   if(idx<0) return;
   arr.splice(idx,1);
+  clearPlanDateIfEmpty(state.activePlanTab); // 🆕 プランが空になったら、そのタブの「実施予定日」もカレンダーに残らないよう一緒に消す
   savePersisted();
   trackEvent("plan_remove", {facility_name:name, plan_tab:state.activePlanTab+1, plan_count:arr.length});
 }
@@ -10978,6 +11170,13 @@ function renderPlanSheet(){
     ${tabsHtml}
     ${bodyHtml}
     ${spots.length>0 ? `<button type="button" class="plan-share-btn" id="planShareBtn">🖼️ ${PLAN_TAB_LABELS[state.activePlanTab]}を画像で共有</button>` : ""}
+    ${spots.length>0 ? `
+    <div class="plan-visit-row">
+      <input type="date" id="planVisitDateInput" class="plan-date-input" value="${state.planDates[state.activePlanTab] || todayISODate()}">
+      <button type="button" class="plan-visit-btn" id="planVisitBtn">✅ このプランに行った</button>
+    </div>
+    <div style="font-size:11.5px; color:var(--ink-soft); margin-top:4px;">※プランに入れているだけでは「行った」とは記録されません。実際に行った日を選んでボタンを押すと、プラン内の全施設が【記録】の履歴に保存され、このプランからは自動的に削除されます。</div>
+    ` : ""}
     <button class="detail-close-bottom" id="planCloseBtnBottom">戻る</button>
   `;
   document.getElementById("planCloseBtn").onclick = ()=>closeSheetById("planOverlay");
@@ -11029,10 +11228,176 @@ function renderPlanSheet(){
   });
   const shareBtn = document.getElementById("planShareBtn");
   if(shareBtn) shareBtn.onclick = ()=>sharePlan(spots);
+  const planVisitBtn = document.getElementById("planVisitBtn");
+  if(planVisitBtn){
+    planVisitBtn.onclick = ()=>{
+      const dateInput = document.getElementById("planVisitDateInput");
+      const dateIso = dateInput && dateInput.value ? dateInput.value : todayISODate();
+      state.planDates[state.activePlanTab] = dateIso; // この日付をカレンダーの「予定」表示にも使う
+      spots.forEach(s=>addVisit(s.name, dateIso, ""));
+      savePersisted();
+      render();
+      // 🆕 記録が完了したら、プラン画面に留まらず「記録（カレンダー）」画面へ移動し、
+      // 今つけた記録をその場で確認できるようにする。
+      closeSheetById("planOverlay");
+      state.calendarMonth = dateIso.slice(0,7);
+      state.calendarSelectedDate = dateIso;
+      renderCalendarSheet();
+      openSheet("calendarOverlay");
+    };
+  }
 }
 document.getElementById("planListBtn").onclick = ()=>{
   renderPlanSheet();
   openSheet("planOverlay");
+};
+
+// ==================================================================
+// 🆕 お出かけカレンダー・履歴シート（既存のプランシートなどと同じ作りのパターンを踏術）
+// ------------------------------------------------------------------
+// ・月表示（state.calendarMonth = "YYYY-MM"．未設定なら今月）
+// ・各日に、その日の「行った記録（visits）」と「プランの予定日（planDates）」をドットで区別表示
+// ・日をタップするとその日の詳細（予定/行った）を下に展開。行った記録はその場で削除も可能。
+// ・カレンダーの下に「お出かけ履歴一覧」（月ごとに施設名を並べるシンプルなリスト）も同じシートに内包し、UIを増やしすぎないようにする。
+function currentCalendarYM(){
+  if(state.calendarMonth) return state.calendarMonth;
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}`;
+}
+function shiftCalendarMonth(delta){
+  const [y,m] = currentCalendarYM().split("-").map(Number);
+  const d = new Date(y, m-1+delta, 1);
+  state.calendarMonth = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}`;
+  state.calendarSelectedDate = null;
+}
+function renderCalendarDayDetail(){
+  const wrap = document.getElementById("calendarDayDetailWrap");
+  if(!wrap) return;
+  const dateIso = state.calendarSelectedDate;
+  if(!dateIso){ wrap.innerHTML = ""; return; }
+  const dayVisits = visitsOnDate(dateIso);
+  const planLabels = [];
+  state.planDates.forEach((pd,i)=>{
+    if(pd===dateIso && state.plans[i] && state.plans[i].length>0){
+      planLabels.push({label:PLAN_TAB_LABELS[i], names:state.plans[i]});
+    }
+  });
+  let html = `<div class="calendar-day-detail"><div class="calendar-day-detail-title">${formatDateJP(dateIso)}</div>`;
+  if(planLabels.length===0 && dayVisits.length===0){
+    html += `<div class="calendar-day-detail-empty">この日の予定・記録はありません。</div>`;
+  }
+  planLabels.forEach(pl=>{
+    html += `<div style="margin-bottom:6px;"><div class="calendar-plan-item">📌 予定：${pl.label}</div>`;
+    pl.names.forEach(n=>{ html += `<div style="font-size:12.5px; padding-left:14px;">・${n}</div>`; });
+    html += `</div>`;
+  });
+  if(dayVisits.length>0){
+    html += `<div style="margin-top:6px; font-weight:700; font-size:13px; color:var(--green);">✅ 行った</div>`;
+    dayVisits.forEach((v)=>{
+      const globalIdx = state.visits.indexOf(v);
+      const already = isInPlan(v.facilityName);
+      html += `<div class="calendar-visit-item">
+        <span class="calendar-visit-name">${v.facilityName}</span>
+        <span>
+          <button type="button" class="calendar-visit-applyplan" data-apply-plan="${globalIdx}" ${already?"disabled":""}>${already?"プラン済み":`🗓 ${PLAN_TAB_LABELS[state.activePlanTab]}に追加`}</button>
+          <button type="button" class="calendar-visit-del" data-del-visit="${globalIdx}">削除</button>
+        </span>
+      </div>`;
+    });
+  }
+  html += `</div>`;
+  wrap.innerHTML = html;
+  wrap.querySelectorAll("[data-del-visit]").forEach(btn=>{
+    btn.onclick = ()=>{
+      removeVisitAt(Number(btn.dataset.delVisit));
+      renderCalendarSheet();
+      render();
+    };
+  });
+  wrap.querySelectorAll("[data-apply-plan]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const v = state.visits[Number(btn.dataset.applyPlan)];
+      if(v && applyVisitToPlan(v.facilityName)){
+        render();
+        renderCalendarSheet();
+      }
+    };
+  });
+}
+function renderCalendarHistory(){
+  if(state.visits.length===0){
+    return `<div class="history-empty">まだ記録がありません。施設詳細ページの「📅 この日に行ったとして記録」から追加できます。</div>`;
+  }
+  const byMonth = {};
+  [...state.visits].sort((a,b)=> b.date.localeCompare(a.date)).forEach(v=>{
+    const ym = v.date.slice(0,7);
+    if(!byMonth[ym]) byMonth[ym] = [];
+    byMonth[ym].push({name: v.facilityName, day: Number(v.date.slice(8,10))});
+  });
+  return Object.keys(byMonth).sort().reverse().map(ym=>{
+    const [y,m] = ym.split("-");
+    return `<div class="history-month-group"><div class="history-month-label">${y}年${Number(m)}月</div>${byMonth[ym].map(item=>`<div class="history-item-row">・${item.name}（${item.day}日）</div>`).join("")}</div>`;
+  }).join("");
+}
+function renderCalendarSheet(){
+  const sheet = document.getElementById("calendarSheet");
+  const ym = currentCalendarYM();
+  const [y,m] = ym.split("-").map(Number);
+  const firstDay = new Date(y, m-1, 1);
+  const lastDay = new Date(y, m, 0);
+  const startWeekday = firstDay.getDay();
+  const daysInMonth = lastDay.getDate();
+  const todayIso = todayISODate();
+  const dow = ["日","月","火","水","木","金","土"];
+  let cells = "";
+  for(let i=0;i<startWeekday;i++) cells += `<div class="calendar-day empty"></div>`;
+  for(let d=1; d<=daysInMonth; d++){
+    const dateIso = `${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const hasVisit = state.visits.some(v=>v.date===dateIso);
+    const hasPlan = state.planDates.some((pd,i)=> pd===dateIso && state.plans[i] && state.plans[i].length>0); // プランが空なら予定ドットは出さない
+    const isToday = dateIso===todayIso;
+    const isSelected = dateIso===state.calendarSelectedDate;
+    cells += `<div class="calendar-day${isToday?" today":""}${isSelected?" selected":""}" data-date="${dateIso}">
+      <div class="calendar-day-num">${d}</div>
+      <div class="calendar-day-dots">${hasPlan?'<span class="calendar-dot plan"></span>':""}${hasVisit?'<span class="calendar-dot visit"></span>':""}</div>
+    </div>`;
+  }
+  sheet.innerHTML = `
+    <button class="sheet-close" id="calendarCloseBtn">×</button>
+    <div class="sheet-title">📅 お出かけカレンダー・履歴</div>
+    <div class="calendar-legend">
+      <span class="calendar-legend-item"><span class="calendar-dot plan"></span>予定</span>
+      <span class="calendar-legend-item"><span class="calendar-dot visit"></span>行った</span>
+    </div>
+    <div class="calendar-month-row">
+      <button type="button" class="calendar-month-nav" id="calendarPrevBtn">‹</button>
+      <div class="calendar-month-label">${y}年${m}月</div>
+      <button type="button" class="calendar-month-nav" id="calendarNextBtn">›</button>
+    </div>
+    <div class="calendar-grid">
+      ${dow.map(w=>`<div class="calendar-dow">${w}</div>`).join("")}
+      ${cells}
+    </div>
+    <div id="calendarDayDetailWrap"></div>
+    <div class="calendar-section-title">📖 お出かけ履歴一覧</div>
+    ${renderCalendarHistory()}
+    <button class="detail-close-bottom" id="calendarCloseBtnBottom">戻る</button>
+  `;
+  document.getElementById("calendarCloseBtn").onclick = ()=>closeSheetById("calendarOverlay");
+  document.getElementById("calendarCloseBtnBottom").onclick = ()=>closeSheetById("calendarOverlay");
+  document.getElementById("calendarPrevBtn").onclick = ()=>{ shiftCalendarMonth(-1); renderCalendarSheet(); };
+  document.getElementById("calendarNextBtn").onclick = ()=>{ shiftCalendarMonth(1); renderCalendarSheet(); };
+  sheet.querySelectorAll(".calendar-day[data-date]").forEach(cell=>{
+    cell.onclick = ()=>{
+      state.calendarSelectedDate = (state.calendarSelectedDate===cell.dataset.date) ? null : cell.dataset.date;
+      renderCalendarSheet();
+    };
+  });
+  renderCalendarDayDetail();
+}
+document.getElementById("calendarOpenBtn").onclick = ()=>{
+  renderCalendarSheet();
+  openSheet("calendarOverlay");
 };
 
 // ==================================================================
@@ -12624,6 +12989,9 @@ function render(){
   const planCountLabel = document.getElementById("planCountLabel");
   planCountLabel.textContent = planTotalCount()>0 ? `(${planTotalCount()})` : "";
 
+  const visitCountLabel = document.getElementById("visitCountLabel");
+  if(visitCountLabel) visitCountLabel.textContent = (state.visits && state.visits.length>0) ? `(${state.visits.length})` : "";
+
   document.querySelectorAll(".sort-toggle-btn").forEach(btn=>{
     btn.classList.toggle("active", btn.dataset.sort===state.sortMode);
   });
@@ -12823,10 +13191,11 @@ function buildCardSummary(spot){
         <div class="card-name">${flowerEmoji(spot) ? flowerEmoji(spot)+" " : ""}${spot.name}</div>
         <div class="card-meta">${fullAreaLabel(spot)}　${genre.label}</div>
       </div>
+      ${state.compareMode ? "" : `
       <div class="card-quick-actions">
         <button type="button" class="card-quick-btn ${isFavQuick?'on':''}" data-quick="fav" title="行きたい">❤️</button>
         <button type="button" class="card-quick-btn ${isPlannedQuick?'on':''}" data-quick="plan" title="プランに追加">🗓</button>
-      </div>
+      </div>`}
     </div>
     ${seasonMatch ? `<div class="season-tag">${SEASON_EMOJI[effectiveDisplaySeason()]} ${effectiveDisplaySeason()}におすすめ</div>` : ""}
     ${visitDateBadgeHtml(spot) ? `<div class="visitdate-badge-row">${visitDateBadgeHtml(spot)}</div>` : ""}
@@ -12837,12 +13206,15 @@ function buildCardSummary(spot){
       <span>${congestionCardLabel(spot)}</span>
     </div>
     <div class="card-go-row">${goHtml}</div>
+    ${cardVisitSummaryHtml(spot)}
   `;
-  card.querySelector('[data-quick="fav"]').onclick = (e)=>{
+  const favQuickBtn = card.querySelector('[data-quick="fav"]');
+  if(favQuickBtn) favQuickBtn.onclick = (e)=>{
     e.stopPropagation();
     toggleSet("favorites", spot.name);
   };
-  card.querySelector('[data-quick="plan"]').onclick = (e)=>{
+  const planQuickBtn = card.querySelector('[data-quick="plan"]');
+  if(planQuickBtn) planQuickBtn.onclick = (e)=>{
     e.stopPropagation();
     if(isInPlan(spot.name)) removeFromPlan(spot.name); else addToPlan(spot.name);
     render();
@@ -13085,8 +13457,18 @@ function openDetail(spot, silent){
       <button class="abtn ${isExcluded?"on excluded":""}" data-act="exclude">🚫 除外</button>
       <button class="abtn ${isCompared?"on compared":""}" data-act="compare">⚖️ 比較に${isCompared?"追加済み":"追加"}</button>
     </div>
+    <div class="visit-add-row">
+      <input type="date" id="detailVisitDateInput" value="${todayISODate()}" max="${todayISODate()}">
+      <button type="button" class="visit-add-btn" id="detailVisitAddBtn">📅 この日に行ったとして記録</button>
+      <span class="visit-added-note" id="detailVisitAddedNote" style="display:none;">✅ 記録しました！</span>
+    </div>
+    ${detailVisitHistoryHtml(spot)}
+    ${isPlanned ? `<div style="font-size:11px; color:var(--ink-soft); margin-top:2px;">※記録すると、現在入っているプランからは自動的に削除されます。</div>` : ""}
     <button type="button" class="detail-close-bottom" id="detailCloseBtnBottom">閉じる</button>
   `;
+  sheet.querySelectorAll("[data-jump-date]").forEach(btn=>{
+    btn.onclick = ()=> jumpToCalendarDate(btn.dataset.jumpDate);
+  });
   sheet.querySelector('[data-act="fav"]').onclick = ()=>toggleSet("favorites", spot.name);
   sheet.querySelector('[data-act="visited"]').onclick = ()=>toggleSet("visited", spot.name);
   sheet.querySelector('[data-act="exclude"]').onclick = ()=>toggleSet("excluded", spot.name);
@@ -13101,6 +13483,18 @@ function openDetail(spot, silent){
     toggleCompareSpot(spot.name);
     openDetail(spot, true);
   };
+  const detailVisitAddBtn = sheet.querySelector("#detailVisitAddBtn");
+  if(detailVisitAddBtn){
+    detailVisitAddBtn.onclick = ()=>{
+      const dateInput = sheet.querySelector("#detailVisitDateInput");
+      const dateIso = dateInput && dateInput.value ? dateInput.value : todayISODate();
+      addVisit(spot.name, dateIso, "");
+      render();
+      const note = sheet.querySelector("#detailVisitAddedNote");
+      if(note) note.style.display = "inline";
+      detailVisitAddBtn.disabled = true;
+    };
+  }
   const officialBtn = sheet.querySelector('[data-act="official-click"]');
   if(officialBtn) officialBtn.addEventListener("click", ()=>trackEvent("official_site_click", {facility_name:spot.name}));
   const bookingBtn = sheet.querySelector('[data-act="booking-click"]');
@@ -13185,7 +13579,7 @@ function closeDetail(){
 // リセットボタン（保存データ＋画面上の絞り込み条件をすべて初期化）
 // ==================================================================
 document.getElementById("resetBtn").onclick = ()=>{
-  const ok = confirm("保存されている「行きたい」「行った」「郵便番号」「プラン」などの端末データをすべて削除します。よろしいですか？");
+  const ok = confirm("保存されている「行きたい」「行った」「郵便番号」「プラン」「お出かけ記録・カレンダー」などの端末データをすべて削除します。よろしいですか？");
   if(!ok) return;
   try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
   resetFilters();
@@ -13210,6 +13604,10 @@ document.getElementById("resetBtn").onclick = ()=>{
   state.activePlanTab = 0;
   state.planTripModes = ["roundtrip","roundtrip","roundtrip"];
   state.planTripModeManualFlags = [false,false,false];
+  state.visits = [];
+  state.planDates = [null,null,null];
+  state.calendarMonth = null;
+  state.calendarSelectedDate = null;
   document.getElementById("zipInput").value = "";
   document.getElementById("compareBanner").style.display = "none";
   document.getElementById("compareToggleBtn").classList.remove("active");
