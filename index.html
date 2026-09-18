@@ -100,21 +100,21 @@
     --teal:#3E8FB0; --green:#4F7942;
   }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
-  body{margin:0; padding-top:calc(65px + env(safe-area-inset-top)); background:var(--cream); color:var(--ink); font-family:'Noto Sans JP',sans-serif; -webkit-font-smoothing:antialiased;}
-  #sortToggleRow{scroll-margin-top:calc(76px + env(safe-area-inset-top));}
+  body{margin:0; padding-top:calc(57px + env(safe-area-inset-top)); background:var(--cream); color:var(--ink); font-family:'Noto Sans JP',sans-serif; -webkit-font-smoothing:antialiased;}
+  #sortToggleRow{scroll-margin-top:calc(68px + env(safe-area-inset-top));}
   h1,h2,h3,.mark{font-family:'Zen Maru Gothic',sans-serif;}
   button{font-family:inherit;}
 
   header.header-fixed{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    height:calc(64px + env(safe-area-inset-top));
+    height:calc(56px + env(safe-area-inset-top));
     background:var(--cream);
     border-bottom:1px solid var(--line);
     overflow:hidden;
   }
-  .header-banner-img{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; display:block;}
-  header.header-fixed .hamburger-btn{position:absolute; left:10px; top:calc(env(safe-area-inset-top) + 16px); z-index:2; box-shadow:0 1px 4px rgba(43,38,32,.18); padding:0; width:32px; height:32px; min-width:32px; min-height:32px; font-size:15px;}
-  header.header-fixed .header-share-btn{position:absolute; right:10px; top:calc(env(safe-area-inset-top) + 16px); z-index:2; box-shadow:0 1px 4px rgba(43,38,32,.18);}
+  .header-banner-img{position:absolute; top:env(safe-area-inset-top); left:0; width:100%; height:56px; object-fit:cover; object-position:center bottom; display:block;}
+  header.header-fixed .hamburger-btn{position:absolute; left:10px; top:calc(env(safe-area-inset-top) + 12px); z-index:2; box-shadow:0 1px 4px rgba(43,38,32,.18); padding:0; width:32px; height:32px; min-width:32px; min-height:32px; font-size:15px;}
+  header.header-fixed .header-share-btn{position:absolute; right:10px; top:calc(env(safe-area-inset-top) + 12px); z-index:2; box-shadow:0 1px 4px rgba(43,38,32,.18);}
   .header-scroll{
     padding:3px 16px; background:var(--cream); border-bottom:1px solid var(--line);
     display:flex; align-items:center; gap:10px; flex-wrap:wrap;
@@ -2185,7 +2185,7 @@ verifiedAt:"2026年9月16日",
  ages:["0-1歳","2-3歳","4-6歳","低学年"], weather:["晴れ","雨"], duration:["半日","1日"],
  stayTime:{minMinutes:180, maxMinutes:300},
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"▲ 混雑しやすい", holidayPM:"▲ 混雑しやすい"},
- price:"日時・年齢により3000〜4000円台", parking:"yes", access:"京王・小田急・多摩モノレール「多摩センター」駅から徒歩5分",
+ price:"デイパスポート 変動制・大人3900円〜6900円／小人・シニア2800円〜5800円（2歳以下無料）", parking:"yes", access:"京王・小田急・多摩モノレール「多摩センター」駅から徒歩5分",
  baby:"授乳室・調乳スペース充実／ベビーカーOK", lunch:"館内にキャラクターカフェ・フードコートあり。",
  officialUrl:"https://puroland.sanrio.co.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/150360/"}, recommendedBooking:"asoview",
@@ -2198,7 +2198,7 @@ verifiedAt:"2026年9月16日",
  seasons:["夏","冬"],
  holidays:["夏休み","年末年始"],
  walletLevel:1,
- price:"入園1800円台＋乗り物フリーパス3600円台〜", parking:"yes", access:"京王線「京王よみうりランド」駅からゴンドラ",
+ price:"入園1900円台＋乗り物フリーパス3900円台〜（ワンデーパス合計目安5800円前後）", parking:"yes", access:"京王線「京王よみうりランド」駅からゴンドラ",
  baby:"おむつ替えあり／ベビーカーOK（園内起伏あり）", lunch:"園内にフードコート・レストラン複数あり。",
  officialUrl:"https://www.yomiuriland.com/",
  verifiedAt:"2026年9月16日",
@@ -2281,7 +2281,7 @@ verifiedAt:"2026年9月16日",
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"△ やや混雑"},
  seasons:["夏","冬"],
  holidays:["年末年始","夏休み"],
- price:"入園大人2000円台（プール・アトラクション別途あり）", parking:"yes", access:"東武線「東武動物公園」駅からバス5分",
+ price:"入園大人2300円（プール・アトラクションは別途）", parking:"yes", access:"東武線「東武動物公園」駅からバス5分",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"園内にレストラン・フードコート多数。",
  officialUrl:"https://www.tobuzoo.com/",
  bookingLinks:{asoview:"https://www.asoview.com/base/155350/"}, recommendedBooking:"asoview",
@@ -2307,7 +2307,7 @@ verifiedAt:"2026年9月16日",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
  stayTime:{minMinutes:300, maxMinutes:420},
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"▲ 混雑しやすい", holidayPM:"▲ 混雑しやすい"},
- price:"入場無料／水族館4施設共通券は5000円前後", parking:"yes", access:"シーサイドライン「八景島」駅から徒歩2分",
+ price:"入場無料／水族館4施設共通「アクアリゾーツパス」高校生以上3500円・小中学生2200円（乗り物込みの「ワンデーパス」は高校生以上5700円前後）", parking:"yes", access:"シーサイドライン「八景島」駅から徒歩2分",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"島内にレストラン・フードコート多数。",
  officialUrl:"https://www.seaparadise.co.jp/",
  businessHours:{mon:"10:00-17:00", tue:"10:00-17:00", wed:"10:00-17:00", thu:"10:00-17:00", fri:"10:00-17:00", sat:"10:00-18:00", sun:"10:00-18:00", holiday:"10:00-18:00"},
@@ -2364,7 +2364,9 @@ verifiedAt:"2026年9月16日",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
  stayTime:{minMinutes:480, maxMinutes:600},
  congestion:{weekdayAM:"▲ 混雑しやすい", weekdayPM:"▲ 混雑しやすい", holidayAM:"✕ 大変混雑", holidayPM:"✕ 大変混雑"},
- price:"1デーパスポート 変動制・大人7900円〜10900円程度", parking:"yes", access:"JR「舞浜」駅から徒歩／モノレール",
+ price:"1デーパスポート 変動制・大人7900円〜（日により最大12000円台まで変動）", parking:"yes",
+ parkingDetail:{available:true, priceLabel:"普通乗用車4,000円／日（公式駐車場・固定料金）", priceShort:"4,000円", stars:3, symbol:"○", ratingLabel:"○ 普通（台数は多いが繁忙期は早朝から混雑）", note:"公式駐車場は普通乗用車一律4,000円。満車の場合はリゾートパーキング第6〜8に案内されます。"},
+ access:"JR「舞浜」駅から徒歩／モノレール",
  baby:"授乳室・おむつ替え多数完備／ベビーカーOK（貸出あり）", lunch:"パーク内にレストラン・軽食店が非常に豊富。",
  officialUrl:"https://www.tokyodisneyresort.jp/",
  desc:"屋内アトラクションも多く、多少の雨でも進行できるプログラムが多い王道テーマパーク。",
