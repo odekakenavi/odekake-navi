@@ -1877,11 +1877,14 @@ function priceCardSnippet(spot){
   const price = spot.price;
   if(!price) return "料金情報要確認";
   const bd = parsePriceBreakdown(price);
+  // 元の料金文言で金額の直後に「〜」がある場合（例：「大人7900円〜」）は、
+  // カードの簡易表示でも「〜」を残し、固定金額であるかのような誤解を防ぐ
+  const hasTilde = (val)=> new RegExp(val + "\\s*円\\s*[〜~]").test(price);
   const parts = [];
-  if(bd.adult!==undefined) parts.push(`大人${bd.adult.toLocaleString()}円`);
+  if(bd.adult!==undefined) parts.push(`大人${bd.adult.toLocaleString()}円${hasTilde(bd.adult)?"〜":""}`);
   const childVal = bd.elementary!==undefined ? bd.elementary : (bd.child!==undefined ? bd.child : bd.infant);
   const childLabel = bd.elementary!==undefined ? "小学生" : (bd.child!==undefined ? "子ども" : "幼児");
-  if(childVal!==undefined) parts.push(`${childLabel}${childVal===0 ? "無料" : childVal.toLocaleString()+"円"}`);
+  if(childVal!==undefined) parts.push(`${childLabel}${childVal===0 ? "無料" : childVal.toLocaleString()+"円"+(hasTilde(childVal)?"〜":"")}`);
   if(parts.length>0) return parts.join("／");
   // 区分別の金額が拾えない場合のみ「入園無料」等の判定にフォールバック
   const yenAll = parsePriceYen(price);
@@ -2528,7 +2531,7 @@ verifiedAt:"2026年9月16日",
  ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"△ やや混雑", holidayPM:"▲ 混雑しやすい"},
  walletLevel:1,
- price:"入場料800円＋アトラクション料金（フリーパス4500円程度）", parking:"yes", access:"ゆりかもめ「お台場海浜公園」駅から徒歩2分",
+ price:"入場大人1500円＋アトラクション料金（フリーパス大人5800円）", parking:"yes", access:"ゆりかもめ「お台場海浜公園」駅から徒歩2分",
  baby:"おむつ替えあり／小さい子には物足りない場合あり", lunch:"デックス東京ビーチ内に飲食店多数。",
  officialUrl:"https://tokyo-joypolis.com/",
  verifiedAt:"2026年9月16日",
@@ -2607,7 +2610,7 @@ verifiedAt:"2026年9月16日",
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"▲ 混雑しやすい", holidayPM:"✕ 大変混雑"},
  seasons:["夏"],
  holidays:["夏休み"],
- price:"入園＋プール利用 大人3300円台", parking:"yes", access:"JR「拝島」駅からバス20分",
+ price:"1Dayパス（入園＋プール＋遊園地） 大人3900円〜5200円（夏季）／オフシーズンはやや割安", parking:"yes", access:"JR「拝島」駅からバス20分",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"園内にレストラン・売店多数。",
  officialUrl:"https://www.summerland.co.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/154229/"}, recommendedBooking:"asoview",
@@ -3036,7 +3039,7 @@ verifiedAt:"2026年9月16日",
 {region:"栃木", name:"日光江戸村", area:"日光市", lat:36.7480, lng:139.5730,
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
  stayTime:{minMinutes:240, maxMinutes:360},
- price:"大人5000円台／子供2600円台", parking:"yes", access:"東武「鬼怒川温泉」駅からバス20分",
+ price:"通行手形（1日フリーパス）大人5800円／小人3000円", parking:"yes", access:"東武「鬼怒川温泉」駅からバス20分",
  baby:"おむつ替えあり", lunch:"園内に飲食店多数。",
  officialUrl:"https://edowonderland.net/",
  overnightRecommended:true, hotelArea:"nikko",
@@ -5133,7 +5136,7 @@ verifiedAt:"2026年9月16日",
 {region:"東京", name:"チームラボプラネッツ TOKYO（豊洲）", area:"江東区豊洲", lat:35.64935, lng:139.789789,
  ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  congestion:{weekdayAM:"△ やや混雑", weekdayPM:"▲ 混雑しやすい", holidayAM:"▲ 混雑しやすい", holidayPM:"✕ 大変混雑"},
- price:"大人3800円台／小人（4〜12歳）1500円台／3歳以下無料", parking:"no", access:"ゆりかもめ「新豊洲駅」から徒歩1分",
+ price:"変動制・大人3800円〜5600円程度／小人（4〜12歳）1500円〜／3歳以下無料", parking:"no", access:"ゆりかもめ「新豊洲駅」から徒歩1分",
  baby:"水域を裸足で歩くエリアがあるためベビーカー入場不可／抱っこ紐推奨", lunch:"館内にカフェあり。隣接のららぽーと豊洲にも飲食店多数。",
  officialUrl:"https://planets.teamlab.art/tokyo/jp/",
  verifiedAt:"2026年9月16日",
@@ -5144,7 +5147,7 @@ verifiedAt:"2026年9月16日",
 {region:"東京", name:"ナンジャタウン（サンシャインシティ）", area:"豊島区・池袋", lat:35.7295, lng:139.7191,
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  stayTime:{minMinutes:120, maxMinutes:180},
- price:"ナンジャパスポート 大人4000円台／4-12歳3200円台（入園のみのナンジャエントリーは大人1000円）", parking:"yes", access:"東京メトロ有楽町線「東池袋駅」から徒歩3分／JR「池袋駅」から徒歩8分",
+ price:"ナンジャパスポート 大人（19歳以上）4000円台／中高生3200円台／4-12歳（小学生以下）2400円台（入園のみのナンジャエントリーは別料金）", parking:"yes", access:"東京メトロ有楽町線「東池袋駅」から徒歩3分／JR「池袋駅」から徒歩8分",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"ご当地餃子やデザートが楽しめるフードコーナーが充実。",
  officialUrl:"https://sunshinecity.jp/namja/",
  desc:"サンシャインシティ内にある完全屋内型テーマパーク。猫とふれあえる「ニャンジャタウン」や忍者の街「NINJATOWN」など、天候を気にせず一日中遊べる。",
@@ -5227,7 +5230,7 @@ verifiedAt:"2026年9月16日",
 {region:"福島", name:"スパリゾートハワイアンズ", area:"いわき市常磐藤原町", lat:36.994039, lng:140.816077,
  overnightRecommended:true, hotelArea:"iwaki",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
- price:"大人3570円台／小学生2250円台／幼児(3歳以上)1640円台（土日祝は割高）", parking:"yes", access:"JR「湯本駅」から無料送迎バスで約15分",
+ price:"大人（中学生以上）4100円台／小学生2800円前後／幼児(3歳以上)2200円前後（土日祝は割高）", parking:"yes", access:"JR「湯本駅」から無料送迎バスで約15分",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"館内にレストラン・バイキングあり。",
  officialUrl:"https://www.hawaiians.co.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/155503/"}, recommendedBooking:"asoview",
@@ -5813,7 +5816,7 @@ verifiedAt:"2026年9月16日",
 // ------------------------------------------------------------------
 {region:"神奈川", name:"箱根ロープウェイ", area:"足柄下郡箱根町（早雲山〜桃源台）", lat:35.246428, lng:139.035628,
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"早雲山〜桃源台 片道 中学生以上1550円／小学生780円（区間により変動）", parking:"yes", access:"箱根登山ケーブルカー「早雲山駅」からすぐ",
+ price:"早雲山〜桃源台 片道 中学生以上2000円／小学生700円（2025年10月改定、区間により変動）", parking:"yes", access:"箱根登山ケーブルカー「早雲山駅」からすぐ",
  baby:"全線バリアフリーでベビーカーごと乗車可", lunch:"早雲山駅「cu-mo箱根」、大涌谷駅に飲食店あり。",
  officialUrl:"https://www.hakonenavi.jp/hakone-ropeway/",
  overnightRecommended:true, hotelArea:"hakone",
@@ -5821,7 +5824,7 @@ verifiedAt:"2026年9月16日",
  tip:"全線バリアフリーでベビーカーのまま乗車可能。火山ガスの影響やメンテナンスで運休することがあるため、訪問前に公式サイトで運行状況の確認がおすすめ。"},
 {region:"神奈川", name:"箱根海賊船", area:"足柄下郡箱根町（芦ノ湖）", lat:35.23803, lng:138.994736,
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"桃源台〜元箱根港 片道 中学生以上1200円台／小学生600円台（区間により変動）", parking:"yes", access:"箱根登山バス「桃源台」バス停からすぐ",
+ price:"桃源台〜元箱根港 片道 中学生以上1700円／小学生850円（2025年10月改定、区間により変動）", parking:"yes", access:"箱根登山バス「桃源台」バス停からすぐ",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"桃源台・元箱根港周辺に飲食店あり。",
  officialUrl:"https://www.hakonenavi.jp/hakone-kankosen/",
  overnightRecommended:true, hotelArea:"hakone",
