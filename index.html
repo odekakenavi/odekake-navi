@@ -147,7 +147,7 @@
   .drawer-panel.open{transform:translateX(0);}
   .drawer-header{display:flex; align-items:center; justify-content:space-between; padding:4px 16px 14px; border-bottom:1px solid var(--line);}
   .drawer-title{font-size:17px; font-weight:900; color:var(--ink);}
-  .drawer-close-btn{border:none; background:transparent; font-size:22px; cursor:pointer; color:var(--ink-soft); width:40px; height:40px; border-radius:8px;}
+  .drawer-close-btn{border:none; background:#F1EADA; font-size:16px; cursor:pointer; color:var(--ink); width:34px; height:34px; min-width:44px; min-height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
   .drawer-close-btn:hover{background:#F5F0E8;}
   .drawer-section{padding:14px 16px 4px;}
   .drawer-section-title{font-size:13px; font-weight:700; color:var(--ink-soft); margin-bottom:8px;}
@@ -585,9 +585,9 @@
   .compare-table td{line-height:1.5;}
 
   /* ---------- 詳細画面 ---------- */
-  .detail-header-row{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:2px; padding-top:8px;}
+  .detail-header-row{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:8px; padding-top:8px;}
   .detail-header-row .detail-name{margin:0; flex:1; min-width:0; word-break:break-word;}
-  .detail-header-row .sheet-close{margin:0; flex:0 0 auto; width:40px; height:40px; min-width:44px; min-height:44px;}
+  .detail-header-row .sheet-close{margin:0 0 0 auto; flex:0 0 auto; width:40px; height:40px; min-width:44px; min-height:44px;}
   .detail-name{font-size:19px; font-weight:900; font-family:'Zen Maru Gothic',sans-serif; line-height:1.4; padding-right:10px;}
   .detail-area{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
   .detail-close-bottom{
@@ -13005,10 +13005,10 @@ function openDetail(spot, silent){
     <div class="detail-section">
       <h3>👶 その他の情報</h3>
       <div class="detail-info-grid">
-        <div class="info-row"><span class="ico">🍼</span><span class="lbl">赤ちゃん</span><span class="val">${spot.baby}</span></div>
-        <div class="info-row"><span class="ico">🍴</span><span class="lbl">食事</span><span class="val">${spot.lunch}</span></div>
+        <div class="info-row"><span class="ico">🍼</span><span class="lbl">赤ちゃん</span><span class="val">${spot.baby || "情報なし"}</span></div>
+        <div class="info-row"><span class="ico">🍴</span><span class="lbl">食事</span><span class="val">${spot.lunch || "情報なし"}</span></div>
       </div>
-      <div class="tip"><b>ひとこと：</b>${spot.tip}</div>
+      <div class="tip"><b>ひとこと：</b>${spot.tip || "情報なし"}</div>
     </div>
 
     <div class="detail-section">
