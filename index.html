@@ -871,6 +871,29 @@
   .weather-loading, .weather-error{font-size:11.5px; color:var(--ink-soft); padding:6px 2px;}
   .weather-updated{font-size:10.5px; color:var(--ink-soft); margin-top:8px;}
   .spot-verified-note{font-size:10.5px; color:var(--ink-soft); margin-top:10px; text-align:right;}
+
+  /* ---------- 📸 実際に行ったよ（実体験）：データがある施設の詳細画面にだけ表示される ---------- */
+  .exp-open-btn{
+    display:block; width:100%; text-align:center; padding:12px; border-radius:10px;
+    background:#F5F0E4; border:1px solid var(--line); color:var(--ink); font-size:13px;
+    font-weight:800; cursor:pointer;
+  }
+  .exp-body{margin-top:10px;}
+  .exp-card{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:11px 12px; margin-bottom:10px;}
+  .exp-visit{font-size:13px; font-weight:800;}
+  .exp-facts{font-size:12px; color:var(--ink-soft); margin-top:4px; line-height:1.6;}
+  .exp-block{margin-top:10px;}
+  .exp-label{font-size:11.5px; font-weight:700; color:var(--ink-soft); margin-bottom:4px;}
+  .exp-text{font-size:12.5px; line-height:1.7; white-space:pre-wrap;}
+  .exp-photos{display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+  .exp-photo{margin:0;}
+  .exp-photo img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:#eee;}
+  .exp-photo figcaption{font-size:10.5px; color:var(--ink-soft); margin-top:2px; line-height:1.4;}
+  .exp-kid-row{font-size:12.5px; line-height:1.6; padding:2px 0; border-bottom:1px dashed var(--line);}
+  .exp-kid-name{font-weight:700; margin-right:6px;}
+  .exp-kid-level{margin-right:6px; color:var(--ink-soft);}
+  .exp-kid-note{display:block; color:var(--ink);}
+  .exp-status{font-size:12px; color:var(--ink-soft); padding:6px 0;}
   .weather-note{font-size:10px; color:var(--ink-soft); margin-top:6px; line-height:1.5;}
 
   /* 🆕 お出かけカレンダー・履歴（既存デザイントーンを踏術し、必要最小限のCSSのみ追加） */
@@ -2443,7 +2466,7 @@ verifiedAt:"2026年9月16日",
  officialUrl:"https://www.tokyo-park.or.jp/park/hikarigaoka/",
  desc:"大型のアスレチック遊具とバードサンクチュアリがある広々とした公園。",
  tip:"遊具エリアは年齢別にゾーニングされていて小さい子でも安心。"},
-{region:"東京", name:"舎人公園", area:"足立区", lat:35.7857, lng:139.7969,
+{region:"東京", name:"舎人公園", area:"足立区", lat:35.7857, lng:139.7969, genre:"公園",
  ages:["0-1歳","2-3歳","4-6歳","低学年"], weather:["晴れ"], duration:["半日"],
  seasons:["夏"],
  price:"入園無料（ミニ遊園地は乗り物ごとに有料）", parking:"yes", access:"日暮里・舎人ライナー「舎人公園」駅から徒歩3分",
@@ -2460,7 +2483,7 @@ verifiedAt:"2026年9月16日",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"園内にレストラン・売店複数あり。",
  officialUrl:"https://www.shinrinkoen.jp/",
  desc:"広さ日本有数の国営公園。大型アスレチック遊具やサイクリングコースがあり体を動かし放題。", tip:"園内が広いのでレンタサイクル利用が移動の鍵。"},
-{region:"埼玉", name:"東武動物公園", area:"宮代町", lat:36.0011, lng:139.7256,
+{region:"埼玉", name:"東武動物公園", area:"南埼玉郡宮代町", lat:36.0011, lng:139.7256,
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"△ やや混雑"},
  seasons:["夏","冬"],
@@ -2529,7 +2552,7 @@ verifiedAt:"2026年9月16日",
  bookingLinks:{asoview:"https://www.asoview.com/base/122238/"}, recommendedBooking:"asoview",
  desc:"相模湾を望む立地で、屋内水族館と海辺散策を一度に楽しめる。イルカショーも人気。",
  tip:"帰りに江の島の海辺を歩けば、雨上がりでも1日プランになる。"},
-{region:"神奈川", name:"箱根（彫刻の森・ロープウェイ）", area:"箱根町", lat:35.2401, lng:139.0393,
+{region:"神奈川", name:"箱根（彫刻の森・ロープウェイ）", area:"足柄下郡箱根町", lat:35.2401, lng:139.0393,
  ages:["低学年","高学年"], weather:["晴れ"], duration:["1日"],
  price:"彫刻の森 大人2000円台＋ロープウェイ・登山鉄道別途", parking:"yes", access:"箱根登山鉄道「彫刻の森」駅から徒歩2分",
  baby:"おむつ替えあり／屋外中心で長距離歩行あり", lunch:"美術館内にカフェあり。箱根エリアに飲食店多数。",
@@ -2632,7 +2655,7 @@ verifiedAt:"2026年9月16日",
  officialUrl:"https://hitachikaihin.jp/",
  desc:"ネモフィラやコキアで有名な丘陵の公園。大型遊具エリアや自転車コースもある。",
  tip:"花のシーズンは特に混雑。開園直後の入園がおすすめ。"},
-{region:"茨城", name:"アクアワールド茨城県大洗水族館", area:"大洗町", lat:36.3103, lng:140.5786,
+{region:"茨城", name:"アクアワールド茨城県大洗水族館", area:"東茨城郡大洗町", lat:36.3103, lng:140.5786,
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
  stayTime:{minMinutes:150, maxMinutes:240},
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"▲ 混雑しやすい"},
@@ -2643,7 +2666,7 @@ verifiedAt:"2026年9月16日",
  bookingLinks:{asoview:"https://www.asoview.com/base/154299/"}, recommendedBooking:"asoview",
  desc:"サメの飼育種類数が国内屈指。屋外の展望テラスから海を眺められるのも特徴。",
  tip:"授乳室・ベビーカー貸出ありで乳児連れも安心。"},
-{region:"栃木", name:"那須どうぶつ王国", area:"那須町", lat:37.0159, lng:139.9626,
+{region:"栃木", name:"那須どうぶつ王国", area:"那須郡那須町", lat:37.0159, lng:139.9626,
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
  stayTime:{minMinutes:240, maxMinutes:360},
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"△ やや混雑"},
@@ -3204,7 +3227,7 @@ verifiedAt:"2026年9月16日",
  desc:"実物大のロケットが目印の科学館。プラネタリウムや体験型展示が揃う。",
  tip:"つくば駅から徒歩圏内でアクセスが良く、雨の日プランに組み込みやすい。"},
 
-{region:"栃木", name:"那須ハイランドパーク", area:"那須町", lat:37.0330, lng:140.0330,
+{region:"栃木", name:"那須ハイランドパーク", area:"那須郡那須町", lat:37.0330, lng:140.0330,
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["1日"],
  stayTime:{minMinutes:240, maxMinutes:360},
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"▲ 混雑しやすい"},
@@ -4787,7 +4810,7 @@ verifiedAt:"2026年9月16日",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  congestion:{weekdayAM:"○ 普通", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"△ やや混雑"},
  walletLevel:3,
- price:"メインデッキ 大人1,500円／小中学生900円／4歳以上600円", parking:"yes", access:"都営大江戸線「赤羽橋」駅から徒歩5分",
+ price:"メインデッキ 大人1500円／小中学生900円／4歳以上600円", parking:"yes", access:"都営大江戸線「赤羽橋」駅から徒歩5分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"フットタウン内に飲食店・売店多数。",
  officialUrl:"https://www.tokyotower.co.jp/",
  verifiedAt:"2026年9月16日",
@@ -4797,7 +4820,7 @@ verifiedAt:"2026年9月16日",
 {region:"東京", name:"東京スカイツリー", area:"墨田区", lat:35.7101, lng:139.8107,
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  congestion:{weekdayAM:"○ 普通", weekdayPM:"△ やや混雑", holidayAM:"▲ 混雑しやすい", holidayPM:"▲ 混雑しやすい"},
- price:"天望デッキ 大人1,800円〜（変動制）", parking:"no", access:"東武スカイツリーライン「とうきょうスカイツリー」駅から徒歩すぐ",
+ price:"天望デッキ 大人1800円〜（変動制）", parking:"no", access:"東武スカイツリーライン「とうきょうスカイツリー」駅から徒歩すぐ",
  baby:"おむつ替え・授乳室あり／ベビーカーOK", lunch:"東京ソラマチ内に飲食店・すみだ水族館も隣接。",
  officialUrl:"https://www.tokyo-skytree.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/164259/"}, recommendedBooking:"asoview",
@@ -4805,7 +4828,7 @@ verifiedAt:"2026年9月16日",
  tip:"すみだ水族館とセットで訪れると雨の日でも1日楽しめる。"},
 {region:"東京", name:"ミニチュアミュージアム スモールワールズ", area:"江東区・有明", lat:35.6280, lng:139.7930,
  ages:["4-6歳","低学年","高学年"], weather:["雨"], duration:["半日"],
- price:"大人2,700円程度／子ども1,600円程度（要確認）", parking:"yes", access:"りんかい線「東京テレポート」駅・ゆりかもめ「有明」駅から徒歩圏",
+ price:"大人2700円程度／子ども1600円程度（要確認）", parking:"yes", access:"りんかい線「東京テレポート」駅・ゆりかもめ「有明」駅から徒歩圏",
  baby:"おむつ替えトイレあり／ベビーカーは一部使用制限あり", lunch:"館内にカフェあり。",
  officialUrl:"https://smallworlds.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/158743/"}, recommendedBooking:"asoview",
@@ -4813,7 +4836,7 @@ verifiedAt:"2026年9月16日",
  tip:"完全屋内なので雨の日の予定にぴったり。"},
 {region:"東京", name:"うんこミュージアム TOKYO", area:"港区・お台場", lat:35.6270, lng:139.7745,
  ages:["2-3歳","4-6歳","低学年"], weather:["雨"], duration:["半日"],
- price:"大人2,200円程度／子ども1,400円程度（要確認）", parking:"yes", access:"ゆりかもめ「お台場海浜公園」駅から徒歩3分",
+ price:"大人2200円程度／子ども1400円程度（要確認）", parking:"yes", access:"ゆりかもめ「お台場海浜公園」駅から徒歩3分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"デックス東京ビーチ内に飲食店多数。",
  officialUrl:"https://unko-museum.jp/tokyo/",
  bookingLinks:{asoview:"https://www.asoview.com/base/158505/"}, recommendedBooking:"asoview",
@@ -4823,7 +4846,7 @@ verifiedAt:"2026年9月16日",
  ages:["低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  stayTime:{minMinutes:90, maxMinutes:180},
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"△ やや混雑", holidayPM:"△ やや混雑"},
- price:"一般1,000円程度／高校生以下・18歳未満無料", parking:"no", access:"JR「上野」駅から徒歩10分",
+ price:"一般1000円程度／高校生以下・18歳未満無料", parking:"no", access:"JR「上野」駅から徒歩10分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"上野公園周辺に飲食店多数。",
  officialUrl:"https://www.tnm.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/154827/"}, recommendedBooking:"asoview",
@@ -4842,7 +4865,7 @@ verifiedAt:"2026年9月16日",
  tip:"夏は水遊びエリア「じゃぶじゃぶパラダイス」もあり。"},
 {region:"神奈川", name:"箱根ガラスの森美術館", area:"足柄下郡箱根町", lat:35.2450, lng:139.0180,
  ages:["4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
- price:"大人1,800円程度／子ども無料〜割引あり（要確認）", parking:"yes", access:"箱根登山バス「箱根ガラスの森」下車すぐ",
+ price:"大人1800円程度／子ども無料〜割引あり（要確認）", parking:"yes", access:"箱根登山バス「箱根ガラスの森」下車すぐ",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"館内にレストラン・カフェあり。",
  officialUrl:"https://www.hakone-garasunomori.jp/",
  overnightRecommended:true, hotelArea:"hakone",
@@ -4852,7 +4875,7 @@ verifiedAt:"2026年9月16日",
 {region:"神奈川", name:"横浜イングリッシュガーデン", area:"横浜市西区", lat:35.4550, lng:139.6280,
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["春","秋"],
- price:"大人1,000円程度（季節により変動、要確認）", parking:"yes", access:"JR「横浜」駅から徒歩15分／バス便あり",
+ price:"大人1000円程度（季節により変動、要確認）", parking:"yes", access:"JR「横浜」駅から徒歩15分／バス便あり",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"園内にカフェあり。",
  officialUrl:"https://www.y-eg.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/155326/"}, recommendedBooking:"asoview",
@@ -4896,7 +4919,7 @@ verifiedAt:"2026年9月16日",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["1日"],
  seasons:["夏"],
  holidays:["夏休み"],
- price:"大人1,900円／高校生1,100円／中学生450円／小学生400円／4歳以上200円", parking:"yes", access:"JR総武本線「松尾」駅からバス約20分",
+ price:"大人1900円／高校生1100円／中学生450円／小学生400円／4歳以上200円", parking:"yes", access:"JR総武本線「松尾」駅からバス約20分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"園内に売店・軽食あり。",
  officialUrl:"http://watergarden.hasunuma.co.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/155351/"}, recommendedBooking:"asoview",
@@ -4964,7 +4987,7 @@ verifiedAt:"2026年9月16日",
  tip:"完全屋内で雨の日でもゆっくり楽しめる。"},
 {region:"栃木", name:"那須オルゴール美術館", area:"那須郡那須町", lat:37.0250, lng:140.0850,
  ages:["4-6歳","低学年","高学年"], weather:["雨"], duration:["半日"],
- price:"大人1,000円程度／中高生800円程度／小学生600円程度（要確認）", parking:"yes", access:"東北自動車道「那須IC」から車で約10分",
+ price:"大人1000円程度／中高生800円程度／小学生600円程度（要確認）", parking:"yes", access:"東北自動車道「那須IC」から車で約10分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"館内にカフェあり。",
  officialUrl:null,
  overnightRecommended:true, hotelArea:"nasu",
@@ -4973,7 +4996,7 @@ verifiedAt:"2026年9月16日",
  tip:"静かな雰囲気の館内なので落ち着いて過ごせる子ども向け。"},
 {region:"栃木", name:"那須ステンドグラス美術館", area:"那須郡那須町", lat:37.0280, lng:140.0880,
  ages:["4-6歳","低学年","高学年"], weather:["雨"], duration:["半日"],
- price:"大人1,600円程度（要確認）", parking:"yes", access:"東北自動車道「那須IC」から車で約10分",
+ price:"大人1600円程度（要確認）", parking:"yes", access:"東北自動車道「那須IC」から車で約10分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"館内にショップ・カフェあり。",
  officialUrl:null,
  overnightRecommended:true, hotelArea:"nasu",
@@ -5217,7 +5240,7 @@ verifiedAt:"2026年9月16日",
  congestion:{weekdayAM:"◎ 空いている", weekdayPM:"○ 普通", holidayAM:"▲ 混雑しやすい", holidayPM:"✕ 大変混雑"},
  seasons:["春","冬"],
  holidays:["GW","年末年始"],
- price:"入園料は花の咲き具合により変動（目安：大人300〜1,900円／子ども100〜900円）", parking:"yes", access:"JR両毛線「あしかがフラワーパーク」駅から徒歩3分",
+ price:"入園料は花の咲き具合により変動（目安：大人300〜1900円／子ども100〜900円）", parking:"yes", access:"JR両毛線「あしかがフラワーパーク」駅から徒歩3分",
  baby:"おむつ替えトイレあり／ベビーカーOK", lunch:"園内にレストラン・売店あり。",
  officialUrl:"https://www.ashikaga.co.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/spot/09202cc3310040305/"}, recommendedBooking:"asoview",
@@ -5485,7 +5508,7 @@ verifiedAt:"2026年9月16日",
  overnightRecommended:true, hotelArea:"odawara",
  desc:"起伏に富んだ地形を生かした自然豊かな大型公園。小田原城を模した大型アスレチックや67mの吊り橋、こども列車など遊具が充実しており、1日中遊べる。",
  tip:"入園無料だが駐車場は有料。土日祝や繁忙期は駐車場が事前予約制になる場合があるので公式サイトで確認を。"},
-{region:"神奈川", name:"観音崎公園", area:"横須賀市鴨居", lat:35.256557, lng:139.739551,
+{region:"神奈川", name:"観音崎公園", area:"横須賀市鴨居", lat:35.256557, lng:139.739551, genre:"公園",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  price:"入園無料（自然博物館は別途入館料）", parking:"yes", access:"京急線「馬堀海岸駅」からバス",
  baby:"おむつ替えあり／一部未舗装路あり", lunch:"園内にレストランあり。",
@@ -5606,7 +5629,7 @@ verifiedAt:"2026年9月16日",
  overnightRecommended:true, hotelArea:"izu",
  desc:"温泉熱を利用してワニや熱帯植物を育てる動植物園。世界最多クラスのワニのコレクションのほか、日本で唯一のニシレッサーパンダ・アマゾンマナティーの展示も見どころ。園内の3分の2が屋根付きで雨の日も安心。",
  tip:"駅から徒歩1分と好アクセス。本園・分園間は無料シャトルバスで移動でき、全て回ると2〜2.5時間ほど楽しめる。"},
-{region:"静岡", name:"浜名湖パルパル", area:"浜松市西区舘山寺町", lat:34.764511, lng:137.617327,
+{region:"静岡", name:"浜名湖パルパル", area:"浜松市西区舘山寺町", lat:34.764511, lng:137.617327, genre:"遊園地・テーマパーク",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  price:"大人1300円台／小学生900円台／3歳〜未就学児800円台（乗り物は別途）", parking:"yes", access:"JR「浜松駅」北口からバス約45分",
  baby:"おむつ替えあり／ベビーカーOK。3歳の誕生日は親子3名入園無料の特典あり", lunch:"園内にレストラン「ぱくぱく大食堂」あり。",
@@ -6313,7 +6336,7 @@ verifiedAt:"2026年9月16日",
 // ------------------------------------------------------------------
 // 📌 追加候補リスト（Phase24）：館山・南房総エリア（続き）
 // ------------------------------------------------------------------
-{region:"千葉", name:"館山城・城山公園", area:"館山市館山", lat:34.980712, lng:139.856708,
+{region:"千葉", name:"館山城・城山公園", area:"館山市館山", lat:34.980712, lng:139.856708, genre:"公園",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["春"],
  price:"公園は無料（館山城・博物館は大人400円／小中高生200円）", parking:"yes", access:"JR「館山」駅からバスで約10分",
@@ -6727,7 +6750,16 @@ const SPOTS_SAITAMA_EXTRA = [
  baby:"館内ベビーカーOK", lunch:"周辺に飲食店あり。",
  officialUrl:"https://ningyo-muse.saitama.jp/",
  desc:"人形のまち・岩槻にある、雛人形や五月人形などの節句人形を中心とした全国唯一の公立人形専門博物館。江戸時代からの人形製作の歴史や技術を、実物展示や映像で分かりやすく紹介。高校生以下は入館無料で、雨の日の学習にもおすすめ。",
- tip:"高校生以下無料のため家族での来館がしやすい。岩槻城址公園とセットで訪れやすい立地。"}
+ tip:"高校生以下無料のため家族での来館がしやすい。岩槻城址公園とセットで訪れやすい立地。"},
+{region:"埼玉", name:"キッズランドUS 埼玉熊谷店", area:"熊谷市本石", lat:36.146259, lng:139.378683,
+ ages:["0-1歳","2-3歳","4-6歳","低学年"], weather:["晴れ","雨"], duration:["半日"],
+ price:"700円台〜（時間制・遊び放題プランあり）", parking:"yes", access:"イオン熊谷店3F（秩父鉄道「上熊谷」駅から徒歩約6分）",
+ baby:"授乳室・おむつ替え台あり／離乳食持ち込み可", lunch:"イオン熊谷店内にフードコート・飲食店多数。",
+ officialUrl:"https://kidsland-us.com/",
+ verifiedAt:"2026年9月20日",
+ bookingLinks:{asoview:"https://www.asoview.com/base/156927/"}, recommendedBooking:"asoview",
+ desc:"巨大ジャングルジムやボールプール、メリーゴーランド、トランポリンなどが揃う室内型キッズパーク。イオン熊谷店3Fに位置し、天候に左右されず雨の日でも思いっきり体を動かして遊べる。",
+ tip:"イオン熊谷店の駐車場（1000台超）がそのまま使えるので車での来店がしやすい。ショッピングのついでに立ち寄りやすい立地。"}
 ];
 SPOTS.push(...SPOTS_SAITAMA_EXTRA);
 
@@ -6769,7 +6801,7 @@ const SPOTS_ONSEN_SPA_2 = [
 {region:"東京", name:"万葉の湯 町田", area:"町田市鶴間", lat:35.530, lng:139.440,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"入館セット（入浴＋浴衣＋タオル）大人2,530円前後／小学生以下は割安（時間帯・曜日で変動）", parking:"yes", access:"東急田園都市線・小田急「南町田グランベリーパーク」駅から無料シャトルバスあり",
+ price:"入館セット（入浴＋浴衣＋タオル）大人2530円前後／小学生以下は割安（時間帯・曜日で変動）", parking:"yes", access:"東急田園都市線・小田急「南町田グランベリーパーク」駅から無料シャトルバスあり",
  baby:"ベビーバス・おむつ交換台・調乳サービスあり／おむつが外れていない子は大浴場不可（別料金の貸切風呂で対応可）", lunch:"和食中心の食事処あり。",
  officialUrl:"https://www.manyo.co.jp/machida/",
  stayTime:{minMinutes:150, maxMinutes:300},
@@ -6778,7 +6810,7 @@ const SPOTS_ONSEN_SPA_2 = [
 {region:"東京", name:"竜泉寺の湯 八王子みなみ野店", area:"八王子市片倉町", lat:35.620, lng:139.340,
  genre:"温泉・スパ",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人（平日）1,000円台／子供500円台（施設・時間帯により変動、岩盤浴は中学生以上で別途）", parking:"yes", access:"JR「八王子みなみ野」「八王子」「橋本」「北野」各駅から無料シャトルバスあり",
+ price:"大人（平日）1000円台／子供500円台（施設・時間帯により変動、岩盤浴は中学生以上で別途）", parking:"yes", access:"JR「八王子みなみ野」「八王子」「橋本」「北野」各駅から無料シャトルバスあり",
  baby:"「ちびっこの湯」あり／小学生以下は保護者同伴、7歳以上・120cm以上の混浴不可", lunch:"お食事処あり（キッズメニュー・サラダバーあり）。",
  officialUrl:"https://hachioji.ryusenjinoyu.com/",
  stayTime:{minMinutes:150, maxMinutes:300},
@@ -6803,7 +6835,7 @@ const SPOTS_ONSEN_SPA_3 = [
 {region:"千葉", name:"東京湯楽城", area:"富里市七栄", lat:35.782, lng:140.348,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人1,800円台／小人900円台（月曜定休）", parking:"yes", access:"京成本線「京成成田」駅・JR「成田」駅からバスあり／車の場合は東関東自動車道「富里IC」から近い",
+ price:"大人1800円台／小人900円台（月曜定休）", parking:"yes", access:"京成本線「京成成田」駅・JR「成田」駅からバスあり／車の場合は東関東自動車道「富里IC」から近い",
  baby:"キッズスペースあり／おむつ替えあり", lunch:"館内に食事処・フードコートあり。",
  officialUrl:"https://chi-hotelsresorts.com/",
  stayTime:{minMinutes:180, maxMinutes:300},
@@ -6821,7 +6853,7 @@ const SPOTS_ONSEN_SPA_3 = [
 {region:"埼玉", name:"おふろcafé utatane", area:"さいたま市北区大成町", lat:35.912, lng:139.633,
  genre:"温泉・スパ",
  ages:["低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"入館料（時間制）2,000円台〜（曜日・時間帯で変動）", parking:"yes", access:"JR「宮原」駅から徒歩約15分／車の場合は東北自動車道「岩槻IC」から近い",
+ price:"入館料（時間制）2000円台〜（曜日・時間帯で変動）", parking:"yes", access:"JR「宮原」駅から徒歩約15分／車の場合は東北自動車道「岩槻IC」から近い",
  baby:"3歳未満はおむつ・トレーニングパンツ着用での入浴不可（ベビーバスで対応）", lunch:"併設カフェあり。ソフトクリーム・軽食メニューが充実。",
  officialUrl:"https://ofurocafe-utatane.com/",
  stayTime:{minMinutes:240, maxMinutes:360},
@@ -6837,7 +6869,7 @@ const SPOTS_POOL = [
 {region:"千葉", name:"龍宮城スパ・ホテル三日月", area:"木更津市北浜町", lat:35.410, lng:139.913,
  genre:"プール・水遊び",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"日帰りプール利用 大人3,000円台〜（施設・季節により変動）", parking:"yes", access:"JR内房線「木更津」駅からバスあり／車の場合は館山自動車道「木更津南IC」から近い",
+ price:"日帰りプール利用 大人3000円台〜（施設・季節により変動）", parking:"yes", access:"JR内房線「木更津」駅からバスあり／車の場合は館山自動車道「木更津南IC」から近い",
  baby:"水深40cmのキッズプールあり／おむつ替えあり", lunch:"館内にレストラン・軽食コーナーあり。",
  officialUrl:"https://mikazuki.co.jp/",
  stayTime:{minMinutes:180, maxMinutes:360},
@@ -6847,7 +6879,7 @@ const SPOTS_POOL = [
  genre:"プール・水遊び",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  seasons:["夏"], holidays:["夏休み"],
- price:"入園＋プールセット 大人3,800円台〜（時期・年齢により変動）", parking:"yes", access:"東武動物公園駅からバス5分（東武動物公園内）",
+ price:"入園＋プールセット 大人3800円台〜（時期・年齢により変動）", parking:"yes", access:"東武動物公園駅からバス5分（東武動物公園内）",
  baby:"幼児用プールあり／おむつ替えあり", lunch:"園内にレストラン・売店あり。",
  officialUrl:"https://www.tobuzoo.com/pool/",
  stayTime:{minMinutes:180, maxMinutes:360},
@@ -6863,7 +6895,7 @@ const SPOTS_OUTDOOR = [
 {region:"神奈川", name:"フォレストアドベンチャー・よこはま", area:"横浜市青葉区", lat:35.567, lng:139.510,
  genre:"アスレチック・アウトドア",
  ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"コースにより2,000〜4,500円程度（身長・年齢制限あり）", parking:"yes", access:"東急田園都市線「青葉台」駅からバス",
+ price:"コースにより2000〜4500円程度（身長・年齢制限あり）", parking:"yes", access:"東急田園都市線「青葉台」駅からバス",
  baby:"未就学児は対象外のコースが多い／付き添いのみ利用可", lunch:"周辺の飲食店を利用（園内に軽食程度）。",
  officialUrl:"https://foret-aventure.jp/",
  stayTime:{minMinutes:120, maxMinutes:180},
@@ -6872,7 +6904,7 @@ const SPOTS_OUTDOOR = [
 {region:"神奈川", name:"フォレストアドベンチャー・小田原", area:"小田原市", lat:35.264, lng:139.114,
  genre:"アスレチック・アウトドア",
  ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"コースにより2,000〜4,500円程度（身長・年齢制限あり）", parking:"yes", access:"JR「小田原」駅からバス",
+ price:"コースにより2000〜4500円程度（身長・年齢制限あり）", parking:"yes", access:"JR「小田原」駅からバス",
  baby:"未就学児は対象外のコースが多い", lunch:"周辺の飲食店を利用。",
  officialUrl:"https://foret-aventure.jp/",
  stayTime:{minMinutes:120, maxMinutes:180},
@@ -6881,7 +6913,7 @@ const SPOTS_OUTDOOR = [
 {region:"埼玉", name:"フォレストアドベンチャー・秩父", area:"秩父市", lat:35.990, lng:139.050,
  genre:"アスレチック・アウトドア",
  ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"コースにより2,000〜4,500円程度（身長・年齢制限あり）", parking:"yes", access:"西武秩父線「西武秩父」駅から車",
+ price:"コースにより2000〜4500円程度（身長・年齢制限あり）", parking:"yes", access:"西武秩父線「西武秩父」駅から車",
  baby:"未就学児は対象外のコースが多い", lunch:"周辺の飲食店を利用。",
  officialUrl:"https://foret-aventure.jp/",
  stayTime:{minMinutes:120, maxMinutes:180},
@@ -6890,7 +6922,7 @@ const SPOTS_OUTDOOR = [
 {region:"茨城", name:"フォレストアドベンチャー・つくば", area:"つくば市", lat:36.150, lng:140.130,
  genre:"アスレチック・アウトドア",
  ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"コースにより2,000〜4,500円程度（身長・年齢制限あり）", parking:"yes", access:"つくばエクスプレス「つくば」駅から車",
+ price:"コースにより2000〜4500円程度（身長・年齢制限あり）", parking:"yes", access:"つくばエクスプレス「つくば」駅から車",
  baby:"未就学児は対象外のコースが多い", lunch:"周辺の飲食店を利用。",
  officialUrl:"https://foret-aventure.jp/",
  stayTime:{minMinutes:120, maxMinutes:180},
@@ -6899,7 +6931,7 @@ const SPOTS_OUTDOOR = [
 {region:"群馬", name:"フォレストアドベンチャー・上野", area:"多野郡上野村", lat:36.050, lng:138.750,
  genre:"アスレチック・アウトドア",
  ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"コースにより2,000〜4,500円程度（身長・年齢制限あり）", parking:"yes", access:"上信越自動車道「藤岡IC」から車で約1時間",
+ price:"コースにより2000〜4500円程度（身長・年齢制限あり）", parking:"yes", access:"上信越自動車道「藤岡IC」から車で約1時間",
  baby:"未就学児は対象外のコースが多い", lunch:"周辺の飲食店を利用。",
  officialUrl:"https://foret-aventure.jp/",
  stayTime:{minMinutes:120, maxMinutes:180},
@@ -6916,7 +6948,7 @@ const SPOTS_FRUIT = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["冬","春","夏","秋"],
- price:"品目・時期により変動（いちご狩り等は1,500〜2,500円程度）", parking:"yes", access:"関越自動車道「沼田IC」から車ですぐ",
+ price:"品目・時期により変動（いちご狩り等は1500〜2500円程度）", parking:"yes", access:"関越自動車道「沼田IC」から車ですぐ",
  baby:"おむつ替えは要問合せ／ベビーカーは一部通路のみ利用可", lunch:"直売所での軽食程度。周辺に飲食店あり。",
  officialUrl:"http://www.harada-nouen.com/",
  bookingLinks:{asoview:"https://www.asoview.com/base/995/"},
@@ -6953,7 +6985,7 @@ const SPOTS_RANCH_2 = [
 {region:"茨城", name:"ダチョウ王国 石岡ファーム", area:"石岡市半ノ木", lat:36.146, lng:140.244,
  genre:"牧場",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
- price:"大人（中学生以上）1,200円台／3歳以上700円台", parking:"yes", access:"常磐自動車道「石岡小美玉スマートIC」から車で約10分",
+ price:"大人（中学生以上）1200円台／3歳以上700円台", parking:"yes", access:"常磐自動車道「石岡小美玉スマートIC」から車で約10分",
  baby:"おむつ替えあり／ベビーカーOK", lunch:"園内に軽食コーナーあり。",
  officialUrl:"https://dacho.co.jp/",
  stayTime:{minMinutes:90, maxMinutes:150},
@@ -6969,7 +7001,7 @@ const SPOTS_ONSEN_SPA_4 = [
 {region:"神奈川", name:"RAKU SPA 鶴見", area:"横浜市鶴見区元宮", lat:35.5188, lng:139.6519,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人1,958円台（土日祝2,178円台）／小人（4歳〜小学生）650円台", parking:"yes", access:"JR「川崎」「鶴見」「武蔵小杉」各駅から無料送迎バスあり",
+ price:"大人1958円台（土日祝2178円台）／小人（4歳〜小学生）650円台", parking:"yes", access:"JR「川崎」「鶴見」「武蔵小杉」各駅から無料送迎バスあり",
  baby:"授乳室・ベビーバス・ベビーチェアあり／おむつが外れていない子は湯船不可", lunch:"和洋中韓200種類以上のお食事処あり（キッズメニューあり）。",
  officialUrl:"https://rakuspa.com/tsurumi/",
  stayTime:{minMinutes:180, maxMinutes:300},
@@ -7031,7 +7063,7 @@ const SPOTS_POOL_2 = [
  genre:"プール・水遊び",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["1日"],
  seasons:["夏"], holidays:["夏休み"],
- price:"1日券 大人4,400〜4,900円台／小学生2,400〜2,600円台／幼児（3歳以上）1,200〜1,400円台（日により変動）", parking:"yes", access:"JR「大磯」駅からタクシーで約9分／小田原厚木道路「大磯IC」から約5分",
+ price:"1日券 大人4400〜4900円台／小学生2400〜2600円台／幼児（3歳以上）1200〜1400円台（日により変動）", parking:"yes", access:"JR「大磯」駅からタクシーで約9分／小田原厚木道路「大磯IC」から約5分",
  baby:"おむつが外れていない子は水遊び用パンツ＋水着で利用可", lunch:"プールサイドに軽食店多数（食べ物の持ち込みは不可）。",
  officialUrl:"https://www.princehotels.co.jp/pool/oiso/",
  stayTime:{minMinutes:240, maxMinutes:420},
@@ -7048,7 +7080,7 @@ const SPOTS_OUTDOOR_2 = [
  genre:"アスレチック・アウトドア",
  ages:["4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  seasons:["春","夏","秋"],
- price:"入園料600円（4歳以上）／1DAYパスポート2,000円程度", parking:"yes", access:"館山自動車道「君津IC」から車で約25分",
+ price:"入園料600円（4歳以上）／1DAYパスポート2000円程度", parking:"yes", access:"館山自動車道「君津IC」から車で約25分",
  baby:"おむつ替えは要問合せ", lunch:"レストラン・フードコートあり。",
  officialUrl:null,
  stayTime:{minMinutes:180, maxMinutes:300},
@@ -7057,7 +7089,7 @@ const SPOTS_OUTDOOR_2 = [
 {region:"茨城", name:"こもれび森のイバライド", area:"稲敷市上君山", lat:35.9382, lng:140.2364,
  genre:"アスレチック・アウトドア",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人（中学生以上）1,200円台／子供（4歳〜小学生）800円台／3歳以下無料", parking:"yes", access:"JR常磐線「佐貫」駅からタクシーで約30分",
+ price:"大人（中学生以上）1200円台／子供（4歳〜小学生）800円台／3歳以下無料", parking:"yes", access:"JR常磐線「佐貫」駅からタクシーで約30分",
  baby:"おむつ替えあり", lunch:"バイキングレストラン「シュー」あり。",
  officialUrl:"https://www.ibaraido.co.jp/",
  stayTime:{minMinutes:180, maxMinutes:300},
@@ -7083,7 +7115,7 @@ const SPOTS_FRUIT_2 = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["冬","春"],
- price:"いちご狩り 1,200〜1,700円程度（時期により変動、予約不要・時間無制限食べ放題）", parking:"yes", access:"北関東自動車道「鉾田IC」から車で約20分",
+ price:"いちご狩り 1200〜1700円程度（時期により変動、予約不要・時間無制限食べ放題）", parking:"yes", access:"北関東自動車道「鉾田IC」から車で約20分",
  baby:"おむつ替えは要問合せ", lunch:"直売所での軽食程度。",
  officialUrl:"https://www.fukasaku-ichigo.com/",
  bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000202461/"},
@@ -7094,7 +7126,7 @@ const SPOTS_FRUIT_2 = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  seasons:["冬","春"],
- price:"平日 大人2,400円台／小学生1,700円台／3歳以上1,400円台（3歳未満無料、休日は割高）", parking:"yes", access:"常磐自動車道「常総IC」から車で約2分",
+ price:"平日 大人2400円台／小学生1700円台／3歳以上1400円台（3歳未満無料、休日は割高）", parking:"yes", access:"常磐自動車道「常総IC」から車で約2分",
  baby:"通路が広くベビーカー・車椅子でも入園可", lunch:"併設カフェ「GRANBERRY」でいちごスイーツあり。",
  officialUrl:"https://granberry-ichigo.jp/",
  bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000202036/"},
@@ -7105,7 +7137,7 @@ const SPOTS_FRUIT_2 = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["冬","春","夏","秋"],
- price:"品目により1,800〜2,000円程度（いちご・さくらんぼ・ぶどう・りんご等）", parking:"yes", access:"関越自動車道「月夜野IC」から車で約15分",
+ price:"品目により1800〜2000円程度（いちご・さくらんぼ・ぶどう・りんご等）", parking:"yes", access:"関越自動車道「月夜野IC」から車で約15分",
  baby:"おむつ替えは要問合せ", lunch:"BBQ・ケーキセット等のメニューあり。",
  officialUrl:"https://www.mogitore.jp/",
  bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000202829/"},
@@ -7117,7 +7149,7 @@ const SPOTS_FRUIT_2 = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["夏","秋"],
- price:"大人1,500〜2,500円程度／小学生1,000〜1,500円程度（時期・品種により変動）", parking:"yes", access:"横浜新道「戸塚IC」から車で約10〜15分／JR「戸塚」駅からバス「影取」下車徒歩2〜3分",
+ price:"大人1500〜2500円程度／小学生1000〜1500円程度（時期・品種により変動）", parking:"yes", access:"横浜新道「戸塚IC」から車で約10〜15分／JR「戸塚」駅からバス「影取」下車徒歩2〜3分",
  baby:"授乳室・おむつ替えあり／ベビーカーOK", lunch:"直売所で購入した果物をその場でどうぞ。",
  officialUrl:"https://www.s-kajuen.com/",
  bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000183272/"},
@@ -7170,7 +7202,7 @@ const SPOTS_ONSEN_SPA_5 = [
 {region:"千葉", name:"スパメッツァおおたか 竜泉寺の湯", area:"流山市おおたかの森西", lat:35.8688, lng:139.9142,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人1,000円台〜（時間帯・曜日により変動）", parking:"yes", access:"東武アーバンパークライン・つくばエクスプレス「流山おおたかの森」駅直結",
+ price:"大人1000円台〜（時間帯・曜日により変動）", parking:"yes", access:"東武アーバンパークライン・つくばエクスプレス「流山おおたかの森」駅直結",
  baby:"おむつ替えあり／ちびっこ向けの浅い浴槽あり", lunch:"お食事処あり。おおたかの森駅周辺にも飲食店多数。",
  officialUrl:null,
  stayTime:{minMinutes:150, maxMinutes:300},
@@ -7179,7 +7211,7 @@ const SPOTS_ONSEN_SPA_5 = [
 {region:"神奈川", name:"極楽湯 横浜芹が谷店", area:"横浜市港南区芹が谷", lat:35.3897, lng:139.5642,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
- price:"大人1,050円台／小人（4歳〜小学生）550円台", parking:"yes", access:"JR「東戸塚」駅・京急「上大岡」駅から無料送迎バスあり",
+ price:"大人1050円台／小人（4歳〜小学生）550円台", parking:"yes", access:"JR「東戸塚」駅・京急「上大岡」駅から無料送迎バスあり",
  baby:"おむつが外れていない子は無料のベビーバスを利用", lunch:"お食事処・ほぐし処あり。",
  officialUrl:"https://www.gokurakuyu.ne.jp/tempo/serigaya/",
  stayTime:{minMinutes:150, maxMinutes:240},
@@ -7206,7 +7238,7 @@ const SPOTS_ONSEN_SPA_5 = [
 {region:"東京", name:"東京荻窪天然温泉 なごみの湯", area:"杉並区上荻", lat:35.7042, lng:139.6197,
  genre:"温泉・スパ",
  ages:["低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
- price:"大人（平日）1,980円台／子供1,070円台／幼児540円台（2026年9月時点、料金は変更の可能性あり）", parking:"yes", access:"JR「荻窪」駅から徒歩1〜2分",
+ price:"大人（平日）1980円台／子供1070円台／幼児540円台（2026年9月時点、料金は変更の可能性あり）", parking:"yes", access:"JR「荻窪」駅から徒歩1〜2分",
  baby:"※2026年10月1日より未就学児の利用不可になる予定（9月時点ではまだ利用可）", lunch:"和洋中の食事処あり。",
  officialUrl:"https://www.nagomino-yu.com/",
  stayTime:{minMinutes:120, maxMinutes:240},
@@ -7223,7 +7255,7 @@ const SPOTS_POOL_3 = [
  genre:"プール・水遊び",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  seasons:["夏"], holidays:["夏休み"],
- price:"大人1,190円程度（2026年は7/18〜8/31開催予定）", parking:"yes", access:"JR「青堀」駅からバス約15分、富津公園内",
+ price:"大人1190円程度（2026年は7/18〜8/31開催予定）", parking:"yes", access:"JR「青堀」駅からバス約15分、富津公園内",
  baby:"幼児プールあり／ウォータースライダーは身長120cm以上が対象", lunch:"公園内に売店あり。",
  officialUrl:null,
  stayTime:{minMinutes:180, maxMinutes:300},
@@ -7264,7 +7296,7 @@ const SPOTS_OUTDOOR_3 = [
 {region:"神奈川", name:"ツリークロスアドベンチャー 厚木・七沢", area:"厚木市七沢", lat:35.4278, lng:139.2686,
  genre:"アスレチック・アウトドア",
  ages:["低学年","高学年"], weather:["晴れ"], duration:["半日"],
- price:"4,000円程度〜（コース・時期により変動）", parking:"yes", access:"小田急線「本厚木」駅から車で約20分、七沢温泉郷隣接",
+ price:"4000円程度〜（コース・時期により変動）", parking:"yes", access:"小田急線「本厚木」駅から車で約20分、七沢温泉郷隣接",
  baby:"入場・見学は無料／小さい子向けにツリークロスアスレチック（疑似体験）やトランポリン、ハンモックあり", lunch:"お弁当持参でピクニック可（テーブルあり）。周辺に飲食店・七沢温泉郷あり。",
  officialUrl:"https://treecross-advtr.storeinfo.jp/",
  stayTime:{minMinutes:120, maxMinutes:150},
@@ -7336,7 +7368,7 @@ const SPOTS_OUTDOOR_4 = [
  genre:"アスレチック・アウトドア",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["春","夏"],
- price:"入場料1,600円前後（1人2kgまで無料、駐車場無料）", parking:"yes", access:"木更津金田ICから車で約5分",
+ price:"入場料1600円前後（1人2kgまで無料、駐車場無料）", parking:"yes", access:"木更津金田ICから車で約5分",
  baby:"駐車場近くトイレもきれいと口コミにあり",
  officialUrl:null,
  stayTime:{minMinutes:120, maxMinutes:240},
@@ -7355,7 +7387,7 @@ const SPOTS_OUTDOOR_5 = [
  genre:"アスレチック・アウトドア",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  seasons:["冬"],
- price:"たんばランド1日券1,800円（2歳以下無料、リフト券提示で800円）", parking:"yes", access:"関越自動車道「沼田IC」から車で約35分／JR「沼田」駅から無料送迎バス（要予約）",
+ price:"たんばランド1日券1800円（2歳以下無料、リフト券提示で800円）", parking:"yes", access:"関越自動車道「沼田IC」から車で約35分／JR「沼田」駅から無料送迎バス（要予約）",
  baby:"スキー・スノーボードと分離された専用エリアのため小さな子でも安全", lunch:"リゾートセンター内にレストランあり。",
  officialUrl:"https://www.tambara.co.jp/",
  stayTime:{minMinutes:120, maxMinutes:240},
@@ -7365,7 +7397,7 @@ const SPOTS_OUTDOOR_5 = [
  genre:"アスレチック・アウトドア",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
  seasons:["冬"],
- price:"雪遊び券（キッズパーク専用）子供1日2,200円／4時間1,600円／2時間1,200円", parking:"yes", access:"上信越自動車道「碓氷軽井沢IC」から車で約40分／軽井沢駅から毎日シャトルバスあり",
+ price:"雪遊び券（キッズパーク専用）子供1日2200円／4時間1600円／2時間1200円", parking:"yes", access:"上信越自動車道「碓氷軽井沢IC」から車で約40分／軽井沢駅から毎日シャトルバスあり",
  baby:"授乳室・おむつ交換室あり／迷子防止リストバンド無料配布", lunch:"レストランにキッズチェア・ファミリー優先席あり（全メニューアレルギー表示）。",
  officialUrl:"https://karuizawa-snowpark.com/",
  stayTime:{minMinutes:120, maxMinutes:240},
@@ -7479,7 +7511,7 @@ const SPOTS_CAMP_1 = [
 {region:"千葉", name:"高滝湖グランピングリゾート", area:"市原市養老", lat:35.377, lng:140.157,
  genre:"キャンプ場・グランピング",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["1日"],
- price:"1泊2食付き1名16,000円〜（平日）", parking:"yes", access:"小湊鉄道「高滝」駅から徒歩約9分／圏央道「市原鶴舞IC」から車で約8分",
+ price:"1泊2食付き1名16000円〜（平日）", parking:"yes", access:"小湊鉄道「高滝」駅から徒歩約9分／圏央道「市原鶴舞IC」から車で約8分",
  baby:"おむつ交換・ベビーチェア等は要問合せ", lunch:"地元食材のBBQ（プライベートBBQハウス、冷暖房完備）。",
  officialUrl:"https://www.takatakiko-glamping.com/",
  bookingLinks:{jalan:"https://www.jalan.net/yad372767/"},
@@ -7490,7 +7522,7 @@ const SPOTS_CAMP_1 = [
 {region:"埼玉", name:"ノーラ名栗", area:"飯能市下名栗", lat:35.897, lng:139.180,
  genre:"キャンプ場・グランピング",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日","1日"],
- price:"グランピング1泊2食付き2名30,000円〜／日帰りBBQは要問合せ（4〜12月）", parking:"yes", access:"西武池袋線「飯能駅」からバスで約41分",
+ price:"グランピング1泊2食付き2名30000円〜／日帰りBBQは要問合せ（4〜12月）", parking:"yes", access:"西武池袋線「飯能駅」からバスで約41分",
  baby:"ベビーチェア・おむつ交換台あり", lunch:"北欧風BBQ「コッコバーベキュー」（手ぶらOK）。",
  officialUrl:"https://nolla-naguri.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/base/161620/"},
@@ -7618,7 +7650,7 @@ const SPOTS_SKATE_1 = [
 {region:"東京", name:"東大和スケートセンター（BIGBOX東大和）", area:"東大和市桜が丘", lat:35.7520, lng:139.4260,
  genre:"スケート・ボウリング",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["雨"], duration:["半日"],
- price:"滑走料 大人1,300円台／子ども700円台、貸靴 大人500円台／子ども300円台", parking:"yes", access:"西武拝島線「東大和市駅」から徒歩1分",
+ price:"滑走料 大人1300円台／子ども700円台、貸靴 大人500円台／子ども300円台", parking:"yes", access:"西武拝島線「東大和市駅」から徒歩1分",
  baby:"靴のまま入れる幼児向け「アイスキッズエリア」あり（定期開催）", lunch:"館内にハンバーグレストラン「BURGCAMP」あり。",
  officialUrl:"https://www.seibu-leisure.co.jp/web/iceskate/index.html",
  bookingLinks:{asoview:"https://www.asoview.com/base/116593/"},
@@ -7628,7 +7660,7 @@ const SPOTS_SKATE_1 = [
 {region:"神奈川", name:"横浜銀行アイスアリーナ", area:"横浜市神奈川区広台太田町", lat:35.4757, lng:139.6302,
  genre:"スケート・ボウリング",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["雨"], duration:["半日"],
- price:"滑走料 大人1,300円台／子ども800円台（貸靴付きプランあり）", parking:"yes", access:"JR「東神奈川」駅から徒歩5分",
+ price:"滑走料 大人1300円台／子ども800円台（貸靴付きプランあり）", parking:"yes", access:"JR「東神奈川」駅から徒歩5分",
  baby:"キッズルーム・授乳室・おむつ替え室完備", lunch:"館内にイートインできるコンビニあり。",
  officialUrl:"https://yokohama-icearena.jp/",
  bookingLinks:{asoview:"https://www.asoview.com/spot/spot0000052311/", jalan:"https://www.jalan.net/kankou/spt_guide000000187056/"}, recommendedBooking:"jalan",
@@ -7838,7 +7870,7 @@ const SPOTS_ONSEN_SPA_6 = [
 {region:"埼玉", name:"竜泉寺の湯 草加・谷塚店", area:"草加市谷塚上町", lat:35.8375, lng:139.8058,
  genre:"温泉・スパ",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人950円台（土日祝1,100円台）／小人300円台／幼児無料", parking:"yes", access:"東武スカイツリーライン「草加」駅・「谷塚」駅から無料送迎バスあり",
+ price:"大人950円台（土日祝1100円台）／小人300円台／幼児無料", parking:"yes", access:"東武スカイツリーライン「草加」駅・「谷塚」駅から無料送迎バスあり",
  baby:"※中学生未満のお子様のみでの利用は不可（保護者同伴が必要）", lunch:"お食事処あり。",
  officialUrl:"https://ryusenjinoyu.com/souka/",
  stayTime:{minMinutes:150, maxMinutes:300},
@@ -7847,7 +7879,7 @@ const SPOTS_ONSEN_SPA_6 = [
 {region:"茨城", name:"御老公の湯 境店", area:"猿島郡境町", lat:36.1103, lng:139.7089,
  genre:"温泉・スパ",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
- price:"大人（中学生以上・平日）1,400円台（土日祝1,600円台）／小学生660円台／小学生未満無料", parking:"yes", access:"JR「古河」駅からタクシーで約25分、または送迎バスあり",
+ price:"大人（中学生以上・平日）1400円台（土日祝1600円台）／小学生660円台／小学生未満無料", parking:"yes", access:"JR「古河」駅からタクシーで約25分、または送迎バスあり",
  baby:"※3歳未満のお子様は大浴場での入浴不可", lunch:"お食事処あり。館内で大衆演劇の観劇も可能（別途観劇料）。",
  officialUrl:null,
  stayTime:{minMinutes:120, maxMinutes:240},
@@ -7863,7 +7895,7 @@ const SPOTS_ONSEN_SPA_7 = [
 {region:"東京", name:"東京豊洲 万葉倶楽部", area:"江東区豊洲", lat:35.6443, lng:139.7810,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人2,000円台〜（時間帯・曜日により変動）", parking:"yes", access:"ゆりかもめ「市場前」駅から徒歩約6分／東京メトロ・都営地下鉄「豊洲」駅から無料送迎バスあり",
+ price:"大人2000円台〜（時間帯・曜日により変動）", parking:"yes", access:"ゆりかもめ「市場前」駅から徒歩約6分／東京メトロ・都営地下鉄「豊洲」駅から無料送迎バスあり",
  baby:"授乳室・おむつ替え台あり／離乳食持ち込み可", lunch:"館内に食事処あり。",
  officialUrl:"https://www.manyo.co.jp/toyosu/",
  stayTime:{minMinutes:180, maxMinutes:360},
@@ -7872,7 +7904,7 @@ const SPOTS_ONSEN_SPA_7 = [
 {region:"神奈川", name:"横浜みなとみらい 万葉倶楽部", area:"横浜市中区新港", lat:35.4560, lng:139.6382,
  genre:"温泉・スパ",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人2,000円台〜（時間帯・曜日により変動）", parking:"yes", access:"みなとみらい線「みなとみらい」駅から徒歩約5分／横浜駅西口から無料シャトルバスあり",
+ price:"大人2000円台〜（時間帯・曜日により変動）", parking:"yes", access:"みなとみらい線「みなとみらい」駅から徒歩約5分／横浜駅西口から無料シャトルバスあり",
  baby:"離乳食持ち込み可", lunch:"館内に食事処あり。",
  officialUrl:"https://www.manyo.co.jp/yokohama/",
  stayTime:{minMinutes:180, maxMinutes:360},
@@ -7881,7 +7913,7 @@ const SPOTS_ONSEN_SPA_7 = [
 {region:"埼玉", name:"おふろcafé ハレニワの湯", area:"熊谷市久保島", lat:36.1710, lng:139.3449,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人1,500〜2,000円程度（時間帯により変動）", parking:"yes", access:"関越自動車道「東松山IC」または「花園IC」から車で約20〜30分",
+ price:"大人1500〜2000円程度（時間帯により変動）", parking:"yes", access:"関越自動車道「東松山IC」または「花園IC」から車で約20〜30分",
  baby:"授乳室・おむつ替え台あり／おむつが外れていない子もスイムパンツ着用でキッズ風呂を利用可", lunch:"レストラン「ハレニワ食堂」・カフェあり。",
  officialUrl:"https://ofurocafe-hareniwa.com/",
  stayTime:{minMinutes:180, maxMinutes:360},
@@ -7897,7 +7929,7 @@ const SPOTS_ONSEN_SPA_8 = [
 {region:"神奈川", name:"小田原お堀端 万葉の湯", area:"小田原市栄町", lat:35.2543, lng:139.1572,
  genre:"温泉・スパ",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人1,500円台〜（時間帯により変動）", parking:"yes", access:"小田原駅から徒歩約5分",
+ price:"大人1500円台〜（時間帯により変動）", parking:"yes", access:"小田原駅から徒歩約5分",
  baby:"おむつ替え台あり／離乳食持ち込み可", lunch:"お食事処・宴会メニューが充実。",
  officialUrl:null,
  stayTime:{minMinutes:120, maxMinutes:240},
@@ -7906,7 +7938,7 @@ const SPOTS_ONSEN_SPA_8 = [
 {region:"埼玉", name:"ビオリゾート ホテル＆スパ オーパークおごせ", area:"入間郡越生町上野", lat:35.9466, lng:139.2948,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日","1日"],
- price:"大人3,000円前後〜（プランにより変動）", parking:"yes", access:"関越自動車道「鶴ヶ島IC」から車で約30分",
+ price:"大人3000円前後〜（プランにより変動）", parking:"yes", access:"関越自動車道「鶴ヶ島IC」から車で約30分",
  baby:"授乳室・おむつ替え台あり／おむつが外れていない子も専用スイミングパンツ着用で水着スパを利用可", lunch:"森のレストラン「MORINIWA」あり。子ども向けデジタルコンテンツ・座椅子席も完備。",
  officialUrl:"https://www.biotherapy-cure-resort.com/opark-ogose/",
  stayTime:{minMinutes:180, maxMinutes:360},
@@ -7915,7 +7947,7 @@ const SPOTS_ONSEN_SPA_8 = [
 {region:"埼玉", name:"西武秩父駅前温泉 祭の湯", area:"秩父市野坂町", lat:35.9906, lng:139.0838,
  genre:"温泉・スパ",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
- price:"大人1,300円台〜（時間帯により変動）", parking:"yes", access:"西武秩父線「西武秩父」駅直結",
+ price:"大人1300円台〜（時間帯により変動）", parking:"yes", access:"西武秩父線「西武秩父」駅直結",
  baby:"授乳室・おむつ替え台あり", lunch:"フードコート「呑喰処 祭の宴」に9店舗あり（ラーメン・そば・アイス等）。お土産屋も併設。",
  officialUrl:"https://www.chichibu-matsurinoyu.com/",
  stayTime:{minMinutes:90, maxMinutes:180},
@@ -7948,7 +7980,7 @@ const SPOTS_FRUIT_4 = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  seasons:["冬","春"],
- price:"2,950円程度（小学生以上、時期・年齢により変動、40分食べ放題）", parking:"yes", access:"富津館山道路「富浦IC」から車で約30分",
+ price:"2950円程度（小学生以上、時期・年齢により変動、40分食べ放題）", parking:"yes", access:"富津館山道路「富浦IC」から車で約30分",
  baby:"バリアフリー設計でベビーカー・車椅子OK", lunch:"直売所あり。",
  officialUrl:null,
  bookingLinks:{asoview:"https://www.asoview.com/spot/spot0000010832/", jalan:"https://www.jalan.net/kankou/spt_guide000000203720/"}, recommendedBooking:"jalan",
@@ -8132,7 +8164,7 @@ const SPOTS_FRUIT_8 = [
  genre:"果物狩り・収穫体験",
  ages:["0-1歳","2-3歳","4-6歳","低学年","高学年"], weather:["晴れ","雨"], duration:["半日"],
  seasons:["冬","春"],
- price:"90分摘み取りプラン 小学生以上1,500〜1,800円（入園＋いちご200gまで込み）／小学生未満入園無料", parking:"no", access:"JR南武線「西府駅」から徒歩約7分／京王線「分倍河原駅」から徒歩約12分",
+ price:"90分摘み取りプラン 小学生以上1500〜1800円（入園＋いちご200gまで込み）／小学生未満入園無料", parking:"no", access:"JR南武線「西府駅」から徒歩約7分／京王線「分倍河原駅」から徒歩約12分",
  baby:"車椅子・ベビーカーで自由に摘み取り可能", lunch:"ソフトドリンク飲み放題付き。",
  officialUrl:"https://fuchu-ichigogari.com/",
  bookingLinks:{asoview:"https://www.asoview.com/base/161217/", jalan:"https://www.jalan.net/kankou/spt_guide000000223548/"}, recommendedBooking:"jalan",
@@ -8210,7 +8242,7 @@ const SPOTS_FRUIT_11 = [
  genre:"果物狩り・収穫体験",
  ages:["2-3歳","4-6歳","低学年","高学年"], weather:["晴れ"], duration:["半日"],
  seasons:["夏"],
- price:"さくらんぼ狩り 大人30分1,500円程度／ブルーベリー狩り 30分300円程度", parking:"yes", access:"関越自動車道「沼田IC」から車で約5分",
+ price:"さくらんぼ狩り 大人30分1500円程度／ブルーベリー狩り 30分300円程度", parking:"yes", access:"関越自動車道「沼田IC」から車で約5分",
  baby:"水道・アルコール消毒あり", lunch:"休憩スペースで麦茶のサービスあり。",
  officialUrl:null,
  bookingLinks:{jalan:"https://www.jalan.net/kankou/spt_guide000000189004/"},
@@ -9666,7 +9698,8 @@ function siblingWardsFor(prefSlug, citySlug, designatedRoot){
     if(entry.designatedRoot !== designatedRoot) return;
     list.push({citySlug: key.split("/")[1], label: entry.label, count: entry.spots.length});
   });
-  return list.sort((a,b)=> b.count - a.count);
+  // 50音順でソート
+  return list.sort((a,b)=> a.label.localeCompare(b.label, 'ja'));
 }
 function parseRouteSegments(){
   try{
@@ -11036,7 +11069,7 @@ function renderTermsSheet(){
         <li>近い順に並び替えるために入力した郵便番号（上3桁相当のエリア情報として使用し、住所の特定はできません）</li>
         <li>最近見た施設の履歴</li>
       </ul>
-      <p>また、人気施設の傾向を把握する目的で、施設の閲覧数や検索キーワードなどの匿名の利用状況を端末内に集計・保存する場合がありますが、個人を特定する情報は含まれません。Google Analytics等の外部アクセス解析ツールを使用しています。</p>
+      <p>また、人気施設の傾向を把握する目的で、施設の閲覧数や検索キーワードなどの匿名の利用状況を端末内に集計・保存する場合がありますが、個人を特定する情報は含まれません。Google Analytics等の外部アクセス解析ツールを使用しており、これらはクッキーを使用して訪問者の行動を分析していますが、個別の個人特定には使用されず、集計・分析のみに利用されます。</p>
       <p>お問い合わせフォームでいただいた内容は、お問い合わせへの対応目的以外には使用しません。</p>
       <p style="margin-top:14px; color:var(--ink-soft); font-size:11px;">最終更新：${TERMS_LAST_UPDATED}</p>
     </div>
@@ -13667,7 +13700,8 @@ function regionBreadcrumbHtml(prefSlug, citySlug, prefEntry, cityEntry){
   const prefName = fullPrefectureName(prefEntry.jpRegion);
   let html = '<span data-nav-home="1">おでかけナビ</span> ▶︎ ';
   if(citySlug){
-    html += '<span data-nav-pref="' + prefSlug + '">' + prefName + '</span> ▶︎ ' + cityEntry.label;
+    html += '<span data-nav-pref="' + prefSlug + '">' + prefName + '</span> ▶︎ ' +
+            '<span data-nav-city="' + citySlug + '">' + cityEntry.label + '</span>';
   } else {
     html += prefName;
   }
@@ -13691,23 +13725,19 @@ function renderRegionSheet(prefSlug, citySlug, prefEntry, cityEntry){
     const cityList = [...CITY_SPOTS.entries()]
       .filter(function(entry){ return entry[0].indexOf(prefSlug+"/")===0; })
       .map(function(entry){ return {citySlug: entry[0].split("/")[1], label: entry[1].label, count: entry[1].spots.length}; })
-      .sort(function(a,b){ return b.count - a.count; });
+      .sort(function(a,b){ return a.label.localeCompare(b.label, 'ja'); });
     bodyHtml += '<div class="region-page-title">🗾 ' + prefName + 'の子連れお出かけスポット</div>' +
       '<div class="region-page-desc">' + prefName + 'で子どもと楽しめるお出かけスポットを紹介。市区町村やカテゴリから探せます。</div>' +
       '<div class="region-section"><div class="region-section-title">📍 市区町村から探す</div><div class="region-link-grid">' +
-      cityList.map(function(c){ return '<button type="button" class="region-link-pill" data-nav-city="' + c.citySlug + '">' + c.label + '<span class="cnt">(' + c.count + ')</span></button>'; }).join("") +
+      cityList.map(function(c){ return '<button type="button" class="region-link-pill" data-nav-city="' + c.citySlug + '">' + c.label + '</button>'; }).join("") +
       '</div></div>' +
       '<div class="region-section"><div class="region-section-title">✨ ' + prefName + 'のおすすめスポット</div><div class="cards" id="regionCardsWrap"></div>' +
       (prefEntry.spots.length > REGION_SPOT_LIMIT ? '<span class="region-more-link" data-genre-filter="all" data-genre-region="' + prefEntry.jpRegion + '">' + prefName + 'の全' + prefEntry.spots.length + '件を検索で見る →</span>' : "") +
       '</div>' +
       '<div class="region-section"><div class="region-section-title">🎯 カテゴリから探す</div>' + regionGenreLinksHtml(prefEntry.spots, prefEntry.jpRegion) + '</div>';
   } else {
-    const siblings = siblingWardsFor(prefSlug, citySlug, cityEntry.designatedRoot);
     bodyHtml += '<div class="region-page-title">📍 ' + cityEntry.label + 'の子連れお出かけスポット</div>' +
       '<div class="region-page-desc">' + cityEntry.label + '（' + prefName + '）で子どもと楽しめるお出かけスポットを紹介。</div>' +
-      (siblings.length>0 ? '<div class="region-section"><div class="region-section-title">🏘️ ' + cityEntry.designatedRoot + '内の区から探す</div><div class="region-link-grid">' +
-        siblings.map(function(s){ return '<button type="button" class="region-link-pill" data-nav-city="' + s.citySlug + '">' + s.label.replace(cityEntry.designatedRoot,"") + '<span class="cnt">(' + s.count + ')</span></button>'; }).join("") +
-        '</div></div>' : "") +
       '<div class="region-section"><div class="region-section-title">✨ ' + cityEntry.label + 'のスポット</div><div class="cards" id="regionCardsWrap"></div>' +
       (cityEntry.spots.length > REGION_SPOT_LIMIT ? '<span class="region-more-link" data-genre-filter="all" data-genre-region="' + prefEntry.jpRegion + '">' + prefName + 'の全' + prefEntry.spots.length + '件を検索で見る →</span>' : "") +
       '</div>' +
@@ -13771,9 +13801,193 @@ function spotRegionBreadcrumbHtml(spot){
   const cityEntry = CITY_SPOTS.get(prefSlug + "/" + citySlug);
   const prefName = fullPrefectureName(spot.region);
   const cityLabel = cityEntry ? cityEntry.label : "";
-  return '<div class="region-breadcrumb spot-region-breadcrumb-row"><span data-nav-pref="' + prefSlug + '">' + prefName + '</span>' +
+  return '<div class="region-breadcrumb spot-region-breadcrumb-row"><span data-nav-home="1">おでかけナビ</span> ▶︎ ' +
+    '<span data-nav-pref="' + prefSlug + '">' + prefName + '</span>' +
     (cityLabel ? ' ▶︎ <span data-nav-pref="' + prefSlug + '" data-nav-city="' + citySlug + '">' + cityLabel + '</span>' : '') +
     '</div>';
+}
+
+// ==================================================================
+// 📸 「実際に行ったよ」（実体験）— 将来の拡張用の土台
+// ------------------------------------------------------------------
+// ・施設基本データ（SPOTS）には実体験を一切埋め込まない。実体験は別ファイルに分離する。
+//     experiences/index.json            … どの施設に実体験があるかの目次（軽量）
+//     experiences/<facilityId>.json     … 1施設分の実体験（複数回分を配列で保持）
+//     experiences/photos/…              … 写真本体（外部ストレージ/CDNのURLを直接書いてもよい）
+// ・facilityId は施設の独立URL（spotSlug）と同じ値（例："tokyo/taito/ueno"）。
+//   施設名を変えても紐付けは切れない。スラッグの決定ルールは変更していない。
+// ・目次に載っていない施設（＝実体験なし）では何も表示しない。ファイルが無い・
+//   読み込めない場合（file://で開いた時など）も何も表示せず、既存機能には影響しない。
+// ・掲載は status:"published" の記録のみ。フォーム受付分は status:"pending" で
+//   追加しておき、運営が確認後に "published" へ変更する運用を想定している。
+// ・評価（星・点数）・ランキング・「おすすめ度」は意図的に持たない。
+// ・詳細な項目仕様は experiences/README.md を参照。
+// ==================================================================
+const EXPERIENCE_DATA_DIR = "experiences/";
+const EXPERIENCE_PHOTO_CATEGORIES = [
+  {key:"entrance",  label:"外観・入口"},
+  {key:"parking",   label:"駐車場"},
+  {key:"play",      label:"子どもが遊ぶ場所"},
+  {key:"meal_rest", label:"食事・休憩"},
+  {key:"other",     label:"その他"}
+];
+const EXPERIENCE_TRANSPORT_LABELS = {car:"車", train:"電車", bus:"バス", bicycle:"自転車", walk:"徒歩", other:"その他"};
+const EXPERIENCE_LEVEL_LABELS = {easy:"◯ しやすかった", partial:"△ 場所・条件による", hard:"✕ 難しかった"};
+const EXPERIENCE_KIDS_ITEMS = [
+  {key:"stroller",      label:"ベビーカー"},
+  {key:"toddlerFun",    label:"小さい子（0〜5歳程度）"},
+  {key:"elementaryFun", label:"小学生"},
+  {key:"meals",         label:"食事"},
+  {key:"diaperChange",  label:"おむつ替え"},
+  {key:"nursing",       label:"授乳"},
+  {key:"restBreak",     label:"休憩"}
+];
+const EXPERIENCE_COST_ITEMS = [
+  {key:"adult", label:"大人"}, {key:"child", label:"子ども"},
+  {key:"parking", label:"駐車場"}, {key:"other", label:"その他"}
+];
+const __experienceCache = new Map();   // facilityId -> Promise<記録の配列>
+let __experienceManifestPromise = null;
+
+function expEsc(v){
+  return String(v == null ? "" : v).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function experienceBaseUrl(){ return APP_BASE_PATH + EXPERIENCE_DATA_DIR; }
+function experienceFilePath(facilityId){
+  return experienceBaseUrl() + String(facilityId).split("/").map(encodeURIComponent).join("/") + ".json";
+}
+function loadExperienceManifest(){
+  if(__experienceManifestPromise) return __experienceManifestPromise;
+  __experienceManifestPromise = (async ()=>{
+    try{
+      if(window.location.protocol === "file:") return {};
+      const res = await fetch(experienceBaseUrl() + "index.json");
+      if(!res.ok) return {};
+      const json = await res.json();
+      return (json && typeof json.facilities === "object" && json.facilities) || {};
+    }catch(e){ return {}; }
+  })();
+  return __experienceManifestPromise;
+}
+// 保存データを表示用に整える。掲載対象外（未承認など）や必須項目欠落の記録は除外する。
+function normalizeExperiences(list, facilityId){
+  if(!Array.isArray(list)) return [];
+  return list
+    .filter(e=> e && typeof e === "object" && e.status === "published" && e.facilityId === facilityId && /^\d{4}-\d{2}(-\d{2})?$/.test(e.visitDate || ""))
+    .sort((a,b)=> String(b.visitDate).localeCompare(String(a.visitDate)));
+}
+function loadFacilityExperiences(facilityId){
+  if(__experienceCache.has(facilityId)) return __experienceCache.get(facilityId);
+  const p = (async ()=>{
+    const res = await fetch(experienceFilePath(facilityId));
+    if(!res.ok) throw new Error("experience fetch failed");
+    const json = await res.json();
+    return normalizeExperiences(json && json.experiences, facilityId);
+  })();
+  p.catch(()=>{ __experienceCache.delete(facilityId); });   // 失敗した場合は次回また試せるようにする
+  __experienceCache.set(facilityId, p);
+  return p;
+}
+// 写真URLの解決：https:// の絶対URL、または experiences/photos/ からの相対パスのみ許可する。
+function experiencePhotoSrc(url){
+  if(typeof url !== "string") return null;
+  const u = url.trim();
+  if(!u) return null;
+  if(/^https:\/\//i.test(u)) return u;
+  if(/^[a-z][a-z0-9+.-]*:/i.test(u) || u.indexOf("//") === 0 || u.indexOf("..") !== -1) return null;
+  return experienceBaseUrl() + "photos/" + u.replace(/^\/+/, "");
+}
+function experienceVisitLabel(d){
+  const m = String(d).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);
+  if(!m) return "";
+  return `${m[1]}年${parseInt(m[2],10)}月${m[3] ? parseInt(m[3],10)+"日" : ""}訪問`;
+}
+function experienceFactsHtml(e){
+  const parts = [];
+  const p = e.party || {};
+  const who = [];
+  if(Number.isFinite(p.adults)) who.push(`大人${p.adults}人`);
+  if(Number.isFinite(p.children)) who.push(`子ども${p.children}人`);
+  if(Array.isArray(p.childAges) && p.childAges.length) who.push(`（${p.childAges.map(expEsc).join("・")}）`);
+  if(who.length) parts.push(`👨‍👩‍👧 ${who.join(" ")}`);
+  if(EXPERIENCE_TRANSPORT_LABELS[e.transport]) parts.push(`🚗 ${EXPERIENCE_TRANSPORT_LABELS[e.transport]}`);
+  if(Number.isFinite(e.stayMinutes) && e.stayMinutes > 0) parts.push(`⏱ 滞在${formatMinutes(e.stayMinutes)}`);
+  return parts.length ? `<div class="exp-facts">${parts.join("　")}</div>` : "";
+}
+function experienceCostsHtml(e){
+  const c = e.costs;
+  if(!c || typeof c !== "object") return "";
+  const rows = EXPERIENCE_COST_ITEMS.filter(i=>Number.isFinite(c[i.key])).map(i=>`${i.label} ${c[i.key].toLocaleString()}円`);
+  const total = Number.isFinite(c.total) ? `<b>合計 ${c.total.toLocaleString()}円</b>` : "";
+  if(!rows.length && !total) return "";
+  return `<div class="exp-block"><div class="exp-label">💰 実際にかかった費用</div><div class="exp-text">${[...rows, total].filter(Boolean).join("／")}</div></div>`;
+}
+function experienceKidsHtml(e){
+  const k = e.kids;
+  if(!k || typeof k !== "object") return "";
+  const rows = EXPERIENCE_KIDS_ITEMS.map(i=>{
+    const v = k[i.key];
+    if(!v || typeof v !== "object") return "";
+    const lv = EXPERIENCE_LEVEL_LABELS[v.level] || "";
+    const note = v.note ? expEsc(v.note) : "";
+    if(!lv && !note) return "";
+    return `<div class="exp-kid-row"><span class="exp-kid-name">${i.label}</span>${lv ? `<span class="exp-kid-level">${lv}</span>` : ""}${note ? `<span class="exp-kid-note">${note}</span>` : ""}</div>`;
+  }).join("");
+  return rows ? `<div class="exp-block"><div class="exp-label">👶 子連れで行ってみて</div>${rows}</div>` : "";
+}
+function experiencePhotosHtml(e){
+  if(!Array.isArray(e.photos) || !e.photos.length) return "";
+  const known = new Set(EXPERIENCE_PHOTO_CATEGORIES.map(c=>c.key));
+  return EXPERIENCE_PHOTO_CATEGORIES.map(cat=>{
+    const items = e.photos.filter(ph=> ph && (known.has(ph.category) ? ph.category : "other") === cat.key)
+      .map(ph=>({src: experiencePhotoSrc(ph.url), caption: ph.caption || ""})).filter(x=>x.src);
+    if(!items.length) return "";
+    return `<div class="exp-block"><div class="exp-label">📷 ${cat.label}</div><div class="exp-photos">${
+      items.map(x=>`<figure class="exp-photo"><img src="${expEsc(x.src)}" alt="${expEsc(x.caption || cat.label)}" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">${x.caption ? `<figcaption>${expEsc(x.caption)}</figcaption>` : ""}</figure>`).join("")
+    }</div></div>`;
+  }).join("");
+}
+function experienceCardHtml(e){
+  return `<div class="exp-card">
+    <div class="exp-visit">${expEsc(experienceVisitLabel(e.visitDate))}</div>
+    ${experienceFactsHtml(e)}
+    ${experiencePhotosHtml(e)}
+    ${experienceKidsHtml(e)}
+    ${experienceCostsHtml(e)}
+    ${e.learned ? `<div class="exp-block"><div class="exp-label">📝 行ってみて分かったこと</div><div class="exp-text">${expEsc(e.learned)}</div></div>` : ""}
+  </div>`;
+}
+// 詳細画面の所定の枠（#experienceSlot）に、実体験がある施設の場合だけ入口を描画する。
+function mountExperienceSection(spot){
+  const slot = document.getElementById("experienceSlot");
+  if(!slot) return;
+  const facilityId = spotSlug(spot);
+  if(!facilityId) return;
+  loadExperienceManifest().then(manifest=>{
+    const entry = manifest[facilityId];
+    if(!entry || !(entry.count > 0) || !slot.isConnected) return;   // 実体験なし／画面が切り替わった場合は何もしない
+    slot.className = "detail-section";
+    slot.innerHTML = `<h3>📸 実際に行ったよ</h3>
+      <button type="button" class="exp-open-btn" aria-expanded="false">写真・子連れ体験を見る（${entry.count}件）</button>
+      <div class="exp-body" style="display:none;"></div>`;
+    const btn = slot.querySelector(".exp-open-btn");
+    const body = slot.querySelector(".exp-body");
+    let loaded = false;
+    btn.onclick = async ()=>{
+      const open = body.style.display === "none";
+      body.style.display = open ? "" : "none";
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if(!open || loaded) return;
+      body.innerHTML = `<div class="exp-status">読み込み中…</div>`;
+      try{
+        const list = await loadFacilityExperiences(facilityId);
+        body.innerHTML = list.length ? list.map(experienceCardHtml).join("") : `<div class="exp-status">表示できる情報がまだありません。</div>`;
+        loaded = true;
+      }catch(e){
+        body.innerHTML = `<div class="exp-status">読み込めませんでした。時間をおいて再度お試しください。</div>`;
+      }
+    };
+  }).catch(()=>{});
 }
 
 // ------------------------------------------------------------------
@@ -14010,6 +14224,8 @@ function openDetail(spot, silent, backTarget){
 
     ${regionRelatedSpotsHtml(spot)}
 
+    <div id="experienceSlot"></div>
+
     ${spot.verifiedAt ? `<div class="spot-verified-note">✅ 情報確認日：${spot.verifiedAt}</div>` : ""}
     <div class="action-row" style="margin-top:14px;">
       <button class="abtn ${isFav?"on":""}" data-act="fav">❤️ 行きたい</button>
@@ -14028,6 +14244,7 @@ function openDetail(spot, silent, backTarget){
     ${isPlanned ? `<div style="font-size:11px; color:var(--ink-soft); margin-top:2px;">※記録すると、現在入っているプランからは自動的に削除されます。</div>` : ""}
     <button type="button" class="detail-close-bottom" id="detailCloseBtnBottom">閉じる</button>
   `;
+  mountExperienceSection(spot);
   sheet.querySelectorAll("[data-jump-date]").forEach(btn=>{
     btn.onclick = ()=> jumpToCalendarDate(btn.dataset.jumpDate);
   });
@@ -14266,11 +14483,16 @@ pickDiscovery(); // 「新しいおでかけ先を発見」の初期ピックア
 // 独立した新しい入口として追加する。
 // ------------------------------------------------------------------
 // 現在データが十分に存在する地域を優先して表示（全国データが増えたら追加すればよい構造）
+// 都道府県の人口データ（2024年推定）
+const PREF_POPULATION = {
+  "東京": 13960000, "神奈川": 9250000, "埼玉": 7280000, "千葉": 6250000,
+  "茨城": 2840000, "栃木": 1880000, "群馬": 1880000, "山梨": 805000
+};
 const DRAWER_PREFS = [
-  {region:"神奈川", label:"神奈川"}, {region:"東京", label:"東京"},
-  {region:"千葉", label:"千葉"}, {region:"埼玉", label:"埼玉"},
-  {region:"山梨", label:"山梨"}, {region:"群馬", label:"群馬"},
-  {region:"栃木", label:"栃木"}, {region:"茨城", label:"茨城"}
+  {region:"東京", label:"東京"}, {region:"神奈川", label:"神奈川"},
+  {region:"埼玉", label:"埼玉"}, {region:"千葉", label:"千葉"},
+  {region:"茨城", label:"茨城"}, {region:"栃木", label:"栃木"},
+  {region:"群馬", label:"群馬"}, {region:"山梨", label:"山梨"}
 ];
 const SEASON_EN_SLUG = {"春":"spring", "夏":"summer", "秋":"autumn", "冬":"winter"};
 
