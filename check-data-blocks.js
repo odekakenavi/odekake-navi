@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// index.html の DATA-BLOCK（施設・ホテル）が「そのまま外部JSONへ切り出せる状態か」を確認するだけのツール。
+// 施設（data/spots.json があればそれ、無ければ index.html 内の DATA-BLOCK）とホテル（index.html 内の DATA-BLOCK）の整合を確認するだけのツール。
 // ファイルは一切書き換えない。使い方:  node tools/check-data-blocks.js [index.html]
 //   確認すること: ①データだけで単独評価できる（他の変数・関数に依存しない） ②JSONにできない値が無い
 //                 ③JSON往復で内容が同一 ④施設名の重複が無い ⑤hotelArea の参照先が FAMILY_HOTELS に在る ⑥ホテルの地域メタが揃っている
@@ -35,11 +35,24 @@ function roundTrip(label, obj) {
 }
 
 console.log('施設データ（SPOTS）');
-const spText = block('SPOTS', 'SPOTS');
-const sp = spText && evalPure(spText, ['SPOTS']);
 let SPOTS = [];
-if (sp) {
-  SPOTS = sp.SPOTS; pass('単独評価OK：' + SPOTS.length + '件');
+const jsonPath = require('path').join(require('path').dirname(file), 'data', 'spots.json');
+if (fs.existsSync(jsonPath)) {
+  // 外部化済み：data/spots.json を検証する
+  try { SPOTS = JSON.parse(fs.readFileSync(jsonPath, 'utf8')); pass('data/spots.json を読み込めた：' + SPOTS.length + '件'); }
+  catch (err) { fail('data/spots.json がJSONとして不正: ' + err.message); }
+  if (!Array.isArray(SPOTS) || !SPOTS.length) { fail('data/spots.json が空、または配列ではない'); SPOTS = []; }
+  const need = ['region', 'name', 'area', 'lat', 'lng', 'ages', 'weather', 'duration', 'price', 'parking', 'access', 'desc'];
+  const lacking = SPOTS.filter(s => need.some(k => s[k] === undefined)).map(s => s.name || '(名前なし)');
+  lacking.length ? fail('必須項目が欠けている施設: ' + lacking.slice(0, 5).join(' / ')) : pass('全施設に必須項目（' + need.join('/') + '）がある');
+  const badGeo = SPOTS.filter(s => !(typeof s.lat === 'number' && typeof s.lng === 'number' && isFinite(s.lat) && isFinite(s.lng))).map(s => s.name);
+  badGeo.length ? fail('緯度経度が数値でない: ' + badGeo.slice(0, 5).join(' / ')) : pass('緯度経度はすべて数値');
+} else {
+  const spText = block('SPOTS', 'SPOTS');
+  const sp = spText && evalPure(spText, ['SPOTS']);
+  if (sp) { SPOTS = sp.SPOTS; pass('単独評価OK：' + SPOTS.length + '件'); }
+}
+if (SPOTS.length) {
   roundTrip('SPOTS', SPOTS);
   const seen = new Set(), dup = [];
   SPOTS.forEach(s => { seen.has(s.name) ? dup.push(s.name) : seen.add(s.name); });
