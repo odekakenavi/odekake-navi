@@ -744,6 +744,8 @@
   .plan-item-main{flex:1; min-width:0; cursor:pointer;}
   .plan-item-name{font-size:13.5px; font-weight:700; color:var(--ink);}
   .plan-item-meta{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+  /* 🆕 プランの時刻が施設の営業時間外になっている可能性がある場合の注意表示（.visitdate-badge.closed と同系色） */
+  .plan-hours-warn{font-size:11px; font-weight:700; color:#a33b2c; background:#F8DAD3; border-radius:8px; padding:3px 8px; margin-top:4px; display:inline-block;}
   .plan-item-controls{display:flex; gap:4px; flex:0 0 auto;}
   .plan-item-controls button{
     border:none; background:var(--paper); color:var(--ink-soft); border-radius:8px; width:26px; height:26px;
@@ -3118,7 +3120,8 @@ const SLUG_OVERRIDES = {
   "新江ノ島水族館": "kanagawa/fujisawa/enosui",
   "箱根（彫刻の森・ロープウェイ）": "kanagawa/hakone/hakone-oam",
   "山下公園": "kanagawa/yokohama-naka/yamashita-park",
-  "東京ディズニーランド／シー": "chiba/urayasu/tokyodisneyresort",
+  "東京ディズニーランド": "chiba/urayasu/tokyodisneyresort",
+  "東京ディズニーシー": "chiba/urayasu/tokyodisneysea",
   "マザー牧場": "chiba/futtsu/motherfarm",
   "鴨川シーワールド": "chiba/kamogawa/kamogawa-seaworld",
   "ふなばしアンデルセン公園": "chiba/funabashi/andersen",
@@ -6559,6 +6562,35 @@ function planSimpleItemsHtml(spots, summary, tripMode){
   }).join("");
 }
 // 出発 → 施設 → 移動 → 昼食 … の順に、既存のプランカードに時刻の行を足して並べる
+// 🆕 営業時間チェック用：このプラン（タブ）で判定に使う日付。
+// 「実施予定日」を設定していればその日、未設定なら「今日」を仮の判定基準にする
+// （あくまで目安。営業時間が未登録の施設は getBusinessStatusForDate 側で "unknown" となり警告は出さない）。
+function planDateForCheck(){
+  const iso = state.planDates && state.planDates[state.activePlanTab];
+  const d = iso ? parseVisitDate(iso) : null;
+  return d || new Date();
+}
+// 🆕 施設の到着・出発予定時刻が、営業時間・定休日と食い違っていないかを判定する。
+// ・営業時間が登録されていない施設（"unknown"）は判定せず null を返す（不明を休業扱いにしない）。
+// ・定休日に該当する場合は時刻を問わず注意文を返す。
+// ・営業時間の形式が「09:00-17:00」のように読み取れない場合（変則的な文言のみの施設）は判定しない。
+// ・日をまたぐ時刻（翌日・前日）はこの日の営業時間と単純比較できないため判定しない。
+function planBusinessHoursWarning(spot, dateForCheck, arriveT, departT){
+  const st = getBusinessStatusForDate(spot, dateForCheck);
+  if(st.status==="unknown") return null;
+  if(st.status==="closed"){
+    return `⚠️ この日は${st.reason || "休業"}の可能性があります`;
+  }
+  const m = /^(\d{1,2}):(\d{2})-(\d{1,2}):(\d{2})$/.exec(st.hours);
+  if(!m) return null;
+  const openMin = Number(m[1])*60+Number(m[2]), closeMin = Number(m[3])*60+Number(m[4]);
+  const inRange = t => typeof t==="number" && t>=0 && t<1440 && (t<openMin || t>=closeMin);
+  const labels = [];
+  if(inRange(arriveT)) labels.push("到着");
+  if(inRange(departT)) labels.push("出発");
+  if(labels.length===0) return null;
+  return `⚠️ ${labels.join("・")}予定が営業時間（${st.hours}）外の可能性があります`;
+}
 function planTimelineHtml(spots, tl, sol){
   let html = "";
   tl.ents.forEach(e=>{
@@ -6571,6 +6603,9 @@ function planTimelineHtml(spots, tl, sol){
       const s = e.spot, i = e.i;
       const stayLabel = deriveStayTimeLabel(s);
       const inf = planStayInfo(tl, sol, "stay:"+i);
+      const arriveV = planNodeView(tl, sol, "spot:"+i+":arrive");
+      const departV = planNodeView(tl, sol, "spot:"+i+":depart");
+      const hoursWarn = planBusinessHoursWarning(s, planDateForCheck(), arriveV && arriveV.t, departV && departV.t);
       html += `
         <div class="plan-item">
           <div class="plan-item-head">
@@ -6587,6 +6622,7 @@ function planTimelineHtml(spots, tl, sol){
           </div>
           <div class="plan-time-line">${planChipHtml(tl, sol, "spot:"+i+":arrive", "到着")}<span class="ptl-arrow">→</span>${planChipHtml(tl, sol, "spot:"+i+":depart", "出発")}</div>
           <div class="plan-time-line">${planStayChipHtml(tl, sol, "stay:"+i)}</div>
+          ${hoursWarn ? `<div class="plan-hours-warn">${hoursWarn}</div>` : ""}
           ${planInsideMealNoteHtml(tl, i)}
           ${inf && inf.shrunk ? `<div class="plan-item-meta">※手入力した時刻に合わせて、おすすめより短めにしています</div>` : ""}
           ${planEditorHtml(tl, sol, "spot:"+i+":arrive")}${planEditorHtml(tl, sol, "spot:"+i+":depart")}${planEditorHtml(tl, sol, "stay:"+i)}
