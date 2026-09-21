@@ -4761,6 +4761,12 @@ function planNodeView(tl, sol, id){
   }
   return null;
 }
+// 「施設の間」の食事（昼食・夕食）の合計時間（分）。「施設内」の食事は施設の滞在時間に含まれるため0扱い
+function planMealTotalMinutes(tl, sol){
+  let m = 0;
+  tl.ents.forEach(e=>{ if(e.type==="meal") m += sol.dur[e.segStay] || 0; });
+  return m;
+}
 /*PLAN_TIME_ENGINE_END*/
 
 function loadPersisted(){
@@ -6294,14 +6300,20 @@ function computePlanSummary(spots, tripMode){
     }
   }
   const totalMid = stayMid + moveMin;
-  // 目安：3カ所程度・移動込みで実質7時間以内なら「比較的回りやすい」、それを超えると徐々に「忙しい」
-  // （3カ所という件数だけで判断せず、滞在時間・移動時間の実際の合計で判断する。
-  //   以前は6時間/8時間の基準だったが、2カ所選んだだけで「詰め込み気味」と出やすかったため、
-  //   実際の1日の余裕（休憩・食事・移動の遅れ等）を踏まえて基準を7時間/9時間に緩和した）
-  // さらに「詳しく絞り込む」で選択中の子どもの年齢（state.ages）を踏まえて基準を微調整する。
-  // ・未就学児（0-1歳／2-3歳）が含まれる場合：体力面で疲れやすいため基準を90分厳しく
-  // ・高学年のみが選択されている場合：長時間動けるため基準を60分緩く
-  // ・年齢未選択、または4-6歳／低学年を含む場合：既存の基準のまま
+  const advisory = planAdvisoryLevel(totalMid, spots.length);
+  return { stayMid, moveMin, legs, homeLegOut, homeLegReturn, tripMode, advisory };
+}
+// 目安：3カ所程度・移動込みで実質7時間以内なら「比較的回りやすい」、それを超えると徐々に「忙しい」
+// （3カ所という件数だけで判断せず、滞在時間・移動時間の実際の合計で判断する。
+//   以前は6時間/8時間の基準だったが、2カ所選んだだけで「詰め込み気味」と出やすかったため、
+//   実際の1日の余裕（休憩・移動の遅れ等）を踏まえて基準を7時間/9時間に緩和した）
+// さらに「詳しく絞り込む」で選択中の子どもの年齢（state.ages）を踏まえて基準を微調整する。
+// ・未就学児（0-1歳／2-3歳）が含まれる場合：体力面で疲れやすいため基準を90分厳しく
+// ・高学年のみが選択されている場合：長時間動けるため基準を60分緩く
+// ・年齢未選択、または4-6歳／低学年を含む場合：既存の基準のまま
+// 🕐 プランの時刻自動計算で食事（昼食・夕食）を「施設の間」に設定した場合は、その食事時間もtotalMidに
+//    足した上でここを呼び直す（renderPlanSheet参照）。「施設内」の食事は施設の滞在時間に含まれる想定のため足さない。
+function planAdvisoryLevel(totalMid, spotCount){
   let ageAdjustMin = 0;
   if(state.ages && state.ages.size>0){
     const hasYoung = state.ages.has("0-1歳") || state.ages.has("2-3歳");
@@ -6311,13 +6323,10 @@ function computePlanSummary(spots, tripMode){
   }
   const easyMax = 420 + ageAdjustMin;
   const busyMax = 540 + ageAdjustMin;
-  let advisory = null;
-  if(spots.length>=2){
-    if(totalMid<=easyMax) advisory = {level:"easy", text:"🙂 比較的回りやすいプランです。"};
-    else if(totalMid<=busyMax) advisory = {level:"busy", text:"⏰ やや詰め込み気味です。無理のないペースで回りましょう。"};
-    else advisory = {level:"busy", text:"⚠️ 少し忙しいプランです。1カ所減らすか、日程を分けるのがおすすめです。"};
-  }
-  return { stayMid, moveMin, legs, homeLegOut, homeLegReturn, tripMode, advisory };
+  if(spotCount<2) return null;
+  if(totalMid<=easyMax) return {level:"easy", text:"🙂 比較的回りやすいプランです。"};
+  if(totalMid<=busyMax) return {level:"busy", text:"⏰ やや詰め込み気味です。無理のないペースで回りましょう。"};
+  return {level:"busy", text:"⚠️ 少し忙しいプランです。1カ所減らすか、日程を分けるのがおすすめです。"};
 }
 
 const PLAN_TAB_LABELS = ["プランA", "プランB", "プランC"];
@@ -6668,11 +6677,16 @@ function renderPlanSheet(){
       ? "📌「手入力」の時刻は固定され、自動計算では変わりません。他の時刻は、その前後を自動で計算しています。"
       : "🕐 「--:--」をタップして時刻を入力すると、その時刻を基準に前後の時刻を自動で計算します（10分刻み）。"}</div>`;
     const itemsHtml = planTimelineHtml(spots, tl, sol);
+    // 🍽 「施設の間」の食事は実際に時間を使うため、合計時間の目安・忙しさの判定にも加える
+    //   （「施設内」の食事は施設の滞在時間に既に含まれている想定のため、ここには加えない）
+    const mealMin = planMealTotalMinutes(tl, sol);
+    if(mealMin>0) summary.advisory = planAdvisoryLevel(summary.stayMid + summary.moveMin + mealMin, spots.length);
     const summaryHtml = `
       <div class="plan-summary">
         <div class="plan-summary-row"><span>スポット数</span><b>${spots.length}カ所</b></div>
         <div class="plan-summary-row"><span>合計滞在時間の目安</span><b>約${formatMinutes(summary.stayMid)}</b></div>
         ${summary.moveMin>0 ? `<div class="plan-summary-row"><span>合計移動時間の目安（${state.mode==="transit"?"🚃電車・バス":"🚗車"}）</span><b>約${formatMinutes(summary.moveMin)}</b></div>` : ""}
+        ${mealMin>0 ? `<div class="plan-summary-row"><span>食事の時間の目安</span><b>約${formatMinutes(mealMin)}</b></div>` : ""}
         ${summary.advisory ? `<div class="plan-advisory ${summary.advisory.level}">${summary.advisory.text}</div>` : ""}
       </div>
     `;
