@@ -1333,8 +1333,8 @@
 // 🗺 データ構造マップ（将来のデータ分離に向けた目印。処理内容は変更していない）
 // ------------------------------------------------------------------
 // 「DATA-BLOCK BEGIN/END」の目印コメントで挟んだ範囲が“純粋なデータ”。将来ここを外部ファイルへ移す。
-//   ・施設本体 …… SPOTS（＋SPOTS_*配列を SPOTS.push で連結）。650件。id/slugフィールドは無い。
-//   ・ホテル ……… FAMILY_HOTELS（エリアキー→ホテル配列）＋HOTEL_AREA_META＋HOTEL_PREF_ORDER
+//   ・施設本体 …… SPOTS（＋SPOTS_*配列を SPOTS.push で連結）。710件（2026-09-21時点。正確な数は SPOTS.length）。id/slugフィールドは無い。
+//   ・ホテル ……… FAMILY_HOTELS（エリアキー→ホテル配列。99件・43エリア／2026-09-21時点）＋HOTEL_AREA_META＋HOTEL_PREF_ORDER
 //   ・地域/URL …… PREF_SLUG / CITY_ROMAJI（表示名→URL用ローマ字）、SLUG_OVERRIDES（施設名→確定slug）
 //   ・その他 …… ZIP3_MASTER / STATION_MASTER（郵便番号・駅の座標）
 // 【データを編集する時の約束（既存機能・既存URLを壊さないため）】
@@ -1346,6 +1346,61 @@
 //   6) 静的ページ生成ツール（tools/build-static-pages.js）は、次の部分をこのファイルから取り出して読む。名前・並びを変える時はツールも直すこと:
 //      「const SPOTS = [」から「function spotBySlug」まで／「const GENRES」／「function deriveCategory」
 // ==================================================================
+// ==================================================================
+// 🧩 構造マップ／データ分離の境界（ステップ1。コメントと、未使用の設定・関数1組を足しただけで、既存の処理は変更していない）
+// ------------------------------------------------------------------
+// ■ どこに何があるか（行番号は編集でずれるので、下の名前で検索する）
+//   <head> ………… CSP／GA4（測定ID付きの gtag）／404リダイレクト復元（__ODEKAKE_BASE_PATH__）／OGP・Twitter／canonical／manifest・アイコン
+//   HTML（body）… id="hamburgerBtn" 〜 各 *Overlay / *Sheet（詳細・地域・絞り込み・お気に入り・プラン・比較・カレンダー・診断・ホテル 等）
+//   CSS ………… <style> 1つ（:root の変数〜末尾）
+//   共通JS（このscript）
+//     定数・マスター …… STORAGE_KEY／GENRES／CATEGORY_INTRO／ZIP3_MASTER・STATION_MASTER（DATA-BLOCK）
+//     派生値・ラベル …… deriveRainLevel 〜 deriveCategory／spotSearchText／matchesKeyword
+//     施設データ ………… DATA-BLOCK: SPOTS
+//     slug・SEO・ルーティング … PREF_SLUG／SLUG_OVERRIDES（DATA-BLOCK）／buildFacilitySlug／SPOT_SLUG／APP_BASE_PATH／updateSeoTagsForSpot／initRoutingFromLocation／PREF_SPOTS・CITY_SPOTS
+//     状態・GA4・保存 …… let state／trackEvent／loadPersisted・savePersisted（LocalStorage）
+//     天気API ………… WEATHER_CACHE_KEY／fetchWeatherForSpot／loadWeatherIntoDetail
+//     検索・絞り込みUI …… buildRegionChipsInto／renderFilterSheet／onZipSubmit／requestCurrentLocation／matches
+//     規約・FAQ・運営者 …… renderTermsSheet／FAQ_ITEMS／renderFaqSheet／renderAboutSheet
+//     お気に入り・プラン・行った履歴・共有・比較 …… renderFavSheet／addToPlanTab／addVisit／shareSpot／renderCompareSheet
+//     ホテルデータ ………… DATA-BLOCK: FAMILY_HOTELS
+//     ホテル機能 ………… hotelHasOtaLink／getNearbyHotels／getNearbySpotsForHotel／renderHotelSearchSheet／openHotelSearch
+//     推薦 ………… GENERAL_RECOMMEND_WEIGHTS／computeGeneralRecommendScore／computeDiagnosisScore／renderDiagnosisResultView／getNearbyCombos
+//     カード・詳細・地域ページ・実体験 …… buildCardSummary／renderRegionSheet／EXPERIENCE_DATA_DIR／openDetail
+//     初期化 ………… const persisted = loadPersisted() 〜 render()／initRoutingFromLocation() まで（末尾付近）
+//     監査モード …… renderAuditMode（?audit=1）
+//   別script（このscriptの後ろ）…… 翻訳機能（即時関数で独立。ヘッダーの翻訳ボタン）
+// ■ データ分離の境界（ステップ1で確認済み）
+//   ・DATA-BLOCK 内の SPOTS ／ FAMILY_HOTELS＋HOTEL_AREA_META＋HOTEL_PREF_ORDER は「純粋なデータ」。
+//     他の変数・関数を一切参照せず、空の環境で単独評価でき、JSON往復（stringify→parse）しても内容が完全に同一。
+//   ・データを「読み込み中（起動時）」に使っている処理は次の4か所だけ。外部ファイル化する時は、データが届いた後に実行する必要がある。
+//       ① SPOTS 直後の operationStatus==="closed" 除去ループ
+//       ② (function buildSlugIndex(){…})()      … SPOT_SLUG / SLUG_TO_SPOT を作る
+//       ③ (function buildRegionHub(){…})()      … PREF_SPOTS / CITY_SPOTS を作る
+//       ④ (function buildRegionHotelHub(){…})() … PREF_HOTELS / CITY_HOTELS を作る
+//     上記以外は関数の中でだけデータを使うので、データが揃ってから呼ばれれば動く。末尾の初期化（render() など）も同様にデータ到着後に走らせる。
+//   ・確認は tools/check-data-blocks.js で再実行できる（純粋性・JSON往復・重複名・hotelArea の参照先）。
+// ==================================================================
+// 📦 外部データファイルの置き場所（ステップ1では未使用。今のデータは上記 DATA-BLOCK にそのまま入っている）
+// 相対パスの基準は「今開いているページのURL」ではなく「起動時のベースパス」にする。
+//   施設ページ（/kanagawa/fujisawa/xxx/）を開いた後や pushState 後は location が変わり、"./data/spots.json" のような書き方だと
+//   読み込み先がずれて404になるため。<head> で保存した __ODEKAKE_BASE_PATH__ を使うので、GitHub Pages のサブパス公開でも壊れない。
+//   ※ APP_BASE_PATH と同じ求め方だが、APP_BASE_PATH は後ろで定義される const なので、データ読み込みより前に使えるよう独立させている。
+//   ※ file:// で index.html を直接開いた場合、ブラウザは fetch での JSON 読み込みを許可しない（ローカル確認は簡易サーバー経由にする）。
+const DATA_SOURCES = Object.freeze({
+  spots:  "data/spots.json",   // SPOTS（施設）を1つの配列にしたもの
+  hotels: "data/hotels.json"   // { familyHotels, areaMeta, prefOrder }
+});
+function dataFileUrl(key){
+  const rel = DATA_SOURCES[key];
+  if(!rel) return "";
+  let base = "";
+  try{
+    const p = window.__ODEKAKE_BASE_PATH__ || window.location.pathname;
+    base = p.endsWith("/") ? p : p.replace(/[^/]*$/, "");
+  }catch(e){ base = ""; }
+  return base + rel;
+}
 const STORAGE_KEY = "odekakeNaviV2";
 // 📅 このデータの更新時点（施設データ＝SPOTS等を追加・修正した際にここも更新する）
 const APP_LAST_UPDATED = "2026年9月21日"; // 日本時間での最終更新日（施設データを追加・修正した日に書き換える。ページ生成日ではない）
