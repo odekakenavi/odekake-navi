@@ -6612,6 +6612,7 @@ function planTimelineHtml(spots, tl, sol){
             <div class="plan-item-order">${i+1}</div>
             <div class="plan-item-main" data-name="${escapeAttr(s.name)}">
               <div class="plan-item-name">${genreInfo(s).icon} ${flowerEmoji(s) ? flowerEmoji(s)+" " : ""}${s.name}</div>
+              ${hoursWarn ? `<div class="plan-hours-warn">${hoursWarn}</div>` : ""}
               <div class="plan-item-meta">${fullAreaLabel(s)}</div>
               ${stayLabel ? `<div class="plan-item-meta">${stayLabel.replace("⏱️ おすすめ滞在時間：","⏱️ ").replace("⏱️ おすすめ滞在：","⏱️ ")}</div>` : ""}
             </div>
@@ -6622,7 +6623,6 @@ function planTimelineHtml(spots, tl, sol){
           </div>
           <div class="plan-time-line">${planChipHtml(tl, sol, "spot:"+i+":arrive", "到着")}<span class="ptl-arrow">→</span>${planChipHtml(tl, sol, "spot:"+i+":depart", "出発")}</div>
           <div class="plan-time-line">${planStayChipHtml(tl, sol, "stay:"+i)}</div>
-          ${hoursWarn ? `<div class="plan-hours-warn">${hoursWarn}</div>` : ""}
           ${planInsideMealNoteHtml(tl, i)}
           ${inf && inf.shrunk ? `<div class="plan-item-meta">※手入力した時刻に合わせて、おすすめより短めにしています</div>` : ""}
           ${planEditorHtml(tl, sol, "spot:"+i+":arrive")}${planEditorHtml(tl, sol, "spot:"+i+":depart")}${planEditorHtml(tl, sol, "stay:"+i)}
