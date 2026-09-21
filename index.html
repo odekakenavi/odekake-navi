@@ -820,6 +820,11 @@
   .plan-lunch-main{flex:1; min-width:0;}
   .plan-lunch-place{width:100%; box-sizing:border-box; margin-top:4px; font-size:16px; padding:7px 8px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--ink); font-family:inherit;}
   .plan-lunch-dur{font-size:11px; color:var(--ink-soft);}
+  .plan-meal-add-row{display:flex; gap:8px;}
+  .plan-meal-add-row .plan-lunch-add{flex:1; width:auto;}
+  .plan-meal-dinner{background:#EEF0FA;}
+  .plan-meal-inside{margin-left:14px; border-style:dashed;}
+  .plan-meal-where{display:block; width:100%; box-sizing:border-box; margin-top:4px; font-size:16px; padding:7px 6px; min-height:40px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--ink); font-family:inherit;}
   .plan-lunch-add{
     display:block; width:100%; text-align:center; min-height:42px; padding:8px; margin:2px 0 10px; border-radius:10px;
     border:1.5px dashed var(--sun); background:var(--paper); color:var(--sun); font-size:13px; font-weight:800; cursor:pointer; font-family:inherit;
@@ -4386,7 +4391,9 @@ function getFilterName(filterType){
 //    }},
 //    home:{ depart, arrive },                // 手入力した出発／帰着時刻
 //    legMin:{ ["A|B"]:分 },                  // 移動時間が取得できない区間だけ手入力した移動時間
-//    lunch:null | { afterIndex, place, start, end, durationMin, moveBeforeMin }
+//    lunch / dinner: null | { afterIndex, place, start, end, durationMin, moveBeforeMin, inSpot }
+//      ・inSpot=null …「施設の間」（移動の途中。時刻の鎖に入り、前後を計算に含める）
+//      ・inSpot="施設名" …「施設内」（その施設の滞在の中。滞在時間・移動には影響しない。時刻は表示用）
 //  }
 //  ※「手入力値」はここに保存、「自動計算値」は保存せず毎回 planSolve で計算する
 //    （基準滞在時間＝planStayMinutesMid、補正後滞在時間＝基準×ペース、移動時間＝planLegInfoの切り上げ）。
@@ -4400,6 +4407,10 @@ const PLAN_PACES = [
 ];
 const PLAN_DEFAULT_PACE = "standard";
 const PLAN_LUNCH_DEFAULT_MIN = 60;   // 昼食の既定の長さ（分）
+const PLAN_MEALS = [                 // 食事（昼食・夕食）。どちらも同じ仕組み
+  {key:"lunch",  label:"昼食", icon:"🍽", defDur:60},
+  {key:"dinner", label:"夕食", icon:"🍴", defDur:90}
+];
 const PLAN_MIN_DUR = 10;             // 滞在・昼食の最短（分）
 const PLAN_MAX_DUR = 720;            // 手入力できる滞在・移動時間の上限（分）
 const PLAN_SHRINK_FLOOR = 30;        // 手入力した時刻に間に合わせるとき、自動の滞在を縮めてよい下限（分）
@@ -4435,9 +4446,21 @@ function planStayPref(spot, paceKey){
 }
 
 function planDefaultSchedule(){
-  return { v:1, pace:PLAN_DEFAULT_PACE, stops:{}, home:{depart:null, arrive:null}, legMin:{}, lunch:null };
+  return { v:1, pace:PLAN_DEFAULT_PACE, stops:{}, home:{depart:null, arrive:null}, legMin:{}, lunch:null, dinner:null };
 }
 // 保存データ（旧データ・壊れたデータを含む）を安全な形に整える。不正な値は捨てて自動計算に戻す
+function planNormalizeMeal(l, defDur){
+  if(!l || typeof l!=="object") return null;
+  return {
+    afterIndex: (Number.isInteger(l.afterIndex) && l.afterIndex>=0) ? l.afterIndex : 0,
+    place: typeof l.place==="string" ? l.place.slice(0,40) : "",
+    start: planValidClock(l.start) ? l.start : null,
+    end: planValidClock(l.end) ? l.end : null,
+    durationMin: planValidDur(l.durationMin) ? l.durationMin : defDur,
+    moveBeforeMin: planValidBuf(l.moveBeforeMin) ? l.moveBeforeMin : 0,
+    inSpot: (typeof l.inSpot==="string" && l.inSpot && l.inSpot!=="__proto__") ? l.inSpot : null
+  };
+}
 function planNormalizeSchedule(raw){
   const d = planDefaultSchedule();
   if(!raw || typeof raw!=="object") return d;
@@ -4462,17 +4485,7 @@ function planNormalizeSchedule(raw){
   if(raw.legMin && typeof raw.legMin==="object"){
     Object.keys(raw.legMin).forEach(k=>{ if(k!=="__proto__" && planValidDur(raw.legMin[k])) d.legMin[k] = raw.legMin[k]; });
   }
-  if(raw.lunch && typeof raw.lunch==="object"){
-    const l = raw.lunch;
-    d.lunch = {
-      afterIndex: (Number.isInteger(l.afterIndex) && l.afterIndex>=0) ? l.afterIndex : 0,
-      place: typeof l.place==="string" ? l.place.slice(0,40) : "",
-      start: planValidClock(l.start) ? l.start : null,
-      end: planValidClock(l.end) ? l.end : null,
-      durationMin: planValidDur(l.durationMin) ? l.durationMin : PLAN_LUNCH_DEFAULT_MIN,
-      moveBeforeMin: planValidBuf(l.moveBeforeMin) ? l.moveBeforeMin : 0
-    };
-  }
+  PLAN_MEALS.forEach(m=>{ d[m.key] = planNormalizeMeal(raw[m.key], m.defDur); });
   return d;
 }
 function planGetSched(tab){
@@ -4495,7 +4508,12 @@ function planPruneSchedule(tab){
     const parts = k.split("|");
     if(!parts.every(p=> p==="@home" || names.indexOf(p)>=0)) delete sched.legMin[k];
   });
-  if(sched.lunch) sched.lunch.afterIndex = Math.max(0, Math.min(names.length, sched.lunch.afterIndex|0));
+  PLAN_MEALS.forEach(m=>{
+    const ml = sched[m.key];
+    if(!ml) return;
+    ml.afterIndex = Math.max(0, Math.min(names.length, ml.afterIndex|0));
+    if(ml.inSpot && names.indexOf(ml.inSpot)<0) ml.inSpot = null;   // 施設内に入れていた施設が消えたら「施設の間」に戻す
+  });
 }
 
 // ------------------------------------------------------------------
@@ -4504,28 +4522,42 @@ function planPruneSchedule(tab){
 function planBuildTimeline(spots, tripMode, sched, summary){
   const showOut = (tripMode==="roundtrip" || tripMode==="outboundOnly");
   const showRet = (tripMode==="roundtrip" || tripMode==="returnOnly");
-  const lunch = sched.lunch;
   const nodes = [], segs = [], idx = {}, stayIdx = {};
+  const n = spots.length;
+  // 食事：「施設内」（その施設の滞在の中）と「施設の間」（移動の途中。時刻の鎖に入る）に分ける
+  const meals = {}, inside = {};
+  const between = [];
+  PLAN_MEALS.forEach(mk=>{
+    const ml = sched[mk.key];
+    if(!ml) return;
+    meals[mk.key] = ml;
+    const si = ml.inSpot ? spots.findIndex(s=>s.name===ml.inSpot) : -1;
+    if(si>=0) inside[mk.key] = {spotIdx:si, meal:ml, mk};
+    else between.push(mk);
+  });
   const ents = [];
   if(showOut) ents.push({type:"homeOut"});
-  const items = spots.map((s,i)=>({type:"spot", spot:s, i}));
-  if(lunch) items.splice(Math.max(0, Math.min(spots.length, lunch.afterIndex|0)), 0, {type:"lunch"});
-  items.forEach(it=>ents.push(it));
+  for(let g=0; g<=n; g++){
+    between.filter(mk=> Math.max(0, Math.min(n, meals[mk.key].afterIndex|0))===g).forEach(mk=>ents.push({type:"meal", mk}));
+    if(g<n) ents.push({type:"spot", spot:spots[g], i:g});
+  }
   if(showRet) ents.push({type:"homeRet"});
 
-  const addNode = (id, kind, label, manual)=>{
+  const addNode = (id, kind, label, manual, extra)=>{
     idx[id] = nodes.length;
-    nodes.push({ id, kind, label, fixed: planValidClock(manual), value: planValidClock(manual) ? manual : null });
+    nodes.push(Object.assign({ id, kind, label, fixed: planValidClock(manual), value: planValidClock(manual) ? manual : null }, extra||{}));
     return idx[id];
   };
   // 前のエンティティ → e の移動区間
   const travelSeg = (prev, e, k)=>{
-    if(e.type==="lunch"){
-      // 昼食は「前の場所の近く（または途中）」でとる想定。既定の移動は0分（将来 moveBeforeMin で調整可能）
-      return {kind:"move", elastic:false, dur:lunch.moveBeforeMin||0, missing:false, key:null, leg:null};
+    if(e.type==="meal"){
+      // 施設の間の食事は「前の場所の近く（または途中）」でとる想定。既定の移動は0分（moveBeforeMin で調整可能）
+      return {kind:"move", elastic:false, dur:meals[e.mk.key].moveBeforeMin||0, missing:false, key:null, leg:null};
     }
-    // 昼食を挟む場合は「昼食の前の場所」から次の場所への元の移動時間をそのまま使う
-    const P = (prev.type==="lunch") ? (ents[k-2] || null) : prev;
+    // 食事を挟む場合は「食事の前の場所」から次の場所への元の移動時間をそのまま使う
+    let q = k-1;
+    while(q>=0 && ents[q].type==="meal") q--;
+    const P = q>=0 ? ents[q] : null;
     if(!P) return {kind:"move", elastic:false, dur:0, missing:false, key:null, leg:null};
     let leg = null, key = null;
     if(P.type==="homeOut" && e.type==="spot"){ leg = summary.homeLegOut; key = "@home|"+e.spot.name; }
@@ -4559,16 +4591,17 @@ function planBuildTimeline(spots, tripMode, sched, summary){
       else { seg.elastic=true; seg.pref=st.paced+extra; seg.floor=Math.min(st.paced, PLAN_SHRINK_FLOOR)+extra; seg.stay=st.paced; seg.source="auto"; }
       e.segStay = segs.length; stayIdx["stay:"+e.i] = segs.length; segs.push(seg);
       e.n2 = addNode("spot:"+e.i+":depart","depart",name+"の出発", rec.depart);
-    } else if(e.type==="lunch"){
-      e.n1 = addNode("lunch:start","lunchStart","昼食の開始", lunch.start);
-      const ld = planValidDur(lunch.durationMin) ? lunch.durationMin : PLAN_LUNCH_DEFAULT_MIN;
-      e.segStay = segs.length; stayIdx["stay:lunch"] = segs.length;
-      segs.push({ kind:"lunch", elastic:true, pref:ld, floor:Math.min(ld, PLAN_SHRINK_FLOOR), extra:0, stay:ld, source:"auto" });
-      e.n2 = addNode("lunch:end","lunchEnd","昼食の終了", lunch.end);
+    } else if(e.type==="meal"){
+      const mk = e.mk, ml = meals[mk.key];
+      e.n1 = addNode(mk.key+":start","mealStart",mk.label+"の開始", ml.start, {mealKey:mk.key});
+      const ld = planValidDur(ml.durationMin) ? ml.durationMin : mk.defDur;
+      e.segStay = segs.length; stayIdx["stay:"+mk.key] = segs.length;
+      segs.push({ kind:"meal", elastic:true, pref:ld, floor:Math.min(ld, PLAN_SHRINK_FLOOR), extra:0, stay:ld, source:"auto" });
+      e.n2 = addNode(mk.key+":end","mealEnd",mk.label+"の終了", ml.end, {mealKey:mk.key});
     }
     prev = e;
   });
-  return { nodes, segs, idx, stayIdx, ents, showOut, showRet, lunch, pace: sched.pace };
+  return { nodes, segs, idx, stayIdx, ents, showOut, showRet, meals, inside, pace: sched.pace };
 }
 
 // ------------------------------------------------------------------
@@ -4676,6 +4709,57 @@ function planSolve(nodes, segs){
     }
   }
   return out;
+}
+
+// 「施設内」の食事：その施設の滞在の中でとるだけなので、時刻の鎖には入れない（滞在時間・移動は変わらない）。
+// 手入力した開始／終了は固定。未入力側は、もう一方から食事の長さ分ずらして自動表示。
+// どちらも未入力なら、滞在の真ん中あたりに自動で置く（施設の到着・出発が分かる場合のみ）。
+function planInsideSolve(tl, sol){
+  const out = {};
+  Object.keys(tl.inside).forEach(key=>{
+    const ins = tl.inside[key], ml = ins.meal;
+    const A = sol.t[tl.idx["spot:"+ins.spotIdx+":arrive"]];
+    const D = sol.t[tl.idx["spot:"+ins.spotIdx+":depart"]];
+    const dur = planValidDur(ml.durationMin) ? ml.durationMin : ins.mk.defDur;
+    let s = planValidClock(ml.start) ? ml.start : null;
+    let e = planValidClock(ml.end) ? ml.end : null;
+    let sSt = s!=null ? "manual" : "unresolved", eSt = e!=null ? "manual" : "unresolved";
+    if(s!=null && e==null){ e = s + dur; eSt = "auto"; }
+    else if(e!=null && s==null){ s = e - dur; sSt = "auto"; }
+    else if(s==null && e==null && A!=null && D!=null){
+      const off = D-A>dur ? Math.floor(((D-A-dur)/2)/10)*10 : 0;
+      s = A + off; e = s + dur; sSt = eSt = "auto";
+    }
+    if(s!=null && planFmtTime(s)===null){ s = null; sSt = "unresolved"; }
+    if(e!=null && planFmtTime(e)===null){ e = null; eSt = "unresolved"; }
+    let warn = null;
+    if(s!=null && e!=null){
+      if(e<=s) warn = "order";
+      else if(A!=null && D!=null && (s<A || e>D)) warn = "outside";
+    }
+    out[key] = { start:{t:s, st:sSt}, end:{t:e, st:eSt}, warn, dur };
+  });
+  return out;
+}
+function planSolveAll(tl){
+  const sol = planSolve(tl.nodes, tl.segs);
+  sol.inside = planInsideSolve(tl, sol);
+  return sol;
+}
+// 時刻チップ・入力欄から見た「時刻の項目」（鎖の中のノードでも、施設内の食事でも同じ形で扱う）
+function planNodeView(tl, sol, id){
+  if(id in tl.idx){
+    const i = tl.idx[id], nd = tl.nodes[i];
+    return { label:nd.label, t:sol.t[i], st:sol.st[i], why:sol.why[i], fixed:nd.fixed, kind:nd.kind, mealKey:nd.mealKey||null };
+  }
+  const m = /^(lunch|dinner):(start|end)$/.exec(id);
+  if(m && sol.inside && sol.inside[m[1]]){
+    const r = sol.inside[m[1]], x = (m[2]==="start") ? r.start : r.end;
+    const mk = PLAN_MEALS.find(z=>z.key===m[1]);
+    return { label: mk.label + (m[2]==="start" ? "の開始" : "の終了"), t:x.t, st:x.st, why: x.st==="unresolved" ? "noAnchor" : null,
+             fixed: x.st==="manual", kind: m[2]==="start" ? "mealStart" : "mealEnd", mealKey:m[1] };
+  }
+  return null;
 }
 /*PLAN_TIME_ENGINE_END*/
 
@@ -6247,21 +6331,21 @@ const PLAN_TRIP_MODES = [
 // 手入力＝オレンジの実線枠「手入力」タグ／自動計算＝グレーの「自動」タグ／計算できない＝「--:--」
 // ------------------------------------------------------------------
 function planEsc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-function planUiValidate(tl){
+function planUiValidate(tl, sol){
   if(planUi.tab!==state.activePlanTab){ planUi.tab = state.activePlanTab; planUi.editing = null; }
   const id = planUi.editing;
-  if(id && !(id in tl.idx) && !(id!=="stay:lunch" && id in tl.stayIdx)) planUi.editing = null;
+  if(id && !planNodeView(tl, sol, id) && !(/^stay:\d+$/.test(id) && id in tl.stayIdx)) planUi.editing = null;
 }
 function planWhyLabel(why){ return why==="missingLeg" ? "移動時間を設定" : (why==="conflict" ? "要確認" : "未設定"); }
 function planChipHtml(tl, sol, id, label){
-  const i = tl.idx[id];
-  if(i==null) return "";
-  const tm = planFmtTime(sol.t[i]);
+  const v = planNodeView(tl, sol, id);
+  if(!v) return "";
+  const tm = planFmtTime(v.t);
   let cls, tag, txt;
-  if(sol.st[i]==="manual" && tm){ cls="manual"; tag="手入力"; txt=tm; }
-  else if(sol.st[i]==="auto" && tm){ cls="auto"; tag="自動"; txt=tm; }
-  else { cls="none"; tag=planWhyLabel(sol.why[i]); txt="--:--"; }
-  return `<button type="button" class="plan-time-chip ${cls}${planUi.editing===id?" editing":""}" data-pt-node="${id}" aria-label="${planEsc(tl.nodes[i].label)} ${txt} ${tag}">${label?`<span class="ptc-label">${label}</span>`:""}<span class="ptc-time">${txt}</span><span class="ptc-tag">${tag}</span></button>`;
+  if(v.st==="manual" && tm){ cls="manual"; tag="手入力"; txt=tm; }
+  else if(v.st==="auto" && tm){ cls="auto"; tag="自動"; txt=tm; }
+  else { cls="none"; tag=planWhyLabel(v.why); txt="--:--"; }
+  return `<button type="button" class="plan-time-chip ${cls}${planUi.editing===id?" editing":""}" data-pt-node="${id}" aria-label="${planEsc(v.label)} ${txt} ${tag}">${label?`<span class="ptc-label">${label}</span>`:""}<span class="ptc-time">${txt}</span><span class="ptc-tag">${tag}</span></button>`;
 }
 function planStayInfo(tl, sol, id){
   const si = tl.stayIdx[id];
@@ -6301,12 +6385,12 @@ function planEditorHtml(tl, sol, id){
       <div class="pte-note">手入力した滞在時間は固定され、お出かけペースを変えても変わりません。</div>
     </div>`;
   }
-  const i = tl.idx[id];
-  if(i==null) return "";
-  const nd = tl.nodes[i];
-  let cur = sol.t[i];
+  const nd = planNodeView(tl, sol, id);
+  if(!nd) return "";
+  let cur = nd.t;
   if(!(typeof cur==="number" && cur>=0 && cur<=1430)){
-    cur = { homeDepart:480, arrive:600, depart:720, lunchStart:720, lunchEnd:780, homeArrive:1080 }[nd.kind] || 540;
+    const dinner = nd.mealKey==="dinner";
+    cur = { homeDepart:480, arrive:600, depart:720, mealStart:(dinner?1080:720), mealEnd:(dinner?1170:780), homeArrive:1080 }[nd.kind] || 540;
   }
   const h = Math.floor(cur/60), m = cur%60;
   let hOpts = "", mOpts = "";
@@ -6359,6 +6443,36 @@ function planHomeRowHtml(tl, sol, id, label){
 function planConflictHtml(tl, sol){
   return sol.conflicts.map(c=>`<div class="plan-advisory busy">⚠️ 「${planEsc(tl.nodes[c.a].label)}」から「${planEsc(tl.nodes[c.b].label)}」までの時間が約${formatMinutes(c.shortBy)}足りません。どちらかの時刻を見直してください。</div>`).join("");
 }
+// 食事（昼食・夕食）のカード。「施設の間」（移動の途中）か「施設内」かを選べる。時刻を入力すると手入力（固定）になる
+function planMealCardHtml(mk, tl, sol, spots, isInside){
+  const ml = tl.meals[mk.key];
+  const insideRes = isInside ? sol.inside[mk.key] : null;
+  const dur = isInside ? (insideRes ? insideRes.dur : null) : sol.dur[tl.stayIdx["stay:"+mk.key]];
+  const whereOpts = `<option value="">施設の間</option>` + spots.map((s,i)=>`<option value="${i}"${(isInside && ml.inSpot===s.name)?" selected":""}>「${planEsc(s.name)}」の中</option>`).join("");
+  let warn = "";
+  if(insideRes && insideRes.warn==="outside") warn = `<div class="plan-item-meta">⚠️ 施設の滞在時間（到着〜出発）の外になっています</div>`;
+  if(insideRes && insideRes.warn==="order") warn = `<div class="plan-item-meta">⚠️ 終了は開始より後の時刻にしてください</div>`;
+  const controls = isInside ? "" : `
+      ${ml.afterIndex<=0 ? "" : `<button type="button" data-meal-up="${mk.key}">▲</button>`}
+      ${ml.afterIndex>=spots.length ? "" : `<button type="button" data-meal-down="${mk.key}">▼</button>`}`;
+  return `
+    <div class="plan-item plan-meal plan-meal-${mk.key}${isInside?" plan-meal-inside":""}">
+      <div class="plan-item-head">
+        <div class="plan-item-order plan-lunch-order">${mk.icon}</div>
+        <div class="plan-lunch-main">
+          <div class="plan-item-name">${mk.label}${isInside ? "（施設内）" : ""}</div>
+          <select class="plan-meal-where" data-meal="${mk.key}" aria-label="${mk.label}の場所">${whereOpts}</select>
+          <input type="text" class="plan-lunch-place plan-meal-place" data-meal="${mk.key}" maxlength="40" placeholder="お店・場所（自由入力）" value="${planEsc(ml.place)}" aria-label="${mk.label}のお店・場所">
+        </div>
+        <div class="plan-item-controls">${controls}</div>
+      </div>
+      <div class="plan-time-line">${planChipHtml(tl, sol, mk.key+":start", "開始")}<span class="ptl-arrow">→</span>${planChipHtml(tl, sol, mk.key+":end", "終了")}${Number.isFinite(dur) ? `<span class="plan-lunch-dur">（${formatMinutes(dur)}）</span>` : ""}</div>
+      ${warn}
+      ${planEditorHtml(tl, sol, mk.key+":start")}${planEditorHtml(tl, sol, mk.key+":end")}
+      <div class="plan-item-move-row"><button type="button" class="plan-item-move-btn plan-item-delete-btn" data-meal-remove="${mk.key}">🗑 削除</button></div>
+    </div>
+  `;
+}
 // 出発 → 施設 → 移動 → 昼食 … の順に、既存のプランカードに時刻の行を足して並べる
 function planTimelineHtml(spots, tl, sol){
   let html = "";
@@ -6396,28 +6510,12 @@ function planTimelineHtml(spots, tl, sol){
           </div>
         </div>
       `;
-    } else if(e.type==="lunch"){
-      const lunch = tl.lunch;
-      const si = tl.stayIdx["stay:lunch"];
-      const dur = sol.dur[si];
-      html += `
-        <div class="plan-item plan-lunch">
-          <div class="plan-item-head">
-            <div class="plan-item-order plan-lunch-order">🍽</div>
-            <div class="plan-lunch-main">
-              <div class="plan-item-name">昼食</div>
-              <input type="text" class="plan-lunch-place" id="planLunchPlace" maxlength="40" placeholder="お店・場所（自由入力）" value="${planEsc(lunch.place)}" aria-label="昼食のお店・場所">
-            </div>
-            <div class="plan-item-controls">
-              ${lunch.afterIndex<=0 ? "" : `<button type="button" data-lunch-up="1">▲</button>`}
-              ${lunch.afterIndex>=spots.length ? "" : `<button type="button" data-lunch-down="1">▼</button>`}
-            </div>
-          </div>
-          <div class="plan-time-line">${planChipHtml(tl, sol, "lunch:start", "開始")}<span class="ptl-arrow">→</span>${planChipHtml(tl, sol, "lunch:end", "終了")}${Number.isFinite(dur) ? `<span class="plan-lunch-dur">（${formatMinutes(dur)}）</span>` : ""}</div>
-          ${planEditorHtml(tl, sol, "lunch:start")}${planEditorHtml(tl, sol, "lunch:end")}
-          <div class="plan-item-move-row"><button type="button" class="plan-item-move-btn plan-item-delete-btn" id="planLunchRemoveBtn">🗑 削除</button></div>
-        </div>
-      `;
+    } else if(e.type==="meal"){
+      html += planMealCardHtml(e.mk, tl, sol, spots, false);
+    }
+    // 「施設内」の食事は、その施設のカードのすぐ下に出す
+    if(e.type==="spot"){
+      PLAN_MEALS.forEach(mk=>{ if(tl.inside[mk.key] && tl.inside[mk.key].spotIdx===e.i) html += planMealCardHtml(mk, tl, sol, spots, true); });
     }
   });
   return html;
@@ -6434,10 +6532,10 @@ function planApplyManual(spots, sched, id, val){
   }
   if(val!=null && !planValidClock(val)) return;
   const v = (val==null) ? null : val;
+  const mm = /^(lunch|dinner):(start|end)$/.exec(id);
   if(id==="home:depart") sched.home.depart = v;
   else if(id==="home:arrive") sched.home.arrive = v;
-  else if(id==="lunch:start" && sched.lunch) sched.lunch.start = v;
-  else if(id==="lunch:end" && sched.lunch) sched.lunch.end = v;
+  else if(mm) { if(sched[mm[1]]) sched[mm[1]][mm[2]] = v; }
   else {
     const m = /^spot:(\d+):(arrive|depart)$/.exec(id);
     const sp = m ? spots[Number(m[1])] : null;
@@ -6490,21 +6588,38 @@ function planBindHandlers(sheet, spots){
       redraw();
     };
   });
-  const lunchAdd = sheet.querySelector("#planLunchAddBtn");
-  if(lunchAdd) lunchAdd.onclick = ()=>{
-    sched.lunch = { afterIndex: Math.ceil(spots.length/2), place:"", start:null, end:null, durationMin:PLAN_LUNCH_DEFAULT_MIN, moveBeforeMin:0 };
-    planUi.editing = null;
-    trackEvent("plan_lunch_add", {plan_tab: state.activePlanTab+1});
-    redraw();
-  };
-  const lunchRemove = sheet.querySelector("#planLunchRemoveBtn");
-  if(lunchRemove) lunchRemove.onclick = ()=>{ sched.lunch = null; planUi.editing = null; redraw(); };
-  const lunchUp = sheet.querySelector("[data-lunch-up]");
-  if(lunchUp) lunchUp.onclick = (e)=>{ e.stopPropagation(); if(sched.lunch && sched.lunch.afterIndex>0){ sched.lunch.afterIndex--; planUi.editing = null; redraw(); } };
-  const lunchDown = sheet.querySelector("[data-lunch-down]");
-  if(lunchDown) lunchDown.onclick = (e)=>{ e.stopPropagation(); if(sched.lunch && sched.lunch.afterIndex<spots.length){ sched.lunch.afterIndex++; planUi.editing = null; redraw(); } };
-  const lunchPlace = sheet.querySelector("#planLunchPlace");
-  if(lunchPlace) lunchPlace.oninput = ()=>{ if(sched.lunch){ sched.lunch.place = lunchPlace.value.slice(0,40); savePersisted(); } };
+  sheet.querySelectorAll("[data-meal-add]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const mk = PLAN_MEALS.find(m=>m.key===btn.dataset.mealAdd);
+      if(!mk) return;
+      sched[mk.key] = { afterIndex: mk.key==="dinner" ? spots.length : Math.ceil(spots.length/2), place:"", start:null, end:null, durationMin:mk.defDur, moveBeforeMin:0, inSpot:null };
+      planUi.editing = null;
+      trackEvent("plan_meal_add", {meal: mk.key, plan_tab: state.activePlanTab+1});
+      redraw();
+    };
+  });
+  sheet.querySelectorAll("[data-meal-remove]").forEach(btn=>{
+    btn.onclick = ()=>{ const k = btn.dataset.mealRemove; if(PLAN_MEALS.some(m=>m.key===k)) sched[k] = null; planUi.editing = null; redraw(); };
+  });
+  sheet.querySelectorAll("[data-meal-up]").forEach(btn=>{
+    btn.onclick = (e)=>{ e.stopPropagation(); const ml = sched[btn.dataset.mealUp]; if(ml && ml.afterIndex>0){ ml.afterIndex--; planUi.editing = null; redraw(); } };
+  });
+  sheet.querySelectorAll("[data-meal-down]").forEach(btn=>{
+    btn.onclick = (e)=>{ e.stopPropagation(); const ml = sched[btn.dataset.mealDown]; if(ml && ml.afterIndex<spots.length){ ml.afterIndex++; planUi.editing = null; redraw(); } };
+  });
+  sheet.querySelectorAll(".plan-meal-where").forEach(sel=>{
+    sel.onchange = ()=>{
+      const ml = sched[sel.dataset.meal];
+      if(!ml) return;
+      const sp = sel.value==="" ? null : spots[Number(sel.value)];
+      ml.inSpot = sp ? sp.name : null;
+      planUi.editing = null;
+      redraw();
+    };
+  });
+  sheet.querySelectorAll(".plan-meal-place").forEach(inp=>{
+    inp.oninput = ()=>{ const ml = sched[inp.dataset.meal]; if(ml){ ml.place = inp.value.slice(0,40); savePersisted(); } };
+  });
 }
 
 function renderPlanSheet(){
@@ -6541,8 +6656,8 @@ function renderPlanSheet(){
     // 🕐 時刻の自動計算：手入力した時刻を固定点にして前後を計算（ロジックは planBuildTimeline / planSolve）
     const sched = planGetSched(state.activePlanTab);
     const tl = planBuildTimeline(spots, tripMode, sched, summary);
-    const sol = planSolve(tl.nodes, tl.segs);
-    planUiValidate(tl);
+    const sol = planSolveAll(tl);
+    planUiValidate(tl, sol);
     const paceHtml = `
       <div class="plan-pace-block">
         <div class="plan-pace-title">🐢 お出かけペース <span>（自動計算する滞在時間にだけ反映）</span></div>
@@ -6561,7 +6676,8 @@ function renderPlanSheet(){
         ${summary.advisory ? `<div class="plan-advisory ${summary.advisory.level}">${summary.advisory.text}</div>` : ""}
       </div>
     `;
-    const lunchAddHtml = sched.lunch ? "" : `<button type="button" class="plan-lunch-add" id="planLunchAddBtn">🍽 昼食を追加</button>`;
+    const lunchAddHtml = PLAN_MEALS.some(m=>!sched[m.key])
+      ? `<div class="plan-meal-add-row">${PLAN_MEALS.filter(m=>!sched[m.key]).map(m=>`<button type="button" class="plan-lunch-add" data-meal-add="${m.key}">${m.icon} ${m.label}を追加</button>`).join("")}</div>` : "";
     bodyHtml = tripModeHtml + paceHtml + hintHtml + summaryHtml + planConflictHtml(tl, sol) + itemsHtml + lunchAddHtml;
   }
   sheet.innerHTML = `
