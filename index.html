@@ -1732,13 +1732,17 @@ function effectiveSeasons(spot){
 }
 // おでかけナビ独自の季節期間（月日の境界で判定）：
 // 春 2/22〜5/20／夏 5/21〜8/20／秋 8/21〜11/20／冬 11/21〜2/21
-function currentSeason(){
-  const now = new Date();
-  const md = (now.getMonth()+1) * 100 + now.getDate(); // 例: 9/17 → 917
+// 任意の日付から季節を求める共通ロジック（🎒持ち物機能が「お出かけ日」の季節を
+// 求めるのにも使う。currentSeason()はこれに「今日」を渡すだけの薄いラッパーにする）。
+function seasonForDate(d){
+  const md = (d.getMonth()+1) * 100 + d.getDate(); // 例: 9/17 → 917
   if(md >= 221 && md <= 520) return "春";
   if(md >= 521 && md <= 820) return "夏";
   if(md >= 821 && md <= 1120) return "秋";
   return "冬"; // 11/21〜12/31 および 1/1〜2/20
+}
+function currentSeason(){
+  return seasonForDate(new Date());
 }
 // 🌸 「季節から探す」で季節を1つだけ選んでいる場合は、それを「おすすめする季節」として優先する。
 // 選んでいない場合のみ、暦上の「今の季節」を使う（選択中の季節と違う季節のおすすめが出るのを防ぐ）
@@ -5087,6 +5091,16 @@ const WMO_WEATHER_MAP = {
 function weatherCodeInfo(code){
   return WMO_WEATHER_MAP[code] || {icon:"🌡", label:"不明"};
 }
+// 🎒 持ち物機能用：WMOコードを「晴れ／曇り／雨／雪」の4区分（PACKING_MASTERの
+// weather条件と同じ語彙）に丸める。未知のコードはnull（＝天候不明として扱う）。
+function weatherCodeToPackingCategory(code){
+  if(code==null) return null;
+  if(code===0 || code===1) return "晴れ";
+  if(code===2 || code===3 || code===45 || code===48) return "曇り";
+  if([51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99].includes(code)) return "雨";
+  if([71,73,75,77,85,86].includes(code)) return "雪";
+  return null;
+}
 
 function loadWeatherCache(){
   try{
@@ -5122,18 +5136,24 @@ function formatWeatherUpdatedAt(fetchedAt){
   return `${get("month")}月${get("day")}日 ${get("hour")}:00更新`;
 }
 
-// Open-Meteoのレスポンス（daily配列）を、表示しやすい3日分の配列に変換する
+// Open-Meteoのレスポンス（daily配列）を、表示しやすい配列に変換する。
+// 施設詳細では先頭3日分（今日・明日・明後日）だけを表示に使うが、🎒持ち物機能が
+// 「お出かけ日」の天気をピンポイントで探せるよう、取得できた分（最大16日）は
+// 全てdate付きで返す（＝天気APIの二重取得を避けるための共有データ）。
 function parseWeatherResponse(json){
   const d = json && json.daily;
   if(!d || !Array.isArray(d.time)) return null;
-  const len = Math.min(3, d.time.length);
+  const len = d.time.length;
   const days = [];
   for(let i=0;i<len;i++){
-    const info = weatherCodeInfo(d.weather_code ? d.weather_code[i] : undefined);
+    const code = d.weather_code ? d.weather_code[i] : undefined;
+    const info = weatherCodeInfo(code);
     days.push({
       label: WEATHER_DAY_LABELS[i] || d.time[i],
       icon: info.icon,
       cond: info.label,
+      code: (code==null || isNaN(code)) ? null : code,
+      date: d.time[i] || null, // YYYY-MM-DD（Asia/Tokyo）
       tempMax: d.temperature_2m_max ? Math.round(d.temperature_2m_max[i]) : null,
       tempMin: d.temperature_2m_min ? Math.round(d.temperature_2m_min[i]) : null,
       pop: (d.precipitation_probability_max && d.precipitation_probability_max[i]!=null) ? Math.round(d.precipitation_probability_max[i]) : null
@@ -5153,9 +5173,12 @@ async function fetchWeatherForSpot(spot){
     return cached.data; // キャッシュが有効な間はAPIへ再アクセスしない
   }
   try{
+    // forecast_days=16：施設詳細では先頭3日分しか表示しないが、🎒持ち物機能が数日先の
+    // お出かけ日の天気も同じ1回のAPI呼び出し・同じキャッシュから探せるようにするため、
+    // Open-Meteoが日別予報で返せる最大日数（16日）まで一度に取得する（二重取得防止）。
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lng}`
       + `&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max`
-      + `&timezone=Asia%2FTokyo&forecast_days=3`;
+      + `&timezone=Asia%2FTokyo&forecast_days=16`;
     const res = await fetch(url);
     if(!res.ok) throw new Error("weather fetch failed: " + res.status);
     const json = await res.json();
@@ -5169,6 +5192,26 @@ async function fetchWeatherForSpot(spot){
     console.warn("[天気予報] 取得に失敗しました:", e);
     return null; // サイト全体を止めず、呼び出し側で「取得できませんでした」を表示させる
   }
+}
+
+// 🎒 持ち物機能用：指定した「お出かけ日」の天気を、既存の fetchWeatherForSpot（＝施設詳細の
+// 天気予報と共通のAPI呼び出し・キャッシュ）から探す。持ち物専用にAPIを二重に呼ぶことはしない。
+// 戻り値の status:
+//   "ok"        … その日の予報が取得できた（dayに天気・気温が入る）
+//   "unknown"   … 通信・APIは正常だが、まだ先すぎて予報の対象外（＝天気を断定しない）
+//   "error"     … 通信失敗・APIエラーなどで予報そのものが取得できなかった
+//   "unavailable" … 施設の緯度経度が無い等、そもそも問い合わせできない
+async function fetchWeatherForDate(spot, dateIso){
+  if(!spot || typeof spot.lat !== "number" || typeof spot.lng !== "number" || !dateIso){
+    return { status:"unavailable" };
+  }
+  const days = await fetchWeatherForSpot(spot);
+  if(!days) return { status:"error" };
+  const today = todayISODate();
+  const targetIso = dateIso < today ? today : dateIso; // 過去日は安全側で「今日」として扱う
+  const day = days.find(d=>d.date === targetIso);
+  if(!day) return { status:"unknown" };
+  return { status:"ok", day };
 }
 
 // 詳細画面の #weatherForecastBody に非同期で天気を描画する
@@ -6918,6 +6961,7 @@ function renderPlanSheet(){
       <button type="button" class="plan-schedule-btn" id="planScheduleBtn">📅 この日に行く予定にする</button>
       <button type="button" class="plan-visit-btn" id="planVisitBtn">✅ このプランに行った</button>
     </div>
+    <button type="button" class="plan-share-btn plan-share-btn-outline" id="planPackingBtn">🎒 このプランの持ち物を確認</button>
     <div style="font-size:11.5px; color:var(--ink-soft); margin-top:4px;">※「行く予定にする」は行く日をカレンダーに残すだけで、記録にはなりません。実際に行った後で「このプランに行った」を押すと、プラン内の全施設が【記録】の履歴に保存され、このプランからは自動的に削除されます。</div>
     ` : ""}
     <button class="detail-close-bottom" id="planCloseBtnBottom">戻る</button>
@@ -6981,6 +7025,8 @@ function renderPlanSheet(){
     const planUrl = window.location.origin + APP_BASE_PATH + "?plan=" + encodeURIComponent(spots.map(s=>s.name).join("|"));
     shareLinkOrCopy(planUrl, `${PLAN_TAB_LABELS[state.activePlanTab]}｜おでかけナビ`, `🚗 今日のおでかけプラン（${spots.length}カ所）`);
   };
+  const planPackingBtn = document.getElementById("planPackingBtn");
+  if(planPackingBtn) planPackingBtn.onclick = ()=>{ openPackingSheet(); };
   const planScheduleBtn = document.getElementById("planScheduleBtn");
   if(planScheduleBtn){
     planScheduleBtn.onclick = ()=>{
@@ -10604,16 +10650,16 @@ function openHotelDetailFromSpot(areaKey, hotelName, spotName){
 // 準備できたものをチェックできる」機能。既存の検索・施設詳細・プラン等の
 // 仕組みは変更せず、独立した sheet-overlay（#packingOverlay）として追加する。
 //
-// データは「持ち物マスタ（PACKING_MASTER）」と「今回のお出かけ用設定
-// （packingState）」を明確に分離する。マスタは固定データで、チェック・
-// 除外・カテゴリ変更などはすべて packingState 側に保存し、マスタ自体は
-// 書き換えない（別のお出かけでは再び候補にできるようにするため）。
+// データは「持ち物マスタ（PACKING_MASTER・不変）」「お出かけ単位の保存データ
+// （packingStore.manual／packingStore.outings[key]）」「その場で決まる自動判定
+// （プランの日付・施設・天気APIから作る packingEffectiveContext()）」の3層に
+// 分ける。マスタ自体は書き換えない（別のお出かけでも同じ候補として使えるように
+// するため）。保存データは「お出かけ単位」（予定日＋施設の組み合わせ）で分離し、
+// 別のプランを開いても準備状況が混ざらないようにする。
 //
-// 将来の自動提案（施設 → 目的 → 季節 → 天気 → 気温 → 年齢 → 持ち物）に
-// 備え、各アイテムに conditions（purposes / season / weather /
-// temperature / ages）を持たせている。今回はユーザーが手動で
-// お出かけ先・季節・天気・気温を選ぶが、将来はプランの日付・施設・
-// 天気APIの値をそのまま conditions の判定に渡すだけで自動化できる構造。
+// 各アイテムはconditions（purposes / season / weather / temperature / ages）を
+// 持ち、プランの日付・施設・天気APIの値をそのままconditionsの判定に渡すことで
+// 自動化している（手動での上書きも「条件を変更」から引き続き可能）。
 // ==================================================================
 const PACKING_STORAGE_KEY = "odekakeNaviPackingV1"; // 既存のSTORAGE_KEY等と衝突しない専用キー
 
@@ -10718,48 +10764,111 @@ const PACKING_MASTER = [
   pkItem("t_verycold_gear","手袋・帽子・カイロ","temperature","seasonal",508,{temperature:{min:null,max:5}})
 ];
 
-let packingState = null;
+// ------------------------------------------------------------------
+// 🎒 自動化（Phase6）：持ち物は「持ち物マスタ（不変）」「お出かけ単位の設定
+// （保存データ）」「その回に自動で決まる条件＝天気API等」の3層に分ける。
+//
+//  state.plans[tab] / state.planDates[tab] （既存のプラン機能）
+//     ↓
+//  packingBuildAutoContext()  … 施設→目的、宿泊有無、予定日→季節 を自動算出
+//     ↓（お出かけ日の天気だけ、既存fetchWeatherForSpotを使って非同期取得）
+//  packingAutoWeather[outingKey]
+//     ↓
+//  packingEffectiveContext()  … 自動値 + 手動上書き(あれば) を合成
+//     ↓
+//  packingItemMatchesContext() … 個々のマスタアイテムが今回の条件に合うか
+//
+// 保存データは「お出かけ単位（日付＋施設の組み合わせ）」ごとに分離して保存し
+// （packingStore.outings[key]）、プラン・日付が無い状態で開いた場合だけ
+// 従来通りの「手動モード」（packingStore.manual）を使う。
+// 旧バージョン（フラットなprepared/excluded/ctx）のlocalStorageは、初回読込時に
+// 「手動モード」のデータとして引き継ぐ（データを消さない）。
+// ------------------------------------------------------------------
+let packingStore = null; // { v:2, manual:{...}, outings:{ [key]: {...} } }
+let packingCurrentOutingKey = null; // 現在開いている持ち物シートがどのお出かけの物か（null=手動モード）
+let packingAutoWeather = {}; // outingKey -> {status, weather, tempMax, tempMin, pop, dateIso, cond, icon}（保存はしない・その場限りのキャッシュ）
+let packingWeatherChangeNotice = {}; // outingKey -> {from,to} | undefined（1回表示したら消す）
 
-function packingDefaultState(){
+function packingDefaultManualBucket(){
   return { prepared:[], excluded:[], overrides:{}, customItems:[],
     ctx:{ purposes:[], season: currentSeason(), weather:null, temp:null } };
 }
+function packingDefaultOutingBucket(){
+  return { prepared:[], excluded:[], overrides:{}, customItems:[],
+    manualCtx:{ purposes:null, season:null, weather:null, temp:null }, // null=自動判定を使う
+    lastAuto:{ weather:null, tempMax:null, tempMin:null, dateIso:null } }; // 天気変化の検知用
+}
+// 保存データの1バケット分（旧形式含む）を安全な形に正規化する。壊れたデータでも機能を止めない。
+function packingSanitizeBucket(raw, isManual){
+  const base = isManual ? packingDefaultManualBucket() : packingDefaultOutingBucket();
+  if(!raw || typeof raw !== "object") return base;
+  const known = new Set(PACKING_MASTER.map(it=>it.id));
+  const customIds = new Set();
+  const customItems = Array.isArray(raw.customItems)
+    ? raw.customItems.filter(it=>it && typeof it.id==="string" && typeof it.name==="string" && it.name.trim()!=="")
+      .map(it=>({ id:it.id, name:String(it.name).slice(0,60), category: PACKING_CATEGORY_OPTIONS.some(c=>c.key===it.category) ? it.category : "other" }))
+      .filter(it=>{ if(known.has(it.id) || customIds.has(it.id)) return false; customIds.add(it.id); return true; })
+    : [];
+  const validIds = new Set([...known, ...customIds]);
+  const dedupe = arr => Array.isArray(arr) ? [...new Set(arr.filter(id=>typeof id==="string" && validIds.has(id)))] : [];
+  const prepared = dedupe(raw.prepared);
+  let excluded = dedupe(raw.excluded);
+  excluded = excluded.filter(id=>!prepared.includes(id)); // 準備済みと不要が同時にONにならないようにする（壊れたデータの保険）
+  const overrides = {};
+  if(raw.overrides && typeof raw.overrides === "object"){
+    Object.keys(raw.overrides).forEach(id=>{
+      if(validIds.has(id) && PACKING_CATEGORY_OPTIONS.some(c=>c.key===raw.overrides[id])) overrides[id]=raw.overrides[id];
+    });
+  }
+  if(isManual){
+    const rawCtx = raw.ctx || {};
+    const seasonVal = ["春","夏","秋","冬"].includes(rawCtx.season) ? rawCtx.season : currentSeason();
+    const weatherVal = ["晴れ","曇り","雨","雪"].includes(rawCtx.weather) ? rawCtx.weather : null;
+    const tempVal = (typeof rawCtx.temp === "number" && !isNaN(rawCtx.temp)) ? Math.max(-30, Math.min(50, rawCtx.temp)) : null;
+    const purposesVal = Array.isArray(rawCtx.purposes) ? [...new Set(rawCtx.purposes.filter(k=>PACKING_PURPOSES.some(pp=>pp.key===k)))] : [];
+    return { prepared, excluded, overrides, customItems, ctx:{ purposes:purposesVal, season:seasonVal, weather:weatherVal, temp:tempVal } };
+  }
+  const rawMc = raw.manualCtx || {};
+  const mcPurposes = Array.isArray(rawMc.purposes) ? [...new Set(rawMc.purposes.filter(k=>PACKING_PURPOSES.some(pp=>pp.key===k)))] : null;
+  const mcSeason = ["春","夏","秋","冬"].includes(rawMc.season) ? rawMc.season : null;
+  const mcWeather = ["晴れ","曇り","雨","雪"].includes(rawMc.weather) ? rawMc.weather : null;
+  const mcTemp = (typeof rawMc.temp === "number" && !isNaN(rawMc.temp)) ? Math.max(-30, Math.min(50, rawMc.temp)) : null;
+  const rawLa = raw.lastAuto || {};
+  const lastAuto = {
+    weather: ["晴れ","曇り","雨","雪"].includes(rawLa.weather) ? rawLa.weather : null,
+    tempMax: (typeof rawLa.tempMax === "number" && !isNaN(rawLa.tempMax)) ? rawLa.tempMax : null,
+    tempMin: (typeof rawLa.tempMin === "number" && !isNaN(rawLa.tempMin)) ? rawLa.tempMin : null,
+    dateIso: typeof rawLa.dateIso === "string" ? rawLa.dateIso : null
+  };
+  return { prepared, excluded, overrides, customItems, manualCtx:{ purposes:mcPurposes, season:mcSeason, weather:mcWeather, temp:mcTemp }, lastAuto };
+}
 // localStorageが壊れている／古い形式でも、サイト全体を止めずに安全な初期状態へ戻す
-function loadPackingState(){
-  const fallback = packingDefaultState();
+function loadPackingStore(){
+  const fallback = { v:2, manual: packingDefaultManualBucket(), outings:{} };
   try{
     const raw = localStorage.getItem(PACKING_STORAGE_KEY);
     if(!raw) return fallback;
     const p = JSON.parse(raw);
     if(!p || typeof p !== "object") return fallback;
-    const known = new Set(PACKING_MASTER.map(it=>it.id));
-    const customIds = new Set();
-    const customItems = Array.isArray(p.customItems)
-      ? p.customItems.filter(it=>it && typeof it.id==="string" && typeof it.name==="string" && it.name.trim()!=="")
-        .map(it=>({ id:it.id, name:String(it.name).slice(0,60), category: PACKING_CATEGORY_OPTIONS.some(c=>c.key===it.category) ? it.category : "other" }))
-        .filter(it=>{ if(known.has(it.id) || customIds.has(it.id)) return false; customIds.add(it.id); return true; })
-      : [];
-    const validIds = new Set([...known, ...customIds]);
-    const dedupe = arr => Array.isArray(arr) ? [...new Set(arr.filter(id=>typeof id==="string" && validIds.has(id)))] : [];
-    const prepared = dedupe(p.prepared);
-    let excluded = dedupe(p.excluded);
-    // 準備済みと不要が同時にONにならないようにする（壊れたデータの保険）
-    excluded = excluded.filter(id=>!prepared.includes(id));
-    const overrides = {};
-    if(p.overrides && typeof p.overrides === "object"){
-      Object.keys(p.overrides).forEach(id=>{
-        if(validIds.has(id) && PACKING_CATEGORY_OPTIONS.some(c=>c.key===p.overrides[id])) overrides[id]=p.overrides[id];
-      });
+    if(p.v === 2){
+      const manual = packingSanitizeBucket(p.manual, true);
+      const outings = {};
+      if(p.outings && typeof p.outings === "object"){
+        // お出かけの件数が際限なく増え続けないよう上限を設ける（古い順は自然に読み捨てられる）
+        Object.keys(p.outings).slice(0,200).forEach(key=>{
+          outings[key] = packingSanitizeBucket(p.outings[key], false);
+        });
+      }
+      return { v:2, manual, outings };
     }
-    const seasonVal = (p.ctx && ["春","夏","秋","冬"].includes(p.ctx.season)) ? p.ctx.season : currentSeason();
-    const weatherVal = (p.ctx && ["晴れ","曇り","雨","雪"].includes(p.ctx.weather)) ? p.ctx.weather : null;
-    const tempVal = (p.ctx && typeof p.ctx.temp === "number" && !isNaN(p.ctx.temp)) ? Math.max(-30, Math.min(50, p.ctx.temp)) : null;
-    const purposesVal = (p.ctx && Array.isArray(p.ctx.purposes)) ? [...new Set(p.ctx.purposes.filter(k=>PACKING_PURPOSES.some(pp=>pp.key===k)))] : [];
-    return { prepared, excluded, overrides, customItems, ctx:{ purposes:purposesVal, season:seasonVal, weather:weatherVal, temp:tempVal } };
+    // 旧形式（フラットなprepared/excluded/ctx）からの移行。どのお出かけの物か分からないため、
+    // 「手動モード」用のデータとしてそのまま引き継ぐ（削除はしない。以後は新形式で保存される）。
+    return { v:2, manual: packingSanitizeBucket(p, true), outings:{} };
   }catch(e){ return fallback; }
 }
-function savePackingState(){
-  try{ localStorage.setItem(PACKING_STORAGE_KEY, JSON.stringify(packingState)); }catch(e){ /* 保存できなくても機能は継続 */ }
+function savePackingStore(){
+  if(!packingStore) return;
+  try{ localStorage.setItem(PACKING_STORAGE_KEY, JSON.stringify(Object.assign({v:2}, packingStore))); }catch(e){ /* 保存できなくても機能は継続 */ }
 }
 function packingGenerateCustomId(){
   return "custom_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,7);
@@ -10776,43 +10885,167 @@ function packingTempInRange(t, cond){
   return true;
 }
 // マスタの1件が「今回のお出かけ」条件に合うかどうかの判定。
-// 将来、施設・天気APIの値をそのまま purposes/weather/temp に渡すだけで自動化できる。
+// ctx.weatherKnown / ctx.tempKnown が false の場合（＝先すぎて予報がまだ無い、
+// またはAPIエラー）は、天気・気温を勝手に断定せず、雨・晴れの定番装備と
+// 薄手の羽織りだけを「念のため」の候補として残す（他の温度依存グッズ等は含めない）。
 function packingItemMatchesContext(item, ctx){
   if(!packingAgesMatch(item)) return false;
   switch(item.category){
     case "basic": return true;
     case "purpose": return item.conditions.purposes.some(p=>ctx.purposes.has(p));
     case "season": return item.conditions.season.includes(ctx.season);
-    case "weather": return !!ctx.weather && item.conditions.weather.includes(ctx.weather);
-    case "temperature": return packingTempInRange(ctx.temp, item.conditions.temperature);
+    case "weather":
+      if(ctx.weather) return item.conditions.weather.includes(ctx.weather);
+      if(ctx.weatherKnown === false){
+        if(item.conditions.weather.includes("雨") || item.conditions.weather.includes("晴れ")) return true;
+        if(item.conditions.weather.includes("雪") && ctx.season==="冬") return true;
+      }
+      return false;
+    case "temperature":
+      if(ctx.temp!=null) return packingTempInRange(ctx.temp, item.conditions.temperature);
+      if(ctx.tempKnown === false) return item.id === "t_cool_layer"; // 念のための薄手の羽織りだけ
+      return false;
     default: return false;
   }
 }
-function packingCurrentCategory(item){
-  const ov = packingState.overrides[item.id];
+// 🔴必須／🟡おすすめ／⚪念のため の3段階（表示用のバッジ）。
+// 既存の6グループ（表示区分）はそのまま維持し、あくまで補助表示として付与する。
+const PACKING_TIER_LABELS = { must:"🔴 必須", nice:"🟡 おすすめ", safety:"⚪ 念のため" };
+function packingItemTier(item, ctx){
+  if(item.category === "weather") return ctx.weatherKnown ? "must" : "safety";
+  if(item.category === "temperature") return ctx.tempKnown ? "nice" : "safety";
+  if(item.group === "must" || item.group === "kids") return "must";
+  return "nice";
+}
+function packingCurrentCategory(item, bucket){
+  const ov = bucket.overrides[item.id];
   return (ov && PACKING_CATEGORY_OPTIONS.some(c=>c.key===ov)) ? ov : item.category;
 }
 // 持ち物マスタ＋ユーザー追加分から、今回の条件に合う候補一覧を作る
-// （マスタ自体は一切書き換えない＝「持ち物マスタ」と「今回の設定」の分離）
-function packingCandidateList(){
-  const ctx = { purposes: new Set(packingState.ctx.purposes), season: packingState.ctx.season,
-    weather: packingState.ctx.weather, temp: packingState.ctx.temp };
-  const fromMaster = PACKING_MASTER.filter(it=>packingItemMatchesContext(it, ctx));
-  const custom = packingState.customItems.map(c=>pkItem(c.id, c.name, c.category, "custom", 9999, {}));
+// （マスタ自体は一切書き換えない＝「持ち物マスタ」と「今回の設定」の分離）。
+// 一度「準備済み」「今回は不要」にした物は、後で条件（天気など）が変わって
+// 対象外になっても一覧から消さない（ユーザーの操作を勝手に取り消さないため）。
+function packingCandidateList(ctx, bucket){
+  const preparedIdSet = new Set(bucket.prepared);
+  const excludedIdSet = new Set(bucket.excluded);
+  const fromMaster = PACKING_MASTER.filter(it=>
+    packingItemMatchesContext(it, ctx) || preparedIdSet.has(it.id) || excludedIdSet.has(it.id));
+  const custom = bucket.customItems.map(c=>pkItem(c.id, c.name, c.category, "custom", 9999, {}));
   return [...fromMaster, ...custom];
 }
+
+// 現在のプランタブ（state.activePlanTab）から、持ち物の自動判定に使う材料を作る。
+// 既存のSPOTS／deriveCategory／overnightRecommended／state.ages をそのまま利用し、
+// 施設データを持ち物専用に複製・推測することはしない。
+function packingBuildAutoContext(tabIndex){
+  const names = state.plans[tabIndex] || [];
+  const spots = names.map(n=>SPOTS.find(s=>s.name===n)).filter(Boolean);
+  const dateIso = state.planDates[tabIndex] || null;
+  const purposes = new Set();
+  spots.forEach(sp=>{
+    const cat = deriveCategory(sp);
+    if(PACKING_PURPOSES.some(p=>p.key===cat)) purposes.add(cat); // ⑤施設情報から持ち物目的を自動判定（複数施設は統合）
+  });
+  const hasOvernight = spots.some(sp=>sp.overnightRecommended)
+    || (state.planTripModes[tabIndex] && state.planTripModes[tabIndex] !== "roundtrip"); // ⑦宿泊も自動判定
+  if(hasOvernight) purposes.add("ホテル泊");
+  const baseDate = dateIso ? new Date(dateIso+"T00:00:00+09:00") : new Date();
+  const season = isNaN(baseDate.getTime()) ? currentSeason() : seasonForDate(baseDate);
+  return { spots, dateIso, purposes, season, hasOvernight };
+}
+// 現在の「お出かけ」を一意に識別するキー（⑮お出かけ単位で持ち物の状態を分けるため）。
+// 予定日＋施設の組み合わせで判定する（既存データのみ利用。新しいIDは作らない）。
+function packingOutingKeyFor(tabIndex){
+  const names = (state.plans[tabIndex] || []).slice().sort((a,b)=>a.localeCompare(b,"ja"));
+  const dateIso = state.planDates[tabIndex] || "";
+  if(names.length===0 && !dateIso) return null; // プランが空＝自動判定の材料が無いので手動モードにする
+  return `${dateIso}__${names.join("|")}`;
+}
+function packingCurrentBucket(){
+  if(!packingStore) packingStore = loadPackingStore();
+  if(packingCurrentOutingKey==null) return packingStore.manual;
+  if(!packingStore.outings[packingCurrentOutingKey]) packingStore.outings[packingCurrentOutingKey] = packingDefaultOutingBucket();
+  return packingStore.outings[packingCurrentOutingKey];
+}
+// 自動判定（プラン＋天気API）と、ユーザーの手動上書き（あれば）を合成した「今回の条件」。
+// プラン・予定日が無い状態で開いた場合は、これまで通りユーザーが手動で選ぶモードのまま。
+function packingEffectiveContext(){
+  const bucket = packingCurrentBucket();
+  if(packingCurrentOutingKey==null){
+    const c = bucket.ctx;
+    return { mode:"manual", purposes:new Set(c.purposes), season:c.season, weather:c.weather, temp:c.temp,
+      weatherKnown: c.weather!=null, tempKnown: c.temp!=null, auto:null, autoWeather:null };
+  }
+  const auto = packingBuildAutoContext(state.activePlanTab);
+  const aw = packingAutoWeather[packingCurrentOutingKey] || { status:"loading" };
+  const mc = bucket.manualCtx;
+  const purposes = mc.purposes ? new Set(mc.purposes) : new Set(auto.purposes);
+  const season = mc.season || auto.season;
+  let weather = mc.weather, weatherKnown;
+  if(weather!=null){ weatherKnown = true; }
+  else if(aw.status==="ok"){ weather = aw.weather; weatherKnown = true; }
+  else { weatherKnown = false; }
+  let temp = mc.temp, tempKnown;
+  if(temp!=null){ tempKnown = true; }
+  else if(aw.status==="ok"){ temp = aw.tempMax; tempKnown = true; }
+  else { tempKnown = false; }
+  return { mode:"auto", purposes, season, weather, temp, weatherKnown, tempKnown, auto, autoWeather:aw };
+}
+// お出かけ日の天気を非同期で取得し、取得できたら再描画する。既存のfetchWeatherForSpot
+// （＝施設詳細の天気予報と共通のAPI呼び出し・キャッシュ）をそのまま使い、
+// 持ち物機能専用にAPIを二重に呼ぶことはしない。
+async function packingRefreshAutoWeather(){
+  const key = packingCurrentOutingKey;
+  if(key==null) return;
+  const auto = packingBuildAutoContext(state.activePlanTab);
+  if(!auto.dateIso || auto.spots.length===0){ packingAutoWeather[key] = { status:"none" }; renderPackingSheet(); return; }
+  const spot = auto.spots.find(s=>typeof s.lat==="number" && typeof s.lng==="number");
+  if(!spot){ packingAutoWeather[key] = { status:"none" }; renderPackingSheet(); return; }
+  if(!packingAutoWeather[key]) packingAutoWeather[key] = { status:"loading" };
+  renderPackingSheet();
+  const result = await fetchWeatherForDate(spot, auto.dateIso);
+  if(packingCurrentOutingKey !== key) return; // 取得中に別のお出かけへ切り替わっていたら書き込まない（誤表示防止）
+  let entry;
+  if(result.status === "ok"){
+    const cat = weatherCodeToPackingCategory(result.day.code);
+    entry = { status: cat ? "ok" : "unknown", weather:cat, tempMax:result.day.tempMax, tempMin:result.day.tempMin,
+      pop:result.day.pop, dateIso:auto.dateIso, cond:result.day.cond, icon:result.day.icon };
+  } else if(result.status === "unknown"){
+    entry = { status:"unknown", dateIso: auto.dateIso };
+  } else if(result.status === "error"){
+    entry = { status:"error", dateIso: auto.dateIso };
+  } else {
+    entry = { status:"none" };
+  }
+  const bucket = packingCurrentBucket();
+  const prev = bucket.lastAuto;
+  // ⑬天気予報が前回と変わっていたら、一度だけ小さく通知する（同じ日付同士の比較のみ）
+  if(entry.status==="ok" && prev.dateIso===entry.dateIso && prev.weather && prev.weather!==entry.weather){
+    packingWeatherChangeNotice[key] = { from: prev.weather, to: entry.weather };
+  }
+  if(entry.status==="ok"){
+    bucket.lastAuto = { weather:entry.weather, tempMax:entry.tempMax, tempMin:entry.tempMin, dateIso:entry.dateIso };
+    savePackingStore();
+  }
+  packingAutoWeather[key] = entry;
+  renderPackingSheet();
+}
 function openPackingSheet(){
-  if(!packingState) packingState = loadPackingState();
+  if(!packingStore) packingStore = loadPackingStore();
+  packingCurrentOutingKey = packingOutingKeyFor(state.activePlanTab);
   try{ trackEvent("packing_open", {}); }catch(e){ /* 計測できなくても機能は継続 */ }
   renderPackingSheet();
   openSheet("packingOverlay");
+  if(packingCurrentOutingKey!=null) packingRefreshAutoWeather();
 }
-function renderPackingItemRow(item, isPrepared){
-  const cat = packingCurrentCategory(item);
+function renderPackingItemRow(item, isPrepared, isExcluded, bucket, ctx){
+  const cat = packingCurrentCategory(item, bucket);
+  const tier = item.category==="custom" ? null : packingItemTier(item, ctx);
+  const isSticky = item.category!=="custom" && (isPrepared||isExcluded) && !packingItemMatchesContext(item, ctx);
   return `
     <div class="packing-item${isPrepared?" is-checked":""}">
       <button type="button" class="packing-check-btn${isPrepared?" checked":""}" data-pk-check="${escapeAttr(item.id)}" aria-label="${isPrepared?"未準備に戻す":"準備済みにする"}">${isPrepared?"☑":"☐"}</button>
-      <div class="packing-name">${expEsc(item.name)}</div>
+      <div class="packing-name">${expEsc(item.name)}${tier ? `<span style="margin-left:6px; font-size:11px; opacity:.8;">${PACKING_TIER_LABELS[tier]}</span>` : ""}${isSticky ? `<span style="margin-left:6px; font-size:11px; color:var(--ink-soft, #888);">（現在の条件では対象外）</span>` : ""}</div>
       <select class="packing-type-select" data-pk-cat="${escapeAttr(item.id)}" aria-label="種別">
         ${PACKING_CATEGORY_OPTIONS.map(c=>`<option value="${c.key}"${c.key===cat?" selected":""}>${c.label}</option>`).join("")}
       </select>
@@ -10820,13 +11053,13 @@ function renderPackingItemRow(item, isPrepared){
     </div>`;
 }
 function renderPackingSheet(){
-  if(!packingState) packingState = loadPackingState();
   const sheet = document.getElementById("packingSheet");
   if(!sheet) return;
-  const ctx = packingState.ctx;
-  const all = packingCandidateList();
-  const excludedIdSet = new Set(packingState.excluded);
-  const preparedIdSet = new Set(packingState.prepared);
+  const bucket = packingCurrentBucket();
+  const ctx = packingEffectiveContext();
+  const all = packingCandidateList(ctx, bucket);
+  const excludedIdSet = new Set(bucket.excluded);
+  const preparedIdSet = new Set(bucket.prepared);
   const included = all.filter(it=>!excludedIdSet.has(it.id));
   const excludedItems = all.filter(it=>excludedIdSet.has(it.id));
   const preparedCount = included.filter(it=>preparedIdSet.has(it.id)).length;
@@ -10837,21 +11070,51 @@ function renderPackingSheet(){
   included.forEach(it=>{ (groups[it.group] || groups.nice).push(it); });
   PACKING_GROUP_ORDER.forEach(g=>groups[g].sort((a,b)=> (a.priority-b.priority) || a.name.localeCompare(b.name,"ja")));
 
-  const purposeChips = PACKING_PURPOSES.map(p=>
-    `<button type="button" class="chip${ctx.purposes.includes(p.key)?" active":""}" data-pk-purpose="${escapeAttr(p.key)}">${expEsc(p.label)}</button>`
-  ).join("");
-  const seasonChips = ["春","夏","秋","冬"].map(s=>
-    `<button type="button" class="chip${ctx.season===s?" active":""}" data-pk-season="${s}">${SEASON_EMOJI[s]||""} ${s}</button>`
-  ).join("");
-  const weatherOptions = [["晴れ","☀️"],["曇り","☁️"],["雨","🌧"],["雪","❄️"]];
-  const weatherChips = weatherOptions.map(([w,icon])=>
-    `<button type="button" class="chip${ctx.weather===w?" active":""}" data-pk-weather="${w}">${icon} ${w}</button>`
-  ).join("");
+  // ①〜④ 自動判定サマリー（プラン・お出かけ日がある時だけ表示）
+  let autoSummaryHtml = "";
+  if(ctx.mode === "auto"){
+    const auto = ctx.auto;
+    const facilityLabel = auto.spots.length ? auto.spots.map(s=>s.name).join("・") : "";
+    const dateLabel = auto.dateIso ? formatDateJP(auto.dateIso) : "予定日未設定";
+    const aw = ctx.autoWeather || { status:"none" };
+    const WICON = {"晴れ":"☀️","曇り":"☁️","雨":"🌧","雪":"❄️"};
+    let weatherLine;
+    if(bucket.manualCtx.weather!=null || bucket.manualCtx.temp!=null){
+      weatherLine = `<span>🛠 天気・気温は手動設定を使用中</span>`;
+    } else if(aw.status==="loading"){
+      weatherLine = `<span>天気を確認しています…</span>`;
+    } else if(aw.status==="ok"){
+      weatherLine = `<span>${WICON[aw.weather]||"🌡"} ${aw.cond||aw.weather}　最高${aw.tempMax!=null?aw.tempMax+"℃":"--"} / 最低${aw.tempMin!=null?aw.tempMin+"℃":"--"}</span>`;
+    } else if(aw.status==="unknown"){
+      weatherLine = `<span>この日の天気予報はまだ取得できません（先すぎて予報対象外です）。季節・行き先などから持ち物を判定しています。</span>`;
+    } else if(aw.status==="error"){
+      weatherLine = `<span>天気情報を取得できませんでした。季節・行き先などから持ち物を判定しています。</span>`;
+    } else {
+      weatherLine = `<span>予定日を設定すると天気を自動で確認します</span>`;
+    }
+    const notice = packingWeatherChangeNotice[packingCurrentOutingKey];
+    const noticeHtml = notice ? `<div class="packing-weather-notice" style="font-size:12px; margin-top:4px;">${WICON[notice.from]||""} ${notice.from} → ${WICON[notice.to]||""} ${notice.to} に天気予報が更新されました</div>` : "";
+    if(notice) delete packingWeatherChangeNotice[packingCurrentOutingKey]; // 一度表示したら消す
+    autoSummaryHtml = `
+      <div class="packing-auto-summary" style="background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:10px; font-size:13px; line-height:1.6;">
+        <div>📅 ${expEsc(dateLabel)}${facilityLabel ? `　📍 ${expEsc(facilityLabel)}` : ""}</div>
+        <div>${weatherLine}</div>
+        ${noticeHtml}
+      </div>`;
+  }
+
+  const tierCounts = { must:0, nice:0, safety:0 };
+  included.forEach(it=>{
+    if(it.category==="custom") return;
+    if(!packingItemMatchesContext(it, ctx)) return; // 現在アクティブな（条件に合う）物だけを件数に数える
+    tierCounts[packingItemTier(it, ctx)]++;
+  });
+  const tierSummaryHtml = `<div class="packing-tier-summary" style="font-size:12px; color:var(--ink-soft,#888); margin:2px 0 8px;">${PACKING_TIER_LABELS.must} ${tierCounts.must}件　${PACKING_TIER_LABELS.nice} ${tierCounts.nice}件　${PACKING_TIER_LABELS.safety} ${tierCounts.safety}件</div>`;
 
   const groupsHtml = PACKING_GROUP_ORDER.map(g=>{
     const items = groups[g];
     if(!items || items.length===0) return "";
-    return `<div class="packing-group-title">${PACKING_GROUP_LABELS[g]}</div>${items.map(it=>renderPackingItemRow(it, preparedIdSet.has(it.id))).join("")}`;
+    return `<div class="packing-group-title">${PACKING_GROUP_LABELS[g]}</div>${items.map(it=>renderPackingItemRow(it, preparedIdSet.has(it.id), excludedIdSet.has(it.id), bucket, ctx)).join("")}`;
   }).join("");
 
   const excludedHtml = excludedItems.length ? `
@@ -10864,37 +11127,57 @@ function renderPackingSheet(){
         </div>`).join("")}
     </div>` : "";
 
+  // ⑱条件を変更（手動）：普段は折りたたんでおき、必要な人だけが開く詳細設定として扱う
+  const purposeChips = PACKING_PURPOSES.map(p=>
+    `<button type="button" class="chip${ctx.purposes.has(p.key)?" active":""}" data-pk-purpose="${escapeAttr(p.key)}">${expEsc(p.label)}</button>`
+  ).join("");
+  const seasonChips = ["春","夏","秋","冬"].map(s=>
+    `<button type="button" class="chip${ctx.season===s?" active":""}" data-pk-season="${s}">${SEASON_EMOJI[s]||""} ${s}</button>`
+  ).join("");
+  const weatherOptions = [["晴れ","☀️"],["曇り","☁️"],["雨","🌧"],["雪","❄️"]];
+  const weatherChips = weatherOptions.map(([w,icon])=>
+    `<button type="button" class="chip${ctx.weather===w?" active":""}" data-pk-weather="${w}">${icon} ${w}</button>`
+  ).join("");
+  const advancedHtml = `
+    <details class="packing-advanced" style="margin-bottom:10px;">
+      <summary style="cursor:pointer; font-size:13px; color:var(--ink-soft); padding:4px 0;">🛠 条件を変更（手動）</summary>
+      <div class="packing-ctx">
+        <div class="packing-ctx-row">
+          <div class="packing-ctx-label">お出かけ先（複数選択できます）</div>
+          <div class="chips">${purposeChips}</div>
+        </div>
+        <div class="packing-ctx-row">
+          <div class="packing-ctx-label">季節</div>
+          <div class="chips">${seasonChips}</div>
+        </div>
+        <div class="packing-ctx-row">
+          <div class="packing-ctx-label">天気（わかれば）</div>
+          <div class="chips">${weatherChips}</div>
+        </div>
+        <div class="packing-ctx-row">
+          <div class="packing-ctx-label">予想気温（℃・わかれば）</div>
+          <input type="number" inputmode="numeric" class="packing-add-input" id="packingTempInput" placeholder="例：30" style="max-width:110px;" value="${ctx.temp!=null ? ctx.temp : ""}">
+        </div>
+        ${ctx.mode==="auto" ? `<button type="button" class="packing-restore-btn" id="packingAutoResetBtn">自動判定に戻す</button>` : ""}
+      </div>
+    </details>`;
+
   sheet.innerHTML = `
     <button class="sheet-close" id="packingCloseBtn">×</button>
     <div class="sheet-title">🎒 お出かけの持ち物</div>
     <div class="packing-desc">子どもとのお出かけに必要なものを確認して、準備できたものをチェックできます。公園・水族館・動物園・プール・果物狩り・ホテル泊など行き先や、雨の日・夏のお出かけといった天気・季節に合わせて候補を追加できます。</div>
 
-    <div class="packing-ctx">
-      <div class="packing-ctx-row">
-        <div class="packing-ctx-label">お出かけ先（複数選択できます）</div>
-        <div class="chips">${purposeChips}</div>
-      </div>
-      <div class="packing-ctx-row">
-        <div class="packing-ctx-label">季節</div>
-        <div class="chips">${seasonChips}</div>
-      </div>
-      <div class="packing-ctx-row">
-        <div class="packing-ctx-label">天気（わかれば）</div>
-        <div class="chips">${weatherChips}</div>
-      </div>
-      <div class="packing-ctx-row">
-        <div class="packing-ctx-label">予想気温（℃・わかれば）</div>
-        <input type="number" inputmode="numeric" class="packing-add-input" id="packingTempInput" placeholder="例：30" style="max-width:110px;" value="${ctx.temp!=null ? ctx.temp : ""}">
-      </div>
-    </div>
+    ${autoSummaryHtml}
+    ${advancedHtml}
 
     <div class="packing-progress">
       <span class="ppg-main">${preparedCount} / ${total}</span>
       <span>準備できました</span>
       ${excludedItems.length ? `<span>（今回は不要：${excludedItems.length}件）</span>` : ""}
     </div>
+    ${tierSummaryHtml}
 
-    ${total===0 ? `<div class="packing-empty">条件に合う持ち物がまだありません。上の「お出かけ先」を選ぶと候補が増えます。</div>` : groupsHtml}
+    ${total===0 ? `<div class="packing-empty">条件に合う持ち物がまだありません。${ctx.mode==="auto" ? "プランに施設を追加すると候補が増えます。" : "上の「条件を変更」からお出かけ先を選ぶと候補が増えます。"}</div>` : groupsHtml}
 
     <div class="packing-group-title">➕ 持ち物を追加</div>
     <div class="packing-add-row">
@@ -10909,29 +11192,37 @@ function renderPackingSheet(){
 
     <button type="button" class="packing-reset-btn" id="packingResetBtn">持ち物チェックをリセット</button>
 
-    <div class="packing-seo">子連れお出かけの持ち物は、公園の持ち物・水族館の持ち物・動物園の持ち物・雨の日の持ち物・夏のお出かけの持ち物など、行き先や天気によって変わります。お出かけ先や季節・天気を選ぶと、このページで必要なものをまとめて確認できます。</div>
+    <div class="packing-seo">子連れお出かけの持ち物は、公園の持ち物・水族館の持ち物・動物園の持ち物・雨の日の持ち物・夏のお出かけの持ち物など、行き先や天気によって変わります。プランに予定日・行き先を設定すると、このページで必要なものを自動でまとめて確認できます。</div>
 
     <button class="detail-close-bottom" id="packingCloseBtnBottom">戻る</button>
   `;
 
   document.getElementById("packingCloseBtn").onclick = ()=>closeSheetById("packingOverlay");
   document.getElementById("packingCloseBtnBottom").onclick = ()=>closeSheetById("packingOverlay");
+
+  // 手動上書きの書き込み先：自動モードではbucket.manualCtx、手動モードでは従来通りbucket.ctx
+  function packingWriteManual(mutator){
+    if(ctx.mode==="auto"){ mutator(bucket.manualCtx); }
+    else { mutator(bucket.ctx); }
+    savePackingStore(); renderPackingSheet();
+  }
   sheet.querySelectorAll("[data-pk-purpose]").forEach(btn=>{
     btn.onclick = ()=>{
       const k = btn.dataset.pkPurpose;
-      const idx = packingState.ctx.purposes.indexOf(k);
-      if(idx>=0) packingState.ctx.purposes.splice(idx,1); else packingState.ctx.purposes.push(k);
-      savePackingState(); renderPackingSheet();
+      packingWriteManual(target=>{
+        if(ctx.mode==="auto" && target.purposes==null) target.purposes = [...ctx.purposes]; // 初回タップ時は自動判定の内容を引き継いでから変更する
+        const idx = target.purposes.indexOf(k);
+        if(idx>=0) target.purposes.splice(idx,1); else target.purposes.push(k);
+      });
     };
   });
   sheet.querySelectorAll("[data-pk-season]").forEach(btn=>{
-    btn.onclick = ()=>{ packingState.ctx.season = btn.dataset.pkSeason; savePackingState(); renderPackingSheet(); };
+    btn.onclick = ()=>{ packingWriteManual(target=>{ target.season = btn.dataset.pkSeason; }); };
   });
   sheet.querySelectorAll("[data-pk-weather]").forEach(btn=>{
     btn.onclick = ()=>{
       const w = btn.dataset.pkWeather;
-      packingState.ctx.weather = (packingState.ctx.weather===w) ? null : w;
-      savePackingState(); renderPackingSheet();
+      packingWriteManual(target=>{ target.weather = (ctx.weather===w) ? null : w; });
     };
   });
   const tempInput = document.getElementById("packingTempInput");
@@ -10939,41 +11230,47 @@ function renderPackingSheet(){
     tempInput.onchange = (e)=>{
       const v = e.target.value;
       const n = v==="" ? null : Number(v);
-      packingState.ctx.temp = (n==null || isNaN(n)) ? null : Math.max(-30, Math.min(50, Math.round(n)));
-      savePackingState(); renderPackingSheet();
+      packingWriteManual(target=>{ target.temp = (n==null || isNaN(n)) ? null : Math.max(-30, Math.min(50, Math.round(n))); });
+    };
+  }
+  const autoResetBtn = document.getElementById("packingAutoResetBtn");
+  if(autoResetBtn){
+    autoResetBtn.onclick = ()=>{
+      bucket.manualCtx = { purposes:null, season:null, weather:null, temp:null };
+      savePackingStore(); renderPackingSheet();
     };
   }
   sheet.querySelectorAll("[data-pk-check]").forEach(btn=>{
     btn.onclick = ()=>{
       const id = btn.dataset.pkCheck;
-      const i = packingState.prepared.indexOf(id);
-      if(i>=0) packingState.prepared.splice(i,1); else packingState.prepared.push(id);
-      const ei = packingState.excluded.indexOf(id); // 準備済みと不要が同時にONにならないようにする
-      if(ei>=0) packingState.excluded.splice(ei,1);
-      savePackingState(); renderPackingSheet();
+      const i = bucket.prepared.indexOf(id);
+      if(i>=0) bucket.prepared.splice(i,1); else bucket.prepared.push(id);
+      const ei = bucket.excluded.indexOf(id); // 準備済みと不要が同時にONにならないようにする
+      if(ei>=0) bucket.excluded.splice(ei,1);
+      savePackingStore(); renderPackingSheet();
     };
   });
   sheet.querySelectorAll("[data-pk-skip]").forEach(btn=>{
     btn.onclick = ()=>{
       const id = btn.dataset.pkSkip;
-      if(!packingState.excluded.includes(id)) packingState.excluded.push(id);
-      const pi = packingState.prepared.indexOf(id);
-      if(pi>=0) packingState.prepared.splice(pi,1);
-      savePackingState(); renderPackingSheet();
+      if(!bucket.excluded.includes(id)) bucket.excluded.push(id);
+      const pi = bucket.prepared.indexOf(id);
+      if(pi>=0) bucket.prepared.splice(pi,1);
+      savePackingStore(); renderPackingSheet();
     };
   });
   sheet.querySelectorAll("[data-pk-restore]").forEach(btn=>{
     btn.onclick = ()=>{
       const id = btn.dataset.pkRestore;
-      const i = packingState.excluded.indexOf(id);
-      if(i>=0) packingState.excluded.splice(i,1);
-      savePackingState(); renderPackingSheet();
+      const i = bucket.excluded.indexOf(id);
+      if(i>=0) bucket.excluded.splice(i,1);
+      savePackingStore(); renderPackingSheet();
     };
   });
   sheet.querySelectorAll("[data-pk-cat]").forEach(sel=>{
     sel.onchange = ()=>{
-      packingState.overrides[sel.dataset.pkCat] = sel.value;
-      savePackingState(); renderPackingSheet();
+      bucket.overrides[sel.dataset.pkCat] = sel.value;
+      savePackingStore(); renderPackingSheet();
     };
   });
   const addBtn = document.getElementById("packingAddBtn");
@@ -10984,23 +11281,23 @@ function renderPackingSheet(){
       if(!name) return;
       const catSel = document.getElementById("packingAddCategory");
       const category = PACKING_CATEGORY_OPTIONS.some(c=>c.key===catSel.value) ? catSel.value : "other";
-      const existingNames = new Set(packingCandidateList().map(it=>it.name));
+      const existingNames = new Set(packingCandidateList(ctx, bucket).map(it=>it.name));
       if(existingNames.has(name)){
         alert("すでに追加されています");
         return;
       }
-      packingState.customItems.push({ id: packingGenerateCustomId(), name, category });
+      bucket.customItems.push({ id: packingGenerateCustomId(), name, category });
       input.value = "";
-      savePackingState(); renderPackingSheet();
+      savePackingStore(); renderPackingSheet();
     };
   }
   const resetBtn = document.getElementById("packingResetBtn");
   if(resetBtn){
     resetBtn.onclick = ()=>{
       if(!confirm("持ち物チェックをリセットします。よろしいですか？\n（追加した持ち物は削除されません）")) return;
-      packingState.prepared = [];
-      packingState.excluded = [];
-      savePackingState(); renderPackingSheet();
+      bucket.prepared = [];
+      bucket.excluded = [];
+      savePackingStore(); renderPackingSheet();
     };
   }
 }
