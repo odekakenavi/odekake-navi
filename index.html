@@ -186,7 +186,7 @@
     padding:10px 14px; border-radius:10px; opacity:0; visibility:hidden; transition:opacity .2s; white-space:pre-line;
   }
   .translate-toast.show{opacity:1; visibility:visible;}
-  .translate-toast-link{pointer-events:auto; color:#fff; text-decoration:underline; font-weight:700;}
+  .translate-toast-link{pointer-events:auto; color:#fff; text-decoration:underline; font-weight:700; background:none; border:none; padding:0; margin:0; font-size:inherit; font-family:inherit; cursor:pointer;}
   /* Googleの翻訳ウィジェットが出す上部バナー・ツールチップは非表示にし、ページ位置のずれを防ぐ */
   body{top:0 !important;}
   body > .skiptranslate, .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip{display:none !important;}
@@ -11986,9 +11986,9 @@ function dataFileUrl(key){ return dataFileUrls(key)[0] || ""; }
       ui.toastTimer = setTimeout(function(){ try{ ui.toast.className = "translate-toast"; }catch(e){} }, ms || 6500);
     }catch(e){ log("[translate] toast failed", e); }
   }
-  // 翻訳に失敗した時だけ出す簡潔な案内（詳細な原因説明はしない。Chromeへのリンクのみ）
+  // 翻訳に失敗した時だけ出す簡潔な案内（詳細な原因説明はしない。推奨ブラウザ案内シートへのリンクのみ）
   function toastFail(){
-    toast('この環境では翻訳できませんでした。<a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer" class="translate-toast-link">Chromeで開く</a>など別ブラウザもお試しください。', 9000, true);
+    toast('この環境では翻訳できませんでした。<button type="button" class="translate-toast-link" onclick="document.getElementById(&quot;browserOpenBtn&quot;).click();">推奨ブラウザについて</button>もご確認ください。', 9000, true);
   }
 
   function currentLang(){ for(var i=0;i<LANGS.length;i++){ if(LANGS[i].code===state.lang) return LANGS[i]; } return LANGS[0]; }
