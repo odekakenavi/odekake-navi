@@ -1172,6 +1172,40 @@
   .plan-schedule-badge{font-size:12.5px; color:var(--sun); font-weight:700; margin-top:10px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
   .plan-schedule-clear{border:none; background:none; color:var(--ink-soft); font-size:11.5px; text-decoration:underline; cursor:pointer; padding:2px;}
 
+
+  /* ---------- 🎒 お出かけの持ち物（持ち物チェックリスト） ---------- */
+  .packing-desc{font-size:12.5px; color:var(--ink-soft); line-height:1.6; margin-bottom:14px;}
+  .packing-ctx{background:#F8F4EA; border-radius:12px; padding:12px 14px; margin-bottom:16px;}
+  .packing-ctx-row{margin-bottom:10px;}
+  .packing-ctx-row:last-child{margin-bottom:0;}
+  .packing-ctx-label{font-size:11px; font-weight:700; color:var(--ink-soft); margin:0 0 6px 2px;}
+  .packing-progress{display:flex; gap:8px; align-items:center; background:#FFF6EF; border-radius:12px; padding:10px 14px; margin-bottom:14px; font-size:12px; color:var(--ink-soft); font-weight:700; flex-wrap:wrap;}
+  .packing-progress .ppg-main{font-size:17px; font-weight:900; color:var(--coral);}
+  .packing-group-title{font-size:12.5px; font-weight:900; color:var(--ink-soft); margin:18px 0 8px; padding-bottom:4px; border-bottom:2px solid var(--line);}
+  .packing-item{display:flex; align-items:center; gap:8px; padding:9px 2px; border-bottom:1px solid var(--line);}
+  .packing-item:last-child{border-bottom:none;}
+  .packing-check-btn{flex:0 0 auto; width:38px; height:38px; min-width:38px; border-radius:9px; border:1.5px solid var(--line);
+    background:var(--paper); font-size:17px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink-soft);}
+  .packing-check-btn.checked{background:var(--coral); border-color:var(--coral); color:#fff;}
+  .packing-name{flex:1; min-width:0; font-size:13.5px; font-weight:700; color:var(--ink); word-break:break-word;}
+  .packing-item.is-checked .packing-name{color:var(--ink-soft); text-decoration:line-through;}
+  .packing-type-select{flex:0 0 auto; font-size:11px; color:var(--ink-soft); border:1px solid var(--line); border-radius:8px;
+    padding:5px 2px; background:var(--paper); max-width:64px; font-family:inherit;}
+  .packing-skip-btn{flex:0 0 auto; width:32px; height:32px; min-width:32px; border-radius:50%; border:1.5px solid var(--line);
+    background:var(--paper); color:var(--ink-soft); font-size:14px; cursor:pointer;}
+  .packing-skip-btn:hover{border-color:var(--coral); color:var(--coral);}
+  .packing-empty{font-size:13px; color:var(--ink-soft); padding:18px 4px; text-align:center;}
+  .packing-add-row{display:flex; gap:6px; margin-top:10px; flex-wrap:wrap;}
+  .packing-add-input{flex:1 1 140px; min-width:0; padding:9px 10px; border:1.5px solid var(--line); border-radius:10px; font-size:13.5px; font-family:inherit;}
+  .packing-add-select{flex:0 0 auto; padding:9px 4px; border:1.5px solid var(--line); border-radius:10px; font-size:12px; font-family:inherit; background:var(--paper);}
+  .packing-add-btn{flex:0 0 auto; padding:9px 16px; border:none; border-radius:10px; background:var(--ink); color:var(--cream); font-weight:700; font-size:13px; cursor:pointer;}
+  .packing-excluded{margin-top:22px; padding-top:6px; border-top:2px dashed var(--line);}
+  .packing-excluded-item{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 2px; font-size:13px; color:var(--ink-soft); border-bottom:1px solid var(--line);}
+  .packing-restore-btn{flex:0 0 auto; font-size:12px; font-weight:700; color:var(--coral); background:none; border:1px solid var(--coral);
+    border-radius:999px; padding:5px 12px; cursor:pointer;}
+  .packing-reset-btn{display:block; width:100%; margin-top:22px; padding:12px; border:1.5px solid var(--line); border-radius:12px;
+    background:var(--paper); color:var(--ink-soft); font-size:13px; font-weight:700; cursor:pointer;}
+  .packing-seo{font-size:11.5px; color:var(--ink-soft); line-height:1.7; margin-top:20px; padding-top:12px; border-top:1px solid var(--line);}
 </style>
 
 <!-- ValueCommerce LinkSwitch：対象ECサイトへのリンクを自動でアフィリエイトリンクに変換 -->
@@ -1426,6 +1460,11 @@
 <!-- 🎯「今日どこ行く？」診断モーダル -->
 <div class="sheet-overlay" id="diagnosisOverlay">
   <div class="sheet" id="diagnosisSheet"></div>
+</div>
+
+<!-- 🎒 お出かけの持ち物チェックリスト（既存のお気に入り・プラン等とは別の独立したシート） -->
+<div class="sheet-overlay" id="packingOverlay">
+  <div class="sheet" id="packingSheet"></div>
 </div>
 
 <!-- アプリ本体。type="text/plain" なのでブラウザはここでは実行しない。直後のローダーが data/spots.json を取得してから実行する（詳細は下の構造マップ）。 -->
@@ -10558,6 +10597,414 @@ function openHotelDetailFromSpot(areaKey, hotelName, spotName){
   }
 }
 
+// ==================================================================
+// 🎒 お出かけの持ち物チェックリスト
+// ------------------------------------------------------------------
+// 目的：単なる持ち物一覧ではなく「今日のお出かけに必要な荷物を確認して、
+// 準備できたものをチェックできる」機能。既存の検索・施設詳細・プラン等の
+// 仕組みは変更せず、独立した sheet-overlay（#packingOverlay）として追加する。
+//
+// データは「持ち物マスタ（PACKING_MASTER）」と「今回のお出かけ用設定
+// （packingState）」を明確に分離する。マスタは固定データで、チェック・
+// 除外・カテゴリ変更などはすべて packingState 側に保存し、マスタ自体は
+// 書き換えない（別のお出かけでは再び候補にできるようにするため）。
+//
+// 将来の自動提案（施設 → 目的 → 季節 → 天気 → 気温 → 年齢 → 持ち物）に
+// 備え、各アイテムに conditions（purposes / season / weather /
+// temperature / ages）を持たせている。今回はユーザーが手動で
+// お出かけ先・季節・天気・気温を選ぶが、将来はプランの日付・施設・
+// 天気APIの値をそのまま conditions の判定に渡すだけで自動化できる構造。
+// ==================================================================
+const PACKING_STORAGE_KEY = "odekakeNaviPackingV1"; // 既存のSTORAGE_KEY等と衝突しない専用キー
+
+// 気温の境界値（後から調整できるよう定数化）
+const PACKING_TEMP_THRESHOLDS = { hot:30, warm:22, cool:15, cold:8 };
+
+// 持ち物マスタ側で表示順を変更できるよう、グループ（親目線の並び順）と
+// グループ内の priority を持たせる。カテゴリ（種別）は将来の自動連携用の
+// 分類で、ユーザーが手動変更しても、この group・priority は変えない
+// （＝表示位置は変わらず、あくまで「種別ラベル」だけが今回の設定として変わる）。
+const PACKING_GROUP_ORDER = ["must","kids","onsite","seasonal","nice","custom"];
+const PACKING_GROUP_LABELS = {
+  must:"🔑 忘れると困るもの", kids:"👶 子ども関連", onsite:"🎒 現地で使うもの",
+  seasonal:"🌤 季節・天候対策", nice:"✨ あると便利なもの", custom:"➕ 追加した持ち物"
+};
+const PACKING_CATEGORY_OPTIONS = [
+  {key:"basic", label:"基本"}, {key:"purpose", label:"お出かけ先"}, {key:"season", label:"季節"},
+  {key:"weather", label:"天気"}, {key:"temperature", label:"気温"}, {key:"other", label:"その他"}
+];
+// お出かけ先・目的：既存GENRESのキー名と揃え、将来 deriveCategory(spot) の結果と
+// そのまま連携できるようにする（GENRESに無い「ホテル泊」だけ独自に追加）。
+const PACKING_PURPOSES = [
+  {key:"公園", label:"🌳 公園"}, {key:"水族館", label:"🐠 水族館"}, {key:"動物園", label:"🐼 動物園"},
+  {key:"遊園地・テーマパーク", label:"🎡 遊園地"}, {key:"プール・水遊び", label:"🏊 プール・水遊び"},
+  {key:"アスレチック・アウトドア", label:"🌲 アスレチック"}, {key:"果物狩り・収穫体験", label:"🍓 果物狩り"},
+  {key:"牧場", label:"🐮 牧場"}, {key:"温泉・スパ", label:"♨️ 温泉・スパ"}, {key:"ホテル泊", label:"🏨 ホテル泊"}
+];
+function pkCond(o){ return Object.assign({purposes:[], season:[], weather:[], temperature:{min:null,max:null}, ages:[]}, o||{}); }
+function pkItem(id, name, category, group, priority, conditions){
+  return {id, name, category, group, priority, conditions: pkCond(conditions)};
+}
+
+// 🗂 持ち物マスタ（将来JSONへ分離しやすいよう、この配列だけで完結する構造にしている）
+const PACKING_MASTER = [
+  // ① 基本（ほぼ毎回のお出かけで候補になるもの）
+  pkItem("wallet","財布","basic","must",10),
+  pkItem("phone","スマートフォン","basic","must",20),
+  pkItem("mobile_battery","モバイルバッテリー","basic","must",30),
+  pkItem("tickets","チケット・予約確認","basic","must",40),
+  pkItem("kid_change","子どもの着替え","basic","kids",10),
+  pkItem("diapers","おむつ","basic","kids",20,{ages:["0-1歳","2-3歳"]}),
+  pkItem("wipes","おしりふき","basic","kids",30,{ages:["0-1歳","2-3歳"]}),
+  pkItem("wet_tissue","ウェットティッシュ","basic","kids",40),
+  pkItem("kid_supplies","必要な子ども用品（ミルク・おやつ等）","basic","kids",50),
+  pkItem("drink","飲み物","basic","onsite",10),
+  pkItem("towel","タオル","basic","onsite",20),
+  pkItem("tissue","ティッシュ","basic","onsite",30),
+  pkItem("plastic_bag","ビニール袋","basic","onsite",40),
+
+  // ② お出かけ先・目的別
+  pkItem("p_park_sheet","レジャーシート","purpose","onsite",110,{purposes:["公園"]}),
+  pkItem("p_park_toys","ボール・シャボン玉など遊び道具","purpose","nice",510,{purposes:["公園"]}),
+  pkItem("p_aqua_outer","羽織り（館内が涼しいことも）","purpose","seasonal",320,{purposes:["水族館"]}),
+  pkItem("p_zoo_hat","帽子","purpose","seasonal",330,{purposes:["動物園","公園","牧場","果物狩り・収穫体験","アスレチック・アウトドア"]}),
+  pkItem("p_zoo_sheet","レジャーシート","purpose","onsite",120,{purposes:["動物園"]}),
+  pkItem("p_amuse_sheet","レジャーシート","purpose","onsite",130,{purposes:["遊園地・テーマパーク"]}),
+  pkItem("p_amuse_battery","モバイルバッテリー（多め）","purpose","nice",520,{purposes:["遊園地・テーマパーク"]}),
+  pkItem("p_amuse_motion","酔い止め","purpose","nice",530,{purposes:["遊園地・テーマパーク"]}),
+  pkItem("p_pool_swim","水着","purpose","onsite",140,{purposes:["プール・水遊び"]}),
+  pkItem("p_pool_towel","大判タオル","purpose","onsite",150,{purposes:["プール・水遊び"]}),
+  pkItem("p_pool_change","着替え（多め）","purpose","kids",60,{purposes:["プール・水遊び"]}),
+  pkItem("p_pool_sandal","ビーチサンダル","purpose","onsite",160,{purposes:["プール・水遊び"]}),
+  pkItem("p_pool_zip","濡れ物用ジップ袋","purpose","onsite",170,{purposes:["プール・水遊び"]}),
+  pkItem("p_athletic_shoes","動きやすい靴","purpose","onsite",180,{purposes:["アスレチック・アウトドア","キャンプ場・グランピング"]}),
+  pkItem("p_athletic_gloves","軍手","purpose","nice",540,{purposes:["アスレチック・アウトドア","キャンプ場・グランピング"]}),
+  pkItem("p_bug_spray","虫除けスプレー","purpose","seasonal",310,{purposes:["公園","アスレチック・アウトドア","果物狩り・収穫体験","キャンプ場・グランピング"]}),
+  pkItem("p_fruit_apron","汚れてよい服・エプロン","purpose","onsite",190,{purposes:["果物狩り・収穫体験"]}),
+  pkItem("p_fruit_cooler","持ち帰り用保冷バッグ","purpose","nice",550,{purposes:["果物狩り・収穫体験"]}),
+  pkItem("p_farm_shoes","汚れてよい靴・長靴","purpose","onsite",200,{purposes:["牧場"]}),
+  pkItem("p_farm_sanitizer","消毒液・除菌シート","purpose","onsite",210,{purposes:["牧場"]}),
+  pkItem("p_onsen_towel","バスタオル","purpose","onsite",220,{purposes:["温泉・スパ"]}),
+  pkItem("p_onsen_change","着替え","purpose","onsite",230,{purposes:["温泉・スパ"]}),
+  pkItem("p_hotel_change","着替え（多め）","purpose","kids",70,{purposes:["ホテル泊"]}),
+  pkItem("p_hotel_toothbrush","歯ブラシ","purpose","onsite",240,{purposes:["ホテル泊"]}),
+  pkItem("p_hotel_medicine","常備薬","purpose","must",50,{purposes:["ホテル泊"]}),
+  pkItem("p_hotel_charger","充電器","purpose","must",60,{purposes:["ホテル泊"]}),
+
+  // ③ 季節
+  pkItem("s_spring_mask","花粉対策（マスク）","season","seasonal",340,{season:["春"]}),
+  pkItem("s_spring_outer","羽織り","season","seasonal",350,{season:["春","秋"]}),
+  pkItem("s_summer_sunscreen","日焼け止め","season","seasonal",360,{season:["夏"]}),
+  pkItem("s_summer_bug","虫除けスプレー","season","seasonal",370,{season:["夏"]}),
+  pkItem("s_autumn_outer","羽織り・軽めの防寒具","season","seasonal",380,{season:["秋"]}),
+  pkItem("s_winter_warm","防寒着","season","seasonal",390,{season:["冬"]}),
+  pkItem("s_winter_kairo","カイロ","season","seasonal",400,{season:["冬"]}),
+
+  // ④ 天気
+  pkItem("w_rain_coat","レインコート・傘","weather","seasonal",410,{weather:["雨"]}),
+  pkItem("w_rain_shoes","防水シューズ","weather","seasonal",420,{weather:["雨"]}),
+  pkItem("w_rain_cover","ベビーカー用レインカバー","weather","seasonal",430,{weather:["雨"]}),
+  pkItem("w_snow_gear","防水ブーツ・手袋","weather","seasonal",440,{weather:["雪"]}),
+  pkItem("w_sun_hat","帽子・日傘","weather","seasonal",450,{weather:["晴れ"]}),
+  pkItem("w_sun_sunscreen","日焼け止め","weather","seasonal",460,{weather:["晴れ"]}),
+  pkItem("w_cloud_umbrella","念のため折りたたみ傘","weather","seasonal",470,{weather:["曇り"]}),
+
+  // ⑤ 気温（当日の気温に応じて必要性が変化する持ち物。境界値は PACKING_TEMP_THRESHOLDS）
+  pkItem("t_hot_gear","冷却タオル・保冷剤などの暑さ対策グッズ","temperature","seasonal",480,{temperature:{min:PACKING_TEMP_THRESHOLDS.hot,max:null}}),
+  pkItem("t_hot_drink","多めの飲み物・塩分補給","temperature","onsite",250,{temperature:{min:28,max:null}}),
+  pkItem("t_warm_towel","汗拭き用タオル（多め）","temperature","seasonal",490,{temperature:{min:PACKING_TEMP_THRESHOLDS.warm,max:null}}),
+  pkItem("t_cool_layer","羽織り（薄手の上着）","temperature","seasonal",500,{temperature:{min:PACKING_TEMP_THRESHOLDS.cold,max:18}}),
+  pkItem("t_cold_coat","防寒着（コート・ブランケット）","temperature","seasonal",505,{temperature:{min:null,max:PACKING_TEMP_THRESHOLDS.cool}}),
+  pkItem("t_verycold_gear","手袋・帽子・カイロ","temperature","seasonal",508,{temperature:{min:null,max:5}})
+];
+
+let packingState = null;
+
+function packingDefaultState(){
+  return { prepared:[], excluded:[], overrides:{}, customItems:[],
+    ctx:{ purposes:[], season: currentSeason(), weather:null, temp:null } };
+}
+// localStorageが壊れている／古い形式でも、サイト全体を止めずに安全な初期状態へ戻す
+function loadPackingState(){
+  const fallback = packingDefaultState();
+  try{
+    const raw = localStorage.getItem(PACKING_STORAGE_KEY);
+    if(!raw) return fallback;
+    const p = JSON.parse(raw);
+    if(!p || typeof p !== "object") return fallback;
+    const known = new Set(PACKING_MASTER.map(it=>it.id));
+    const customIds = new Set();
+    const customItems = Array.isArray(p.customItems)
+      ? p.customItems.filter(it=>it && typeof it.id==="string" && typeof it.name==="string" && it.name.trim()!=="")
+        .map(it=>({ id:it.id, name:String(it.name).slice(0,60), category: PACKING_CATEGORY_OPTIONS.some(c=>c.key===it.category) ? it.category : "other" }))
+        .filter(it=>{ if(known.has(it.id) || customIds.has(it.id)) return false; customIds.add(it.id); return true; })
+      : [];
+    const validIds = new Set([...known, ...customIds]);
+    const dedupe = arr => Array.isArray(arr) ? [...new Set(arr.filter(id=>typeof id==="string" && validIds.has(id)))] : [];
+    const prepared = dedupe(p.prepared);
+    let excluded = dedupe(p.excluded);
+    // 準備済みと不要が同時にONにならないようにする（壊れたデータの保険）
+    excluded = excluded.filter(id=>!prepared.includes(id));
+    const overrides = {};
+    if(p.overrides && typeof p.overrides === "object"){
+      Object.keys(p.overrides).forEach(id=>{
+        if(validIds.has(id) && PACKING_CATEGORY_OPTIONS.some(c=>c.key===p.overrides[id])) overrides[id]=p.overrides[id];
+      });
+    }
+    const seasonVal = (p.ctx && ["春","夏","秋","冬"].includes(p.ctx.season)) ? p.ctx.season : currentSeason();
+    const weatherVal = (p.ctx && ["晴れ","曇り","雨","雪"].includes(p.ctx.weather)) ? p.ctx.weather : null;
+    const tempVal = (p.ctx && typeof p.ctx.temp === "number" && !isNaN(p.ctx.temp)) ? Math.max(-30, Math.min(50, p.ctx.temp)) : null;
+    const purposesVal = (p.ctx && Array.isArray(p.ctx.purposes)) ? [...new Set(p.ctx.purposes.filter(k=>PACKING_PURPOSES.some(pp=>pp.key===k)))] : [];
+    return { prepared, excluded, overrides, customItems, ctx:{ purposes:purposesVal, season:seasonVal, weather:weatherVal, temp:tempVal } };
+  }catch(e){ return fallback; }
+}
+function savePackingState(){
+  try{ localStorage.setItem(PACKING_STORAGE_KEY, JSON.stringify(packingState)); }catch(e){ /* 保存できなくても機能は継続 */ }
+}
+function packingGenerateCustomId(){
+  return "custom_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,7);
+}
+function packingAgesMatch(item){
+  if(!item.conditions.ages || item.conditions.ages.length===0) return true;
+  if(!state.ages || state.ages.size===0) return true; // 年齢が未指定なら絞り込まない
+  return item.conditions.ages.some(a=>state.ages.has(a));
+}
+function packingTempInRange(t, cond){
+  if(t==null || isNaN(t)) return false;
+  if(cond.min!=null && t<cond.min) return false;
+  if(cond.max!=null && t>cond.max) return false;
+  return true;
+}
+// マスタの1件が「今回のお出かけ」条件に合うかどうかの判定。
+// 将来、施設・天気APIの値をそのまま purposes/weather/temp に渡すだけで自動化できる。
+function packingItemMatchesContext(item, ctx){
+  if(!packingAgesMatch(item)) return false;
+  switch(item.category){
+    case "basic": return true;
+    case "purpose": return item.conditions.purposes.some(p=>ctx.purposes.has(p));
+    case "season": return item.conditions.season.includes(ctx.season);
+    case "weather": return !!ctx.weather && item.conditions.weather.includes(ctx.weather);
+    case "temperature": return packingTempInRange(ctx.temp, item.conditions.temperature);
+    default: return false;
+  }
+}
+function packingCurrentCategory(item){
+  const ov = packingState.overrides[item.id];
+  return (ov && PACKING_CATEGORY_OPTIONS.some(c=>c.key===ov)) ? ov : item.category;
+}
+// 持ち物マスタ＋ユーザー追加分から、今回の条件に合う候補一覧を作る
+// （マスタ自体は一切書き換えない＝「持ち物マスタ」と「今回の設定」の分離）
+function packingCandidateList(){
+  const ctx = { purposes: new Set(packingState.ctx.purposes), season: packingState.ctx.season,
+    weather: packingState.ctx.weather, temp: packingState.ctx.temp };
+  const fromMaster = PACKING_MASTER.filter(it=>packingItemMatchesContext(it, ctx));
+  const custom = packingState.customItems.map(c=>pkItem(c.id, c.name, c.category, "custom", 9999, {}));
+  return [...fromMaster, ...custom];
+}
+function openPackingSheet(){
+  if(!packingState) packingState = loadPackingState();
+  try{ trackEvent("packing_open", {}); }catch(e){ /* 計測できなくても機能は継続 */ }
+  renderPackingSheet();
+  openSheet("packingOverlay");
+}
+function renderPackingItemRow(item, isPrepared){
+  const cat = packingCurrentCategory(item);
+  return `
+    <div class="packing-item${isPrepared?" is-checked":""}">
+      <button type="button" class="packing-check-btn${isPrepared?" checked":""}" data-pk-check="${escapeAttr(item.id)}" aria-label="${isPrepared?"未準備に戻す":"準備済みにする"}">${isPrepared?"☑":"☐"}</button>
+      <div class="packing-name">${expEsc(item.name)}</div>
+      <select class="packing-type-select" data-pk-cat="${escapeAttr(item.id)}" aria-label="種別">
+        ${PACKING_CATEGORY_OPTIONS.map(c=>`<option value="${c.key}"${c.key===cat?" selected":""}>${c.label}</option>`).join("")}
+      </select>
+      <button type="button" class="packing-skip-btn" data-pk-skip="${escapeAttr(item.id)}" aria-label="今回は不要" title="今回は不要">×</button>
+    </div>`;
+}
+function renderPackingSheet(){
+  if(!packingState) packingState = loadPackingState();
+  const sheet = document.getElementById("packingSheet");
+  if(!sheet) return;
+  const ctx = packingState.ctx;
+  const all = packingCandidateList();
+  const excludedIdSet = new Set(packingState.excluded);
+  const preparedIdSet = new Set(packingState.prepared);
+  const included = all.filter(it=>!excludedIdSet.has(it.id));
+  const excludedItems = all.filter(it=>excludedIdSet.has(it.id));
+  const preparedCount = included.filter(it=>preparedIdSet.has(it.id)).length;
+  const total = included.length;
+
+  const groups = {};
+  PACKING_GROUP_ORDER.forEach(g=>{ groups[g] = []; });
+  included.forEach(it=>{ (groups[it.group] || groups.nice).push(it); });
+  PACKING_GROUP_ORDER.forEach(g=>groups[g].sort((a,b)=> (a.priority-b.priority) || a.name.localeCompare(b.name,"ja")));
+
+  const purposeChips = PACKING_PURPOSES.map(p=>
+    `<button type="button" class="chip${ctx.purposes.includes(p.key)?" active":""}" data-pk-purpose="${escapeAttr(p.key)}">${expEsc(p.label)}</button>`
+  ).join("");
+  const seasonChips = ["春","夏","秋","冬"].map(s=>
+    `<button type="button" class="chip${ctx.season===s?" active":""}" data-pk-season="${s}">${SEASON_EMOJI[s]||""} ${s}</button>`
+  ).join("");
+  const weatherOptions = [["晴れ","☀️"],["曇り","☁️"],["雨","🌧"],["雪","❄️"]];
+  const weatherChips = weatherOptions.map(([w,icon])=>
+    `<button type="button" class="chip${ctx.weather===w?" active":""}" data-pk-weather="${w}">${icon} ${w}</button>`
+  ).join("");
+
+  const groupsHtml = PACKING_GROUP_ORDER.map(g=>{
+    const items = groups[g];
+    if(!items || items.length===0) return "";
+    return `<div class="packing-group-title">${PACKING_GROUP_LABELS[g]}</div>${items.map(it=>renderPackingItemRow(it, preparedIdSet.has(it.id))).join("")}`;
+  }).join("");
+
+  const excludedHtml = excludedItems.length ? `
+    <div class="packing-excluded">
+      <div class="packing-group-title">今回不要にしたもの（${excludedItems.length}件）</div>
+      ${excludedItems.map(it=>`
+        <div class="packing-excluded-item">
+          <span>${expEsc(it.name)}</span>
+          <button type="button" class="packing-restore-btn" data-pk-restore="${escapeAttr(it.id)}">戻す</button>
+        </div>`).join("")}
+    </div>` : "";
+
+  sheet.innerHTML = `
+    <button class="sheet-close" id="packingCloseBtn">×</button>
+    <div class="sheet-title">🎒 お出かけの持ち物</div>
+    <div class="packing-desc">子どもとのお出かけに必要なものを確認して、準備できたものをチェックできます。公園・水族館・動物園・プール・果物狩り・ホテル泊など行き先や、雨の日・夏のお出かけといった天気・季節に合わせて候補を追加できます。</div>
+
+    <div class="packing-ctx">
+      <div class="packing-ctx-row">
+        <div class="packing-ctx-label">お出かけ先（複数選択できます）</div>
+        <div class="chips">${purposeChips}</div>
+      </div>
+      <div class="packing-ctx-row">
+        <div class="packing-ctx-label">季節</div>
+        <div class="chips">${seasonChips}</div>
+      </div>
+      <div class="packing-ctx-row">
+        <div class="packing-ctx-label">天気（わかれば）</div>
+        <div class="chips">${weatherChips}</div>
+      </div>
+      <div class="packing-ctx-row">
+        <div class="packing-ctx-label">予想気温（℃・わかれば）</div>
+        <input type="number" inputmode="numeric" class="packing-add-input" id="packingTempInput" placeholder="例：30" style="max-width:110px;" value="${ctx.temp!=null ? ctx.temp : ""}">
+      </div>
+    </div>
+
+    <div class="packing-progress">
+      <span class="ppg-main">${preparedCount} / ${total}</span>
+      <span>準備できました</span>
+      ${excludedItems.length ? `<span>（今回は不要：${excludedItems.length}件）</span>` : ""}
+    </div>
+
+    ${total===0 ? `<div class="packing-empty">条件に合う持ち物がまだありません。上の「お出かけ先」を選ぶと候補が増えます。</div>` : groupsHtml}
+
+    <div class="packing-group-title">➕ 持ち物を追加</div>
+    <div class="packing-add-row">
+      <input type="text" class="packing-add-input" id="packingAddInput" placeholder="持ち物の名前" maxlength="30">
+      <select class="packing-add-select" id="packingAddCategory" aria-label="カテゴリ">
+        ${PACKING_CATEGORY_OPTIONS.map(c=>`<option value="${c.key}"${c.key==="other"?" selected":""}>${c.label}</option>`).join("")}
+      </select>
+      <button type="button" class="packing-add-btn" id="packingAddBtn">追加</button>
+    </div>
+
+    ${excludedHtml}
+
+    <button type="button" class="packing-reset-btn" id="packingResetBtn">持ち物チェックをリセット</button>
+
+    <div class="packing-seo">子連れお出かけの持ち物は、公園の持ち物・水族館の持ち物・動物園の持ち物・雨の日の持ち物・夏のお出かけの持ち物など、行き先や天気によって変わります。お出かけ先や季節・天気を選ぶと、このページで必要なものをまとめて確認できます。</div>
+
+    <button class="detail-close-bottom" id="packingCloseBtnBottom">戻る</button>
+  `;
+
+  document.getElementById("packingCloseBtn").onclick = ()=>closeSheetById("packingOverlay");
+  document.getElementById("packingCloseBtnBottom").onclick = ()=>closeSheetById("packingOverlay");
+  sheet.querySelectorAll("[data-pk-purpose]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const k = btn.dataset.pkPurpose;
+      const idx = packingState.ctx.purposes.indexOf(k);
+      if(idx>=0) packingState.ctx.purposes.splice(idx,1); else packingState.ctx.purposes.push(k);
+      savePackingState(); renderPackingSheet();
+    };
+  });
+  sheet.querySelectorAll("[data-pk-season]").forEach(btn=>{
+    btn.onclick = ()=>{ packingState.ctx.season = btn.dataset.pkSeason; savePackingState(); renderPackingSheet(); };
+  });
+  sheet.querySelectorAll("[data-pk-weather]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const w = btn.dataset.pkWeather;
+      packingState.ctx.weather = (packingState.ctx.weather===w) ? null : w;
+      savePackingState(); renderPackingSheet();
+    };
+  });
+  const tempInput = document.getElementById("packingTempInput");
+  if(tempInput){
+    tempInput.onchange = (e)=>{
+      const v = e.target.value;
+      const n = v==="" ? null : Number(v);
+      packingState.ctx.temp = (n==null || isNaN(n)) ? null : Math.max(-30, Math.min(50, Math.round(n)));
+      savePackingState(); renderPackingSheet();
+    };
+  }
+  sheet.querySelectorAll("[data-pk-check]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const id = btn.dataset.pkCheck;
+      const i = packingState.prepared.indexOf(id);
+      if(i>=0) packingState.prepared.splice(i,1); else packingState.prepared.push(id);
+      const ei = packingState.excluded.indexOf(id); // 準備済みと不要が同時にONにならないようにする
+      if(ei>=0) packingState.excluded.splice(ei,1);
+      savePackingState(); renderPackingSheet();
+    };
+  });
+  sheet.querySelectorAll("[data-pk-skip]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const id = btn.dataset.pkSkip;
+      if(!packingState.excluded.includes(id)) packingState.excluded.push(id);
+      const pi = packingState.prepared.indexOf(id);
+      if(pi>=0) packingState.prepared.splice(pi,1);
+      savePackingState(); renderPackingSheet();
+    };
+  });
+  sheet.querySelectorAll("[data-pk-restore]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const id = btn.dataset.pkRestore;
+      const i = packingState.excluded.indexOf(id);
+      if(i>=0) packingState.excluded.splice(i,1);
+      savePackingState(); renderPackingSheet();
+    };
+  });
+  sheet.querySelectorAll("[data-pk-cat]").forEach(sel=>{
+    sel.onchange = ()=>{
+      packingState.overrides[sel.dataset.pkCat] = sel.value;
+      savePackingState(); renderPackingSheet();
+    };
+  });
+  const addBtn = document.getElementById("packingAddBtn");
+  if(addBtn){
+    addBtn.onclick = ()=>{
+      const input = document.getElementById("packingAddInput");
+      const name = (input.value || "").trim().slice(0,30);
+      if(!name) return;
+      const catSel = document.getElementById("packingAddCategory");
+      const category = PACKING_CATEGORY_OPTIONS.some(c=>c.key===catSel.value) ? catSel.value : "other";
+      const existingNames = new Set(packingCandidateList().map(it=>it.name));
+      if(existingNames.has(name)){
+        alert("すでに追加されています");
+        return;
+      }
+      packingState.customItems.push({ id: packingGenerateCustomId(), name, category });
+      input.value = "";
+      savePackingState(); renderPackingSheet();
+    };
+  }
+  const resetBtn = document.getElementById("packingResetBtn");
+  if(resetBtn){
+    resetBtn.onclick = ()=>{
+      if(!confirm("持ち物チェックをリセットします。よろしいですか？\n（追加した持ち物は削除されません）")) return;
+      packingState.prepared = [];
+      packingState.excluded = [];
+      savePackingState(); renderPackingSheet();
+    };
+  }
+}
+
 // 🆕 ハンバーガーメニュー下部「その他メニュー」の項目定義。
 // enabled:true の項目は、既存のボタン（行きたい／プラン／について）をそのままクリックさせるだけで、
 // 新しい状態管理や画面は一切作らない。enabled:false の項目はまだページが無いため、
@@ -10568,6 +11015,7 @@ const DRAWER_MORE_ITEMS = [
   { icon:"🏨", label:"ホテルを探す", enabled:true, onSelect:()=>openHotelSearch() },
   { icon:"❤️", label:"行きたい", enabled:true, onSelect:()=>document.getElementById("favListBtn").click() },
   { icon:"🗓️", label:"プラン", enabled:true, onSelect:()=>document.getElementById("planListBtn").click() },
+  { icon:"🎒", label:"お出かけの持ち物", enabled:true, onSelect:()=>openPackingSheet() },
   { icon:"📅", label:"記録", enabled:true, onSelect:()=>document.getElementById("calendarOpenBtn").click() },
   { icon:"📖", label:"簡単な使い方", enabled:true, onSelect:()=>{ renderHowToSheet(); openSheet("howToOverlay"); } },
   { icon:"❓", label:"よくある質問（FAQ）", enabled:true, onSelect:()=>document.getElementById("faqOpenBtn").click() },
