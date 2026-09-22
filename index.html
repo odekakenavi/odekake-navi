@@ -239,7 +239,7 @@
   }
   .drawer-region-row-page:hover{text-decoration:underline;}
   .region-breadcrumb{font-size:11.5px; color:var(--ink-soft); margin-bottom:10px; line-height:1.6;}
-  .region-breadcrumb span[data-nav-pref], .region-breadcrumb span[data-nav-city], .region-breadcrumb span[data-nav-home]{color:var(--sun); cursor:pointer;}
+  .region-breadcrumb a[data-nav-pref], .region-breadcrumb a[data-nav-city], .region-breadcrumb a[data-nav-home]{color:var(--sun); cursor:pointer; text-decoration:none;}
   .region-page-title{font-family:'Zen Maru Gothic',sans-serif; font-size:19px; font-weight:700; margin-bottom:6px; line-height:1.4;}
   .region-page-desc{font-size:13px; color:var(--ink-soft); line-height:1.6; margin-bottom:18px;}
   .region-section{margin-bottom:22px;}
@@ -248,6 +248,7 @@
   .region-link-pill{
     border:1.5px solid var(--line); background:var(--paper); border-radius:999px; padding:8px 14px;
     font-size:13px; font-weight:700; color:var(--ink); cursor:pointer; display:flex; align-items:center; gap:5px;
+    text-decoration:none;
   }
   .region-link-pill .cnt{color:var(--ink-soft); font-weight:500; font-size:11.5px;}
   .region-genre-pill{
@@ -255,12 +256,12 @@
     font-size:12.5px; font-weight:700; cursor:pointer;
   }
   .region-empty{font-size:13px; color:var(--ink-soft); padding:10px 0;}
-  .region-more-link{display:block; text-align:center; font-size:13px; font-weight:700; color:var(--sun); margin-top:10px; cursor:pointer;}
+  .region-more-link{display:block; text-align:center; font-size:13px; font-weight:700; color:var(--sun); margin-top:10px; cursor:pointer; text-decoration:none;}
   .spot-region-breadcrumb-row{margin-bottom:10px;}
   .region-related-list{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;}
   .region-related-item{
     border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:7px 13px;
-    font-size:12.5px; font-weight:700; color:var(--ink); cursor:pointer;
+    font-size:12.5px; font-weight:700; color:var(--ink); cursor:pointer; text-decoration:none; display:inline-block;
   }
   .region-related-item:hover{border-color:var(--sun); color:var(--sun);}
   .drawer-season-row{display:flex; flex-direction:column; gap:8px;}
@@ -1086,6 +1087,7 @@
   .nearby-combo-card{
     display:flex; align-items:center; gap:10px; background:#F5F0E4; border:1px solid var(--line);
     border-radius:10px; padding:10px 11px; margin-bottom:8px; cursor:pointer;
+    text-decoration:none; color:inherit;
   }
   .nearby-combo-icon{font-size:22px; flex:0 0 auto;}
   .nearby-combo-body{flex:1; min-width:0;}
@@ -3943,6 +3945,15 @@ const DEFAULT_PAGE_DESCRIPTION = (document.querySelector('meta[name="description
 let __suppressHistoryPush = false; // popstate経由でopenDetailを呼ぶ時、履歴を二重に積まないためのフラグ
 let __detailBackTarget = null; // 「この近くで一緒に楽しむなら」から移動した時の、戻り先の施設
 
+// 施設・地域ページの絶対URLを生成する共通ヘルパー。
+// canonical／OGP／内部リンクのhrefなど、同じURL組み立てロジックを各所に重複実装しないために使う。
+function spotHref(spot){
+  return window.location.origin + APP_BASE_PATH + spotSlug(spot) + "/";
+}
+function regionHref(prefSlug, citySlug){
+  return window.location.origin + APP_BASE_PATH + prefSlug + "/" + (citySlug ? citySlug + "/" : "");
+}
+
 function setMetaContent(selector, content){
   try{
     let el = document.querySelector(selector);
@@ -4022,6 +4033,47 @@ function setBreadcrumbJsonLdForSpot(spot){
     document.head.appendChild(script);
   }catch(e){}
 }
+function removeSpotJsonLd(){
+  const el = document.getElementById("spotJsonLd");
+  if(el) el.remove();
+}
+// 施設そのものを検索エンジンに伝えるための構造化データ（TouristAttraction）。
+// 施設詳細を開くたびにscriptが増殖しないよう、専用id（#spotJsonLd）の要素を1つだけ維持し、
+// 施設が切り替わるたびに中身を作り直す（古い施設のデータが残らないようにする）。
+// 施設データに存在しない項目（住所詳細・画像・営業時間等）は推測で埋めず、そのまま省略する。
+function buildSpotJsonLd(spot, canonicalHref){
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": spot.name,
+    "url": canonicalHref
+  };
+  if(spot.desc) ld.description = spot.desc;
+  const rawCityLabel = (spot.area || "").split("・")[0] || spot.area || "";
+  const cityLabel = cleanCityDisplayName(baseMunicipality(rawCityLabel));
+  if(spot.region || cityLabel){
+    const address = { "@type": "PostalAddress" };
+    if(spot.region) address.addressRegion = fullPrefectureName(spot.region);
+    if(cityLabel) address.addressLocality = cityLabel;
+    ld.address = address;
+  }
+  if(typeof spot.lat === "number" && typeof spot.lng === "number"){
+    ld.geo = { "@type": "GeoCoordinates", "latitude": spot.lat, "longitude": spot.lng };
+  }
+  return ld;
+}
+function setSpotJsonLd(spot, canonicalHref){
+  try{
+    let script = document.getElementById("spotJsonLd");
+    if(!script){
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = "spotJsonLd";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(buildSpotJsonLd(spot, canonicalHref));
+  }catch(e){}
+}
 // 施設ごとのtitle・descriptionを生成する（不自然なキーワードの詰め込みはしない）
 function buildSpotMetaDescription(spot){
   const area = fullAreaLabel(spot);
@@ -4034,7 +4086,7 @@ function updateSeoTagsForSpot(spot){
   try{
     const title = `${spot.name}｜子連れお出かけ情報｜おでかけナビ`;
     const desc = buildSpotMetaDescription(spot);
-    const canonicalHref = window.location.origin + APP_BASE_PATH + spotSlug(spot) + "/";
+    const canonicalHref = spotHref(spot);
     document.title = title;
     setMetaContent('meta[name="description"]', desc);
     setMetaContent('meta[property="og:title"]', title);
@@ -4044,6 +4096,7 @@ function updateSeoTagsForSpot(spot){
     setMetaContent('meta[name="twitter:description"]', desc);
     setCanonicalHref(canonicalHref);
     setBreadcrumbJsonLdForSpot(spot);
+    setSpotJsonLd(spot, canonicalHref);
   }catch(e){}
 }
 function resetSeoTags(){
@@ -4057,6 +4110,7 @@ function resetSeoTags(){
     setMetaContent('meta[name="twitter:description"]', DEFAULT_PAGE_DESCRIPTION);
     setCanonicalHref(window.location.origin + APP_BASE_PATH);
     removeBreadcrumbJsonLd();
+    removeSpotJsonLd();
   }catch(e){}
 }
 // 現在のURLが「このアプリのベースパス＋施設slug」の形になっているかを判定する
@@ -4230,13 +4284,13 @@ function updateSeoTagsForRegion(prefSlug, citySlug){
       title = cityEntry.label + (cityHotelCount>0 ? "のお出かけスポット・ホテル" : "の子連れお出かけスポット") + "｜" + prefName + "｜おでかけナビ";
       desc = cityEntry.label + "（" + prefName + "）で子どもと楽しめるお出かけスポットを紹介。" + cityEntry.spots.length + "件のスポットが見つかります。" +
         (cityHotelCount>0 ? "子連れ向けホテルも" + cityHotelCount + "件掲載。" : "");
-      canonicalHref = home + prefSlug + "/" + citySlug + "/";
+      canonicalHref = regionHref(prefSlug, citySlug);
     } else {
       const prefHotelCount = (PREF_HOTELS.get(prefSlug) || []).length;
       title = prefName + (prefHotelCount>0 ? "のお出かけスポット・ホテル" : "の子連れお出かけスポット") + "｜おでかけナビ";
       desc = prefName + "で子どもと楽しめるお出かけスポットを紹介。" + prefEntry.spots.length + "件のスポットが見つかります。" +
         (prefHotelCount>0 ? "子連れ向けホテルも" + prefHotelCount + "件掲載。" : "");
-      canonicalHref = home + prefSlug + "/";
+      canonicalHref = regionHref(prefSlug, null);
     }
     document.title = title;
     setMetaContent('meta[name="description"]', desc);
@@ -9505,10 +9559,11 @@ function buildCardSummary(spot){
 const REGION_SPOT_LIMIT = 24;
 function regionBreadcrumbHtml(prefSlug, citySlug, prefEntry, cityEntry){
   const prefName = fullPrefectureName(prefEntry.jpRegion);
-  let html = '<span data-nav-home="1">おでかけナビ</span> ▶︎ ';
+  const home = window.location.origin + APP_BASE_PATH;
+  let html = '<a href="' + home + '" data-nav-home="1">おでかけナビ</a> ▶︎ ';
   if(citySlug){
-    html += '<span data-nav-pref="' + prefSlug + '">' + prefName + '</span> ▶︎ ' +
-            '<span data-nav-city="' + citySlug + '">' + cityEntry.label + '</span>';
+    html += '<a href="' + regionHref(prefSlug, null) + '" data-nav-pref="' + prefSlug + '">' + prefName + '</a> ▶︎ ' +
+            '<a href="' + regionHref(prefSlug, citySlug) + '" data-nav-city="' + citySlug + '">' + cityEntry.label + '</a>';
   } else {
     html += prefName;
   }
@@ -9537,7 +9592,7 @@ function renderRegionSheet(prefSlug, citySlug, prefEntry, cityEntry){
     bodyHtml += '<div class="region-page-title">🗾 ' + prefName + 'の子連れお出かけスポット</div>' +
       '<div class="region-page-desc">' + prefName + 'で子どもと楽しめるお出かけスポットを紹介。市区町村やカテゴリから探せます。</div>' +
       '<div class="region-section"><div class="region-section-title">📍 市区町村から探す</div><div class="region-link-grid">' +
-      cityList.map(function(c){ return '<button type="button" class="region-link-pill" data-nav-city="' + c.citySlug + '">' + c.label + '</button>'; }).join("") +
+      cityList.map(function(c){ return '<a class="region-link-pill" href="' + regionHref(prefSlug, c.citySlug) + '" data-nav-city="' + c.citySlug + '">' + c.label + '</a>'; }).join("") +
       '</div></div>' +
       '<div class="region-section"><div class="region-section-title">✨ ' + prefName + 'のおすすめスポット</div><div class="cards" id="regionCardsWrap"></div>' +
       (prefEntry.spots.length > REGION_SPOT_LIMIT ? '<span class="region-more-link" data-genre-filter="all" data-genre-region="' + prefEntry.jpRegion + '">' + prefName + 'の全' + prefEntry.spots.length + '件を検索で見る →</span>' : "") +
@@ -9566,9 +9621,9 @@ function renderRegionSheet(prefSlug, citySlug, prefEntry, cityEntry){
     spots.forEach(function(spot){ cardsWrap.appendChild(buildCardSummary(spot)); });
   }
 
-  sheet.querySelectorAll("[data-nav-home]").forEach(function(el){ el.onclick = function(){ closeRegionAndResetUrl(); }; });
-  sheet.querySelectorAll("[data-nav-pref]").forEach(function(el){ el.onclick = function(){ openRegionPage(el.dataset.navPref, null); }; });
-  sheet.querySelectorAll("[data-nav-city]").forEach(function(el){ el.onclick = function(){ openRegionPage(prefSlug, el.dataset.navCity); }; });
+  sheet.querySelectorAll("[data-nav-home]").forEach(function(el){ el.onclick = function(e){ if(e) e.preventDefault(); closeRegionAndResetUrl(); }; });
+  sheet.querySelectorAll("[data-nav-pref]").forEach(function(el){ el.onclick = function(e){ if(e) e.preventDefault(); openRegionPage(el.dataset.navPref, null); }; });
+  sheet.querySelectorAll("[data-nav-city]").forEach(function(el){ el.onclick = function(e){ if(e) e.preventDefault(); openRegionPage(prefSlug, el.dataset.navCity); }; });
   sheet.querySelectorAll("[data-genre-filter]").forEach(function(el){
     el.onclick = function(){
       const genreKey = el.dataset.genreFilter;
@@ -9596,10 +9651,10 @@ function regionRelatedSpotsHtml(spot){
   const RELATED_LIMIT = 6;
   const shown = others.slice(0, RELATED_LIMIT);
   const items = shown.map(function(s){
-    return '<button type="button" class="region-related-item" data-region-spot-name="' + s.name.replace(/"/g,'&quot;') + '">' + genreInfo(s).icon + ' ' + s.name + '</button>';
+    return '<a class="region-related-item" href="' + spotHref(s) + '" data-region-spot-name="' + s.name.replace(/"/g,'&quot;') + '">' + genreInfo(s).icon + ' ' + s.name + '</a>';
   }).join("");
   const moreLink = others.length > RELATED_LIMIT
-    ? '<span class="region-more-link" data-nav-pref="' + prefSlug + '" data-nav-city="' + citySlug + '">' + cityEntry.label + 'のスポットをもっと見る →</span>'
+    ? '<a class="region-more-link" href="' + regionHref(prefSlug, citySlug) + '" data-nav-pref="' + prefSlug + '" data-nav-city="' + citySlug + '">' + cityEntry.label + 'のスポットをもっと見る →</a>'
     : '';
   return '<div class="detail-section"><h3>🏘️ ' + cityEntry.label + 'の子連れお出かけスポット</h3>' +
     '<div class="region-related-list">' + items + '</div>' + moreLink + '</div>';
@@ -9612,9 +9667,10 @@ function spotRegionBreadcrumbHtml(spot){
   const cityEntry = CITY_SPOTS.get(prefSlug + "/" + citySlug);
   const prefName = fullPrefectureName(spot.region);
   const cityLabel = cityEntry ? cityEntry.label : "";
-  return '<div class="region-breadcrumb spot-region-breadcrumb-row"><span data-nav-home="1">おでかけナビ</span> ▶︎ ' +
-    '<span data-nav-pref="' + prefSlug + '">' + prefName + '</span>' +
-    (cityLabel ? ' ▶︎ <span data-nav-pref="' + prefSlug + '" data-nav-city="' + citySlug + '">' + cityLabel + '</span>' : '') +
+  const home = window.location.origin + APP_BASE_PATH;
+  return '<div class="region-breadcrumb spot-region-breadcrumb-row"><a href="' + home + '" data-nav-home="1">おでかけナビ</a> ▶︎ ' +
+    '<a href="' + regionHref(prefSlug, null) + '" data-nav-pref="' + prefSlug + '">' + prefName + '</a>' +
+    (cityLabel ? ' ▶︎ <a href="' + regionHref(prefSlug, citySlug) + '" data-nav-pref="' + prefSlug + '" data-nav-city="' + citySlug + '">' + cityLabel + '</a>' : '') +
     '</div>';
 }
 
@@ -9865,7 +9921,7 @@ function openDetail(spot, silent, backTarget){
     ${__detailBackTarget ? `<button type="button" class="detail-back-btn" id="detailBackBtn">← ${__detailBackTarget.name}に戻る</button>` : ""}
     ${spotRegionBreadcrumbHtml(spot)}
     <div class="detail-header-row">
-      <div class="detail-name">${flowerEmoji(spot) ? flowerEmoji(spot)+" " : ""}${spot.name}</div>
+      <h1 class="detail-name">${flowerEmoji(spot) ? flowerEmoji(spot)+" " : ""}${spot.name}</h1>
       <button class="sheet-close" id="detailCloseBtn">×</button>
     </div>
     <div class="detail-area">${fullAreaLabel(spot)}　${category}　${activityLabel}</div>
@@ -10006,14 +10062,14 @@ function openDetail(spot, silent, backTarget){
     <div class="detail-section">
       <h3>🗺️ この近くで一緒に楽しむなら</h3>
       ${nearbyCombos.map(c => `
-        <div class="nearby-combo-card" data-act="nearby-combo" data-name="${c.spot.name.replace(/"/g,'&quot;')}" data-genre="${c.genre}" data-km="${Math.round(c.km)}">
+        <a class="nearby-combo-card" href="${spotHref(c.spot)}" data-act="nearby-combo" data-name="${c.spot.name.replace(/"/g,'&quot;')}" data-genre="${c.genre}" data-km="${Math.round(c.km)}">
           <div class="nearby-combo-icon">${genreInfo(c.spot).icon}</div>
           <div class="nearby-combo-body">
             <div class="nearby-combo-reason">${nearbyReasonLabel(c.genre)}</div>
             <div class="nearby-combo-name">${c.spot.name}</div>
             <div class="nearby-combo-dist">📍 この施設から約${Math.round(c.km)}km</div>
           </div>
-        </div>
+        </a>
       `).join("")}
     </div>` : ""}
 
@@ -10053,14 +10109,18 @@ function openDetail(spot, silent, backTarget){
   sheet.querySelectorAll("[data-jump-date]").forEach(btn=>{
     btn.onclick = ()=> jumpToCalendarDate(btn.dataset.jumpDate);
   });
+  sheet.querySelectorAll("[data-nav-home]").forEach(el=>{
+    el.onclick = (e)=>{ if(e) e.preventDefault(); closeDetailAndResetUrl(); };
+  });
   sheet.querySelectorAll("[data-nav-pref]").forEach(el=>{
-    el.onclick = ()=>{ closeDetailAndResetUrl(); openRegionPage(el.dataset.navPref, null); };
+    el.onclick = (e)=>{ if(e) e.preventDefault(); closeDetailAndResetUrl(); openRegionPage(el.dataset.navPref, null); };
   });
   sheet.querySelectorAll("[data-nav-city]").forEach(el=>{
-    el.onclick = ()=>{ closeDetailAndResetUrl(); openRegionPage(el.dataset.navPref, el.dataset.navCity); };
+    el.onclick = (e)=>{ if(e) e.preventDefault(); closeDetailAndResetUrl(); openRegionPage(el.dataset.navPref, el.dataset.navCity); };
   });
   sheet.querySelectorAll("[data-region-spot-name]").forEach(btn=>{
-    btn.onclick = ()=>{
+    btn.onclick = (e)=>{
+      if(e) e.preventDefault();
       const destSpot = SPOTS.find(s=>s.name===btn.dataset.regionSpotName);
       if(destSpot) openDetail(destSpot);
     };
@@ -10161,7 +10221,8 @@ function openDetail(spot, silent, backTarget){
   });
   // 🗺️ この近くで一緒に楽しむなら（クリックで既存の詳細表示機能を再利用）
   sheet.querySelectorAll('[data-act="nearby-combo"]').forEach(card=>{
-    card.addEventListener("click", ()=>{
+    card.addEventListener("click", (e)=>{
+      if(e) e.preventDefault();
       const destSpot = SPOTS.find(s=>s.name===card.dataset.name);
       if(!destSpot) return;
       trackEvent("nearby_combo_click", {
