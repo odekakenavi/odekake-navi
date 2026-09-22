@@ -5345,7 +5345,7 @@ async function loadWeatherIntoDetail(spot){
   }
   bodyNow.innerHTML = `
     <div class="weather-forecast">
-      ${days.map(d => `
+      ${days.slice(0,3).map(d => `
         <div class="weather-day">
           <div class="weather-day-label">${d.label}</div>
           <div class="weather-day-icon">${d.icon}</div>
