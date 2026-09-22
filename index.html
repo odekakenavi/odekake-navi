@@ -2489,14 +2489,17 @@ function deriveParkingDetail(spot){
   }
   const yen = parsePriceYen(spot.price);
   let priceLabel, priceShort, stars, ratingLabel, symbol;
+  // 🆕 実際の駐車料金データが無い施設は「入場料の水準」から機械的に推測しているだけなので、
+  // 以前は「無料〜500円」のように無料と有料を1つのラベルに混ぜて表示しており分かりにくかった。
+  // ここからは必ず「無料」か「有料（目安額）」のどちらかを明言し、区別できるようにする。
   if(yen === 0 || yen === null){
-    priceLabel = "無料〜低額（施設により異なる・目安）"; priceShort = "無料目安"; stars = 5; symbol = "◎"; ratingLabel = "◎ 停めやすい";
+    priceLabel = "無料の場合が多い（施設により異なる・目安）"; priceShort = "無料目安"; stars = 5; symbol = "◎"; ratingLabel = "◎ 停めやすい";
   } else if(yen <= 1000){
-    priceLabel = "無料〜500円／日程度（目安）"; priceShort = "〜500円"; stars = 4; symbol = "◎"; ratingLabel = "◎ 停めやすい";
+    priceLabel = "有料の場合が多い（〜500円／日程度・目安）"; priceShort = "有料〜500円"; stars = 4; symbol = "◎"; ratingLabel = "◎ 停めやすい";
   } else if(yen <= 2500){
-    priceLabel = "500〜1,000円／日程度（目安）"; priceShort = "〜1,000円"; stars = 3; symbol = "○"; ratingLabel = "○ 普通";
+    priceLabel = "有料（500〜1,000円／日程度・目安）"; priceShort = "有料〜1,000円"; stars = 3; symbol = "○"; ratingLabel = "○ 普通";
   } else {
-    priceLabel = "1,000円前後／日、繁忙期は変動（目安）"; priceShort = "1,000円〜"; stars = 3; symbol = "○"; ratingLabel = "○ 普通";
+    priceLabel = "有料（1,000円前後／日、繁忙期は変動・目安）"; priceShort = "有料1,000円〜"; stars = 3; symbol = "○"; ratingLabel = "○ 普通";
   }
   return {
     available:true, priceLabel, priceShort, stars, symbol, ratingLabel,
@@ -2513,8 +2516,24 @@ function hashStr(str){
 // 👥 混雑の目安（実測ではなく、施設の規模・所要時間から算出した一般的な傾向）。
 // spot.congestion を個別登録すればそちらを優先する。
 const CONGESTION_LEVELS = ["◎ 空いている","○ 普通","△ やや混雑","▲ 混雑しやすい","✕ 大変混雑"];
+// 🆕 施設に businessHours が登録されていて、平日（月〜金）が全て定休日、
+// あるいは土日祝が全て定休日と分かる場合は、その時間帯の混雑度を「◎ 空いている」等の
+// 架空のレベルではなく「休業」と表示する（＝休業日を「空いている」と誤解させないための上書き）。
+// spot.congestion を個別登録している施設にも同様に適用する（自動算出・手動登録どちらの値でも起こりうるため）。
+function applyBusinessClosureToCongestion(spot, c){
+  const bh = spot.businessHours;
+  if(!bh) return c;
+  const isClosedVal = v => !v || v==="定休日" || v==="休" || v==="closed";
+  const weekdaysAllClosed = ["mon","tue","wed","thu","fri"].every(k=>isClosedVal(bh[k]));
+  const holidaysAllClosed = ["sat","sun"].every(k=>isClosedVal(bh[k])) && isClosedVal(bh.holiday);
+  if(!weekdaysAllClosed && !holidaysAllClosed) return c;
+  const out = Object.assign({}, c);
+  if(weekdaysAllClosed){ out.weekdayAM = "休業（平日は営業なし）"; out.weekdayPM = "休業（平日は営業なし）"; }
+  if(holidaysAllClosed){ out.holidayAM = "休業（土日祝は営業なし）"; out.holidayPM = "休業（土日祝は営業なし）"; }
+  return out;
+}
 function deriveCongestion(spot){
-  if(spot.congestion) return spot.congestion;
+  if(spot.congestion) return applyBusinessClosureToCongestion(spot, spot.congestion);
   const h = hashStr(spot.name);
   const big = spot.duration.includes("1日");
   const base = big ? 1 : 0; // 大型・1日型施設は総じて混みやすい傾向
@@ -2522,10 +2541,10 @@ function deriveCongestion(spot){
   const wPM = clamp(base + ((h>>2) % 2), 0, CONGESTION_LEVELS.length-1);
   const hAM = clamp(base + 1 + ((h>>4) % 2), 0, CONGESTION_LEVELS.length-1);
   const hPM = clamp(base + 2 + ((h>>6) % 2), 0, CONGESTION_LEVELS.length-1);
-  return {
+  return applyBusinessClosureToCongestion(spot, {
     weekdayAM: CONGESTION_LEVELS[wAM], weekdayPM: CONGESTION_LEVELS[wPM],
     holidayAM: CONGESTION_LEVELS[hAM], holidayPM: CONGESTION_LEVELS[hPM]
-  };
+  });
 }
 // 比較画面用のコンパクトな混雑まとめ（平日／休日の代表値のみ）
 function congestionSummary(spot){
