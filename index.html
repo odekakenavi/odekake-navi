@@ -8871,6 +8871,85 @@ function diagSaveHistory(name){
 }
 
 // ------------------------------------------------------------------
+// 🆕 🧑‍🍼 「親の負担」の考慮（大人の人数設定がある場合のみ）
+// ------------------------------------------------------------------
+//  ・「今日どこ行く？」の3問（mood/scale/priority）は増やさない。大人の人数は
+//    「うちの子設定」に追加した設定（adultMode）から取得する。
+//  ・"auto"（未設定・おまかせ）の場合は既存の推薦ロジックを維持する（加減点0）。
+//  ・"solo"（ワンオペ）の場合に最も強く、"multi"（大人2人以上）の場合はそれより軽く考慮する。
+//  ・すべて「施設データから確認できた場合にのみ」加点／慎重に評価する。情報がない項目は
+//    中立（0）のまま扱い、推測で加点・減点しない。
+//  ・材料は既存の自由記述（spot.desc / spot.baby / spot.lunch / spot.tip）と、
+//    既存の判定関数（deriveRainLevel＝屋内かどうかの目安、deriveCategory、diagStayRange）
+//    のみを使い、新しいデータ項目の入力は前提にしない。
+// ------------------------------------------------------------------
+const PARENT_BURDEN_BASE_WEIGHT = { solo:1, multi:0.4 }; // ワンオペ ＞ 大人2人以上
+const PARENT_BURDEN_MAX = 26; // 既存のスコアリングを大きく壊さないよう、加減点に上限を設ける
+const PARENT_BURDEN_OUTDOOR_GENRES = ["公園","動物園","牧場","アスレチック・アウトドア","キャンプ場・グランピング"];
+
+// 施設の自由記述から、ワンオペ時の「負担が軽くなりやすい材料」「負担が大きくなりやすい材料」を拾う。
+// 該当する記述が見つかった場合にだけ配列に追加する（見つからない＝マイナス評価はしない）。
+function diagParentBurdenSignals(spot){
+  const babyText = typeof spot.baby === "string" ? spot.baby : "";
+  const lunchText = typeof spot.lunch === "string" ? spot.lunch : "";
+  const text = [spot.desc, spot.baby, spot.lunch, spot.tip].filter(t=>typeof t==="string").join("。");
+  const rainLv = deriveRainLevel(spot); // 1〜4（4＝雨の日でもOK＝屋内中心の目安として再利用）
+  const genre = deriveCategory(spot);
+  const stay = diagStayRange(spot);
+  const pos = [], neg = [];
+
+  // 【優先したい条件（確認できた場合にプラス評価）】
+  if(/駐車場[^。]{0,10}(徒歩[1-3]分|すぐ|近い|隣接)/.test(text)) pos.push({key:"parkingNear", text:"駐車場から近い"});
+  if(/(園内|館内|敷地内)[^。]{0,10}(コンパクト|まとま|1か所|一か所)/.test(text)) pos.push({key:"compact", text:"遊び場がまとまっている"});
+  if(rainLv===4) pos.push({key:"indoor", text:"屋内で過ごしやすい"});
+  if(/(キッズトイレ|子ども用トイレ|お子様用トイレ)/.test(text)) pos.push({key:"kidsToilet", text:"子ども用トイレがある"});
+  if(/トイレ[^。]{0,10}(近い|すぐ)/.test(text)) pos.push({key:"toiletNear", text:"トイレが近い"});
+  if(/(おむつ交換|オムツ交換|おむつ替え)/.test(babyText)) pos.push({key:"diaper", text:"おむつ交換設備がある"});
+  if(/(授乳室|授乳スペース)/.test(babyText)) pos.push({key:"nursing", text:"授乳室がある"});
+  if(/ベビーカー[^。]{0,6}(貸出|OK|可|利用可|対応)/.test(babyText)) pos.push({key:"stroller", text:"ベビーカーを利用しやすい"});
+  if(/(休憩(スペース|所|エリア)|ベンチ(が多い|あり))/.test(text)) pos.push({key:"rest", text:"休憩できる場所がある"});
+  if(lunchText && !/(不可|持込禁止)/.test(lunchText)) pos.push({key:"meal", text:"飲食しやすい"});
+  if(stay && stay.max<=2) pos.push({key:"short", text:"短時間でも楽しめる"});
+  if(/(途中で帰り|一部だけ楽しめ|好きなだけ楽しんで)/.test(text)) pos.push({key:"leaveEarly", text:"途中で帰りやすい"});
+
+  // 【負担が大きくなりやすい条件（確認できた場合に慎重に評価。「広い＝悪い」「屋外＝悪い」とはしない）】
+  if(/(非常に広い|広大な(敷地|園内)|園内が広い|敷地が広大)/.test(text)) neg.push({key:"large", text:"園内が広め"});
+  if(/(徒歩(10分以上|15分|20分)|園内[^。]{0,10}移動[^。]{0,10}(多い|かかる))/.test(text)) neg.push({key:"walk", text:"施設内の移動が多め"});
+  if(/駐車場[^。]{0,10}(遠い|離れ)/.test(text)) neg.push({key:"parkingFar", text:"駐車場から少し距離がある"});
+  if(/(複数(の)?(エリア|施設)に分かれ|点在)/.test(text)) neg.push({key:"scattered", text:"遊び場が分かれている"});
+  if(/(階段が多い|急な階段)/.test(text)) neg.push({key:"stairs", text:"階段が多め"});
+  if(rainLv<=2 && PARENT_BURDEN_OUTDOOR_GENRES.includes(genre)) neg.push({key:"outdoor", text:"屋外での移動が中心"});
+  if(stay && stay.min>=4) neg.push({key:"longStay", text:"長時間の滞在が前提"});
+
+  return { pos, neg };
+}
+// 上記の材料から、今日の条件（大人の人数・雨・複数児）に応じた加減点を計算する。
+// adultMode が "auto"（未設定）の場合は必ず0を返し、既存の推薦ロジックを変えない。
+function diagParentBurdenAdj(spot, ctx, weather){
+  const mode = ctx.adultMode;
+  if(mode!=="solo" && mode!=="multi") return { adj:0, pos:[], neg:[], mode:"auto" };
+  const sig = diagParentBurdenSignals(spot);
+  const base = PARENT_BURDEN_BASE_WEIGHT[mode];
+  let posScore = Math.min(sig.pos.length, 6) * 3;
+  let negScore = Math.min(sig.neg.length, 5) * 3;
+  // 🆕 「雨の日」＋「ワンオペ」が重なった場合は、屋内・駐車場からの近さをより強く優先する
+  if(mode==="solo" && weather && weather.kind==="rain"){
+    if(sig.pos.some(p=>p.key==="indoor")) posScore += 6;
+    if(sig.pos.some(p=>p.key==="parkingNear")) posScore += 4;
+    if(sig.neg.some(n=>n.key==="outdoor" || n.key==="parkingFar")) negScore += 6;
+  }
+  // 🆕 「大人1人＋複数の子ども（乳幼児を含む／年齢差が大きい／3人以上）」の場合、
+  //    「遊び場がまとまっていて見守りやすい」をやや優先する
+  if(mode==="solo" && ctx.multiKidsFactor){
+    if(sig.pos.some(p=>p.key==="compact")) posScore += 5;
+    if(sig.neg.some(n=>n.key==="scattered")) negScore += 5;
+  }
+  let adj = (posScore - negScore) * base;
+  adj = Math.max(-PARENT_BURDEN_MAX, Math.min(PARENT_BURDEN_MAX, adj));
+  return { adj, pos:sig.pos, neg:sig.neg, mode };
+}
+
+// ------------------------------------------------------------------
 // 🎯 今日どこ行く？：総合スコア
 //   weather：この施設に使う天気（現地の天気が取れていれば現地、なければ出発地の天気）
 // ------------------------------------------------------------------
@@ -8896,6 +8975,8 @@ function computeDiagnosisScore(spot, ctx, weather, weatherIsDest){
             + parts.weather*W.weather + parts.age*W.age + parts.distance*W.distance*distMul;
   // 出発地が未設定（東京駅付近で代用）の間は、実際の到着時刻が分からないため「間に合うか」の判定に移動時間は使わない
   const open = diagOpenCheck(spot, ctx, ctx.originIsDefault ? null : minutes);
+  // 🆕 親の負担（大人の人数設定がある場合のみ。未設定なら0）
+  const parentBurden = diagParentBurdenAdj(spot, ctx, weather);
   total += diagSeasonAdj(spot, ctx)
          + diagPersonalAdj(spot)
          + open.penalty
@@ -8903,8 +8984,9 @@ function computeDiagnosisScore(spot, ctx, weather, weatherIsDest){
          + (travel && travel.noTransit ? -20 : 0) // 電車設定で公共交通が行きにくい施設
          + diagTweakAdj(spot, tweaks, parts.distance, minutes)
          + diagRepeatPenalty(spot, ctx)
-         + diagJitter(spot.name, ctx.seed || 0);
-  return { total, parts, open, travel, stay, weather, weatherIsDest: !!weatherIsDest, mood };
+         + diagJitter(spot.name, ctx.seed || 0)
+         + parentBurden.adj;
+  return { total, parts, open, travel, stay, weather, weatherIsDest: !!weatherIsDest, mood, parentBurden };
 }
 
 // ジャンルが偏りすぎないようにしながら、スコア上位からBEST5を選ぶ（1位は常に最高スコアの施設）。
@@ -8992,6 +9074,21 @@ function diagnosisReasons(item, ctx){
     add(3, snip && snip.length<=22 ? `💰 費用を抑えやすい（${snip}）` : "💰 費用を抑えやすい");
   }
   else if(ctx.priority==="special" && p.priority>=0.7) add(3, `✨ 特別感のあるお出かけ先（${genre}）`);
+  // 🆕 親目線（ワンオペ設定時のみ、実際に確認できたデータがある場合に1つだけ追加。理由を作らない）
+  if(ctx.adultMode==="solo" && sc.parentBurden && sc.parentBurden.pos && sc.parentBurden.pos.length){
+    const pb = sc.parentBurden;
+    const hasIndoor = pb.pos.some(p=>p.key==="indoor");
+    const compactBits = pb.pos.filter(p=>p.key==="compact" || p.key==="parkingNear").map(p=>p.text);
+    let text;
+    if(w && w.kind==="rain" && hasIndoor){
+      text = "☔ 雨の日でも屋内で過ごしやすく、移動の負担が少なめです";
+    } else if(compactBits.length){
+      text = `🧑‍🍼 今日はワンオペなので、${compactBits.join("・")}ので見守りやすい施設です`;
+    } else {
+      text = `🧑‍🍼 今日はワンオペなので、${pb.pos[0].text}点を優先しました`;
+    }
+    add(3.5, text);
+  }
   // 移動時間（出発地が設定されている場合だけ）
   const tr = sc.travel;
   if(tr && typeof tr.minutes==="number" && !ctx.originIsDefault){ // 出発地が未設定の間は「約○分」を理由に出さない
@@ -9254,7 +9351,10 @@ async function renderDiagnosisResults(){
       mood: diagnosisAnswers.mood || "any",
       scale: diagnosisAnswers.scale || "any",
       priority: diagnosisAnswers.priority || "any",
-      weather: todayWeatherInfoCache
+      weather: todayWeatherInfoCache,
+      // 🆕 親の負担を考慮するための材料（「今日どこ行く？」の3問は増やさず、設定から取得する）
+      adultMode: adultMode,
+      multiKidsFactor: diagMultiKidsFactor(childrenData)
     })
   };
   // ③ 採点 → 上位候補の現地の天気を取得 → 採点し直して確定
@@ -11779,6 +11879,25 @@ function saveFamilyPreferences(pref){
 }
 let familyPreferences = loadFamilyPreferences();
 
+// 🆕 👤 お出かけする大人の人数（親の負担を考慮した推薦のための設定。既存キーとは別に保存する）
+// ------------------------------------------------------------------
+// ・"auto"（おまかせ・初期値）／"solo"（大人1人＝ワンオペ）／"multi"（大人2人以上）
+// ・未設定（＝"auto"）の場合は、既存の推薦ロジックを基本的に維持する。
+// ・「大人1人（ワンオペ）」の場合のみ、親の負担を推薦ロジックで強く考慮する。
+// ------------------------------------------------------------------
+const ADULT_MODE_KEY = "odekakeNaviAdultModeV1";
+function loadAdultMode(){
+  try{
+    const v = localStorage.getItem(ADULT_MODE_KEY);
+    if(v==="solo" || v==="multi" || v==="auto") return v;
+  }catch(e){ /* 取得できなくても「おまかせ」扱いにする */ }
+  return "auto";
+}
+function saveAdultMode(v){
+  try{ localStorage.setItem(ADULT_MODE_KEY, v); }catch(e){ /* 保存できなくても機能は継続 */ }
+}
+let adultMode = loadAdultMode();
+
 // 生年月日（"YYYY-MM-DD"）から現在時点の満年齢・月齢を計算する。不正な値や未来日はnull
 function calcAgeFromBirthDate(dateStr){
   if(typeof dateStr !== "string") return null;
@@ -11822,6 +11941,16 @@ function childAgeBucket(child){
   return "高学年";
 }
 function childrenRegistered(){ return childrenData.length > 0; }
+// 🆕 「大人1人＋複数の子ども」で特に負担が大きくなりやすい状況かどうか（乳幼児を含む／年齢差が大きい／3人以上）。
+// 施設データではなく、登録済みの「うちの子設定」の年齢だけから判断する（推測で施設側の情報を補わない）。
+function diagMultiKidsFactor(children){
+  if(!Array.isArray(children) || children.length < 2) return false;
+  if(children.length >= 3) return true;
+  const ages = children.map(childAgeYears).filter(a=>a!==null);
+  if(ages.some(a=>a<=1)) return true; // 乳幼児を含む
+  if(ages.length>=2 && (Math.max(...ages) - Math.min(...ages)) >= 4) return true; // 年齢差が大きい
+  return false;
+}
 // 🆕 性別に応じたアイコン（未設定は中性的な🧒のまま）
 function childGenderIcon(c){
   if(c.gender === "boy") return "👦";
@@ -11855,13 +11984,13 @@ function childBirthdayStatus(child){
   if(bestDiff === 0) return {type:"today", diff:0};
   return {type: bestDiff>0 ? "before" : "after", diff:bestDiff};
 }
-// 🎂 誕生日前後1週間だけ表示するお祝いメッセージ。当日／前／後で表記を変える
+// 🎂 誕生日前後1週間だけ表示するお祝いメッセージ。当日／前は表示し、過去日（後）は表示しない
 function childBirthdayBadgeText(child){
   const st = childBirthdayStatus(child);
   if(!st) return null;
   if(st.type === "today") return "🎉 今日はお誕生日！おめでとう！";
   if(st.type === "before") return `🎂 もうすぐお誕生日（あと${st.diff}日）`;
-  return `🎉 お誕生日おめでとうございました（${Math.abs(st.diff)}日前）`;
+  return null; // 過去日（お誕生日が過ぎた分）は表示しない
 }
 
 // 🆕 「今日どこ行く？」直下に表示する、うちの子設定への控えめな案内バナー。
@@ -11951,6 +12080,18 @@ function renderKidsListView(){
       </div>
 
       <div class="kids-section-divider"></div>
+
+      <div class="kids-pref-summary">
+        <div class="settings-item-label">🚗 お出かけする大人</div>
+        <div class="settings-item-desc">親1人でお子さまを連れて行く日はこちら。「今日どこ行く？」の推薦に活かされます。</div>
+        <div class="chips" id="adultModeChips">
+          <button type="button" class="chip${adultMode==="auto" ? " active" : ""}" data-adult-mode="auto">おまかせ</button>
+          <button type="button" class="chip${adultMode==="solo" ? " active" : ""}" data-adult-mode="solo">大人1人（ワンオペ）</button>
+          <button type="button" class="chip${adultMode==="multi" ? " active" : ""}" data-adult-mode="multi">大人2人以上</button>
+        </div>
+      </div>
+
+      <div class="kids-section-divider"></div>
       <button type="button" class="kids-reset-btn" id="kidsResetAllBtn">うちの子設定をすべてリセット</button>
     </div>
     <button class="detail-close-bottom" id="kidsCloseBtnBottom">戻る</button>
@@ -11972,6 +12113,16 @@ function renderKidsListView(){
       quizDraft:{ interests: familyPreferences.interests.slice(), playStyles: familyPreferences.playStyles.slice(), outingStyle: familyPreferences.outingStyle } };
     renderKidsSheet();
   };
+  // 🆕 お出かけする大人（おまかせ／ワンオペ／大人2人以上）。3択のみで、複雑な画面は作らない。
+  sheet.querySelectorAll("[data-adult-mode]").forEach(btn=>{
+    btn.onclick = ()=>{
+      const v = btn.getAttribute("data-adult-mode");
+      if(v===adultMode) return;
+      adultMode = (v==="solo"||v==="multi"||v==="auto") ? v : "auto";
+      saveAdultMode(adultMode);
+      renderKidsSheet();
+    };
+  });
   document.getElementById("kidsResetAllBtn").onclick = ()=>{
     if(!confirm("うちの子設定（登録した子ども・お出かけの好み）をすべて削除します。この操作は取り消せません。よろしいですか？")) return;
     childrenData = [];
@@ -12976,6 +13127,92 @@ function dataFileUrl(key){ return dataFileUrls(key)[0] || ""; }
 
   try{ build(); }
   catch(e){ log("[translate] init failed (ignored):", e); }
+})();
+</script>
+<!-- 🆕 PWA対応：Service Worker登録用の更新通知トースト（既存デザインには影響しない、独立した追加スタイル） -->
+<style>
+  .pwa-update-toast{
+    position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom)); transform:translate(-50%, 12px);
+    background:var(--ink); color:var(--cream); border-radius:999px; padding:10px 10px 10px 18px;
+    display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; font-family:'Noto Sans JP',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,.18); z-index:9999; opacity:0; pointer-events:none; transition:opacity .25s, transform .25s;
+    max-width:calc(100vw - 32px);
+  }
+  .pwa-update-toast.show{ opacity:1; transform:translate(-50%, 0); pointer-events:auto; }
+  .pwa-update-btn{
+    background:var(--coral); color:#fff; border:none; border-radius:999px; padding:7px 14px;
+    font-size:12.5px; font-weight:700; cursor:pointer; white-space:nowrap;
+  }
+</style>
+
+<!-- 🆕 PWA対応：Service Worker登録＋更新通知
+     ・既存の機能・デザイン・SEO構造には影響しない、独立した追加コードとして window の load 後に実行する。
+     ・パスは <head> で保存した起動時のベースパス（__ODEKAKE_BASE_PATH__）からの相対で組み立てるため、
+       GitHub Pagesのサブパス公開（https://xxx.github.io/odekake-navi/ 等）でもそのまま動く。
+     ・新しいService Workerを検知した場合だけ、軽い更新通知を1回だけ出す（頻繁なポップアップは出さない）。
+     ・更新の適用はユーザーが通知の「更新する」を押した時だけ行い、勝手な強制リロード・無限リロードはしない。
+     ・Service Workerに対応していないブラウザでは何もしない（通常のWebサイトとして今まで通り動作する）。 -->
+<script>
+(function(){
+  "use strict";
+  if(!("serviceWorker" in navigator)) return;
+  function swBasePath(){
+    try{
+      var p = window.__ODEKAKE_BASE_PATH__ || window.location.pathname;
+      return p.charAt(p.length-1) === "/" ? p : p.replace(/[^\/]*$/, "");
+    }catch(e){ return "./"; }
+  }
+  function showUpdateToast(onReload){
+    try{
+      var el = document.createElement("div");
+      el.className = "pwa-update-toast";
+      el.setAttribute("role", "status");
+      el.setAttribute("aria-live", "polite");
+      el.innerHTML = '<span>最新版に更新しました</span><button type="button" class="pwa-update-btn">更新する</button>';
+      document.body.appendChild(el);
+      requestAnimationFrame(function(){ el.className = "pwa-update-toast show"; });
+      el.querySelector(".pwa-update-btn").addEventListener("click", function(){
+        el.className = "pwa-update-toast";
+        onReload();
+      });
+      setTimeout(function(){ // 15秒で自動的に消える（出しっぱなしにしない）
+        try{ el.className = "pwa-update-toast"; setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 300); }catch(e){}
+      }, 15000);
+    }catch(e){}
+  }
+  function offerUpdate(reg){
+    if(window.__odekakePwaUpdateShown) return; // 同じセッション中は1回だけ
+    window.__odekakePwaUpdateShown = true;
+    showUpdateToast(function(){
+      var sw = reg.waiting || reg.installing;
+      if(sw) sw.postMessage({ type: "SKIP_WAITING" });
+    });
+  }
+  window.addEventListener("load", function(){
+    var base = swBasePath();
+    navigator.serviceWorker.register(base + "service-worker.js", { scope: base }).then(function(reg){
+      if(reg.waiting && navigator.serviceWorker.controller) offerUpdate(reg); // 既に新しい版が待機中だった場合
+      reg.addEventListener("updatefound", function(){
+        var installing = reg.installing;
+        if(!installing) return;
+        installing.addEventListener("statechange", function(){
+          // controllerが既に存在する＝初回インストールではなく「更新」なので、その時だけ通知する
+          if(installing.state === "installed" && navigator.serviceWorker.controller) offerUpdate(reg);
+        });
+      });
+      // タブに戻ってきた時に控えめに更新確認する（頻繁な確認・通知はしない）
+      document.addEventListener("visibilitychange", function(){
+        if(document.visibilityState === "visible"){ try{ reg.update(); }catch(e){} }
+      });
+    }).catch(function(e){ /* 登録に失敗しても、通常のWebサイトとしては今まで通り動作する */ });
+
+    var reloading = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function(){
+      if(reloading) return; // 無限リロード防止：1回だけ
+      reloading = true;
+      window.location.reload();
+    });
+  });
 })();
 </script>
 
