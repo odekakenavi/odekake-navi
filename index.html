@@ -11473,8 +11473,9 @@ function openPackingSheet(forceManual){
   if(packingCurrentOutingKey!=null) packingRefreshAutoWeather();
 }
 function renderPackingItemRow(item, isPrepared, isExcluded, bucket, ctx){
-  const tier = item.category==="custom" ? null : packingItemTier(item, ctx);
-  const isSticky = item.category!=="custom" && (isPrepared||isExcluded) && !packingItemMatchesContext(item, ctx);
+  const isCustom = item.group === "custom";
+  const tier = isCustom ? null : packingItemTier(item, ctx);
+  const isSticky = !isCustom && (isPrepared||isExcluded) && !packingItemMatchesContext(item, ctx);
   return `
     <div class="packing-item${isPrepared?" is-checked":""}">
       <button type="button" class="packing-check-btn${isPrepared?" checked":""}" data-pk-check="${escapeAttr(item.id)}" aria-label="${isPrepared?"未準備に戻す":"準備済みにする"}">${isPrepared?"☑":"☐"}</button>
@@ -11535,7 +11536,7 @@ function renderPackingSheet(){
 
   const tierCounts = { must:0, nice:0, safety:0 };
   included.forEach(it=>{
-    if(it.category==="custom") return;
+    if(it.group==="custom") return;
     if(!packingItemMatchesContext(it, ctx)) return; // 現在アクティブな（条件に合う）物だけを件数に数える
     tierCounts[packingItemTier(it, ctx)]++;
   });
@@ -11612,9 +11613,6 @@ function renderPackingSheet(){
     <div class="packing-group-title">➕ 持ち物を追加</div>
     <div class="packing-add-row">
       <input type="text" class="packing-add-input" id="packingAddInput" placeholder="持ち物の名前" maxlength="30">
-      <select class="packing-add-select" id="packingAddCategory" aria-label="カテゴリ">
-        ${PACKING_CATEGORY_OPTIONS.map(c=>`<option value="${c.key}"${c.key==="other"?" selected":""}>${c.label}</option>`).join("")}
-      </select>
       <button type="button" class="packing-add-btn" id="packingAddBtn">追加</button>
     </div>
 
@@ -11703,14 +11701,12 @@ function renderPackingSheet(){
       const input = document.getElementById("packingAddInput");
       const name = (input.value || "").trim().slice(0,30);
       if(!name) return;
-      const catSel = document.getElementById("packingAddCategory");
-      const category = PACKING_CATEGORY_OPTIONS.some(c=>c.key===catSel.value) ? catSel.value : "other";
       const existingNames = new Set(packingCandidateList(ctx, bucket).map(it=>it.name));
       if(existingNames.has(name)){
         alert("すでに追加されています");
         return;
       }
-      bucket.customItems.push({ id: packingGenerateCustomId(), name, category });
+      bucket.customItems.push({ id: packingGenerateCustomId(), name, category:"other" });
       input.value = "";
       savePackingStore(); renderPackingSheet();
     };
