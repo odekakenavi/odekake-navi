@@ -292,6 +292,8 @@
   .drawer-menu-item.soon{cursor:default; color:var(--ink-soft);}
   .drawer-menu-item.soon:hover{color:var(--ink-soft);}
   .drawer-menu-badge{font-size:10.5px; font-weight:700; color:var(--ink-soft); background:#F1EADA; border-radius:999px; padding:2px 8px; flex:0 0 auto; white-space:nowrap;}
+  /* 🆕 「うちの子設定」などが登録済みの時に出す、目立つ色のバッジ（「近日公開」の地味な配色とは区別する） */
+  .drawer-menu-badge-done{color:#fff; background:var(--green,#4F7942);}
   .scroll-top-btn{position:fixed; bottom:20px; right:20px; z-index:40; width:56px; height:64px; border-radius:12px; border:none; background:var(--paper); box-shadow:0 2px 8px rgba(0,0,0,.12); cursor:pointer; display:none; flex-direction:column; align-items:center; justify-content:center; opacity:0.7; transition:opacity 0.2s; font-size:11px; font-weight:700; color:var(--ink-soft); min-width:56px; min-height:64px; padding:4px 2px; line-height:1.3;}
   .scroll-top-btn:hover{opacity:1;}
   .scroll-top-btn.show{display:flex;}
@@ -608,6 +610,16 @@
   /* ---------- 👨‍👩‍👧 うちの子設定 ---------- */
   .kids-empty{font-size:12.5px; color:var(--ink-soft); text-align:center; padding:18px 0;}
   .kids-child-card{cursor:pointer;}
+  /* 🆕 誕生日前後1週間だけ表示するお祝いメッセージ */
+  .kids-birthday-badge{
+    margin-top:6px; font-size:12px; font-weight:700; color:#a33b2c; background:#FCEEE0;
+    border-radius:8px; padding:5px 9px; display:inline-block;
+  }
+  /* 🆕 性別チップ（既存の.chip/.chipsを流用。男の子/女の子/回答しないの3択） */
+  .kids-gender-row{margin-top:2px;}
+  /* 🆕 生年月日：年・月・日を別々のプルダウンにして、途中の状態で誤確定しないようにする */
+  .kids-birth-select-row{display:flex; gap:6px;}
+  .kids-birth-select{flex:1; min-width:0;}
   .kids-section-divider{border-top:1px solid var(--line); margin:16px 0;}
   .kids-pref-summary .settings-item-label{margin-bottom:4px;}
   .kids-pref-summary .settings-item-desc{margin-bottom:10px;}
@@ -835,6 +847,9 @@
     border:none; background:var(--paper); color:var(--ink-soft); border-radius:8px; width:26px; height:26px;
     font-size:12px; font-weight:700; cursor:pointer; border:1px solid var(--line);
   }
+  /* 🆕 「編集」など文字ラベルのボタンは、他の▲▼✕等アイコン専用ボタン（26×26px固定）とは別に
+     幅を文字に合わせて自動調整する（固定幅だと文字がはみ出て正しく表示されないため） */
+  .plan-item-controls .kids-edit-btn{width:auto; height:auto; padding:6px 14px; font-size:11.5px;}
   .plan-item-remove{border:none; background:#F1EADA; color:var(--ink-soft); border-radius:8px; padding:5px 9px; font-size:10.5px; font-weight:700; cursor:pointer; margin-top:6px;}
   .plan-item-move-row{display:flex; gap:4px; flex-wrap:wrap; margin-top:6px;}
   .plan-item-move-btn{border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; padding:5px 9px; font-size:10.5px; font-weight:700; cursor:pointer;}
@@ -11458,16 +11473,12 @@ function openPackingSheet(forceManual){
   if(packingCurrentOutingKey!=null) packingRefreshAutoWeather();
 }
 function renderPackingItemRow(item, isPrepared, isExcluded, bucket, ctx){
-  const cat = packingCurrentCategory(item, bucket);
   const tier = item.category==="custom" ? null : packingItemTier(item, ctx);
   const isSticky = item.category!=="custom" && (isPrepared||isExcluded) && !packingItemMatchesContext(item, ctx);
   return `
     <div class="packing-item${isPrepared?" is-checked":""}">
       <button type="button" class="packing-check-btn${isPrepared?" checked":""}" data-pk-check="${escapeAttr(item.id)}" aria-label="${isPrepared?"未準備に戻す":"準備済みにする"}">${isPrepared?"☑":"☐"}</button>
       <div class="packing-name">${expEsc(item.name)}${tier ? `<span style="margin-left:6px; font-size:11px; opacity:.8;">${PACKING_TIER_LABELS[tier]}</span>` : ""}${isSticky ? `<span style="margin-left:6px; font-size:11px; color:var(--ink-soft, #888);">（現在の条件では対象外）</span>` : ""}</div>
-      <select class="packing-type-select" data-pk-cat="${escapeAttr(item.id)}" aria-label="種別">
-        ${PACKING_CATEGORY_OPTIONS.map(c=>`<option value="${c.key}"${c.key===cat?" selected":""}>${c.label}</option>`).join("")}
-      </select>
       <button type="button" class="packing-skip-btn" data-pk-skip="${escapeAttr(item.id)}" aria-label="今回は不要" title="今回は不要">×</button>
     </div>`;
 }
@@ -11686,12 +11697,6 @@ function renderPackingSheet(){
       savePackingStore(); renderPackingSheet();
     };
   });
-  sheet.querySelectorAll("[data-pk-cat]").forEach(sel=>{
-    sel.onchange = ()=>{
-      bucket.overrides[sel.dataset.pkCat] = sel.value;
-      savePackingStore(); renderPackingSheet();
-    };
-  });
   const addBtn = document.getElementById("packingAddBtn");
   if(addBtn){
     addBtn.onclick = ()=>{
@@ -11746,7 +11751,9 @@ function loadChildren(){
     nickname: typeof c.nickname === "string" ? c.nickname.slice(0,20) : "",
     birthDate: (typeof c.birthDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(c.birthDate)) ? c.birthDate : null,
     ageYearsManual: (typeof c.ageYearsManual === "number" && isFinite(c.ageYearsManual) && c.ageYearsManual>=0 && c.ageYearsManual<=18) ? Math.round(c.ageYearsManual) : null,
-    heightCm: (typeof c.heightCm === "number" && isFinite(c.heightCm) && c.heightCm>=30 && c.heightCm<=200) ? Math.round(c.heightCm*10)/10 : null
+    heightCm: (typeof c.heightCm === "number" && isFinite(c.heightCm) && c.heightCm>=30 && c.heightCm<=200) ? Math.round(c.heightCm*10)/10 : null,
+    // 🆕 性別（任意・アイコン表示のみに使用。統計や絞り込みには使わない）
+    gender: (c.gender === "boy" || c.gender === "girl") ? c.gender : null
   }));
 }
 function saveChildren(arr){
@@ -11819,6 +11826,47 @@ function childAgeBucket(child){
   return "高学年";
 }
 function childrenRegistered(){ return childrenData.length > 0; }
+// 🆕 性別に応じたアイコン（未設定は中性的な🧒のまま）
+function childGenderIcon(c){
+  if(c.gender === "boy") return "👦";
+  if(c.gender === "girl") return "👧";
+  return "🧒";
+}
+// 生年月日を「YYYY年M月D日」の表示用テキストに変換
+function formatBirthDateJP(dateStr){
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr||"");
+  if(!m) return "";
+  return `${Number(m[1])}年${Number(m[2])}月${Number(m[3])}日`;
+}
+// 指定した年・月（1-12）の末日を返す（うるう年も自動で考慮される）
+function daysInMonth(year, month){ return new Date(year, month, 0).getDate(); }
+// 誕生日の前後7日以内かどうかを判定する（年をまたぐ場合も考慮し、前年・今年・来年の3候補から最も近いものを使う）
+function childBirthdayStatus(child){
+  if(!child.birthDate) return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(child.birthDate);
+  if(!m) return null;
+  const month = Number(m[2]), day = Number(m[3]);
+  const now = new Date(); now.setHours(0,0,0,0);
+  const y = now.getFullYear();
+  let bestDiff = Infinity;
+  [y-1, y, y+1].forEach(cy=>{
+    const d = new Date(cy, month-1, day); d.setHours(0,0,0,0);
+    if(d.getMonth() !== month-1) return; // 存在しない日付（2/29等）は候補から除外
+    const diff = Math.round((d.getTime()-now.getTime())/86400000);
+    if(Math.abs(diff) < Math.abs(bestDiff)) bestDiff = diff;
+  });
+  if(!isFinite(bestDiff) || Math.abs(bestDiff) > 7) return null;
+  if(bestDiff === 0) return {type:"today", diff:0};
+  return {type: bestDiff>0 ? "before" : "after", diff:bestDiff};
+}
+// 🎂 誕生日前後1週間だけ表示するお祝いメッセージ。当日／前／後で表記を変える
+function childBirthdayBadgeText(child){
+  const st = childBirthdayStatus(child);
+  if(!st) return null;
+  if(st.type === "today") return "🎉 今日はお誕生日！おめでとう！";
+  if(st.type === "before") return `🎂 もうすぐお誕生日（あと${st.diff}日）`;
+  return `🎉 お誕生日おめでとうございました（${Math.abs(st.diff)}日前）`;
+}
 
 // 🆕 「今日どこ行く？」直下に表示する、うちの子設定への控えめな案内バナー。
 // 一度閉じたら（または「設定する」を押したら）二度と表示しないよう、既存のSTORAGE_KEY等とは
@@ -11862,15 +11910,20 @@ function validateManualAgeInput(raw){
 let kidsUI = { view:"list", editingChildId:null, draft:null, quizStep:1, quizDraft:null };
 
 function kidsChildCardHTML(c){
+  const metaParts = [childAgeLabel(c)];
+  if(c.birthDate) metaParts.push(formatBirthDateJP(c.birthDate) + "生まれ");
+  if(c.heightCm) metaParts.push(String(c.heightCm) + "cm");
+  const bdayText = childBirthdayBadgeText(c);
   return `<div class="plan-item kids-child-card" data-kids-edit="${escapeAttr(c.id)}">
     <div class="plan-item-head">
-      <div class="plan-item-order">🧒</div>
+      <div class="plan-item-order">${childGenderIcon(c)}</div>
       <div class="plan-item-main">
         <div class="plan-item-name">${expEsc(c.nickname || "名前未設定")}</div>
-        <div class="plan-item-meta">${expEsc(childAgeLabel(c))}${c.heightCm ? " ・ " + expEsc(String(c.heightCm)) + "cm" : ""}</div>
+        <div class="plan-item-meta">${expEsc(metaParts.join(" ・ "))}</div>
       </div>
-      <div class="plan-item-controls"><button type="button" data-kids-edit="${escapeAttr(c.id)}">編集</button></div>
+      <div class="plan-item-controls"><button type="button" class="kids-edit-btn" data-kids-edit="${escapeAttr(c.id)}">編集</button></div>
     </div>
+    ${bdayText ? `<div class="kids-birthday-badge">${expEsc(bdayText)}</div>` : ""}
   </div>`;
 }
 function kidsPrefSummaryText(){
@@ -11915,7 +11968,7 @@ function renderKidsListView(){
     };
   });
   document.getElementById("kidsAddChildBtn").onclick = ()=>{
-    kidsUI = { view:"editChild", editingChildId:null, draft:{nickname:"", birthDate:null, ageYearsManual:null, heightCm:null}, quizStep:1, quizDraft:null };
+    kidsUI = { view:"editChild", editingChildId:null, draft:{nickname:"", birthDate:null, ageYearsManual:null, heightCm:null, gender:null}, quizStep:1, quizDraft:null };
     renderKidsSheet();
   };
   document.getElementById("kidsPrefBtn").onclick = ()=>{
@@ -11935,10 +11988,33 @@ function renderKidsListView(){
   document.getElementById("kidsCloseBtn").onclick = ()=>closeSheetById("kidsOverlay");
   document.getElementById("kidsCloseBtnBottom").onclick = ()=>closeSheetById("kidsOverlay");
 }
+// 🆕 生年月日プルダウン（年・月・日）の選択肢HTML
+function kidsBirthYearOptionsHTML(selected){
+  const nowY = new Date().getFullYear();
+  let html = `<option value="">年</option>`;
+  for(let y=nowY; y>=nowY-19; y--) html += `<option value="${y}"${y===selected?" selected":""}>${y}年</option>`;
+  return html;
+}
+function kidsBirthMonthOptionsHTML(selected){
+  let html = `<option value="">月</option>`;
+  for(let m=1;m<=12;m++) html += `<option value="${m}"${m===selected?" selected":""}>${m}月</option>`;
+  return html;
+}
+function kidsBirthDayOptionsHTML(selected, year, month){
+  const maxDay = (year && month) ? daysInMonth(year, month) : 31;
+  let html = `<option value="">日</option>`;
+  for(let d=1; d<=maxDay; d++) html += `<option value="${d}"${d===selected?" selected":""}>${d}日</option>`;
+  return html;
+}
 function renderKidsEditChildView(){
   const sheet = document.getElementById("kidsSheet");
-  const draft = kidsUI.draft || {nickname:"", birthDate:null, ageYearsManual:null, heightCm:null};
+  const draft = kidsUI.draft || {nickname:"", birthDate:null, ageYearsManual:null, heightCm:null, gender:null};
   const editing = !!kidsUI.editingChildId;
+  const bm = /^(\d{4})-(\d{2})-(\d{2})$/.exec(draft.birthDate||"");
+  const selY = bm ? Number(bm[1]) : "";
+  const selM = bm ? Number(bm[2]) : "";
+  const selD = bm ? Number(bm[3]) : "";
+  const hasFullBirth = !!(selY && selM && selD);
   sheet.innerHTML = `
     <button class="sheet-close" id="kidsCloseBtn">×</button>
     <div class="sheet-title">${editing ? "子どもの情報を編集" : "子どもを追加"}</div>
@@ -11948,11 +12024,24 @@ function renderKidsEditChildView(){
         <input type="text" class="kids-form-input" id="kidsFieldNickname" maxlength="20" placeholder="例：みーちゃん" value="${escapeAttr(draft.nickname||"")}">
       </div>
       <div class="kids-form-field">
-        <label class="kids-form-label">生年月日（任意）</label>
-        <input type="date" class="kids-form-input" id="kidsFieldBirthDate" value="${escapeAttr(draft.birthDate||"")}" max="${todayDateInputValue()}">
-        <div class="kids-form-hint">入力すると年齢が自動計算され、誕生日を迎えると自動で更新されます。</div>
+        <label class="kids-form-label">性別（任意・アイコンの表示にのみ使います）</label>
+        <div class="chips kids-gender-row" id="kidsGenderRow" data-gender-value="${draft.gender||""}">
+          <button type="button" class="chip${draft.gender==="boy"?" active":""}" data-gender-btn="boy">👦 男の子</button>
+          <button type="button" class="chip${draft.gender==="girl"?" active":""}" data-gender-btn="girl">👧 女の子</button>
+          <button type="button" class="chip${!draft.gender?" active":""}" data-gender-btn="">🧒 回答しない</button>
+        </div>
       </div>
-      <div class="kids-form-field" id="kidsManualAgeField" style="${draft.birthDate ? "display:none;" : ""}">
+      <div class="kids-form-field">
+        <label class="kids-form-label">生年月日（任意）</label>
+        <div class="kids-birth-select-row">
+          <select class="kids-form-input kids-birth-select" id="kidsFieldBirthYear" aria-label="生まれた年">${kidsBirthYearOptionsHTML(selY)}</select>
+          <select class="kids-form-input kids-birth-select" id="kidsFieldBirthMonth" aria-label="生まれた月">${kidsBirthMonthOptionsHTML(selM)}</select>
+          <select class="kids-form-input kids-birth-select" id="kidsFieldBirthDay" aria-label="生まれた日">${kidsBirthDayOptionsHTML(selD, selY, selM)}</select>
+        </div>
+        <div class="kids-form-hint">年・月・日をすべて選ぶと年齢が自動計算され、誕生日を迎えると自動で更新されます。</div>
+        <div class="kids-form-error" id="kidsBirthError" style="display:none;"></div>
+      </div>
+      <div class="kids-form-field" id="kidsManualAgeField" style="${hasFullBirth ? "display:none;" : ""}">
         <label class="kids-form-label">年齢（生年月日を入力しない場合のみ）</label>
         <input type="number" class="kids-form-input" id="kidsFieldAgeManual" min="0" max="18" step="1" placeholder="例：6" value="${draft.ageYearsManual===null||draft.ageYearsManual===undefined ? "" : draft.ageYearsManual}">
         <div class="kids-form-error" id="kidsAgeError" style="display:none;"></div>
@@ -11967,17 +12056,58 @@ function renderKidsEditChildView(){
       ${editing ? `<button type="button" class="kids-reset-btn" id="kidsDeleteChildBtn">この子どもを削除</button>` : ""}
     </div>
   `;
-  const birthInput = document.getElementById("kidsFieldBirthDate");
+  const genderRow = document.getElementById("kidsGenderRow");
+  genderRow.querySelectorAll("[data-gender-btn]").forEach(btn=>{
+    btn.onclick = ()=>{
+      genderRow.dataset.genderValue = btn.dataset.genderBtn;
+      genderRow.querySelectorAll("[data-gender-btn]").forEach(b=>b.classList.toggle("active", b===btn));
+    };
+  });
+  const yearSel = document.getElementById("kidsFieldBirthYear");
+  const monthSel = document.getElementById("kidsFieldBirthMonth");
+  const daySel = document.getElementById("kidsFieldBirthDay");
   const manualAgeField = document.getElementById("kidsManualAgeField");
-  birthInput.onchange = ()=>{
-    manualAgeField.style.display = birthInput.value ? "none" : "";
-  };
+  const birthErrEl = document.getElementById("kidsBirthError");
+  // 年・月が変わったら、その月の日数に合わせて「日」の選択肢を作り直す（選択済みの日が範囲外なら未選択に戻す）
+  function refreshDayOptions(){
+    const y = Number(yearSel.value) || null, mo = Number(monthSel.value) || null;
+    const curD = Number(daySel.value) || null;
+    const maxDay = (y && mo) ? daysInMonth(y, mo) : 31;
+    const keepD = (curD && curD<=maxDay) ? curD : "";
+    daySel.innerHTML = kidsBirthDayOptionsHTML(keepD || null, y, mo);
+  }
+  function refreshBirthUI(){
+    birthErrEl.style.display = "none";
+    const allSet = yearSel.value && monthSel.value && daySel.value;
+    manualAgeField.style.display = allSet ? "none" : "";
+  }
+  yearSel.onchange = ()=>{ refreshDayOptions(); refreshBirthUI(); };
+  monthSel.onchange = ()=>{ refreshDayOptions(); refreshBirthUI(); };
+  daySel.onchange = refreshBirthUI;
   document.getElementById("kidsSaveChildBtn").onclick = ()=>{
     const heightRes = validateHeightInput(document.getElementById("kidsFieldHeight").value.trim());
     const heightErrEl = document.getElementById("kidsHeightError");
     heightErrEl.style.display = "none";
     if(!heightRes.ok){ heightErrEl.textContent = heightRes.error; heightErrEl.style.display = ""; return; }
-    const birthVal = birthInput.value || null;
+    // 生年月日：年・月・日のいずれかだけ選ばれている状態は中途半端なのでエラーにする（全部未選択＝未入力はOK）
+    const yv = yearSel.value, mv = monthSel.value, dv = daySel.value;
+    birthErrEl.style.display = "none";
+    let birthVal = null;
+    if(yv || mv || dv){
+      if(!(yv && mv && dv)){
+        birthErrEl.textContent = "生年月日は「年・月・日」をすべて選ぶか、すべて未選択のままにしてください";
+        birthErrEl.style.display = "";
+        return;
+      }
+      const pad = n=>String(n).padStart(2,"0");
+      const candidate = `${yv}-${pad(mv)}-${pad(dv)}`;
+      if(candidate > todayDateInputValue()){
+        birthErrEl.textContent = "生年月日に未来の日付は入力できません";
+        birthErrEl.style.display = "";
+        return;
+      }
+      birthVal = candidate;
+    }
     let ageManualVal = null;
     if(!birthVal){
       const ageEl = document.getElementById("kidsFieldAgeManual");
@@ -11988,9 +12118,11 @@ function renderKidsEditChildView(){
       ageManualVal = ageRes.value;
     }
     const nickname = document.getElementById("kidsFieldNickname").value.trim().slice(0,20);
+    const genderVal = genderRow.dataset.genderValue;
     const newChild = {
       id: kidsUI.editingChildId || ("child_"+Date.now().toString(36)+Math.random().toString(36).slice(2,7)),
-      nickname, birthDate: birthVal, ageYearsManual: ageManualVal, heightCm: heightRes.value
+      nickname, birthDate: birthVal, ageYearsManual: ageManualVal, heightCm: heightRes.value,
+      gender: (genderVal==="boy"||genderVal==="girl") ? genderVal : null
     };
     if(kidsUI.editingChildId){
       childrenData = childrenData.map(c=>c.id===kidsUI.editingChildId ? newChild : c);
@@ -12100,8 +12232,8 @@ const DRAWER_MORE_ITEMS = [
   { icon:"🗓️", label:"プラン", enabled:true, settingsKey:"plan", onSelect:()=>document.getElementById("planListBtn").click() },
   { icon:"🎒", label:"お出かけの持ち物", enabled:true, settingsKey:"packing", onSelect:()=>openPackingSheet(true) },
   { icon:"📅", label:"記録", enabled:true, settingsKey:"history", onSelect:()=>document.getElementById("calendarOpenBtn").click() },
-  // 🆕 👨‍👩‍👧 うちの子設定。登録済みなら見た目でわかるよう、ラベルに✓を付ける（データ自体には影響しない）
-  { icon:"👨‍👩‍👧", label:()=>"うちの子設定" + (childrenRegistered() ? " ✓" : ""), enabled:true,
+  // 🆕 👨‍👩‍👧 うちの子設定。登録済みなら見た目でわかるよう「登録済み・◯人」バッジを付ける（データ自体には影響しない）
+  { icon:"👨‍👩‍👧", label:"うちの子設定", badge:()=>childrenRegistered() ? `登録済み・${childrenData.length}人` : null, enabled:true,
     onSelect:()=>{ kidsUI = { view:"list", editingChildId:null, draft:null, quizStep:1, quizDraft:null }; renderKidsSheet(); openSheet("kidsOverlay"); } },
   { icon:"📖", label:"簡単な使い方", enabled:true, onSelect:()=>{ renderHowToSheet(); openSheet("howToOverlay"); } },
   { icon:"❓", label:"よくある質問（FAQ）", enabled:true, onSelect:()=>document.getElementById("faqOpenBtn").click() },
@@ -12119,7 +12251,9 @@ function buildDrawerMoreMenu(){
     btn.type = "button";
     btn.className = "drawer-menu-item" + (item.enabled ? "" : " soon");
     const labelText = typeof item.label === "function" ? item.label() : item.label;
+    const badgeText = typeof item.badge === "function" ? item.badge() : null;
     btn.innerHTML = `<span class="dmi-icon">${item.icon}</span><span class="dmi-label">${labelText}</span>` +
+      (badgeText ? `<span class="drawer-menu-badge drawer-menu-badge-done">${expEsc(badgeText)}</span>` : "") +
       (item.enabled ? `<span class="dmi-arrow">›</span>` : `<span class="drawer-menu-badge">近日公開</span>`);
     if(item.enabled){
       btn.onclick = ()=>{ closeDrawer(); item.onSelect(); };
