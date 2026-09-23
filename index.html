@@ -44,6 +44,30 @@
 <meta property="og:url" content="https://odekakenavi.github.io/odekake-navi/">
 <link rel="canonical" href="https://odekakenavi.github.io/odekake-navi/" id="canonicalLink">
 
+<!-- 🆕 サイト全体の構造化データ（WebSite／Organization）。
+     施設・地域ページ側は spotJsonLd / breadcrumbJsonLd / regionItemListJsonLd が
+     動的に差し替えるため、ここではサイト全体を表す固定値のみを1回だけ出力する
+     （重複実装を避けるため、これ以外の場所でWebSite/Organizationは出力しない）。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "おでかけナビ",
+      "url": "https://odekakenavi.github.io/odekake-navi/",
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "Organization",
+      "name": "おでかけナビ",
+      "url": "https://odekakenavi.github.io/odekake-navi/",
+      "logo": "https://odekakenavi.github.io/odekake-navi/og-image.png"
+    }
+  ]
+}
+</script>
+
 <!-- ==================================================================
      🔗 施設ごとの独立URL対応（GitHub Pages用のSPAリダイレクト復元）
      ------------------------------------------------------------------
@@ -225,22 +249,25 @@
   }
   .drawer-link:hover, .drawer-genre-btn:hover{border-color:var(--coral); background:#FFF6EF;}
   .drawer-genre-btn{font-size:12px; padding:10px 8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  /* 🆕 地域から探す：1行=1都道府県。行タップで絞り込み、右端の小さいリンクでその県のページへ */
-  .drawer-region-list{display:flex; flex-direction:column;}
-  .drawer-region-row{
-    display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--line); padding:2px 0;
+  /* 🆕 地域から探す：「目的から探す」と同じ2列グリッド・同サイズのカードに変更。
+     カード本体タップで絞り込み、カード内の小さい「ページを見る」リンクでその県のページへ遷移できる（機能は維持）。 */
+  .drawer-region-list{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .drawer-region-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:10px 8px; display:flex; flex-direction:column; gap:3px;
   }
-  .drawer-region-row:last-child{border-bottom:none;}
-  .drawer-region-row-main{
-    flex:1; background:none; border:none; padding:10px 4px; text-align:left; cursor:pointer;
-    font-size:13.5px; font-weight:700; color:var(--ink); font-family:inherit;
+  .drawer-region-card:hover{border-color:var(--coral); background:#FFF6EF;}
+  .drawer-region-card-main{
+    background:none; border:none; padding:0; text-align:left; cursor:pointer;
+    font-size:12px; font-weight:700; color:var(--ink); font-family:inherit;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%;
   }
-  .drawer-region-row-main:hover{color:var(--coral);}
-  .drawer-region-row-page{
-    flex:0 0 auto; background:none; border:none; padding:6px 4px; cursor:pointer;
-    font-size:11.5px; font-weight:700; color:var(--sun); font-family:inherit; white-space:nowrap;
+  .drawer-region-card-main:hover{color:var(--coral);}
+  .drawer-region-card-page{
+    background:none; border:none; padding:0; cursor:pointer; text-align:left;
+    font-size:10.5px; font-weight:700; color:var(--sun); font-family:inherit;
   }
-  .drawer-region-row-page:hover{text-decoration:underline;}
+  .drawer-region-card-page:hover{text-decoration:underline;}
   .region-breadcrumb{font-size:11.5px; color:var(--ink-soft); margin-bottom:10px; line-height:1.6;}
   .region-breadcrumb a[data-nav-pref], .region-breadcrumb a[data-nav-city], .region-breadcrumb a[data-nav-home]{color:var(--sun); cursor:pointer; text-decoration:none;}
   .region-page-title{font-family:'Zen Maru Gothic',sans-serif; font-size:19px; font-weight:700; margin-bottom:6px; line-height:1.4;}
@@ -261,6 +288,11 @@
   .region-empty{font-size:13px; color:var(--ink-soft); padding:10px 0;}
   .region-more-link{display:block; text-align:center; font-size:13px; font-weight:700; color:var(--sun); margin-top:10px; cursor:pointer; text-decoration:none;}
   .spot-region-breadcrumb-row{margin-bottom:10px;}
+  .kids-highlight-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px;}
+  .kids-highlight-list li{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:8px 12px; font-size:12.5px; font-weight:600; color:var(--ink); line-height:1.5;
+  }
   .region-related-list{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;}
   .region-related-item{
     border:1px solid var(--line); background:var(--paper); border-radius:999px; padding:7px 13px;
@@ -4306,17 +4338,49 @@ function setSpotJsonLd(spot, canonicalHref){
     script.textContent = JSON.stringify(buildSpotJsonLd(spot, canonicalHref));
   }catch(e){}
 }
+// 🆕 施設データ（ages/weather/duration/parking）から、その施設に実際に当てはまる
+// 特徴だけを短い言葉にする。存在しない・当てはまらない項目は足さない。
+const AGE_LABEL_ORDER = ["0-1歳","2-3歳","4-6歳","低学年","高学年"];
+function ageRangeLabel(spot){
+  const ages = AGE_LABEL_ORDER.filter(a => (spot.ages||[]).includes(a));
+  if(!ages.length) return "";
+  if(ages.length === AGE_LABEL_ORDER.length) return "幅広い年齢";
+  if(ages.length <= 2) return ages.join("・");
+  return ages[0] + "〜" + ages[ages.length-1];
+}
+// title・meta description用の短いタグ（最大2つ。詰め込み防止のため件数を絞る）
+function buildSpotHighlightTags(spot){
+  const tags = [];
+  const ageLabel = ageRangeLabel(spot);
+  if(ageLabel) tags.push(ageLabel);
+  if(spot.parking === "yes") tags.push("駐車場あり");
+  else if((spot.weather||[]).includes("雨")) tags.push("雨の日OK");
+  return tags.slice(0, 2);
+}
 // 施設ごとのtitle・descriptionを生成する（不自然なキーワードの詰め込みはしない）
 function buildSpotMetaDescription(spot){
   const area = fullAreaLabel(spot);
-  let base = `${spot.name}（${area}）の子連れお出かけ情報。`;
+  const ageLabel = ageRangeLabel(spot);
+  const bits = [];
+  if(ageLabel) bits.push(ageLabel + "向け");
+  if((spot.duration||[]).includes("半日") && !(spot.duration||[]).includes("1日")) bits.push("半日でも楽しめる");
+  if(spot.parking === "yes") bits.push("駐車場あり");
+  const bitsText = bits.length ? bits.join("・") + "の" : "";
+  let base = `${spot.name}（${area}）は${bitsText}子連れお出かけスポット。`;
   if(spot.desc) base += spot.desc;
   if(base.length > 120) base = base.slice(0, 120) + "…";
   return base;
 }
+function buildSpotTitle(spot){
+  const areaShort = cleanCityDisplayName(baseMunicipality((spot.area||"").split("・")[0] || spot.area || ""));
+  const tags = buildSpotHighlightTags(spot);
+  const areaPart = areaShort ? areaShort + "の" : "";
+  const tagPart = tags.length ? "｜" + tags.join("・") : "";
+  return `${spot.name}｜${areaPart}子連れお出かけ${tagPart}｜おでかけナビ`;
+}
 function updateSeoTagsForSpot(spot){
   try{
-    const title = `${spot.name}｜子連れお出かけ情報｜おでかけナビ`;
+    const title = buildSpotTitle(spot);
     const desc = buildSpotMetaDescription(spot);
     const canonicalHref = spotHref(spot);
     document.title = title;
@@ -4329,6 +4393,7 @@ function updateSeoTagsForSpot(spot){
     setCanonicalHref(canonicalHref);
     setBreadcrumbJsonLdForSpot(spot);
     setSpotJsonLd(spot, canonicalHref);
+    removeRegionItemListJsonLd(); // 施設ページにはItemList（地域の一覧）は不要
   }catch(e){}
 }
 function resetSeoTags(){
@@ -4343,6 +4408,7 @@ function resetSeoTags(){
     setCanonicalHref(window.location.origin + APP_BASE_PATH);
     removeBreadcrumbJsonLd();
     removeSpotJsonLd();
+    removeRegionItemListJsonLd();
   }catch(e){}
 }
 // 現在のURLが「このアプリのベースパス＋施設slug」の形になっているかを判定する
@@ -4533,6 +4599,7 @@ function updateSeoTagsForRegion(prefSlug, citySlug){
     setMetaContent('meta[name="twitter:description"]', desc);
     setCanonicalHref(canonicalHref);
     setBreadcrumbJsonLdForRegion(prefSlug, citySlug, prefEntry, cityEntry);
+    setRegionItemListJsonLd(prefSlug, citySlug, prefEntry, cityEntry);
   }catch(e){}
 }
 function setBreadcrumbJsonLdForRegion(prefSlug, citySlug, prefEntry, cityEntry){
@@ -4550,6 +4617,30 @@ function setBreadcrumbJsonLdForRegion(prefSlug, citySlug, prefEntry, cityEntry){
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "breadcrumbJsonLd";
+    script.textContent = JSON.stringify(ld);
+    document.head.appendChild(script);
+  }catch(e){}
+}
+// 🆕 地域ページ（都道府県／市区町村）のItemList構造化データ。
+// renderRegionSheet が実際に画面へ表示するスポット（REGION_SPOT_LIMIT件まで）と
+// 完全に同じ並び・同じ件数だけを出す（表示内容と構造化データを一致させるため）。
+function removeRegionItemListJsonLd(){
+  const el = document.getElementById("regionItemListJsonLd");
+  if(el) el.remove();
+}
+function setRegionItemListJsonLd(prefSlug, citySlug, prefEntry, cityEntry){
+  try{
+    removeRegionItemListJsonLd();
+    const spots = (cityEntry ? cityEntry.spots : prefEntry.spots).slice(0, REGION_SPOT_LIMIT);
+    if(!spots.length) return;
+    const ld = {
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "itemListElement": spots.map((s,i)=>({"@type":"ListItem","position":i+1,"name":s.name,"url":spotHref(s)}))
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "regionItemListJsonLd";
     script.textContent = JSON.stringify(ld);
     document.head.appendChild(script);
   }catch(e){}
@@ -10085,6 +10176,28 @@ function spotRegionBreadcrumbHtml(spot){
     (cityLabel ? ' ▶︎ <a href="' + regionHref(prefSlug, citySlug) + '" data-nav-pref="' + prefSlug + '" data-nav-city="' + citySlug + '">' + cityLabel + '</a>' : '') +
     '</div>';
 }
+// 🆕 「こんな子連れにおすすめ」— ages/weather/duration/parkingという既存フィールドだけから
+// 根拠を持って言える内容だけを並べる（データに無いことは書かない）。表示件数は最大5つ。
+function buildKidsHighlightBullets(spot){
+  const bullets = [];
+  const ages = spot.ages || [];
+  if(ages.includes("0-1歳") || ages.includes("2-3歳")) bullets.push("👶 小さな子（0〜3歳ごろ）と一緒でも楽しみやすい");
+  if(ages.includes("4-6歳")) bullets.push("🧒 未就学児（4〜6歳）と楽しみやすい");
+  if(ages.includes("低学年") || ages.includes("高学年")) bullets.push("🎒 小学生と一緒でも楽しめる");
+  const weather = spot.weather || [];
+  if(weather.includes("雨")) bullets.push("☔ 雨の日のお出かけ候補になる");
+  const duration = spot.duration || [];
+  if(duration.includes("半日") && !duration.includes("1日")) bullets.push("⏱ 半日のお出かけに向いている");
+  if(duration.includes("1日")) bullets.push("🗓 1日たっぷり過ごせる");
+  if(spot.parking === "yes") bullets.push("🚗 駐車場があるので車での来場もしやすい");
+  return bullets.slice(0, 5);
+}
+function kidsHighlightHtml(spot){
+  const bullets = buildKidsHighlightBullets(spot);
+  if(!bullets.length) return "";
+  return '<div class="detail-section"><h3>🎒 こんな子連れにおすすめ</h3>' +
+    '<ul class="kids-highlight-list">' + bullets.map(function(b){ return '<li>' + b + '</li>'; }).join("") + '</ul></div>';
+}
 
 // ==================================================================
 // 📸 「実際に行ったよ」（実体験）— 将来の拡張用の土台
@@ -10340,6 +10453,7 @@ function openDetail(spot, silent, backTarget){
     ${spotDetailPhotoHTML(spot)}
     <div class="detail-desc">${spot.desc}</div>
     ${stayTimeLabel ? `<div class="detail-stay-time">${stayTimeLabel}</div>` : ""}
+    ${kidsHighlightHtml(spot)}
 
     <div class="detail-section">
       <h3>☔ 今日行きやすい？</h3>
@@ -10781,12 +10895,12 @@ function buildDrawerMenu(){
   DRAWER_PREFS.forEach(({region, label})=>{
     const prefSlug = PREF_SLUG[region];
     if(!prefSlug) return;
-    const row = document.createElement("div");
-    row.className = "drawer-region-row";
+    const card = document.createElement("div");
+    card.className = "drawer-region-card";
 
     const mainBtn = document.createElement("button");
     mainBtn.type = "button";
-    mainBtn.className = "drawer-region-row-main";
+    mainBtn.className = "drawer-region-card-main";
     mainBtn.textContent = "🗾 " + label;
     mainBtn.onclick = ()=>{
       // 既存の state.region をそのまま使い、その都道府県だけに絞り込む
@@ -10797,23 +10911,23 @@ function buildDrawerMenu(){
       afterFilterChange();
       document.getElementById("sortToggleRow").scrollIntoView({behavior:"smooth", block:"start"});
     };
-    row.appendChild(mainBtn);
+    card.appendChild(mainBtn);
 
-    // 🆕 地域ページ（市区町村・おすすめ一覧）がある都道府県だけ、右端に小さくページへのリンクを添える
+    // 🆕 地域ページ（市区町村・おすすめ一覧）がある都道府県だけ、カード内下部に小さくページへのリンクを添える
     if(PREF_SPOTS.has(prefSlug)){
       const pageBtn = document.createElement("button");
       pageBtn.type = "button";
-      pageBtn.className = "drawer-region-row-page";
+      pageBtn.className = "drawer-region-card-page";
       pageBtn.textContent = "ページを見る ›";
       pageBtn.onclick = (e)=>{
         e.stopPropagation();
         closeDrawer();
         openRegionPage(prefSlug, null);
       };
-      row.appendChild(pageBtn);
+      card.appendChild(pageBtn);
     }
 
-    regionGrid.appendChild(row);
+    regionGrid.appendChild(card);
   });
 
   const seasonRow = document.getElementById("drawerSeasonRow");
@@ -12753,6 +12867,80 @@ function renderAuditMode(){
   draw();
 }
 renderAuditMode();
+
+// ==================================================================
+// 🆕 🔍 SEO技術チェックモード（?seoaudit=1）
+// ------------------------------------------------------------------
+// 既存の ?audit=1（データ監査）とは別モード。全施設について
+// title／description／canonical／slugの状態を機械的に確認できるようにする。
+// 本番のUI・機能には一切影響しない（このURLパラメータを付けた時だけ動く）。
+// ==================================================================
+function renderSeoAuditMode(){
+  const params = new URLSearchParams(window.location.search);
+  if(params.get("seoaudit") !== "1") return;
+
+  const rows = SPOTS.map(spot=>{
+    const title = buildSpotTitle(spot);
+    const desc = buildSpotMetaDescription(spot);
+    const slug = spotSlug(spot);
+    const canonical = spotHref(spot);
+    const issues = [];
+    if(!title || title.length < 5) issues.push("titleが短すぎる/空");
+    if(title.length > 40) issues.push("titleが長め(" + title.length + "文字)");
+    if(!desc || desc.length < 10) issues.push("descriptionが短すぎる/空");
+    if(desc.length > 130) issues.push("descriptionが長すぎる(" + desc.length + "文字)");
+    if(!spot.desc) issues.push("desc(本文説明)が未設定");
+    if(!spot.access) issues.push("accessが未設定");
+    if(!slug) issues.push("slugが生成できていない");
+    if(/-\d+$/.test(slug)) issues.push("slugが自動連番(-2等)＝SLUG_OVERRIDES未登録の可能性");
+    if(!canonical || canonical.indexOf(slug) === -1) issues.push("canonicalとslugが不一致");
+    return {
+      name: spot.name, region: spot.region||"", slug, title, titleLen: title.length,
+      desc, descLen: desc.length, canonical,
+      status: issues.length ? "⚠ " + issues.join(" / ") : "OK"
+    };
+  });
+  const problemCount = rows.filter(r=>r.status!=="OK").length;
+
+  const cols = [
+    {key:"name", label:"施設名"}, {key:"region", label:"都県"}, {key:"slug", label:"slug"},
+    {key:"titleLen", label:"title文字数"}, {key:"descLen", label:"desc文字数"}, {key:"status", label:"チェック結果"}
+  ];
+  function csvEscape(v){ const s=String(v==null?"":v); return /[",\n]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }
+  function downloadCsv(){
+    const header = cols.map(c=>c.label).join(",");
+    const body = rows.map(r=>cols.map(c=>csvEscape(r[c.key])).join(",")).join("\n");
+    const csv = "\uFEFF" + header + "\n" + body;
+    const blob = new Blob([csv], {type:"text/csv"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "odekake_seo_audit.csv";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(url), 10000);
+  }
+  const overlay = document.createElement("div");
+  overlay.style.cssText = "position:fixed; inset:0; background:#fff; z-index:99999; overflow:auto; font-family:sans-serif; padding:16px;";
+  document.body.innerHTML = "";
+  document.body.appendChild(overlay);
+  overlay.innerHTML = `
+    <div style="display:flex; gap:10px; align-items:center; margin-bottom:10px; flex-wrap:wrap;">
+      <h2 style="margin:0; font-size:18px;">🔍 SEO技術チェック（全${rows.length}件中、要確認 ${problemCount}件）</h2>
+      <button id="seoAuditCsvBtn" style="padding:6px 12px; font-size:13px; cursor:pointer;">📥 CSVダウンロード</button>
+    </div>
+    <div style="overflow:auto; max-height:calc(100vh - 60px); border:1px solid #ddd;">
+      <table style="border-collapse:collapse; font-size:11.5px; white-space:nowrap;">
+        <thead style="position:sticky; top:0; background:#f5f0e6; z-index:1;">
+          <tr>${cols.map(c=>`<th style="padding:6px 8px; border:1px solid #ddd; text-align:left;">${c.label}</th>`).join("")}</tr>
+        </thead>
+        <tbody>
+          ${rows.map(r=>`<tr style="${r.status!=='OK' ? 'background:#fff6e5;' : ''}">${cols.map(c=>`<td style="padding:5px 8px; border:1px solid #eee; max-width:320px; overflow:hidden; text-overflow:ellipsis; white-space:${c.key==='status'?'normal':'nowrap'};">${(r[c.key]||"").toString().replace(/</g,"&lt;")}</td>`).join("")}</tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+  overlay.querySelector("#seoAuditCsvBtn").onclick = downloadCsv;
+}
+renderSeoAuditMode();
 </script>
 
 <!-- 🚀 ローダー：施設（data/spots.json）とホテル（data/hotels.json）を同時に取得 → window.__ODEKAKE_DATA__ に格納 → アプリ本体（id="odekake-app"）を実行。
