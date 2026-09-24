@@ -249,25 +249,22 @@
   }
   .drawer-link:hover, .drawer-genre-btn:hover{border-color:var(--coral); background:#FFF6EF;}
   .drawer-genre-btn{font-size:12px; padding:10px 8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  /* 🆕 地域から探す：「目的から探す」と同じ2列グリッド・同サイズのカードに変更。
-     カード本体タップで絞り込み、カード内の小さい「ページを見る」リンクでその県のページへ遷移できる（機能は維持）。 */
-  .drawer-region-list{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
-  .drawer-region-card{
-    background:var(--paper); border:1px solid var(--line); border-radius:10px;
-    padding:10px 8px; display:flex; flex-direction:column; gap:3px;
+  /* 🆕 地域から探す：1行=1都道府県。行タップで絞り込み、右端の小さいリンクでその県のページへ */
+  .drawer-region-list{display:flex; flex-direction:column;}
+  .drawer-region-row{
+    display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--line); padding:2px 0;
   }
-  .drawer-region-card:hover{border-color:var(--coral); background:#FFF6EF;}
-  .drawer-region-card-main{
-    background:none; border:none; padding:0; text-align:left; cursor:pointer;
-    font-size:12px; font-weight:700; color:var(--ink); font-family:inherit;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%;
+  .drawer-region-row:last-child{border-bottom:none;}
+  .drawer-region-row-main{
+    flex:1; background:none; border:none; padding:10px 4px; text-align:left; cursor:pointer;
+    font-size:13.5px; font-weight:700; color:var(--ink); font-family:inherit;
   }
-  .drawer-region-card-main:hover{color:var(--coral);}
-  .drawer-region-card-page{
-    background:none; border:none; padding:0; cursor:pointer; text-align:left;
-    font-size:10.5px; font-weight:700; color:var(--sun); font-family:inherit;
+  .drawer-region-row-main:hover{color:var(--coral);}
+  .drawer-region-row-page{
+    flex:0 0 auto; background:none; border:none; padding:6px 4px; cursor:pointer;
+    font-size:11.5px; font-weight:700; color:var(--sun); font-family:inherit; white-space:nowrap;
   }
-  .drawer-region-card-page:hover{text-decoration:underline;}
+  .drawer-region-row-page:hover{text-decoration:underline;}
   .region-breadcrumb{font-size:11.5px; color:var(--ink-soft); margin-bottom:10px; line-height:1.6;}
   .region-breadcrumb a[data-nav-pref], .region-breadcrumb a[data-nav-city], .region-breadcrumb a[data-nav-home]{color:var(--sun); cursor:pointer; text-decoration:none;}
   .region-page-title{font-family:'Zen Maru Gothic',sans-serif; font-size:19px; font-weight:700; margin-bottom:6px; line-height:1.4;}
@@ -3089,9 +3086,11 @@ const CITY_ROMAJI = {
   "埼玉|春日部市": "kasukabe",
   "埼玉|東松山市": "higashimatsuyama",
   "埼玉|比企郡ときがわ町": "tokigawa",
+  "埼玉|比企郡小川町": "ogawa",
   "埼玉|滑川町": "namegawa",
   "埼玉|熊谷市": "kumagaya",
   "埼玉|狭山市": "sayama",
+  "埼玉|深谷市": "fukaya",
   "埼玉|秩父市": "chichibu",
   "埼玉|秩父郡東秩父村": "higashichichibu",
   "埼玉|秩父郡横瀬町": "yokoze",
@@ -3112,6 +3111,8 @@ const CITY_ROMAJI = {
   "山梨|山梨市": "yamanashi-city",
   "山梨|甲州市": "koshu",
   "山梨|甲府市": "kofu",
+  "山梨|笛吹市": "fuefuki",
+  "山梨|都留市": "tsuru",
   "東京|あきる野市": "akiruno",
   "東京|世田谷区": "setagaya",
   "東京|中野区": "nakano",
@@ -3162,6 +3163,7 @@ const CITY_ROMAJI = {
   "栃木|那須塩原市": "nasushiobara",
   "栃木|那須町": "nasu",
   "栃木|那須郡那須町": "nasu",
+  "栃木|塩谷郡高根沢町": "takanezawa",
   "神奈川|三浦市": "miura",
   "神奈川|中郡二宮町": "ninomiya",
   "神奈川|中郡大磯町": "oiso",
@@ -3197,6 +3199,7 @@ const CITY_ROMAJI = {
   "神奈川|横浜市金沢区": "yokohama-kanazawa",
   "神奈川|横浜市青葉区": "yokohama-aoba",
   "神奈川|横浜市鶴見区": "yokohama-tsurumi",
+  "神奈川|横浜市瀬谷区": "yokohama-seya",
   "神奈川|横須賀市": "yokosuka",
   "神奈川|海老名市": "ebina",
   "神奈川|相模原市中央区": "sagamihara-chuo",
@@ -10895,12 +10898,12 @@ function buildDrawerMenu(){
   DRAWER_PREFS.forEach(({region, label})=>{
     const prefSlug = PREF_SLUG[region];
     if(!prefSlug) return;
-    const card = document.createElement("div");
-    card.className = "drawer-region-card";
+    const row = document.createElement("div");
+    row.className = "drawer-region-row";
 
     const mainBtn = document.createElement("button");
     mainBtn.type = "button";
-    mainBtn.className = "drawer-region-card-main";
+    mainBtn.className = "drawer-region-row-main";
     mainBtn.textContent = "🗾 " + label;
     mainBtn.onclick = ()=>{
       // 既存の state.region をそのまま使い、その都道府県だけに絞り込む
@@ -10911,23 +10914,23 @@ function buildDrawerMenu(){
       afterFilterChange();
       document.getElementById("sortToggleRow").scrollIntoView({behavior:"smooth", block:"start"});
     };
-    card.appendChild(mainBtn);
+    row.appendChild(mainBtn);
 
-    // 🆕 地域ページ（市区町村・おすすめ一覧）がある都道府県だけ、カード内下部に小さくページへのリンクを添える
+    // 🆕 地域ページ（市区町村・おすすめ一覧）がある都道府県だけ、右端に小さくページへのリンクを添える
     if(PREF_SPOTS.has(prefSlug)){
       const pageBtn = document.createElement("button");
       pageBtn.type = "button";
-      pageBtn.className = "drawer-region-card-page";
+      pageBtn.className = "drawer-region-row-page";
       pageBtn.textContent = "ページを見る ›";
       pageBtn.onclick = (e)=>{
         e.stopPropagation();
         closeDrawer();
         openRegionPage(prefSlug, null);
       };
-      card.appendChild(pageBtn);
+      row.appendChild(pageBtn);
     }
 
-    regionGrid.appendChild(card);
+    regionGrid.appendChild(row);
   });
 
   const seasonRow = document.getElementById("drawerSeasonRow");
