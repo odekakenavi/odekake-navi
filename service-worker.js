@@ -1,200 +1,198 @@
-/*
- * ==================================================================
- * 🚀 おでかけナビ Service Worker
- * ------------------------------------------------------------------
- * 【方針（最重要）】
- *  ・index.html（ページ本体）と 施設／ホテルデータ（spots.json 等）は、
- *    「オンライン時は常にネットワークから最新版を取得」し、取得できた
- *    ときだけキャッシュを更新する（Network First）。
- *    オフライン時（＝本当にネットワークへ到達できない場合）だけ、
- *    最後に正常取得できたキャッシュを表示する。
- *  ・「古いデータを固定的にキャッシュする（Cache First）」方式には、
- *    index.html と spots.json / hotels.json のどちらも絶対にしない。
- *  ・アイコンや manifest.json などのPWAに最低限必要な静的ファイルだけ、
- *    CACHE_VERSION 付きでバージョン管理してキャッシュする。
- *  ・GitHub Pages のプロジェクトページ（https://<user>.github.io/<repo>/ の
- *    ようなサブパス）でも正しく動くよう、パスはすべて service-worker.js
- *    自身の登録スコープからの相対パスとして扱い、ドメインやサブパスを
- *    コードに直接書かない。
- *  ・施設ページ（/kanagawa/yokohama/xxx/ 等）への直接アクセスは、既存の
- *    GitHub Pages 404.html によるリダイレクト復元の仕組みに一切干渉しない。
- *    ネットワーク応答が得られた場合（200でも404でも）はそのまま返し、
- *    「本当にネットワークへ到達できなかった場合」だけキャッシュへ
- *    フォールバックする。
- * ==================================================================
- */
+/* ======================================================================
+   おでかけナビ Service Worker
+   ----------------------------------------------------------------------
+   方針：「古いデータを表示し続けない」ことを最優先にする。
+   ・HTML（アプリ本体）／JSON（施設・ホテル・実体験）／JS／CSS／manifest
+       → Network First（常にサーバーへ再検証。オフライン・通信が極端に遅い時だけ保存済みを表示）
+   ・画像（施設写真・アイコン等）
+       → Stale While Revalidate（保存済みをすぐ出しつつ、裏で最新版に更新）
+   ・別ドメイン（GA4／Open-Meteo／ValueCommerce／Google Fonts／翻訳 等）
+       → 一切さわらない（天気APIなどが古いまま固定されることはない）
+   ・GET以外／Rangeリクエスト → さわらない
+
+   GitHub Pages のサブパス（/odekake-navi/ など）で動くよう、パスはすべて
+   この Service Worker 自身の scope（self.registration.scope）から組み立てる。
+   キャッシュ名にも scope を含めるので、同じドメインの別サイト
+   （例：テスト用 /odekakenavi-test/）と保存領域が混ざらない。
+   ====================================================================== */
 "use strict";
 
-// 🆕 CSS・JS相当の静的ファイルやHTMLの「オフライン用シェル」を更新したら、
-//    このバージョンを上げるだけで古いキャッシュが安全に破棄される。
-//    （例："v1.0.1" のように上げる）
-const CACHE_VERSION = "v1.0.0";
-const CACHE_PREFIX = "odekake-";
-const STATIC_CACHE = CACHE_PREFIX + "static-" + CACHE_VERSION;
-const DATA_CACHE = CACHE_PREFIX + "data-" + CACHE_VERSION;
+var SW_VERSION = "2026-09-24-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
+var SCOPE_URL  = new URL(self.registration.scope);
+var SCOPE_PATH = SCOPE_URL.pathname;                 // 例：/odekake-navi/
+var PREFIX     = "odekake:" + SCOPE_PATH + ":";
+var CACHE_SHELL   = PREFIX + "shell-v1";    // アプリ本体（index.html）
+var CACHE_DATA    = PREFIX + "data-v1";     // data/*.json・manifest・JS/CSS
+var CACHE_RUNTIME = PREFIX + "runtime-v1";  // experiences/*.json（数が増えるので件数上限あり）
+var CACHE_IMG     = PREFIX + "img-v1";      // 画像（件数上限あり）
+var CURRENT = [CACHE_SHELL, CACHE_DATA, CACHE_RUNTIME, CACHE_IMG];
 
-// service-worker.js 自身の登録スコープを基準に、相対パスでURLを組み立てる
-// （ドメイン名やサブパスをハードコードしない＝GitHub Pagesのサブディレクトリ公開でもそのまま動く）
-function scopeUrl(){
-  try{ return new URL(self.registration.scope); }
-  catch(e){ return new URL(self.location.href); }
+var NET_TIMEOUT_MS = 6000;      // 保存済みがある時だけ、この時間を超えたら保存済みを先に表示する
+var MAX_RUNTIME_ENTRIES = 60;
+var MAX_IMG_ENTRIES = 120;
+
+var SHELL_KEY = SCOPE_URL.href;  // アプリ本体の保存キー（?spot= 等のクエリ違いで増えないよう固定）
+
+/* ---------- install / activate ---------- */
+self.addEventListener("install", function(){
+  // 待機（waiting）のままにして、ページ側の「更新する」ボタン（SKIP_WAITINGメッセージ）で切り替える。
+  // ＝勝手に画面が再読み込みされない。データ／HTMLは常にNetwork Firstなので、切り替えを待つ間も古い内容は出ない。
+});
+
+self.addEventListener("activate", function(event){
+  event.waitUntil((async function(){
+    var keys = await caches.keys();
+    await Promise.all(keys.filter(function(k){
+      // ① このscopeの古い版のキャッシュ ② 旧Service Workerが作っていた "odekake〜" 系の古いキャッシュ を掃除
+      var mine   = k.indexOf(PREFIX) === 0 && CURRENT.indexOf(k) === -1;
+      var legacy = /^odekake/i.test(k) && k.indexOf("odekake:") !== 0;
+      return mine || legacy;
+    }).map(function(k){ return caches.delete(k); }));
+    // clients.claim() は呼ばない：初回インストール時にページが勝手に切り替わって再読み込みされるのを防ぐ。
+    // （次回の読み込みから自然にService Workerの管理下になる）
+  })());
+});
+
+self.addEventListener("message", function(event){
+  if(event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
+});
+
+/* ---------- fetch ---------- */
+self.addEventListener("fetch", function(event){
+  var req = event.request;
+  if(req.method !== "GET") return;
+  if(req.headers.has("range")) return;
+  var url;
+  try{ url = new URL(req.url); }catch(e){ return; }
+  if(url.origin !== self.location.origin) return;           // 別ドメインは触らない
+  if(url.pathname.indexOf(SCOPE_PATH) !== 0) return;         // scope外は触らない
+
+  if(req.mode === "navigate"){
+    event.respondWith(handleNavigation(event));
+    return;
+  }
+  if(/\.(?:json|webmanifest|js|mjs|css)$/i.test(url.pathname)){
+    var cacheName = url.pathname.indexOf("/experiences/") !== -1 ? CACHE_RUNTIME : CACHE_DATA;
+    event.respondWith(networkFirst(event, req, cacheName));
+    return;
+  }
+  if(req.destination === "image" || /\.(?:png|jpe?g|webp|gif|svg|ico|avif)$/i.test(url.pathname)){
+    event.respondWith(staleWhileRevalidate(event, req));
+    return;
+  }
+  // それ以外（sitemap.xml等）は何もせず通常どおりネットワークへ
+});
+
+/* ---------- helpers ---------- */
+function isShellPath(pathname){
+  return pathname === SCOPE_PATH || pathname === SCOPE_PATH + "index.html";
 }
-function scopedUrl(relPath){
-  return new URL(relPath, scopeUrl()).toString();
+function dataKey(url){            // クエリ（?v=123 等）違いで増えないよう、パスだけをキーにする
+  var u = new URL(url);
+  return u.origin + u.pathname;
+}
+function delay(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+
+async function trimCache(cacheName, max){
+  try{
+    var cache = await caches.open(cacheName);
+    var keys = await cache.keys();
+    for(var i = 0; i < keys.length - max; i++) await cache.delete(keys[i]);
+  }catch(e){}
 }
 
-// オフライン時の最終フォールバックとして使う、トップページ（index.html）のキャッシュキー
-const OFFLINE_SHELL_URL = scopedUrl("./");
-
-// 🆕 PWAとして最低限必要な静的ファイルだけを事前キャッシュする。
-//    既存の機能・デザインそのものをキャッシュ対象にするわけではなく、
-//    あくまで「オフライン時にも最低限の画面を出す」ための保険。
-//    1ファイルでも取得に失敗してもinstall全体は失敗させない（初回アクセス時のエラー防止）。
-const PRECACHE_URLS = [
-  OFFLINE_SHELL_URL,
-  scopedUrl("icons/manifest.json"),
-  scopedUrl("icons/icon-192.png"),
-  scopedUrl("icons/apple-touch-icon.png")
-];
-
-// 施設データ・ホテルデータ判定：既存ローダー（DATA_SOURCES）の複数の候補ファイル名と一致させる。
-// 将来ファイル名の候補が増えた場合は、ここに1行足すだけでよい。
-const DATA_FILE_RE = /\/(data\/spots\.json|data_spots\.json|spots\.json|data spots\.json|data\/hotels\.json|data_hotels\.json|hotels\.json|data hotels\.json)$/;
-function isDataRequest(url){
-  return DATA_FILE_RE.test(decodeURIComponent(url.pathname));
+// リダイレクト済みレスポンス（/odekake-navi → /odekake-navi/ 等）はそのままだとナビゲーションに返せないので作り直す
+async function cleanResponse(res){
+  if(!res.redirected) return res;
+  var body = await res.blob();
+  return new Response(body, { status: res.status, statusText: res.statusText, headers: res.headers });
 }
 
-self.addEventListener("install", (event) => {
-  event.waitUntil((async () => {
-    try{
-      const cache = await caches.open(STATIC_CACHE);
-      await Promise.all(PRECACHE_URLS.map(async (u) => {
-        try{
-          const res = await fetch(u, { cache: "no-cache" });
-          if(res && res.ok) await cache.put(u, res.clone());
-        }catch(e){ /* 個別ファイルの事前キャッシュ失敗は無視して続行（初回アクセス時のエラー防止） */ }
+function offlinePage(){
+  var html = '<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1">' +
+    '<title>おでかけナビ（オフライン）</title></head>' +
+    '<body style="margin:0;padding:32px 20px;font:15px/1.8 sans-serif;background:#FBF7EF;color:#2B2620;text-align:center">' +
+    '<p style="font-size:34px;margin:0">📶</p>' +
+    '<h1 style="font-size:18px">インターネットに接続できません</h1>' +
+    '<p>通信状況を確認して、もう一度お試しください。</p>' +
+    '<p><a href="' + SCOPE_PATH + '" style="color:#3E8FB0;font-weight:700">おでかけナビのトップへ</a></p>' +
+    '</body></html>';
+  return new Response(html, { status: 503, headers: { "Content-Type": "text/html; charset=utf-8" } });
+}
+
+/* ---------- ページ移動：Network First（毎回サーバーに再検証。304なら転送量はごくわずか） ---------- */
+async function handleNavigation(event){
+  var req = event.request;
+  var url = new URL(req.url);
+  var shell = isShellPath(url.pathname);
+  var cache = await caches.open(CACHE_SHELL);
+  var cached = shell ? await cache.match(SHELL_KEY) : undefined;
+
+  var net = fetch(new Request(req.url, { cache: "no-cache", credentials: "same-origin" })).then(function(res){
+    if(shell && res.ok) event.waitUntil(cache.put(SHELL_KEY, res.clone()));
+    return res;
+  });
+  var netClean = net.then(cleanResponse);
+
+  // 404（施設ページ等の深いURL）もそのまま返す → 404.html のSPAリダイレクト復元が従来どおり動く
+  if(!cached){
+    try{ return await netClean; }
+    catch(e){ return offlinePage(); }
+  }
+  event.waitUntil(net.catch(function(){}));
+  try{
+    return await Promise.race([
+      netClean.then(function(res){ return res.status >= 500 ? cached : res; }),
+      delay(NET_TIMEOUT_MS).then(function(){ return cached; })
+    ]);
+  }catch(e){
+    return cached;
+  }
+}
+
+/* ---------- JSON / JS / CSS / manifest：Network First ---------- */
+async function networkFirst(event, req, cacheName){
+  var key = dataKey(req.url);
+  var cache = await caches.open(cacheName);
+  var cached = await cache.match(key);
+  // ページ側が cache:"no-cache" 等を指定していればそのまま尊重し、指定なしの時は再検証を付ける
+  var netReq = req.cache === "default" ? new Request(req, { cache: "no-cache" }) : req;
+
+  var net = fetch(netReq).then(function(res){
+    if(res.ok && res.type === "basic"){
+      event.waitUntil(cache.put(key, res.clone()).then(function(){
+        if(cacheName === CACHE_RUNTIME) return trimCache(cacheName, MAX_RUNTIME_ENTRIES);
       }));
-    }catch(e){ /* 事前キャッシュに失敗してもインストール自体は続ける */ }
-    // ここでは self.skipWaiting() を呼ばない：既存タブを開いたユーザーを急に切り替えない。
-    // 反映は activate 側の制御と、ページ側からの明示的な更新操作（SKIP_WAITING メッセージ）に委ねる。
-  })());
-});
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil((async () => {
-    // 前のバージョンのキャッシュ（odekake- で始まり、現在のバージョンと一致しないもの）だけを破棄する
-    const names = await caches.keys();
-    await Promise.all(names.map((name) => {
-      if(name.indexOf(CACHE_PREFIX) === 0 && name !== STATIC_CACHE && name !== DATA_CACHE){
-        return caches.delete(name);
-      }
-      return Promise.resolve();
-    }));
-    await self.clients.claim(); // 開いているタブにも、次のリクエストから新しいSWを適用する
-  })());
-});
-
-// ページ側（更新通知のボタンなど、ユーザー操作をきっかけにした場合のみ）から呼ばれる。
-// Service Worker側から自発的にskipWaitingはしない＝無限リロード・意図しない切り替えを避ける。
-self.addEventListener("message", (event) => {
-  if(event && event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
-});
-
-// ------------------------------------------------------------------
-// ① ナビゲーション（HTML）：ネットワーク優先
-// ------------------------------------------------------------------
-// 取得できた場合は、ステータス（200・404など）にかかわらずそのまま返す。
-// これにより、GitHub Pagesの404.htmlによる施設URLの復元処理をそのまま活かす。
-// 本当にネットワークへ到達できない時だけ、キャッシュ済みのトップページを返す。
-async function handleNavigation(request){
-  try{
-    const res = await fetch(request);
-    if(res && res.ok){
-      try{
-        const cache = await caches.open(STATIC_CACHE);
-        await cache.put(OFFLINE_SHELL_URL, res.clone());
-      }catch(e){ /* キャッシュ更新に失敗しても表示は継続 */ }
     }
     return res;
-  }catch(networkErr){
-    try{
-      const cache = await caches.open(STATIC_CACHE);
-      const cached = await cache.match(OFFLINE_SHELL_URL);
-      if(cached) return cached;
-    }catch(e){ /* キャッシュ参照にも失敗した場合は下のフォールバックへ */ }
-    // 事前キャッシュもまだ無い（初回アクセスかつオフライン）場合の、最低限の案内表示
-    return new Response(
-      "<!doctype html><html lang=\"ja\"><meta charset=\"utf-8\">" +
-      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
-      "<title>おでかけナビ</title>" +
-      "<body style=\"font-family:sans-serif;padding:24px;color:#2B2620;background:#FBF7EF;\">" +
-      "<p>現在オフラインのため表示できません。通信状態を確認して、もう一度お試しください。</p>" +
-      "</body></html>",
-      { status: 200, headers: { "Content-Type": "text/html; charset=utf-8" } }
-    );
+  });
+
+  if(!cached) return net;                                    // 保存が無ければ、ネットワークの結果をそのまま返す（失敗も通常どおり）
+  event.waitUntil(net.catch(function(){}));
+  try{
+    return await Promise.race([
+      net.then(function(res){ return res.status >= 500 ? cached : res; }),   // 404等は「本当に無い」ので保存済みで隠さない
+      delay(NET_TIMEOUT_MS).then(function(){ return cached; })
+    ]);
+  }catch(e){
+    return cached;
   }
 }
 
-// ------------------------------------------------------------------
-// ② 施設・ホテルデータ（spots.json / hotels.json）：ネットワーク優先
-// ------------------------------------------------------------------
-// 取得できた（正常応答の）場合だけキャッシュを更新する＝失敗した古い応答でキャッシュを汚さない。
-// 取得できない時だけ、最後に正常取得できたキャッシュにフォールバックする。
-async function handleDataRequest(request){
-  try{
-    const res = await fetch(request, { cache: "no-cache" });
-    if(res && res.ok){
-      try{
-        const cache = await caches.open(DATA_CACHE);
-        await cache.put(request, res.clone());
-      }catch(e){ /* キャッシュ更新に失敗しても表示は継続 */ }
+/* ---------- 画像：Stale While Revalidate ---------- */
+async function staleWhileRevalidate(event, req){
+  var cache = await caches.open(CACHE_IMG);
+  var cached = await cache.match(req.url);
+  var net = fetch(req).then(function(res){
+    if(res.ok && res.type === "basic"){
+      event.waitUntil(cache.put(req.url, res.clone()).then(function(){ return trimCache(CACHE_IMG, MAX_IMG_ENTRIES); }));
     }
     return res;
-  }catch(networkErr){
-    const cache = await caches.open(DATA_CACHE);
-    const cached = await cache.match(request);
-    if(cached) return cached;
-    // フォールバックも無ければネットワークエラーをそのまま投げ、既存ローダー側のエラー表示に委ねる
-    throw networkErr;
+  });
+  if(cached){
+    event.waitUntil(net.catch(function(){}));
+    return cached;
   }
+  return net;
 }
-
-// ------------------------------------------------------------------
-// ③ 静的アセット（manifest.json・アイコン等）：Stale-While-Revalidate
-// ------------------------------------------------------------------
-// キャッシュがあればまず即座に返しつつ、裏側で最新版を取得してキャッシュを更新する。
-// CACHE_VERSIONを上げてデプロイすれば、activate時に前のバージョンごと入れ替わる。
-async function handleStaticAsset(request){
-  const cache = await caches.open(STATIC_CACHE);
-  const cached = await cache.match(request);
-  const networkPromise = fetch(request).then((res) => {
-    if(res && res.ok) cache.put(request, res.clone());
-    return res;
-  }).catch(() => null);
-  if(cached) return cached;
-  const fromNetwork = await networkPromise;
-  return fromNetwork || fetch(request);
-}
-
-self.addEventListener("fetch", (event) => {
-  const request = event.request;
-  if(request.method !== "GET") return; // POST等は素通し（既存の挙動のまま）
-
-  let url;
-  try{ url = new URL(request.url); }catch(e){ return; }
-  if(url.origin !== self.location.origin) return; // 外部ドメイン（CDN・GA4・翻訳等）はSWを介さず既存のまま
-
-  if(request.mode === "navigate"){
-    event.respondWith(handleNavigation(request));
-    return;
-  }
-  if(isDataRequest(url)){
-    event.respondWith(handleDataRequest(request));
-    return;
-  }
-  if(/\/icons\//.test(url.pathname) || /manifest\.json$/.test(url.pathname)){
-    event.respondWith(handleStaticAsset(request));
-    return;
-  }
-  // それ以外の同一オリジンリクエストはService Workerを介さず通常通り取得する（未知のファイルを壊さない）
-});

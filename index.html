@@ -114,9 +114,24 @@
 <meta name="apple-mobile-web-app-title" content="おでかけナビ">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#3E8FB0">
-<link rel="manifest" href="icons/manifest.json">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="icons/pwa-apple-touch-180.png">
 <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+<!-- 🆕 PWA：manifest と ホーム画面アイコンのパスは、上の <head> で保存した起動時のベースパス（__ODEKAKE_BASE_PATH__）から組み立てる。
+     施設ページなど深いURLで開かれた場合（404リダイレクト復元でlocation.pathnameが書き換わった後）でも相対パスがずれて404にならず、
+     GitHub Pagesのサブパス（/odekake-navi/ ・テスト用サブパス）でもそのまま動く。JSが動かない環境でも通常のWebサイトとして表示される。 -->
+<script>
+(function(){
+  try{
+    var p = window.__ODEKAKE_BASE_PATH__ || window.location.pathname;
+    var base = p.charAt(p.length - 1) === "/" ? p : p.replace(/[^\/]*$/, "");
+    var m = document.createElement("link");
+    m.rel = "manifest"; m.href = base + "manifest.webmanifest";
+    document.head.appendChild(m);
+    var a = document.querySelector('link[rel="apple-touch-icon"]');
+    if(a) a.href = base + "icons/pwa-apple-touch-180.png";
+  }catch(e){ /* 失敗してもサイト本体には影響しない */ }
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -1460,6 +1475,18 @@
   <div class="chips" id="zipCandidateChips"></div>
 </div>
 
+<!-- 🆕 📱 ホーム画面に追加の小さな案内（控えめ表示。モバイルのみ／ホーム画面から起動済みなら非表示／×で30日間非表示）。
+     表示制御は本文末尾の「ホーム画面に追加」スクリプト（refreshCard）が行う。 -->
+<div class="a2hs-card" id="a2hsCard">
+  <span class="a2hs-ic" aria-hidden="true">📱</span>
+  <div class="a2hs-body">
+    <div class="a2hs-title">おでかけナビをホーム画面に追加</div>
+    <div class="a2hs-sub">次回からすぐ開けます</div>
+  </div>
+  <button type="button" class="a2hs-btn" id="a2hsCardBtn">追加方法</button>
+  <button type="button" class="a2hs-close" id="a2hsCardClose" aria-label="この案内を閉じる">×</button>
+</div>
+
 <!-- 今日はどうする？（施設を探す＝検索・絞り込みの入口。旧「迷ったらこれ！」はここに統合） -->
 <div class="mood-section">
   <div class="mood-title-row">
@@ -1580,6 +1607,11 @@
 <!-- 推奨ブラウザについて -->
 <div class="sheet-overlay" id="browserOverlay">
   <div class="sheet" id="browserSheet"></div>
+</div>
+
+<!-- 🆕 📱 ホーム画面に追加の手順（iPhone／Android／PC別。中身は本文末尾のスクリプトが描画） -->
+<div class="sheet-overlay" id="a2hsOverlay">
+  <div class="sheet" id="a2hsSheet"></div>
 </div>
 
 <!-- 詳細シート -->
@@ -12600,6 +12632,10 @@ const DRAWER_MORE_ITEMS = [
   { icon:"📖", label:"簡単な使い方", enabled:true, onSelect:()=>{ renderHowToSheet(); openSheet("howToOverlay"); } },
   { icon:"❓", label:"よくある質問（FAQ）", enabled:true, onSelect:()=>document.getElementById("faqOpenBtn").click() },
   // 🆕 ⚙️ 設定（機能の表示/非表示）。settingsKeyを持たないため、この項目自体は常に表示する
+  // 🆕 📱 ホーム画面に追加（PWA）。ホーム画面アプリとして起動している時は非表示（hideIf）。処理本体は本文末尾の window.odekakeA2HS
+  { icon:"📱", label:"ホーム画面に追加", enabled:true,
+    hideIf:()=>!!(window.odekakeA2HS && window.odekakeA2HS.isStandalone()),
+    onSelect:()=>{ if(window.odekakeA2HS) window.odekakeA2HS.open("menu"); } },
   { icon:"⚙️", label:"設定", enabled:true, onSelect:()=>{ renderSettingsSheet(); openSheet("settingsOverlay"); } },
   { icon:"ℹ️", label:"おでかけナビについて", enabled:true, onSelect:()=>document.getElementById("aboutOpenBtn").click() }
 ];
@@ -12609,6 +12645,7 @@ function buildDrawerMoreMenu(){
   DRAWER_MORE_ITEMS.forEach(item=>{
     // 🆕 設定でOFFにされた機能は、メニューから非表示にする（データ・機能自体は削除しない。ONに戻せば再表示）
     if(item.settingsKey && !isFeatureVisible(item.settingsKey)) return;
+    if(typeof item.hideIf === "function" && item.hideIf()) return; // 🆕 条件付きで非表示にする項目（ホーム画面に追加）
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "drawer-menu-item" + (item.enabled ? "" : " soon");
@@ -13502,6 +13539,261 @@ function dataFileUrl(key){ return dataFileUrls(key)[0] || ""; }
       window.location.reload();
     });
   });
+})();
+</script>
+
+<!-- 🆕 📱 ホーム画面に追加（PWA）：独立した追加スタイル＋追加スクリプト。既存の機能・デザイン・ロジックには手を加えない。
+     ・見た目は既存の変数（--paper／--line／--sun／--ink 等）・角丸・フォントをそのまま使う。
+     ・@media (display-mode: standalone) の中だけ、ホーム画面から起動した時のsafe-area補正を追加する
+       （通常のブラウザ表示・PC表示には一切影響しない）。 -->
+<style>
+  .a2hs-card{
+    display:none; align-items:center; gap:10px; margin:0 16px 12px; padding:9px 10px 9px 12px;
+    background:var(--paper); border:1.5px solid var(--line); border-radius:12px;
+  }
+  .a2hs-card.show{display:flex;}
+  .a2hs-ic{flex:0 0 auto; font-size:20px; line-height:1;}
+  .a2hs-body{flex:1 1 auto; min-width:0;}
+  .a2hs-title{font-size:12px; font-weight:800; color:var(--ink); line-height:1.4;}
+  .a2hs-sub{font-size:11px; color:var(--ink-soft); line-height:1.4; margin-top:1px;}
+  .a2hs-btn{
+    flex:0 0 auto; border:1.5px solid var(--sun); background:transparent; color:var(--sun);
+    font-size:12px; font-weight:800; padding:7px 12px; border-radius:999px; cursor:pointer; white-space:nowrap; font-family:inherit;
+  }
+  .a2hs-close{
+    flex:0 0 auto; border:none; background:transparent; color:var(--ink-soft); font-size:16px; line-height:1;
+    cursor:pointer; padding:4px; min-width:28px; min-height:28px; font-family:inherit;
+  }
+  .a2hs-steps{margin:8px 0 10px; padding:0; list-style:none; counter-reset:a2hs;}
+  .a2hs-steps li{
+    counter-increment:a2hs; position:relative; padding:0 0 12px 34px; font-size:13px; line-height:1.7; color:var(--ink);
+  }
+  .a2hs-steps li::before{
+    content:counter(a2hs); position:absolute; left:0; top:0; width:24px; height:24px; border-radius:50%;
+    background:var(--sun); color:#fff; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center;
+  }
+  .a2hs-steps .a2hs-note{display:block; font-size:11.5px; color:var(--ink-soft); line-height:1.6; margin-top:2px;}
+  .a2hs-copy-btn{
+    display:block; width:100%; margin:4px 0 8px; padding:11px; border:1.5px solid var(--sun); background:transparent; color:var(--sun);
+    border-radius:12px; font-size:13px; font-weight:800; cursor:pointer; font-family:inherit;
+  }
+  @media (display-mode: standalone){
+    /* ホーム画面から起動した時（iPhoneのノッチ・ホームバー付近）に、メニューと「TOPへ戻る」ボタンが端に隠れないようにする */
+    .drawer-panel{padding-top:calc(16px + env(safe-area-inset-top)); padding-bottom:calc(40px + env(safe-area-inset-bottom));}
+    .scroll-top-btn{bottom:calc(20px + env(safe-area-inset-bottom)); right:calc(20px + env(safe-area-inset-right));}
+  }
+</style>
+
+<script>
+(function(){
+  "use strict";
+
+  // ------------------------------------------------------------------
+  // 設定（将来「再訪問ユーザー向けの案内」を出したい時は、ここの値と
+  //       window.odekakeA2HS.getVisitCount() を使えばよい構造にしてある）
+  // ------------------------------------------------------------------
+  var CONFIG = {
+    cardMinVisits: 1,   // トップの小さな案内を出す最低訪問回数（1＝初回から控えめなカードを表示。2にすると再訪問者のみ）
+    dismissDays: 30     // 「×」で閉じた後、案内カードを再表示しない日数
+  };
+  var K_DISMISS   = "odekakeNaviA2hsDismissedV1";
+  var K_INSTALLED = "odekakeNaviA2hsInstalledV1";
+  var K_VISITS    = "odekakeNaviVisitCountV1";
+  var K_SESSION   = "odekakeNaviVisitSessionV1";
+  var K_LAUNCH    = "odekakeNaviPwaLaunchLoggedV1";
+
+  function lsGet(k){ try{ return window.localStorage.getItem(k); }catch(e){ return null; } }
+  function lsSet(k, v){ try{ window.localStorage.setItem(k, v); }catch(e){} }
+  function ssGet(k){ try{ return window.sessionStorage.getItem(k); }catch(e){ return null; } }
+  function ssSet(k, v){ try{ window.sessionStorage.setItem(k, v); }catch(e){} }
+  function track(name, params){ try{ if(typeof window.gtag === "function") window.gtag("event", name, params || {}); }catch(e){} }
+
+  // ------------------------------------------------------------------
+  // 環境判定
+  // ------------------------------------------------------------------
+  var ua = navigator.userAgent || "";
+  var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);   // iPadOSの「デスクトップ用サイト」表示も含む
+  var isAndroid = /Android/i.test(ua);
+  var inAppBrowser = /Line\/|FBAN|FBAV|Instagram|Twitter|MicroMessenger|KAKAOTALK|Snapchat|TikTok|; wv\)/i.test(ua);
+  var isIOSSafari = isIOS && /Safari\//.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS|OPT\/|DuckDuckGo|YaBrowser|GSA\//.test(ua) && !inAppBrowser;
+
+  function isStandalone(){
+    try{ if(window.navigator.standalone === true) return true; }catch(e){}
+    try{
+      var modes = ["standalone", "fullscreen", "minimal-ui"];
+      for(var i = 0; i < modes.length; i++){
+        if(window.matchMedia("(display-mode: " + modes[i] + ")").matches) return true;
+      }
+    }catch(e){}
+    return false;
+  }
+  function isInstalledFlag(){ return lsGet(K_INSTALLED) === "1"; }
+  function getVisitCount(){ return parseInt(lsGet(K_VISITS), 10) || 0; }
+  function isDismissed(){
+    var t = parseInt(lsGet(K_DISMISS), 10);
+    return !!t && (Date.now() - t) < CONFIG.dismissDays * 86400000;
+  }
+
+  // ------------------------------------------------------------------
+  // 訪問回数（1セッション＝1回）と、ホーム画面アプリ（standalone）としての起動の計測
+  // ------------------------------------------------------------------
+  if(!ssGet(K_SESSION)){
+    ssSet(K_SESSION, "1");
+    lsSet(K_VISITS, String(getVisitCount() + 1));
+  }
+  if(isStandalone() && !ssGet(K_LAUNCH)){          // 既存のGA4（gtag）にイベントを送るだけ。通常のWebアクセスの計測には影響しない
+    ssSet(K_LAUNCH, "1");
+    track("pwa_launch", { display_mode: "standalone" });
+  }
+
+  // ------------------------------------------------------------------
+  // Android/Chrome等：標準のインストール導線（beforeinstallprompt）
+  // ------------------------------------------------------------------
+  var deferredPrompt = null;
+  window.addEventListener("beforeinstallprompt", function(e){
+    e.preventDefault();          // 自動のミニバーは出さず、こちらのボタン操作で表示する
+    deferredPrompt = e;
+    refreshCard();
+  });
+  window.addEventListener("appinstalled", function(){
+    deferredPrompt = null;
+    lsSet(K_INSTALLED, "1");
+    track("pwa_installed", {});
+    refreshCard();
+  });
+
+  // ------------------------------------------------------------------
+  // トップページの小さな案内カード
+  // ------------------------------------------------------------------
+  var card = document.getElementById("a2hsCard");
+  var cardBtn = document.getElementById("a2hsCardBtn");
+  var cardClose = document.getElementById("a2hsCardClose");
+
+  function refreshCard(){
+    if(!card) return;
+    var mobile = isIOS || isAndroid;
+    var show = !isStandalone() && !isInstalledFlag() && !isDismissed() &&
+               getVisitCount() >= CONFIG.cardMinVisits && (mobile || !!deferredPrompt);
+    card.className = "a2hs-card" + (show ? " show" : "");
+    if(cardBtn) cardBtn.textContent = deferredPrompt ? "追加する" : "追加方法";
+  }
+
+  // ------------------------------------------------------------------
+  // 追加方法シート（既存の .sheet-overlay / openSheet / closeSheetById をそのまま利用）
+  // ------------------------------------------------------------------
+  function openOverlay(){
+    var el = document.getElementById("a2hsOverlay");
+    if(!el) return;
+    if(typeof window.openSheet === "function") window.openSheet("a2hsOverlay");
+    else el.classList.add("open");
+  }
+  function closeOverlay(){
+    var el = document.getElementById("a2hsOverlay");
+    if(!el) return;
+    if(typeof window.closeSheetById === "function") window.closeSheetById("a2hsOverlay");
+    else el.classList.remove("open");
+  }
+  function stepsHtml(items){
+    return '<ol class="a2hs-steps">' + items.map(function(it){
+      return "<li>" + it[0] + (it[1] ? '<span class="a2hs-note">' + it[1] + "</span>" : "") + "</li>";
+    }).join("") + "</ol>";
+  }
+  function sheetBody(){
+    if(isStandalone()){
+      return "<p>おでかけナビは、すでにアプリとして開いています 🎉</p>";
+    }
+    var lead = "<p>おでかけナビをホーム画面に追加すると、次回からアイコンをタップするだけですぐ開けます。</p>";
+    if(isIOS && isIOSSafari){
+      return lead + stepsHtml([
+        ["Safariの「共有」ボタン（□に↑のマーク）をタップ", "iPhoneは画面の下、iPadは画面の上にあります。見つからない時は「…」をタップして「共有」を選びます。"],
+        ["メニューの「ホーム画面に追加」をタップ", "見つからない時は、メニューを下にスクロールするか「もっと見る」を開いてください。"],
+        ["右上の「追加」をタップ", "ホーム画面に「おでかけナビ」のアイコンができます。"]
+      ]) + '<p class="a2hs-note" style="font-size:11.5px;color:var(--ink-soft)">※ iOSのバージョンによって、画面の表示が少し異なることがあります。</p>';
+    }
+    if(isIOS){
+      return "<p><b>iPhoneではSafariで開くとホーム画面に追加できます。</b></p>" + stepsHtml([
+        ["下のボタンでこのページのURLをコピーして、Safariで開きます", "LINE・Instagramなどのアプリ内ブラウザの場合は、画面右上（または右下）のメニューから「Safariで開く」を選んでも開けます。"],
+        ["Safariの「共有」ボタン →「ホーム画面に追加」→「追加」", ""]
+      ]) + '<button type="button" class="a2hs-copy-btn" id="a2hsCopyBtn">🔗 このページのURLをコピー</button>';
+    }
+    if(isAndroid){
+      var first = inAppBrowser
+        ? [["Chromeで開き直します", "アプリ内ブラウザの場合は、画面右上（または右下）のメニューから「ブラウザで開く」「Chromeで開く」を選んでください。"]]
+        : [];
+      return lead + stepsHtml(first.concat([
+        ["ブラウザ右上の「⋮」メニューをタップ", ""],
+        ["「ホーム画面に追加」（または「アプリをインストール」）をタップ", ""],
+        ["「追加」（または「インストール」）をタップ", "お使いのブラウザによって、表示が少し異なります。"]
+      ]));
+    }
+    return "<p>パソコンでは、ブラウザ（Chrome・Edge）のアドレスバー右側に表示される「インストール」アイコン、またはメニューの「アプリとしてインストール」から追加できます。</p>" +
+           "<p>MacのSafariでは、「共有」→「Dockに追加」から追加できます。</p>";
+  }
+  function renderSheet(){
+    var sheet = document.getElementById("a2hsSheet");
+    if(!sheet) return;
+    sheet.innerHTML =
+      '<button class="sheet-close" id="a2hsCloseBtn" type="button" aria-label="閉じる">×</button>' +
+      '<div class="sheet-title">📱 ホーム画面に追加</div>' +
+      '<div class="about-body">' + sheetBody() + "</div>" +
+      '<button class="detail-close-bottom" id="a2hsCloseBtnBottom" type="button">閉じる</button>';
+    document.getElementById("a2hsCloseBtn").onclick = closeOverlay;
+    document.getElementById("a2hsCloseBtnBottom").onclick = closeOverlay;
+    var copy = document.getElementById("a2hsCopyBtn");
+    if(copy){
+      copy.onclick = function(){
+        var done = function(){ copy.textContent = "✓ コピーしました。Safariに貼り付けて開いてください"; };
+        var fail = function(){ copy.textContent = "コピーできませんでした（アドレスバーのURLを長押ししてコピーしてください）"; };
+        try{
+          if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(window.location.href).then(done, fail);
+          else fail();
+        }catch(e){ fail(); }
+      };
+    }
+  }
+
+  // ------------------------------------------------------------------
+  // 「ホーム画面に追加」の実行（メニュー・カード共通）
+  // ------------------------------------------------------------------
+  function open(source){
+    track("pwa_a2hs_click", { source: source || "unknown" });
+    if(deferredPrompt){
+      var ev = deferredPrompt;
+      deferredPrompt = null;      // prompt() は1つのイベントにつき1回だけ
+      refreshCard();
+      try{
+        ev.prompt();
+        if(ev.userChoice && ev.userChoice.then){
+          ev.userChoice.then(function(c){ track("pwa_install_prompt", { outcome: (c && c.outcome) || "unknown" }); });
+        }
+        return;
+      }catch(e){ /* 失敗したら手動の案内を出す */ }
+    }
+    renderSheet();
+    openOverlay();
+  }
+
+  if(cardBtn) cardBtn.addEventListener("click", function(){ open("top_card"); });
+  if(cardClose) cardClose.addEventListener("click", function(){
+    lsSet(K_DISMISS, String(Date.now()));
+    refreshCard();
+  });
+  try{
+    var mq = window.matchMedia("(display-mode: standalone)");
+    var onChange = function(){ refreshCard(); };
+    if(mq.addEventListener) mq.addEventListener("change", onChange);
+    else if(mq.addListener) mq.addListener(onChange);
+  }catch(e){}
+
+  // メニュー（DRAWER_MORE_ITEMS）から使う入口
+  window.odekakeA2HS = {
+    open: open,
+    isStandalone: isStandalone,
+    getVisitCount: getVisitCount,   // 将来の再訪問ユーザー向け案内用
+    config: CONFIG
+  };
+
+  refreshCard();
 })();
 </script>
 
