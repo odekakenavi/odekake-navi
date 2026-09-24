@@ -249,22 +249,24 @@
   }
   .drawer-link:hover, .drawer-genre-btn:hover{border-color:var(--coral); background:#FFF6EF;}
   .drawer-genre-btn{font-size:12px; padding:10px 8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  /* 🆕 地域から探す：1行=1都道府県。行タップで絞り込み、右端の小さいリンクでその県のページへ */
-  .drawer-region-list{display:flex; flex-direction:column;}
-  .drawer-region-row{
-    display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--line); padding:2px 0;
+  /* 🆕 地域から探す：「目的から探す」と同じ2列グリッド表示。タップで絞り込み、
+     右上の小さい丸バッジ（📄）でその県のページへ（機能はそのまま、見た目だけ調整） */
+  .drawer-region-list{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .drawer-region-item{position:relative;}
+  .drawer-region-btn{
+    display:block; background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:10px 8px; text-decoration:none; color:var(--ink); font-size:12px; font-weight:700;
+    cursor:pointer; text-align:left; width:100%; font-family:inherit;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
-  .drawer-region-row:last-child{border-bottom:none;}
-  .drawer-region-row-main{
-    flex:1; background:none; border:none; padding:10px 4px; text-align:left; cursor:pointer;
-    font-size:13.5px; font-weight:700; color:var(--ink); font-family:inherit;
+  .drawer-region-btn:hover{border-color:var(--coral); background:#FFF6EF;}
+  .drawer-region-item.has-page .drawer-region-btn{padding-right:28px;}
+  .drawer-region-page-badge{
+    position:absolute; top:6px; right:6px; width:20px; height:20px; min-width:0; min-height:0;
+    border-radius:50%; background:var(--sun); color:#fff; border:none; font-size:10px;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0; line-height:1;
   }
-  .drawer-region-row-main:hover{color:var(--coral);}
-  .drawer-region-row-page{
-    flex:0 0 auto; background:none; border:none; padding:6px 4px; cursor:pointer;
-    font-size:11.5px; font-weight:700; color:var(--sun); font-family:inherit; white-space:nowrap;
-  }
-  .drawer-region-row-page:hover{text-decoration:underline;}
+  .drawer-region-page-badge:hover{opacity:.85;}
   .region-breadcrumb{font-size:11.5px; color:var(--ink-soft); margin-bottom:10px; line-height:1.6;}
   .region-breadcrumb a[data-nav-pref], .region-breadcrumb a[data-nav-city], .region-breadcrumb a[data-nav-home]{color:var(--sun); cursor:pointer; text-decoration:none;}
   .region-page-title{font-family:'Zen Maru Gothic',sans-serif; font-size:19px; font-weight:700; margin-bottom:6px; line-height:1.4;}
@@ -296,14 +298,23 @@
     font-size:12.5px; font-weight:700; color:var(--ink); cursor:pointer; text-decoration:none; display:inline-block;
   }
   .region-related-item:hover{border-color:var(--sun); color:var(--sun);}
-  .drawer-season-row{display:flex; flex-direction:column; gap:8px;}
-  .drawer-season-link{
-    display:flex; align-items:center; gap:8px; background:var(--paper); border:1px solid var(--line);
-    border-radius:10px; padding:10px 12px; text-decoration:none; color:var(--ink); font-size:13.5px; font-weight:700;
-    cursor:pointer; text-align:left; width:100%; font-family:inherit;
+  /* 🆕 季節から探す：「目的から探す」と同じ2列グリッド表示。文字を読まなくても
+     季節ごとの色（春=ピンク／夏=水色／秋=橙／冬=青）で見分けられるようにする。
+     今の季節はコーラル色の太枠で強調（これも色による表現）。 */
+  .drawer-season-row{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .drawer-season-item{
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    border-radius:10px; padding:10px 8px; font-size:12.5px; font-weight:700;
+    cursor:pointer; text-align:center; width:100%; font-family:inherit;
+    border:1.5px solid transparent;
   }
-  .drawer-season-link:hover{border-color:var(--coral); background:#FFF6EF;}
-  .drawer-season-link.current{border-color:var(--coral); background:#FFF1E6;}
+  .drawer-season-item .dsi-emoji{font-size:16px; line-height:1;}
+  .drawer-season-item:hover{filter:brightness(.96);}
+  .drawer-season-item.season-spring{background:#FFE1EE; color:#B23A67; border-color:#FFC2DA;}
+  .drawer-season-item.season-summer{background:#DBF3FF; color:#0E7FA6; border-color:#ABE2F5;}
+  .drawer-season-item.season-autumn{background:#FFE6BE; color:#A85F12; border-color:#F2C787;}
+  .drawer-season-item.season-winter{background:#E1EDFF; color:#33578F; border-color:#B6CDF4;}
+  .drawer-season-item.current{border-color:var(--coral); box-shadow:0 0 0 2px rgba(226,96,58,.22);}
   .drawer-divider{border:none; border-top:1px solid var(--line); margin:14px 16px 0;}
   /* 🆕 今後追加予定の機能を並べる「その他メニュー」（地域・目的・季節とは見た目を分けて、
      カード探索用の導線と区別しやすいシンプルな一覧形式にする） */
@@ -10956,12 +10967,12 @@ function buildDrawerMenu(){
   DRAWER_PREFS.forEach(({region, label})=>{
     const prefSlug = PREF_SLUG[region];
     if(!prefSlug) return;
-    const row = document.createElement("div");
-    row.className = "drawer-region-row";
+    const item = document.createElement("div");
+    item.className = "drawer-region-item";
 
     const mainBtn = document.createElement("button");
     mainBtn.type = "button";
-    mainBtn.className = "drawer-region-row-main";
+    mainBtn.className = "drawer-region-btn";
     mainBtn.textContent = "🗾 " + label;
     mainBtn.onclick = ()=>{
       // 既存の state.region をそのまま使い、その都道府県だけに絞り込む
@@ -10972,23 +10983,27 @@ function buildDrawerMenu(){
       afterFilterChange();
       document.getElementById("sortToggleRow").scrollIntoView({behavior:"smooth", block:"start"});
     };
-    row.appendChild(mainBtn);
+    item.appendChild(mainBtn);
 
-    // 🆕 地域ページ（市区町村・おすすめ一覧）がある都道府県だけ、右端に小さくページへのリンクを添える
+    // 🆕 地域ページ（市区町村・おすすめ一覧）がある都道府県だけ、右上に小さくページへのリンクを添える
+    // （2列グリッド化で幅が狭くなったため、テキストリンクから丸い小バッジに変更。機能は従来通り）
     if(PREF_SPOTS.has(prefSlug)){
+      item.classList.add("has-page");
       const pageBtn = document.createElement("button");
       pageBtn.type = "button";
-      pageBtn.className = "drawer-region-row-page";
-      pageBtn.textContent = "ページを見る ›";
+      pageBtn.className = "drawer-region-page-badge";
+      pageBtn.textContent = "📄";
+      pageBtn.setAttribute("aria-label", label + "のページを見る");
+      pageBtn.title = label + "のページを見る";
       pageBtn.onclick = (e)=>{
         e.stopPropagation();
         closeDrawer();
         openRegionPage(prefSlug, null);
       };
-      row.appendChild(pageBtn);
+      item.appendChild(pageBtn);
     }
 
-    regionGrid.appendChild(row);
+    regionGrid.appendChild(item);
   });
 
   const seasonRow = document.getElementById("drawerSeasonRow");
@@ -10997,8 +11012,11 @@ function buildDrawerMenu(){
   ["春","夏","秋","冬"].forEach(season=>{
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "drawer-season-link" + (season===nowSeason ? " current" : "");
-    btn.innerHTML = `<span>${SEASON_EMOJI[season]}</span><span>${season}のお出かけ${season===nowSeason ? "　今の季節" : ""}</span>`;
+    // 🆕 文字だけでなく、季節ごとの色（背景色）で見分けられるようにする。
+    // 今の季節はコーラル色の枠で強調（テキストの「今の季節」表記は無くし、色で表現）。
+    btn.className = "drawer-season-item season-" + SEASON_EN_SLUG[season] + (season===nowSeason ? " current" : "");
+    btn.innerHTML = `<span class="dsi-emoji">${SEASON_EMOJI[season]}</span><span>${season}</span>`;
+    btn.setAttribute("aria-label", season + "のお出かけ" + (season===nowSeason ? "（今の季節）" : ""));
     btn.onclick = ()=>{
       // 既存の state.seasons をそのまま使い、その季節だけに絞り込む
       // （新しいページへは移動せず、アプリ内でそのまま結果を表示する）
