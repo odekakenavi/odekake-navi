@@ -114,8 +114,8 @@
 <meta name="apple-mobile-web-app-title" content="おでかけナビ">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#3E8FB0">
-<link rel="apple-touch-icon" href="icons/pwa-apple-touch-180.png">
-<link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="pwa-apple-touch-180.png">
+<link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
 <!-- 🆕 PWA：manifest と ホーム画面アイコンのパスは、上の <head> で保存した起動時のベースパス（__ODEKAKE_BASE_PATH__）から組み立てる。
      施設ページなど深いURLで開かれた場合（404リダイレクト復元でlocation.pathnameが書き換わった後）でも相対パスがずれて404にならず、
      GitHub Pagesのサブパス（/odekake-navi/ ・テスト用サブパス）でもそのまま動く。JSが動かない環境でも通常のWebサイトとして表示される。 -->
@@ -128,7 +128,7 @@
     m.rel = "manifest"; m.href = base + "manifest.webmanifest";
     document.head.appendChild(m);
     var a = document.querySelector('link[rel="apple-touch-icon"]');
-    if(a) a.href = base + "icons/pwa-apple-touch-180.png";
+    if(a) a.href = base + "pwa-apple-touch-180.png";
   }catch(e){ /* 失敗してもサイト本体には影響しない */ }
 })();
 </script>
@@ -1563,6 +1563,24 @@
   <div class="recent-title" id="seasonalTitle"></div>
   <div class="recent-chips" id="seasonalChips"></div>
 </div>
+
+<!-- 🆕 🔎 JavaScriptを実行しない検索エンジン・AIクローラーにも「このサイトは何か」と「どのページがあるか」が伝わるよう、
+     生のHTMLに直接書いておく紹介文＋都道府県ページ（静的ページ）へのリンク。アプリの機能・見た目には関与しない。
+     リンク先は tools/build-static-pages.js が生成する実ファイル（/odekake-navi/{都道府県}/）。県を追加・削除した時はここも合わせる。 -->
+<section class="seo-intro" id="seoIntro" aria-label="おでかけナビについて">
+  <h2 class="seo-intro-title">おでかけナビとは</h2>
+  <p class="seo-intro-text">おでかけナビは、関東1都6県と山梨・静岡・福島・長野の、子どもと楽しめるお出かけスポットを、年齢・天気・料金・距離・行き方から探せるサイトです。「今日どこ行く？」に3問答えるだけで、その日のおすすめも見つかります。</p>
+  <h2 class="seo-intro-title">都道府県から探す</h2>
+  <ul class="seo-pref-list"><li><a href="/odekake-navi/tokyo/">東京都</a></li><li><a href="/odekake-navi/kanagawa/">神奈川県</a></li><li><a href="/odekake-navi/saitama/">埼玉県</a></li><li><a href="/odekake-navi/chiba/">千葉県</a></li><li><a href="/odekake-navi/ibaraki/">茨城県</a></li><li><a href="/odekake-navi/tochigi/">栃木県</a></li><li><a href="/odekake-navi/gunma/">群馬県</a></li><li><a href="/odekake-navi/yamanashi/">山梨県</a></li><li><a href="/odekake-navi/shizuoka/">静岡県</a></li><li><a href="/odekake-navi/nagano/">長野県</a></li><li><a href="/odekake-navi/fukushima/">福島県</a></li></ul>
+</section>
+<style>
+  .seo-intro{padding:6px 16px 18px;}
+  .seo-intro-title{font-size:12px; font-weight:700; color:var(--ink-soft); margin:14px 0 4px;}
+  .seo-intro-text{font-size:11.5px; line-height:1.8; color:var(--ink-soft); margin:0;}
+  .seo-pref-list{list-style:none; margin:6px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px;}
+  .seo-pref-list a{display:inline-block; padding:7px 12px; border-radius:999px; border:1.5px solid var(--line); background:var(--paper);
+    color:var(--ink); font-size:12px; font-weight:600; text-decoration:none;}
+</style>
 
 <footer>
   行く前に最新の営業時間・料金・休園日・駐車場状況・設備情報は必ず公式サイトでご確認ください。距離は直線距離からの概算で、実際の道路事情により前後します。
@@ -4217,7 +4235,62 @@ const SLUG_OVERRIDES = {
   "うみかぜ公園": "kanagawa/yokosuka/umikaze-park",
   "ワンダリア横浜": "kanagawa/yokohama-naka/wonderia",
   "パルながいずみ（長泉町こども交流センター）": "shizuoka/nagaizumi/pal-nagaizumi",
-  "長泉健康公園（ウェルピアながいずみ）": "shizuoka/nagaizumi/nagaizumi-kenko-park"
+  "長泉健康公園（ウェルピアながいずみ）": "shizuoka/nagaizumi/nagaizumi-kenko-park",
+  "黒湯天然温泉 みうら湯": "kanagawa/yokohama-minami/黒湯天然温泉-みうら湯",
+  "こどもふっかパーク（深谷市こども館）": "saitama/fukaya/こどもふっかパーク（深谷市こども館）",
+  "深谷テラスパーク": "saitama/fukaya/深谷テラスパーク",
+  "道の駅おがわまち": "saitama/ogawa/道の駅おがわまち",
+  "桔梗信玄餅工場テーマパーク": "yamanashi/fuefuki/桔梗信玄餅工場テーマパーク",
+  "愛宕山公園（山梨県立愛宕山こどもの国）": "yamanashi/kofu/愛宕山公園（山梨県立愛宕山こどもの国）",
+  "相模湖公園": "kanagawa/sagamihara-midori/相模湖公園",
+  "勝沼グレパーク": "yamanashi/koshu/勝沼グレパーク",
+  "辻 豊玉園": "yamanashi/koshu/辻-豊玉園",
+  "久保田園": "yamanashi/koshu/久保田園",
+  "ぶどう狩り 岩崎園": "yamanashi/koshu/ぶどう狩り-岩崎園",
+  "ぶどうばたけ": "yamanashi/koshu/ぶどうばたけ",
+  "山梨県立リニア見学センター": "yamanashi/tsuru/山梨県立リニア見学センター",
+  "長浜海浜公園": "shizuoka/atami/長浜海浜公園",
+  "道の駅 伊東マリンタウン": "shizuoka/ito/道の駅-伊東マリンタウン",
+  "小柴自然公園（小柴貯油施設跡地）": "kanagawa/yokohama-kanazawa/小柴自然公園（小柴貯油施設跡地）",
+  "UNIQLO PARK 横浜ベイサイド店": "kanagawa/yokohama-kanazawa/UNIQLO-PARK-横浜ベイサイド店",
+  "港南台北公園こどもログハウス「どんぐりハウス」": "kanagawa/yokohama-konan/港南台北公園こどもログハウス「どんぐりハウス」",
+  "踊場公園こどもログハウス「ニャンぱく砦」": "kanagawa/yokohama-totsuka/踊場公園こどもログハウス「ニャンぱく砦」",
+  "永田みなみ台公園こどもログハウス「わんぱくハウス」": "kanagawa/yokohama-minami/永田みなみ台公園こどもログハウス「わんぱくハウス」",
+  "鴨池公園こどもログハウス「かもいけランド」": "kanagawa/yokohama-tsuzuki/鴨池公園こどもログハウス「かもいけランド」",
+  "川島町公園こどもログハウス「アドベンチャーハウス」": "kanagawa/yokohama-hodogaya/川島町公園こどもログハウス「アドベンチャーハウス」",
+  "白幡公園こどもログハウス「ピッコロ」": "kanagawa/yokohama-tsurumi/白幡公園こどもログハウス「ピッコロ」",
+  "神大寺中央公園こどもログハウス": "kanagawa/yokohama-kanagawa/神大寺中央公園こどもログハウス",
+  "境之谷公園こどもログハウス": "kanagawa/yokohama-nishi/境之谷公園こどもログハウス",
+  "柏葉公園こどもログハウス": "kanagawa/yokohama-naka/柏葉公園こどもログハウス",
+  "上白根大池公園こどもログハウス「おおいけらんど」": "kanagawa/yokohama-asahi/上白根大池公園こどもログハウス「おおいけらんど」",
+  "洋光台駅前公園こどもログハウス": "kanagawa/yokohama-isogo/洋光台駅前公園こどもログハウス",
+  "富岡八幡公園こどもログハウス": "kanagawa/yokohama-kanazawa/富岡八幡公園こどもログハウス",
+  "綱島公園こどもログハウス": "kanagawa/yokohama-kohoku/綱島公園こどもログハウス",
+  "桂山公園こどもログハウス「ロッキー」": "kanagawa/yokohama-sakae/桂山公園こどもログハウス「ロッキー」",
+  "霧が丘公園こどもログハウス": "kanagawa/yokohama-midori/霧が丘公園こどもログハウス",
+  "美しが丘公園こどもログハウス": "kanagawa/yokohama-aoba/美しが丘公園こどもログハウス",
+  "瀬谷中央公園こどもログハウス「まるたのしろ」": "kanagawa/yokohama-seya/瀬谷中央公園こどもログハウス「まるたのしろ」",
+  "相模原麻溝公園（ふれあい動物広場）": "kanagawa/sagamihara-minami/相模原麻溝公園（ふれあい動物広場）",
+  "藤沢市少年の森": "kanagawa/fujisawa/藤沢市少年の森",
+  "鎌倉中央公園": "kanagawa/kamakura/鎌倉中央公園",
+  "いずみ台公園こどもログハウス": "kanagawa/yokohama-izumi/いずみ台公園こどもログハウス",
+  "サザンビーチちがさき": "kanagawa/chigasaki/サザンビーチちがさき",
+  "道の駅 湘南ちがさき": "kanagawa/chigasaki/道の駅-湘南ちがさき",
+  "相模三川公園": "kanagawa/ebina/相模三川公園",
+  "ファンタジーキッズリゾート イオン海老名店": "kanagawa/ebina/ファンタジーキッズリゾート-イオン海老名店",
+  "湘南あそびマーレ": "kanagawa/hiratsuka/湘南あそびマーレ",
+  "羽根木プレーパーク": "tokyo/setagaya/羽根木プレーパーク",
+  "駒沢はらっぱプレーパーク": "tokyo/setagaya/駒沢はらっぱプレーパーク",
+  "渋谷はるのおがわプレーパーク": "tokyo/shibuya/渋谷はるのおがわプレーパーク",
+  "練馬区立こどもの森": "tokyo/nerima/練馬区立こどもの森",
+  "柏の宮公園プレーパーク": "tokyo/suginami/柏の宮公園プレーパーク",
+  "鬼怒グリーンパーク": "tochigi/takanezawa/鬼怒グリーンパーク",
+  "さがみ湖温泉 うるり": "kanagawa/sagamihara-midori/さがみ湖温泉-うるり",
+  "花やしき": "tokyo/taito/花やしき",
+  "ちきゅうのにわ 幕張新都心店": "chiba/chiba-mihama/ちきゅうのにわ-幕張新都心店",
+  "トンデミ幕張 イオンモール幕張新都心店": "chiba/chiba-mihama/トンデミ幕張-イオンモール幕張新都心店",
+  "しまぐるランド幕張新都心": "chiba/chiba-mihama/しまぐるランド幕張新都心",
+  "横浜市立金沢動物園": "kanagawa/yokohama-kanazawa/横浜市立金沢動物園"
 };
 // ▲▲▲ DATA-BLOCK END: SLUG_OVERRIDES ▲▲▲
 function buildFacilitySlug(spot){
