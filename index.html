@@ -2670,13 +2670,13 @@ function priceCardSnippet(spot){
 function deriveCarMinutes(spot, km){
   if(typeof spot === "number"){ km = spot; spot = null; } // 旧呼び出し（km単体）にも対応
   if(spot && spot.carMinutesOverride) return spot.carMinutesOverride;
-  return Math.round(estimateMinutes(km));
+  return Math.round(estimateMinutes(km, {terrainFactor: terrainSlowdownFactor(spot)}));
 }
 function deriveTransitMinutes(spot, km){
   if(typeof spot === "number"){ km = spot; spot = null; }
   if(spot && spot.transitMinutesOverride) return spot.transitMinutesOverride;
-  // 実測の乗換ルートではなく、車の所要時間に待ち時間・乗換分を加味した概算
-  return Math.round(estimateMinutes(km) * 1.6 + 15);
+  // 実測の乗換ルートではなく、距離帯ごとの平均表定速度＋待ち時間・乗換の概算（詳細は関数定義を参照）
+  return Math.round(estimateTransitMinutes(km, {terrainFactor: terrainSlowdownFactor(spot)}));
 }
 // 分数を「◯時間◯分」（60分未満はそのまま「◯分」）の分かりやすい表記に変換する
 function formatMinutes(min){
@@ -5482,9 +5482,66 @@ function haversineKm(lat1,lng1,lat2,lng2){
   const a=Math.sin(dLat/2)**2+Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLng/2)**2;
   return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
 }
-function estimateMinutes(km){
-  if(km<=15) return km/25*60;
-  return (15/25*60) + (km-15)/55*60;
+// 🛣 直線距離(km)を「概算の道路距離」に変換する。実際の道路は住宅地の道なり・信号・
+// 川や海・山による迂回などでまず直線にはならないため、区間ごとに迂回係数（detour factor）を
+// 掛けて補正する。近距離ほど住宅地の道なりで迂回率が高く、遠距離ほど高速道路の直線区間の
+// 比率が増えて迂回率が下がる、という一般的な傾向をモデル化している（実測ではなく目安）。
+function roadDistanceKm(straightKm){
+  let factor;
+  if(straightKm <= 5) factor = 1.4;
+  else if(straightKm <= 15) factor = 1.3;
+  else if(straightKm <= 40) factor = 1.2;
+  else factor = 1.1;
+  return straightKm * factor;
+}
+// 🚗 道路距離を、区間ごとの平均速度を積み上げて所要時間（分）に変換する。
+// 「市街地（信号が多く低速）→郊外の一般道→幹線道路→高速道路中心」という、
+// 距離が伸びるほど平均速度が上がる大まかな傾向をモデル化（実測ではなく目安）。
+// opts.terrainFactor を渡すと、山間部・高原など道路が単純な直線距離より大きく
+// 迂回・低速になりやすい地形に対して、さらに補正を掛けられる。
+const CAR_SPEED_TIERS = [
+  {upTo:5, speedKmh:18},    // 市街地・信号の多い一般道
+  {upTo:15, speedKmh:28},   // 郊外の一般道
+  {upTo:40, speedKmh:45},   // 幹線道路・一部高速道路
+  {upTo:Infinity, speedKmh:70} // 高速道路中心の長距離移動
+];
+function estimateMinutes(km, opts={}){
+  const roadKm = roadDistanceKm(km) * (opts.terrainFactor || 1);
+  let remaining = roadKm, lowerBound = 0, minutes = 0;
+  for(const tier of CAR_SPEED_TIERS){
+    if(remaining <= 0) break;
+    const span = Math.min(remaining, tier.upTo - lowerBound);
+    minutes += span / tier.speedKmh * 60;
+    remaining -= span;
+    lowerBound = tier.upTo;
+  }
+  return minutes;
+}
+// 🚃 電車・バスの所要時間（分）を、直線距離から距離帯ごとの平均表定速度で概算する。
+// 車の所要時間からの係数換算（旧ロジック）ではなく、鉄道の実際の傾向―近距離ほど
+// 各駅停車中心で表定速度が低く、遠距離になるほど急行・特急・新幹線の利用が増えて
+// 表定速度が上がる―を距離帯として直接モデル化している（実測の乗換検索ではなく目安）。
+// 待ち時間・乗換・駅までの徒歩などの固定オーバーヘッドは、近距離ほど所要時間に占める
+// 割合が大きく、遠距離ほど乗換回数が増えやすい傾向をふまえ、距離に応じて緩やかに増やす。
+function estimateTransitMinutes(km, opts={}){
+  const railKm = km * (opts.terrainFactor || 1); // 鉄道はおおむね直線的なので道路ほど迂回係数は掛けない
+  let speedKmh;
+  if(railKm <= 10) speedKmh = 18;       // 近距離：各駅停車＋徒歩・待ち時間の比率が大きい
+  else if(railKm <= 30) speedKmh = 30;  // 郊外：急行・快速なども混じる
+  else if(railKm <= 80) speedKmh = 45;  // 中距離：特急・新幹線の利用も増える
+  else speedKmh = 70;                    // 長距離：新幹線中心
+  const rideMinutes = railKm / speedKmh * 60;
+  const overhead = 15 + Math.min(km, 60) * 0.3; // 待ち時間・乗換・徒歩の目安（15〜33分の範囲）
+  return rideMinutes + overhead;
+}
+// 🏔 登山・高原・峠など、道路が単純な直線距離より大きく迂回・低速になりやすい地形の
+// キーワード。該当する施設は所要時間の概算に軽い低速補正（terrainFactor）をかける。
+// spot.name / spot.desc から機械的に判定するだけの簡易ロジックであり、実測ではなく目安。
+const MOUNTAIN_TERRAIN_HINTS = ["登山","高原","峠","渓谷","ロープウェイ","スキー","牧場"];
+function terrainSlowdownFactor(spot){
+  if(!spot || typeof spot!=="object") return 1;
+  const text = (spot.name||"") + (spot.desc||"");
+  return MOUNTAIN_TERRAIN_HINTS.some(h=>text.includes(h)) ? 1.25 : 1;
 }
 // 距離の見やすい表示（1km未満は「○○m」、1km以上は「○○.○km」）。
 // あくまでhaversineKm()による直線距離であり、道路距離ではない点に注意。
@@ -6904,10 +6961,11 @@ function moveItemToTab(name, toTabIndex){
 function planLegInfo(spotA, spotB){
   if(typeof spotA.lat!=="number" || typeof spotB.lat!=="number") return null;
   const km = haversineKm(spotA.lat, spotA.lng, spotB.lat, spotB.lng);
+  const terrainFactor = terrainSlowdownFactor(spotB); // 到着側の地形（登山・高原など）を基準に補正
   if(state.mode==="transit"){
-    return { km, minutes: Math.round(estimateMinutes(km) * 1.6 + 15), mode:"transit" };
+    return { km, minutes: Math.round(estimateTransitMinutes(km, {terrainFactor})), mode:"transit" };
   }
-  return { km, minutes: Math.round(estimateMinutes(km)), mode:"car" };
+  return { km, minutes: Math.round(estimateMinutes(km, {terrainFactor})), mode:"car" };
 }
 // 出発地（state.homeLoc）⇔スポット間の移動時間。郵便番号・地名が未設定の場合はnullを返す
 function homeLegInfo(spot){
@@ -8589,7 +8647,7 @@ function distanceCompatScore(spot, homeLoc){
   const w = GENERAL_RECOMMEND_WEIGHTS.distance;
   if(!homeLoc || typeof spot.lat !== "number") return Math.round(w*0.7);
   const km = haversineKm(homeLoc.lat, homeLoc.lng, spot.lat, spot.lng);
-  const minutes = estimateMinutes(km);
+  const minutes = estimateMinutes(km, {terrainFactor: terrainSlowdownFactor(spot)});
   if(minutes<=30) return w;
   if(minutes<=60) return Math.round(w*0.7);
   if(minutes<=90) return Math.round(w*0.4);
