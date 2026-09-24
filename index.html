@@ -1762,13 +1762,32 @@ const OPERATOR_PHOTO_DATA_URI = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQAB
 // 両方が空のうちは、これまで通り asoview.com への直リンクのまま動作する（挙動は変わらない）。
 const VC_SID = "3781559";
 const VC_PID = "892711217";
+const VC_PID_JALAN = "892711274"; // じゃらん 遊び・体験（sidは共通）。ホテル用は別広告のため未設定
 function withAffiliateParam(url, provider){
-  if(provider === "asoview" && VC_SID && VC_PID){
+  const pid = provider === "asoview" ? VC_PID : (provider === "jalan" ? VC_PID_JALAN : "");
+  if(pid && VC_SID){
     // すでにバリューコマース経由のURLなら二重にラップしない
     if(/valuecommerce\.com/i.test(url)) return url;
-    return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${VC_SID}&pid=${VC_PID}&vc_url=${encodeURIComponent(url)}`;
+    return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${VC_SID}&pid=${pid}&vc_url=${encodeURIComponent(url)}`;
   }
   return url;
+}
+// 🏨 ホテル予約リンク用：URLのホスト名で広告主を判定し、該当する場合のみバリューコマース経由にする
+//    （公式サイト等その他のURL・すでにアフィリエイト化済みのURLはそのまま。pidが空の広告主は変換しない）
+const VC_HOTEL_PIDS = [
+  {host:/(^|\.)jalan\.net$/i,       pid:"892711283"}, // じゃらん（宿泊）
+  {host:/^www\.ikyu\.com$/i,        pid:"892711281"}, // 一休.com
+  {host:/^travel\.yahoo\.co\.jp$/i, pid:"892711284"}  // Yahoo!トラベル
+];
+function withHotelAffiliateParam(url){
+  try{
+    if(!VC_SID || typeof url !== "string") return url;
+    const host = new URL(url).hostname;
+    if(/valuecommerce\.com$/i.test(host)) return url; // 二重ラップ防止
+    const hit = VC_HOTEL_PIDS.find(x=>x.host.test(host));
+    if(!hit || !hit.pid) return url;
+    return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${VC_SID}&pid=${hit.pid}&vc_url=${encodeURIComponent(url)}`;
+  }catch(e){ return url; }
 }
 
 const AGES = ["0-1歳","2-3歳","4-6歳","低学年","高学年"];
@@ -8506,7 +8525,7 @@ const HOTEL_BOOKING_SITES = [
 function hotelBookingOptionsHtml(spot, hotel){
   const booking = hotel.booking || {};
   return HOTEL_BOOKING_SITES.map(site=>{
-    const url = booking[site.key];
+    const url = withHotelAffiliateParam(booking[site.key]);
     if(!url) return ""; // このサイトに未掲載（または未設定）の場合は枠ごと非表示にする
     return `<a class="hotel-booking-option ${site.key}" href="${url}" target="_blank" rel="noopener"
         data-act="hotel-booking-click" data-hotel-name="${hotel.name}" data-hotel-area="${hotel.area}" data-booking-site="${site.key}">
@@ -11095,6 +11114,7 @@ function getHotelReservationLinks(hotel){
   let links = [];
   if(Array.isArray(hotel.bookingLinks)){
     links = hotel.bookingLinks.slice()
+      .filter(l=>l && l.siteName !== "公式サイト") // 公式サイトのリンクは表示しない
       .sort((a,b)=>(a.order||99)-(b.order||99))
       .map(l=>({siteName:l.siteName, url:l.url}))
       .filter(valid);
@@ -11105,7 +11125,7 @@ function getHotelReservationLinks(hotel){
   return links.map(l=>{
     const site = HOTEL_BOOKING_SITES.find(s=>s.label===l.siteName);
     return {
-      siteName: l.siteName, url: l.url,
+      siteName: l.siteName, url: withHotelAffiliateParam(l.url),
       key: site ? site.key : "",
       icon: site ? site.icon : "🌐",
       text: site ? `${l.siteName}で空室を見る` : `${l.siteName}を見る`,
