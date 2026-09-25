@@ -95,6 +95,44 @@ function pyJson(v) {
   return JSON.stringify(v);
 }
 const PREF_FULL = { '東京': '東京都', '神奈川': '神奈川県', '埼玉': '埼玉県', '千葉': '千葉県', '茨城': '茨城県', '栃木': '栃木県', '群馬': '群馬県', '山梨': '山梨県', '静岡': '静岡県', '福島': '福島県', '長野': '長野県' };
+// 目的別ページ（/purpose/xxx/）が実在するジャンルだけを対象にする。ここに無いジャンルは今までどおりリンクなしのバッジのまま。
+const PURPOSE_PAGE_SLUGS = { '動物園': 'zoo', '水族館': 'aquarium', '室内遊び場': 'indoor', '公園': 'park', '博物館・科学館': 'museum', '遊園地・テーマパーク': 'amusement', '果物狩り・収穫体験': 'fruit-picking', '温泉・スパ': 'onsen', '牧場': 'ranch', 'アスレチック・アウトドア': 'athletic' };
+// 施設ページ→各特集ページへの関連リンク判定（index.html側の deriveRainLevel / parsePriceYen と同じロジック）
+const INDOOR_HINTS = ["水族館","博物館","科学館","ミュージアム","タワー","プラネタリウム","屋内","ドーム","美術館","動物園（屋内","防災館","アリーナ"];
+const OUTDOOR_HINTS = ["公園","牧場","サファリ","ハイキング","登山","海岸","ビーチ","キャンプ","動物園","植物園","古墳","城址","展望","湖","滝","高原"];
+function deriveRainLevel(spot) {
+  if (spot.rainLevel) return spot.rainLevel;
+  const weather = spot.weather || [];
+  const both = weather.includes('晴れ') && weather.includes('雨');
+  const rainOnly = weather.includes('雨') && !weather.includes('晴れ');
+  const text = (spot.name || '') + (spot.desc || '');
+  if (both || rainOnly) return 4;
+  const indoor = INDOOR_HINTS.some(h => text.includes(h));
+  const outdoor = OUTDOOR_HINTS.some(h => text.includes(h));
+  if (indoor && !outdoor) return 3;
+  if (outdoor) return 1;
+  return 2;
+}
+function parsePriceYen(price) {
+  if (!price) return null;
+  if ((price.includes('入園無料') || price.includes('入館無料')) || (price.includes('無料') && !/[0-9]/.test(price))) return 0;
+  const m = price.match(/([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{3,5})\s*円/);
+  if (m) return parseInt(m[1].replace(/,/g, ''), 10);
+  return null;
+}
+function isFreeSpot(spot) { return parsePriceYen(spot.price) === 0; }
+function isBabySpot(spot) { const ages = spot.ages || []; return ages.includes('0-1歳') && !ages.includes('高学年'); }
+function relatedPageLinks(row) {
+  const s = row.spot;
+  const links = [];
+  const pslug = PURPOSE_PAGE_SLUGS[row.genre];
+  if (pslug) links.push([`${BASE}purpose/${pslug}/`, `${row.genre}の他のスポットを見る`]);
+  if (deriveRainLevel(s) >= 3) links.push([`${BASE}rainy-day/`, '☔ 雨の日特集で他のスポットを見る']);
+  if (isFreeSpot(s)) links.push([`${BASE}free/`, '💰 無料スポット特集で他のスポットを見る']);
+  if (isBabySpot(s)) links.push([`${BASE}baby/`, '👶 赤ちゃん向け特集で他のスポットを見る']);
+  return links;
+}
+
 const SEASONS = [
   { key: '春', slug: 'spring', emoji: '🌸', period: '2/21〜5/20' },
   { key: '夏', slug: 'summer', emoji: '☀️', period: '5/21〜8/20' },
@@ -125,6 +163,9 @@ const CSS_FAC = String.raw`
   .cta{display:block; text-align:center; background:#3E8FB0; color:#fff !important; text-decoration:none; font-weight:700; padding:14px; border-radius:12px; margin:26px 0 10px;}
   .cta:hover{opacity:.9;}
   .maps-link{display:inline-block; margin-top:6px; color:#3E8FB0;}
+  .related-links{display:flex; flex-direction:column; gap:8px; margin:14px 0;}
+  .related-links a{display:block; background:#fff; border:1px solid #eadfca; border-radius:10px; padding:11px 14px; text-decoration:none; color:#2B2620; font-size:13.5px; font-weight:600;}
+  .related-links a:hover{border-color:#3E8FB0; color:#3E8FB0;}
   footer{font-size:12px; color:#928a7c; text-align:center; padding:24px 18px 40px;}
   footer a{color:#3E8FB0;}
   .verified{font-size:12px; color:#928a7c; margin-top:24px;}
@@ -141,7 +182,8 @@ const CSS_REGION = String.raw`
   .intro{margin:10px 0 20px; font-size:14px; color:#4a443c;}
   .section-title{font-size:16px; font-weight:400; border-left:4px solid #F4B740; padding-left:8px; margin:26px 0 10px;}
   .genre-badge-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .genre-badge-item{background:#fff; border:1px solid #eadfca; border-radius:999px; padding:7px 14px; font-size:13px; font-weight:600;}
+  .genre-badge-item{background:#fff; border:1px solid #eadfca; border-radius:999px; padding:7px 14px; font-size:13px; font-weight:600; color:#2B2620; text-decoration:none; display:inline-block;}
+  a.genre-badge-item:hover{border-color:#E2603A; color:#E2603A;}
   .link-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
   .link-card{display:block; background:#fff; border:1px solid #eadfca; border-radius:10px; padding:12px 14px; text-decoration:none; color:#2B2620;}
   .link-card .lc-name{font-weight:700; font-size:14px;}
@@ -283,6 +325,8 @@ function facilityPage(row) {
   const bl = s.bookingLinks ? Object.keys(s.bookingLinks).filter(k => BK[k] && s.bookingLinks[k]) : [];
   const booking = bl.length ? `<div class="detail-block"><h2>🎟️ 予約情報</h2><ul>${bl.map(k => `<li><a href="${esc(s.bookingLinks[k])}" target="_blank" rel="noopener nofollow">${BK[k]}で見る</a></li>`).join('')}</ul></div>` : '';
   h += '\n' + booking;
+  const rl = relatedPageLinks(row);
+  if (rl.length) h += `\n<div class="detail-block"><h2>🔗 関連ページ</h2><div class="related-links">${rl.map(([href, label]) => `<a href="${href}">${esc(label)}</a>`).join('')}</div></div>`;
   const verified = s.verifiedAt ? `<div class="verified">✅ 情報確認日：${esc(s.verifiedAt)}</div>` : '';
   h += `\n\n<a class="cta" href="${BASE}?spot=${encodeURIComponent(s.name)}">🧭 天気・行き方・混雑状況をおでかけナビアプリで見る</a>\n\n${verified}\n</div>\n` + FOOTER;
   return h;
@@ -350,7 +394,11 @@ function prefPage(p) {
   const gorder = p.genres;
   // 同数の時は、データに最初に現れた順（gc は最初に現れた順に並ぶ）
   const gl = [...gc.entries()].map(([k, n], i) => ({ key: k, count: n, first: i, idx: gorder.findIndex(g => g.key === k) })).sort((a, b) => (b.count - a.count) || (a.first - b.first)).slice(0, 3);
-  if (gl.length) h += `<h2 class="section-title">🏷️ 人気カテゴリ</h2><div class="genre-badge-row">${gl.map(g => `<span class="genre-badge-item">${gorder[g.idx].label.split(' ')[0]}${esc(g.key)}（${g.count}件）</span>`).join('')}</div>`;
+  if (gl.length) h += `<h2 class="section-title">🏷️ 人気カテゴリ</h2><div class="genre-badge-row">${gl.map(g => {
+    const label = `${gorder[g.idx].label.split(' ')[0]}${esc(g.key)}（${g.count}件）`;
+    const pslug = PURPOSE_PAGE_SLUGS[g.key];
+    return pslug ? `<a class="genre-badge-item" href="${BASE}purpose/${pslug}/">${label}</a>` : `<span class="genre-badge-item">${label}</span>`;
+  }).join('')}</div>`;
   h += `<h2 class="section-title">📍 市区町村から探す</h2><div class="link-grid">${cards.map(c => card(`${BASE}${p.slug}/${c.slug}/`, c.name, c.count)).join('')}</div>\n`;
   const sl = SEASONS.map(se => ({ se, n: p.rows.filter(r => (r.spot.seasons || []).includes(se.key)).length })).filter(x => x.n > 0);
   if (sl.length) h += `<h2 class="section-title">季節から探す</h2><div class="link-grid">${sl.map(x => card(`${BASE}season/${x.se.slug}/#region-${p.slug}`, `${x.se.emoji} ${x.se.key}のお出かけ`, x.n)).join('')}</div>`;
