@@ -17,7 +17,7 @@
    ====================================================================== */
 "use strict";
 
-var SW_VERSION = "2026-09-24-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
+var SW_VERSION = "2026-09-26-2";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
 var SCOPE_URL  = new URL(self.registration.scope);
 var SCOPE_PATH = SCOPE_URL.pathname;                 // 例：/odekake-navi/
 var PREFIX     = "odekake:" + SCOPE_PATH + ":";
