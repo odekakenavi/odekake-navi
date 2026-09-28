@@ -55,7 +55,10 @@
     },
     "desc": "パンダ目当てで混みやすいが、園内は広く動物の種類も豊富。ベビーカーで回れる坂道多め。",
     "tip": "開園直後に入るとパンダ待ち行列を回避しやすい。",
-    "layoutCompact": false
+    "layoutCompact": false,
+    "kidsToilet": "partial",
+    "kidsToiletNote": "西園 子ども動物園「すてっぷ」内に子ども用トイレがあります（公式サイトより）",
+    "kidsToiletCheckedAt": "2026年9月28日"
   },
   {
     "region": "東京",
@@ -604,7 +607,10 @@
     },
     "desc": "ライオンバスやアフリカ園など、上野より広々とゆったり見て回れる動物園。",
     "tip": "起伏があるのでベビーカーより抱っこ紐が楽な区間も。",
-    "layoutCompact": false
+    "layoutCompact": false,
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内のトイレに子ども用補助便座があります（公式サイトより）",
+    "kidsToiletCheckedAt": "2026年9月28日"
   },
   {
     "region": "埼玉",
@@ -887,7 +893,10 @@
     "desc": "動物園と遊園地とプールが一体化した複合施設。屋内エリアもあるため小雨でも遊べる部分あり。",
     "tip": "夏はプール、冬はイルミネーションと季節ごとに顔が変わる。",
     "layoutCompact": false,
-    "strollerRental": true
+    "strollerRental": true,
+    "kidsToilet": "booster",
+    "kidsToiletNote": "親子トイレに幼児用便座・ベビーシートがあります（公式サイトより）",
+    "kidsToiletCheckedAt": "2026年9月28日"
   },
   {
     "region": "埼玉",
@@ -1249,7 +1258,10 @@
     "desc": "ミッキーやディズニーキャラクターに会える王道のテーマパーク。屋内アトラクションも多く、多少の雨でも進行できるプログラムが多い。隣接する東京ディズニーシーとは別のチケットが必要（1枚での行き来は基本不可）。",
     "tip": "未就学児はキャラクターグリーティングだけでも大満足なことが多い。",
     "strollerRental": true,
-    "layoutCompact": false
+    "layoutCompact": false,
+    "kidsToilet": "urinal",
+    "kidsToiletNote": "女性用レストルームに男児用小便器があります（チャイナボイジャー前とトムソーヤ島の砦のレストルームを除く）（公式サイトより）",
+    "kidsToiletCheckedAt": "2026年9月28日"
   },
   {
     "region": "千葉",
@@ -1303,7 +1315,10 @@
       "jalan": "https://www.jalan.net/kankou/spt_12227cc3540155509/"
     },
     "strollerRental": true,
-    "layoutCompact": false
+    "layoutCompact": false,
+    "kidsToilet": "urinal",
+    "kidsToiletNote": "女性用レストルームに男児用小便器があります（公式サイトより）",
+    "kidsToiletCheckedAt": "2026年9月28日"
   },
   {
     "region": "千葉",
@@ -1857,7 +1872,10 @@
     "lunch": "園内に売店あり。吉祥寺エリアに飲食店多数。",
     "officialUrl": "https://www.tokyo-zoo.net/zoo/inokashira/",
     "desc": "ゾウのはな子で知られた小規模な動物園。分園には水生物館もあり半日で回れる規模感。",
-    "tip": "リスの小径は放し飼いのリスと近距離で見られ子どもに人気。"
+    "tip": "リスの小径は放し飼いのリスと近距離で見られ子どもに人気。",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "子ども用トイレは、本園の正門先・芝生広場・リスの小径横・ぶらんこ広場と、分園の水生物館・山小屋のトイレにあります（公式サイトより）",
+    "kidsToiletCheckedAt": "2026年9月28日"
   },
   {
     "region": "東京",
