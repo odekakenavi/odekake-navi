@@ -1468,5 +1468,194 @@ function patchOpenDetailForMinna(){if(__minnaOpenDetailPatched)return;if(typeof 
 function renderMinnaSpotSection(spot){var sheet=document.getElementById("detailSheet");if(!sheet||!spot)return;var items=MINNA.bySpot.get(spot.name)||[];if(items.length===0)return;var html='<div class="minna-spot-section"><div class="minna-spot-section-title">\u{1F4F8} \u307F\u3093\u306A\u306E\u304A\u3067\u304B\u3051</div>'+items.map(function(it){var igLink=it.contribution.postUrl?'<a class="minna-spot-ig-link" href="'+minnaEsc(it.contribution.postUrl)+'" target="_blank" rel="noopener noreferrer">Instagram\u3067\u6295\u7A3F\u3092\u898B\u308B</a>':"";return'<div class="minna-spot-item"><div class="minna-spot-item-name">'+minnaEsc(it.contributor.displayName)+'</div>'+(it.contribution.comment?'<div class="minna-spot-item-comment">\u300C'+minnaEsc(it.contribution.comment)+'\u300D</div>':"")+igLink+'</div>'}).join("")+'</div>';sheet.insertAdjacentHTML("beforeend",html)}
 window.addEventListener("odekakeAppReady",function(){patchOpenDetailForMinna();refreshMinnaMenu();loadMinnaData()});
 })();</script>
+<!-- ===== 季節の演出（花びら・紅葉・雪・サンタなど） ===== -->
+<style id="seasonFxStyle">
+.fx-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .8s;background:linear-gradient(180deg,transparent 35%,var(--fx-tint,transparent) 100%)}
+.fx-bg.on{opacity:1}
+.fx-canvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:none}
+.fx-canvas.on{display:block}
+body.fx-on .header-scroll{background:transparent}
+.fx-toggle{position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;width:38px;height:38px;min-width:38px;min-height:38px;padding:0;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);box-shadow:0 2px 8px rgba(0,0,0,.12);font-size:18px;line-height:1;cursor:pointer;opacity:.92}
+.fx-toggle.off{filter:grayscale(1);opacity:.6}
+.fx-santa{position:fixed;left:0;top:0;z-index:39;pointer-events:none;font-size:28px;white-space:nowrap;will-change:transform}
+.fx-santa span{display:inline-block;animation:fxBob 1.2s ease-in-out infinite}
+@keyframes fxBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+</style>
+<script>(function(){"use strict";
+var KEY="odekakeNaviFxV1";
+var SCENES={
+  spring:   {icon:"\u{1F338}",tint:"#FFE6EE",mix:["petal"]},
+  summer:   {icon:"\u2600\uFE0F",tint:"#DCF1F5",mix:["bubble"]},
+  autumn:   {icon:"\u{1F341}",tint:"#FBE4C6",mix:["leaf"]},
+  winter:   {icon:"\u2744\uFE0F",tint:"#E3EDF7",mix:["snow"]},
+  christmas:{icon:"\u{1F384}",tint:"#E4EFE2",mix:["snow"],santa:true},
+  halloween:{icon:"\u{1F383}",tint:"#EDDFF4",mix:["leaf","leaf","pumpkin","bat"]}
+};
+function detectScene(){
+  var q=null;try{q=new URLSearchParams(location.search).get("fx")}catch(e){}
+  if(q&&SCENES[q])return q;
+  var d=new Date(),md=(d.getMonth()+1)*100+d.getDate();
+  if(md>=1020&&md<=1031)return"halloween";
+  if(md>=1201&&md<=1225)return"christmas";
+  if(md>=221&&md<=520)return"spring";
+  if(md>=521&&md<=915)return"summer";
+  if(md>=916&&md<=1120)return"autumn";
+  return"winter";
+}
+var sceneKey=detectScene(),scene=SCENES[sceneKey];
+var reduce=false;try{reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+var saved=null;try{saved=localStorage.getItem(KEY)}catch(e){}
+var enabled=saved?saved==="on":!reduce;
+
+var bg=document.createElement("div");bg.className="fx-bg";bg.setAttribute("aria-hidden","true");bg.style.setProperty("--fx-tint",scene.tint);
+var cv=document.createElement("canvas");cv.className="fx-canvas";cv.setAttribute("aria-hidden","true");
+var btn=document.createElement("button");btn.type="button";btn.className="fx-toggle";btn.textContent=scene.icon;
+document.body.appendChild(bg);document.body.appendChild(cv);document.body.appendChild(btn);
+var ctx=cv.getContext("2d");
+var W=0,H=0,dpr=1,parts=[],running=false,last=0,santaTimer=null;var trects=[],collectTimer=null;
+var EMOJI_FONT='"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+var PETAL_COLORS=["#FFC4D6","#FFD3E0","#FFB7CD","#FFE0E9"];
+
+function rnd(a,b){return a+Math.random()*(b-a)}
+function targetCount(){return Math.round(Math.min(17,Math.max(8,W/28)))}
+function make(kind,initial){
+  var p={kind:kind,x:rnd(0,W),y:initial?rnd(0,H):rnd(-40,-10),t:rnd(0,6.28),rot:rnd(0,6.28),vr:rnd(-.03,.03),a:1};
+  if(kind==="petal"){p.s=rnd(5,9);p.vy=rnd(.5,1.1);p.vx=rnd(.15,.5);p.amp=rnd(.3,.7);p.sw=rnd(.015,.03);p.col=PETAL_COLORS[Math.floor(rnd(0,PETAL_COLORS.length))]}
+  else if(kind==="leaf"){p.s=rnd(15,24);p.e=Math.random()<.55?"\u{1F341}":"\u{1F342}";p.vy=rnd(.7,1.4);p.vx=rnd(-.2,.3);p.amp=rnd(.4,.9);p.sw=rnd(.012,.025);p.vr=rnd(-.025,.025)}
+  else if(kind==="snow"){p.s=rnd(1.6,4.2);p.vy=.45+p.s*.22;p.vx=rnd(-.15,.15);p.amp=rnd(.15,.45);p.sw=rnd(.01,.022)}
+  else if(kind==="bubble"){p.s=rnd(4,11);p.vy=-rnd(.3,.8);p.vx=0;p.amp=rnd(.2,.5);p.sw=rnd(.015,.03);if(!initial)p.y=H+rnd(10,40)}
+  else if(kind==="pumpkin"){p.s=rnd(18,24);p.e="\u{1F383}";p.vy=rnd(.5,.9);p.vx=0;p.amp=rnd(.2,.4);p.sw=rnd(.01,.02)}
+  else if(kind==="bat"){p.s=rnd(16,22);p.e="\u{1F987}";p.dir=Math.random()<.5?1:-1;p.vx=p.dir*rnd(.9,1.6);p.vy=0;p.base=rnd(70,H*.55);p.y=p.base;p.x=initial?rnd(0,W):(p.dir>0?-30:W+30);p.sw=rnd(.03,.05)}
+  return p;
+}
+function resize(){
+  W=window.innerWidth;H=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,2);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+  var n=targetCount();
+  while(parts.length<n)parts.push(make(scene.mix[parts.length%scene.mix.length],true));
+  if(parts.length>n)parts.length=n;
+}
+function drawPart(p){
+  var k=p.kind;
+  if(k==="petal"){
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.scale(1,.45+.55*Math.abs(Math.cos(p.t*1.7)));
+    ctx.fillStyle=p.col;ctx.beginPath();var s=p.s;
+    ctx.moveTo(0,-s*.55);ctx.bezierCurveTo(s*.95,-s*1.1,s*1.05,s*.5,0,s);ctx.bezierCurveTo(-s*1.05,s*.5,-s*.95,-s*1.1,0,-s*.55);
+    ctx.fill();ctx.restore();
+  }else if(k==="snow"){
+    ctx.fillStyle="rgba(140,182,220,.38)";ctx.beginPath();ctx.arc(p.x,p.y,p.s+1.2,0,6.283);ctx.fill();
+    ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,6.283);ctx.fill();
+  }else if(k==="bubble"){
+    ctx.fillStyle="rgba(190,232,244,.28)";ctx.strokeStyle="rgba(70,160,195,.55)";ctx.lineWidth=1.2;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,6.283);ctx.fill();ctx.stroke();
+    ctx.strokeStyle="rgba(255,255,255,.95)";ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(p.x,p.y,p.s*.62,3.6,4.5);ctx.stroke();
+  }else{
+    ctx.save();ctx.translate(p.x,p.y);
+    ctx.rotate(k==="leaf"?p.rot:Math.sin(p.t)*.3);
+    if(k==="bat")ctx.scale(p.dir>0?-1:1,.6+.4*Math.abs(Math.sin(p.t*4)));
+    ctx.font=p.s+"px "+EMOJI_FONT;ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(p.e,0,0);ctx.restore();
+  }
+}
+function step(now){
+  if(!running)return;
+  if(document.hidden){running=false;return}
+  var dt=Math.min((now-last)/16.67,3);last=now;
+  ctx.clearRect(0,0,W,H);
+  for(var i=0;i<parts.length;i++){
+    var p=parts[i];
+    p.t+=p.sw?p.sw*dt:0.02*dt;p.rot+=p.vr*dt;
+    if(p.kind==="bat"){
+      p.x+=p.vx*dt;p.y=p.base+Math.sin(p.t)*22;
+      if((p.dir>0&&p.x>W+40)||(p.dir<0&&p.x<-40)){parts[i]=make("bat",false);continue}
+    }else{
+      p.x+=(p.vx+Math.sin(p.t)*p.amp)*dt;p.y+=p.vy*dt;
+      if(p.vy>0&&p.y>H+30){parts[i]=make(p.kind,false);continue}
+      if(p.vy<0&&p.y<-30){parts[i]=make(p.kind,false);continue}
+      if(p.x>W+40)p.x=-30;else if(p.x<-40)p.x=W+30;
+    }
+    drawPart(p);
+  }
+  var sx=window.pageXOffset||0,sy=window.pageYOffset||0;
+  for(var j=0;j<trects.length;j++){
+    var r=trects[j],rx=r[0]-sx,ry=r[1]-sy;
+    if(ry>H||ry+r[3]<0||rx>W||rx+r[2]<0)continue;
+    ctx.clearRect(rx-5,ry-3,r[2]+10,r[3]+6);
+  }
+  requestAnimationFrame(step);
+}
+function start(){
+  if(running)return;running=true;last=performance.now();requestAnimationFrame(step);
+}
+function flySanta(){
+  santaTimer=null;
+  if(!enabled||!scene.santa||document.hidden){scheduleSanta(8000);return}
+  var el=document.createElement("div");el.className="fx-santa";el.setAttribute("aria-hidden","true");
+  el.innerHTML='<span>\u{1F98C}</span><span style="animation-delay:-.25s">\u{1F98C}</span><span style="animation-delay:-.5s">\u{1F6F7}</span><span style="animation-delay:-.75s">\u{1F385}</span>';
+  el.style.top="-200px";
+  document.body.appendChild(el);
+  var w=el.offsetWidth||140,h=el.offsetHeight||40;
+  var hd=document.querySelector("header.header-fixed");
+  var minY=(hd?hd.getBoundingClientRect().bottom:60)+4,sx=window.pageXOffset||0,sy=window.pageYOffset||0,ok=[];
+  for(var y=minY;y+h<H*.8;y+=6){
+    var hit=false;
+    for(var j=0;j<trects.length;j++){
+      var r=trects[j],rx=r[0]-sx,ry=r[1]-sy;
+      if(rx<W&&rx+r[2]>0&&ry<y+h+8&&ry+r[3]>y-8){hit=true;break}
+    }
+    if(!hit)ok.push(y);
+  }
+  if(!ok.length){if(el.parentNode)el.parentNode.removeChild(el);scheduleSanta(4000);return}
+  el.style.top=ok[Math.floor(Math.random()*ok.length)]+"px";
+  var anim=el.animate([{transform:"translate3d("+(W+20)+"px,0,0)"},{transform:"translate3d("+(-w-20)+"px,0,0)"}],{duration:Math.max(8000,W*15),easing:"linear"});
+  anim.onfinish=function(){if(el.parentNode)el.parentNode.removeChild(el)};
+  scheduleSanta(rnd(22000,40000));
+}
+function scheduleSanta(ms){if(scene.santa&&enabled){clearTimeout(santaTimer);santaTimer=setTimeout(flySanta,ms)}}
+function clearSanta(){clearTimeout(santaTimer);santaTimer=null;var els=document.querySelectorAll(".fx-santa");for(var i=0;i<els.length;i++)els[i].parentNode.removeChild(els[i])}
+function apply(){
+  btn.classList.toggle("off",!enabled);btn.setAttribute("aria-pressed",enabled?"true":"false");
+  btn.setAttribute("aria-label",enabled?"\u5B63\u7BC0\u306E\u6F14\u51FA\u3092\u30AA\u30D5\u306B\u3059\u308B":"\u5B63\u7BC0\u306E\u6F14\u51FA\u3092\u30AA\u30F3\u306B\u3059\u308B");
+  btn.title=enabled?"\u5B63\u7BC0\u306E\u6F14\u51FA\uFF1A\u30AA\u30F3":"\u5B63\u7BC0\u306E\u6F14\u51FA\uFF1A\u30AA\u30D5";
+  bg.classList.toggle("on",enabled);document.body.classList.toggle("fx-on",enabled);cv.classList.toggle("on",enabled);
+  if(enabled){resize();start();scheduleSanta(3500);scheduleCollect(300)}
+  else{running=false;ctx.clearRect(0,0,W,H);clearSanta();trects=[]}
+}
+function collectRects(){
+  collectTimer=null;
+  if(!enabled||document.body.style.position==="fixed")return;
+  var out=[],sx=window.pageXOffset||0,sy=window.pageYOffset||0,cnt=0;
+  var tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    if(!/\S/.test(n.nodeValue))return NodeFilter.FILTER_REJECT;
+    var t=n.parentElement&&n.parentElement.tagName;
+    if(!t||t==="SCRIPT"||t==="STYLE"||t==="NOSCRIPT"||t==="TEXTAREA"||t==="OPTION")return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT}});
+  var range=document.createRange(),n;
+  while((n=tw.nextNode())&&cnt<8000){
+    cnt++;
+    if(n.parentElement.closest("header,.drawer-panel,.fx-toggle,.fx-santa"))continue;
+    range.selectNodeContents(n);
+    var rs=range.getClientRects();
+    for(var k=0;k<rs.length;k++){var r=rs[k];if(r.width<2||r.height<2)continue;out.push([r.left+sx,r.top+sy,r.width,r.height])}
+  }
+  trects=out;
+}
+function scheduleCollect(ms){
+  if(!enabled)return;clearTimeout(collectTimer);
+  collectTimer=setTimeout(function(){
+    if(window.requestIdleCallback)requestIdleCallback(collectRects,{timeout:1500});else collectRects();
+  },ms);
+}
+btn.addEventListener("click",function(){
+  enabled=!enabled;try{localStorage.setItem(KEY,enabled?"on":"off")}catch(e){}apply();
+});
+window.addEventListener("resize",function(){if(enabled){resize();scheduleCollect(300)}});
+window.addEventListener("load",function(){scheduleCollect(600)});
+try{document.fonts&&document.fonts.ready.then(function(){scheduleCollect(200)})}catch(e){}
+try{new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var t=ms[i].target;var el=t.nodeType===1?t:t.parentElement;if(el&&el.closest&&el.closest(".fx-santa,.fx-toggle,.fx-canvas,.fx-bg"))continue;scheduleCollect(400);return}}).observe(document.body,{childList:true,subtree:true,characterData:true})}catch(e){}
+setInterval(function(){if(enabled&&!document.hidden)scheduleCollect(0)},5000);
+document.addEventListener("visibilitychange",function(){if(!document.hidden&&enabled)start()});
+apply();
+})();</script>
+<!-- ===== /季節の演出 ===== -->
 </body>
 </html>
