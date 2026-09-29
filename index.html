@@ -110,7 +110,7 @@
 .lo-next{margin:12px 16px 0}
 .lo-next-title{font-family:"Zen Maru Gothic",sans-serif;font-size:14px;font-weight:800;color:var(--ink)}
 .lo-next-sub{font-size:11px;color:var(--ink-soft);margin:2px 0 8px}
-.lo-next-list{display:flex;flex-direction:column;gap:6px;max-height:250px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:2px}
+.lo-next-list{display:grid;grid-template-rows:repeat(3,auto);grid-auto-flow:column;grid-auto-columns:88%;gap:6px 8px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding-bottom:6px}.lo-next-list>.lo-next-card{scroll-snap-align:start;min-width:0}
 .lo-next-card{display:flex;align-items:center;gap:10px;text-align:left;width:100%;min-height:52px;padding:9px 12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;cursor:pointer;font-family:inherit;color:var(--ink)}
 .lo-next-ic{font-size:22px;flex:0 0 auto}
 .lo-next-body{display:flex;flex-direction:column;min-width:0;gap:1px}
