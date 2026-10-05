@@ -2531,11 +2531,6 @@
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://odekakenavi.github.io/odekake-navi/tokyo/koto/gas-science-museum/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
 <loc>https://odekakenavi.github.io/odekake-navi/tokyo/shinjuku/fire-museum/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -2982,11 +2977,6 @@
 </url>
 <url>
 <loc>https://odekakenavi.github.io/odekake-navi/tokyo/shinagawa/welcome/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://odekakenavi.github.io/odekake-navi/tokyo/koto/gas-kagakukan/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
