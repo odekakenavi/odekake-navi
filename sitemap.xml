@@ -5491,11 +5491,6 @@
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://odekakenavi.github.io/odekake-navi/kanagawa/hakone/%E7%AE%B1%E6%A0%B9%E3%82%84%E3%81%99%E3%82%89%E3%81%8E%E3%81%AE%E6%A3%AE/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
 <loc>https://odekakenavi.github.io/odekake-navi/kanagawa/atsugi/%E3%81%BC%E3%81%86%E3%81%95%E3%81%84%E3%81%AE%E4%B8%98%E5%85%AC%E5%9C%92/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -6072,11 +6067,6 @@
 </url>
 <url>
 <loc>https://odekakenavi.github.io/odekake-navi/yamanashi/fuefuki/%E5%8F%A4%E5%B1%8B%E7%94%B2%E7%8E%89%E5%9C%92/</loc>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://odekakenavi.github.io/odekake-navi/yamanashi/koshu/%E8%BE%BB%E8%B1%8A%E7%8E%89%E5%9C%92/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
