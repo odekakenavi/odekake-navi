@@ -942,7 +942,7 @@ document.getElementById("lastUpdatedLabel").textContent=computeLastUpdatedLabel(
         </button>
       `).join("")}
     </div>
-  `;let bodyHtml;if(spots.length===0){bodyHtml=`<div class="plan-empty">\u307E\u3060${PLAN_TAB_LABELS[state.activePlanTab]}\u306B\u8FFD\u52A0\u3057\u305F\u5834\u6240\u304C\u3042\u308A\u307E\u305B\u3093\u3002<br>\u30B9\u30DD\u30C3\u30C8\u8A73\u7D30\u753B\u9762\u306E\u300C\u{1F5D3} \u30D7\u30E9\u30F3\u306B\u8FFD\u52A0\u300D\u304B\u3089\u3001\u4ECA\u56DE\u5B9F\u969B\u306B\u884C\u304F\u5834\u6240\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044\u3002<br>\uFF08\u76EE\u5B89\u306F1\u65E53\u30AB\u6240\u7A0B\u5EA6\u3067\u3059\uFF09</div>`}else{const summary=computePlanSummary(spots,tripMode);const tripModeHtml=`
+  `;let planNearbyHotel=null;let bodyHtml;if(spots.length===0){bodyHtml=`<div class="plan-empty">\u307E\u3060${PLAN_TAB_LABELS[state.activePlanTab]}\u306B\u8FFD\u52A0\u3057\u305F\u5834\u6240\u304C\u3042\u308A\u307E\u305B\u3093\u3002<br>\u30B9\u30DD\u30C3\u30C8\u8A73\u7D30\u753B\u9762\u306E\u300C\u{1F5D3} \u30D7\u30E9\u30F3\u306B\u8FFD\u52A0\u300D\u304B\u3089\u3001\u4ECA\u56DE\u5B9F\u969B\u306B\u884C\u304F\u5834\u6240\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044\u3002<br>\uFF08\u76EE\u5B89\u306F1\u65E53\u30AB\u6240\u7A0B\u5EA6\u3067\u3059\uFF09</div>`}else{const summary=computePlanSummary(spots,tripMode);const tripModeHtml=`
       <div class="plan-tripmode-row">
         ${PLAN_TRIP_MODES.map(m=>`<button type="button" class="plan-tripmode-btn ${tripMode===m.key?"active":""}" data-tripmode="${m.key}">${m.label}</button>`).join("")}
       </div>
@@ -956,7 +956,7 @@ document.getElementById("lastUpdatedLabel").textContent=computeLastUpdatedLabel(
            <button type="button" class="plan-time-reset" id="planTimeResetBtn">\u21BA \u6642\u523B\u3060\u3051\u30EA\u30BB\u30C3\u30C8</button>
          </div>`:`<div class="plan-time-toolbar">
            <button type="button" class="plan-time-toggle plan-time-toggle-off" id="planTimeToggleBtn">\u{1F550} \u6642\u523B\u3092\u81EA\u52D5\u8A08\u7B97\u3059\u308B\uFF08\u30BF\u30C3\u30D7\u3067\u6709\u52B9\u5316\uFF09</button>
-         </div>`;const planNearbyHotel=(tripMode!=="roundtrip"&&spots.length>0)?(function(){try{return getNearbyHotels(spots[spots.length-1])[0]||null}catch(e){return null}})():null;const summaryHtml=`
+         </div>`;planNearbyHotel=(tripMode!=="roundtrip"&&spots.length>0)?(function(){try{return getNearbyHotels(spots[spots.length-1])[0]||null}catch(e){return null}})():null;const summaryHtml=`
       <div class="plan-summary">
         <div class="plan-summary-row"><span>\u30B9\u30DD\u30C3\u30C8\u6570</span><b>${spots.length}\u30AB\u6240</b></div>
         <div class="plan-summary-row"><span>\u5408\u8A08\u6EDE\u5728\u6642\u9593\u306E\u76EE\u5B89</span><b>\u7D04${formatMinutes(summary.stayMid)}</b></div>
