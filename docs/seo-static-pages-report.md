@@ -35,7 +35,7 @@
 | 3 | よみうりランド | 遊園地・テーマパーク | https://odekakenavi.github.io/odekake-navi/tokyo/inagi/yomiuriland/ |
 | 4 | 国営昭和記念公園 | 大型公園 | https://odekakenavi.github.io/odekake-navi/tokyo/tachikawa/showakinen-koen/ |
 | 5 | はまぎん こども宇宙科学館 | 屋内施設（雨の日OK） | https://odekakenavi.github.io/odekake-navi/kanagawa/yokohama-isogo/hamagin-space-science-center/ |
-| 6 | 鉄道博物館 | 博物館・科学館 | https://odekakenavi.github.io/odekake-navi/saitama/saitama-city/railway-museum/ |
+| 6 | 鉄道博物館 | 博物館・科学館 | https://odekakenavi.github.io/odekake-navi/saitama/saitama-omiya/railway-museum/ |
 | 7 | キッザニア東京 | 商業施設・屋内遊び場 | https://odekakenavi.github.io/odekake-navi/tokyo/koto/kidzania/ |
 | 8 | アンパンマンこどもミュージアム＆モール横浜 | 子ども向け人気施設 | https://odekakenavi.github.io/odekake-navi/kanagawa/yokohama-nishi/yokohama-anpanman/ |
 | 9 | 東京都水の科学館 | 無料・低料金施設 | https://odekakenavi.github.io/odekake-navi/tokyo/koto/mizunokagaku/ |
