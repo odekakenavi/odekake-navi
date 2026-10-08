@@ -6,42 +6,44 @@
 
 ## フォルダ構成
 
+リポジトリ内の置き場所と、公開されるURLは別々です。公開の直前に `tools/build-public.js` が組み立てるので、**公開URLは変わりません**。
+
 ```
 /
-├─ index.html             アプリ本体（データは data/ から読み込み）
-├─ service-worker.js      キャッシュ制御（ルート固定）
-├─ site-ui.js             特集ページ共通の翻訳ボタンなど（ルート固定・/odekake-navi/site-ui.js で読まれる）
-├─ manifest.webmanifest   PWA設定
-├─ sitemap.xml / robots.txt / llms.txt   検索・AI向け
-├─ BingSiteAuth.xml, google….html        検索エンジンの所有権確認用（消さない）
-├─ 画像                    header.webp, operator.webp, og-image.png, icon-192.png, pwa-*.png
-│
-├─ data/                  施設・ホテル・イベントのデータ
+├─ index.html             アプリ本体（公開URL: /）
+├─ data/                  施設・ホテル・イベントのデータ（公開URL: /data/）
 │   ├─ spots.json           施設データ
 │   ├─ hotels.json          ホテルデータ
 │   └─ event-data.json      イベント特集用データ（merge-event-data.js で spots.json に反映）
+├─ photo/                 画像（公開URLは /img/ になる）
+│
+├─ site/                  公開ページ
+│   ├─ area/                都道府県フォルダ（chiba, tokyo …）→ 公開URL /chiba/ …
+│   ├─ event/               イベント特集 → /event/
+│   ├─ season/              季節ページ → /season/
+│   ├─ feature/             purpose, free, rainy-day など → /purpose/ …
+│   └─ root-files/          ルートに置く必要があるファイル（→ /）
+│                           service-worker.js, site-ui.js, manifest.webmanifest, sitemap.xml, robots.txt, llms.txt,
+│                           404.html, 検索エンジンの確認用ファイル, アイコン, og-image.png など
 │
 ├─ tools/                 ページ生成・チェック用スクリプト（PCで実行）
-│   ├─ build-static-pages.js   施設ページ・地域ページの生成
+│   ├─ build-static-pages.js   施設ページ・地域ページ・季節ページの生成
 │   ├─ build-area-pages.js     複数市区町村をまとめたエリア特集の生成
 │   ├─ build-event-pages.js    イベント特集（/event/…）の生成
+│   ├─ place-build.js          生成結果（_build/）を正しい置き場所へ入れる
+│   ├─ build-public.js         公開用フォルダ（_public/）の組み立て（GitHub Actionsも使用）
+│   ├─ layout.js               置き場所と公開URLの対応表
 │   ├─ merge-event-data.js     event-data.json を spots.json に反映
 │   ├─ check-data-blocks.js    データ整合チェック（ファイルは書き換えない）
 │   └─ archive/                一回きりの作業ファイル
-│
-├─ backend/               サイトからは読まれない運用用コード
-│   ├─ weather-proxy-worker.js   天気APIのプロキシ（Cloudflare Worker）
-│   ├─ worker-hardening.js       Worker側の対策サンプル
-│   └─ gas-hardening.js          みんなのおでかけ（GAS）側の入力対策サンプル
-│
-├─ docs/                  作業報告・仕様メモ（seo-static-pages-report.md ＝静的ページ生成の報告書）
-├─ experiences/           （計画中・未作成）「実際に行ったよ」の実体験データ置き場。仕様は下の「実体験データの仕様」参照
-│
-└─ chiba/ tokyo/ kanagawa/ …   公開ページ（都道府県・市区町村・施設）
-   event/ season/ purpose/ free/ rainy-day/   特集ページ
+├─ backend/               サイトからは読まれない運用用コード（天気プロキシ、GASの対策サンプル）
+├─ docs/                  作業報告・仕様メモ
+└─ .github/workflows/pages.yml   公開用の設定（push すると自動で公開）
 ```
 
-公開URLになるフォルダは、フォルダ名を変えると検索結果・シェアされたURLが切れるため移動しないでください。
+- 新しい都道府県フォルダは `site/area/` に、新しい特集フォルダは `site/feature/` に入れるだけで、公開時に自動で最上位へ出ます。
+- 公開URLになるフォルダ名（`chiba`、`event` など）は、変えると検索結果・共有されたURLが切れるため、変更しないでください。
+- 同じURLに2つのファイルが重なる場合や、必須ファイルが無い場合、公開用の組み立てがエラーで止まり、公開されません。
 
 ## 更新の流れ（PCで作業するとき）
 
@@ -50,9 +52,22 @@
 ```
 node tools/check-data-blocks.js index.html
 node tools/merge-event-data.js data/spots.json data/event-data.json
-node tools/build-area-pages.js --index index.html --spots data/spots.json --sitemap sitemap.xml --out _build_area
+
+# ページの生成（出力は _build/ へ）→ 正しい置き場所へ入れる
+node tools/build-static-pages.js --out _build --keep-sitemap site/root-files/sitemap.xml
+node tools/build-event-pages.js --out _build
+node tools/place-build.js _build
+
+# エリア特集（出力は _build_area/ へ）
+node tools/build-area-pages.js --sitemap site/root-files/sitemap.xml --out _build_area
+node tools/place-build.js _build_area
+
+# 手元で確認したい時（公開時は GitHub Actions が自動で実行します）
+node tools/build-public.js --out _public
+node tools/build-static-pages.js --compare _public
 ```
 
+そのあと `git add -A`、`git commit`、`git push` で公開されます（公開の進み具合は GitHub の Actions タブで確認できます）。
 各スクリプトの詳しい使い方・オプションは、ファイル先頭のコメントを見てください。
 
 ## 実体験データの仕様（「📸 実際に行ったよ」・計画中）
