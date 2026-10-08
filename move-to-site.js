@@ -32,8 +32,13 @@ const STAY = new Set([
   'move-to-site.js',
 ]);
 const STAY_PATTERNS = [/^_build/];                    // ビルドの出力フォルダ（_build_area など）は公開しない
-// 公開しないが残したいファイルの移動先
-const TO_DOCS = new Map([['_template.json', 'docs/experiences-template.json']]);
+// 公開しないが残したいファイルの移動先（ルートに紛れていた作業用ファイル）
+const REDIRECT = new Map([
+  ['_template.json', 'docs/experiences-template.json'],
+  ['facility-rollout-list.json', 'tools/facility-rollout-list.json'],   // 静的ページ生成ツールの入力。公開は不要
+]);
+// 役目を終えた作業用ファイル（公開されないよう削除する）
+const REMOVE = ['reorganize.sh', 'README new.md', 'README_new.md', 'README_merged.md'];
 
 const WORKFLOW = `name: Deploy site to GitHub Pages
 
@@ -75,23 +80,26 @@ if (!fs.existsSync(path.join(ROOT, '.git'))) die('ここはGitリポジトリの
 if (!fs.existsSync(path.join(ROOT, 'index.html'))) die('index.html が見つかりません。リポジトリ直下で実行してください。');
 if (fs.existsSync(path.join(ROOT, SITE))) die(`${SITE}/ が既にあります。二重に実行しないでください。`);
 try { git(['--version']); } catch (e) { die('git が使えません。Git をインストールしてください。'); }
-const dirty = git(['status', '--porcelain', '--untracked-files=no']).trim();   // 追跡中のファイルの未コミット変更だけを確認
+const dirty = git(['status', '--porcelain', '--untracked-files=no']).split('\n')
+  .filter(l => l.trim() && !/move-to-site\.js$/.test(l)).join('\n').trim();   // 追跡中のファイルの未コミット変更だけを確認（このスクリプト自身は除く）
 if (dirty && !FORCE) die('未コミットの変更があります。先にコミットするか、git stash で退避してから実行してください。\n' + dirty.split('\n').slice(0, 10).join('\n'));
 const untracked = git(['ls-files', '--others', '--exclude-standard']).trim().split('\n').filter(Boolean);
 
 // ---- 移動対象を決める
 const entries = fs.readdirSync(ROOT).sort();
-const toSite = [], toDocs = [], stay = [];
+const toSite = [], toDocs = [], toRemove = [], stay = [];
 for (const name of entries) {
-  if (TO_DOCS.has(name)) { toDocs.push(name); continue; }
+  if (REMOVE.includes(name)) { toRemove.push(name); continue; }
+  if (REDIRECT.has(name)) { toDocs.push(name); continue; }
   if (STAY.has(name) || STAY_PATTERNS.some(re => re.test(name))) { stay.push(name); continue; }
   toSite.push(name);
 }
 
 console.log(RUN ? '=== 実行モード ===' : '=== 予行演習（何も変更しません。--run で実行）===');
 console.log(`\nルートに残す（${stay.length}）: ${stay.join('  ')}`);
-console.log(`\ndocs/ へ移す（${toDocs.length}）:`);
-for (const n of toDocs) console.log(`  ${n} → ${TO_DOCS.get(n)}`);
+console.log(`\ndocs/・tools/ へ移す（${toDocs.length}）:`);
+for (const n of toDocs) console.log(`  ${n} → ${REDIRECT.get(n)}${fs.existsSync(path.join(ROOT, REDIRECT.get(n))) ? '   ⚠ 移動先に同名ファイルが既にあります（移動せず、手動で確認）' : ''}`);
+console.log(`\n削除する（${toRemove.length}）: ${toRemove.join('  ') || 'なし'}`);
 console.log(`\n${SITE}/ へ移す（${toSite.length}）:`);
 for (const n of toSite) {
   const isDir = fs.statSync(path.join(ROOT, n)).isDirectory();
@@ -116,7 +124,15 @@ function move(src, dst) {
   catch (e) { fs.renameSync(path.join(ROOT, src), path.join(ROOT, dst)); }   // 未追跡のものは普通に移動
 }
 fs.mkdirSync(path.join(ROOT, SITE), { recursive: true });
-for (const n of toDocs) move(n, TO_DOCS.get(n));
+for (const n of toDocs) {
+  const dst = REDIRECT.get(n);
+  if (fs.existsSync(path.join(ROOT, dst))) { console.log(`  スキップ ${n}（${dst} が既にあるため。内容を見比べて、新しい方を残してください）`); continue; }
+  move(n, dst);
+}
+for (const n of toRemove) {
+  try { git(['rm', '-q', '--', n]); } catch (e) { fs.unlinkSync(path.join(ROOT, n)); }
+  console.log(`  削除 ${n}`);
+}
 for (const n of toSite) { process.stdout.write(`  移動 ${n} … `); move(n, `${SITE}/${n}`); console.log('OK'); }
 
 const wf = path.join(ROOT, '.github', 'workflows', 'pages.yml');
