@@ -696,11 +696,6 @@
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://odekakenavi.github.io/odekake-navi/kanagawa/yokohama-city/</loc>
-<changefreq>weekly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
 <loc>https://odekakenavi.github.io/odekake-navi/kanagawa/yokohama-hodogaya/</loc>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
@@ -1002,11 +997,6 @@
 </url>
 <url>
 <loc>https://odekakenavi.github.io/odekake-navi/saitama/saitama-chuo/</loc>
-<changefreq>weekly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://odekakenavi.github.io/odekake-navi/saitama/saitama-city/</loc>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -1646,7 +1636,7 @@
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://odekakenavi.github.io/odekake-navi/saitama/saitama-city/railway-museum/</loc>
+<loc>https://odekakenavi.github.io/odekake-navi/saitama/saitama-omiya/railway-museum/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
@@ -1701,7 +1691,7 @@
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://odekakenavi.github.io/odekake-navi/kanagawa/yokohama-city/cupnoodles-museum/</loc>
+<loc>https://odekakenavi.github.io/odekake-navi/kanagawa/yokohama-naka/cupnoodles-museum/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
