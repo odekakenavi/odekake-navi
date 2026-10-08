@@ -680,8 +680,8 @@
   {
     "region": "埼玉",
     "name": "鉄道博物館",
-    "slug": "saitama/saitama-city/railway-museum",
-    "area": "さいたま市大宮",
+    "slug": "saitama/saitama-omiya/railway-museum",
+    "area": "さいたま市大宮区",
     "lat": 35.920556,
     "lng": 139.618333,
     "ages": [
@@ -1206,8 +1206,8 @@
   {
     "region": "神奈川",
     "name": "カップヌードルミュージアム横浜",
-    "slug": "kanagawa/yokohama-city/cupnoodles-museum",
-    "area": "横浜市みなとみらい",
+    "slug": "kanagawa/yokohama-naka/cupnoodles-museum",
+    "area": "横浜市中区・みなとみらい",
     "lat": 35.4564,
     "lng": 139.6337,
     "ages": [
