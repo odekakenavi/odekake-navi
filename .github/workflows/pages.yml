@@ -22,9 +22,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # リポジトリの置き場所（site/area など）から、公開用の形（_public/）を組み立てる。重なり・不足があればここで止まり、公開されない。
+      - name: Assemble public site
+        run: node tools/build-public.js --out _public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _public
       - id: deployment
         uses: actions/deploy-pages@v4
