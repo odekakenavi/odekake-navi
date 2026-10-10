@@ -1313,7 +1313,7 @@ function openDetail(spot,silent,backTarget){if(backTarget!==void 0){__detailBack
       <button type="button" class="abtn" data-act="copylink">\u{1F517} \u30EA\u30F3\u30AF\u3092\u30B3\u30D4\u30FC</button>
       <button type="button" class="abtn ${isExcluded?"on excluded":""}" data-act="exclude">\u{1F6AB} \u9664\u5916</button>
       <button type="button" class="abtn ${isCompared?"on compared":""}" data-act="compare">\u2696\uFE0F \u6BD4\u8F03\u306B${isCompared?"\u8FFD\u52A0\u6E08\u307F":"\u8FFD\u52A0"}</button>
-    </div>\n    <div class="detail-more-title">\u{1F4CB} \u8A73\u7D30\u60C5\u5831</div>\n    ${stayTimeLabel?`<div class="detail-stay-time">${stayTimeLabel}</div>`:""}\n    ${kidsHighlightHtml(spot)}
+    </div>\n    <div class="detail-more-title">\u{1F4CB} \u8A73\u7D30\u60C5\u5831</div>\n    ${stayTimeLabel?`<div class="detail-stay-time">${stayTimeLabel}</div>`:""}\n    ${(()=>{const kh=kidsHighlightHtml(spot);return kh?`<details class="detail-fold detail-fold-kids" data-fold="kids"${foldAttr("kids",false)}><summary>\u{1F392} \u3053\u3093\u306A\u5B50\u9023\u308C\u306B\u304A\u3059\u3059\u3081</summary><div class="detail-fold-body">${kh}</div></details>`:""})()}
     <details class="detail-fold" data-fold="hours"${foldAttr("hours",true)}>
     <summary>\u{1F552} \u55B6\u696D\u6642\u9593\u30FB\u6DF7\u96D1\u30FB\u5929\u6C17</summary>
     <div class="detail-fold-body">
@@ -1914,6 +1914,8 @@ renderSeoAuditMode();try{window.dispatchEvent(new Event("odekakeAppReady"))}catc
 .detail-fold[open]>summary{border-bottom:1px solid var(--line)}
 .detail-fold-body{padding:0 14px 14px}
 .detail-fold-body>.detail-section:first-child{margin-top:12px}
+.detail-fold-kids .detail-section>h3{display:none}
+.detail-fold-kids .detail-section{margin-top:12px}
 .minna-spot-item[hidden]{display:none}
 .minna-spot-toggle{display:block;width:100%;margin-top:10px;padding:10px;min-height:44px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font-size:13px;font-weight:700;cursor:pointer}
 .minna-spot-section{margin:18px 16px 4px;padding:14px;background:var(--cream);border:1px solid var(--line);border-radius:16px}
