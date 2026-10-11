@@ -2203,7 +2203,7 @@ document.addEventListener("visibilitychange",function(){if(!document.hidden&&ena
 apply();
 })();</script>
 <!-- ===== /季節の演出 ===== -->
-<style id="sheet-back-style">/* 各画面の「← 戻る」ボタン（.sheet-back*）。 */.sheet-backbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 6px;padding:2px 0;background:var(--paper)}.sheet-backbar .sheet-close{margin:0}.sheet-back-btn{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 14px 0 10px;border:none;border-radius:999px;background:#F1EADA;color:var(--ink);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}.sheet-back-btn:active{background:#E7DFCF}</style>
+<style id="sheet-back-style">/* 各画面の「← 戻る」ボタン（.sheet-back*）。 */.sheet-backbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 6px;padding:2px 0}.sheet-backbar .sheet-close{margin:0}.sheet-back-btn{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 14px 0 10px;border:none;border-radius:999px;background:#F1EADA;color:var(--ink);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}.sheet-back-btn:active{background:#E7DFCF}</style>
 <script>(function(){"use strict";try{
 /* 各画面（.sheet-overlay）に「← 戻る」を付け、画面の遷移履歴をたどって1つ前の画面に戻る。アプリ本体のコードには触れない。 */
 var NO_BAR={mapOverlay:1,diagnosisOverlay:1};
@@ -2259,7 +2259,7 @@ btn.addEventListener("click",function(e){e.stopPropagation();goBack(ov)});
 bar.appendChild(btn);
 var first=sheet.firstElementChild;
 sheet.insertBefore(bar,first);
-if(first.classList&&first.classList.contains("sheet-close"))bar.appendChild(first);
+if(first.classList&&first.classList.contains("sheet-close")&&ov.id!=="minnaListOverlay"&&ov.id!=="minnaCreatorOverlay")bar.appendChild(first);
 }
 var sheetObs=new MutationObserver(function(recs){var seen=[];recs.forEach(function(r){if(seen.indexOf(r.target)<0){seen.push(r.target);ensure(r.target)}})});
 overlays.forEach(function(o){var s=o.querySelector(".sheet");if(!s)return;sheetObs.observe(s,{childList:true});ensure(s)});
