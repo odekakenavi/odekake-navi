@@ -67,6 +67,19 @@
       "note": "購入日から1年間有効。購入は園の券売所のみ。払い戻し・再発行なし。",
       "confirmedAt": "2026-10",
       "url": "https://www.tokyo-zoo.net/annual_pass/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "園内の休憩所やベンチで食べられます。",
+      "source": "web",
+      "checkedAt": "2026年10月12日",
+      "sheetNote": "【口コミからの目安・実際と異なる場合があります】園内に芝生の広場が少なく、レジャーシートを広げる場所はほとんどないという声が複数あります。ベンチやテーブルのある休憩所で食べる人が多いようです。"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "西園には屋根付きのテラスや屋内の休憩所があります。混雑する日は日陰の席が埋まりやすいので、早めに確保すると安心です。",
+      "source": "web",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -150,7 +163,28 @@
         "note": "夏のイベント「爽快夏まつり」。2026年は水しぶきを浴びる人気企画や夏限定の展示、子ども向けワークショップがあった。来年の内容・日程は発表待ち。"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "水族館で購入した飲食物以外の持ち込みはご遠慮いただいています。水筒・ペットボトルの飲み物は持ち込めます（屋外の「マリンガーデン」で飲めます）。エントランスのゲストルーム（無人休憩スペース）のテーブル席なら飲食できますが、席数に限りがあります。",
+      "allergy": "ask",
+      "allergyNote": "サンシャインシティ公式サイトで、各店のアレルギー対応を確認できます。",
+      "nearbyLunch": [
+        {
+          "name": "サンシャインシティ内のレストラン街",
+          "note": "水族館は再入場ができないため、食事は入館の前後にとります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://sunshinecity.jp/aquarium/information/faq.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "展示の多くは屋内ですが、屋外エリア「マリンガーデン」の一部は雨を遮るものがなく、傘が必要です（傘の貸出はありません）。",
+      "source": "official",
+      "sourceUrl": "https://sunshinecity.jp/aquarium/information/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -214,6 +248,29 @@
       "note": "スマートフォンで入場できるデジタル年パスがおすすめと公式が案内しています。障がい者手帳をお持ちの方は年会費が半額です。",
       "confirmedAt": "2026-10",
       "url": "https://www.sumida-aquarium.com/about/price/"
+    },
+    "food": {
+      "allergy": "ask",
+      "allergyNote": "東京ソラマチ公式サイトで、アレルギー対応メニューを検索できます。",
+      "checkedAt": "2026年10月12日",
+      "source": "official",
+      "bento": "ok",
+      "bentoNote": "ゴミは持ち帰りです。館内では椅子やソファに座って食べ、食べ歩きはできません。",
+      "babyFoodNote": "給湯付きのベビー休憩室・授乳室が館内に2か所あります。",
+      "nearbyLunch": [
+        {
+          "name": "東京ソラマチ内の飲食店",
+          "note": "再入場スタンプで一度出られるので、館外で食事をしてから戻れます。"
+        }
+      ],
+      "sourceUrl": "https://www.sumida-aquarium.com/faq/"
+    },
+    "heat": {
+      "roof": "full",
+      "note": "展示はすべて屋内で、傘をさして見学する場所はありません。",
+      "source": "official",
+      "sourceUrl": "https://www.sumida-aquarium.com/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -253,7 +310,18 @@
     },
     "recommendedBooking": "asoview",
     "desc": "約100種のお仕事・社会体験ができる屋内型施設。時間入れ替え制で1日がっつり滞在するタイプ。",
-    "tip": "人気の予約は争奪戦。開始直後の枠を狙うのがコツ。"
+    "tip": "人気の予約は争奪戦。開始直後の枠を狙うのがコツ。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "衛生管理のため、お弁当やおやつなど飲食物の持ち込みはお断りと案内されています。アレルギー除去食、離乳食、水筒、おひとり様1本までのペットボトル飲料は持ち込めます。園内の飲食店は、RF1、シャウエッセン、ピザーラエクスプレス、モスバーガーです。大人の一時退場は、退場時間の30分前までできます（団体向けFAQの記載）。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は持ち込めます。",
+      "allergy": "ask",
+      "allergyNote": "食物アレルギーがある場合、アレルギー除去食の持ち込みや低アレルゲンメニュー（モスバーガー）の利用ができます。事前に相談します。",
+      "source": "official",
+      "sourceUrl": "https://www.kidzania.jp/group_info/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -292,7 +360,13 @@
     "recommendedBooking": "asoview",
     "desc": "レゴブロックづくしの屋内施設。4Dシネマや小さめのライド系アトラクションもある。",
     "tip": "大人だけの入場は不可、子ども同伴が条件。",
-    "layoutCompact": true
+    "layoutCompact": true,
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトの案内として、飲食物の持ち込みはご遠慮ください、汗をかいた子への給水のための水筒は持ち込める、アレルギーなど食事制限のある子の食事は持ち込めると紹介する記事があります。公式サイトで最新の案内を確認できていません。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -349,7 +423,20 @@
     },
     "desc": "恐竜の骨格標本から宇宙・人体まで、展示のスケールが大きい。じっくり読む子は1日でも足りない。",
     "tip": "未就学児にはやや文字情報が多め。シアター360は整理券制。",
-    "strollerRental": true
+    "strollerRental": true,
+    "food": {
+      "bento": "ok",
+      "bentoNote": "持参した飲食物は、日本館地下1階のラウンジ（約100席）と地球館屋上のハーブガーデンで食べられます。展示室内の飲食はできません。蓋つきの水筒は持ち込めます。ハーブガーデンは天候不良時は閉鎖されます。",
+      "nearbyLunch": [
+        {
+          "name": "館内レストラン「ムーセイオン」・カフェ「くじらカフェ」",
+          "note": "ムーセイオンは地球館中2階（140席）、くじらカフェは日本館地下1階のラウンジ内（38席）です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.kahaku.go.jp/riyou/kannai-guide/restaurant.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -479,6 +566,25 @@
       "note": "発行日から1年間、本人のみ。入園料を取る全国の国営公園にも入園できます。駐車料金は普通車900円が800円になります（年パス自体に駐車券は含まれません）。",
       "confirmedAt": "2026-10",
       "url": "https://www.showakinen-koen.jp/park-information/price/"
+    },
+    "heat": {
+      "note": "「みんなの原っぱ」は日差しを遮るものが少ない広い芝生です。夏は帽子や日よけを用意し、木陰のある場所での休憩も考えておくと安心です。",
+      "source": "web",
+      "checkedAt": "2026年10月12日"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "レストラン・カフェの店内には持ち込めません。ゴミは持ち帰りです。雨の日は東屋が使えます（人数に限りあり）。",
+      "sheetNote": "レジャーシートは園内の売店（立川口・西立川口・原っぱ南など）でも販売しています。",
+      "nearbyLunch": [
+        {
+          "name": "園内のレストラン・カフェ",
+          "note": "ふれあい広場レストラン、渓流広場レストラン（軽食）、ぎんなん茶屋などがあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.showakinen-koen.jp/park-information/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -537,7 +643,25 @@
         "type": "event"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "お弁当・ファストフード類の持ち込みはできません。水筒などのドリンク類は持ち込めます。レストランで買ったお食事は、レストラン内で食べます。",
+      "babyFood": "ok",
+      "babyFoodNote": "ベビーフードは持ち込めます。",
+      "allergy": "ask",
+      "allergyNote": "食事に制約がある場合は、アレルギー対応食を館内レストランに持ち込めます。レストランではドリンク代がかかる場合があり、同行者はメニューの注文が必要です。",
+      "source": "official",
+      "sourceUrl": "https://www.puroland.jp/food/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "full",
+      "note": "屋内型のテーマパークです。",
+      "source": "official",
+      "sourceUrl": "https://www.puroland.jp/guide/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -615,6 +739,26 @@
         "type": "themepark",
         "note": "夏は、都内有数のレジャープール「プールWAI」が開く。2026年は流れるプールやスライダーのほか、ナイトプールもあった。来年の内容・日程は発表待ち。"
       }
+    },
+    "rideLimits": [
+      {
+        "name": "リポビタンロケット☆ルナ",
+        "minCm": 110,
+        "note": "130cm未満は付き添いが必要（中学生以上の同乗）"
+      },
+      {
+        "name": "ファイト イッパーツ！",
+        "minCm": 105,
+        "note": "120cm未満および6歳未満は付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.yomiuriland.com/",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】今回の調査では公式サイトの記載は見つかりませんでした。紹介記事や口コミでは、お弁当は持ち込めるが、ビン・缶・アルコールは不可という声が複数あります。園内にはお弁当を食べられる広場や休憩所があるという紹介が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -683,6 +827,23 @@
       "note": "多摩動物公園でのみ有効・販売。他園とは共通ではありません。",
       "confirmedAt": "2026-10",
       "url": "https://www.tokyo-zoo.net/annual_pass/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "広場や無料休憩所で食べられます。サバンナキッチン、ウォッチングセンター内のズーカフェ、コアラ館下売店も無料休憩所を兼ねています。",
+      "babyFoodNote": "離乳食を温めたいときは、サバンナキッチンの係員に申し出ると電子レンジを借りられます。ウォッチングセンター内とサバンナキッチンの授乳室には、調乳用の温水器があります。",
+      "allergy": "label",
+      "allergyNote": "臨時売店を除くすべての店舗にアレルゲン一覧表があります。係員に声をかけてください。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-zoo.net/tama/visitor-info/faq/index.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "雨の日や日差しの強い日は、屋根付きの広場（はやし広場・さくら広場・シフゾウ広場）でお弁当を食べられます。丘陵地にあるため急な坂道が多く、歩いて1周するだけで2〜3時間かかります。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-zoo.net/tama/visitor-info/faq/index.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -741,7 +902,15 @@
       "asoview": "https://www.asoview.com/spot/11103ae3292035207/"
     },
     "desc": "実物車両の展示に加え、運転シミュレータや模型ジオラマも充実。電車好きなら1日いける。",
-    "tip": "シミュレータは有料・整理券制。到着したらまず確保を。"
+    "tip": "シミュレータは有料・整理券制。到着したらまず確保を。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めますが、館内の飲食は決められた場所に限られます。屋外は本館屋上のパノラマデッキと南館屋上のトレインテラスのベンチ、屋内は3階の新幹線ラウンジです。展示室内は飲食禁止です。",
+      "babyFoodNote": "調乳器はベビー休憩室にあります。",
+      "source": "official",
+      "sourceUrl": "https://www.railway-museum.jp/contact/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -789,6 +958,13 @@
         "type": "event",
         "note": "開業以来初のハロウィーン特別企画「闇の魔術のハロウィーン」。100個以上のジャック・オー・ランタンが浮かぶ大広間、館内に現れる死喰い人（デスイーター）、魔法省でのライブパフォーマンス、禁じられた森の吸魂鬼などの演出があり、限定フードも登場する。闇の勢力がテーマの内容なので、お子さんの年齢に合うか公式サイトで確認してから。"
       }
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "食べ物の持ち込みはできません。水筒や、フタ付きのペットボトルなど、中身がこぼれない容器の飲み物は持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.wbstudiotour.jp/visit-guide/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -825,7 +1001,21 @@
     "officialUrl": "https://www.tokyo-park.or.jp/park/yoyogi/",
     "desc": "約54haの広さで、入場無料の都立公園。北側は森、南側は広場で、中央広場の芝生や噴水、約800本の桜がある。自転車センターで自転車を借りて、1周約1.8kmのサイクリングコースを走れる（子ども用の練習コースもある）。",
     "tip": "駐車場は有料（65台）なので電車で。JR原宿駅から徒歩約3分、東京メトロ千代田線の代々木公園駅から徒歩約3分。",
-    "layoutCompact": false
+    "layoutCompact": false,
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトに飲食のルールの記載は見つかりませんでした。中央広場などの芝生でお弁当を食べたという紹介・口コミが複数あります。",
+      "sheet": "ok",
+      "sheetNote": "【口コミからの目安・実際と異なる場合があります】芝生の広場にレジャーシートを敷いて過ごす人の紹介が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    },
+    "heat": {
+      "shade": "some",
+      "note": "【口コミからの目安・実際と異なる場合があります】園内の樹木が多く、木陰で休めるという紹介が複数あります。中央広場には池や噴水があり、水遊びスペースがあるという紹介もあります。夏は帽子と水筒があると安心です。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -856,7 +1046,13 @@
     "lunch": "公園内に軽食店あり。IMAショッピングセンターも隣接。",
     "officialUrl": "https://www.tokyo-park.or.jp/park/hikarigaoka/",
     "desc": "練馬区内最大の都立公園で、入園無料。約6haの広い芝生広場や、複合遊具が3つとネットジャングルジム・うんていがそろう「ちびっこ広場」、夏に水遊びができる流れがある。バードサンクチュアリや、秋に黄金色になるいちょう並木も見どころ。",
-    "tip": "入口のけやき広場からちびっこ広場まで500〜600mあるので、小さな子連れはベビーカーがあると安心。バーベキューは予約制。都営大江戸線の光が丘駅から徒歩約8分。"
+    "tip": "入口のけやき広場からちびっこ広場まで500〜600mあるので、小さな子連れはベビーカーがあると安心。バーベキューは予約制。都営大江戸線の光が丘駅から徒歩約8分。",
+    "heat": {
+      "note": "東京都の公園協会の案内では、芝生広場で、ポップアップ型のワンタッチテントを日よけに使えます（9〜17時）。悪天候の日は使えません。少なくとも1方向は開けて使います。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/hikarigaoka/news/2024/park_info_3.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -894,6 +1090,12 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000194002/",
       "asoview": "https://www.asoview.com/spot/spot0000000655/"
+    },
+    "heat": {
+      "note": "東京都の公園協会の案内では、園内の草地広場全域で、1辺2m以下のポップアップテント・ワンタッチテントを日よけに使えます（通年・9〜17時、桜の時期を除く）。ペグ打ちや樹木を使ったロープ固定はできません。混雑時は控え、少なくとも1方向は開けて使います。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/toneri/news/2022/50524.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -932,7 +1134,15 @@
       "jalan": "https://www.jalan.net/kankou/spt_11341ah3330041062/"
     },
     "layoutCompact": false,
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】今回の調査では公式サイトの記載は見つかりませんでした。紹介記事や現地レポートでは、お弁当を持ち込んで芝生広場や机・椅子のある場所で食べられるという声が複数あります。コンロなどの火気類は持ち込めません。",
+      "sheet": "ok",
+      "sheetNote": "【口コミからの目安・実際と異なる場合があります】西口の芝生広場などで、レジャーシートやワンタッチサンシェードを広げて過ごす人の紹介が複数あります。大型テントとタープは許可が必要または不可という紹介があります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -1011,7 +1221,20 @@
         "note": "夏には夜間イベント「サマーナイトZOO」（開園を20時まで延長）や打ち上げ花火がある。花火の観覧は無料（別途入園料が必要）。来年の内容・日程は発表待ち。"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "無料休憩所や芝生エリアで食べられます。ゴミは持ち帰りです。プールの利用時も食べ物は持ち込めます（飲み物はペットボトルか水筒で、ビンは不可）。",
+      "source": "official",
+      "sourceUrl": "https://www.tobuzoo.com/faq/guide/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "夏のプールは日陰が少ないため、ポップアップテント・ワンタッチテントの持ち込みが案内されています。骨組みのあるフレーム型テントやタープは使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.tobuzoo.com/faq/pool/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -1154,7 +1377,13 @@
         "note": "花火イベント「花火シンフォニア」がある（屋外開催で、雨天時は変更の場合あり）。内容の詳細は公式サイトで確認を。来年の日程は発表待ち。"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】今回の調査では公式サイトの記載は見つかりませんでした。紹介記事や口コミでは、島内の屋外（芝生広場、ベンチ、机と椅子のスペース）でお弁当を食べられる一方、水族館の館内は飲食できず、ショースペースだけが例外という案内が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -1209,6 +1438,17 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/155472/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000179484/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "ミュージアム（2・3階）内での飲食はご遠慮くださいと案内されています。水筒やペットボトルなど密閉できる容器の飲み物は持ち込めます。1階フードコートは、施設の店舗で買った飲食物のみ食べられます（混雑時は60分以内）。",
+      "babyFood": "ok",
+      "babyFoodNote": "アレルギー対応食と離乳食は、1階フードコートに持ち込めます。赤ちゃんのミルクは、授乳室を使います。",
+      "allergy": "ask",
+      "allergyNote": "アレルギー対応食は持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.yokohama-anpanman.jp/qa/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -1251,7 +1491,14 @@
       "jalan": "https://www.jalan.net/kankou/spt_guide000000191233/",
       "asoview": "https://www.asoview.com/base/162764/"
     },
-    "layoutCompact": true
+    "layoutCompact": true,
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食物の持ち込みはご遠慮くださいと案内されています。4階の「NOODLES BAZAAR -ワールド麺ロード-」でも、そこで提供する飲食物以外は持ち込めません。麺料理は1食500円（ハーフサイズ）で、持ち帰りと店外への持ち出しはできません。",
+      "source": "official",
+      "sourceUrl": "https://www.cupnoodles-museum.jp/ja/yokohama/guide/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -1309,6 +1556,13 @@
       "note": "デジタル会員証は5,300円。繁忙期の入場事前予約制の時間帯はデジタル会員証を使えません。カード会員証は臨時休館日以外すべて利用可。",
       "confirmedAt": "2026-10",
       "url": "https://www.enosui.com/member.php"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食物は持ち込めます（アルコール類は不可）。水槽展示エリアでは食べられません。屋根のない屋外ではトビが食べ物をねらうことがあるので、注意が必要です。",
+      "source": "official",
+      "sourceUrl": "https://www.enosui.com/faq.php",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -1370,6 +1624,12 @@
     "tip": "ベビーカーのまま長時間歩ける舗装路が多く、乳幼児連れの散歩に向く。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_14104ah3330044192/"
+    },
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -1456,7 +1716,41 @@
         "url": "https://www.tokyodisneyresort.jp/treasure/christmas2026/tdl/",
         "source": "ユーザー提供の調査表（2026-09-28）。公式ページでの確認は未完了"
       }
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "ベイマックスのハッピーライド",
+        "minCm": 81,
+        "note": "お子さまをひざに乗せての利用は不可。1人で座って安定した姿勢を保てることが必要"
+      },
+      {
+        "name": "スプラッシュ・マウンテン",
+        "minCm": 90
+      },
+      {
+        "name": "ガジェットのゴーコースター",
+        "minCm": 90
+      },
+      {
+        "name": "ビッグサンダー・マウンテン",
+        "minCm": 102
+      },
+      {
+        "name": "スター・ツアーズ：ザ・アドベンチャーズ・コンティニュー",
+        "minCm": 102
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.tokyodisneyresort.jp/tdl/attraction.html",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "持参したお弁当はパーク内では食べられず、パーク外のピクニックエリアで食べます。あめ・ガム・小さなお子さまのおやつ、水筒、ペットボトル（アルコールを含まない飲み物）は持ち込めます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食はレストランやショーレストランに持ち込めます。湯煎や電子レンジに対応しているレストランでは、離乳食もあたためてもらえます（当日キャストに相談）。レストランでの販売はありません。",
+      "source": "official",
+      "sourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa64b5469793792a81212/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -1545,7 +1839,54 @@
         "url": "https://www.tokyodisneyresort.jp/treasure/christmas2026/tds/",
         "source": "ユーザー提供の調査表（2026-09-28）。公式ページでの確認は未完了"
       }
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "ニモ＆フレンズ・シーライダー",
+        "minCm": 90
+      },
+      {
+        "name": "フランダーのフライングフィッシュコースター",
+        "minCm": 90
+      },
+      {
+        "name": "ソアリン：ファンタスティック・フライト",
+        "minCm": 102
+      },
+      {
+        "name": "タワー・オブ・テラー",
+        "minCm": 102
+      },
+      {
+        "name": "ピーターパンのネバーランドアドベンチャー",
+        "minCm": 102
+      },
+      {
+        "name": "インディ・ジョーンズ・アドベンチャー：クリスタルスカルの魔宮",
+        "minCm": 117
+      },
+      {
+        "name": "レイジングスピリッツ",
+        "minCm": 117,
+        "maxCm": 195,
+        "note": "195cmを超える方は利用不可"
+      },
+      {
+        "name": "センター・オブ・ジ・アース",
+        "minCm": 117
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.tokyodisneyresort.jp/tds/attraction.html",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "持参したお弁当はパーク内では食べられず、パーク外のピクニックエリアで食べます。あめ・ガム・小さなお子さまのおやつ、水筒、ペットボトル（アルコールを含まない飲み物）は持ち込めます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食はレストランやショーレストランに持ち込めます。湯煎や電子レンジに対応しているレストランでは、離乳食もあたためてもらえます（当日キャストに相談）。レストランでの販売はありません。",
+      "source": "official",
+      "sourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa64b5469793792a81212/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -1611,7 +1952,18 @@
         "note": "夏の夜間イベント「サマーナイトファーム」。営業を夜まで延長し、約15分の打ち上げ花火や夕方限定の動物ふれあい、ライトアップされた「ナイト遊園地」を楽しめる。芝生に寝転がって花火を見られる。来年の内容・日程は発表待ち。"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "レストランへの飲食物の持ち込みはご遠慮くださいと案内されています（場内で購入したものと離乳食を除く）。屋外でお弁当を食べられるかは、公式サイトに明記が見つかりませんでした。紹介記事では、芝生の広場でお弁当を食べられるという声が複数あります。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、レストランに持ち込めます。",
+      "allergy": "ok",
+      "allergyNote": "アレルギー対応食品は、レストランに持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.motherfarm.co.jp/service/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -1684,6 +2036,18 @@
       "note": "大人のみの販売です。更新は7,500円。小人・幼児は年パスがなく、ドルフィンドリームクラブ（大人12,500円・小人7,500円・幼児5,000円）になります。",
       "confirmedAt": "2026-10",
       "url": "https://www.kamogawa-seaworld.jp/price_ticket/annual_passport/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトの案内として、お弁当は持ち込めるがレストラン内では食べられず、園内のベンチやテーブルを使うと紹介されています。屋外のパラソル付きテーブル席は、サーフスタジアム手前やスタジアムの間などにあるという紹介が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "【口コミからの目安・実際と異なる場合があります】屋外のパラソル席はありますが、雨の日に持ち込んだ食事を食べられる屋内のテーブル席は見当たらないという紹介があります。雨予報の日はレストランの利用も考えておくと安心です。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -1735,7 +2099,20 @@
         "type": "play"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めます。園内に芝生広場があり、レストランメルヘンの屋外席のBBQは食材の持ち込みができません。",
+      "source": "official",
+      "sourceUrl": "https://www.park-funabashi.or.jp/and/faq.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "幅2.2m×奥行2.2m×高さ1.5m未満のテントは持ち込めます。金属の支柱で支えるテントや、ロープで固定するもの（タープ含む）は持ち込めません。",
+      "source": "official",
+      "sourceUrl": "https://www.park-funabashi.or.jp/and/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -1808,6 +2185,21 @@
       "note": "1回の料金は、通常期の入園料1,000円と駐車料金1,000円（乗用車）の合計です。年パスの人が同乗していれば、その車の駐車料金はかかりません。イルミネーション期間は入園料も駐車料金も上がるため、より早く元が取れます。小人（4歳〜小学生）2,500円、シニア（65歳以上）4,500円。",
       "confirmedAt": "2026-10",
       "url": "https://t-doitsumura.co.jp/hour-fee/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "持ち込んだ飲食物は、芝生広場かマーケットエリア内のフードテラスで食べます。飲食店内への持ち込みと、バーベキューエリアへの食材の持ち込みはできません。",
+      "sheet": "ok",
+      "sheetNote": "園内中央の芝生広場で、レジャーシートを広げて食事ができます。",
+      "source": "official",
+      "sourceUrl": "https://t-doitsumura.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "テントは、芝生の上であれば立てられます（公式FAQ）。",
+      "source": "official",
+      "sourceUrl": "https://t-doitsumura.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -1906,6 +2298,20 @@
       "note": "購入日から1年間有効。春のネモフィラ・秋のコキアの季節料金期間も追加なしで入園できます。駐車券付きは別料金です。入園料を取る全国の国営公園でも使えます。",
       "confirmedAt": "2026-10",
       "url": "https://hitachikaihin.jp/guide/ticket/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持ち込みは自由です。芝生やベンチのほか、グラスハウス、記念の森レストハウス、テラスハウス、グリーン工房などの建物内でも食べられます。",
+      "source": "official",
+      "sourceUrl": "https://hitachikaihin.jp/faq.php?c=1&code=10&lc=0&mode=detail",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "グラスハウス、記念の森レストハウス、テラスハウス、グリーン工房などの建物内で食事ができます。大型テントは持ち込めませんが、2メートル四方までは持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.hitachikaihin.jp/guide/forbidden.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -1968,7 +2374,13 @@
         "note": "「ハロウィンアクアワールド2026」。エトピリカの水槽がハロウィン仕様の装飾になり、「もぐもぐタイム」は水中給餌の特別版（11:45／15:00）。期間中の「NIGHT AQUAWORLD」もハロウィン版で、10/31にはボランティアスタッフによるハロウィンクラフト体験もある。"
       }
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトの「館内に持ち込めないもの」には飲食物が挙がっていません。紹介記事では、お弁当を持ち込んで、フードコート・リラックスカフェ マーメイド・多目的ホール・オーシャンテラスで食べられるという声が複数あります。当日中は再入場できます（公式）。【お知らせ】公式サイトによると、フードコートと多目的スペースは整備事業のため2026年11月1日〜2027年3月中旬は閉鎖されます。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "栃木",
@@ -2018,7 +2430,26 @@
     "tip": "標高が高く夏でも涼しいが、朝晩は羽織るものを。",
     "layoutCompact": false,
     "strollerRental": true,
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "室内型レストランへの持ち込みはできません。2階無料休憩所か王国ファームエリアの席で食べられます。レストランでのお弁当の預かりや、冷蔵設備の貸し出しはありません。",
+      "sheetNote": "雨の日は、王国タウンの入場ゲート横2階の無料休憩室（室内）か、王国展望レストラン横の芝生広場（屋外）が案内されています。2階無料休憩室は、団体の利用状況によって時間の制限や利用できない日があります。",
+      "babyFood": "ok",
+      "babyFoodNote": "同行の方がレストランで食事をするなら、離乳食も一緒に食べられます（店のスタッフに申し出ます）。湯煎や電子レンジに対応している店では、離乳食もあたためてもらえます。",
+      "allergy": "ask",
+      "allergyNote": "メニューによって対応できない場合があります。当日はレストランのスタッフに、事前の確認は問い合わせフォームのレストラン欄から聞けます。",
+      "source": "official",
+      "sourceUrl": "https://nasu-oukoku.com/?page_id=416",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "王国タウンには全天候型の回廊があり、雨の日も傘なしで回れると案内されています。",
+      "source": "official",
+      "sourceUrl": "https://nasu-oukoku.com/?p=10023",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "栃木",
@@ -2055,7 +2486,14 @@
     "desc": "世界の有名建築や遺跡を25分の1の大きさで再現した、屋外のミニチュアパーク。22か国102点の建物があり、世界遺産が50物件含まれる。日本、アメリカ、ヨーロッパ、エジプト、アジアのゾーンに分かれ、地上から見上げる目線で、本物そっくりの街並みを歩ける。",
     "tip": "入園料は大人2,800円、4歳〜小学生1,400円、3歳以下は無料。駐車場は有料。夏季は9:00〜17:00、冬季は9:30〜16:00で、入園は閉園の1時間前まで。鬼怒川温泉駅からバスで約5分。",
     "strollerRental": true,
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "個人のお客さまのお弁当の持ち込みはお断りと案内されています。お食事だけ、買い物だけの利用でも、入園券が必要です。",
+      "source": "official",
+      "sourceUrl": "https://www.tobuws.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "群馬",
@@ -2100,7 +2538,23 @@
     "tip": "車内から見るスタイルなので、寝てしまった乳児がいても安心。",
     "layoutCompact": false,
     "strollerRental": true,
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当を持ってきた場合は、第1駐車場内の屋根付きの無料休憩所で食べられます（譲り合って使います）。園内のレストランやショップは、入園券がなくても使えます。",
+      "allergy": "ask",
+      "allergyNote": "メニューにアレルギー表示はありません。レストラン「サバンナ」とファストフード「オークウッド」には、各種アレルギーに対応したメニューがあります。係員に申し出ます。",
+      "source": "official",
+      "sourceUrl": "https://safari.co.jp/faq/faq_tax/eating-and-drinking/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "第1駐車場内に、屋根付きの無料休憩所があります。",
+      "source": "official",
+      "sourceUrl": "https://safari.co.jp/faq/faq_tax/eating-and-drinking/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2131,7 +2585,21 @@
     "lunch": "吉祥寺駅周辺に飲食店多数。園内売店は限定的。",
     "officialUrl": "https://www.tokyo-park.or.jp/park/inokashira/",
     "desc": "1917年開園の日本最初の郊外公園で、入園無料。井の頭池でボートに乗れ、春は公園全体で約400本の桜が咲く。園内の井の頭自然文化園には動物園とレトロなミニ遊園地があり、小学生以下は入園無料。",
-    "tip": "駐車場は有料（160台）で混みやすいので電車が便利。吉祥寺駅から徒歩約5分、京王井の頭線の井の頭公園駅から徒歩約1分。"
+    "tip": "駐車場は有料（160台）で混みやすいので電車が便利。吉祥寺駅から徒歩約5分、京王井の頭線の井の頭公園駅から徒歩約1分。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトに飲食のルールの記載は見つかりませんでした。口コミでは、ベンチや芝生の広場でお弁当を食べたという声が複数あります。",
+      "sheet": "ok",
+      "sheetNote": "【口コミからの目安・実際と異なる場合があります】レジャーシートを敷いて過ごしたという声が複数あります。公式の案内ではないので、お出かけ前に公園案内所（0422-47-6900）でも確認できます。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    },
+    "heat": {
+      "shade": "some",
+      "note": "【口コミからの目安・実際と異なる場合があります】雑木林の御殿山や木の下で休めたという声が複数あります。屋根付きの休憩場所については情報が見つかっていません。夏は帽子と水筒があると安心です。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2170,6 +2638,22 @@
       "note": "井の頭自然文化園でのみ有効・販売。他園とは共通ではありません。",
       "confirmedAt": "2026-10",
       "url": "https://www.tokyo-zoo.net/annual_pass/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食堂施設はないので、園内の野外卓やベンチで食べます。",
+      "allergy": "label",
+      "allergyNote": "特定原材料8品目（えび・かに・くるみ・小麦・そば・卵・乳・落花生）はメニューに表示されています。詳しくは売店の係員に聞けます。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-zoo.net/inokashira/visitor-info/faq/index.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "屋根付きで飲食できるのは、本園の東屋と資料館2階のテラス、水生物園の東屋です。ベンチの数に限りがあります。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-zoo.net/inokashira/visitor-info/faq/index.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -2210,7 +2694,20 @@
     "recommendedBooking": "asoview",
     "desc": "大型水族館より小ぶりでゆったり回れる。イルカ・アシカショーもあり幼児連れでも疲れにくい。",
     "tip": "海底トンネルは小さい子が怖がることもあるので様子を見ながら進むと◎。",
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内でのお食事はご遠慮いただいています。食事はしながわ区民公園のベンチやレストランを利用します。",
+      "nearbyLunch": [
+        {
+          "name": "しながわ区民公園（ベンチ・芝生エリア）",
+          "note": "当日は入館券の半券を見せれば何度でも再入館できるので、館外で食事をしてから戻れます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.aquarium.gr.jp/otoiawase",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2256,7 +2753,21 @@
     "recommendedBooking": "asoview",
     "desc": "円形プールで行うドルフィンパフォーマンスは、光と音の演出が見もの。東日本で唯一見られるナンヨウマンタが泳ぐ海中トンネルや、幻想的なクラゲの展示、メリーゴーラウンドなど子どもが遊べる屋内アトラクションもある。品川駅から徒歩数分。",
     "tip": "営業時間は季節・曜日で変わり、最終入場は営業終了の1時間前。行く日の時間とショーの時刻を公式サイトで確認。",
-    "layoutCompact": true
+    "layoutCompact": true,
+    "food": {
+      "allergy": "partial",
+      "allergyNote": "品川プリンスホテル内のレストランやフードコートに、アレルギー表示や主要8品目への対応がある店舗があります。",
+      "checkedAt": "2026年10月12日",
+      "source": "web",
+      "bento": "ng",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】館内での飲食と、飲食物の持ち込みはできないという案内が複数あります。アレルギー対応食・離乳食は例外とする案内もあるので、必要な場合は事前に問い合わせると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "品川プリンスホテル内のレストラン・フードコート",
+          "note": "【口コミからの目安・実際と異なる場合があります】当日は入館券（半券）を見せれば再入館できるという情報が多数ですが、再入館不可とする記事も1件あります。出る前にスタッフに確認してください。"
+        }
+      ]
+    }
   },
   {
     "region": "東京",
@@ -2300,7 +2811,13 @@
     "desc": "屋内型のアミューズメント施設。VRやライド系アトラクションが多く小学生以上が楽しみやすい。",
     "tip": "未就学児が乗れる乗り物は限られるので年齢確認を。",
     "strollerRental": true,
-    "layoutCompact": true
+    "layoutCompact": true,
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトの案内として、飲食物の持ち込みはご遠慮ください、館内に飲食スペースやカフェがある、当日のチケットで何度でも再入場できると紹介する記事があります。公式サイトで最新の案内を確認できていません。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2353,7 +2870,14 @@
       }
     ],
     "businessHoursNote": "10:00〜17:00（入館は16:30まで）／休館：火曜日（祝日の場合は開館）・年末年始。2026年10月1日〜2027年4月22日は全館休館",
-    "verifiedAt": "2026年9月28日"
+    "verifiedAt": "2026年9月28日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食べられるのは1・5・7階の休憩スペースです。展示場内では飲食できません。",
+      "source": "official",
+      "sourceUrl": "https://www.miraikan.jst.go.jp/visit/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2401,6 +2925,19 @@
     "tip": "無料の割に体験展示が充実。休日は事前予約枠があるので公式サイトを確認。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000172966/"
+    },
+    "heat": {
+      "roof": "full",
+      "summer": "cool",
+      "note": "館内は空調完備で、猛暑日の避難先にも使いやすい施設です。",
+      "source": "text"
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "公式サイトの団体見学のお知らせでは、館内でのお食事は禁止で、屋外のベンチや芝生広場で食べられると案内されています（天候などで使えない場合があります）。このお知らせの内容は更新時期が古い可能性があるので、お出かけ前に最新の案内を確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.mizunokagaku.jp/visit/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -2441,7 +2978,14 @@
       "jalan": "https://www.jalan.net/kankou/spt_13104ae3302046354/"
     },
     "layoutCompact": true,
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内での飲食はできません。水またはお茶だけ、廊下のベンチで飲めます。",
+      "source": "official",
+      "sourceUrl": "https://art-play.or.jp/ttm/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2612,6 +3156,33 @@
         "type": "illumination",
         "note": "ウインターイルミネーション「TOKYO SNOW DOME CITY」。テーマは「スノードーム」と「雪」で、シナモロールがメインキャラクター。100万球超のホワイトイルミネーションが東京ドームシティ全域を包み、高さ約15mのLEDツリー（毎時15分に光のショー）、高さ3.9mの巨大スノードーム、アトラクションズエリアの光のトンネル「SPARKLE TUNNEL with シナモロール」が登場する。11/20〜2027/1/17はGallery AaMoで「ふわふわんだーシナモロールパーク」（全長約12mの巨大すべり台など）を開催し、同期間にアプリ「Omoide Badge」のクイズラリーも実施。イルミネーションは17:00〜24:00（日没や展示により変更あり）、無料。12月の北欧クリスマス企画は、2026年分の発表を確認できていない。"
       }
+    },
+    "rideLimits": [
+      {
+        "name": "サンダードルフィン",
+        "minCm": 130,
+        "minAge": 8,
+        "maxAge": 64
+      },
+      {
+        "name": "ワンダードロップ",
+        "minCm": 110,
+        "minAge": 5,
+        "note": "8歳までは付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.tokyo-dome.co.jp/tdcity/attraction/",
+    "heat": {
+      "roof": "partial",
+      "note": "屋根付きエリアがあります。",
+      "source": "text"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】今回の調査では公式サイトの記載は見つかりませんでした。紹介記事では、入場無料のエリアで、お弁当や飲み物を持ち込んで園内のベンチなどで食べられるという声が複数あります。東京ドーム（球場）の持ち込みルールとは別です。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -2673,7 +3244,63 @@
         "type": "themepark"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "rideLimits": [
+      {
+        "name": "スピンディンギー",
+        "minCm": 90,
+        "note": "90〜109cmは保護者の付き添いが必要"
+      },
+      {
+        "name": "スーパーバウンティ",
+        "minCm": 110
+      },
+      {
+        "name": "Tiki（ティキ）スライド",
+        "minCm": 120
+      },
+      {
+        "name": "dobon（夏季のみ）",
+        "minCm": 140,
+        "maxAge": 60,
+        "note": "体重105kg以下。十分な泳力のある方が対象"
+      },
+      {
+        "name": "タワーズロック（夏季のみ）",
+        "minCm": 140,
+        "note": "コブラツイスター（1人乗り）は体重100kg以下、バックドロッパー（2人乗り）は合計体重180kg以下"
+      },
+      {
+        "name": "モンスターストリーム（夏季のみ）",
+        "minCm": 130,
+        "maxAge": 64,
+        "note": "十分な泳力が必要。130cm未満は保護者同伴でも利用不可。小学生以下には保護者が付き添う"
+      },
+      {
+        "name": "DEKASLA（デカスラ）（夏季のみ）",
+        "minCm": 130,
+        "note": "合計体重の条件あり（公式の表記は170kg以上400kg以下）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.summerland.co.jp/",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "クーラーボックスも持ち込めます。入園後に外部のフードデリバリーを注文することは禁止です。",
+      "babyFoodNote": "園内では離乳食・ベビーフード・粉ミルクは販売していません。ベビールームにミルク用のお湯があります。",
+      "allergy": "label",
+      "allergyNote": "原材料表は各店舗で見られます。ただし全店で、特定原材料8品目を含む食材を同じ厨房・洗浄機器で扱っています。",
+      "source": "official",
+      "sourceUrl": "https://www.summerland.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "全天候型のアドベンチャードームがあります。屋内プールでも紫外線を完全には防げないため、日焼け止めがすすめられています（入水前にシャワーで落とします）。",
+      "source": "official",
+      "sourceUrl": "https://www.summerland.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2739,7 +3366,20 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_13229ae3292081608/"
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "source": "official",
+      "bentoNote": "1階の休憩室（154席）で、お弁当などを持ち込んで食べられます。席の予約や場所取りはできません。",
+      "nearbyLunch": [
+        {
+          "name": "館内カフェ「ロクトショクドウ」",
+          "note": "1階にあります（35席）。"
+        }
+      ],
+      "sourceUrl": "https://www.tamarokuto.or.jp/floorguide/breakroom.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -2879,40 +3519,6 @@
   },
   {
     "region": "東京",
-    "name": "アネビートリムパーク 稲城",
-    "slug": "tokyo/inagi/aneby-trim-park-inagi",
-    "area": "稲城市",
-    "lat": 35.639,
-    "lng": 139.501,
-    "genre": "室内遊び場",
-    "ages": [
-      "0-1歳",
-      "2-3歳",
-      "4-6歳"
-    ],
-    "weather": [
-      "雨"
-    ],
-    "duration": [
-      "半日"
-    ],
-    "seasons": [
-      "夏"
-    ],
-    "holidays": [
-      "夏休み"
-    ],
-    "price": "時間制 子供1000円前後（要予約の場合あり）",
-    "parking": "yes",
-    "access": "京王相模原線「稲城」駅からバス",
-    "baby": "おむつ替え・授乳室あり",
-    "lunch": "館内に飲食スペースあり。",
-    "officialUrl": null,
-    "desc": "大型クッション遊具やボールプールで体を動かせる屋内型施設。雨の日の定番。",
-    "tip": "人気の時間帯は事前予約がおすすめ。"
-  },
-  {
-    "region": "東京",
     "name": "キドキドあそびのせかい アリオ北砂店",
     "slug": "tokyo/koto/kidokid-ario-kitasuna",
     "area": "江東区・北砂",
@@ -2937,7 +3543,14 @@
     "lunch": "アリオ北砂内にフードコートあり。",
     "officialUrl": null,
     "desc": "ショッピングモール内の室内遊び場。天候に左右されず気軽に立ち寄れる。",
-    "tip": "買い物のついでに立ち寄りやすく、雨の日の急な予定変更にも便利。"
+    "tip": "買い物のついでに立ち寄りやすく、雨の日の急な予定変更にも便利。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、あめやガムを含めて、お食事はご遠慮くださいと案内されています。蓋付きの飲み物（水筒やペットボトル）は持ち込めて、場内のレストスペースで飲みます（店舗の案内）。",
+      "source": "official",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -3030,7 +3643,13 @@
     "lunch": "公園内に売店あり。",
     "officialUrl": "https://www.tokyo-park.or.jp/park/mizumoto/",
     "desc": "都内で唯一の水郷の景観をもつ入園無料の公園。約10haの大芝生広場や、約1,800本のメタセコイアの森、冒険広場の複合遊具があり、野鳥や水辺の生き物も観察できる。5月下旬〜6月中旬は花菖蒲が見頃。",
-    "tip": "駐車場は有料（287台）。JR金町駅南口からバスで約15分「水元公園」下車、徒歩7分。"
+    "tip": "駐車場は有料（287台）。JR金町駅南口からバスで約15分「水元公園」下車、徒歩7分。",
+    "heat": {
+      "note": "東京都の公園協会の案内では、園内の草地広場全域で、1辺2m以下のポップアップテント・ワンタッチテントを日よけに使えます（通年・9〜17時）。ペグ打ちや樹木を使ったロープ固定はできません。混雑時や長時間の使用は控え、少なくとも1方向は開けて使います。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/mizumoto/news/2024/park_info_6.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -3061,7 +3680,13 @@
     "lunch": "公園周辺に飲食店あり。",
     "officialUrl": "https://www.tokyo-park.or.jp/park/shinozaki/",
     "desc": "江戸川の堤防の西に広がる、約30haの都立公園で、入園無料（一部有料）。2つの芝山と広い草地があり、遊具は幼児から小学生まで楽しめる。バーベキュー広場やドッグランもある。江戸川の堤防に上がると、川と対岸の千葉県を見渡せる。",
-    "tip": "駐車場は有料（第一192台・第二97台）。授乳室と園内の売店・飲食店はないので、飲み物や食べ物は持参が安心。近くには無料でポニーに乗れる「篠崎ポニーランド」もある。"
+    "tip": "駐車場は有料（第一192台・第二97台）。授乳室と園内の売店・飲食店はないので、飲み物や食べ物は持参が安心。近くには無料でポニーに乗れる「篠崎ポニーランド」もある。",
+    "heat": {
+      "note": "東京都の公園協会の案内では、A地区西側の多目的広場に限り、ワンタッチテント・ポップアップテントを使えます（9〜17時）。ペグや杭は使えず、悪天候の日は使えません。2022年のお知らせの内容なので、お出かけ前に最新の案内を確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/shinozaki/news/2022/50163.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -3180,6 +3805,18 @@
       "note": "購入日から1年間有効。ズーラシアと金沢動物園の両方に入園できます。",
       "confirmedAt": "2026-10",
       "url": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/fee.php"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "サバンナテラスの無料休憩スペース（屋内外で約160席）で、お弁当などの持ち込みの食事ができます。芝生の広場はオージーヒル前、みんなのはらっぱ、ころころ広場にあります（イベント開催時は使えないことがあります）。オージーヒル グリルレストランの店内には飲食物を持ち込めません。",
+      "sheetNote": "レジャーシートはオージーヒルギフトショップで販売しています。杭を使うテントやテーブルは持ち込めません。",
+      "babyFood": "ok",
+      "babyFoodNote": "レストラン内への飲食物の持ち込みはできませんが、ベビーフードは例外として案内されています（オージーヒル グリルレストラン）。",
+      "allergy": "label",
+      "allergyNote": "レストランのメニューボードに8大アレルギーが表示されています。成分の詳細はカウンターで見られます。",
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/faq.php",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -3240,6 +3877,20 @@
         "tentative": true,
         "type": "sakura"
       }
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "園内のひだまり広場や大池前の芝生広場、屋内休憩所、大池前の休憩所でお弁当を食べられます。園内がとても混んでいるときは使えない場合があり、その場合は向かいの野毛山公園（広い芝生広場でレジャーシートが使えます）を使うよう案内されています。",
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/nogeyama/faq.php",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "屋内休憩所と、大池前の休憩所でお昼を食べられます。多くの方が使うので、譲り合って使います。",
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/nogeyama/groupinfo.php",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -3312,7 +3963,22 @@
     "lunch": "園内に売店・軽食あり。",
     "officialUrl": "https://www.kodomonokuni.org/",
     "desc": "広大な敷地に牧場・アスレチック・プールなどが揃う複合型施設。1日体を動かして遊べる。",
-    "tip": "起伏があるエリアも多いので歩きやすい靴で。夏はプールも人気。"
+    "tip": "起伏があるエリアも多いので歩きやすい靴で。夏はプールも人気。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "アルコール以外は持ち込めます。ゴミは持ち帰ります。",
+      "sheet": "ok",
+      "sheetNote": "「じゆうひろば」（約30,000㎡の草地の広場）は、シートを広げてお弁当を食べたり休けいしたりするのにおすすめと公式サイトで紹介されています。",
+      "source": "official",
+      "sourceUrl": "https://www.kodomonokuni.org/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "簡易の日よけテントを使えます（週末は、じゆうひろばにたくさん立ちます）。芝生を痛めるため、ペグは打てません。プール・スケート場内には、すべての日よけテントを持ち込めません。「せせらぎ」は、木陰の下を流れる人工の小川です（3月中旬〜10月中旬）。",
+      "source": "official",
+      "sourceUrl": "https://www.kodomonokuni.org/yugu/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -3351,7 +4017,18 @@
     "lunch": "館内にカフェあり。",
     "officialUrl": "https://fujiko-museum.com/",
     "desc": "ドラえもんなど藤子作品の原画やジオラマが並ぶ屋内ミュージアム。雨の日の定番候補。",
-    "tip": "日時指定の予約制チケットが必要。事前に公式サイトでの購入が必須。"
+    "tip": "日時指定の予約制チケットが必要。事前に公式サイトでの購入が必須。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "一部を除き、飲食物の持ち込みはできません。フタ付きのペットボトルや水筒など、飲み物は持ち込めますが、展示室内での飲食はできません。持ち込んだゴミは持ち帰ります。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、ミュージアムカフェの利用時か、授乳室で食べられます。",
+      "allergy": "ask",
+      "allergyNote": "カフェを利用する方で食事に制約がある場合は、カフェへの飲食物の持ち込みができます（事前に問い合わせます）。アレルギー物質28品目中、該当なしのカレーも用意されています。",
+      "source": "official",
+      "sourceUrl": "https://fujiko-museum.com/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -3411,7 +4088,14 @@
     "officialUrl": "https://www.mhi.com/jp/expertise/museum/minatomirai",
     "desc": "三菱重工の技術を紹介するミュージアムで、ロケットエンジンの実物や深海調査船「しんかい6500」の実物大模型、旅客機の実物大模型などが見られる。ヘリコプターの操縦シミュレーター「スカイウォークアドベンチャー」で横浜上空の飛行体験もできる。",
     "tip": "入館料は小学生100円と手ごろ（支払いは現金のみ）。操縦シミュレーターは小学生以上が対象で、当日先着順の予約制。授乳室・おむつ交換台あり。みなとみらい駅から徒歩3分。月曜休館。",
-    "verifiedAt": "2026年9月25日"
+    "verifiedAt": "2026年9月25日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内に食事をする場所はありませんと案内されています。",
+      "source": "official",
+      "sourceUrl": "https://www.mhi.com/jp/company/overview/museum/minatomirai/about_museum/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -3504,7 +4188,16 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_14209cc3320040617/"
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内は飲食禁止です。お弁当は屋外の広場で食べます。雨の日の食事場所はありません。",
+      "source": "official",
+      "sheet": "partial",
+      "sheetNote": "広場では、大きめのレジャーシートやテントを広げた長時間の利用はご遠慮いただいています。館内の滞在を含めて2時間程度が目安です。",
+      "sourceUrl": "https://sagamigawa-fureai.com/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -3630,7 +4323,14 @@
     "recommendedBooking": "asoview",
     "desc": "ゾウの絵画パフォーマンスやふれあい体験が名物のテーマパーク。動物との距離が近い。",
     "tip": "ゾウさんショーの時間は事前にチェックして予定を組むのがおすすめ。",
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当を食べられる場所は、エレファントスクエア周辺の観客席と案内されています。",
+      "source": "official",
+      "sourceUrl": "https://zounokuni.com/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -3739,7 +4439,21 @@
     "lunch": "園内に売店あり。",
     "officialUrl": null,
     "desc": "「動物とのふれあい」がテーマの市立動物園。「なかよし広場」ではモルモットを抱っこでき（開園中はいつでも）、ヤギやウサギにもふれられる。レストハウス3階の「なかよしルーム」ではマイクロブタとふれあえる。ミニ鉄道もあり、隣の観賞植物園と自然観察園は入場無料。",
-    "tip": "小学校就学前は入園無料。月曜休園（祝日の場合は翌日）。駐車場は有料。JR市川大野駅から京成バスで約10分「動植物園」下車。"
+    "tip": "小学校就学前は入園無料。月曜休園（祝日の場合は翌日）。駐車場は有料。JR市川大野駅から京成バスで約10分「動植物園」下車。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "持参したお弁当は、食堂内の無料休憩所のほか、園内各所で食べられます（市川市の案内）。",
+      "source": "official",
+      "sourceUrl": "https://faq.city.ichikawa.lg.jp/faq/faq/web/knowledge671.html?pageListSettingIdFromUrl=102",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "レストハウス（食堂）内に無料休憩所があります。",
+      "source": "official",
+      "sourceUrl": "https://faq.city.ichikawa.lg.jp/faq/faq/web/knowledge671.html?pageListSettingIdFromUrl=102",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -3842,7 +4556,23 @@
     "recommendedBooking": "asoview",
     "desc": "乳搾りやポニー乗馬など牧場体験が豊富。芝そりゲレンデもあり体を動かして遊べる。夏（例年7月上旬〜8月下旬）は園内に合計約11万本のひまわり畑が咲き誇り、トロッコ列車に乗りながら観賞できる。",
     "tip": "季節ごとのイベント（いちご狩りなど）もチェックしておくとお得。 秋は栗拾い（例年9月中旬〜10月中旬・500g1,200円・入場料別）やさつまいも掘りもできる。",
-    "verifiedAt": "2026年10月3日"
+    "verifiedAt": "2026年10月3日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めますが、飲食施設内への持ち込みはできません。広場でレジャーシートを敷くか、屋外や、屋内休憩施設「ビッグバーン」のテーブル・イスで食べます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、飲食施設内にも持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.yumebokujo.com/faq.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "屋内休憩施設「ビッグバーン」に、お弁当を食べられるテーブルとイスがあります。",
+      "source": "official",
+      "sourceUrl": "https://www.yumebokujo.com/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -3917,7 +4647,33 @@
         "note": "「西武園ゆうえんち ハイカラ・ハロウィン」。昭和レトロな夕日の丘商店街が緑や紫のハロウィン仕様になり、特大のジャック・オ・ランタンのオブジェが出迎える。参加型の「ハイカラ・ハロウィンパレード」は15:00〜15:20（10/23〜25は15:30〜15:50）。ハロウィン限定フードも登場。"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "rideLimits": [
+      {
+        "name": "ウルトラマン・ザ・ライド",
+        "minCm": 100,
+        "minAge": 4,
+        "note": "130cm未満は18歳以上の保護者と同乗"
+      },
+      {
+        "name": "スイング・スイング",
+        "minCm": 90
+      },
+      {
+        "name": "バイキング",
+        "minCm": 110,
+        "note": "120cm未満は18歳以上の保護者と同乗"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.seibu-leisure.co.jp/seibuen/",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "公式サイトの団体向けQ&Aで、飲食物の持ち込みはお断りと案内されています。個人向けの案内は今回確認できていないため、お出かけ前に公式サイトで確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.seibuen-amusement-park.jp/group2024/ippan.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -3985,7 +4741,21 @@
       "maxMinutes": 240
     },
     "desc": "コアラのいる動物園で、小動物とのふれあいや牛の乳しぼり体験、乗馬ができる。こどもの城や恐竜コーナー、冒険の森アスレチックもあり、幼児から小学生まで1日遊べる。小学校就学前の子は入園無料。",
-    "tip": "夏期はじゃぶじゃぶ池（無料・水深0〜50cm）で水遊びができる。11月15日〜1月31日は閉園が16:30と早い。月曜休園（祝日は開園）で、駐車場は有料。"
+    "tip": "夏期はじゃぶじゃぶ池（無料・水深0〜50cm）で水遊びができる。11月15日〜1月31日は閉園が16:30と早い。月曜休園（祝日は開園）で、駐車場は有料。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "昼食の持ち込みはできます。広場の事前の場所取りはご遠慮くださいと案内されています。自由広場は公式サイトで人気のお弁当スポットとして紹介されています。",
+      "source": "official",
+      "sourceUrl": "https://www.parks.or.jp/sczoo/faq/000/000467.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "室内ではありませんが、噴水広場横、中央売店横、レストランガゼボ横、野外ステージには屋根があり、雨や日差しをよけて食事ができます。",
+      "source": "official",
+      "sourceUrl": "https://www.parks.or.jp/sczoo/faq/000/000455.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -4064,7 +4834,22 @@
     "officialUrl": "https://www.saitama-suizoku.com/",
     "desc": "羽生水郷公園の中にある淡水魚専門の水族館。天然記念物のミヤコタナゴやムサシトミヨなど荒川の生き物を展示し、水槽の下にもぐって見上げる「金魚ドーム」もある。庭の池では大きなコイやソウギョにエサをあげられる。",
     "tip": "未就学児は無料で、小・中学生も通常期は100円と手ごろ。駐車場は無料。駅からは車で約15分なので車が便利。",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内では飲食ができません。お弁当は、水族館前の屋根付きの休憩舎で食べます（場所の予約はできません）。",
+      "babyFoodNote": "離乳食やミルクを作りたいときは、電子レンジやお湯を使えます。事務室、入場券売り場、近くのスタッフに申し出ます。",
+      "source": "official",
+      "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "雨の日にお弁当を食べる場所として、水族館前に屋根付きの休憩舎があります（場所の予約はできません）。",
+      "source": "official",
+      "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -4125,7 +4910,14 @@
         "type": "play"
       }
     },
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "各ご家庭で作ったお弁当だけ持ち込めます。ファストフードやコンビニ弁当などの持ち込みはご遠慮くださいと案内されています。",
+      "source": "official",
+      "sourceUrl": "https://www.musashinomura.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -4157,7 +4949,13 @@
     "lunch": "公園周辺に飲食店あり。",
     "officialUrl": "https://www.parks.or.jp/tokorozawa/",
     "desc": "日本で最初の飛行場の跡地にできた、県営では最大規模（約50ha）の公園。広い芝生広場や大型複合遊具のある子ども広場、ドッグラン、日本庭園があり、航空公園駅前には戦後初の国産旅客機YS-11が展示されている。",
-    "tip": "園内の「所沢航空発祥記念館」はリニューアル工事のため2027年3月末（予定）まで休館中。西武新宿線の航空公園駅から徒歩すぐ。"
+    "tip": "園内の「所沢航空発祥記念館」はリニューアル工事のため2027年3月末（予定）まで休館中。西武新宿線の航空公園駅から徒歩すぐ。",
+    "heat": {
+      "note": "大型テントやタープなど、他の利用者を排除して場所を占有するものは持ち込めません（2020年の利用者遵守事項）。小型の日よけについては、お出かけ前に公園の管理事務所に確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.parks.or.jp/tokorozawa-kokuu/faq/files/1613/001613/att_0000001.pdf",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -4194,7 +4992,13 @@
     "lunch": "園内に売店あり。",
     "officialUrl": "https://www.parks.or.jp/kawagoesuijo/",
     "desc": "夏はプール、それ以外の季節は広場や遊具で遊べる公園。川越観光の後に立ち寄りやすい。",
-    "tip": "プールは夏季限定なので、時期を確認してから訪問を。"
+    "tip": "プールは夏季限定なので、時期を確認してから訪問を。",
+    "heat": {
+      "note": "夏季プールでは、テントを使えます。監視の妨げになる場所や、混雑時の大きなテントはご遠慮ください。強風や混雑のときは、たたむよう指示されることがあります。",
+      "source": "official",
+      "sourceUrl": "https://www.parks.or.jp/kawagoesuijo/guide/000/000099.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "茨城",
@@ -4338,7 +5142,7 @@
     "access": "東北新幹線「那須塩原」駅からバス50分",
     "baby": "おむつ替えあり",
     "lunch": "園内にレストランあり。",
-    "officialUrl": "https://www.nasuhighlandpark.co.jp/",
+    "officialUrl": "https://www.nasuhai.co.jp/",
     "verifiedAt": "2026年9月16日",
     "overnightRecommended": true,
     "hotelArea": "nasu",
@@ -4376,6 +5180,79 @@
         "tentative": true,
         "type": "play"
       }
+    },
+    "rideLimits": [
+      {
+        "name": "フライングサブマリン",
+        "minCm": 97,
+        "minAge": 3,
+        "note": "未就学児または身長120cm未満は保護者同乗"
+      },
+      {
+        "name": "屋内型コースターSHINPI＋",
+        "minAge": 3,
+        "note": "未就学児は保護者同伴"
+      },
+      {
+        "name": "スピンターンコースター",
+        "minCm": 110,
+        "note": "小学生未満は保護者同伴。135cm未満は保護者同乗"
+      },
+      {
+        "name": "スーパーバイキング",
+        "minCm": 110,
+        "minAge": 3,
+        "note": "未就学児は保護者同伴。110〜119cmは保護者同乗（指定席）"
+      },
+      {
+        "name": "スペースショット",
+        "minCm": 130,
+        "maxAge": 64,
+        "note": "未就学児は保護者同伴。65歳以上は利用不可"
+      },
+      {
+        "name": "F²（エフ・ツー）",
+        "minCm": 130,
+        "maxCm": 200,
+        "maxAge": 64,
+        "note": "未就学児は保護者同伴。65歳以上は利用不可"
+      },
+      {
+        "name": "ビッグバーンコースター",
+        "minCm": 120,
+        "maxAge": 64,
+        "note": "65歳以上は利用不可"
+      },
+      {
+        "name": "ウェーブスインガーNEO",
+        "minCm": 120,
+        "minAge": 3,
+        "note": "3歳は保護者とペア席で乗車。120cm未満は保護者同伴でも利用不可"
+      },
+      {
+        "name": "バットフライヤー",
+        "minAge": 3,
+        "note": "未就学児は保護者同伴。100cm未満は保護者同乗"
+      },
+      {
+        "name": "フラッシュダンス",
+        "minCm": 110,
+        "note": "未就学児は保護者同伴"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.nasuhai.co.jp/attraction/",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】今回の調査では公式サイトの記載は見つかりませんでした。紹介記事では、お弁当や飲み物は持ち込めるが、飲食店への持ち込みは不可という紹介が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "【口コミからの目安・実際と異なる場合があります】園内のベンチやテーブル席には、屋外でも一部に屋根があるという紹介があります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -4425,6 +5302,15 @@
         "tentative": true,
         "type": "play"
       }
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "食べ物の持ち込みはご遠慮くださいと案内されています。園内の食事処や茶屋で食べます。",
+      "allergy": "ask",
+      "allergyNote": "食物アレルギーなどで食事に制限がある方に限り、お弁当などの対応食をお食事処に持ち込めます。お食事処のスタッフ（江戸人）に声をかけます。同行の方は、お食事処のメニューを利用します。",
+      "source": "official",
+      "sourceUrl": "https://edowonderland.net/qa/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -4620,7 +5506,13 @@
     "recommendedBooking": "asoview",
     "desc": "駅直結のビル内水族館で、天候に関係なく楽しめる。世界の淡水魚や熱帯魚の展示が中心。",
     "tip": "屋内完結型なので雨の日のお出かけ先として重宝する。",
-    "verifiedAt": "2026年10月2日"
+    "verifiedAt": "2026年10月2日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトを直接確認できませんでした。紹介記事では、館内への飲食物の持ち込みはできないが、10階のカフェ「CAFE CRAM」で買った軽食やおやつは館内に持ち込める、当日は再入場できるという声が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -4668,6 +5560,13 @@
     "tip": "土曜日は高校生以下が入館無料。土日祝はサイエンス・ショウや工作教室もある。第1・第3火曜は休館。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_14107cc3290030153/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当などを持ち込む場合は、B1階の休憩室で食べられます。展示室内での飲食はできません。酒類の持ち込みは禁止です。1階のコスモカフェでも食事ができます。",
+      "source": "official",
+      "sourceUrl": "https://www.yokohama-kagakukan.jp/info/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -4959,7 +5858,13 @@
     "lunch": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。",
     "officialUrl": "https://www.hama-midorinokyokai.or.jp/park/kodomonokuni/",
     "desc": "大きな遊具広場と池のある人気の公園。遊具や芝生の広場もあり、小さな子ども連れの散歩コースにも向いている。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -4990,7 +5895,13 @@
     "lunch": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。",
     "officialUrl": "https://www.city.yokohama.lg.jp/totsuka/shokai/gaiyo/totsukafuoto/kategori_sagasu/pikkuappu/c05-03-maioka01.html",
     "desc": "田んぼや谷戸の自然が残るのどかな公園。自然を感じながらのんびり過ごせる、地域に親しまれた公園。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -5021,7 +5932,13 @@
     "lunch": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。",
     "officialUrl": "https://www.hama-midorinokyokai.or.jp/park/negishi/about/outline.php",
     "desc": "旧競馬場の広い芝生広場がありボール遊びもしやすい。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "note": "自立式の簡易なテントなら、公園の利用に支障のない場所で使えます。",
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/negishi/details/post-52.php",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -5064,6 +5981,12 @@
         "tentative": true,
         "type": "flower"
       }
+    },
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -5095,7 +6018,13 @@
     "lunch": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。",
     "officialUrl": "https://www.hama-midorinokyokai.or.jp/park/kishine/",
     "desc": "駅近でアクセスしやすい広い芝生公園。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -5229,7 +6158,13 @@
     "overnightRecommended": true,
     "hotelArea": "shonan",
     "desc": "交通公園やアスレチックのある海辺の公園。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "note": "公式の公園利用のルールで、大型テントとタープ類は使えず、小型のポップアップテントなら使えると案内されています。交通公園内でもテント類は使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.kanagawa-park.or.jp/tujidou/rule.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -5319,7 +6254,13 @@
     "officialUrl": null,
     "desc": "四季の花と大きな噴水広場が楽しめる公園。自然を感じながらのんびり過ごせる、地域に親しまれた公園。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "heat": {
+      "note": "小型の日よけテントは使えます。大型テント（4〜5人用など）は使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.kanagawa-park.or.jp/sagamihara/map.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -5406,7 +6347,14 @@
     "lunch": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。",
     "officialUrl": "https://www.kanagawa-park.or.jp/satoyama/",
     "desc": "田園と雑木林が残る里山エリア。虫取りに人気。ベンチや広場も整っていて、ちょっとした息抜きに立ち寄りやすい。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "shade": "little",
+      "note": "園内には木陰が少ないため、熱中症防止として、小型の日よけテントだけ使えます。キャンプ用のテントとタープは使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.kanagawa-park.or.jp/satoyama/guidance/tent.pdf",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -5880,7 +6828,13 @@
     "officialUrl": null,
     "desc": "大きな遊具広場とスポーツ施設が揃う公園。遊具や芝生の広場もあり、小さな子ども連れの散歩コースにも向いている。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -6473,6 +7427,19 @@
     },
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_11408ae3292044486/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食べ物の持ち込みはできますが、飲食はレストハウス1階の休憩室を使います。本館と荒川わくわくランド内での飲食はご遠慮くださいと案内されています。休憩ホールには自動販売機があり、お弁当などを持ち込んで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://www.river-museum.jp/contact/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "荒川わくわくランド内での飲食はご遠慮くださいと案内されていますが、熱中症予防のため、ペットボトルや水筒など蓋のある飲み物は持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.river-museum.jp/facility/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -6752,6 +7719,12 @@
         "tentative": true,
         "type": "park"
       }
+    },
+    "heat": {
+      "note": "千葉市の案内では、園内の広場で使えるテント類は自立式のものに限ります。閉め切っての使用はできず、ペグなどが必要なテントは使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.city.chiba.jp/toshi/koenryokuchi/kanri/chuo-mihama/inagekaihinkouen_riyouhouhou.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -7107,7 +8080,11 @@
     "lunch": "園内に飲食施設あり（こどもの城2階、ぱなぱなのまちなど）。食事の持ち込みもOK。",
     "officialUrl": "https://www.park-tochigi.com/wanpaku/",
     "desc": "37.2haの広い県営公園で、入園は無料。屋内施設の「こどもの城」ではボールプールや迷路で遊べ、体験施設「ふしぎの船」（有料）や大恐竜パーク、園内を走るわんぱくトレインもある。道の駅みぶに隣接していて、高速道路の壬生PAから歩いても入園できる。",
-    "tip": "公園は年中無休だが、屋内施設（こどもの城・ぱなぱなのまち・ふしぎの船）は毎週火曜休館（祝日の場合は翌日）、大恐竜パークは毎週月曜休み。広いので歩きやすい靴で。"
+    "tip": "公園は年中無休だが、屋内施設（こどもの城・ぱなぱなのまち・ふしぎの船）は毎週火曜休館（祝日の場合は翌日）、大恐竜パークは毎週月曜休み。広いので歩きやすい靴で。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "栃木",
@@ -7495,7 +8472,13 @@
     "lunch": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。",
     "officialUrl": null,
     "desc": "江戸東京たてもの園に隣接する広い公園。広場が開けていて、ボール遊びや追いかけっこもしやすい。",
-    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。"
+    "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
+    "heat": {
+      "note": "東京都の公園協会の案内では、いこいの広場・こどもの広場・つつじ山広場・ユーカリ広場で、1辺2m以下のポップアップテント・ワンタッチテントを使えます（日出から日没まで）。ペグ打ちや木へのロープ固定が必要なテントは使えません。2021年のお知らせの内容なので、お出かけ前に最新の案内を確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/koganei/news/2021/49037.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -7590,7 +8573,17 @@
     "needsReview": [
       "料金・休館日は情報サイトの掲載値。公式で最新を要確認",
       "officialUrlは日本科学技術振興財団のトップページ想定のため、館のページで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食事を持参した場合は、休憩室を使います（利用できる場所や日時は館内の掲示で確認します）。展示室内や歩きながらの飲食は、あめ・ガムも含めて禁止です。地階のレストランへの飲食物の持ち込みはできません（離乳食を除く）。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、地階のレストランに持ち込めます。",
+      "allergyNote": "地階のレストランは、調理運営上の理由から、食物アレルギーへの対応ができません。",
+      "source": "official",
+      "sourceUrl": "https://www.jsf.or.jp/guide/access/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -7799,6 +8792,21 @@
         "tentative": true,
         "type": "park"
       }
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めます。ファーストフード店周辺のテーブル・椅子と、レストラン内での飲食はできません。芝生、ファーストフード店以外のテーブル・椅子、休憩所は使えます（横須賀市の案内）。",
+      "sheet": "ok",
+      "sheetNote": "「のんびりはらっぱ」は、ピクニックシートを敷いてお弁当を食べられる場所として公式サイトで紹介されています。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/faq/shisei/gaiyo/shisetsu/0746.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "shade": "little",
+      "note": "【口コミからの目安・実際と異なる場合があります】芝生広場やじゃぶじゃぶ池のまわりは日陰が少なく、ワンタッチテントを持ち込む人が多いという紹介が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -7916,7 +8924,13 @@
     "officialUrl": null,
     "desc": "起伏を生かした遊具エリアがある広い公園。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
-    "address": "神奈川県横浜市金沢区富岡東2-9"
+    "address": "神奈川県横浜市金沢区富岡東2-9",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -8481,6 +9495,35 @@
         "type": "themepark",
         "note": "夏の水遊びイベント「ムーミン谷でみずあそび」。2026年は水しぶきを浴びるショーや、スプラッシュゾーン、水に入って遊べる「じゃぶじゃぶクリーク」、パーク全体をミストで包む「ムーミン谷の雲海」などがあった。来年の内容・日程は発表待ち。"
       }
+    },
+    "rideLimits": [
+      {
+        "name": "飛行おにのジップラインアドベンチャー",
+        "minCm": 120,
+        "maxCm": 190,
+        "note": "190cm未満。小学3年生以上、体重30kg以上100kg未満。18歳未満は保護者の同意が必要。別途1デーパスが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://metsa-hanno.com/place/301/",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "有料エリアのムーミンバレーパークは、飲食物の持ち込みをご遠慮くださいと案内されています。水筒やペットボトルなど水分補給用の飲み物は持ち込めます。無料エリアのメッツァビレッジはお弁当を持ち込めます（レストラン内とバイキング棟のテラス席は除く）。",
+      "nearbyLunch": [
+        {
+          "name": "メッツァビレッジ（無料エリア）",
+          "note": "湖畔の「ノルディックスクエア」など屋外のオープンスペースで、お弁当を食べられます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://metsa-hanno.com/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "メッツァビレッジには、雨の日に使える持ち込み飲食スペースがありません。バスで行く場合は車内で食べるなど、雨の日の食事方法を考えておくよう案内されています。",
+      "source": "official",
+      "sourceUrl": "https://metsa-hanno.com/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -8872,6 +9915,13 @@
     "tip": "千葉市内の小・中学生は、土曜日に「ふれあいパスポート」で常設展示とプラネタリウム（一般投影）が無料。駐車場はきぼーるの有料駐車場を利用。授乳室あり。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_12101ae3292044973/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "館内では食べ物を販売していません。10階のスカイガーデンで、お弁当などを持ち込んで昼食をとれます。団体で食事をとる場合は予約が必要です。業者による配達と持ち込みはできません。",
+      "source": "official",
+      "sourceUrl": "https://www.kagakukanq.com/sp_faq/%E7%A7%91%E5%AD%A6%E9%A4%A8%E3%81%AE%E4%B8%AD%E3%81%AB%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F%E3%81%8A%E5%BC%81%E5%BD%93%E3%81%AF",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -9907,7 +10957,13 @@
     "lunch": "周辺に飲食店・コンビニあり。",
     "officialUrl": null,
     "desc": "大岡川と中村川の分岐点にある公園。ローラーすべり台付きの大型コンビネーション遊具があり、桜の名所としても知られる。",
-    "tip": "公園専用の駐車場はなく、徒歩圏内にコインパーキングがある程度。電車でのアクセスがおすすめ。"
+    "tip": "公園専用の駐車場はなく、徒歩圏内にコインパーキングがある程度。電車でのアクセスがおすすめ。",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -9937,7 +10993,13 @@
     "lunch": "園内に自動販売機あり。",
     "officialUrl": null,
     "desc": "港南区と磯子区にまたがる約23万平方メートルの広大な公園。丘陵地の各所に遊具広場が点在し、大池のほとりには能舞台「久良岐能舞台」や保存された横浜市電の車両もある。",
-    "tip": "駐車場は有料（最初の2時間300円、以降20分ごとに50円）。敷地がとても広いので、遊具エリアと自然散策エリアを分けて楽しむのがおすすめ。"
+    "tip": "駐車場は有料（最初の2時間300円、以降20分ごとに50円）。敷地がとても広いので、遊具エリアと自然散策エリアを分けて楽しむのがおすすめ。",
+    "heat": {
+      "note": "横浜市の案内では、2〜3人が入れる大きさまでで、杭（ペグ）を打たない簡易なテント（ワンタッチテント）なら使えます。公園ごとに決まりが異なる場合があるので、お出かけ前に公園で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/qa/rule/faqrule-14.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -10241,7 +11303,7 @@
     "access": "東武伊勢崎線「せんげん台」駅からバス",
     "baby": "おむつ替えトイレあり／ベビーカーOK",
     "lunch": "園内に売店あり。",
-    "officialUrl": null,
+    "officialUrl": "https://www.parks.or.jp/shirakobatosuijo/",
     "desc": "夏は流れるプールやさざなみプール、スライダーなど9種類のプールが開く広大な県営公園。乳児〜幼児向けの幼児用プールや、幼児〜低学年向けの子ども用プールもあり、ホワイトビーチで砂遊びもできる。秋〜冬はプールでルアーやフライのフィッシングも楽しめる。",
     "tip": "プールは例年7月中旬〜9月上旬で、小学生未満は無料。スライダープールは小学生以上。おむつが取れていない子は、水遊び用おむつの上から水着を着る。駐車場は無料（1,900台）だが、プール期間中は有料。",
     "verifiedAt": "2026年10月5日"
@@ -10415,7 +11477,14 @@
     "lunch": "隣接商業施設「ビア長池」にレストラン・スーパーあり。飲食持込可。",
     "officialUrl": null,
     "desc": "屋内型の大型遊園地。ゴーカートや室内電車などの乗り物から、1年中雪遊びができる「スノータウン」まで楽しめる、雨の日の強い味方。",
-    "tip": "駅直結でアクセス抜群。天候を気にせず一日中遊べるので、雨予報の日の代替プランに最適。"
+    "tip": "駅直結でアクセス抜群。天候を気にせず一日中遊べるので、雨予報の日の代替プランに最適。",
+    "food": {
+      "bento": "ok",
+      "source": "official",
+      "bentoNote": "お弁当などの食べ物と飲み物の持ち込みができます。",
+      "sourceUrl": "https://asobimare.jp/tokyo/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -10509,7 +11578,14 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000186737/"
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内でのお食事はできません。持ち込みもご遠慮くださいと案内されています。飲み物は、休憩コーナーで飲めます。",
+      "source": "official",
+      "sourceUrl": "https://www.chikahaku.jp/about/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -10579,6 +11655,13 @@
     "tip": "雨でも濡れずに駅からそのまま入れるのが最大の魅力。授乳室・おむつ替えスペースも完備。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000008568/"
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "場内での飲食は、基本的にご遠慮くださいと案内されています。飲み物は、蓋付きの容器（ペットボトルなど）なら持ち込めます。場外にフードエリアがあり、そこでは持ち込みと飲食ができます。時間制パス（60・90分）は、飲食エリアを使うためだけの再入場ができます。",
+      "source": "official",
+      "sourceUrl": "https://kidspark.hapipiland.com/guide/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -10611,6 +11694,13 @@
     "tip": "駅直結でアクセス抜群。2025年にリニューアルオープンしたばかりで設備がきれい。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000044936/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUSの公式FAQでは、飲食物の持ち込みができ、飲食スペースで食べられると案内されています（アルコールと、荷物での座席の取り置きは不可）。「mini」の店舗の飲食スペースの有無は、お出かけ前に店舗へ確認してください。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -10657,7 +11747,16 @@
         "reason": "2026年12月31日で閉店予定"
       }
     ],
-    "businessHoursNote": "2026年12月31日で閉店予定"
+    "businessHoursNote": "2026年12月31日で閉店予定",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "お食事の持ち込みはできません。店内のレストランを利用します。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、全店で持ち込めます（公式サイトの案内）。アレルギー対応食の持ち込みは、受付スタッフに相談します。",
+      "source": "official",
+      "sourceUrl": "https://fantasyresort.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -10758,6 +11857,13 @@
     "tip": "駅直結でベビーカーのまま入店しやすい。みなとみらい観光と組み合わせた雨の日プランに便利。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000022382/"
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "施設内では飲食物の持ち込みをご遠慮くださいと案内されています（フタつきの飲料のみ可）。この店舗には「レストコーナー」があり、そのスペースでは食事ができます。",
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -11110,7 +12216,14 @@
     },
     "recommendedBooking": "asoview",
     "desc": "1872年創設の日本でいちばん歴史の長い博物館で、国宝・重要文化財を多数収蔵する。平成館1階には未就学児と保護者向けの「ファミリースペース」があり、絵本やおもちゃのほか、授乳やおむつ替えができるベビーケアルームもある。本館北側の庭園も散策できる。",
-    "tip": "高校生以下・18歳未満は総合文化展（常設展）が無料。毎月第4日曜（一部の月を除く）は子ども向けの「トーハクプチキッズデー」を開催。駐車場はないので電車で（JR上野駅公園口から徒歩10分）。"
+    "tip": "高校生以下・18歳未満は総合文化展（常設展）が無料。毎月第4日曜（一部の月を除く）は子ども向けの「トーハクプチキッズデー」を開催。駐車場はないので電車で（JR上野駅公園口から徒歩10分）。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式サイトのQ&Aでは、お弁当などは、平成館ラウンジのドリンクコーナー、本館地下1階のドリンクコーナー、東洋館テラスで食べると案内されています。このQ&Aの内容は更新時期が古い可能性があるので、お出かけ前に最新の案内を確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=156",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -11188,7 +12301,134 @@
         "type": "illumination",
         "note": "関東最大級の約600万球「さがみ湖イルミリオン」（18回目）。2026年はSNSで人気のクリエイター「可哀想に!」（おぱんちゅうさぎ・んぽちゃむ）と初コラボした「可哀想に!ギラギラサーカス団 inさがみ湖イルミリオン」。キャラクターをモチーフにした光るスポットや描き下ろしイラストのフォトスポットが登場。夜限定の演出で、全長100mのスライダー「マジカルウェーブ」、標高370mの空中を自転車で進む「青空ペダル」、虹色に光る「虹のリフト」も楽しめる。営業時間は16:00〜21:00（時期により変動、最終入場は30分前）。入園料は大人2,000〜2,400円・小人1,300〜1,700円（時期により変動）。昼から入園した人は追加料金なしで観覧できる。休園日は公式サイトで要確認。"
       }
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "マッスルモンスター2",
+        "minCm": 120,
+        "note": "体重120kg以下。140cm未満は140cm以上の付き添いが必要。小学生以下は18歳以上の付き添いが必要"
+      },
+      {
+        "name": "絶叫吊り橋 風天",
+        "minCm": 120,
+        "note": "体重120kg以下。140cm未満は140cm以上の付き添いが必要。18歳未満は保護者の同意書、小学生以下は18歳以上の付き添いが必要"
+      },
+      {
+        "name": "大空天国",
+        "minCm": 130,
+        "maxAge": 64,
+        "note": "65歳未満"
+      },
+      {
+        "name": "極楽パイロット",
+        "minCm": 130,
+        "maxAge": 64,
+        "note": "65歳未満"
+      },
+      {
+        "name": "青空ペダル",
+        "minAge": 4,
+        "note": "130cm未満は16歳以上の保護者と一緒に利用（公式表記は身長130cm以上）"
+      },
+      {
+        "name": "マジカルウェーブ",
+        "minAge": 6,
+        "note": "小学生以上、体重100kg未満"
+      },
+      {
+        "name": "F-1カート（1人乗り）",
+        "minCm": 140,
+        "note": "小学5年生以上"
+      },
+      {
+        "name": "F-1カート（2人乗り・運転席）",
+        "minCm": 140,
+        "note": "中学生以上"
+      },
+      {
+        "name": "F-1カート（2人乗り・助手席）",
+        "minAge": 4
+      },
+      {
+        "name": "バギーカート（1人乗り）",
+        "minCm": 140,
+        "note": "中学生以上"
+      },
+      {
+        "name": "バギーカート（2人乗り・運転者）",
+        "minCm": 140,
+        "note": "中学生以上"
+      },
+      {
+        "name": "バギーカート（2人乗り・助手席）",
+        "minCm": 110,
+        "note": "小学生以上"
+      },
+      {
+        "name": "ティーパーティー",
+        "minAge": 3,
+        "note": "3・4歳は付き添いが必要"
+      },
+      {
+        "name": "スカイライダー（運転席）",
+        "minCm": 130
+      },
+      {
+        "name": "スカイライダー（助手席）",
+        "minAge": 4,
+        "note": "4歳以上かつ130cm未満は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "スカイパラソル",
+        "minCm": 100,
+        "minAge": 3,
+        "note": "4歳以下は付き添いが必要"
+      },
+      {
+        "name": "空飛ぶブランコ",
+        "minAge": 4,
+        "note": "4・5歳は付き添いが必要"
+      },
+      {
+        "name": "天狗道場（初級）",
+        "minCm": 100,
+        "note": "体重120kgまで。140cm以下は付き添いが必要（140cm以上かつ中学生以上）"
+      },
+      {
+        "name": "天狗道場（中級・上級）",
+        "minCm": 120,
+        "note": "小学3年生以上、体重120kgまで。140cm以下は付き添いが必要（140cm以上かつ中学生以上）"
+      },
+      {
+        "name": "とつげき！パディントン探検隊",
+        "minAge": 2,
+        "note": "5歳以下は付き添いが必要"
+      },
+      {
+        "name": "すすめ！キャプテンパディントン",
+        "minCm": 105,
+        "minAge": 4
+      },
+      {
+        "name": "はっしん！パディントン飛行隊",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "105cm未満は付き添いが必要"
+      },
+      {
+        "name": "モリモリノボル",
+        "minCm": 120,
+        "maxCm": 200,
+        "note": "200cm未満、体重120kg未満、小学生以上。18歳未満は保護者の同意署名が必要"
+      },
+      {
+        "name": "MORI MORIバギー（助手席）",
+        "minAge": 6,
+        "note": "運転席は普通車運転免許の保有者"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.sagamiko-resort.jp/attractions/index.html"
   },
   {
     "region": "神奈川",
@@ -11839,7 +13079,25 @@
     },
     "recommendedBooking": "asoview",
     "desc": "おもちゃの部屋・アスレチック・アトラクションの3エリアからなる子ども向けテーマパーク。",
-    "tip": "屋内エリアもあるので雨の日でも楽しめる。小さい子連れに特におすすめ。"
+    "tip": "屋内エリアもあるので雨の日でも楽しめる。小さい子連れに特におすすめ。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めます。園内に屋根付きの大きな飲食スペースがあり、自由に使えます。園内の飲食店は、テイクアウト式の「キングハット」「プラザ」「屋台」です（時期によって営業店舗が変わります）。",
+      "babyFood": "ok",
+      "babyFoodNote": "総合案内所に電子レンジがあり、購入した離乳食も持参した離乳食もあたためられます。総合案内所では離乳食や粉ミルクも売っています。",
+      "allergy": "label",
+      "allergyNote": "アレルギー対応メニューはありません。各店舗の券売機に、メニューごとのアレルギー情報一覧表があります（対応表ではありません）。すべて同じ厨房で調理するため、微量に混入する可能性があります。",
+      "source": "official",
+      "sourceUrl": "https://www.omochaoukoku.com/karuizawa/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "屋根付きの大きな飲食スペースがあります。おもちゃのお部屋（全12館）は冷暖房完備の室内で、天候に関係なく遊べます。",
+      "source": "official",
+      "sourceUrl": "https://www.omochaoukoku.com/karuizawa/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "群馬",
@@ -13008,6 +14266,13 @@
     "tip": "土曜のものづくり教室や日祝のサイエンスショーなど、参加型イベントも豊富。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_11203cc3290033315/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "科学館内では飲食をお断りしています。お弁当を持ってきた場合は、科学館のある建物の1階コミュニティルームで食べられます。お天気のよい日は、外のベンチでも食べられます（川口市の案内）。",
+      "source": "official",
+      "sourceUrl": "https://www.city.kawaguchi.lg.jp/soshiki/04010/060/faq/6393.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -13143,7 +14408,59 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/13118ah3330044075/",
       "jalan": "https://www.jalan.net/kankou/spt_13118ah3330044075/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "ファミリーコースター",
+        "minCm": 80,
+        "minAge": 3,
+        "note": "未就学児は大人の付き添い（有料）が必要"
+      },
+      {
+        "name": "ウォーターシューティングライド",
+        "minAge": 3,
+        "note": "未就学児は大人の付き添い（有料）が必要"
+      },
+      {
+        "name": "スカイサイクル",
+        "minAge": 3,
+        "note": "付き添いなしの小学生（1人利用）は130cm以上。未就学児は大人の付き添い（有料）が必要"
+      },
+      {
+        "name": "ふわふわドーム",
+        "minAge": 3,
+        "maxAge": 12
+      },
+      {
+        "name": "くじらスライダー",
+        "minCm": 100,
+        "minAge": 5,
+        "maxAge": 12
+      },
+      {
+        "name": "アニマルハウス",
+        "minCm": 70,
+        "minAge": 2,
+        "maxAge": 4
+      },
+      {
+        "name": "わくわくパーク（室内遊び場）",
+        "maxAge": 12,
+        "note": "6か月以上。大人の付き添いが必要（子ども3名に対し大人1名以上）"
+      },
+      {
+        "name": "ポニー乗馬",
+        "minAge": 3,
+        "maxAge": 10
+      },
+      {
+        "name": "釣り堀",
+        "minAge": 4,
+        "note": "3歳以下は入場不可。未就学児は大人の付き添い（有料）が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.city.arakawa.tokyo.jp/a038/yuuen/riyo.html"
   },
   {
     "region": "東京",
@@ -13259,7 +14576,23 @@
     "tip": "入園無料でアトラクションごとの支払いなので、予算に合わせて遊べる。専用駐車場がないため公共交通機関がおすすめ。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/14103cc3540060196/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "バニッシュ！",
+        "minCm": 120,
+        "maxAge": 64,
+        "note": "小学生以上"
+      },
+      {
+        "name": "ファミリー・バナナ・コースター",
+        "minCm": 95,
+        "minAge": 3,
+        "note": "小学生未満および120cm未満は有料の付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://cosmoworld.jp/"
   },
   {
     "region": "神奈川",
@@ -13416,6 +14749,163 @@
         "type": "event",
         "note": "トーマスランドの「トーマスランド HALLOWEEN PARTY！」（テーマは「おばけとパーティー」）。パーク内でスタンプを集めるビンゴ（参加無料。缶バッジは先着）、おばけの顔はめパネル、毎週末のショー「PLAY ON!」ハロウィン特別版がある。10/31は小学生以下の子どもが主役の仮装パレード（参加者にお菓子）、10/31と11/1はスタッフに「トリック・オア・トリート」と声をかけるとお菓子がもらえる。富士急ハイランドへの入園は無料だが、トーマスランドの利用にはパス料金が必要。"
       }
+    },
+    "rideLimits": [
+      {
+        "name": "ZOKKON",
+        "minCm": 120,
+        "maxCm": 195,
+        "maxAge": 64,
+        "note": "身長195cm未満"
+      },
+      {
+        "name": "FUJIYAMA",
+        "minCm": 110,
+        "maxAge": 64,
+        "note": "110〜130cm未満は中学生以上の付添者の同伴が必要。未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "高飛車",
+        "minCm": 125,
+        "maxAge": 54
+      },
+      {
+        "name": "ええじゃないか",
+        "minCm": 125,
+        "maxCm": 200,
+        "maxAge": 54,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "テンテコマイ",
+        "minCm": 130,
+        "maxAge": 64,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "鉄骨番長",
+        "minCm": 110,
+        "maxAge": 64,
+        "note": "110〜130cm未満は中学生以上の付添者の同伴が必要。未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "トンデミーナ",
+        "minCm": 137,
+        "maxCm": 195,
+        "maxAge": 64,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "レッド・タワー",
+        "minCm": 130,
+        "maxAge": 64,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "パニック・ロック",
+        "minCm": 140,
+        "maxAge": 64,
+        "note": "10歳未満は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "ナガシマスカ",
+        "minCm": 110,
+        "maxAge": 64,
+        "note": "110〜130cm未満は中学生以上の付添者の同伴が必要。未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "富士飛行社",
+        "minCm": 110,
+        "minAge": 4,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "進撃の巨人 THE RIDE -レべリオの決戦-",
+        "minCm": 110,
+        "minAge": 4,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "ほぼほぼジェットコースターV",
+        "minCm": 100,
+        "minAge": 7
+      },
+      {
+        "name": "FUJIYAMAウォーク",
+        "minCm": 140,
+        "note": "小学生以下は18歳以上の付添が必要"
+      },
+      {
+        "name": "FUJIYAMAスライダー",
+        "minCm": 130,
+        "maxAge": 64
+      },
+      {
+        "name": "幻影劇場",
+        "minCm": 100,
+        "minAge": 7
+      },
+      {
+        "name": "ウェーブスウィンガー",
+        "minCm": 110,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "リラックマのまくまくスイーツバイキング",
+        "minCm": 120,
+        "minAge": 6,
+        "note": "120〜140cm未満は中学生以上の付添者の同伴が必要。未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "すみっコぐらしのバルーン・カップケーキ",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "90〜105cm未満は中学生以上の付添者の同伴が必要。未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "リサとガスパールのそらたびにっき",
+        "minCm": 100,
+        "maxCm": 190,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "キラリンコ",
+        "minAge": 4,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "ニアとアニマルコースター",
+        "minAge": 3,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "ホッピング ウィンストン",
+        "minCm": 90,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "GO!GO!バルストロード",
+        "minCm": 90,
+        "note": "未就学児は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "戦慄迷宮",
+        "minAge": 6,
+        "note": "小学生以上。小学生は中学生以上の付添者の同伴が必要"
+      },
+      {
+        "name": "絶望要塞 -IMPOSSIBLE GAMES-",
+        "minAge": 6,
+        "note": "小学生以上。小学生は中学生以上の付添者の同伴が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.fujiq.jp/attraction/index.html",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】紹介記事の情報が分かれています。以前は公式のQ&Aとして、レストランやアトラクション内以外ならお弁当を持ち込めると紹介されていましたが、最近の記事には原則禁止とするものもあり、公式サイトで最新の案内を確認できていません。お出かけ前に公式サイトか電話で確認してください。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -13598,7 +15088,21 @@
     },
     "recommendedBooking": "asoview",
     "desc": "「潮目」をテーマにした東北最大級の環境水族館。親潮と黒潮が出会う海を再現した大水槽や、屋外の「わくわく・はじまりの森」で自然を感じながら学べる。",
-    "tip": "屋内展示が中心で天候に左右されにくい。バックヤードツアーなど体験プログラムも充実している。"
+    "tip": "屋内展示が中心で天候に左右されにくい。バックヤードツアーなど体験プログラムも充実している。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めます。館内の飲食は指定場所のみで、食事は1階南テラス、屋外広場、じゃぶじゃぶ・めぐりの海で食べます。酒類は持ち込めません。",
+      "babyFoodNote": "ベビーケアルームは、授乳やお食事、おむつ替えに使えます。",
+      "source": "official",
+      "sourceUrl": "https://www.aquamarine.or.jp/guide/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "お弁当を食べる場所（1階南テラス、屋外広場、じゃぶじゃぶ・めぐりの海）には屋根がなく、荒天時は使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.aquamarine.or.jp/guide/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -14171,7 +15675,19 @@
     "overnightRecommended": true,
     "hotelArea": "izu",
     "desc": "大室山のふもとに広がる動植物公園。約1500種のサボテン・多肉植物と、放し飼いのカピバラ・リスザルなど約140種の動物とふれあえる。冬季限定の「カピバラの露天風呂」が名物。",
-    "tip": "園内通路の一部に屋根があり雨天でも楽しめる。冬のカピバラ温泉は特に人気なので朝早めの訪問がおすすめ。"
+    "tip": "園内通路の一部に屋根があり雨天でも楽しめる。冬のカピバラ温泉は特に人気なので朝早めの訪問がおすすめ。",
+    "heat": {
+      "roof": "partial",
+      "note": "園内通路の一部に屋根があります。",
+      "source": "text"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "基本的に持ち込めます。お弁当は園内のベンチなどで食べ、ゴミは決められた場所に捨てるか持ち帰ります。持ち込んだ飲食物は、動物に与えないでください。",
+      "source": "official",
+      "sourceUrl": "https://izushaboten.com/information/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "長野",
@@ -14234,7 +15750,12 @@
     "overnightRecommended": true,
     "hotelArea": "izu",
     "desc": "温泉熱を利用してワニや熱帯植物を育てる動植物園。世界最多クラスのワニのコレクションのほか、日本で唯一のニシレッサーパンダ・アマゾンマナティーの展示も見どころ。園内の3分の2が屋根付きで雨の日も安心。",
-    "tip": "駅から徒歩1分と好アクセス。本園・分園間は無料シャトルバスで移動でき、全て回ると2〜2.5時間ほど楽しめる。"
+    "tip": "駅から徒歩1分と好アクセス。本園・分園間は無料シャトルバスで移動でき、全て回ると2〜2.5時間ほど楽しめる。",
+    "heat": {
+      "roof": "mostly",
+      "note": "園内の約3分の2が屋根付きです。",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -14269,7 +15790,26 @@
     },
     "recommendedBooking": "asoview",
     "desc": "浜名湖畔のリゾート型遊園地。メガコースター「四次元」などの絶叫マシンから0歳から遊べる乗り物まで25種類以上のアトラクションが揃う。隣接のロープウェイで浜名湖オルゴールミュージアムにも行きやすい。",
-    "tip": "3歳の誕生日には親子3名入園無料になるキャンペーンがあり、遊園地デビューにおすすめ。夏季は流水プールも人気。"
+    "tip": "3歳の誕生日には親子3名入園無料になるキャンペーンがあり、遊園地デビューにおすすめ。夏季は流水プールも人気。",
+    "rideLimits": [
+      {
+        "name": "ワイルドストーム",
+        "minCm": 120,
+        "maxAge": 64
+      },
+      {
+        "name": "急流すべり「ドン・ブラーコ」",
+        "minCm": 95,
+        "minAge": 3
+      },
+      {
+        "name": "立体迷路「デテミーヤ」",
+        "minAge": 3,
+        "note": "付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://pal2.co.jp/"
   },
   {
     "region": "山梨",
@@ -14552,7 +16092,14 @@
     "overnightRecommended": true,
     "hotelArea": "izu",
     "desc": "東京ドーム約5個分の広さを誇るアトラクション満載の公園。ジップラインや船型立体迷路、恐竜エリアをゴーカートで駆け抜けるアトラクションなど、幅広い年齢で楽しめる。無料の遊具エリアもあり、犬同伴もOK。",
-    "tip": "秋〜夏にかけては夜の「伊豆高原グランイルミ」も開催（昼夜入替制・別料金）。無料遊具エリアだけでも小さな子どもは十分楽しめる。"
+    "tip": "秋〜夏にかけては夜の「伊豆高原グランイルミ」も開催（昼夜入替制・別料金）。無料遊具エリアだけでも小さな子どもは十分楽しめる。",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "レストランやアトラクションへの持ち込みはご遠慮ください。無料遊具エリア、のんびり芝生エリア、園内のベンチなどでは飲食できます。ゴミは園内のゴミ箱に捨てるか、持ち帰ります。バーベキューなどの持ち込みと火器の使用は禁止です。",
+      "source": "official",
+      "sourceUrl": "https://www.granpal.com/information/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "静岡",
@@ -14592,7 +16139,13 @@
     "overnightRecommended": true,
     "hotelArea": "izu",
     "desc": "下田湾の入江をそのまま利用した珍しい海上水族館。イルカが間近に見られる海上ショーや、ウェットスーツを着てイルカと実際に触れ合えるプログラムが人気。",
-    "tip": "イルカとのふれあいプログラムは事前予約がおすすめ。桟橋を歩いて渡る構造なのでベビーカーは折りたたみが必要な場面も。"
+    "tip": "イルカとのふれあいプログラムは事前予約がおすすめ。桟橋を歩いて渡る構造なのでベビーカーは折りたたみが必要な場面も。",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトを直接確認できませんでした。紹介サイトでは、館内への持ち込みはできるが、飲食店舗への持ち込みはできないと案内されています。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "静岡",
@@ -14679,7 +16232,14 @@
     "overnightRecommended": true,
     "hotelArea": "izu",
     "desc": "英国村・カナダ村・日本庭園など6つのエリアからなる広大な自然公園。園内をイギリス製の本格SL「ロムニー鉄道」が走り、四季折々の花々も楽しめる。",
-    "tip": "起伏が多いので歩きやすい靴で。紅葉シーズン（11月中旬〜12月下旬）のライトアップは特に人気で混雑する。"
+    "tip": "起伏が多いので歩きやすい靴で。紅葉シーズン（11月中旬〜12月下旬）のライトアップは特に人気で混雑する。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持ち込みはOKと公式のQ&Aで案内されています。園内の各エリアに、洋食・和食の食事処、そば、うどん、テイクアウトのファーストフード店があります。",
+      "source": "official",
+      "sourceUrl": "https://www.nijinosato.com/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "静岡",
@@ -15336,7 +16896,7 @@
     "access": "JR「黒磯」駅からバス約55分（季節運行）",
     "baby": "身長制限があり未就学児には不向きな場合あり",
     "lunch": "周辺に飲食店あり。",
-    "officialUrl": "https://nozaru.jp/",
+    "officialUrl": "https://nozaru.net/",
     "overnightRecommended": true,
     "hotelArea": "nasu",
     "bookingLinks": {
@@ -15349,7 +16909,21 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 180
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "ノザルコース",
+        "minCm": 130,
+        "note": "小学生以下は大人の体験が必要"
+      },
+      {
+        "name": "コザルコース",
+        "minCm": 110,
+        "note": "保護者は一緒に体験またはコース横で見学付き添い。未就学児は大人の体験が必要、小学生は大人の見学が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://nozaru.net/nozaru/"
   },
   {
     "region": "栃木",
@@ -15474,7 +17048,12 @@
     "overnightRecommended": true,
     "hotelArea": "izu",
     "desc": "旧大仁町の町政50周年を記念して整備された約15haの自然公園。小川での水遊びや虫取り、木製遊具のあるアスレチック広場、展望台などがあり、森林浴やバードウォッチングにも最適。",
-    "tip": "施設内に売店がないため、お弁当・飲み物・虫取り網を持参すると存分に楽しめる。道幅が狭い区間があるので運転に注意。"
+    "tip": "施設内に売店がないため、お弁当・飲み物・虫取り網を持参すると存分に楽しめる。道幅が狭い区間があるので運転に注意。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -16073,7 +17652,18 @@
     },
     "recommendedBooking": "asoview",
     "desc": "富士山2合目、標高1200mの高原にあるアスレチック中心のテーマパーク。水上アスレチック「カッパ大作戦」や、忍者修行アトラクション「忍びの掟」など体を動かす仕掛けが豊富。屋内には1000点以上のおもちゃで遊べるエリアもあり雨の日でも楽しめ、犬同伴も可能。",
-    "tip": "標高が高く夏でも涼しいので避暑を兼ねたお出かけに最適。冬季は休園期間があるため訪問前の確認がおすすめ。"
+    "tip": "標高が高く夏でも涼しいので避暑を兼ねたお出かけに最適。冬季は休園期間があるため訪問前の確認がおすすめ。",
+    "heat": {
+      "summer": "cool",
+      "note": "標高約1200mの高原で、夏でも涼しく避暑を兼ねて出かけやすい場所です。",
+      "source": "text"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】今回の調査では公式サイトの記載は見つかりませんでした。紹介記事では、お弁当を持ち込んで、園内の屋外やキッズフジQ内の飲食スペースで食べられるという声が複数あります。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "静岡",
@@ -16169,7 +17759,12 @@
     "lunch": "フードコート・レストラン多数。",
     "officialUrl": "https://www.premiumoutlets.co.jp/gotemba/",
     "desc": "富士山を望む国内最大級のアウトレットモール。ヒルサイドのミニ遊園地（メリーゴーランド・観覧車）や屋外プレイグラウンド、レゴ・サンリオ等のキッズ向け店舗もあり、買い物と遊びを両立できる。授乳室・ベビーカー貸出など子連れ設備も充実。",
-    "tip": "広大な敷地のため、目的のエリア（West／East／Hill Side）を絞って回るのがおすすめ。雨の日でも屋根付き通路があり楽しめる。"
+    "tip": "広大な敷地のため、目的のエリア（West／East／Hill Side）を絞って回るのがおすすめ。雨の日でも屋根付き通路があり楽しめる。",
+    "heat": {
+      "roof": "partial",
+      "note": "屋根付き通路があります。",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -16308,6 +17903,20 @@
         "tentative": true,
         "type": "play"
       }
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内の軽食レストラン「サイエンスシップ」には、食べ物を持ち込めません。持ち込みで飲食する場合は、常設展示室に併設された中庭テラスの休憩用テントを使います。スペースシアター内は飲食できません。",
+      "source": "official",
+      "sourceUrl": "https://www.kagakukan.pref.yamanashi.jp/guide/faq.php",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "持ち込みの飲食には、常設展示室に併設された中庭テラスの休憩用テントを使います。",
+      "source": "official",
+      "sourceUrl": "https://www.kagakukan.pref.yamanashi.jp/guide/faq.php",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -16654,7 +18263,12 @@
     "overnightRecommended": true,
     "hotelArea": "kawaguchiko",
     "desc": "655人収容の全天候型専用劇場で、伝統芸能「猿まわし」を鑑賞できる。竹馬や太鼓など人間顔負けの芸を披露するお猿さんの演技に子どもも大人も引き込まれる。屋内劇場のため雨の日でも安心して楽しめ、公演後はお猿さんとの記念撮影も。",
-    "tip": "2歳以下は無料なので赤ちゃん連れでも気軽に立ち寄れる。屋根付きの全天候型施設で、雨の日の河口湖観光の候補にぴったり。"
+    "tip": "2歳以下は無料なので赤ちゃん連れでも気軽に立ち寄れる。屋根付きの全天候型施設で、雨の日の河口湖観光の候補にぴったり。",
+    "heat": {
+      "roof": "full",
+      "note": "屋根付きの全天候型劇場です。",
+      "source": "text"
+    }
   },
   {
     "region": "山梨",
@@ -17615,7 +19229,12 @@
     "overnightRecommended": true,
     "hotelArea": "karuizawa",
     "desc": "幅約70mの岩壁から、無数の細い糸のような水が流れ落ちる名瀑。地下水を水源とするため水が濁りにくく、いつでも美しい姿を楽しめる。滝までの遊歩道は短く、小さな子ども連れでも歩きやすい。夏の夜にはライトアップイベントも。",
-    "tip": "避暑スポットとして人気で夏は涼しい。売店の白糸湧水とうふは食べ歩きにおすすめ。"
+    "tip": "避暑スポットとして人気で夏は涼しい。売店の白糸湧水とうふは食べ歩きにおすすめ。",
+    "heat": {
+      "summer": "cool",
+      "note": "避暑スポットとして人気で、夏は涼しいとされています。",
+      "source": "text"
+    }
   },
   {
     "region": "長野",
@@ -17950,6 +19569,11 @@
     "tip": "事前予約制の「地下鉱山」と当日受付の「クリスタルリバー」の2コースがあるので、目的に応じて選ぶとよい。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000230418/"
+    },
+    "heat": {
+      "roof": "full",
+      "note": "屋根付き施設です。",
+      "source": "text"
     }
   },
   {
@@ -18458,7 +20082,11 @@
     },
     "recommendedBooking": "asoview",
     "desc": "巨大ジャングルジムやボールプール、メリーゴーランド、トランポリンなどが揃う室内型キッズパーク。イオン熊谷店3Fに位置し、天候に左右されず雨の日でも思いっきり体を動かして遊べる。",
-    "tip": "イオン熊谷店の駐車場（1000台超）がそのまま使えるので車での来店がしやすい。ショッピングのついでに立ち寄りやすい立地。"
+    "tip": "イオン熊谷店の駐車場（1000台超）がそのまま使えるので車での来店がしやすい。ショッピングのついでに立ち寄りやすい立地。",
+    "food": {
+      "babyFood": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "東京",
@@ -18577,6 +20205,17 @@
     "tip": "おむつが外れていない子どもは大浴場を利用できないため、必要に応じて別料金の貸切風呂（3室）を利用するのがおすすめ。南町田グランベリーパークとあわせて訪れやすい立地。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000023148/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館外からの飲食物の持ち込みは固くお断りと案内されています。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食を利用するお客さまは、持ち込めます。",
+      "allergy": "ask",
+      "allergyNote": "食物アレルギーのある方は、食べ物を持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://www.manyo.co.jp/machida/question/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -18617,6 +20256,13 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000221813/",
       "asoview": "https://www.asoview.com/base/152800/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物、ペットボトルや水筒の持ち込みは禁止と案内されています。館内の自動販売機、レストラン、ドリンクコーナーを使います。",
+      "source": "official",
+      "sourceUrl": "https://hachioji.ryusenjinoyu.com/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -18777,6 +20423,13 @@
         "type": "event",
         "note": "館内に100枚の鏡を飾った「ハロウィンラウンジ」が登場。フェイスペイントシールやコスメで変身できるセルフの「ヴィランメイク」体験（手ぶらでOK）、カボッチャ大会などがある。"
       }
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物の持ち込みはご遠慮くださいと案内されています。カフェの営業終了後は、フロントで軽食を売っています。個室を利用する場合は、個室内への持ち込みができます。",
+      "source": "official",
+      "sourceUrl": "https://ofurocafe-utatane.com/faq",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -18870,7 +20523,20 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/155350/"
     },
-    "bookingNote": "プール券は東武動物公園のアソビュー！ページで購入（入園券セット・プール単体あり）"
+    "bookingNote": "プール券は東武動物公園のアソビュー！ページで購入（入園券セット・プール単体あり）",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食べ物は持ち込めますが、食品の保管にはご注意ください。飲み物はペットボトルか水筒で、ビンは持ち込めません。",
+      "source": "official",
+      "sourceUrl": "https://www.tobuzoo.com/faq/pool/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "プール場内は日陰が少ないため、ポップアップテント・ワンタッチテントの持ち込みが案内されています。骨組みのあるフレーム型テントやタープは使えません。",
+      "source": "official",
+      "sourceUrl": "https://www.tobuzoo.com/faq/pool/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -18906,7 +20572,27 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/159083/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000207451/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "キッズコース",
+        "minCm": 90,
+        "note": "小学3年生まで。18歳以上の保護者の地上からの付き添いが必要（保護者1名につき4名まで）"
+      },
+      {
+        "name": "ネットコース",
+        "minCm": 90,
+        "note": "体重100kgまで。未就学児は18歳以上の保護者と一緒に参加"
+      },
+      {
+        "name": "トレックコース",
+        "minCm": 110,
+        "minAge": 6,
+        "note": "小学1年生以上（6歳は学年を確認）、体重110kgまで。エキサイトコースのみ小学4年生以上または140cm以上"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://foret-aventure.jp/park/fa-yokohama/"
   },
   {
     "region": "神奈川",
@@ -18942,7 +20628,22 @@
       "asoview": "https://www.asoview.com/base/161427/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000180073/"
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "rideLimits": [
+      {
+        "name": "キッズコース",
+        "minCm": 90,
+        "note": "小学3年生まで（主に4〜6歳向けのレベル）。18歳以上の保護者の地上からの付き添いが必要"
+      },
+      {
+        "name": "ジップトリップコース",
+        "minCm": 110,
+        "minAge": 6,
+        "note": "小学1年生以上（6歳は学年を確認）、体重110kgまで。18歳未満は大人の同伴が必須"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://foret-aventure.jp/park/fa-odawara/"
   },
   {
     "region": "埼玉",
@@ -18977,7 +20678,23 @@
     "tip": "身長・年齢制限があるため予約前に確認を。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000181746/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "トレックコース",
+        "minCm": 110,
+        "minAge": 6,
+        "note": "小学1年生以上（6歳は学年を確認）、体重100kgまで。小学生は18歳以上の保護者の同伴が必須"
+      },
+      {
+        "name": "ターザンスイング（トレックコース内）",
+        "minCm": 140,
+        "minAge": 9,
+        "note": "140cm以上かつ小学4年生以上"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://foret-aventure.jp/park/fa-chichibu/"
   },
   {
     "region": "茨城",
@@ -19009,7 +20726,37 @@
       "maxMinutes": 180
     },
     "desc": "筑波山神社のふもとにある、自然の地形を活かした本格的な樹上アスレチック。全74のアクティビティがあり、スリル重視の「アドベンチャーコース」、家族で楽しめる「キャノピーコース」、体力に自信のある人向けの「エキサイトコース」から選べる。",
-    "tip": "参加できる身長や年齢はコースごとに決まっているので、予約時に確認を。"
+    "tip": "参加できる身長や年齢はコースごとに決まっているので、予約時に確認を。",
+    "rideLimits": [
+      {
+        "name": "キャノピーコース",
+        "minCm": 110,
+        "note": "体重110kgまで。小学2年生までは18歳以上の保護者と一緒に参加"
+      },
+      {
+        "name": "アドベンチャーコース",
+        "minCm": 140,
+        "orMinAge": 10,
+        "orLabel": "小学4年生以上",
+        "note": "体重110kgまで。小学生以下は18歳以上の保護者と一緒に参加（9歳は学年を確認）"
+      },
+      {
+        "name": "ジップトリップコース",
+        "minCm": 140,
+        "orMinAge": 10,
+        "orLabel": "小学4年生以上",
+        "note": "体重110kgまで。小学生以下は18歳以上の保護者と一緒に参加（9歳は学年を確認）"
+      },
+      {
+        "name": "エキサイトコース",
+        "minCm": 140,
+        "orMinAge": 10,
+        "orLabel": "小学4年生以上",
+        "note": "体重110kgまで。小学生以下は18歳以上の保護者と一緒に参加（9歳は学年を確認）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://foret-aventure.jp/park/fa-tsukuba/"
   },
   {
     "region": "群馬",
@@ -19045,7 +20792,21 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/spot0000000802/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000208905/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "キッズコース",
+        "minCm": 90,
+        "note": "小学3年生まで。18歳以上の保護者の地上からの付き添いが必要"
+      },
+      {
+        "name": "キャノピーコース",
+        "minCm": 110,
+        "note": "体重110kgまで。小学2年生までは18歳以上の保護者と一緒に参加"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://foret-aventure.jp/park/fa-ueno/"
   },
   {
     "region": "群馬",
@@ -19247,6 +21008,15 @@
     "tip": "おむつが外れていない子はベビーバス・ベビーチェアを利用（男湯にも完備）。3駅から無料送迎バスがあり、車がなくても行きやすい。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000214018/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物の持ち込みは、離乳食を除いてご遠慮くださいと案内されています。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://rakuspa.com/tsurumi/guide/faq.php",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -19286,6 +21056,13 @@
     "tip": "「ちびっこ湯」があるため、おむつが外れていない小さな子どもも一緒に天然温泉を楽しめる。中山駅・鶴ヶ峰駅から無料送迎バスあり。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/152102/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物、ペットボトルや水筒の持ち込みは禁止と案内されています。館内の自動販売機、レストラン、ドリンクコーナーを使います。",
+      "source": "official",
+      "sourceUrl": "https://tsurugamine.ryusenjinoyu.com/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -19497,6 +21274,21 @@
     },
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000009089/"
+    },
+    "food": {
+      "bento": "ng",
+      "source": "official",
+      "bentoNote": "食べものの持ち込みはご遠慮いただいています。アルコール以外の飲み物は持ち込めますが、ビンやガラスの容器は禁止です。",
+      "sheet": "ok",
+      "sheetNote": "レジャーシートは、通路や通行の妨げにならない場所、ほかのお客さまの迷惑にならない場所で使えます。折り畳み椅子は、小さなお子さまが使う程度（約50cm×50cm）の大きさまでです。",
+      "sourceUrl": "https://www.princehotels.co.jp/pool/oiso/faq/",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "shade": "little",
+      "note": "【口コミからの目安・実際と異なる場合があります】プール周辺は日陰がほとんどなく、無料の日陰スペースもないという声が複数あります。日陰で休みたい場合は、有料席のほか、テントやパラソルの持ち込み（持ち込みテントエリアは無料）が案内されています。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
     }
   },
   {
@@ -19576,6 +21368,13 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/spot0000030396/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000223639/"
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "アルコールと市販の飲食物は持ち込めませんと公式サイトに案内されています。紹介記事には、手作りのお弁当は持ち込めるという声がありますが、公式サイトでは確認できていません。お出かけ前に公式サイトか電話で確認してください。",
+      "source": "official",
+      "sourceUrl": "https://www.ibaraido.co.jp/schedule/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -19940,7 +21739,14 @@
       "maxMinutes": 300
     },
     "desc": "「流山おおたかの森」駅直結という好立地の関東最大級クラスの温浴施設。駅直結のため電車でも車がなくても行きやすく、ショッピングモールでの買い物と組み合わせやすい。",
-    "tip": "駅直結でアクセス良好。おおたかの森はファミリー層に人気のエリアで、買い物帰りに立ち寄りやすい。"
+    "tip": "駅直結でアクセス良好。おおたかの森はファミリー層に人気のエリアで、買い物帰りに立ち寄りやすい。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物、ペットボトルや水筒の持ち込みは禁止と案内されています。館内の自動販売機、レストラン、ドリンクコーナーを使います。",
+      "source": "official",
+      "sourceUrl": "https://www.ryusenjinoyu.com/spametsaotaka/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -20122,7 +21928,7 @@
     "access": "JR「青堀」駅からバス約15分、富津公園内",
     "baby": "幼児プールあり／ウォータースライダーは身長120cm以上が対象",
     "lunch": "公園内に売店あり。",
-    "officialUrl": null,
+    "officialUrl": "https://www.cue-net.or.jp/kouen/futtsu/jumbopool/index.html",
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
@@ -20141,6 +21947,18 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/spot0000030532/",
       "jalan": "https://www.jalan.net/kankou/spt_12226cc3540060292/"
+    },
+    "food": {
+      "bentoNote": "酒類、ビン・缶類、ガラス製品、ポットや炊飯器などの調理器具は持ち込めません（火気類・刃物類も不可）。食べ物そのものは、公式の持ち込み禁止の一覧に入っていません。",
+      "source": "official",
+      "sourceUrl": "https://www.cue-net.or.jp/kouen/futtsu/jumbopool/index.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "簡易テントは持ち込めますが、パラソル・日傘・足つきテントは持ち込めません。日焼け止めは、入水前にシャワーなどで落とします。",
+      "source": "official",
+      "sourceUrl": "https://www.cue-net.or.jp/kouen/futtsu/jumbopool/index.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -20187,7 +22005,20 @@
     },
     "needsReview": [
       "市営のため料金が安く、雨の日や冬でも利用できる貴重な屋内プール"
-    ]
+    ],
+    "food": {
+      "bentoNote": "プールサイドでの飲食、履物の使用、喫煙はしないでくださいと案内されています。",
+      "source": "official",
+      "sourceUrl": "https://yokohama-wp.com/kanazawa/guide",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "full",
+      "note": "東京湾をのぞむ海沿いにある屋内プールで、すべて温水プールです。",
+      "source": "official",
+      "sourceUrl": "https://yokohama-wp.com/kanazawa/guide",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -20262,7 +22093,20 @@
       "asoview": "https://www.asoview.com/base/152314/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000191647/"
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "rideLimits": [
+      {
+        "name": "アドベンチャー（AD）コース",
+        "minAge": 8,
+        "note": "小学3年生以上（8歳は学年を確認）、体重130kgまで。推奨身長130cm以上（それ未満でも利用可だが保護者のサポートが必要な場合あり）。中学生以下は18歳以上の保護者と参加"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://treecross-advtr.storeinfo.jp/pages/643777/conditions",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "千葉",
@@ -20288,13 +22132,40 @@
     "parking": "yes",
     "access": "東京から車で約60分",
     "baby": "おむつ替えは要問合せ",
-    "officialUrl": null,
+    "officialUrl": "https://foret-aventure.jp/park/fa-tarzania/",
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
     },
     "desc": "専用ハーネスを着用して樹から樹へ移動する自然共生型アドベンチャーパーク。施設内に65のアクティビティがあり、家族・カップル・友達みんなで楽しめる。",
-    "tip": "原則木曜定休（時期により異なる）。東京から車で約60分とアクセスしやすい。"
+    "tip": "原則木曜定休（時期により異なる）。東京から車で約60分とアクセスしやすい。",
+    "rideLimits": [
+      {
+        "name": "キッズコース",
+        "minCm": 90,
+        "maxCm": 110,
+        "note": "110cmを超えるとキャノピーコースの案内。保護者による確認書の記入とコース下からの見守りが必要"
+      },
+      {
+        "name": "キャノピーコース",
+        "minCm": 110,
+        "note": "体重110kgまで。小学2年生までは保護者の同伴プレイが必要"
+      },
+      {
+        "name": "アドベンチャーコース",
+        "minCm": 140,
+        "orMinAge": 10,
+        "orLabel": "小学4年生以上",
+        "note": "体重110kgまで。小学生のみでの利用は不可（9歳は学年を確認）"
+      },
+      {
+        "name": "エキサイトコース（ターザンスイング）",
+        "minCm": 140,
+        "note": "アドベンチャーコース後に挑戦できる（別料金）。体重110kgまで"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://foret-aventure.jp/park/fa-tarzania/"
   },
   {
     "region": "埼玉",
@@ -20442,6 +22313,23 @@
     "tip": "潮干狩りシーズンの休日は駐車場が朝から満車になることがあるため、早めの到着がおすすめ。隣接する八景島シーパラダイスと合わせて訪れるのも良い。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_14108ah3330042642/"
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内の売店・自動販売機",
+          "note": "海とのふれあいセンター、バーベキュー場、柴口休憩所、南口休憩所に売店があります。売店の営業日は管理センター（045-701-3450）に問い合わせます。飲料やアイスの自動販売機もあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/faq.php",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "海水浴場の更衣室の前には大型の休憩テントがあり、どなたも自由に使えます（海水浴場の開設期間）。",
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/sea.php",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -20569,7 +22457,11 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000056181/"
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "allergy": "label",
+      "source": "text"
+    }
   },
   {
     "region": "長野",
@@ -20737,7 +22629,14 @@
     "tip": "駅から徒歩圏で電車でもアクセスしやすい。",
     "needsReview": [
       "埼玉県内では貴重な大型室内あそび場"
-    ]
+    ],
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、あめやガムを含めて、お食事はご遠慮くださいと案内されています。蓋付きの飲み物（水筒やペットボトル）は持ち込めて、場内のレストスペースで飲みます（店舗の案内）。",
+      "source": "official",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "千葉",
@@ -20960,7 +22859,13 @@
       "maxMinutes": 120
     },
     "desc": "JR市ヶ谷駅を出てすぐの、都心にありながら自然を感じられる釣り堀。鯉釣り・金魚釣りに加え、釣ったその場で焼いて食べられるニジマス釣りもある。観賞魚ショップも併設。電車だけで行けるため、車がない家族の釣りデビューにも向く。",
-    "tip": "駅から徒歩1分という都心のアクセスの良さが最大の魅力。日陰が少ないため夏場は暑さ対策を。"
+    "tip": "駅から徒歩1分という都心のアクセスの良さが最大の魅力。日陰が少ないため夏場は暑さ対策を。",
+    "heat": {
+      "shade": "little",
+      "summer": "caution",
+      "note": "日陰が少ないため、夏場は暑さ対策が必要です。",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -21036,7 +22941,18 @@
       "maxMinutes": 240
     },
     "desc": "童謡「夕焼小焼」のふるさととして知られる八王子西部の自然体験施設。ふれあい牧場ではポニー乗馬や小動物とのふれあい・エサやりが楽しめ、北浅川の浅瀬では川遊びも人気。宿泊施設やキャンプ場も併設されており、日帰り入浴も可能。口コミでは0〜1歳・4〜6歳の利用が多い。",
-    "tip": "川遊び用の着替えとサンダルがあると安心。動物ふれあいと川遊びを組み合わせれば、夏場は半日〜1日たっぷり過ごせる。"
+    "tip": "川遊び用の着替えとサンダルがあると安心。動物ふれあいと川遊びを組み合わせれば、夏場は半日〜1日たっぷり過ごせる。",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "お食事処「いろりばた」",
+          "note": "営業時間は11:30〜14:00です。2027年4月1日から当面の間、営業を休止する予定と八王子市が案内しています。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.city.hachioji.tokyo.jp/kankobunka/005/p003197.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "山梨",
@@ -21128,7 +23044,13 @@
     },
     "desc": "富士山を目の前に望む朝霧高原の体験型観光牧場。乳しぼり・ミルクやりなどの酪農体験に加え、アスレチック広場やグランピング体験も充実しており、動物ふれあいだけでなく1日しっかり遊べるテーマパーク型の牧場。",
     "tip": "富士山を背景にした写真映えスポットとしても人気。グランピング体験もあるため、日帰りだけでなく宿泊にも対応。",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】公式サイトのQ&Aとして、お弁当の持ち込みはOKで、牧場内にテーブル・いす・ベンチがところどころにあると紹介する記事があります。ただし、古い口コミには持ち込み禁止とするものもあり、公式サイトで最新の案内を確認できていません。お出かけ前に確認すると安心です。",
+      "source": "review",
+      "reviewCheckedAt": "2026年10月12日"
+    }
   },
   {
     "region": "長野",
@@ -21896,7 +23818,11 @@
       "maxMinutes": 120
     },
     "desc": "梨とぶどうの食べ放題が楽しめるアットホームな観光農園。開園期間は8月上旬〜10月上旬で、時間無制限〜90分程度の食べ放題プランがある。駅から徒歩8分と電車でもアクセスしやすく、飲食物の持ち込みも可能。",
-    "tip": "新京成電鉄「くぬぎ山」駅から徒歩8分と電車で行きやすいのが強み。梨狩りエリアとぶどう狩りエリアは別々なので、両方楽しみたい場合は順番に案内してもらう。"
+    "tip": "新京成電鉄「くぬぎ山」駅から徒歩8分と電車で行きやすいのが強み。梨狩りエリアとぶどう狩りエリアは別々なので、両方楽しみたい場合は順番に案内してもらう。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "埼玉",
@@ -21969,7 +23895,14 @@
       "maxMinutes": 300
     },
     "desc": "埼玉最大級クラスの日帰り温浴施設。4種類の炭酸泉やロウリュサウナ・塩サウナ、時間無制限の岩盤浴などが揃い、ニフティ温泉の全国ランキングでも上位常連。2024年7月にリニューアルオープン済み。",
-    "tip": "中学生未満のお子様のみでの利用は不可のため、必ず保護者同伴で。草加・谷塚駅から無料送迎バスあり。"
+    "tip": "中学生未満のお子様のみでの利用は不可のため、必ず保護者同伴で。草加・谷塚駅から無料送迎バスあり。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物の持ち込みは禁止と案内されています。お食事処だけの利用でも入館料がかかります。",
+      "source": "official",
+      "sourceUrl": "https://ryusenjinoyu.com/souka/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "茨城",
@@ -22043,6 +23976,17 @@
     "tip": "授乳室・おむつ替え台があるため乳児連れでも利用しやすい。深夜料金や休憩室の有無は事前に公式サイトで確認を。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000224515/"
+    },
+    "food": {
+      "babyFood": "ok",
+      "source": "official",
+      "bento": "ng",
+      "bentoNote": "館外からの飲食物の持ち込みは固くお断りされています。館内の食事は5階のお食事処で、午前11時30分から翌朝4時までとれます。",
+      "babyFoodNote": "離乳食をご利用の方は持ち込めます。",
+      "allergy": "ask",
+      "allergyNote": "食物アレルギーをお持ちの方は、食べ物を持ち込めます。",
+      "sourceUrl": "https://tokyo-toyosu.manyo.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -22081,6 +24025,17 @@
     "tip": "横浜駅西口から無料シャトルバスがあり、車がなくてもアクセスしやすい。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000197331/"
+    },
+    "food": {
+      "babyFood": "ok",
+      "source": "official",
+      "bento": "ng",
+      "bentoNote": "館外からの飲食物の持ち込みは固くお断りされています。",
+      "babyFoodNote": "離乳食をご利用の方は持ち込めます。",
+      "allergy": "ask",
+      "allergyNote": "食物アレルギーをお持ちの方は、食べ物を持ち込めます。",
+      "sourceUrl": "https://www.manyo.co.jp/mm21/question/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -22119,6 +24074,17 @@
     "tip": "お食事・宴会メニューが充実しているため、食事もセットで楽しみたい家族向き。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/4231/"
+    },
+    "food": {
+      "babyFood": "ok",
+      "source": "official",
+      "bento": "ng",
+      "bentoNote": "館外からの飲食物の持ち込みは固くお断りされています。",
+      "babyFoodNote": "離乳食をご利用の方は持ち込めます。",
+      "allergy": "ask",
+      "allergyNote": "食物アレルギーをお持ちの方は、食べ物を持ち込めます。",
+      "sourceUrl": "https://www.manyo.co.jp/odawara/question/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -22234,7 +24200,11 @@
       "maxMinutes": 180
     },
     "desc": "黒湯炭酸泉や露天風呂、ミストサウナなど14種類のお風呂とサウナがある日帰り温泉施設。3歳以下は無料、子ども（4歳〜小学生）は平日350円・土日祝450円と入りやすい。施設利用者は約2,400冊のコミックを無料で読め、コインランドリーも併設している。",
-    "tip": "おむつが取れていないお子様は浴槽に入れないため、おむつが外れてからが目安。7歳以上は混浴不可。営業は平日23時・土日祝24時まで（最終入館は30分前）。"
+    "tip": "おむつが取れていないお子様は浴槽に入れないため、おむつが外れてからが目安。7歳以上は混浴不可。営業は平日23時・土日祝24時まで（最終入館は30分前）。",
+    "food": {
+      "bento": "ng",
+      "source": "text"
+    }
   },
   {
     "region": "埼玉",
@@ -22962,7 +24932,12 @@
       "maxMinutes": 90
     },
     "desc": "農薬・化学肥料不使用、東京都エコ農作物認定制度で最高ランク「エコ100」を取得したミニトマト狩り農園。6品種のミニトマトを30分食べ放題で楽しめ、トンネル栽培のため日陰で収穫体験ができる。口コミ評価5.0の人気農園。",
-    "tip": "完全予約制・雨天中止の場合があるため、訪問前に予約状況・天候を確認するのがおすすめ。秋にはさつまいも掘りも開催。"
+    "tip": "完全予約制・雨天中止の場合があるため、訪問前に予約状況・天候を確認するのがおすすめ。秋にはさつまいも掘りも開催。",
+    "heat": {
+      "shade": "plenty",
+      "note": "トンネル栽培のため、日陰で収穫体験ができます。",
+      "source": "text"
+    }
   },
   {
     "region": "千葉",
@@ -23194,7 +25169,13 @@
     "officialUrl": "https://zama-aeonmall.com/",
     "verifiedAt": "2026年10月5日",
     "desc": "イオンモール座間の館内にある無料の木育キッズスペース「KIDS FIELD」。天然木のぬくもりを感じながら遊べる。フードコート内にも別のキッズスペースがあり、買い物や食事のついでに立ち寄りやすい。",
-    "tip": "雨の日・猛暑日の「少しだけ子どもを遊ばせたい」に便利。駐車場も無料。"
+    "tip": "雨の日・猛暑日の「少しだけ子どもを遊ばせたい」に便利。駐車場も無料。",
+    "heat": {
+      "roof": "full",
+      "summer": "cool",
+      "note": "雨の日・猛暑日に少しだけ遊ばせたいときに便利な館内スペースです。",
+      "source": "text"
+    }
   },
   {
     "region": "千葉",
@@ -23313,7 +25294,14 @@
     "officialUrl": "https://www.yumegaoka-soratos.com/feature/?cd=000011",
     "verifiedAt": "2026年9月20日",
     "desc": "相鉄グループの商業施設「ゆめが丘ソラトス」の屋上にある約3000平米の無料広場。相鉄キャラクター「そうにゃん」をモチーフにしたカラフルな遊具が年齢別に2エリアに分かれて設置されている。3階のstation view terraceから外階段でアクセス。",
-    "tip": "屋上・屋外のため夏場は日差しと熱中症に注意。水分補給をしながら遊ぶのがおすすめ。"
+    "tip": "屋上・屋外のため夏場は日差しと熱中症に注意。水分補給をしながら遊ぶのがおすすめ。",
+    "heat": {
+      "shade": "little",
+      "roof": "none",
+      "summer": "caution",
+      "note": "屋上・屋外のため、夏場は日差しと熱中症に注意。水分補給をしながら遊びましょう。",
+      "source": "text"
+    }
   },
   {
     "region": "埼玉",
@@ -23344,7 +25332,14 @@
     "officialUrl": "https://www.fantasy.co.jp/chikyunoniwa/hanyu/",
     "verifiedAt": "2026年10月5日",
     "desc": "2025年7月にイオンモール羽生内にオープンした、地球・自然をテーマにした室内遊び場（埼玉県初出店）。火山・森・山・宇宙など9つのエリアに分かれ、ボールプールや知育玩具でのごっこ遊びなど0〜12歳の子どもが楽しめる。",
-    "tip": "0歳から12歳まで対象で、赤ちゃん向けのコーナーも別に用意されている。"
+    "tip": "0歳から12歳まで対象で、赤ちゃん向けのコーナーも別に用意されている。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "施設内でお持ち込みのお食事はお断りしていると案内されています。ペットボトルなど、蓋のあるこぼれにくい容器の飲み物は持ち込めます（紙カップ容器は不可）。",
+      "source": "official",
+      "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/hanyu/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -23375,7 +25370,14 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月20日",
     "desc": "JR川崎駅直結の大型商業施設ラゾーナ川崎プラザ4階にある室内遊び場「あそびパークPLUS」。2階の人工芝「ルーファ広場」や屋外の無料キッズパークと組み合わせて過ごせる、駅近で使いやすいスポット。",
-    "tip": "駅直結で雨の日でも濡れずにアクセスできる。2階ルーファ広場は無料の休憩・遊びスペースとしても使える。"
+    "tip": "駅直結で雨の日でも濡れずにアクセスできる。2階ルーファ広場は無料の休憩・遊びスペースとしても使える。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "施設内では飲食物の持ち込みをご遠慮くださいと案内されています（フタつきの飲料のみ可）。食事ができる「レストコーナー」があるのは一部の店舗で、この店舗は公式のレストコーナー設置店の一覧に載っていません。",
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "東京",
@@ -23437,7 +25439,16 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月20日",
     "desc": "三井ショッピングパークららぽーとTOKYO-BAY North Gate 4階にある大型の室内遊び場。ボールプールや砂場、コンビニごっこなど盛りだくさんのアトラクションで、1日中室内で遊べる。約440店舗のららぽーと内なので、買い物と組み合わせやすい。",
-    "tip": "混雑時は入場までに待ち時間が出ることがあるため、開店直後の時間帯が狙い目。"
+    "tip": "混雑時は入場までに待ち時間が出ることがあるため、開店直後の時間帯が狙い目。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お食事の持ち込みができます。ピクニックエリアで食べられます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、全店で持ち込めます（公式サイトの案内）。アレルギー対応食の持ち込みは、受付スタッフに相談します。",
+      "source": "official",
+      "sourceUrl": "https://fantasyresort.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -23582,7 +25593,14 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月20日",
     "desc": "MARK IS みなとみらい3階にある、ボーネルンドが手がける室内遊び場。ボールプールや大型トランポリンなどアスレチックさながらの遊具に加え、ごっこ遊び・組み立て遊びのコーナーもある。生後6ヶ月から使える赤ちゃん専用「ベビーガーデン」があり、きょうだいで年齢差があっても一緒に利用しやすい。",
-    "tip": "赤ちゃん専用エリアが独立しているため、上の子と赤ちゃんの年齢差があっても安心して利用できる。"
+    "tip": "赤ちゃん専用エリアが独立しているため、上の子と赤ちゃんの年齢差があっても安心して利用できる。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、あめやガムを含めて、お食事はご遠慮くださいと案内されています。蓋付きの飲み物（水筒やペットボトル）は持ち込めて、場内のレストスペースで飲みます（店舗の案内）。",
+      "source": "official",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -23643,7 +25661,14 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月20日",
     "desc": "たまプラーザ駅直結、たまプラーザテラス ゲートプラザ ウィンドゲート1階にある室内遊び場「キドキド」。体を動かす「アクティブオーシャン」とごっこ遊び・組み立て遊びの「ディスカバリータウン」の2エリアに加え、赤ちゃん専用の「ベビーガーデン」もある。施設全体にベビー・キッズ向けの「ベビーテラス」も充実。",
-    "tip": "駅直結で天候を気にせずアクセスでき、1階のプレイスペース（無料）も別途あるため、有料のキドキドと使い分けられる。"
+    "tip": "駅直結で天候を気にせずアクセスでき、1階のプレイスペース（無料）も別途あるため、有料のキドキドと使い分けられる。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、あめやガムを含めて、お食事はご遠慮くださいと案内されています。蓋付きの飲み物（水筒やペットボトル）は持ち込めて、場内のレストスペースで飲みます（店舗の案内）。",
+      "source": "official",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -23674,7 +25699,14 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月20日",
     "desc": "辻堂駅北口直結、湘南最大級のショッピングモール「テラスモール湘南」3階にある室内遊び場「キドキド」。体を動かす「アクティブオーシャン」とごっこ遊びの「ディスカバリータウン」に加え、赤ちゃん専用「ベビーガーデン」もある。同じ3階には無料の「キッズテラス」、4階には人工芝の「ピクニックテラス」もあり、有料・無料を組み合わせて過ごせる。",
-    "tip": "駅直結で雨でも濡れずにアクセスできる。3階キッズテラス・4階ピクニックテラスは無料なので、キドキドと合わせて使うと1日過ごしやすい。"
+    "tip": "駅直結で雨でも濡れずにアクセスできる。3階キッズテラス・4階ピクニックテラスは無料なので、キドキドと合わせて使うと1日過ごしやすい。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、あめやガムを含めて、お食事はご遠慮くださいと案内されています。蓋付きの飲み物（水筒やペットボトル）は持ち込めて、場内のレストスペースで飲みます（店舗の案内）。",
+      "source": "official",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -23929,6 +25961,10 @@
     "tip": "7月下旬〜10月下旬がシーズン。土日は臨時駐車場を利用する場合があるので、周辺の案内表示に従うとスムーズ。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000199041/"
+    },
+    "food": {
+      "bento": "ok",
+      "source": "text"
     }
   },
   {
@@ -24078,7 +26114,12 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月21日",
     "desc": "約6000坪の広大な敷地で40種類以上のぶどう狩りが楽しめる農園。畑には屋根が付いているため雨の日でも楽しめるのが特徴。お土産が充実した売店も併設。勝沼ぶどう郷駅から徒歩約8分と、電車で訪れる家族にも便利な立地。",
-    "tip": "駅から徒歩圏内で車がなくても行きやすい。屋根付きの畑なので小雨程度なら決行しやすい。"
+    "tip": "駅から徒歩圏内で車がなくても行きやすい。屋根付きの畑なので小雨程度なら決行しやすい。",
+    "heat": {
+      "roof": "full",
+      "note": "畑に屋根が付いています。",
+      "source": "text"
+    }
   },
   {
     "region": "山梨",
@@ -24800,7 +26841,11 @@
     "officialUrl": "https://loghouse.seya-npo.org/",
     "verifiedAt": "2026年9月21日",
     "desc": "「まるたのしろ」の愛称で親しまれる瀬谷区のこどもログハウス。丸太で作られた木造の館内は裸足になって思い切り体を動かして遊べる造りで、2階から滑れる大きなすべり台、地下迷路、ネット階段、屋根裏などわくわくする遊具が揃う。幼児から中学生まで無料で利用でき、授乳室・おむつ交換台も完備。",
-    "tip": "平日午後3時以降は小学生の利用で混雑しやすいため、小さな子どもは午前中の利用がおすすめ。第2月曜と年末年始が休館日。"
+    "tip": "平日午後3時以降は小学生の利用で混雑しやすいため、小さな子どもは午前中の利用がおすすめ。第2月曜と年末年始が休館日。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -24885,6 +26930,10 @@
         "tentative": true,
         "type": "park"
       }
+    },
+    "food": {
+      "bento": "ok",
+      "source": "text"
     }
   },
   {
@@ -24919,7 +26968,11 @@
     "officialUrl": "https://kamakura-park.com/go/central_park/",
     "verifiedAt": "2026年9月21日",
     "desc": "鎌倉市の中心に位置する、谷戸（やと）の里山風景が残る自然豊かな公園。田んぼや湿地、上池・下池があり、秋には稲穂が実り彼岸花が咲く里山散策が楽しめる。一般的な遊具はないが、野山を自由に駆け回れる自然体験型の公園で、防災公園としての機能も備える。",
-    "tip": "遊具遊びより自然観察・里山散歩向きの公園。虫捕りや落ち葉拾いをしたい子ども連れに向いている。"
+    "tip": "遊具遊びより自然観察・里山散歩向きの公園。虫捕りや落ち葉拾いをしたい子ども連れに向いている。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -25089,6 +27142,15 @@
     "tip": "土日やお盆・夏休みなどのハイシーズンは料金が上がり混雑もするため、平日午前中が狙い目。現金払いのみの場合があるので要確認。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000191230/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "お食事の持ち込みはできません。店内のレストランを利用します。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、全店で持ち込めます（公式サイトの案内）。アレルギー対応食の持ち込みは、受付スタッフに相談します。",
+      "source": "official",
+      "sourceUrl": "https://fantasyresort.jp/faq/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -25121,7 +27183,14 @@
     "officialUrl": null,
     "verifiedAt": "2026年9月21日",
     "desc": "茅ヶ崎市の隣、平塚市のショッピングモール「OSC湘南シティ」内にある大型室内遊園地。最大の目玉は年中雪遊びができる「スノータウン」で、長靴やソリの無料貸出しもある。ほかにふわふわ遊具やボルダリング、3種類のボールプール（ボール温泉・投げるんだー・ボールシュート）など体を動かせる遊具が充実。弁当持ち込み・再入場もできる遊び放題プランが人気。",
-    "tip": "駐車場はあそびマーレ・シネプレックス平塚利用で合計6時間無料になるサービスがある。混雑を避けるなら平日午前中がおすすめ。"
+    "tip": "駐車場はあそびマーレ・シネプレックス平塚利用で合計6時間無料になるサービスがある。混雑を避けるなら平日午前中がおすすめ。",
+    "food": {
+      "bento": "ok",
+      "source": "official",
+      "bentoNote": "お弁当などの食べ物と飲み物の持ち込みができます。",
+      "sourceUrl": "https://asobimare.jp/shonan/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -25215,7 +27284,11 @@
     "officialUrl": null,
     "desc": "無料で利用できる秩父市の子ども向けの公園。アスレチック系の遊具で体を動かして遊べ、秩父観光や日帰り温泉の合間に立ち寄りやすい。",
     "tip": "開園時間は9:00〜17:00（4〜9月）、9:00〜16:30（10〜3月）が目安。無料駐車場は約50台。",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "群馬",
@@ -25873,6 +27946,10 @@
     "tip": "水上アスレチックは濡れる前提の遊具なので、着替え・タオル必須。ちびっこプールは夏季限定・木曜定休なので事前に公式サイトでの確認を。",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/spot0000029463/"
+    },
+    "food": {
+      "bento": "ok",
+      "source": "text"
     }
   },
   {
@@ -25955,7 +28032,27 @@
     },
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_13106cc3540060086/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "ローラーコースター",
+        "minCm": 110
+      },
+      {
+        "name": "ディスク・オー",
+        "minCm": 120
+      },
+      {
+        "name": "リトルスター",
+        "minCm": 130
+      },
+      {
+        "name": "シラサギ",
+        "minCm": 90
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsSource": "https://www.hanayashiki.net/"
   },
   {
     "region": "千葉",
@@ -26082,7 +28179,14 @@
     "officialUrl": "https://bandainamco-am.co.jp/kids/shimaguruland/",
     "verifiedAt": "2026年9月22日",
     "desc": "赤ちゃん絵本『しましまぐるぐる』シリーズをテーマにした、0歳〜2歳専用の室内型あそび場。プリンの滑り台やボールプール、しまぐるの仲間を探せる大きな絵本など、赤ちゃんが夢中になる配色とデザインでつくられている。",
-    "tip": "対象年齢が低いぶん回転がよく、混雑時も比較的入りやすい。延長は10分単位で加算されるので、退館時間の目安を決めておくと安心。"
+    "tip": "対象年齢が低いぶん回転がよく、混雑時も比較的入りやすい。延長は10分単位で加算されるので、退館時間の目安を決めておくと安心。",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、飲み物以外のお食事をご遠慮くださいと案内されています。",
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/kids/shimaguruland/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -26137,7 +28241,31 @@
       "maxMinutes": 240
     },
     "desc": "コアラ・インドゾウ・キリン・サイなど世界の希少な草食動物を、生息地別（アメリカ・ユーラシア・オセアニア・アフリカ区）に展示する動物園。金沢自然公園内にあり、緑豊かで眺望も良い。",
-    "tip": "丘陵地形でアップダウンが多いので、小さい子連れはベビーカーか歩きやすい靴がおすすめ。ヤギ・ヒツジと触れ合える「ほのぼの広場」も人気。"
+    "tip": "丘陵地形でアップダウンが多いので、小さい子連れはベビーカーか歩きやすい靴がおすすめ。ヤギ・ヒツジと触れ合える「ほのぼの広場」も人気。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "動物園内ではわくわく広場、コアラ舎前のユーカリ広場、ユーラシア休憩棟がお弁当におすすめと案内されています。動物園内にレストランはなく、わくわく広場の「わくわくキッチン」で軽食を売っています。",
+      "nearbyLunch": [
+        {
+          "name": "わくわくキッチン（わくわく広場）",
+          "note": "パンなどの軽食と飲み物を売っています。"
+        },
+        {
+          "name": "ののはなカフェ（植物区）",
+          "note": "ジェラートやホットサンドがあります。動物園の外にあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/kanazawa/faq.php",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "雨の日は、アメリカ区とオセアニア区に無料休憩所が1か所ずつあり、お弁当を食べられます。",
+      "source": "official",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/kanazawa/faq.php",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -26568,6 +28696,12 @@
     },
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_12105ah3330042199/"
+    },
+    "heat": {
+      "note": "キャンプ用のテント・タープや、ロープで固定するテントは使えません。熱中症防止のため、日よけ・風よけの小型テントだけ使えます。",
+      "source": "official",
+      "sourceUrl": "https://www.showano-mori.jp/guide",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -26713,6 +28847,22 @@
     ],
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000222491/"
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "BBQは「持ち込みプラン」なら食材や飲み物を持ち込めますが、「手ぶらプラン」では原則持ち込みできません。離乳食など、乳児・幼児の分に限り、持ち込みができます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食など、乳児・幼児の分は持ち込めます。",
+      "source": "official",
+      "sourceUrl": "https://cobble.jp/pages/contact",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "roof": "partial",
+      "note": "BBQの全卓に雨よけの屋根がついています。アクティビティの「イシミッケ」「カセキハックツ」は大谷石の洞窟の中で行い、外気温より10℃前後低くなります。",
+      "source": "official",
+      "sourceUrl": "https://cobble.jp/pages/faq",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -26881,7 +29031,14 @@
     "desc": "デジタル技術とアナログな遊びを組み合わせた「デジタルプレイグラウンド」。どろんこジャングルや濡れない滝すべり「ドドドの滝」、妖精と出会える「きのこのき」など5エリアで冒険体験ができる。",
     "tip": "立川高島屋S.C.地下駐車場は買い物金額に応じて割引あり。雨の日のお出かけ先としても人気。",
     "genreHint": "室内遊び場・デジタル体験",
-    "needsReview": []
+    "needsReview": [],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食物の持ち込みができます。施設内のレストスペース（イオンレイクタウンmoriでは「こもれびテラス」）で食べます。",
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/others/docodoco/faq.html",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "群馬",
@@ -27152,6 +29309,17 @@
     ],
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000216932/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食物の持ち込みはご遠慮くださいと案内されています。飲食物を持ち込んでのピクニックもできません。水筒やマイボトルは持ち込めます。場内のテイクアウト商品やドリンクを利用します。",
+      "babyFood": "ask",
+      "babyFoodNote": "離乳食を持ち込みたい場合は、インフォメーションスタッフに声をかけます。",
+      "allergy": "ask",
+      "allergyNote": "アレルギー食を持ち込みたい場合は、インフォメーションスタッフに声をかけます。",
+      "source": "official",
+      "sourceUrl": "https://kurkkufields.jp/map/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -27201,7 +29369,14 @@
     "needsReview": [
       "料金は改定頻度が高いため訪問前に必ず公式サイトで最新情報を確認",
       "lat/lngはダイナシティ周辺の推定値のため要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ng",
+      "bentoNote": "施設内では飲食物の持ち込みをご遠慮くださいと案内されています（フタつきの飲料のみ可）。食事ができる「レストコーナー」があるのは一部の店舗で、この店舗は公式のレストコーナー設置店の一覧に載っていません。",
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -27543,6 +29718,18 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_13123cc3320040660/",
       "asoview": "https://www.asoview.com/spot/spot0000000004/"
+    },
+    "food": {
+      "bentoNote": "芝生広場とおべんとう広場は、新水族園の準備のため2024年5月19日で利用提供が終了しています。雨の日にお弁当を食べられる屋根付きの場所はありません。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-zoo.net/kasai/visitor-info/groupvisits/index.html",
+      "checkedAt": "2026年10月12日"
+    },
+    "heat": {
+      "note": "雨の日にお弁当を食べられる屋根付きの場所はありません。",
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-zoo.net/kasai/visitor-info/groupvisits/index.html",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -27595,6 +29782,14 @@
     ],
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000030068/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "アルコール以外の、お弁当や飲み物は持ち込めます。レストラン内への持ち込みはご遠慮ください。バーベキュー広場は、食材持ち込みの事前予約制です。",
+      "babyFoodNote": "入園口近くの授乳室にウォーターサーバーがあり、ミルク用のお湯がいつでも使えます。レストランでもお湯を出していますが、営業終了後は用意できません。",
+      "source": "official",
+      "sourceUrl": "https://kidsdom.jp/qa",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -27642,6 +29837,12 @@
     "genreHint": "歴史博物館",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/156630/"
+    },
+    "food": {
+      "bentoNote": "飲食（ガム・飲み物を含む）は、決められた場所でお願いしますと案内されています。決められた場所の詳細は、公式サイトに記載が見つかりませんでした。",
+      "source": "official",
+      "sourceUrl": "https://www.edo-tokyo-museum.or.jp/information/guidelines/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -27791,7 +29992,14 @@
     "genreHint": "温浴施設・全天候型レジャー",
     "needsReview": [
       "料金・営業時間は季節・特定日により変動するため訪問前に公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内への飲食物の持ち込みはご遠慮くださいと案内されています。2階のレストランと1階のカフェ、館内の自動販売機を利用します。",
+      "source": "official",
+      "sourceUrl": "https://ofurocafe-hareniwanoyu.com/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -28874,7 +31082,11 @@
       "定休日は公式で「不定休」とは明記されていないため、公式カレンダーで要確認",
       "駐車場の台数・料金は公式に記載なし（要確認）",
       "lat/lngは公式サイトの地図埋め込みの座標（ユーザー提供値とは経度が約200m異なるため、公式地図の値を採用）"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "栃木",
@@ -29006,7 +31218,11 @@
     ],
     "closedDays": [
       "月に1〜2回の火曜など（公式のお知らせで確認）"
-    ]
+    ],
+    "food": {
+      "bento": "ng",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -29055,6 +31271,21 @@
     ],
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000217106/"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内での食事はご遠慮くださいと案内されています。",
+      "babyFood": "ok",
+      "babyFoodNote": "お子さま用の離乳食などは、持ち込めます。",
+      "nearbyLunch": [
+        {
+          "name": "ビナキッチン（ミュージアム併設のレストラン）",
+          "note": "入口は海老名駅のペデストリアンデッキに面していて、どなたでも入店できます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.odakyu.jp/romancecarmuseum/contact/",
+      "checkedAt": "2026年10月12日"
     }
   },
   {
@@ -29285,7 +31516,16 @@
       "料金は2023年6月の改定前の掲載値のため、公式サイトで最新の入場料・会員料金を要確認",
       "営業時間・定休日・面積は情報サイトの旧掲載値で要確認",
       "公式URL・ベビー設備は未確認"
-    ]
+    ],
+    "food": {
+      "bento": "ng",
+      "bentoNote": "お食事の持ち込みはできません。店内のレストランを利用します。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、全店で持ち込めます（公式サイトの案内）。アレルギー対応食の持ち込みは、受付スタッフに相談します。",
+      "source": "official",
+      "sourceUrl": "https://fantasyresort.jp/faq/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "埼玉",
@@ -29360,7 +31600,12 @@
     "needsReview": [
       "ローラー滑り台の休止期間（2026/9/7〜2027/2/26）は掲載日が古い表示のため要確認"
     ],
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -29480,7 +31725,12 @@
     "address": "神奈川県厚木市温水783-1",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "東京",
@@ -29518,7 +31768,12 @@
       "priceShort": "500円/60分",
       "note": "入園は無料ですが、駐車場は有料です。"
     },
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "東京",
@@ -29625,7 +31880,14 @@
       "料金・営業時間はいこーよ等の掲載値（オープン時点）。公式サイトで最新を要確認"
     ],
     "businessHoursNote": "10:00〜20:00（最終受付19:00）／イオンレイクタウンmoriの営業に準じる",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内では、飲み物以外のお食事をご遠慮くださいと案内されています。",
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/kids/shimaguruland/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "静岡",
@@ -29662,7 +31924,13 @@
     "address": "静岡県島田市伊太1-6",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "heat": {
+      "shade": "little",
+      "summer": "caution",
+      "note": "日差しが強いので、帽子や日よけテントがあると安心です。",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -29699,7 +31967,12 @@
     "address": "静岡県島田市川根町家山1134-1",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -29810,7 +32083,12 @@
     "address": "静岡県富士宮市原436-1",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -29852,7 +32130,12 @@
       "note": "駐車場は無料で82台。"
     },
     "businessHoursNote": "開園 8:30〜17:15",
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -29897,7 +32180,11 @@
       "priceShort": "無料",
       "note": "障がい者用駐車スペースあり"
     },
-    "verifiedAt": "2026年10月1日"
+    "verifiedAt": "2026年10月1日",
+    "food": {
+      "bento": "ng",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -30320,7 +32607,11 @@
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
     ],
-    "verifiedAt": "2026年10月5日"
+    "verifiedAt": "2026年10月5日",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -30518,7 +32809,12 @@
     "address": "山梨県笛吹市八代町岡2223-1",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "山梨",
@@ -30552,7 +32848,12 @@
     "address": "山梨県西八代郡市川三郷町上野",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "山梨",
@@ -30586,7 +32887,12 @@
     "address": "山梨県韮崎市藤井町北下條2531",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "山梨",
@@ -30620,7 +32926,12 @@
     "address": "山梨県甲斐市下今井1136-7",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "山梨",
@@ -30654,7 +32965,12 @@
     "address": "山梨県笛吹市一宮町国分1162-1",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
+    }
   },
   {
     "region": "長野",
@@ -30732,7 +33048,11 @@
       "maxMinutes": 120
     },
     "desc": "りんご狩り（9月下旬〜11月下旬）と栗拾い（9月中旬〜10月中旬）が楽しめる小布施の農園。小学3年生以下は無料で、持ち込みでの園内飲食もできる。",
-    "tip": "要予約。拾った栗ともぎ取ったりんごは量り売りでお土産にできる。"
+    "tip": "要予約。拾った栗ともぎ取ったりんごは量り売りでお土産にできる。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "長野",
@@ -30772,7 +33092,11 @@
       "maxMinutes": 90
     },
     "desc": "ぶどうとりんごを育てる広い農場。りんご狩り（9月上旬〜11月下旬）は30分食べ放題で皮むき器のプレゼントつき。",
-    "tip": "雨具の貸し出しあり（雨天対応施設はなし）。予約は事前に問い合わせを。"
+    "tip": "雨具の貸し出しあり（雨天対応施設はなし）。予約は事前に問い合わせを。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "長野",
@@ -30888,7 +33212,11 @@
     },
     "desc": "栗拾い専門の観光農園。時間制限なしで、拾った栗は1kg単位で量り売り。圧力釜の焼き栗や、鬼皮・渋皮を機械でむいてくれる有料サービスもあり、持ち帰ってすぐ調理できる。",
     "tip": "栗は自然に落ちたものを拾うため、長袖・長ズボン・靴底の厚い靴が安心。開園は10月末までだが、栗がなくなると早めに終了することがある。",
-    "address": "茨城県かすみがうら市上土田723"
+    "address": "茨城県かすみがうら市上土田723",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -30938,7 +33266,14 @@
       "maxMinutes": 240
     },
     "desc": "東京ドーム約9個分の敷地で年間約15種類の果物を収穫できる農業公園。秋冬はみかん（10月上旬〜12月上旬）、柿、キウイ、しいたけ、12月下旬頃からはいちごが楽しめる。果物モチーフの大型遊具もあり、収穫の合間に遊べる。",
-    "tip": "時期は例年の目安（柿は10月中旬〜11月中旬、キウイは11月上旬〜中旬、しいたけは11月上旬〜2月）。食べ放題ではなく1個から量り売りなので、少しずつ色々な果物を試せる。"
+    "tip": "時期は例年の目安（柿は10月中旬〜11月中旬、キウイは11月上旬〜中旬、しいたけは11月上旬〜2月）。食べ放題ではなく1個から量り売りなので、少しずつ色々な果物を試せる。",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当は持ち込めます。ただし、レストランなど一部の施設への持ち込みはできません。ゴミは必ず持ち帰ります。",
+      "source": "official",
+      "sourceUrl": "https://hamamatsu-fp.co.jp/contact/",
+      "checkedAt": "2026年10月12日"
+    }
   },
   {
     "region": "神奈川",
@@ -31070,7 +33405,11 @@
       "maxMinutes": 60
     },
     "desc": "100年以上続く梨専業農家。市川市北部の高台の農園で、新高・豊水などの梨を自分でもいで持ち帰れる。入園は無料で試食もできる。",
-    "tip": "入園無料の代わりに、1グループ3kg以上の収穫が目安。駐車場は8台と少ないので、早めの時間に行くと安心。シーズン終盤なので、行く前に電話で確認を。"
+    "tip": "入園無料の代わりに、1グループ3kg以上の収穫が目安。駐車場は8台と少ないので、早めの時間に行くと安心。シーズン終盤なので、行く前に電話で確認を。",
+    "food": {
+      "bento": "ng",
+      "source": "text"
+    }
   },
   {
     "region": "千葉",
@@ -31113,7 +33452,12 @@
       "maxMinutes": 120
     },
     "desc": "梨を2時間以内で食べ放題にできる梨園。ぶどう狩りもあり、もぎとった梨をその場で味わえる。",
-    "tip": "梨がなくなり次第終了するため、10月は特に事前の電話確認が必須。レジャーシートと虫よけを持参すると快適。土日祝は駐車場が混むので電車利用も。"
+    "tip": "梨がなくなり次第終了するため、10月は特に事前の電話確認が必須。レジャーシートと虫よけを持参すると快適。土日祝は駐車場が混むので電車利用も。",
+    "food": {
+      "bento": "ok",
+      "sheet": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "千葉",
@@ -31156,7 +33500,11 @@
       "maxMinutes": 120
     },
     "desc": "栗拾い（約200本）のほか、落花生掘り・さつまいも掘り・里いも掘りと、秋の収穫体験が続けて楽しめる農園。昔ながらの素朴な環境で、お弁当を食べたりピザを焼いたりもできる。",
-    "tip": "栗は拾った分を1kg単位で買い取る方式。イガや虫対策に長袖・長ズボン・歩きやすい靴で。10月後半は拾える数が減りやすい。"
+    "tip": "栗は拾った分を1kg単位で買い取る方式。イガや虫対策に長袖・長ズボン・歩きやすい靴で。10月後半は拾える数が減りやすい。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "千葉",
@@ -31244,7 +33592,11 @@
       "maxMinutes": 120
     },
     "desc": "相模原市緑区名倉の農家が協力して運営する観光農園。栗拾いのほか、さつまいも掘りや年間のしいたけ狩りも。フラワーガーデンや遊魚園もあり、子連れで1日遊べる。",
-    "tip": "栗拾いは10月上旬ごろまでが目安。行く前に東園へ電話で拾える状況を確認すると安心。長袖・長ズボン・歩きやすい靴で。"
+    "tip": "栗拾いは10月上旬ごろまでが目安。行く前に東園へ電話で拾える状況を確認すると安心。長袖・長ズボン・歩きやすい靴で。",
+    "food": {
+      "bento": "ng",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -31289,7 +33641,11 @@
       "maxMinutes": 120
     },
     "desc": "富士山や相模湾、足柄平野を見渡せる高台のみかん園。園内を走るミニSLや小田急ロマンスカー、無料の芝そり遊びもあり、子連れに人気。みかんが食べ放題でお土産付き。",
-    "tip": "例年、みかん狩りと同時にさつまいも掘り（焼き芋フェア）が開かれることがある。早生は10月上旬から、青島みかんは11月中旬から。"
+    "tip": "例年、みかん狩りと同時にさつまいも掘り（焼き芋フェア）が開かれることがある。早生は10月上旬から、青島みかんは11月中旬から。",
+    "food": {
+      "bento": "ask",
+      "source": "text"
+    }
   },
   {
     "region": "茨城",
@@ -31333,7 +33689,11 @@
       "maxMinutes": 120
     },
     "desc": "飯田川沿いの高台に梨園・栗園、川沿いに巨峰園がある有機質栽培の果樹園。梨は幸水・豊水・新高・にっこりなど、早生から晩生まで揃い、1時間食べ放題でもぎ取れる。",
-    "tip": "10月は梨・栗ともシーズン終盤。梨は新高・にっこりなど遅い品種が中心で、栗は終了が近いので、行く前に電話で確認を。"
+    "tip": "10月は梨・栗ともシーズン終盤。梨は新高・にっこりなど遅い品種が中心で、栗は終了が近いので、行く前に電話で確認を。",
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "埼玉",
@@ -31482,7 +33842,11 @@
     "tip": "みかんの開始日は2026年11月からで、他のみかん園より遅め。JR根府川駅からの送迎は要予約。",
     "needsReview": [
       "座標はるるぶ&more.掲載値"
-    ]
+    ],
+    "food": {
+      "bento": "ng",
+      "source": "text"
+    }
   },
   {
     "region": "神奈川",
@@ -31532,7 +33896,11 @@
     "tip": "受付農園は当番制のため、行く前に電話で確認を。長澤マルユみかん園はソレイユの丘から車で約5分。",
     "needsReview": [
       "座標は三浦海岸駅構内の案内所のもので、各農園は周辺に点在している"
-    ]
+    ],
+    "food": {
+      "bento": "ok",
+      "source": "text"
+    }
   },
   {
     "region": "静岡",
@@ -35748,6 +38116,10 @@
     "tip": "競馬開催日は入場料100円、非開催日は無料です。レースの状況によって遊具が使えない時間帯があります。駐車場は約700台（有料・開門1時間前から）。",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_14131cc3310040505/"
+    },
+    "food": {
+      "sheet": "ok",
+      "source": "text"
     }
   },
   {
@@ -36231,6 +38603,11 @@
     "address": "埼玉県比企郡鳩山町赤沼1427-1",
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_11348ah3330043523/"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持参がおすすめの場所です。",
+      "source": "text"
     }
   },
   {
