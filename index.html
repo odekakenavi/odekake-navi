@@ -137,6 +137,8 @@
 .fc-brk{font-size:11.5px;color:var(--ink);margin-top:4px;line-height:1.6}
 .fc-note{font-size:10.5px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
 .fc-note a{color:var(--sun)}
+.fc-guide{font-size:11.5px;color:#7a5a3a;background:#FBF0DC;border-radius:8px;padding:8px 10px;margin-top:8px;line-height:1.6}
+.fc-set{display:block;margin-top:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer}
 .kf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .kf-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;border-radius:10px;padding:8px 2px;min-width:0}
 .kf-ic{font-size:18px;line-height:1.2}
@@ -1323,8 +1325,27 @@ function kpAgeRange(spot){const defs=kpAgeDefs();const ages=spot.ages||[];const 
 function kidsPointHtml(spot){const defs=kpAgeDefs();const ages=spot.ages||[];const range=kpAgeRange(spot);const chips=defs.map(d=>{const on=ages.includes(d.key);return `<span class="kp-age ${on?"on":"off"}">${on?"\u2713 ":""}${d.label}</span>`}).join("");return `<div class="detail-section kp-block"><h3>\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466} \u5B50\u9023\u308C\u30DD\u30A4\u30F3\u30C8</h3>${range?`<div class="kp-range">\u304A\u3059\u3059\u3081\u5E74\u9F62\uFF1A<b>${range}</b></div><div class="kp-age-chips">${chips}</div>`:`<div class="kp-range">\u304A\u3059\u3059\u3081\u5E74\u9F62\uFF1A\u60C5\u5831\u306A\u3057</div>`}</div>`}
 /* 「無料」表示の言い回しを、その施設の料金欄（入園・入場・入館…）に合わせる。 */
 function freeWordFor(spot){const p=spot&&spot.price!=null?String(spot.price).trim():"";const m=p.match(/^(入園|入場|入館|見学|公園|施設利用)/);return (m?m[1]:"")+"無料"}
-/* ===== 家族5人の料金目安（参考例：大人2人＋小学生2人＋幼児1人(4歳)） ===== */
-var FC_ADULTS=2,FC_ELEM=2,FC_PRE=1,FC_PRE_AGE=4;
+/* ===== 家族の料金目安（うちの子設定を反映／未設定は 大人2人＋5歳 の参考例。大人1人＝シングルにも対応） ===== */
+var FC_PRE_AGE=4,FC_DEFAULT_AGE=5;
+function fcChildCat(c){var age=null;try{age=childAgeYears(c)}catch(e){}
+if(age==null)return{cat:"el",age:null,unknown:true};
+try{if(c.birthDate){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(c.birthDate);if(m){var now=new Date,sy=now.getMonth()>=3?now.getFullYear():now.getFullYear()-1;var bm=+m[2]-1,bd=+m[3];var a=sy-(+m[1]);if(bm>3||(bm===3&&bd>1))a--;return{cat:a<=5?"pre":a<=11?"el":"teen",age:age}}}}catch(e){}
+return{cat:age<=5?"pre":age<=12?"el":"teen",age:age}}
+function fcFamily(){var adults=2;try{if(adultMode==="solo")adults=1}catch(e){}
+var kids=[],reg=false;
+try{if(childrenRegistered()){childrenData.forEach(function(c){kids.push(fcChildCat(c))});reg=kids.length>0}}catch(e){}
+if(!kids.length)kids=[{cat:"pre",age:FC_DEFAULT_AGE,def:true}];
+return{adults:adults,kids:kids,registered:reg,persons:adults+kids.length}}
+function fcFamText(fam){var c={teen:0,el:0,pre:0},ages=[];fam.kids.forEach(function(k){c[k.cat]++;if(k.cat==="pre"&&k.age!=null)ages.push(k.age)});
+var p=["大人"+fam.adults+"人"];if(c.teen)p.push("中高生"+c.teen+"人");if(c.el)p.push("小学生"+c.el+"人");
+if(c.pre)p.push("幼児"+(c.pre===1&&ages.length===1?"("+ages[0]+"歳)":"")+c.pre+"人");return p.join("＋")}
+function fcAssemble(fam,adult,priceOf){var lines=[{k:"adult",label:"大人",price:adult,count:fam.adults}];var total=adult*fam.adults;
+var names={teen:"中高生",el:"小学生",pre:"幼児"};
+["teen","el","pre"].forEach(function(cat){var g={};fam.kids.forEach(function(k){if(k.cat!==cat)return;var pr=priceOf(k);var key=String(pr);var o=g[key]||(g[key]={price:pr,count:0,ages:[]});o.count++;if(k.age!=null)o.ages.push(k.age)});
+Object.keys(g).forEach(function(key){var o=g[key];total+=o.price*o.count;var label=names[cat];
+if(cat==="pre"&&o.ages.length===o.count&&o.count>0)label+="("+o.ages.join("・")+"歳)";
+lines.push({k:cat,label:label,price:o.price,count:o.count})})});
+return{lines:lines,total:total}}
 function fcNorm(s){var t=String(s==null?"":s).replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});t=t.replace(/(\d),(?=\d{3})/g,"$1").replace(/(\d),(?=\d{3})/g,"$1");return t.replace(/～/g,"〜").replace(/\s+/g," ").trim()}
 function fcClassify(label){var L=String(label).replace(/\s+/g,"");
 if(/団体|割引|障|会員|前売|ネット|年間|年パス|ペア|ファミリー(券|チケット|プラン|パック|セット)|エサ|餌|えさ|竿|市民|町民|区民|県民|在住|延長|追加|レンタル|駐車|ロッカー|貸|宿泊|1泊/.test(L))return"skip";
@@ -1375,82 +1396,95 @@ if(/未就学|幼児|乳幼児|小学生未満|園児/.test(L))free.maxAge=Math.
 if(/(小学生|中学生|高校生|18歳)以下|子ども|子供|こども|小人|小中学生$|小学生$/.test(L)&&!/幼児|未就学/.test(L)){free.el=true;free.maxAge=Math.max(free.maxAge,12)}}
 if(free.maxAge>=FC_PRE_AGE)free.pre=true;
 return{t:tiers,free:free,from:from,timed:timed,unit:unit}}
-function fcCompose(p){var t=p.t,free=p.free;var notes=[];var conf="exact";
+function fcCompose(p,fam){var t=p.t,free=p.free;var notes=[];var conf="exact";
 var adult=t.adult!=null?t.adult:t.flat;
 if(adult==null&&t.child!=null)adult=t.child;
 var adultAssumed=false;
 if(adult==null&&(t.el!=null||t.teen!=null||t.pre!=null)){adult=0;adultAssumed=true;notes.push("大人（付き添い）の料金が未掲載のため、子ども分のみで計算しています。")}
 if(adult==null)return null;
-var el=null,pre=null;
+var el=null,elNote=null,elAssumed=false;
 if(t.el!=null)el=t.el;else if(t.child!=null)el=t.child;
 if(el==null&&free.el)el=0;
 if(el==null&&t.pre!=null)el=t.pre;
-if(el==null&&t.teen!=null){el=t.teen;notes.push("小学生の料金が未掲載のため、中高生の料金で計算しています。")}
-var elAssumed=false;
-if(el==null){if(t.flat!=null&&t.adult==null){el=t.flat}else if(free.pre||free.maxAge>=0){el=adult;elAssumed=true;notes.push("小学生の料金が未掲載のため、大人と同額で計算しています（上限の目安）。")}}
-if(t.pre!=null)pre=t.pre;else if(t.child!=null)pre=t.child;else if(free.pre||free.el)pre=0;else pre=el;
-if(el==null){return{partial:true,adult:adult,total:adult*FC_ADULTS,from:p.from,notes:notes}}
-if(pre==null)pre=el;
-var total=adult*FC_ADULTS+el*FC_ELEM+pre*FC_PRE;
-if(elAssumed||adultAssumed)conf="assumed";
+if(el==null&&t.teen!=null){el=t.teen;elNote="小学生の料金が未掲載のため、中高生の料金で計算しています。"}
+if(el==null){if(t.flat!=null&&t.adult==null){el=t.flat}else if(free.pre||free.maxAge>=0){el=adult;elAssumed=true;elNote="小学生の料金が未掲載のため、大人と同額で計算しています（上限の目安）。"}}
+var usedEl=false,teenFb=false;
+function priceOf(k){var a=k.age,fa=(a!=null&&free.maxAge>=a);
+if(k.cat==="pre"){if(fa)return 0;if(t.pre!=null)return t.pre;if(t.child!=null)return t.child;usedEl=true;return el}
+if(fa)return 0;
+if(k.cat==="teen"){if(t.teen!=null)return t.teen;teenFb=true;usedEl=true;return el}
+usedEl=true;return el}
+var bad=fam.kids.some(function(k){return priceOf(k)==null});
+if(bad)return{partial:true,adult:adult,adults:fam.adults,total:adult*fam.adults,from:p.from,notes:notes,fam:fam};
+var asm=fcAssemble(fam,adult,priceOf);
+if(usedEl&&elNote)notes.push(elNote);
+if(teenFb&&t.teen==null)notes.push("中高生の料金が未掲載のため、小学生（子ども）料金で計算しています。");
+if(fam.kids.some(function(k){return k.unknown}))notes.push("年齢が未設定のお子さまは小学生として計算しています。");
+if((elAssumed&&usedEl)||adultAssumed)conf="assumed";
 if(t.adult==null&&t.flat!=null&&t.el==null&&t.child==null&&t.pre==null&&t.teen==null&&!adultAssumed)notes.push("全員同額（1人あたり）として計算しています。");
 if(p.timed)notes.push("時間制・延長で料金が変わる施設です。目安は基本料金で計算しています。");
-return{partial:false,adult:adult,el:el,pre:pre,total:total,from:p.from,conf:conf,notes:notes}}
+return{partial:false,adult:adult,adultAssumed:adultAssumed,adults:fam.adults,lines:asm.lines,total:asm.total,persons:fam.persons,from:p.from,conf:conf,notes:notes,fam:fam}}
 function calcFamilyCost5(spot){
+var fam=fcFamily();
 var price=(spot&&spot.price==null?"":String(spot.price)).trim();
 var o=spot&&spot.familyPrice;
-if(o&&typeof o==="object"&&typeof o.adult==="number"){var ch=typeof o.child==="number"?o.child:o.adult;var inf=typeof o.infant==="number"?o.infant:ch;return{kind:"total",adult:o.adult,el:ch,pre:inf,total:o.adult*FC_ADULTS+ch*FC_ELEM+inf*FC_PRE,from:false,conf:"exact",notes:o.note?[String(o.note)]:[]}}
+if(o&&typeof o==="object"&&typeof o.adult==="number"){var ch=typeof o.child==="number"?o.child:o.adult;var inf=typeof o.infant==="number"?o.infant:ch;var asm0=fcAssemble(fam,o.adult,function(k){return k.cat==="pre"?inf:ch});return{kind:"total",adult:o.adult,adults:fam.adults,lines:asm0.lines,total:asm0.total,persons:fam.persons,from:false,conf:"exact",notes:o.note?[String(o.note)]:[],fam:fam}}
 if(!price)return{kind:"none"};
 var fs=fcNorm(price);
 var fm=fs.match(/^(?:.{0,10}?)(入園|入場|入館|見学|参拝|拝観|公園|施設利用|利用|観覧|散策|入山|展示室|広場)[^／\/、，,（(\d円]{0,14}?(無料|自由)/);
 var bare=!fm&&/^[（(]?無料/.test(fs);
 if(fm||bare){var rest=bare?fs.replace(/^[（(]?無料/,""):fs.slice(fm[0].length);
 var kw=fm?fm[1]:"";var word=(/^(入園|入場|入館|見学|参拝|拝観|施設利用|利用)$/.test(kw)?kw:"")+(fm?fm[2]:"無料");var extra=null;
-if(!/駐車|乗用車|kg|量り売り|カフェ/.test(rest)){var pp=fcParseTiers(rest);if(!pp.unit&&pp.t.adult!=null){var c=fcCompose(pp);if(c&&!c.partial)extra=c}}
+if(!/駐車|乗用車|kg|量り売り|カフェ/.test(rest)){var pp=fcParseTiers(rest);if(!pp.unit&&pp.t.adult!=null){var c=fcCompose(pp,fam);if(c&&!c.partial)extra=c}}
 return{kind:"free",word:word,extra:extra}}
 if(/^(?:(?:入園|入場|入館|見学|公園|施設利用)\s*)?無料$/.test(fs))return{kind:"free",word:(fs.replace(/無料$/,"").trim()||"")+"無料",extra:null};
 if(/^(未確認|不明)/.test(fs))return{kind:"none"};
 var p=fcParseTiers(fs);
 if(p.unit&&p.t.adult==null&&p.t.flat==null)return/\d+円/.test(fs)?{kind:"varies"}:{kind:"none"};
-var r=fcCompose(p);
-if(r&&r.partial)return{kind:"partial",adult:r.adult,total:r.total,from:r.from,notes:r.notes};
-if(r)return{kind:"total",adult:r.adult,el:r.el,pre:r.pre,total:r.total,from:r.from,conf:r.conf,notes:r.notes};
+var r=fcCompose(p,fam);
+if(r&&r.partial)return{kind:"partial",adult:r.adult,adults:r.adults,total:r.total,from:r.from,notes:r.notes,fam:fam};
+if(r)return{kind:"total",adult:r.adult,adultAssumed:r.adultAssumed,adults:r.adults,lines:r.lines,persons:r.persons,total:r.total,from:r.from,conf:r.conf,notes:r.notes,fam:fam};
 if(/\d+円/.test(fs))return{kind:"varies"};
 return{kind:"none"}}
 function familyCostShort(spot){var r=calcFamilyCost5(spot);
-if(r.kind==="total")return"5人で約"+r.total.toLocaleString()+"円"+(r.from?"〜":"");
-if(r.kind==="partial")return"大人2人で約"+r.total.toLocaleString()+"円"+(r.from?"〜":"");
+if(r.kind==="total")return r.persons+"人で約"+r.total.toLocaleString()+"円"+(r.from?"〜":"");
+if(r.kind==="partial")return"大人"+r.adults+"人で約"+r.total.toLocaleString()+"円"+(r.from?"〜":"");
 if(r.kind==="free")return r.extra?"無料（有料部分は約"+r.extra.total.toLocaleString()+"円）":"無料";
 if(r.kind==="varies")return"掲載料金を確認";
 return"情報なし"}
 function todayGoHtml(spot){const rows=[];const lv=deriveRainLevel(spot);const rainTxt=lv>=4?"\u25CE \u5B8C\u5168\u5C4B\u5185":lv===3?"\u25CE \u96E8\u3067\u3082\u304A\u3059\u3059\u3081":lv===2?"\u25CB \u5C0F\u96E8\u306A\u3089OK":"\u25B3 \u6674\u308C\u5411\u304D";rows.push(["\u2614","\u96E8\u306E\u65E5",rainTxt]);let stay="";if(spot.stayTime&&typeof spot.stayTime.minMinutes==="number"&&typeof spot.stayTime.maxMinutes==="number"){stay=formatMinutes(spot.stayTime.minMinutes)+"\u301C"+formatMinutes(spot.stayTime.maxMinutes)}else{const b=deriveStayTimeBucket(spot);if(b)stay=b+"\uFF08\u76EE\u5B89\uFF09"}if(stay)rows.push(["\u23F1","\u6EDE\u5728\u76EE\u5B89",stay]);rows.push(["\u{1F4B0}","\u6599\u91D1",familyCostShort(spot)]);if(spot.parking==="yes")rows.push(["\u{1F697}","\u99D0\u8ECA\u5834","\u3042\u308A"]);else if(spot.parking==="no")rows.push(["\u{1F697}","\u99D0\u8ECA\u5834","\u306A\u3057\u30FB\u5C11\u306A\u3081"]);const defs=kpAgeDefs();const ages=spot.ages||[];if(ages.length){const first=defs.findIndex(d=>ages.includes(d.key));const small=ages.includes("0-1\u6B73")||ages.includes("2-3\u6B73");rows.push(["\u{1F476}","\u5C0F\u3055\u3044\u5B50",small?"\u304A\u3059\u3059\u3081":first===2?"4\u6B73\u3054\u308D\u301C":first===3?"\u5C0F\u5B66\u751F\u301C":"\u9AD8\u5B66\u5E74\u5411\u3051"])}rows.push(["\u{1F3C3}","\u3057\u3063\u304B\u308A\u904A\u3076",deriveActivityLevel(spot)==="active"?"\u304A\u3059\u3059\u3081":"\u307E\u3063\u305F\u308A\u5411\u304D"]);return `<div class="detail-section tg-block"><h3>\u{1F3AF} \u4ECA\u65E5\u884C\u304F\u306A\u3089\uFF1F</h3><div class="tg-grid">${rows.map(r=>`<div class="tg-item"><span class="tg-ic">${r[0]}</span><span class="tg-lb">${r[1]}</span><span class="tg-val">${expEsc(r[2])}</span></div>`).join("")}</div></div>`}
 function fcYen(n){return n.toLocaleString()+"円"}
-function fcBrk(r){var a=r.adult===0?"大人 未掲載（0円扱い）×"+FC_ADULTS+"人":"大人 "+fcYen(r.adult)+"×"+FC_ADULTS+"人";var e="小学生 "+(r.el===0?"無料":fcYen(r.el))+"×"+FC_ELEM+"人";var p="幼児("+FC_PRE_AGE+"歳) "+(r.pre===0?"無料":fcYen(r.pre)+"×"+FC_PRE+"人");return a+"＋"+e+"＋"+p}
+function fcBrk(r){return r.lines.map(function(l){var v=(l.k==="adult"&&r.adultAssumed&&l.price===0)?"未掲載（0円扱い）":(l.price===0?"無料":fcYen(l.price));return l.label+" "+v+"×"+l.count+"人"}).join("＋")}
+function fcGuideHtml(fam){var btn='<button type="button" class="fc-set" data-rl-open-kids="1">うちの子設定を開く</button>';var solo=false,auto=true;try{solo=adultMode==="solo";auto=adultMode==="auto"}catch(e){}
+if(!fam.registered)return'<div class="fc-guide">💡 いまは「大人2人＋5歳」の参考例です。うちの子設定でお子さまの年齢を登録すると、ご家族に合った正確な金額が出ます。大人1人（シングル）の場合も設定できます。'+btn+"</div>";
+if(solo)return'<div class="fc-note">大人1人（シングル）の設定で計算しています。'+"</div>";
+if(auto)return'<div class="fc-note">大人は2人で計算しています。大人1人（シングル）の場合は、うちの子設定の「お出かけする大人」で選べます。'+btn+"</div>";
+return""}
 function familyCostHtml(spot){var r=calcFamilyCost5(spot);
 var off=spot.officialUrl?'<a href="'+spot.officialUrl+'" target="_blank" rel="noopener">公式サイト</a>':"公式サイト";
 var ps=spot.price?String(spot.price):"";var listed=ps?'<div class="fc-note">掲載料金：'+expEsc(ps.length>110?ps.slice(0,110)+"…":ps)+"</div>":"";
-var ex="大人"+FC_ADULTS+"人＋小学生"+FC_ELEM+"人＋幼児"+FC_PRE+"人";
+var fam=(r&&r.fam)||fcFamily();var ex=fcFamText(fam)+(fam.registered?"で計算":"の参考例");var guide=fcGuideHtml(fam);window.__rlLastSpot=spot;
 var notes=function(a){return(a||[]).map(function(n){return'<div class="fc-note">※'+expEsc(n)+"</div>"}).join("")};
 var body="";
 if(r.kind==="total"){
-body='<div class="fc-main"><span class="fc-num">約'+fcYen(r.total)+(r.from?"〜":"")+'</span><span class="fc-sub">'+ex+"の例</span></div>"
+body='<div class="fc-main"><span class="fc-num">約'+fcYen(r.total)+(r.from?"〜":"")+'</span><span class="fc-sub">'+ex+"</span></div>"
 +'<div class="fc-brk">'+fcBrk(r)+"</div>"
 +(r.from?'<div class="fc-note">※「〜円から」の掲載のため、最低料金ベースの目安です。</div>':"")
-+notes(r.notes)+listed
-+'<div class="fc-note">※掲載料金をもとにした参考例です（入場料のみ）。家族構成・年齢の区切り・割引・体験料・駐車場で変わります。最新の料金は'+off+"でご確認ください。</div>"}
++notes(r.notes)+guide+listed
++'<div class="fc-note">※掲載料金をもとにした目安です（入場料のみ）。年齢の区切り・割引・体験料・駐車場で変わります。最新の料金は'+off+"でご確認ください。</div>"}
 else if(r.kind==="partial"){
-body='<div class="fc-main"><span class="fc-num">大人2人で約'+fcYen(r.total)+(r.from?"〜":"")+'</span><span class="fc-sub">子ども料金は未掲載</span></div>'
-+'<div class="fc-brk">大人 '+fcYen(r.adult)+"×2人</div>"+notes(r.notes)+listed
+body='<div class="fc-main"><span class="fc-num">大人'+r.adults+'人で約'+fcYen(r.total)+(r.from?"〜":"")+'</span><span class="fc-sub">子ども料金は未掲載</span></div>'
++'<div class="fc-brk">大人 '+fcYen(r.adult)+"×"+r.adults+"人</div>"+notes(r.notes)+guide+listed
 +'<div class="fc-note">※子ども分は含みません。子どもの料金・無料の年齢は'+off+"でご確認ください。</div>"}
 else if(r.kind==="free"){
 body='<div class="fc-main"><span class="fc-num">'+expEsc(r.word)+"</span></div>";
-if(r.extra){body+='<div class="fc-brk">有料部分を利用する場合の目安：約'+fcYen(r.extra.total)+(r.extra.from?"〜":"")+'<span class="fc-sub">（'+ex+"の例）</span></div>"+'<div class="fc-brk">'+fcBrk(r.extra)+"</div>"+notes(r.extra.notes)}
+if(r.extra){body+='<div class="fc-brk">有料部分を利用する場合の目安：約'+fcYen(r.extra.total)+(r.extra.from?"〜":"")+'<span class="fc-sub">（'+ex+"）</span></div>"+'<div class="fc-brk">'+fcBrk(r.extra)+"</div>"+notes(r.extra.notes)}
 body+=listed+'<div class="fc-note">※園内の有料施設・体験・駐車場などは別途かかる場合があります。詳しくは'+off+"でご確認ください。</div>"}
 else if(r.kind==="varies"){
 body='<div class="fc-main"><span class="fc-num fc-num-sm">回数・時間・コースごとの料金のため、合計の目安を出せません</span></div>'+listed
 +'<div class="fc-note">正確な金額は'+off+"で確認してください。</div>"}
 else{body='<div class="fc-main"><span class="fc-num fc-num-sm">情報なし</span></div><div class="fc-note">料金は'+off+"でご確認ください。</div>"}
-return'<div class="detail-section fc-block"><h3>\u{1F4B0} 家族5人の料金目安</h3>'+body+"</div>"}
+return'<div class="detail-section fc-block"><h3>\u{1F4B0} 家族の料金目安</h3>'+body+"</div>"}
 function kidsFacilityList(spot){const baby=spot.baby==null?"":String(spot.baby);const lunch=spot.lunch==null?"":String(spot.lunch);const all=[baby,lunch,spot.tip||"",spot.desc||""].join(" | ");const U={state:"unknown",text:"\u60C5\u5831\u306A\u3057"};const Y=t=>({state:"yes",text:t||"\u3042\u308A"});const N=t=>({state:"no",text:t||"\u306A\u3057"});const C=t=>({state:"check",text:t||"\u8981\u78BA\u8A8D"});let stroller=U;if(/\u30D9\u30D3\u30FC\u30AB\u30FC(OK|\uFF2F\uFF2B|\u53EF|\u5165\u5E97\u53EF)/.test(baby)||/\u30D9\u30D3\u30FC\u30AB\u30FC[^\uFF0F|]{0,4}(OK|\u53EF)/.test(baby))stroller=Y(/\u8CB8\u51FA|\u30EC\u30F3\u30BF\u30EB/.test(baby)||spot.strollerRental===true?"\u8CB8\u51FA\u3042\u308A":"OK");else if(spot.strollerRental===true)stroller=Y("\u8CB8\u51FA\u3042\u308A");else if(/\u30D9\u30D3\u30FC\u30AB\u30FC[^\uFF0F|]{0,8}(\u8CB8\u51FA|\u30EC\u30F3\u30BF\u30EB)/.test(baby))stroller=Y("\u8CB8\u51FA\u3042\u308A");else if(/\u30D9\u30D3\u30FC\u30AB\u30FC/.test(baby)&&/\u4E0D\u5411\u304D|\u4E0D\u53EF|\u5C11\u306A\u3081/.test(baby))stroller=C("\u5834\u6240\u306B\u3088\u308B");let nursing=U;if(/\u6388\u4E73\u5BA4?[^\uFF0F|]{0,3}(\u306A\u3057|\u4E0D\u53EF)/.test(baby))nursing=N();else if(/\u6388\u4E73/.test(baby))nursing=/\u6388\u4E73[^\uFF0F|]{0,6}\u8981\u554F\u5408\u305B/.test(baby)?C("\u8981\u554F\u5408\u305B"):Y();let diaper=U;if(/\u304A\u3080\u3064(\u66FF\u3048|\u4EA4\u63DB)/.test(baby)){if(/\u304A\u3080\u3064(\u66FF\u3048|\u4EA4\u63DB)[^\uFF0F|]{0,6}(\u306A\u3057|\u4E0D\u53EF)/.test(baby))diaper=N();else if(/\u8981\u554F\u5408\u305B/.test(baby))diaper=C("\u8981\u554F\u5408\u305B");else if(/\u9E93\u306E\u307F|\u4E00\u90E8\u306E\u307F/.test(baby))diaper=C("\u4E00\u90E8\u306E\u307F");else diaper=Y()}let toilet=U;{const kt=spot.kidsToilet;if(kt===true||kt==="partial")toilet=Y("\u5B50\u3069\u3082\u7528\u30C8\u30A4\u30EC");else if(kt==="booster")toilet=Y("\u88DC\u52A9\u4FBF\u5EA7");else if(kt==="urinal")toilet=Y("\u7537\u5150\u7528\u5C0F\u4FBF\u5668");else if(kt===false)toilet=N();else if(kt==="check")toilet=C("\u8981\u78BA\u8A8D");else if(/(\u5B50\u3069\u3082|\u5B50\u4F9B|\u3053\u3069\u3082|\u30AD\u30C3\u30BA|\u5E7C\u5150)\u7528?\u30C8\u30A4\u30EC/.test(all))toilet=Y("\u5B50\u3069\u3082\u7528\u30C8\u30A4\u30EC");else if(/\u88DC\u52A9\u4FBF\u5EA7|\u5E7C\u5150\u7528\u4FBF\u5EA7/.test(all))toilet=Y("\u88DC\u52A9\u4FBF\u5EA7")}let kids=U;if(/\u30AD\u30C3\u30BA(\u30B9\u30DA\u30FC\u30B9|\u30EB\u30FC\u30E0|\u30B3\u30FC\u30CA\u30FC)[^\u3002\uFF0F|]{0,6}(\u306A\u3057|\u306A\u3044|\u9589\u9396|\u4F11\u6B62)/.test(all))kids=N();else if(/\u30AD\u30C3\u30BA(\u30B9\u30DA\u30FC\u30B9|\u30EB\u30FC\u30E0|\u30B3\u30FC\u30CA\u30FC)|\u30D7\u30EC\u30A4\u30EB\u30FC\u30E0/.test(all))kids=Y();let food=U,shop=U;if(lunch&&lunch!=="\u8981\u78BA\u8A8D"){const scope=t=>/\u5834\u5408\u3042\u308A|\u4E00\u90E8/.test(t)?C("\u65BD\u8A2D\u306B\u3088\u308B"):/(\u5712|\u9928|\u5834|\u65BD\u8A2D|\u516C\u5712|\u30E2\u30FC\u30EB)\u5185/.test(t)?Y("\u65BD\u8A2D\u5185\u3042\u308A"):Y("\u5468\u8FBA\u306B\u3042\u308A");if(/\u98F2\u98DF\u8A2D\u5099\u306A\u3057|\u98F2\u98DF(\u5E97)?\u306F(\u3042\u308A\u307E\u305B\u3093|\u306A\u3057)/.test(lunch)){food=N()}else if(/\u30EC\u30B9\u30C8\u30E9\u30F3|\u30AB\u30D5\u30A7|\u98DF\u5802|\u304A\u98DF\u4E8B\u51E6|\u98DF\u4E8B\u51E6|\u30D5\u30FC\u30C9\u30B3\u30FC\u30C8|\u8EFD\u98DF|\u98F2\u98DF\u5E97|\u30D5\u30FC\u30C9/.test(lunch)){food=scope(lunch)}if(/\u58F2\u5E97\u306A\u3057/.test(lunch)||/\u98F2\u98DF\u8A2D\u5099\u306A\u3057/.test(lunch)){shop=N()}else if(/\u58F2\u5E97/.test(lunch)){shop=scope(lunch)}}let parking=U;if(spot.parking==="yes")parking=Y();else if(spot.parking==="no")parking=N("\u306A\u3057\u30FB\u5C11\u306A\u3081");return [{ic:"\u{1F697}",lb:"\u99D0\u8ECA\u5834",...parking},{ic:"\u{1F476}",lb:"\u30D9\u30D3\u30FC\u30AB\u30FC",...stroller},{ic:"\u{1F37C}",lb:"\u6388\u4E73\u5BA4",...nursing},{ic:"\u{1F6BC}",lb:"\u304A\u3080\u3064\u66FF\u3048",...diaper},{ic:"\u{1F6BB}",lb:"\u5B50\u3069\u3082\u7528\u30C8\u30A4\u30EC\u30FB\u4FBF\u5EA7",...toilet},{ic:"\u{1F9F8}",lb:"\u30AD\u30C3\u30BA\u30B9\u30DA\u30FC\u30B9",...kids},{ic:"\u{1F374}",lb:"\u30EC\u30B9\u30C8\u30E9\u30F3",...food},{ic:"\u{1F6CD}\uFE0F",lb:"\u58F2\u5E97",...shop}]}
 function facilityIconsHtml(spot){const list=kidsFacilityList(spot);return `<div class="detail-section kf-block"><h3>\u{1F17F}\uFE0F \u99D0\u8ECA\u5834\u30FB\u5B50\u9023\u308C\u8A2D\u5099</h3><div class="kf-grid">${list.map(f=>`<div class="kf-item kf-${f.state}"><span class="kf-ic">${f.ic}</span><span class="kf-lb${f.lb.length>8?" kf-lb-long":""}">${f.lb}</span><span class="kf-st">${expEsc(f.text)}</span></div>`).join("")}</div>${spot.kidsToiletNote?`<div class="kf-toilet-note">\u{1F6BB} ${expEsc(spot.kidsToiletNote)}</div>`:""}<div class="kf-note">\u203B\u300C\u60C5\u5831\u306A\u3057\u300D\u306F\u300C\u306A\u3044\u300D\u3068\u3044\u3046\u610F\u5473\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u304A\u51FA\u304B\u3051\u524D\u306B\u516C\u5F0F\u30B5\u30A4\u30C8\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div></div>`}
 function detailDrivingUrl(spot){const destination=typeof spot.lat==="number"&&typeof spot.lng==="number"?`${spot.lat},${spot.lng}`:spot.name+" "+(spot.area||"");let url="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(destination)+"&travelmode=driving";if(state.homeLoc&&typeof state.homeLoc.lat==="number"&&typeof state.homeLoc.lng==="number"){url+="&origin="+encodeURIComponent(`${state.homeLoc.lat},${state.homeLoc.lng}`)}return url}
@@ -1771,10 +1805,10 @@ ${spot.name}\uFF08${spot.area}\uFF09`)};sheet.querySelector('[data-act="compare"
       <div class="kids-section-divider"></div>
       <div class="kids-pref-summary">
         <div class="settings-item-label">\u{1F697} \u304A\u51FA\u304B\u3051\u3059\u308B\u5927\u4EBA</div>
-        <div class="settings-item-desc">\u89AA1\u4EBA\u3067\u304A\u5B50\u3055\u307E\u3092\u9023\u308C\u3066\u884C\u304F\u65E5\u306F\u3053\u3061\u3089\u3002\u300C\u4ECA\u65E5\u3069\u3053\u884C\u304F\uFF1F\u300D\u306E\u63A8\u85A6\u306B\u6D3B\u304B\u3055\u308C\u307E\u3059\u3002</div>
+        <div class="settings-item-desc">シングル（親1人）でお子さまを連れて行く日はこちら。「今日どこ行く？」の推薦と、施設の料金目安（大人の人数）に活かされます。</div>
         <div class="chips" id="adultModeChips">
           <button type="button" class="chip${adultMode==="auto"?" active":""}" data-adult-mode="auto">\u304A\u307E\u304B\u305B</button>
-          <button type="button" class="chip${adultMode==="solo"?" active":""}" data-adult-mode="solo">\u5927\u4EBA1\u4EBA\uFF08\u30EF\u30F3\u30AA\u30DA\uFF09</button>
+          <button type="button" class="chip${adultMode==="solo"?" active":""}" data-adult-mode="solo">大人1人（シングル・ワンオペ）</button>
           <button type="button" class="chip${adultMode==="multi"?" active":""}" data-adult-mode="multi">\u5927\u4EBA2\u4EBA\u4EE5\u4E0A</button>
         </div>
       </div>
