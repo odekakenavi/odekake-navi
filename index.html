@@ -1326,7 +1326,7 @@ function kpAgeRange(spot){const defs=kpAgeDefs();const ages=spot.ages||[];const 
 function kidsPointHtml(spot){const defs=kpAgeDefs();const ages=spot.ages||[];const range=kpAgeRange(spot);const chips=defs.map(d=>{const on=ages.includes(d.key);return `<span class="kp-age ${on?"on":"off"}">${on?"\u2713 ":""}${d.label}</span>`}).join("");return `<div class="detail-section kp-block"><h3>\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466} \u5B50\u9023\u308C\u30DD\u30A4\u30F3\u30C8</h3>${range?`<div class="kp-range">\u304A\u3059\u3059\u3081\u5E74\u9F62\uFF1A<b>${range}</b></div><div class="kp-age-chips">${chips}</div>`:`<div class="kp-range">\u304A\u3059\u3059\u3081\u5E74\u9F62\uFF1A\u60C5\u5831\u306A\u3057</div>`}</div>`}
 /* 「無料」表示の言い回しを、その施設の料金欄（入園・入場・入館…）に合わせる。 */
 function freeWordFor(spot){const p=spot&&spot.price!=null?String(spot.price).trim():"";const m=p.match(/^(入園|入場|入館|見学|公園|施設利用)/);return (m?m[1]:"")+"無料"}
-/* ===== 家族の料金目安（うちの子設定を反映／未設定は 大人2人＋5歳 の参考例。大人1人＝シングルにも対応） ===== */
+/* ===== 家族の料金目安（うちの子設定を反映／未設定は 大人2人＋5歳 の参考例。大人1人＝ワンオペにも対応） ===== */
 var FC_PRE_AGE=4,FC_DEFAULT_AGE=5;
 function fcChildCat(c){var age=null;try{age=childAgeYears(c)}catch(e){}
 if(age==null)return{cat:"el",age:null,unknown:true};
@@ -1457,9 +1457,9 @@ function todayGoHtml(spot){const rows=[];const lv=deriveRainLevel(spot);const ra
 function fcYen(n){return n.toLocaleString()+"円"}
 function fcBrk(r){return r.lines.map(function(l){var v=(l.k==="adult"&&r.adultAssumed&&l.price===0)?"未掲載（0円扱い）":(l.price===0?"無料":fcYen(l.price));return l.label+" "+v+"×"+l.count+"人"}).join("＋")}
 function fcGuideHtml(fam){var btn='<button type="button" class="fc-set" data-rl-open-kids="1">うちの子設定を開く</button>';var solo=false,auto=true;try{solo=adultMode==="solo";auto=adultMode==="auto"}catch(e){}
-if(!fam.registered)return'<div class="fc-guide">💡 いまは「大人2人＋5歳」の参考例です。うちの子設定でお子さまの年齢を登録すると、ご家族に合った正確な金額が出ます。大人1人（シングル）の場合も設定できます。'+btn+"</div>";
-if(solo)return'<div class="fc-note">大人1人（シングル）の設定で計算しています。'+"</div>";
-if(auto)return'<div class="fc-note">大人は2人で計算しています。大人1人（シングル）の場合は、うちの子設定の「お出かけする大人」で選べます。'+btn+"</div>";
+if(!fam.registered)return'<div class="fc-guide">💡 いまは「大人2人＋5歳」の参考例です。うちの子設定でお子さまの年齢を登録すると、ご家族に合った正確な金額が出ます。大人1人（ワンオペ）の場合も設定できます。'+btn+"</div>";
+if(solo)return'<div class="fc-note">大人1人（ワンオペ）の設定で計算しています。'+"</div>";
+if(auto)return'<div class="fc-note">大人は2人で計算しています。大人1人（ワンオペ）の場合は、うちの子設定の「お出かけする大人」で選べます。'+btn+"</div>";
 return""}
 function familyCostHtml(spot){var r=calcFamilyCost5(spot);
 var off=spot.officialUrl?'<a href="'+spot.officialUrl+'" target="_blank" rel="noopener">公式サイト</a>':"公式サイト";
@@ -1806,9 +1806,9 @@ ${spot.name}\uFF08${spot.area}\uFF09`)};sheet.querySelector('[data-act="compare"
       <div class="kids-section-divider"></div>
       <div class="kids-pref-summary">
         <div class="settings-item-label">\u{1F697} \u304A\u51FA\u304B\u3051\u3059\u308B\u5927\u4EBA</div>
-        <div class="settings-item-desc">お出かけする大人の人数を選んでください（シングルの方は「大人1人」）。「今日どこ行く？」の推薦と、施設の料金目安に活かされます。未選択の間は大人2人で計算します。</div>
+        <div class="settings-item-desc">お出かけする大人の人数を選んでください（ワンオペの方は「大人1人」）。「今日どこ行く？」の推薦と、施設の料金目安に活かされます。未選択の間は大人2人で計算します。</div>
         <div class="chips" id="adultModeChips">
-          <button type="button" class="chip${adultMode==="solo"?" active":""}" data-adult-sel="1">大人1人（シングル・ワンオペ）</button>
+          <button type="button" class="chip${adultMode==="solo"?" active":""}" data-adult-sel="1">大人1人（ワンオペ）</button>
           <button type="button" class="chip${adultMode==="multi"&&adultCount<3?" active":""}" data-adult-sel="2">大人2人</button>
           <button type="button" class="chip${adultMode==="multi"&&adultCount>=3?" active":""}" data-adult-sel="3">大人3人以上</button>
         </div>
