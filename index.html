@@ -1323,10 +1323,134 @@ function kpAgeRange(spot){const defs=kpAgeDefs();const ages=spot.ages||[];const 
 function kidsPointHtml(spot){const defs=kpAgeDefs();const ages=spot.ages||[];const range=kpAgeRange(spot);const chips=defs.map(d=>{const on=ages.includes(d.key);return `<span class="kp-age ${on?"on":"off"}">${on?"\u2713 ":""}${d.label}</span>`}).join("");return `<div class="detail-section kp-block"><h3>\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466} \u5B50\u9023\u308C\u30DD\u30A4\u30F3\u30C8</h3>${range?`<div class="kp-range">\u304A\u3059\u3059\u3081\u5E74\u9F62\uFF1A<b>${range}</b></div><div class="kp-age-chips">${chips}</div>`:`<div class="kp-range">\u304A\u3059\u3059\u3081\u5E74\u9F62\uFF1A\u60C5\u5831\u306A\u3057</div>`}</div>`}
 /* 「無料」表示の言い回しを、その施設の料金欄（入園・入場・入館…）に合わせる。 */
 function freeWordFor(spot){const p=spot&&spot.price!=null?String(spot.price).trim():"";const m=p.match(/^(入園|入場|入館|見学|公園|施設利用)/);return (m?m[1]:"")+"無料"}
-function calcFamilyCost5(spot){const price=(spot.price==null?"":String(spot.price)).trim();if(!price)return {kind:"none"};if(/^(\u5165\u5712|\u5165\u5834|\u5165\u9928|\u898B\u5B66|\u516C\u5712|\u65BD\u8A2D\u5229\u7528)?\s*\u7121\u6599$/.test(price))return {kind:"free"};const NUM="(\\d{1,3}(?:,\\d{3})+|\\d+)";const toInt=s=>parseInt(String(s).replace(/,/g,""),10);let m=price.match(new RegExp("^\u5927\u4EBA"+NUM+"\u5186\\s*[\uFF0F/]\\s*(\u5B50\u3069\u3082|\u5B50\u4F9B|\u5C0F\u4EBA|\u5C0F\u4E2D\u9AD8\u751F|\u5C0F\u4E2D\u5B66\u751F|\u5C0F\u5B66\u751F\u4EE5\u4E0B|\u4E2D\u5B66\u751F\u4EE5\u4E0B|\u9AD8\u6821\u751F\u4EE5\u4E0B|18\u6B73\u4EE5\u4E0B|\u672A\u5C31\u5B66\u5150|\u5E7C\u5150)?\\s*\u7121\u6599$"));if(m){const adult=toInt(m[1]);if(adult>0)return {kind:"total",mode:"childFree",adult,total:adult*2,label:m[2]||"\u5B50\u3069\u3082"}}m=price.match(new RegExp("^\u5927\u4EBA"+NUM+"\u5186\\s*[\uFF0F/]\\s*(\u5B50\u3069\u3082|\u5B50\u4F9B|\u5C0F\u4EBA|\u5C0F\u4E2D\u9AD8\u751F|\u5C0F\u4E2D\u5B66\u751F|\u5C0F\u5B66\u751F\u4EE5\u4E0B|\u4E2D\u5B66\u751F\u4EE5\u4E0B|\u9AD8\u6821\u751F\u4EE5\u4E0B|18\u6B73\u4EE5\u4E0B)\\s*"+NUM+"\u5186$"));if(m){const adult=toInt(m[1]);const child=toInt(m[3]);if(adult>0&&child>=0)return {kind:"total",mode:"childPaid",adult,child,total:adult*2+child*3,label:m[2]}}if(/\u5927\u4EBA|\u4E00\u822C|\u5B50\u3069\u3082|\u5B50\u4F9B|\u5C0F\u4EBA|\u5C0F\u5B66\u751F|\u4E2D\u5B66\u751F|\u9AD8\u6821\u751F|\u5E7C\u5150|\u672A\u5C31\u5B66|\u6B73|\u5186|\u7121\u6599/.test(price))return {kind:"varies"};return {kind:"none"}}
-function familyCostShort(spot){const r=calcFamilyCost5(spot);if(r.kind==="total")return "5\u4EBA\u3067\u7D04"+r.total.toLocaleString()+"\u5186";if(r.kind==="free")return "\u7121\u6599";if(r.kind==="varies")return "\u5E74\u9F62\u30FB\u5185\u5BB9\u3067\u7570\u306A\u308B";return "\u60C5\u5831\u306A\u3057"}
+/* ===== 家族5人の料金目安（参考例：大人2人＋小学生2人＋幼児1人(4歳)） ===== */
+var FC_ADULTS=2,FC_ELEM=2,FC_PRE=1,FC_PRE_AGE=4;
+function fcNorm(s){var t=String(s==null?"":s).replace(/[０-９]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248)});t=t.replace(/(\d),(?=\d{3})/g,"$1").replace(/(\d),(?=\d{3})/g,"$1");return t.replace(/～/g,"〜").replace(/\s+/g," ").trim()}
+function fcClassify(label){var L=String(label).replace(/\s+/g,"");
+if(/団体|割引|障|会員|前売|ネット|年間|年パス|ペア|ファミリー(券|チケット|プラン|パック|セット)|エサ|餌|えさ|竿|市民|町民|区民|県民|在住|延長|追加|レンタル|駐車|ロッカー|貸|宿泊|1泊/.test(L))return"skip";
+if(/シニア|高齢|シルバー|[5-9]\d歳以上/.test(L)){if(/小人|子ども|子供|こども|小学|小中/.test(L))L=L.replace(/[・･]?(シニア|シルバー|高齢者?)[^・]*/g,"");else return"skip"}
+if(/\d+(カ|ヶ|か|ケ)月/.test(L))return"skip";
+L=L.replace(/大人[（(][^）)]*[）)]/g,"大人").replace(/(中学生|高校生|大学生|1[2-9]歳|20歳)以上/g,"大人").replace(/小学生以上/g,"大人");
+var adult=/大人|一般|成人|おとな|付添|付き添い|同伴|保護者/.test(L);
+var elw=/小学|小中|小・中|中・小|子ども|子供|こども|小人|児童|小児|(中学生|高校生|18歳)以下/.test(L);
+var prew=/幼児|未就学|乳幼児|園児/.test(L);
+var teen=/中学|中高|高校|学生/.test(L);
+var ageOnly=/\d+歳/.test(L);
+if(adult&&(elw||prew))return"both";
+if(adult)return"adult";
+if(prew&&!elw)return"pre";
+if(elw)return"el";
+if(ageOnly)return"child";
+if(teen)return"teen";
+return"flat"}
+function fcParseTiers(text){var t=fcNorm(text);
+t=t.replace(/(\d+)円?\s*〜\s*(\d+)円/g,"$1円〜");
+var tiers={adult:null,el:null,pre:null,teen:null,child:null,flat:null};var from=false,timed=false,unit=false;
+if(/延長|ごと|毎\d|時間制|課金|パック料金/.test(t))timed=true;
+var re=/(\d+)円/g,m,prevEnd=0;
+while((m=re.exec(t))){var gap=t.slice(prevEnd,m.index);var parts=gap.split(/[／\/、，,；;。\n]/);var label=parts[parts.length-1].split(/無料|。/).pop().replace(/^[・\s（(]+/,"");
+var after=t.slice(m.index+m[0].length,m.index+m[0].length+4);
+prevEnd=m.index+m[0].length;
+var tail=label.slice(-6),ahead=t.slice(m.index+m[0].length,m.index+m[0].length+12);
+if(/\d\s*(皿|品|ゲーム|回(?!券)|球|周|ラウンド|台|組|名|泊|kg|g|枚|個|匹|グループ)\s*$/.test(label)||/(^|[^\d])(5|10|15|20)分\s*$/.test(tail)||/^[／\/]?\s*(kg|ｋｇ|チーム|グループ|組|台)|^（1(チーム|グループ|組|台)/.test(ahead)){unit=true;continue}
+var amt=parseInt(m[1],10);var cls=fcClassify(label);if(cls==="skip")continue;
+var isFrom=/^(から|〜)/.test(after);
+function setv(k){if(tiers[k]==null){tiers[k]=amt;if(isFrom)from=true}}
+if(cls==="both"){setv("adult");if(tiers.child==null)tiers.child=amt}
+else if(cls==="adult")setv("adult");
+else if(cls==="pre")setv("pre");
+else if(cls==="el"){setv("el")}
+else if(cls==="child"){setv("child")}
+else if(cls==="teen")setv("teen");
+else if(cls==="flat"){if(amt>=50)setv("flat")}}
+/* 無料ルール */
+var free={el:false,pre:false,maxAge:-1};
+var fre=/([^／\/、，,；;。\n（）()]{0,24}?)(?:は|も)?無料/g,fm;
+while((fm=fre.exec(t))){var L=fm[1].replace(/\s+/g,"");if(!L)continue;
+if(/在住|在学|市民|町民|区民|県民|村民|会員|同伴|付添|付き添い|障|大人|一般/.test(L))continue;
+var a;if((a=L.match(/(\d+)歳未満/)))free.maxAge=Math.max(free.maxAge,parseInt(a[1],10)-1);
+if((a=L.match(/(\d+)歳以下/)))free.maxAge=Math.max(free.maxAge,parseInt(a[1],10));
+if((a=L.match(/〜(\d+)歳/)))free.maxAge=Math.max(free.maxAge,parseInt(a[1],10));
+if(/未就学|幼児|乳幼児|小学生未満|園児/.test(L))free.maxAge=Math.max(free.maxAge,5);
+if(/(小学生|中学生|高校生|18歳)以下|子ども|子供|こども|小人|小中学生$|小学生$/.test(L)&&!/幼児|未就学/.test(L)){free.el=true;free.maxAge=Math.max(free.maxAge,12)}}
+if(free.maxAge>=FC_PRE_AGE)free.pre=true;
+return{t:tiers,free:free,from:from,timed:timed,unit:unit}}
+function fcCompose(p){var t=p.t,free=p.free;var notes=[];var conf="exact";
+var adult=t.adult!=null?t.adult:t.flat;
+if(adult==null&&t.child!=null)adult=t.child;
+var adultAssumed=false;
+if(adult==null&&(t.el!=null||t.teen!=null||t.pre!=null)){adult=0;adultAssumed=true;notes.push("大人（付き添い）の料金が未掲載のため、子ども分のみで計算しています。")}
+if(adult==null)return null;
+var el=null,pre=null;
+if(t.el!=null)el=t.el;else if(t.child!=null)el=t.child;
+if(el==null&&free.el)el=0;
+if(el==null&&t.pre!=null)el=t.pre;
+if(el==null&&t.teen!=null){el=t.teen;notes.push("小学生の料金が未掲載のため、中高生の料金で計算しています。")}
+var elAssumed=false;
+if(el==null){if(t.flat!=null&&t.adult==null){el=t.flat}else if(free.pre||free.maxAge>=0){el=adult;elAssumed=true;notes.push("小学生の料金が未掲載のため、大人と同額で計算しています（上限の目安）。")}}
+if(t.pre!=null)pre=t.pre;else if(t.child!=null)pre=t.child;else if(free.pre||free.el)pre=0;else pre=el;
+if(el==null){return{partial:true,adult:adult,total:adult*FC_ADULTS,from:p.from,notes:notes}}
+if(pre==null)pre=el;
+var total=adult*FC_ADULTS+el*FC_ELEM+pre*FC_PRE;
+if(elAssumed||adultAssumed)conf="assumed";
+if(t.adult==null&&t.flat!=null&&t.el==null&&t.child==null&&t.pre==null&&t.teen==null&&!adultAssumed)notes.push("全員同額（1人あたり）として計算しています。");
+if(p.timed)notes.push("時間制・延長で料金が変わる施設です。目安は基本料金で計算しています。");
+return{partial:false,adult:adult,el:el,pre:pre,total:total,from:p.from,conf:conf,notes:notes}}
+function calcFamilyCost5(spot){
+var price=(spot&&spot.price==null?"":String(spot.price)).trim();
+var o=spot&&spot.familyPrice;
+if(o&&typeof o==="object"&&typeof o.adult==="number"){var ch=typeof o.child==="number"?o.child:o.adult;var inf=typeof o.infant==="number"?o.infant:ch;return{kind:"total",adult:o.adult,el:ch,pre:inf,total:o.adult*FC_ADULTS+ch*FC_ELEM+inf*FC_PRE,from:false,conf:"exact",notes:o.note?[String(o.note)]:[]}}
+if(!price)return{kind:"none"};
+var fs=fcNorm(price);
+var fm=fs.match(/^(?:.{0,10}?)(入園|入場|入館|見学|参拝|拝観|公園|施設利用|利用|観覧|散策|入山|展示室|広場)[^／\/、，,（(\d円]{0,14}?(無料|自由)/);
+var bare=!fm&&/^[（(]?無料/.test(fs);
+if(fm||bare){var rest=bare?fs.replace(/^[（(]?無料/,""):fs.slice(fm[0].length);
+var kw=fm?fm[1]:"";var word=(/^(入園|入場|入館|見学|参拝|拝観|施設利用|利用)$/.test(kw)?kw:"")+(fm?fm[2]:"無料");var extra=null;
+if(!/駐車|乗用車|kg|量り売り|カフェ/.test(rest)){var pp=fcParseTiers(rest);if(!pp.unit&&pp.t.adult!=null){var c=fcCompose(pp);if(c&&!c.partial)extra=c}}
+return{kind:"free",word:word,extra:extra}}
+if(/^(?:(?:入園|入場|入館|見学|公園|施設利用)\s*)?無料$/.test(fs))return{kind:"free",word:(fs.replace(/無料$/,"").trim()||"")+"無料",extra:null};
+if(/^(未確認|不明)/.test(fs))return{kind:"none"};
+var p=fcParseTiers(fs);
+if(p.unit&&p.t.adult==null&&p.t.flat==null)return/\d+円/.test(fs)?{kind:"varies"}:{kind:"none"};
+var r=fcCompose(p);
+if(r&&r.partial)return{kind:"partial",adult:r.adult,total:r.total,from:r.from,notes:r.notes};
+if(r)return{kind:"total",adult:r.adult,el:r.el,pre:r.pre,total:r.total,from:r.from,conf:r.conf,notes:r.notes};
+if(/\d+円/.test(fs))return{kind:"varies"};
+return{kind:"none"}}
+function familyCostShort(spot){var r=calcFamilyCost5(spot);
+if(r.kind==="total")return"5人で約"+r.total.toLocaleString()+"円"+(r.from?"〜":"");
+if(r.kind==="partial")return"大人2人で約"+r.total.toLocaleString()+"円"+(r.from?"〜":"");
+if(r.kind==="free")return r.extra?"無料（有料部分は約"+r.extra.total.toLocaleString()+"円）":"無料";
+if(r.kind==="varies")return"掲載料金を確認";
+return"情報なし"}
 function todayGoHtml(spot){const rows=[];const lv=deriveRainLevel(spot);const rainTxt=lv>=4?"\u25CE \u5B8C\u5168\u5C4B\u5185":lv===3?"\u25CE \u96E8\u3067\u3082\u304A\u3059\u3059\u3081":lv===2?"\u25CB \u5C0F\u96E8\u306A\u3089OK":"\u25B3 \u6674\u308C\u5411\u304D";rows.push(["\u2614","\u96E8\u306E\u65E5",rainTxt]);let stay="";if(spot.stayTime&&typeof spot.stayTime.minMinutes==="number"&&typeof spot.stayTime.maxMinutes==="number"){stay=formatMinutes(spot.stayTime.minMinutes)+"\u301C"+formatMinutes(spot.stayTime.maxMinutes)}else{const b=deriveStayTimeBucket(spot);if(b)stay=b+"\uFF08\u76EE\u5B89\uFF09"}if(stay)rows.push(["\u23F1","\u6EDE\u5728\u76EE\u5B89",stay]);rows.push(["\u{1F4B0}","\u6599\u91D1",familyCostShort(spot)]);if(spot.parking==="yes")rows.push(["\u{1F697}","\u99D0\u8ECA\u5834","\u3042\u308A"]);else if(spot.parking==="no")rows.push(["\u{1F697}","\u99D0\u8ECA\u5834","\u306A\u3057\u30FB\u5C11\u306A\u3081"]);const defs=kpAgeDefs();const ages=spot.ages||[];if(ages.length){const first=defs.findIndex(d=>ages.includes(d.key));const small=ages.includes("0-1\u6B73")||ages.includes("2-3\u6B73");rows.push(["\u{1F476}","\u5C0F\u3055\u3044\u5B50",small?"\u304A\u3059\u3059\u3081":first===2?"4\u6B73\u3054\u308D\u301C":first===3?"\u5C0F\u5B66\u751F\u301C":"\u9AD8\u5B66\u5E74\u5411\u3051"])}rows.push(["\u{1F3C3}","\u3057\u3063\u304B\u308A\u904A\u3076",deriveActivityLevel(spot)==="active"?"\u304A\u3059\u3059\u3081":"\u307E\u3063\u305F\u308A\u5411\u304D"]);return `<div class="detail-section tg-block"><h3>\u{1F3AF} \u4ECA\u65E5\u884C\u304F\u306A\u3089\uFF1F</h3><div class="tg-grid">${rows.map(r=>`<div class="tg-item"><span class="tg-ic">${r[0]}</span><span class="tg-lb">${r[1]}</span><span class="tg-val">${expEsc(r[2])}</span></div>`).join("")}</div></div>`}
-function familyCostHtml(spot){const r=calcFamilyCost5(spot);const off=spot.officialUrl?`<a href="${spot.officialUrl}" target="_blank" rel="noopener">\u516C\u5F0F\u30B5\u30A4\u30C8</a>`:"\u516C\u5F0F\u30B5\u30A4\u30C8";let body="";if(r.kind==="total"){const y=n=>n.toLocaleString()+"\u5186";const brk=r.mode==="childFree"?`\u5927\u4EBA ${y(r.adult)}\u00D72\u4EBA\uFF0B\u5B50\u3069\u30823\u4EBA\uFF08${expEsc(r.label)}\uFF09\u306F\u7121\u6599`:`\u5927\u4EBA ${y(r.adult)}\u00D72\u4EBA\uFF0B\u5B50\u3069\u3082 ${y(r.child)}\u00D73\u4EBA\uFF08${expEsc(r.label)}\uFF09`;body=`<div class="fc-main"><span class="fc-num">\u7D04${y(r.total)}</span><span class="fc-sub">\u5927\u4EBA2\u4EBA\uFF0B\u5B50\u3069\u30823\u4EBA</span></div><div class="fc-brk">${brk}</div><div class="fc-note">\u203B\u5165\u5834\u6599\u306E\u307F\u306E\u76EE\u5B89\u3067\u3059\u3002\u5E74\u9F62\u306B\u3088\u308B\u7121\u6599\u30FB\u5272\u5F15\u3084\u3001\u4F53\u9A13\u30FB\u99D0\u8ECA\u5834\u306A\u3069\u306E\u5225\u6599\u91D1\u306F\u542B\u307F\u307E\u305B\u3093\u3002\u6700\u65B0\u306E\u6599\u91D1\u306F${off}\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div>`}else if(r.kind==="free"){body=`<div class="fc-main"><span class="fc-num">${freeWordFor(spot)}</span></div><div class="fc-note">\u203B\u5712\u5185\u306E\u6709\u6599\u65BD\u8A2D\u30FB\u99D0\u8ECA\u5834\u306A\u3069\u306F\u5225\u9014\u304B\u304B\u308B\u5834\u5408\u304C\u3042\u308A\u307E\u3059\u3002\u8A73\u3057\u304F\u306F${off}\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div>`}else if(r.kind==="varies"){body=`<div class="fc-main"><span class="fc-num fc-num-sm">\u5E74\u9F62\u30FB\u5185\u5BB9\u306B\u3088\u3063\u3066\u7570\u306A\u308A\u307E\u3059</span></div><div class="fc-brk">${spot.price?"\u63B2\u8F09\u6599\u91D1\uFF1A"+expEsc(spot.price):""}</div><div class="fc-note">\u6B63\u78BA\u306A\u91D1\u984D\u306F${off}\u3067\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002</div>`}else{body=`<div class="fc-main"><span class="fc-num fc-num-sm">\u60C5\u5831\u306A\u3057</span></div><div class="fc-note">\u6599\u91D1\u306F${off}\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div>`}return `<div class="detail-section fc-block"><h3>\u{1F4B0} \u5BB6\u65CF5\u4EBA\u306E\u6599\u91D1\u76EE\u5B89</h3>${body}</div>`}
+function fcYen(n){return n.toLocaleString()+"円"}
+function fcBrk(r){var a=r.adult===0?"大人 未掲載（0円扱い）×"+FC_ADULTS+"人":"大人 "+fcYen(r.adult)+"×"+FC_ADULTS+"人";var e="小学生 "+(r.el===0?"無料":fcYen(r.el))+"×"+FC_ELEM+"人";var p="幼児("+FC_PRE_AGE+"歳) "+(r.pre===0?"無料":fcYen(r.pre)+"×"+FC_PRE+"人");return a+"＋"+e+"＋"+p}
+function familyCostHtml(spot){var r=calcFamilyCost5(spot);
+var off=spot.officialUrl?'<a href="'+spot.officialUrl+'" target="_blank" rel="noopener">公式サイト</a>':"公式サイト";
+var ps=spot.price?String(spot.price):"";var listed=ps?'<div class="fc-note">掲載料金：'+expEsc(ps.length>110?ps.slice(0,110)+"…":ps)+"</div>":"";
+var ex="大人"+FC_ADULTS+"人＋小学生"+FC_ELEM+"人＋幼児"+FC_PRE+"人";
+var notes=function(a){return(a||[]).map(function(n){return'<div class="fc-note">※'+expEsc(n)+"</div>"}).join("")};
+var body="";
+if(r.kind==="total"){
+body='<div class="fc-main"><span class="fc-num">約'+fcYen(r.total)+(r.from?"〜":"")+'</span><span class="fc-sub">'+ex+"の例</span></div>"
++'<div class="fc-brk">'+fcBrk(r)+"</div>"
++(r.from?'<div class="fc-note">※「〜円から」の掲載のため、最低料金ベースの目安です。</div>':"")
++notes(r.notes)+listed
++'<div class="fc-note">※掲載料金をもとにした参考例です（入場料のみ）。家族構成・年齢の区切り・割引・体験料・駐車場で変わります。最新の料金は'+off+"でご確認ください。</div>"}
+else if(r.kind==="partial"){
+body='<div class="fc-main"><span class="fc-num">大人2人で約'+fcYen(r.total)+(r.from?"〜":"")+'</span><span class="fc-sub">子ども料金は未掲載</span></div>'
++'<div class="fc-brk">大人 '+fcYen(r.adult)+"×2人</div>"+notes(r.notes)+listed
++'<div class="fc-note">※子ども分は含みません。子どもの料金・無料の年齢は'+off+"でご確認ください。</div>"}
+else if(r.kind==="free"){
+body='<div class="fc-main"><span class="fc-num">'+expEsc(r.word)+"</span></div>";
+if(r.extra){body+='<div class="fc-brk">有料部分を利用する場合の目安：約'+fcYen(r.extra.total)+(r.extra.from?"〜":"")+'<span class="fc-sub">（'+ex+"の例）</span></div>"+'<div class="fc-brk">'+fcBrk(r.extra)+"</div>"+notes(r.extra.notes)}
+body+=listed+'<div class="fc-note">※園内の有料施設・体験・駐車場などは別途かかる場合があります。詳しくは'+off+"でご確認ください。</div>"}
+else if(r.kind==="varies"){
+body='<div class="fc-main"><span class="fc-num fc-num-sm">回数・時間・コースごとの料金のため、合計の目安を出せません</span></div>'+listed
++'<div class="fc-note">正確な金額は'+off+"で確認してください。</div>"}
+else{body='<div class="fc-main"><span class="fc-num fc-num-sm">情報なし</span></div><div class="fc-note">料金は'+off+"でご確認ください。</div>"}
+return'<div class="detail-section fc-block"><h3>\u{1F4B0} 家族5人の料金目安</h3>'+body+"</div>"}
 function kidsFacilityList(spot){const baby=spot.baby==null?"":String(spot.baby);const lunch=spot.lunch==null?"":String(spot.lunch);const all=[baby,lunch,spot.tip||"",spot.desc||""].join(" | ");const U={state:"unknown",text:"\u60C5\u5831\u306A\u3057"};const Y=t=>({state:"yes",text:t||"\u3042\u308A"});const N=t=>({state:"no",text:t||"\u306A\u3057"});const C=t=>({state:"check",text:t||"\u8981\u78BA\u8A8D"});let stroller=U;if(/\u30D9\u30D3\u30FC\u30AB\u30FC(OK|\uFF2F\uFF2B|\u53EF|\u5165\u5E97\u53EF)/.test(baby)||/\u30D9\u30D3\u30FC\u30AB\u30FC[^\uFF0F|]{0,4}(OK|\u53EF)/.test(baby))stroller=Y(/\u8CB8\u51FA|\u30EC\u30F3\u30BF\u30EB/.test(baby)||spot.strollerRental===true?"\u8CB8\u51FA\u3042\u308A":"OK");else if(spot.strollerRental===true)stroller=Y("\u8CB8\u51FA\u3042\u308A");else if(/\u30D9\u30D3\u30FC\u30AB\u30FC[^\uFF0F|]{0,8}(\u8CB8\u51FA|\u30EC\u30F3\u30BF\u30EB)/.test(baby))stroller=Y("\u8CB8\u51FA\u3042\u308A");else if(/\u30D9\u30D3\u30FC\u30AB\u30FC/.test(baby)&&/\u4E0D\u5411\u304D|\u4E0D\u53EF|\u5C11\u306A\u3081/.test(baby))stroller=C("\u5834\u6240\u306B\u3088\u308B");let nursing=U;if(/\u6388\u4E73\u5BA4?[^\uFF0F|]{0,3}(\u306A\u3057|\u4E0D\u53EF)/.test(baby))nursing=N();else if(/\u6388\u4E73/.test(baby))nursing=/\u6388\u4E73[^\uFF0F|]{0,6}\u8981\u554F\u5408\u305B/.test(baby)?C("\u8981\u554F\u5408\u305B"):Y();let diaper=U;if(/\u304A\u3080\u3064(\u66FF\u3048|\u4EA4\u63DB)/.test(baby)){if(/\u304A\u3080\u3064(\u66FF\u3048|\u4EA4\u63DB)[^\uFF0F|]{0,6}(\u306A\u3057|\u4E0D\u53EF)/.test(baby))diaper=N();else if(/\u8981\u554F\u5408\u305B/.test(baby))diaper=C("\u8981\u554F\u5408\u305B");else if(/\u9E93\u306E\u307F|\u4E00\u90E8\u306E\u307F/.test(baby))diaper=C("\u4E00\u90E8\u306E\u307F");else diaper=Y()}let toilet=U;{const kt=spot.kidsToilet;if(kt===true||kt==="partial")toilet=Y("\u5B50\u3069\u3082\u7528\u30C8\u30A4\u30EC");else if(kt==="booster")toilet=Y("\u88DC\u52A9\u4FBF\u5EA7");else if(kt==="urinal")toilet=Y("\u7537\u5150\u7528\u5C0F\u4FBF\u5668");else if(kt===false)toilet=N();else if(kt==="check")toilet=C("\u8981\u78BA\u8A8D");else if(/(\u5B50\u3069\u3082|\u5B50\u4F9B|\u3053\u3069\u3082|\u30AD\u30C3\u30BA|\u5E7C\u5150)\u7528?\u30C8\u30A4\u30EC/.test(all))toilet=Y("\u5B50\u3069\u3082\u7528\u30C8\u30A4\u30EC");else if(/\u88DC\u52A9\u4FBF\u5EA7|\u5E7C\u5150\u7528\u4FBF\u5EA7/.test(all))toilet=Y("\u88DC\u52A9\u4FBF\u5EA7")}let kids=U;if(/\u30AD\u30C3\u30BA(\u30B9\u30DA\u30FC\u30B9|\u30EB\u30FC\u30E0|\u30B3\u30FC\u30CA\u30FC)[^\u3002\uFF0F|]{0,6}(\u306A\u3057|\u306A\u3044|\u9589\u9396|\u4F11\u6B62)/.test(all))kids=N();else if(/\u30AD\u30C3\u30BA(\u30B9\u30DA\u30FC\u30B9|\u30EB\u30FC\u30E0|\u30B3\u30FC\u30CA\u30FC)|\u30D7\u30EC\u30A4\u30EB\u30FC\u30E0/.test(all))kids=Y();let food=U,shop=U;if(lunch&&lunch!=="\u8981\u78BA\u8A8D"){const scope=t=>/\u5834\u5408\u3042\u308A|\u4E00\u90E8/.test(t)?C("\u65BD\u8A2D\u306B\u3088\u308B"):/(\u5712|\u9928|\u5834|\u65BD\u8A2D|\u516C\u5712|\u30E2\u30FC\u30EB)\u5185/.test(t)?Y("\u65BD\u8A2D\u5185\u3042\u308A"):Y("\u5468\u8FBA\u306B\u3042\u308A");if(/\u98F2\u98DF\u8A2D\u5099\u306A\u3057|\u98F2\u98DF(\u5E97)?\u306F(\u3042\u308A\u307E\u305B\u3093|\u306A\u3057)/.test(lunch)){food=N()}else if(/\u30EC\u30B9\u30C8\u30E9\u30F3|\u30AB\u30D5\u30A7|\u98DF\u5802|\u304A\u98DF\u4E8B\u51E6|\u98DF\u4E8B\u51E6|\u30D5\u30FC\u30C9\u30B3\u30FC\u30C8|\u8EFD\u98DF|\u98F2\u98DF\u5E97|\u30D5\u30FC\u30C9/.test(lunch)){food=scope(lunch)}if(/\u58F2\u5E97\u306A\u3057/.test(lunch)||/\u98F2\u98DF\u8A2D\u5099\u306A\u3057/.test(lunch)){shop=N()}else if(/\u58F2\u5E97/.test(lunch)){shop=scope(lunch)}}let parking=U;if(spot.parking==="yes")parking=Y();else if(spot.parking==="no")parking=N("\u306A\u3057\u30FB\u5C11\u306A\u3081");return [{ic:"\u{1F697}",lb:"\u99D0\u8ECA\u5834",...parking},{ic:"\u{1F476}",lb:"\u30D9\u30D3\u30FC\u30AB\u30FC",...stroller},{ic:"\u{1F37C}",lb:"\u6388\u4E73\u5BA4",...nursing},{ic:"\u{1F6BC}",lb:"\u304A\u3080\u3064\u66FF\u3048",...diaper},{ic:"\u{1F6BB}",lb:"\u5B50\u3069\u3082\u7528\u30C8\u30A4\u30EC\u30FB\u4FBF\u5EA7",...toilet},{ic:"\u{1F9F8}",lb:"\u30AD\u30C3\u30BA\u30B9\u30DA\u30FC\u30B9",...kids},{ic:"\u{1F374}",lb:"\u30EC\u30B9\u30C8\u30E9\u30F3",...food},{ic:"\u{1F6CD}\uFE0F",lb:"\u58F2\u5E97",...shop}]}
 function facilityIconsHtml(spot){const list=kidsFacilityList(spot);return `<div class="detail-section kf-block"><h3>\u{1F17F}\uFE0F \u99D0\u8ECA\u5834\u30FB\u5B50\u9023\u308C\u8A2D\u5099</h3><div class="kf-grid">${list.map(f=>`<div class="kf-item kf-${f.state}"><span class="kf-ic">${f.ic}</span><span class="kf-lb${f.lb.length>8?" kf-lb-long":""}">${f.lb}</span><span class="kf-st">${expEsc(f.text)}</span></div>`).join("")}</div>${spot.kidsToiletNote?`<div class="kf-toilet-note">\u{1F6BB} ${expEsc(spot.kidsToiletNote)}</div>`:""}<div class="kf-note">\u203B\u300C\u60C5\u5831\u306A\u3057\u300D\u306F\u300C\u306A\u3044\u300D\u3068\u3044\u3046\u610F\u5473\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u304A\u51FA\u304B\u3051\u524D\u306B\u516C\u5F0F\u30B5\u30A4\u30C8\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div></div>`}
 function detailDrivingUrl(spot){const destination=typeof spot.lat==="number"&&typeof spot.lng==="number"?`${spot.lat},${spot.lng}`:spot.name+" "+(spot.area||"");let url="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(destination)+"&travelmode=driving";if(state.homeLoc&&typeof state.homeLoc.lat==="number"&&typeof state.homeLoc.lng==="number"){url+="&origin="+encodeURIComponent(`${state.homeLoc.lat},${state.homeLoc.lng}`)}return url}
