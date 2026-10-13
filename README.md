@@ -42,6 +42,24 @@
 
 公開URLになるフォルダは、フォルダ名を変えると検索結果・シェアされたURLが切れるため移動しないでください。
 
+## 公開の流れ（自動）
+
+main に push すると GitHub Actions（`.github/workflows/pages.yml`）が次を自動で行います。
+
+1. `tools/check-site.js` … データの自動チェック（JSONの破損・slug重複・緯度経度・URLの形など）。エラーなら**公開せず止まる**（いまのサイトはそのまま）
+2. `tools/build-public.js` … 公開用の形（_public/）を組み立て
+3. `tools/refresh-static-pages.js` … 施設・地域・季節・エリア特集ページと sitemap.xml を、いまの data/spots.json から自動で作り直す
+4. `tools/check-site.js --public _public` … sitemapとページの対応・noindex・canonical・リンク切れを最終確認
+
+→ 施設データ（data/spots.json）を更新するだけで、静的ページもsitemapも自動で最新になります。生成したページをリポジトリにアップする必要はありません。
+結果は GitHub の「Actions」タブ → 最新の実行 → Summary で確認できます（⚠注意は公開を止めず一覧表示のみ）。
+
+手元で同じチェックをする場合：
+```
+node tools/check-site.js
+node tools/build-public.js --out _public && node tools/refresh-static-pages.js --public _public && node tools/check-site.js --public _public
+```
+
 ## 更新の流れ（PCで作業するとき）
 
 リポジトリ直下で実行します。
