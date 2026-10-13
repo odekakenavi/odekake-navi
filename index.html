@@ -2122,6 +2122,9 @@ var HEAT_INDOOR_GENRES=["室内遊び場","博物館・科学館","博物館","�
 var HEAT_OUTDOOR_GENRES=["公園","動物園","牧場","アスレチック・アウトドア","キャンプ場・グランピング","花の名所","釣り堀・魚つかみ取り","果物狩り・収穫体験","遊園地・テーマパーク","遊園地","城・歴史","商業施設屋上・遊具広場","鉄道・観光","おでかけスポット"];
 function heatKind(spot){
 var g="";try{g=deriveCategory(spot)||""}catch(e){}
+var pdesc=(spot.name||"")+(spot.desc||"");
+if(/プール/.test(pdesc)&&/屋内/.test(pdesc)&&/屋外/.test(pdesc))return"mixed";
+if(/温水プール|屋内プール|屋内温水/.test(pdesc)&&!/屋外|夏季限定/.test(pdesc))return"indoor";
 if(g==="プール・水遊び")return"water";
 if(HEAT_INDOOR_GENRES.indexOf(g)<0&&/プール|サマーランド|ウォーターパーク|ビーチ|海水浴場|水上公園/.test(spot.name||"")&&!/温水|ビーチ店|スパ/.test(spot.name||""))return"water";
 var inferred=!spot.genre,generic=inferred&&g==="おでかけスポット";
