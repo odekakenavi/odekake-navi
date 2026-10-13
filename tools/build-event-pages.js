@@ -66,7 +66,7 @@ const EVENTS = {
     ],
     groupChips: [{ g: 0, label: '🍁 紅葉まつり' }, { g: 1, label: '🍂 名所' }],
     order: ['国営ひたち海浜公園', '竜神大吊橋', '修善寺 虹の郷', '那須岳ロープウェイ', '谷川岳ロープウェイ', '高尾山', '明治神宮外苑いちょう並木'],
-    ctaText: '🧭 おでかけナビで紅葉・自然スポットを探す', ctaParam: null,
+    ctaText: '🧭 おでかけナビで紅葉・自然スポットを探す', ctaParam: 'momiji',
   },
   christmas: {
     key: 'クリスマス', slug: 'christmas', emoji: '🎄', navLabel: '🎄 クリスマス',
@@ -105,7 +105,7 @@ const EVENTS = {
       { id: 'group-2', title: '🌳 桜の名所・公園', sub: '遊具や広場があり、子連れでお花見しやすい公園です', match: t => t === 'sakura' },
     ],
     groupChips: [{ g: 0, label: '🌸 河津桜' }, { g: 1, label: '🌳 桜の公園' }],
-    order: [], ctaText: '🧭 おでかけナビで桜・お花見スポットを探す', ctaParam: null,
+    order: [], ctaText: '🧭 おでかけナビで桜・お花見スポットを探す', ctaParam: 'ohanami',
   },
   gw: {
     key: 'GW', slug: 'gw', tentativeLabel: '例年連休に人気・2027年の企画は発表待ち', emoji: '🎏', navLabel: '🎏 GW・こどもの日', year: 2027,
@@ -159,7 +159,7 @@ const EVENTS = {
       { id: 'group-1', title: '🎆 夏祭り・花火のあるおでかけ先', sub: '夜間営業や打ち上げ花火、夏のお祭りを楽しめる場所です', match: t => t === 'event' },
     ],
     groupChips: [],
-    order: [], ctaText: '🧭 おでかけナビで夏のおでかけ先を探す', ctaParam: null,
+    order: [], ctaText: '🧭 おでかけナビで夏祭り・花火スポットを探す', ctaParam: 'natsumatsuri-hanabi',
   },
 
 };
