@@ -25,9 +25,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # ① データの自動チェック。spots.json / hotels.json などが壊れていたらここで止まり、公開されない（いまのサイトはそのまま）。
+      - name: Check data
+        run: node tools/check-site.js
       # リポジトリの置き場所（site/area など）から、公開用の形（_public/）を組み立てる。重なり・不足があればここで止まり、公開されない。
       - name: Assemble public site
         run: node tools/build-public.js --out _public
+      # ② 施設・地域・季節・エリア特集ページと sitemap.xml を、いまの spots.json から自動で作り直す（リポジトリのファイルは書き換えない）。
+      - name: Refresh static pages
+        run: node tools/refresh-static-pages.js --public _public
+      # ③ 公開直前の最終チェック（sitemap とページの対応、noindex、canonical、リンク切れ）。エラーなら公開しない。
+      - name: Check public site
+        run: node tools/check-site.js --public _public
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
