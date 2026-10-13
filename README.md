@@ -48,7 +48,7 @@ main に push すると GitHub Actions（`.github/workflows/pages.yml`）が次�
 
 1. `tools/check-site.js` … データの自動チェック（JSONの破損・slug重複・緯度経度・URLの形など）。エラーなら**公開せず止まる**（いまのサイトはそのまま）
 2. `tools/build-public.js` … 公開用の形（_public/）を組み立て
-3. `tools/refresh-static-pages.js` … 施設・地域・季節・エリア特集ページと sitemap.xml を、いまの data/spots.json から自動で作り直す
+3. `tools/refresh-static-pages.js` … 施設・地域・季節・エリア特集ページと sitemap.xml を、いまの data/spots.json から自動で作り直す（目的別 /purpose/…・雨の日・無料・赤ちゃん向けの特集ページは `tools/build-feature-pages.js` が作る）
 4. `tools/check-site.js --public _public` … sitemapとページの対応・noindex・canonical・リンク切れを最終確認
 
 → 施設データ（data/spots.json）を更新するだけで、静的ページもsitemapも自動で最新になります。生成したページをリポジトリにアップする必要はありません。
