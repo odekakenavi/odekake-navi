@@ -6,7 +6,7 @@
 //   （--index index.html / --spots data/spots.json で入力の場所を変えられる）
 // 方針：
 //   ・施設データ(data/spots.json)の events / eventInfo[イベント名] だけから作る。施設は追加しない。
-//   ・施設ページのURLは index.html の SLUG_OVERRIDES（URL確定済みの表）をそのまま使う。表に無い施設はエラーで止める。
+//   ・施設ページのURLは spots.json の slug 項目を使う（無ければ index.html の SLUG_OVERRIDES）。どちらにも無い施設はエラーで止める。
 //   ・sitemap.xml や他のページには一切触らない。
 //   ・別のイベント（例：お花見）を足す時は、下の EVENTS に1つ書き足す。
 'use strict';
@@ -48,6 +48,25 @@ const EVENTS = {
     groupChips: [{ g: 1, label: '📸 フォトスポット' }],
     order: ['サンリオピューロランド', 'アンパンマンこどもミュージアム＆モール横浜', '東京ディズニーシー', '東京ディズニーランド', 'よみうりランド', '花やしき', 'むさしの村', 'アクアワールド茨城県大洗水族館', 'ハリー・ポッター スタジオツアー東京', '富士急ハイランド', 'リトルプラネット ダイバーシティ東京 プラザ', 'リトルプラネット イオンモール川口', '東京タワー', '横浜イングリッシュガーデン', '夢の島公園・熱帯植物館'],
     ctaText: '🧭 おでかけナビでハロウィン施設を絞り込んで探す', ctaParam: 'halloween',
+  },
+  momiji: {
+    key: '紅葉', slug: 'momiji', periodOverride: '2026年10月〜12月', tentativeLabel: '例年の目安あり・今年の見頃や日程は発表待ち', emoji: '🍁', navLabel: '🍁 紅葉・いちょう',
+    h1: '🍁 子どもと楽しむ紅葉・いちょう特集',
+    subtitle: '紅葉狩りはどこ行く？親子で行きやすい紅葉・いちょう並木の名所',
+    breadcrumb: '紅葉・いちょう特集', ldName: '2026年 子どもと楽しむ紅葉・いちょう特集',
+    title: p => `子どもと楽しむ紅葉・いちょう特集【2026】${p}の子連れスポット｜おでかけナビ`,
+    ogTitle: '🍁 子どもと楽しむ紅葉・いちょう特集｜紅葉狩りはどこ行く？',
+    desc: (p, n) => `紅葉狩りはどこ行く？2026年の秋に親子で楽しめる${p}の紅葉・いちょう並木の名所を${n}件掲載。見頃の予想や紅葉まつりの期間・対象年齢・駐車場の有無つき。`,
+    intro: (p, list) => `「おでかけナビ」に登録されているスポットの中から、2026年の秋に子どもと紅葉やいちょう並木を楽しめる${p}のおでかけ先（${list}）をまとめました。見頃の予想や紅葉まつりの期間が分かるスポットから順に載せています。`,
+    notice: '見頃・ライトアップ・イベントの有無は、年や天候によって変わります。お出かけ前に必ず公式サイトで最新情報をご確認ください。',
+    seasonLink: ['🍁 秋のお出かけ', 'season/autumn/'],
+    groups: [
+      { id: 'group-1', title: '🍁 紅葉まつり・ライトアップ', sub: '期間中に開催される紅葉まつりやライトアップのあるスポットです', match: t => t === 'event' },
+      { id: 'group-2', title: '🍂 紅葉・いちょう並木の名所', sub: '見頃の予想や例年の時期が分かる、紅葉・いちょう・コキアの名所です', match: t => t === 'spot' },
+    ],
+    groupChips: [{ g: 0, label: '🍁 紅葉まつり' }, { g: 1, label: '🍂 名所' }],
+    order: ['国営ひたち海浜公園', '竜神大吊橋', '修善寺 虹の郷', '那須岳ロープウェイ', '谷川岳ロープウェイ', '高尾山', '明治神宮外苑いちょう並木'],
+    ctaText: '🧭 おでかけナビで紅葉・自然スポットを探す', ctaParam: null,
   },
   christmas: {
     key: 'クリスマス', slug: 'christmas', emoji: '🎄', navLabel: '🎄 クリスマス',
@@ -255,8 +274,10 @@ function buildPage(cfg, spots, SLUGS) {
   let items = spots
     .filter(s => (s.events || []).includes(cfg.key) && s.eventInfo && s.eventInfo[cfg.key])
     .map(s => {
-      if (!SLUGS[s.name]) throw new Error('URLが確定していない施設です（SLUG_OVERRIDES に無い）: ' + s.name);
-      return { spot: s, slug: SLUGS[s.name] };
+      // URLは spots.json の slug 項目を優先し、無ければ index.html の SLUG_OVERRIDES（旧方式）を使う
+      const slug = s.slug || SLUGS[s.name];
+      if (!slug) throw new Error('URLが確定していない施設です（slug が無い）: ' + s.name);
+      return { spot: s, slug };
     });
   // 日程が確定している施設を先に、「日程は発表待ち」（tentative）の施設は後ろに並べる
   const tent = r => r.spot.eventInfo[cfg.key].tentative ? 1 : 0;
@@ -276,7 +297,7 @@ function buildPage(cfg, spots, SLUGS) {
   const starts = dated.map(r => infoOf(r).start).filter(Boolean).sort();
   const cap = e => (cfg.until && e > cfg.until) ? cfg.until : e;
   const ends = dated.map(r => cap(infoOf(r).end)).filter(Boolean).sort();
-  const period = starts.length ? periodText(starts, ends) : '';
+  const period = cfg.periodOverride || (starts.length ? periodText(starts, ends) : '');
   const n = items.length;
   const prefs = PREF_ORDER.filter(p => items.some(r => r.spot.region === p));
   const prefList = prefs.join('・');
