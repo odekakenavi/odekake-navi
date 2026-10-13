@@ -10,6 +10,7 @@
  * やること:
  *   1) tools/build-static-pages.js で 施設/地域/季節ページ＋sitemap を一時フォルダに作る
  *   2) tools/build-area-pages.js で エリア特集（chiba/boso など）を作り、sitemap に合流
+ *   2') tools/build-feature-pages.js で 目的別（/purpose/…）・雨の日・無料・赤ちゃん向けの特集ページを作り、sitemap に追加
  *   3) できたページで _public/ を上書き（リポジトリ内のファイルは一切書き換えない）
  *   4) 既存sitemapのうち都道府県フォルダ以外（event/ purpose/ free/ など）のURLを合流し、
  *      sitemap.xml から「ファイルが実在しないURL」と「都道府県フォルダ内の古いURL（いまのデータでは作られないもの）」を外す
@@ -30,7 +31,7 @@ const PREFS = ['tokyo', 'kanagawa', 'saitama', 'chiba', 'ibaraki', 'tochigi', 'g
 if (!fs.existsSync(path.join(PUB, 'sitemap.xml'))) { console.error('✗ ' + PUB + '/sitemap.xml がありません。先に build-public.js を実行してください'); process.exit(1); }
 
 const TMP = fs.mkdtempSync(path.join(os.tmpdir(), 'odekake-gen-'));
-const GEN = path.join(TMP, 'gen'), AREA = path.join(TMP, 'area');
+const GEN = path.join(TMP, 'gen'), AREA = path.join(TMP, 'area'), FEAT = path.join(TMP, 'feature');
 const run = (script, args) => execFileSync(process.execPath, [path.join(ROOT, 'tools', script), ...args], { cwd: ROOT, stdio: ['ignore', 'pipe', 'inherit'] }).toString();
 
 try {
@@ -39,6 +40,8 @@ try {
   run('build-static-pages.js', ['--index', idx, '--spots', spots, '--out', GEN]);
   console.log('・エリア特集ページを生成中…');
   run('build-area-pages.js', ['--index', idx, '--spots', spots, '--sitemap', path.join(GEN, 'sitemap.xml'), '--out', AREA]);
+  console.log('・目的別／雨の日／無料／赤ちゃん向けの特集ページを生成中…');
+  run('build-feature-pages.js', ['--index', idx, '--spots', spots, '--out', FEAT]);
 } catch (e) {
   console.error('✗ 静的ページの生成に失敗しました（data/spots.json や index.html の形が崩れている可能性）。公開を中止します。');
   process.exit(1);
@@ -46,7 +49,7 @@ try {
 
 // 生成されたファイル一覧（sitemap.xml は最後に別扱い）
 const generated = new Set();
-function overlay(srcRoot) {
+function overlay(srcRoot, also) {
   (function rec(rel) {
     for (const e of fs.readdirSync(path.join(srcRoot, rel), { withFileTypes: true })) {
       const r = rel ? rel + '/' + e.name : e.name;
@@ -56,11 +59,13 @@ function overlay(srcRoot) {
       fs.mkdirSync(path.dirname(dst), { recursive: true });
       fs.copyFileSync(path.join(srcRoot, r), dst);
       generated.add(r);
+      if (also) also.add(r);
     }
   })('');
 }
 overlay(GEN);
 overlay(AREA);
+const featurePages = new Set(); overlay(FEAT, featurePages);
 
 // sitemap の整理
 const fileFor = u => { const p = decodeURI(u.replace(/&amp;/g, '&').slice(SITE.length)); return p === '' ? 'index.html' : (p.endsWith('/') ? p + 'index.html' : p); };
@@ -76,6 +81,16 @@ let sm = fs.readFileSync(path.join(AREA, 'sitemap.xml'), 'utf8');
     return first !== '' && !PREFS.includes(first);
   });
   if (extra.length) sm = sm.replace('</urlset>', extra.join('') + '</urlset>');
+}
+// 特集ページ（purpose/ free/ rainy-day/ baby/）は、sitemap に無ければ追加する（新しく増えたジャンルも自動で載る）
+{
+  const have = new Set([...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => decodeURI(m[1])));
+  let add = '';
+  for (const f of [...featurePages].sort()) {
+    const u = SITE + f.replace(/index\.html$/, '');
+    if (!have.has(decodeURI(u))) add += `<url>\n<loc>${u}</loc>\n<changefreq>weekly</changefreq>\n<priority>0.8</priority>\n</url>\n`;
+  }
+  if (add) sm = sm.replace('</urlset>', add + '</urlset>');
 }
 const dropped = { missing: [], stale: [] };
 sm = sm.replace(/<url>[\s\S]*?<\/url>\n?/g, block => {
