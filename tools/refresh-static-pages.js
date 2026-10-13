@@ -10,7 +10,7 @@
  * やること:
  *   1) tools/build-static-pages.js で 施設/地域/季節ページ＋sitemap を一時フォルダに作る
  *   2) tools/build-area-pages.js で エリア特集（chiba/boso など）を作り、sitemap に合流
- *   2'') tools/build-event-pages.js --only momiji で 紅葉・いちょう特集（/event/momiji/）を作り、sitemap に追加
+ *   2'') tools/build-event-pages.js で イベント特集（/event/ 以下：ハロウィン・クリスマス・紅葉・イルミネーションなど）を最新データで作り直し、sitemap に追加
  *   2') tools/build-feature-pages.js で 目的別（/purpose/…）・雨の日・無料・赤ちゃん向けの特集ページを作り、sitemap に追加
  *   3) できたページで _public/ を上書き（リポジトリ内のファイルは一切書き換えない）
  *   4) 既存sitemapのうち都道府県フォルダ以外（event/ purpose/ free/ など）のURLを合流し、
@@ -44,7 +44,7 @@ try {
   console.log('・目的別／雨の日／無料／赤ちゃん向けの特集ページを生成中…');
   run('build-feature-pages.js', ['--index', idx, '--spots', spots, '--out', FEAT]);
   console.log('・紅葉・いちょう特集（/event/momiji/）を生成中…');
-  run('build-event-pages.js', ['--index', idx, '--spots', spots, '--only', 'momiji', '--out', EVT]);
+  run('build-event-pages.js', ['--index', idx, '--spots', spots, '--out', EVT]);
 } catch (e) {
   console.error('✗ 静的ページの生成に失敗しました（data/spots.json や index.html の形が崩れている可能性）。公開を中止します。');
   process.exit(1);
