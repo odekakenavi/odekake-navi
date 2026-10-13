@@ -123,7 +123,7 @@ const EVENTS = {
       { id: 'group-2', title: '🌷 春の花を楽しめる公園・庭園', sub: 'チューリップ・ネモフィラ・藤・芝桜など、春の花が楽しめる場所です', match: t => t === 'flower' },
     ],
     groupChips: [{ g: 0, label: '🎏 遊び・体験' }, { g: 1, label: '🌷 花の名所' }],
-    order: [], ctaText: '🧭 おでかけナビで連休のおでかけ先を探す', ctaParam: null,
+    order: [], ctaText: '🧭 おでかけナビで連休のおでかけ先を探す', ctaParam: 'gw',
   },
   mizuasobi: {
     key: '水遊び', slug: 'mizuasobi', tentativeLabel: '例年夏に営業・2027年の期間は発表待ち', emoji: '💦', navLabel: '💦 水遊び', year: 2027,
@@ -142,7 +142,7 @@ const EVENTS = {
       { id: 'group-3', title: '🎡 遊園地・水族館などの夏の水遊び企画', sub: '夏の期間に水遊びやプールが楽しめる施設です', match: t => t === 'themepark' },
     ],
     groupChips: [{ g: 0, label: '🏊 プール' }, { g: 1, label: '🌊 公園の水遊び場' }, { g: 2, label: '🎡 遊園地・水族館' }],
-    order: [], ctaText: '🧭 おでかけナビで水遊びスポットを探す', ctaParam: null,
+    order: [], ctaText: '🧭 おでかけナビで水遊びスポットを探す', ctaParam: 'mizuasobi',
   },
   natsumatsuri: {
     key: '夏祭り・花火', slug: 'natsumatsuri-hanabi', tentativeLabel: '例年夏に開催・2027年の日程は発表待ち', emoji: '🎆', navLabel: '🎆 夏祭り・花火', year: 2027,
