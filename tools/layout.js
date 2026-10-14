@@ -5,7 +5,7 @@
  *   リポジトリ内                         公開されるURL
  *   index.html                       →  /index.html
  *   data/                            →  /data/
- *   photo/                           →  /img/
+ *   photo/                           →  /img/               （施設画像は photo/spots/ に置く → /img/spots/。spots.json の "img/spots/xxx.jpg" と対応）
  *   site/area/<都道府県>/             →  /<都道府県>/        （例：site/area/chiba → /chiba/）
  *   site/feature/<特集>/              →  /<特集>/            （purpose, free, rainy-day, baby）
  *   site/event/                      →  /event/

@@ -89,7 +89,10 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人600円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
-    }
+    },
+    "image": "img/spots/tokyo-taito-ueno.jpg",
+    "imageCredit": "📷 en:User:Cburnett / CC BY-SA 3.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:San_Diego_Zoo_entrance_elephant.jpg"
   },
   {
     "region": "東京",
@@ -4538,7 +4541,10 @@
       "月曜日（祝日の場合は翌平日）",
       "※12〜2月は16:00まで。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "image": "img/spots/tokyo-itabashi-itabashi-childrens-zoo.jpg",
+    "imageCredit": "📷 Missmikage / CC BY-SA 3.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Itabashi-at-nakajuku.JPG"
   },
   {
     "region": "東京",
@@ -4917,7 +4923,10 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人800円×2＋小学生200円×2＋幼児0円×1（幼児料金あり）"
-    }
+    },
+    "image": "img/spots/kanagawa-yokohama-asahi-zoorasia.jpg",
+    "imageCredit": "📷 Toshihiro Gamo / CC BY 2.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg"
   },
   {
     "region": "神奈川",
@@ -5000,7 +5009,10 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
-    }
+    },
+    "image": "img/spots/kanagawa-yokohama-nishi-nogeyama-zoo.jpg",
+    "imageCredit": "📷 Dddeco / CC BY 2.5 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Nogeyama_Zoo.JPG"
   },
   {
     "region": "神奈川",
@@ -6548,7 +6560,10 @@
       "月曜日（祝日の場合は翌日。春休み・4・5月・夏休みは無休）",
       "12/31",
       "1/1"
-    ]
+    ],
+    "image": "img/spots/ibaraki-hitachi-kamine-zoo.jpg",
+    "imageCredit": "📷 CC BY 3.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kaminezoo.jpg"
   },
   {
     "region": "茨城",
@@ -7000,7 +7015,10 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
-    }
+    },
+    "image": "img/spots/gunma-kiryu-kiryu-gaoka-zoo-amusement-park.jpg",
+    "imageCredit": "📷 Salt256 / CC BY-SA 3.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E5%85%AC%E5%9C%92_%E9%81%8A%E5%9C%92%E5%9C%B0%E5%85%A8%E6%99%AF.JPG"
   },
   {
     "region": "群馬",
@@ -10968,7 +10986,10 @@
     "closedDays": [
       "年中無休"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "image": "img/spots/tochigi-utsunomiya-utsunomiya-zoo.jpg",
+    "imageCredit": "📷 Indiana jo / CC BY-SA 4.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Gate_of_Utsunomiya_Zoo.jpg"
   },
   {
     "region": "栃木",
@@ -21342,7 +21363,10 @@
       "年末年始（12/29〜1/1）",
       "※11月〜2月は閉園が16:00。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "image": "img/spots/tokyo-edogawa-gyousen.jpg",
+    "imageCredit": "📷 しんぎんぐきゃっと / CC BY-SA 4.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Edogawa_Shizen_Zoo.jpg"
   },
   {
     "region": "東京",
@@ -22916,7 +22940,10 @@
       "source": "official",
       "sourceUrl": "https://izoo.co.jp/cando/pg123.html",
       "checkedAt": "2026年10月13日"
-    }
+    },
+    "image": "img/spots/shizuoka-kawazu-izoo.jpg",
+    "imageCredit": "📷 Izoo-izoo4321 / CC BY-SA 3.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BD%93%E6%84%9F%E5%9E%8B%E5%8B%95%E7%89%A9%E5%9C%92_iZoo_%E5%A4%96%E8%A6%B3.jpg"
   },
   {
     "region": "静岡",
@@ -28752,7 +28779,10 @@
       "月曜日（祝日の場合は翌日）",
       "年末年始（12/29〜1/1）"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "image": "img/spots/saitama-saitama-midori-osaki-park.jpg",
+    "imageCredit": "📷 京浜にけ / CC BY-SA 3.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Saitama_Osaki_Park_1.JPG"
   },
   {
     "region": "埼玉",
@@ -40142,7 +40172,10 @@
         "note": "例年の見頃は11月上旬〜12月中旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
         "tentative": true
       }
-    }
+    },
+    "image": "img/spots/kanagawa-yokohama-kanazawa-横浜市立金沢動物園.jpg",
+    "imageCredit": "📷 Quercus acuta / パブリックドメイン / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kanazawa-Shizen-Koen_Park_06.jpg"
   },
   {
     "region": "神奈川",
@@ -53182,7 +53215,10 @@
       "sat": "09:00-16:30",
       "sun": "09:00-16:30",
       "holiday": "09:00-16:30"
-    }
+    },
+    "image": "img/spots/shizuoka-shizuoka-city-nihondaira-zoo.jpg",
+    "imageCredit": "📷 Halowand / CC BY-SA 4.0 / Wikimedia Commons",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Nihondaira_zoo_entrance.jpg"
   },
   {
     "region": "静岡",

@@ -6,7 +6,7 @@
  *   node tools/apply-photos.js --spots site/data/spots.json --choices photo-work/photo-choices.json
  *   node tools/apply-photos.js --dry        # 書き込まずに確認だけ
  *
- * 写真を site/img/spots/<slugの/を-に置換>.jpg(png) に保存し、spots.json に
+ * 写真を photo/spots/<slugの/を-に置換>.jpg(png) に保存し（公開時に /img/spots/ へ配置されます。tools/layout.js 参照）、spots.json に
  * image / imageCredit / imageSourceUrl を書き込みます（元の spots.json は .bak に退避）。
  */
 'use strict';
@@ -28,7 +28,8 @@ const SPOTS = args.spots || ['site/data/spots.json', 'data/spots.json'].find(p =
 const WORK = args.work || 'photo-work';
 const CHOICES = args.choices || path.join(WORK, 'photo-choices.json');
 const CANDS = args.cands || path.join(WORK, 'candidates.json');
-const IMGDIR = args.imgdir || (SPOTS && SPOTS.startsWith('site/') ? 'site/img/spots' : 'img/spots');
+// 保存先は photo/spots に固定（build-public.js が photo/ → _public/img/ に配置する）。img/spots や site/img/spots は公開されないので使わない。
+const IMGDIR = args.imgdir || 'photo/spots';
 const IMG_PREFIX = 'img/spots/';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const escHtml = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));

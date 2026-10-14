@@ -1,0 +1,519 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>施設写真の候補レビュー</title>
+<style>
+body{font-family:system-ui,"Noto Sans JP",sans-serif;margin:0;background:#faf7ef;color:#2b2620}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ddd;padding:10px 16px;z-index:5;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+button{padding:8px 14px;border-radius:8px;border:0;background:#e2603a;color:#fff;font-weight:700;cursor:pointer}
+main{padding:12px 16px;max-width:1100px;margin:0 auto}
+.spot{background:#fff;border:1px solid #e7dfcf;border-radius:12px;padding:12px;margin-bottom:14px}
+.spot h2{font-size:16px;margin:0 0 8px}.spot small{color:#6b6259;font-weight:400;font-size:12px}
+.cands{display:flex;gap:10px;flex-wrap:wrap}
+.cand{display:block;width:260px;border:2px solid #e7dfcf;border-radius:10px;padding:6px;cursor:pointer}
+.cand:has(input:checked){border-color:#e2603a;background:#fff4ee}
+.cand.none{width:110px;display:flex;align-items:center;justify-content:center}
+.frame{width:100%;aspect-ratio:3.27/1;background:#eee;border-radius:8px;overflow:hidden;display:flex;justify-content:center}
+.frame img{height:100%;max-width:100%;object-fit:contain}
+.meta{font-size:11px;line-height:1.6;margin-top:6px;word-break:break-all}
+.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:10.5px;background:#eee}
+.tag.match{background:#dcebd1;color:#3d6b2c}.tag.far{background:#f8dad3}.tag.src{background:#e8f0f6}
+.warn{color:#a33b2c}
+</style></head><body>
+<header><b>施設写真の候補レビュー</b><span id="cnt"></span>
+<label><input type="checkbox" id="onlyUnsel"> 未選択のみ表示</label>
+<button id="save">選択を書き出す（photo-choices.json）</button></header>
+<main>
+<section class="spot" data-slug="tokyo/taito/ueno">
+  <h2>上野動物園 <small>東京 台東区・上野公園</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-tokyo/taito/ueno" value="File:Ueno Zoo 20220414a1.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Ueno_Zoo_20220414a1.jpg/960px-Ueno_Zoo_20220414a1.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 4.0 ／ 江戸村のとくぞう<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Ueno_Zoo_20220414a1.jpg" target="_blank" rel="noopener">Ueno Zoo 20220414a1.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-tokyo/taito/ueno" value="File:San Diego Zoo entrance elephant.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/San_Diego_Zoo_entrance_elephant.jpg/960px-San_Diego_Zoo_entrance_elephant.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 3.0 ／ en:User:Cburnett<br>
+        <a href="https://commons.wikimedia.org/wiki/File:San_Diego_Zoo_entrance_elephant.jpg" target="_blank" rel="noopener">San Diego Zoo entrance elephant.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-tokyo/taito/ueno" value="File:上野動物公園, Ueno Zoo（Ueno Zoological Gardens） - panoramio (8).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%E4%B8%8A%E9%87%8E%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92%2C_Ueno_Zoo%EF%BC%88Ueno_Zoological_Gardens%EF%BC%89_-_panoramio_%288%29.jpg/960px-%E4%B8%8A%E9%87%8E%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92%2C_Ueno_Zoo%EF%BC%88Ueno_Zoological_Gardens%EF%BC%89_-_panoramio_%288%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ Tiger@西北<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E9%87%8E%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92,_Ueno_Zoo%EF%BC%88Ueno_Zoological_Gardens%EF%BC%89_-_panoramio_(8).jpg" target="_blank" rel="noopener">上野動物公園, Ueno Zoo（Ueno Zoological Gardens） - pano</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-tokyo/taito/ueno" value="File:&quot;Pelican&quot; Island on Shinobazu pond, Ueno Zoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/%22Pelican%22_Island_on_Shinobazu_pond%2C_Ueno_Zoo.jpg/960px-%22Pelican%22_Island_on_Shinobazu_pond%2C_Ueno_Zoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC0 ／ Syced<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%22Pelican%22_Island_on_Shinobazu_pond,_Ueno_Zoo.jpg" target="_blank" rel="noopener">&quot;Pelican&quot; Island on Shinobazu pond, Ueno Zoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-tokyo/taito/ueno" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="tokyo/itabashi/itabashi-childrens-zoo">
+  <h2>板橋区立こども動物園 <small>東京 板橋区</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-tokyo/itabashi/itabashi-childrens-zoo" value="File:Itabashi-at-nakajuku.JPG">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Itabashi-at-nakajuku.JPG/960px-Itabashi-at-nakajuku.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 3.0 ／ Missmikage<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Itabashi-at-nakajuku.JPG" target="_blank" rel="noopener">Itabashi-at-nakajuku.JPG</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-tokyo/itabashi/itabashi-childrens-zoo" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="kanagawa/yokohama-asahi/zoorasia">
+  <h2>よこはま動物園ズーラシア <small>神奈川 横浜市旭区</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-asahi/zoorasia" value="File:よこはま動物園ズーラシアのシャトルバス (8730517743).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/%E3%82%88%E3%81%93%E3%81%AF%E3%81%BE%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2%E3%81%AE%E3%82%B7%E3%83%A3%E3%83%88%E3%83%AB%E3%83%90%E3%82%B9_%288730517743%29.jpg/960px-%E3%82%88%E3%81%93%E3%81%AF%E3%81%BE%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2%E3%81%AE%E3%82%B7%E3%83%A3%E3%83%88%E3%83%AB%E3%83%90%E3%82%B9_%288730517743%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Toshihiro Gamo<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E3%82%88%E3%81%93%E3%81%AF%E3%81%BE%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2%E3%81%AE%E3%82%B7%E3%83%A3%E3%83%88%E3%83%AB%E3%83%90%E3%82%B9_(8730517743).jpg" target="_blank" rel="noopener">よこはま動物園ズーラシアのシャトルバス (8730517743).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-asahi/zoorasia" value="File:ズーラシア フレッシュネスバーガー 2012 (8299934758).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2_%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%E3%83%8D%E3%82%B9%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC_2012_%288299934758%29.jpg/960px-%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2_%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%E3%83%8D%E3%82%B9%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC_2012_%288299934758%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Toshihiro Gamo<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2_%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%E3%83%8D%E3%82%B9%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC_2012_(8299934758).jpg" target="_blank" rel="noopener">ズーラシア フレッシュネスバーガー 2012 (8299934758).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-asahi/zoorasia" value="File:ズーラシア 退園口 子連れ 2012 (8298849655).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2_%E9%80%80%E5%9C%92%E5%8F%A3_%E5%AD%90%E9%80%A3%E3%82%8C_2012_%288298849655%29.jpg/960px-%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2_%E9%80%80%E5%9C%92%E5%8F%A3_%E5%AD%90%E9%80%A3%E3%82%8C_2012_%288298849655%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Toshihiro Gamo<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2_%E9%80%80%E5%9C%92%E5%8F%A3_%E5%AD%90%E9%80%A3%E3%82%8C_2012_(8298849655).jpg" target="_blank" rel="noopener">ズーラシア 退園口 子連れ 2012 (8298849655).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-asahi/zoorasia" value="File:Zoorasia, Yokohama - Sep 27, 2012.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Zoorasia%2C_Yokohama_-_Sep_27%2C_2012.jpg/960px-Zoorasia%2C_Yokohama_-_Sep_27%2C_2012.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Toshihiro Gamo<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg" target="_blank" rel="noopener">Zoorasia, Yokohama - Sep 27, 2012.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-kanagawa/yokohama-asahi/zoorasia" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="kanagawa/yokohama-nishi/nogeyama-zoo">
+  <h2>横浜市立野毛山動物園 <small>神奈川 横浜市西区</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-nishi/nogeyama-zoo" value="File:Nogeyama Zoo.JPG">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Nogeyama_Zoo.JPG/960px-Nogeyama_Zoo.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY 2.5 ／ Dddeco<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Nogeyama_Zoo.JPG" target="_blank" rel="noopener">Nogeyama Zoo.JPG</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-nishi/nogeyama-zoo" value="File:Red panda of Nogeyama Zoo; 2013 (01).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Red_panda_of_Nogeyama_Zoo%3B_2013_%2801%29.jpg/960px-Red_panda_of_Nogeyama_Zoo%3B_2013_%2801%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Toshihiro Gamo from Yokohama, Kanagawa, Japan<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Red_panda_of_Nogeyama_Zoo;_2013_(01).jpg" target="_blank" rel="noopener">Red panda of Nogeyama Zoo; 2013 (01).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-nishi/nogeyama-zoo" value="File:Red panda of Nogeyama Zoo; 2013 (02).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Red_panda_of_Nogeyama_Zoo%3B_2013_%2802%29.jpg/960px-Red_panda_of_Nogeyama_Zoo%3B_2013_%2802%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Toshihiro Gamo from Yokohama, Kanagawa, Japan<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Red_panda_of_Nogeyama_Zoo;_2013_(02).jpg" target="_blank" rel="noopener">Red panda of Nogeyama Zoo; 2013 (02).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-nishi/nogeyama-zoo" value="File:Giraffe at Nogeyama zoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Giraffe_at_Nogeyama_zoo.jpg/960px-Giraffe_at_Nogeyama_zoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC0 ／ Syced<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Giraffe_at_Nogeyama_zoo.jpg" target="_blank" rel="noopener">Giraffe at Nogeyama zoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-kanagawa/yokohama-nishi/nogeyama-zoo" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="ibaraki/hitachi/kamine-zoo">
+  <h2>かみね動物園 <small>茨城 日立市</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-ibaraki/hitachi/kamine-zoo" value="File:Kaminezoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Kaminezoo.jpg/960px-Kaminezoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY 3.0 ／ 作者不明<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Kaminezoo.jpg" target="_blank" rel="noopener">Kaminezoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-ibaraki/hitachi/kamine-zoo" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="gunma/kiryu/kiryu-gaoka-zoo-amusement-park">
+  <h2>桐生が岡動物園・遊園地 <small>群馬 桐生市</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-gunma/kiryu/kiryu-gaoka-zoo-amusement-park" value="File:桐生が岡公園 遊園地全景.JPG">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E5%85%AC%E5%9C%92_%E9%81%8A%E5%9C%92%E5%9C%B0%E5%85%A8%E6%99%AF.JPG/960px-%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E5%85%AC%E5%9C%92_%E9%81%8A%E5%9C%92%E5%9C%B0%E5%85%A8%E6%99%AF.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 3.0 ／ Salt256<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E5%85%AC%E5%9C%92_%E9%81%8A%E5%9C%92%E5%9C%B0%E5%85%A8%E6%99%AF.JPG" target="_blank" rel="noopener">桐生が岡公園 遊園地全景.JPG</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-gunma/kiryu/kiryu-gaoka-zoo-amusement-park" value="File:Kiryu - panoramio - kcomiida (23).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Kiryu_-_panoramio_-_kcomiida_%2823%29.jpg/960px-Kiryu_-_panoramio_-_kcomiida_%2823%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ kcomiida<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Kiryu_-_panoramio_-_kcomiida_(23).jpg" target="_blank" rel="noopener">Kiryu - panoramio - kcomiida (23).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-gunma/kiryu/kiryu-gaoka-zoo-amusement-park" value="File:Kiryu - panoramio - kcomiida (25).jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Kiryu_-_panoramio_-_kcomiida_%2825%29.jpg/960px-Kiryu_-_panoramio_-_kcomiida_%2825%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ kcomiida<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Kiryu_-_panoramio_-_kcomiida_(25).jpg" target="_blank" rel="noopener">Kiryu - panoramio - kcomiida (25).jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-gunma/kiryu/kiryu-gaoka-zoo-amusement-park" value="File:桐生が岡遊園地 - panoramio.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E9%81%8A%E5%9C%92%E5%9C%B0_-_panoramio.jpg/960px-%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E9%81%8A%E5%9C%92%E5%9C%B0_-_panoramio.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ CyberOyaji<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E6%A1%90%E7%94%9F%E3%81%8C%E5%B2%A1%E9%81%8A%E5%9C%92%E5%9C%B0_-_panoramio.jpg" target="_blank" rel="noopener">桐生が岡遊園地 - panoramio.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-gunma/kiryu/kiryu-gaoka-zoo-amusement-park" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="tochigi/utsunomiya/utsunomiya-zoo">
+  <h2>宇都宮動物園 <small>栃木 宇都宮市</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-tochigi/utsunomiya/utsunomiya-zoo" value="File:Gate of Utsunomiya Zoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Gate_of_Utsunomiya_Zoo.jpg/960px-Gate_of_Utsunomiya_Zoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 4.0 ／ Indiana jo<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Gate_of_Utsunomiya_Zoo.jpg" target="_blank" rel="noopener">Gate of Utsunomiya Zoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-tochigi/utsunomiya/utsunomiya-zoo" value="File:Kuchinoshima Cow, Juju.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Kuchinoshima_Cow%2C_Juju.jpg/960px-Kuchinoshima_Cow%2C_Juju.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 4.0 ／ Miyuki Meinaka<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Kuchinoshima_Cow,_Juju.jpg" target="_blank" rel="noopener">Kuchinoshima Cow, Juju.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-tochigi/utsunomiya/utsunomiya-zoo" value="File:Kuchinoshima Cows at Utsunomiya Zoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Kuchinoshima_Cows_at_Utsunomiya_Zoo.jpg/960px-Kuchinoshima_Cows_at_Utsunomiya_Zoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 4.0 ／ Miyuki Meinaka<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Kuchinoshima_Cows_at_Utsunomiya_Zoo.jpg" target="_blank" rel="noopener">Kuchinoshima Cows at Utsunomiya Zoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-tochigi/utsunomiya/utsunomiya-zoo" value="File:Pool in Utsunomiya Zoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Pool_in_Utsunomiya_Zoo.jpg/960px-Pool_in_Utsunomiya_Zoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 4.0 ／ Miyuki Meinaka<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Pool_in_Utsunomiya_Zoo.jpg" target="_blank" rel="noopener">Pool in Utsunomiya Zoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-tochigi/utsunomiya/utsunomiya-zoo" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="tokyo/edogawa/gyousen">
+  <h2>江戸川区自然動物園（行船公園） <small>東京 江戸川区北葛西</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-tokyo/edogawa/gyousen" value="File:Edogawa Shizen Zoo.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Edogawa_Shizen_Zoo.jpg/960px-Edogawa_Shizen_Zoo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 4.0 ／ しんぎんぐきゃっと<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Edogawa_Shizen_Zoo.jpg" target="_blank" rel="noopener">Edogawa Shizen Zoo.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-tokyo/edogawa/gyousen" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="shizuoka/kawazu/izoo">
+  <h2>体感型動物園 iZoo <small>静岡 賀茂郡河津町</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-shizuoka/kawazu/izoo" value="File:体感型動物園 iZoo 外観.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/%E4%BD%93%E6%84%9F%E5%9E%8B%E5%8B%95%E7%89%A9%E5%9C%92_iZoo_%E5%A4%96%E8%A6%B3.jpg/960px-%E4%BD%93%E6%84%9F%E5%9E%8B%E5%8B%95%E7%89%A9%E5%9C%92_iZoo_%E5%A4%96%E8%A6%B3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 3.0 ／ Izoo-izoo4321<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E4%BD%93%E6%84%9F%E5%9E%8B%E5%8B%95%E7%89%A9%E5%9C%92_iZoo_%E5%A4%96%E8%A6%B3.jpg" target="_blank" rel="noopener">体感型動物園 iZoo 外観.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-shizuoka/kawazu/izoo" value="File:IZoo 2.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/IZoo_2.jpg/960px-IZoo_2.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC0 ／ Syced<br>
+        <a href="https://commons.wikimedia.org/wiki/File:IZoo_2.jpg" target="_blank" rel="noopener">IZoo 2.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-shizuoka/kawazu/izoo" value="File:IZoo 3.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/IZoo_3.jpg/960px-IZoo_3.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC0 ／ Syced<br>
+        <a href="https://commons.wikimedia.org/wiki/File:IZoo_3.jpg" target="_blank" rel="noopener">IZoo 3.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-shizuoka/kawazu/izoo" value="File:IZoo 6.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/IZoo_6.jpg/960px-IZoo_6.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC0 ／ Syced<br>
+        <a href="https://commons.wikimedia.org/wiki/File:IZoo_6.jpg" target="_blank" rel="noopener">IZoo 6.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-shizuoka/kawazu/izoo" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="saitama/saitama-midori/osaki-park">
+  <h2>大崎公園（こども動物園） <small>埼玉 さいたま市緑区大崎</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-saitama/saitama-midori/osaki-park" value="File:Saitama Osaki Park 1.JPG">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Saitama_Osaki_Park_1.JPG/960px-Saitama_Osaki_Park_1.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ 京浜にけ<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Saitama_Osaki_Park_1.JPG" target="_blank" rel="noopener">Saitama Osaki Park 1.JPG</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-saitama/saitama-midori/osaki-park" value="File:Saitama Osaki Park Botanical Garden 1.JPG">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Saitama_Osaki_Park_Botanical_Garden_1.JPG/960px-Saitama_Osaki_Park_Botanical_Garden_1.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ 京浜にけ<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Saitama_Osaki_Park_Botanical_Garden_1.JPG" target="_blank" rel="noopener">Saitama Osaki Park Botanical Garden 1.JPG</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-saitama/saitama-midori/osaki-park" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="kanagawa/yokohama-kanazawa/横浜市立金沢動物園">
+  <h2>横浜市立金沢動物園 <small>神奈川 横浜市金沢区</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-kanazawa/横浜市立金沢動物園" value="File:Entrance, Kanazawa Zoo, Yokohama - Sep 9, 2007.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Entrance%2C_Kanazawa_Zoo%2C_Yokohama_-_Sep_9%2C_2007.jpg/960px-Entrance%2C_Kanazawa_Zoo%2C_Yokohama_-_Sep_9%2C_2007.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY 2.0 ／ Satoru Fujiwara<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Entrance,_Kanazawa_Zoo,_Yokohama_-_Sep_9,_2007.jpg" target="_blank" rel="noopener">Entrance, Kanazawa Zoo, Yokohama - Sep 9, 2007.j</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-kanazawa/横浜市立金沢動物園" value="File:金沢動物園より東京湾を望む, Tokyo Bay from Kanazawa Zoo - panoramio.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/%E9%87%91%E6%B2%A2%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%88%E3%82%8A%E6%9D%B1%E4%BA%AC%E6%B9%BE%E3%82%92%E6%9C%9B%E3%82%80%2C_Tokyo_Bay_from_Kanazawa_Zoo_-_panoramio.jpg/960px-%E9%87%91%E6%B2%A2%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%88%E3%82%8A%E6%9D%B1%E4%BA%AC%E6%B9%BE%E3%82%92%E6%9C%9B%E3%82%80%2C_Tokyo_Bay_from_Kanazawa_Zoo_-_panoramio.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ xe zna<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%E9%87%91%E6%B2%A2%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%88%E3%82%8A%E6%9D%B1%E4%BA%AC%E6%B9%BE%E3%82%92%E6%9C%9B%E3%82%80,_Tokyo_Bay_from_Kanazawa_Zoo_-_panoramio.jpg" target="_blank" rel="noopener">金沢動物園より東京湾を望む, Tokyo Bay from Kanazawa Zoo - pan</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-kanazawa/横浜市立金沢動物園" value="File:&quot;Welcome&quot; and &quot;See You Come Again&quot; Gate - panoramio.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/%22Welcome%22_and_%22See_You_Come_Again%22_Gate_-_panoramio.jpg/960px-%22Welcome%22_and_%22See_You_Come_Again%22_Gate_-_panoramio.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 3.0 ／ laggnugg<br>
+        <a href="https://commons.wikimedia.org/wiki/File:%22Welcome%22_and_%22See_You_Come_Again%22_Gate_-_panoramio.jpg" target="_blank" rel="noopener">&quot;Welcome&quot; and &quot;See You Come Again&quot; Gate - panora</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-kanagawa/yokohama-kanazawa/横浜市立金沢動物園" value="File:Kanazawa-Shizen-Koen Park 06.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Kanazawa-Shizen-Koen_Park_06.jpg/960px-Kanazawa-Shizen-Koen_Park_06.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC0 ／ Quercus acuta<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Kanazawa-Shizen-Koen_Park_06.jpg" target="_blank" rel="noopener">Kanazawa-Shizen-Koen Park 06.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-kanagawa/yokohama-kanazawa/横浜市立金沢動物園" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section>
+
+<section class="spot" data-slug="shizuoka/shizuoka-city/nihondaira-zoo">
+  <h2>静岡市立日本平動物園 <small>静岡 静岡市駿河区池田</small></h2>
+  <div class="cands">
+    
+    <label class="cand">
+      <input type="radio" name="p-shizuoka/shizuoka-city/nihondaira-zoo" value="File:Nihondaira zoo entrance.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Nihondaira_zoo_entrance.jpg/960px-Nihondaira_zoo_entrance.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag unknown">位置未確認</span>
+        <span class="tag src">Wikipedia代表画像</span><br>
+        CC BY-SA 4.0 ／ Halowand<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Nihondaira_zoo_entrance.jpg" target="_blank" rel="noopener">Nihondaira zoo entrance.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand">
+      <input type="radio" name="p-shizuoka/shizuoka-city/nihondaira-zoo" value="File:Puma - 4711420681.jpg">
+      <div class="frame"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Puma_-_4711420681.jpg/960px-Puma_-_4711420681.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt=""></div>
+      <div class="meta">
+        <span class="tag match">位置一致</span>
+        <span class="tag src">Commons検索</span><br>
+        CC BY-SA 2.0 ／ Kakei.R<br>
+        <a href="https://commons.wikimedia.org/wiki/File:Puma_-_4711420681.jpg" target="_blank" rel="noopener">Puma - 4711420681.jpg</a>
+        
+      </div>
+    </label>
+    <label class="cand none"><input type="radio" name="p-shizuoka/shizuoka-city/nihondaira-zoo" value="" checked><div class="meta">採用しない</div></label>
+  </div>
+</section></main>
+<script>
+const KEY='odekake-photo-choices-v1';
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+document.querySelectorAll('.spot').forEach(sec=>{
+  const slug=sec.dataset.slug;
+  if(saved[slug]){const r=[...sec.querySelectorAll('input')].find(i=>i.value===saved[slug]);if(r)r.checked=true}
+  sec.addEventListener('change',()=>{const v=sec.querySelector('input:checked').value;saved[slug]=v;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}count();filter()});
+});
+function chosen(){return [...document.querySelectorAll('.spot')].map(s=>({slug:s.dataset.slug,fileTitle:s.querySelector('input:checked').value})).filter(x=>x.fileTitle)}
+function count(){document.getElementById('cnt').textContent='採用 '+chosen().length+' 件'}
+function filter(){const on=document.getElementById('onlyUnsel').checked;document.querySelectorAll('.spot').forEach(s=>{s.style.display=on&&s.querySelector('input:checked').value?'none':''})}
+document.getElementById('onlyUnsel').onchange=filter;
+document.getElementById('save').onclick=()=>{const b=new Blob([JSON.stringify(chosen(),null,1)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='photo-choices.json';a.click()};
+count();
+</script></body></html>
