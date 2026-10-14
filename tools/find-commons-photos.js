@@ -38,7 +38,7 @@ function parseArgs(argv) {
   return o;
 }
 const args = parseArgs(process.argv.slice(2));
-const SPOTS = args.spots || ['site/data/spots.json', 'data/spots.json'].find(p => fs.existsSync(p));
+const SPOTS = args.spots || (fs.existsSync('index.html') ? ['data/spots.json', 'site/data/spots.json'] : ['site/data/spots.json', 'data/spots.json']).find(p => fs.existsSync(p));
 const OUTDIR = args.out || 'photo-work';
 if (!SPOTS || !fs.existsSync(SPOTS)) {
   console.error('spots.json が見つかりません。--spots でパスを指定してください。');

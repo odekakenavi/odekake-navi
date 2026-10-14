@@ -5,8 +5,10 @@
  * 使い方（リポジトリのルートで、Node.js 18以上）:
  *   node tools/apply-photos.js --spots site/data/spots.json --choices photo-work/photo-choices.json
  *   node tools/apply-photos.js --dry        # 書き込まずに確認だけ
+ *   --imgdir ほかの/フォルダ   # 写真の保存先を変える（既定は photo/spots。spots.jsonに書くパスも同じになります）
+ *   --prefix photo/spots   # spots.jsonに書くパスだけ別にしたいとき
  *
- * 写真を photo/spots/<slugの/を-に置換>.jpg(png) に保存し（公開時に /img/spots/ へ配置されます。tools/layout.js 参照）、spots.json に
+ * 写真を photo/spots/<slugの/を-に置換>.jpg(png) に保存し、spots.json に
  * image / imageCredit / imageSourceUrl を書き込みます（元の spots.json は .bak に退避）。
  */
 'use strict';
@@ -24,13 +26,12 @@ function parseArgs(argv) {
   return o;
 }
 const args = parseArgs(process.argv.slice(2));
-const SPOTS = args.spots || ['site/data/spots.json', 'data/spots.json'].find(p => fs.existsSync(p));
+const SPOTS = args.spots || (fs.existsSync('index.html') ? ['data/spots.json', 'site/data/spots.json'] : ['site/data/spots.json', 'data/spots.json']).find(p => fs.existsSync(p));
 const WORK = args.work || 'photo-work';
 const CHOICES = args.choices || path.join(WORK, 'photo-choices.json');
 const CANDS = args.cands || path.join(WORK, 'candidates.json');
-// 保存先は photo/spots に固定（build-public.js が photo/ → _public/img/ に配置する）。img/spots や site/img/spots は公開されないので使わない。
-const IMGDIR = args.imgdir || 'photo/spots';
-const IMG_PREFIX = 'img/spots/';
+const IMGDIR = args.imgdir || 'photo/spots'; // 写真の保存先（既定: リポジトリ直下の photo/spots）
+const IMG_PREFIX = (args.prefix ? String(args.prefix) : IMGDIR.replace(/^\.?\/?site\//, '')).replace(/\/+$/, '') + '/';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const escHtml = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -62,6 +63,9 @@ async function main() {
   for (const f of [SPOTS, CHOICES, CANDS]) {
     if (!f || !fs.existsSync(f)) { console.error('見つかりません: ' + f); process.exit(1); }
   }
+  console.log('spots.json        : ' + SPOTS);
+  console.log('写真の保存先      : ' + IMGDIR);
+  console.log('spots.jsonに書く値: ' + IMG_PREFIX + '（ファイル名）');
   const spots = JSON.parse(fs.readFileSync(SPOTS, 'utf8'));
   const choices = JSON.parse(fs.readFileSync(CHOICES, 'utf8'));
   const cands = JSON.parse(fs.readFileSync(CANDS, 'utf8')).results;
