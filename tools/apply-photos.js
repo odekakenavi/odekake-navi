@@ -46,6 +46,47 @@ function creditText(c) {
   return escHtml(parts.join(' / ').replace('📷 /', '📷'));
 }
 
+
+// ---- candidates.json が無いとき（フォルダを作り直した場合など）は、選んだファイル名からCommonsに直接問い合わせる ----
+const COMMONS = 'https://commons.wikimedia.org/w/api.php';
+const stripTags = h => String(h || '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/\s+/g, ' ').trim();
+const LICENSE_OK = /^(CC0|Public domain|PD[ -]|CC BY(-SA)? [1-4]\.\d)/i;
+const LICENSE_NG = /(NC|ND|GFDL only|fair use)/i;
+
+async function lookupFiles(titles) {
+  const found = {};
+  for (let i = 0; i < titles.length; i += 20) {
+    const part = titles.slice(i, i + 20);
+    const url = COMMONS + '?' + new URLSearchParams({
+      format: 'json', formatversion: '2', action: 'query', titles: part.join('|'),
+      prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '800',
+      iiextmetadatalanguage: 'ja', iiextmetadatafilter: 'LicenseShortName|LicenseUrl|Artist'
+    });
+    let json = null;
+    for (let t = 0; t < 4 && !json; t++) {
+      const res = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (res.status === 429 || res.status >= 500) { await sleep(1500 * (t + 1)); continue; }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      json = await res.json();
+    }
+    for (const p of (json && json.query && json.query.pages) || []) {
+      const ii = p.imageinfo && p.imageinfo[0];
+      if (!ii) continue;
+      const md = ii.extmetadata || {};
+      const lic = stripTags(md.LicenseShortName && md.LicenseShortName.value);
+      if (!LICENSE_OK.test(lic) || LICENSE_NG.test(lic)) continue; // 自由なライセンスだけ
+      found[p.title] = {
+        fileTitle: p.title, mime: ii.mime, license: lic,
+        artist: stripTags(md.Artist && md.Artist.value).slice(0, 80),
+        thumbUrl: ii.thumburl || ii.url,
+        pageUrl: ii.descriptionurl || ('https://commons.wikimedia.org/wiki/' + encodeURIComponent(p.title.replace(/ /g, '_')))
+      };
+    }
+    await sleep(300);
+  }
+  return found;
+}
+
 async function download(url, dest) {
   for (let t = 0; t < 4; t++) {
     const res = await fetch(url, { headers: { 'User-Agent': UA } });
@@ -60,7 +101,7 @@ async function download(url, dest) {
 }
 
 async function main() {
-  for (const f of [SPOTS, CHOICES, CANDS]) {
+  for (const f of [SPOTS, CHOICES]) {
     if (!f || !fs.existsSync(f)) { console.error('見つかりません: ' + f); process.exit(1); }
   }
   console.log('spots.json        : ' + SPOTS);
@@ -68,15 +109,21 @@ async function main() {
   console.log('spots.jsonに書く値: ' + IMG_PREFIX + '（ファイル名）');
   const spots = JSON.parse(fs.readFileSync(SPOTS, 'utf8'));
   const choices = JSON.parse(fs.readFileSync(CHOICES, 'utf8'));
-  const cands = JSON.parse(fs.readFileSync(CANDS, 'utf8')).results;
+  const cands = fs.existsSync(CANDS) ? JSON.parse(fs.readFileSync(CANDS, 'utf8')).results : {};
+  const missing = choices.filter(ch => !(cands[ch.slug] && cands[ch.slug].candidates.some(c => c.fileTitle === ch.fileTitle)));
+  let looked = {};
+  if (missing.length) {
+    console.log('candidates.json に無い写真 ' + missing.length + ' 件を、Commonsに直接問い合わせます…');
+    looked = await lookupFiles([...new Set(missing.map(m => m.fileTitle))]);
+  }
   const bySlug = new Map(spots.map(s => [s.slug, s]));
   if (!args.dry) fs.mkdirSync(IMGDIR, { recursive: true });
 
   let ok = 0, ng = 0;
   for (const ch of choices) {
     const spot = bySlug.get(ch.slug);
-    const cand = cands[ch.slug] && cands[ch.slug].candidates.find(c => c.fileTitle === ch.fileTitle);
-    if (!spot || !cand) { console.warn('スキップ（対応なし）: ' + ch.slug); ng++; continue; }
+    const cand = (cands[ch.slug] && cands[ch.slug].candidates.find(c => c.fileTitle === ch.fileTitle)) || looked[ch.fileTitle];
+    if (!spot || !cand) { console.warn('スキップ（写真が見つからない／ライセンス不可）: ' + ch.slug + ' ' + ch.fileTitle); ng++; continue; }
     const ext = cand.mime === 'image/png' ? 'png' : 'jpg';
     const file = `${ch.slug.replace(/[\/\\]+/g, '-')}.${ext}`;
     try {
