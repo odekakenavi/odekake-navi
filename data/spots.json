@@ -371,7 +371,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-koto-kidzania.jpg",
     "imageCredit": "📷 Souka Kinmei / CC BY 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%82%AD%E3%83%83%E3%82%B6%E3%83%8B%E3%82%A2%E6%9D%B1%E4%BA%AC_%E5%85%A5%E3%82%8A%E5%8F%A3.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%82%AD%E3%83%83%E3%82%B6%E3%83%8B%E3%82%A2%E6%9D%B1%E4%BA%AC_%E5%85%A5%E3%82%8A%E5%8F%A3.jpg",
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -430,7 +431,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-minato-legolanddiscoverycenter.jpg",
     "imageCredit": "📷 Tzuhsun Hsu from Taipei, Taiwan / CC BY-SA 2.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%AC%E3%82%B4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%90%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E6%9D%B1%E4%BA%AC_(20689157239).jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%AC%E3%82%B4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%90%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E6%9D%B1%E4%BA%AC_(20689157239).jpg",
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -1124,7 +1126,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-nerima-wbstudiotour.jpg",
     "imageCredit": "📷 Jeremy Thompson / CC BY 2.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Warner_Bros._Studio_Tour_Tokyo_-_The_Making_of_Harry_Potter_-_53408032374.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Warner_Bros._Studio_Tour_Tokyo_-_The_Making_of_Harry_Potter_-_53408032374.jpg",
+    "genre": "遊園地・テーマパーク"
   },
   {
     "region": "東京",
@@ -2045,7 +2048,8 @@
     },
     "image": "img/spots/kanagawa-hakone-hakone-oam.jpg",
     "imageCredit": "📷 Σ64 / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Ashi_from_Mt.Komagatake_03-2.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Ashi_from_Mt.Komagatake_03-2.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "神奈川",
@@ -2786,7 +2790,8 @@
     ],
     "image": "img/spots/chiba-sodegaura-tokyo-doitsumura.jpg",
     "imageCredit": "📷 Xser21 / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%89%E3%82%A4%E3%83%84%E6%9D%91%E3%82%A4%E3%83%AB%E3%83%9F.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%89%E3%82%A4%E3%83%84%E6%9D%91%E3%82%A4%E3%83%AB%E3%83%9F.jpg",
+    "genre": "遊園地・テーマパーク"
   },
   {
     "region": "千葉",
@@ -3153,7 +3158,8 @@
     },
     "image": "img/spots/tochigi-nikko-tobuws.jpg",
     "imageCredit": "📷 Jiang Dong-Qin / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:The_entrance_monument_of_Tobu_World_Square.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:The_entrance_monument_of_Tobu_World_Square.jpg",
+    "genre": "遊園地・テーマパーク"
   },
   {
     "region": "群馬",
@@ -3239,7 +3245,8 @@
     ],
     "image": "img/spots/gunma-tomioka-safari.jpg",
     "imageCredit": "📷 Robek / CC BY 2.5 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffes_at_west_midlands_safari_park.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffes_at_west_midlands_safari_park.jpg",
+    "genre": "動物園"
   },
   {
     "region": "東京",
@@ -3554,7 +3561,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-minato-aqua-park.jpg",
     "imageCredit": "📷 Dick Thomas Johnson from Tokyo, Japan / CC BY 2.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Avatar_The_Way_of_Water_Tokyo_Press_Conference_(52562513647).jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Avatar_The_Way_of_Water_Tokyo_Press_Conference_(52562513647).jpg",
+    "genre": "水族館"
   },
   {
     "region": "東京",
@@ -3616,7 +3624,8 @@
     },
     "image": "img/spots/tokyo-minato-tokyo-joypolis.jpg",
     "imageCredit": "📷 Syced / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Joypolis,_Decks.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Joypolis,_Decks.jpg",
+    "genre": "遊園地・テーマパーク"
   },
   {
     "region": "東京",
@@ -3835,7 +3844,8 @@
     },
     "image": "img/spots/tokyo-shinjuku-ttm.jpg",
     "imageCredit": "📷 Tzu-hsun Hsu / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_of_Tokyo_Toy_Museum.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Entrance_of_Tokyo_Toy_Museum.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -3875,7 +3885,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-toshima-hp-ikebukurobousai.jpg",
     "imageCredit": "📷 Komont / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ikebukuro2007.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ikebukuro2007.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -3930,7 +3941,8 @@
     },
     "image": "img/spots/tokyo-sumida-hp-honjyoboudai.jpg",
     "imageCredit": "📷 Asanagi Olympus SH-21 / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Honjo_Fire_Station_2013-02-10.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Honjo_Fire_Station_2013-02-10.JPG",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -3985,7 +3997,8 @@
     },
     "image": "img/spots/tokyo-tachikawa-hp-tatikawaboudai.jpg",
     "imageCredit": "📷 運動会プロテインパワー / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tachikawa_Life_Safety_Learning_Center.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tachikawa_Life_Safety_Learning_Center.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -4280,7 +4293,8 @@
     },
     "image": "img/spots/tokyo-hachioji-takaotozan.jpg",
     "imageCredit": "📷 Σ64 / CC BY 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tokai_Nature_Trail_in_Mt.Takao_02.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tokai_Nature_Trail_in_Mt.Takao_02.jpg",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "東京",
@@ -4406,7 +4420,8 @@
     },
     "image": "img/spots/tokyo-itabashi-itabashi-botanical-garden.jpg",
     "imageCredit": "📷 妖精書士 / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Itabashi_Botanical_Garden_2019-02-27_(01).jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Itabashi_Botanical_Garden_2019-02-27_(01).jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -5499,7 +5514,8 @@
       "sun": "10:00-21:00",
       "holiday": "10:00-21:00"
     },
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "神奈川",
@@ -7584,7 +7600,8 @@
     },
     "image": "img/spots/kanagawa-kawasaki-takatsu-yumepark.jpg",
     "imageCredit": "📷 Tokyo-Good / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tsudayama-station-building-north.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tsudayama-station-building-north.jpg",
+    "genre": "公園"
   },
   {
     "region": "神奈川",
@@ -8929,7 +8946,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/kanagawa-kamakura-kanagawa-prefectural-ofuna-flower-center.jpg",
     "imageCredit": "📷 あばさー / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kanagawa_Prefectural_Flower_Center_Ofuna_Botanical_Garden.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kanagawa_Prefectural_Flower_Center_Ofuna_Botanical_Garden.JPG",
+    "genre": "花の名所"
   },
   {
     "region": "神奈川",
@@ -9433,7 +9451,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/kanagawa-hiratsuka-kana-garden.jpg",
     "imageCredit": "📷 Nesnad / CC BY 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kana_Garden_-_Hiratsuka_-_2023_Aug_31_various_03.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kana_Garden_-_Hiratsuka_-_2023_Aug_31_various_03.jpg",
+    "genre": "花の名所"
   },
   {
     "region": "神奈川",
@@ -9774,7 +9793,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tokyo-bunkyo-rikugien.jpg",
     "imageCredit": "📷 京浜にけ / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bunkyo_Rikugien_Panoramic_View_In_Late_Autumn_1.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bunkyo_Rikugien_Panoramic_View_In_Late_Autumn_1.JPG",
+    "genre": "公園"
   },
   {
     "region": "東京",
@@ -9843,7 +9863,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tokyo-bunkyo-koishikawa-korakuen.jpg",
     "imageCredit": "📷 Gribeco / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Koishikawa_korakuen_-_Osensui_and_Horaijima.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Koishikawa_korakuen_-_Osensui_and_Horaijima.jpg",
+    "genre": "公園"
   },
   {
     "region": "東京",
@@ -10462,7 +10483,8 @@
       "source": "official",
       "sourceUrl": "https://www.city.toda.saitama.jp/uploaded/attachment/41122.pdf",
       "checkedAt": "2026年10月13日"
-    }
+    },
+    "genre": "公園"
   },
   {
     "region": "埼玉",
@@ -11057,7 +11079,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/ibaraki-mito-kairakuen.jpg",
     "imageCredit": "📷 Σ64 / CC BY 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kairaku-en,_Ibaraki_24.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kairaku-en,_Ibaraki_24.jpg",
+    "genre": "花の名所"
   },
   {
     "region": "茨城",
@@ -11201,7 +11224,8 @@
     },
     "image": "img/spots/ibaraki-oarai-oarai-sun-beach.jpg",
     "imageCredit": "📷 ブルーノ・プラス / CC BY 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ooarai_port.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ooarai_port.jpg",
+    "genre": "プール・水遊び"
   },
   {
     "region": "茨城",
@@ -11255,7 +11279,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/ibaraki-tsukuba-mount-tsukuba.jpg",
     "imageCredit": "📷 RESPITE / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Tsukuba_seen_from_the_WSW_(2006).jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Tsukuba_seen_from_the_WSW_(2006).jpg",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "栃木",
@@ -11861,7 +11886,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/gunma-kiryu-gunma-insect-forest.jpg",
     "imageCredit": "📷 岡部碩道 / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Glasshouse_of_Gunma_Insect_World.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Glasshouse_of_Gunma_Insect_World.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -12265,7 +12291,8 @@
       "年末年始",
       "※入館は16:00まで。夏休み期間は無休。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -12788,7 +12815,8 @@
       "月曜日（祝日の場合は開館）",
       "年末年始"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "神奈川",
@@ -12825,7 +12853,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "公園"
   },
   {
     "region": "神奈川",
@@ -12977,7 +13006,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
-    }
+    },
+    "genre": "花の名所"
   },
   {
     "region": "神奈川",
@@ -13171,7 +13201,8 @@
       "木曜日（祝日の場合は開館）",
       "年末年始"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "埼玉",
@@ -13751,7 +13782,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
-    }
+    },
+    "genre": "動物園"
   },
   {
     "region": "埼玉",
@@ -15022,7 +15054,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人2,300円×2＋小学生1,100円×2＋幼児1,100円×1（幼児料金あり）"
-    }
+    },
+    "genre": "動物園"
   },
   {
     "region": "栃木",
@@ -15062,7 +15095,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
-    }
+    },
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "栃木",
@@ -15274,7 +15308,8 @@
     "closedDays": [
       "水曜日"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "群馬",
@@ -15563,7 +15598,8 @@
     ],
     "image": "img/spots/gunma-annaka-usui-toge-railway-culture-village.jpg",
     "imageCredit": "📷 くろふね / CC BY 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%A2%93%E6%B0%B7%E5%B3%A0%E9%89%84%E9%81%93%E6%96%87%E5%8C%96%E3%82%80%E3%82%89_-_panoramio_(6).jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%A2%93%E6%B0%B7%E5%B3%A0%E9%89%84%E9%81%93%E6%96%87%E5%8C%96%E3%82%80%E3%82%89_-_panoramio_(6).jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "群馬",
@@ -16603,7 +16639,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -16738,7 +16775,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tokyo-adachi-galaxcity.jpg",
     "imageCredit": "📷 Kamemaru2000 / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Gyarakusiti_adachi_2009.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Gyarakusiti_adachi_2009.JPG",
+    "genre": "室内遊び場"
   },
   {
     "region": "神奈川",
@@ -16790,7 +16828,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/kanagawa-yokohama-nishi-hapipiland.jpg",
     "imageCredit": "📷 妖精書士 / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:AsoBuild_01.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:AsoBuild_01.jpg",
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -16840,7 +16879,8 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://kidsland-us.com/"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -16960,7 +17000,8 @@
       "sun": "11:00-20:00",
       "holiday": "11:00-20:00"
     },
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -17014,7 +17055,8 @@
     },
     "closedDays": [
       "年中無休"
-    ]
+    ],
+    "genre": "室内遊び場"
   },
   {
     "region": "神奈川",
@@ -17106,7 +17148,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/ibaraki-tsukuba-tsukuba.jpg",
     "imageCredit": "📷 Tnk3a / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tsukuba_Space_Center-01.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tsukuba_Space_Center-01.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "群馬",
@@ -17194,7 +17237,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "栃木",
@@ -17815,7 +17859,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人2,000円×2＋小学生1,300円×2＋幼児1,300円×1（幼児料金あり）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "神奈川",
@@ -17905,7 +17950,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/kanagawa-hakone-hakone-garasunomori.jpg",
     "imageCredit": "📷 Flow in edgewise / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hakone_Venetian_Glass_Museum.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hakone_Venetian_Glass_Museum.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "神奈川",
@@ -17990,7 +18036,8 @@
       "無休（年末年始は要問合せ）",
       "※最終入園17:30。冬期は時間が異なります。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "花の名所"
   },
   {
     "region": "神奈川",
@@ -18098,7 +18145,8 @@
     },
     "image": "img/spots/saitama-tokorozawa-seibu-leisure.jpg",
     "imageCredit": "📷 Ski Mania / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Prince_Snow_Resort_Sayama.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Prince_Snow_Resort_Sayama.JPG",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "千葉",
@@ -18214,7 +18262,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,900円×2＋小学生400円×2＋幼児200円×1（幼児料金あり）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "茨城",
@@ -18425,7 +18474,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,900円×2＋小学生900円×2＋幼児900円×1（幼児料金あり）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "栃木",
@@ -18484,7 +18534,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tochigi-nasu-nasu-safari-park.jpg",
     "imageCredit": "📷 Robek / CC BY 2.5 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffes_at_west_midlands_safari_park.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffes_at_west_midlands_safari_park.jpg",
+    "genre": "動物園"
   },
   {
     "region": "栃木",
@@ -18653,7 +18704,8 @@
     },
     "image": "img/spots/tochigi-nasu-nasu-music-box-museum.jpg",
     "imageCredit": "📷 Mk346598 / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%82%A3%E9%A0%88%E3%82%AA%E3%83%AB%E3%82%B4%E3%83%BC%E3%83%AB%E7%BE%8E%E8%A1%93%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%82%A3%E9%A0%88%E3%82%AA%E3%83%AB%E3%82%B4%E3%83%BC%E3%83%AB%E7%BE%8E%E8%A1%93%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "栃木",
@@ -18712,7 +18764,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tochigi-nasu-nasu-stained-glass-museum.jpg",
     "imageCredit": "📷 663highland / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:190725_Nasu_Stained_Glass_Museum_Nasu_Tochigi_pref_Japan06s3.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:190725_Nasu_Stained_Glass_Museum_Nasu_Tochigi_pref_Japan06s3.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "栃木",
@@ -18833,7 +18886,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tochigi-nikko-trick-art-pia-nikko.jpg",
     "imageCredit": "📷 あばさー / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Trick_Artpia_Nikko.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Trick_Artpia_Nikko.JPG",
+    "genre": "博物館・科学館"
   },
   {
     "region": "群馬",
@@ -19052,7 +19106,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "東京",
@@ -19088,7 +19143,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "東京",
@@ -19124,7 +19180,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "神奈川",
@@ -19160,7 +19217,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "20歳以上のみ500円（大人2名分）。未成年は対象外・要予約"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "神奈川",
@@ -19197,7 +19255,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "神奈川",
@@ -19309,7 +19368,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "埼玉",
@@ -19349,7 +19409,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/saitama-saitama-minami-lotte-urawa-factory-tour.jpg",
     "imageCredit": "📷 ブツチチ / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%AD%E3%83%83%E3%83%86%E6%B5%A6%E5%92%8C%E5%B7%A5%E5%A0%B4.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%83%AD%E3%83%83%E3%83%86%E6%B5%A6%E5%92%8C%E5%B7%A5%E5%A0%B4.JPG",
+    "genre": "ものづくり体験"
   },
   {
     "region": "千葉",
@@ -19388,7 +19449,8 @@
     "closedFrom": "2023-12-24",
     "image": "img/spots/chiba-funabashi-sapporobeer.jpg",
     "imageCredit": "📷 Melkul / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sapporo_Holdings_Headoffice.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sapporo_Holdings_Headoffice.JPG",
+    "genre": "ものづくり体験"
   },
   {
     "region": "茨城",
@@ -19425,7 +19487,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "茨城",
@@ -19498,7 +19561,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "栃木",
@@ -19536,7 +19600,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "栃木",
@@ -19864,7 +19929,8 @@
       "年末年始",
       "※7/20〜8/31は9:30開始・月曜も営業。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "埼玉",
@@ -19922,7 +19988,8 @@
       "水曜日（祝日の場合は翌日）",
       "年末年始"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "千葉",
@@ -19983,7 +20050,8 @@
       "毎月第3月曜日",
       "年末年始（12/30〜1/1）"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "茨城",
@@ -20027,7 +20095,8 @@
       "officialUrl": "https://www.forespa-daigo.jp/"
     },
     "officialUrlStatus": "候補・公式性未確認",
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "栃木",
@@ -20071,7 +20140,8 @@
       "officialUrl": "https://www.city.shimotsuke.lg.jp/1761/info-0000000338-3.html"
     },
     "officialUrlStatus": "他ツールの検索結果・未確認（自治体の案内ページ）",
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "群馬",
@@ -20122,7 +20192,8 @@
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.city.kiryu.lg.jp/shisetsu/sports/caribbean/index.html"
     },
-    "officialUrlStatus": "他ツールの検索結果・未確認（自治体ページ）"
+    "officialUrlStatus": "他ツールの検索結果・未確認（自治体ページ）",
+    "genre": "プール・水遊び"
   },
   {
     "region": "栃木",
@@ -20260,7 +20331,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tochigi-ashikaga-ashikaga.jpg",
     "imageCredit": "📷 Yoshio Kohara / CC BY 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%82%E3%81%97%E3%81%8B%E3%81%8C%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF_-_panoramio.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%82%E3%81%97%E3%81%8B%E3%81%8C%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF_-_panoramio.jpg",
+    "genre": "花の名所"
   },
   {
     "region": "群馬",
@@ -20335,7 +20407,8 @@
       "sourceUrl": "https://www.flower-park.jp/faq",
       "checkedAt": "2026年10月13日"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "花の名所"
   },
   {
     "region": "東京",
@@ -20390,7 +20463,8 @@
     },
     "image": "img/spots/tokyo-chiyoda-chidorigafuchi-greenway.jpg",
     "imageCredit": "📷 &quot;Tyoron2&quot; / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chidorigafuchi_sakura.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chidorigafuchi_sakura.JPG",
+    "genre": "花の名所"
   },
   {
     "region": "埼玉",
@@ -20445,7 +20519,8 @@
     },
     "image": "img/spots/saitama-kumagaya-kumagaya-sakuranotei.jpg",
     "imageCredit": "📷 京浜にけ / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Saitama_Kumagaya_Sakuratsutsumi_1.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Saitama_Kumagaya_Sakuratsutsumi_1.JPG",
+    "genre": "花の名所"
   },
   {
     "region": "群馬",
@@ -20617,7 +20692,8 @@
     "verifiedAt": "2026年10月13日",
     "closedDays": [
       "※上映時間は季節で変わることがあります。"
-    ]
+    ],
+    "genre": "博物館・科学館"
   },
   {
     "region": "埼玉",
@@ -21011,7 +21087,8 @@
     },
     "image": "img/spots/tokyo-koto-planets.jpg",
     "imageCredit": "📷 Sasa0403 / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Photos_at_teamlab_planets_tokyo.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Photos_at_teamlab_planets_tokyo.jpg",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -21271,7 +21348,8 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/ibaraki-ishioka-flowerpark.jpg",
     "imageCredit": "📷 Strangesnow / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ibaraki,_Ishioka,_Ibaraki_Flower_Park_Entrance.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ibaraki,_Ishioka,_Ibaraki_Flower_Park_Entrance.jpg",
+    "genre": "花の名所"
   },
   {
     "region": "栃木",
@@ -21327,7 +21405,8 @@
       "4〜11月は無休",
       "※12〜3月は火曜休。最終入館16:30。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "山梨",
@@ -21622,7 +21701,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/shizuoka-susono-fujisafari.jpg",
     "imageCredit": "📷 Robek / CC BY 2.5 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffes_at_west_midlands_safari_park.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Giraffes_at_west_midlands_safari_park.jpg",
+    "genre": "動物園"
   },
   {
     "region": "静岡",
@@ -21759,7 +21839,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/fukushima-iwaki-hawaiians.jpg",
     "imageCredit": "📷 Sakaori (talk) / CC BY 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Spa_Resort_Hawaiians_Water_Park._A.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Spa_Resort_Hawaiians_Water_Park._A.JPG",
+    "genre": "温泉・スパ"
   },
   {
     "region": "福島",
@@ -21897,7 +21978,8 @@
       "年末年始（12月29日〜1月1日）",
       "※11月〜1月は閉園16:30。学校の長期休みは月曜も開園。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "動物園"
   },
   {
     "region": "東京",
@@ -22062,7 +22144,8 @@
     "closedDays": [
       "第2・第4月曜日（祝日の場合は開館）"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "東京",
@@ -22864,7 +22947,8 @@
       "定休日なし",
       "※11〜3月は9:00-16:00。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "動物園"
   },
   {
     "region": "静岡",
@@ -22928,7 +23012,8 @@
     "closedDays": [
       "年中無休"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "動物園"
   },
   {
     "region": "静岡",
@@ -24097,7 +24182,8 @@
     },
     "image": "img/spots/shizuoka-kawazu-kawazoo.png",
     "imageCredit": "📷 Saico tan / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:KawaZOO.png"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:KawaZOO.png",
+    "genre": "動物園"
   },
   {
     "region": "静岡",
@@ -24140,7 +24226,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.izuakazawa.jp/"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "静岡",
@@ -24759,7 +24846,8 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人800円×2＋小学生500円×2＋幼児500円×1（幼児も子ども料金と仮定）"
-    }
+    },
+    "genre": "遊園地・テーマパーク"
   },
   {
     "region": "静岡",
@@ -24843,7 +24931,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "ものづくり体験"
   },
   {
     "region": "静岡",
@@ -25443,7 +25532,8 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/shizuoka-atami-ataminews.jpg",
     "imageCredit": "📷 CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%86%B1%E6%B5%B701.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%86%B1%E6%B5%B701.JPG",
+    "genre": "プール・水遊び"
   },
   {
     "region": "静岡",
@@ -25487,7 +25577,8 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人2,500円×2＋小学生1,000円×2＋幼児0円×1（幼児は無料と仮定）"
-    }
+    },
+    "genre": "花の名所"
   },
   {
     "region": "神奈川",
@@ -25593,7 +25684,8 @@
     "closedDays": [
       "無休"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "静岡",
@@ -25652,7 +25744,8 @@
     "closedDays": [
       "木曜日（8月は無休）"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "プール・水遊び"
   },
   {
     "region": "神奈川",
@@ -26338,7 +26431,8 @@
       "sourceUrl": "https://www.pref.yamanashi.jp/kaju/45733583609.html",
       "checkedAt": "2026年10月13日"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "花の名所"
   },
   {
     "region": "山梨",
@@ -26751,7 +26845,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,700円×2＋小学生850円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "動物園"
   },
   {
     "region": "山梨",
@@ -27595,7 +27690,8 @@
     "closedDays": [
       "※4〜11月の時間。最終入館19:30。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "温泉・スパ"
   },
   {
     "region": "群馬",
@@ -27649,7 +27745,8 @@
     },
     "closedDays": [
       "無休"
-    ]
+    ],
+    "genre": "動物園"
   },
   {
     "region": "群馬",
@@ -27694,7 +27791,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,200円×2＋小学生600円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "温泉・スパ"
   },
   {
     "region": "群馬",
@@ -27780,7 +27878,8 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.932-onsen.com/green/"
     },
-    "officialUrlStatus": "ウォーカープラスの公式サイト欄に記載（未直接確認）"
+    "officialUrlStatus": "ウォーカープラスの公式サイト欄に記載（未直接確認）",
+    "genre": "アスレチック・アウトドア"
   },
   {
     "region": "群馬",
@@ -27893,7 +27992,8 @@
       "定休日なし",
       "※アトラクションは施設ごとに営業日・時間が異なります。4月と12月に全館メンテナンス日あり。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "室内遊び場"
   },
   {
     "region": "長野",
@@ -28033,7 +28133,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人500円×2＋小学生250円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "博物館・科学館"
   },
   {
     "region": "長野",
@@ -28153,7 +28254,8 @@
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.town.karuizawa.lg.jp/page/1267.html"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "公園"
   },
   {
     "region": "長野",
@@ -28428,7 +28530,8 @@
       "sat": "09:00-16:00",
       "sun": "09:00-16:00",
       "holiday": "09:00-16:00"
-    }
+    },
+    "genre": "花の名所"
   },
   {
     "region": "長野",
@@ -28619,7 +28722,8 @@
     "closedDays": [
       "冬季休園（12/1〜3/19）",
       "※11月は16:00閉園に短縮。冬季休園あり。"
-    ]
+    ],
+    "genre": "水族館"
   },
   {
     "region": "栃木",
@@ -28719,7 +28823,8 @@
       "officialUrl": "https://www.nikko-hanaichimonme.jp/"
     },
     "officialUrlStatus": "候補・公式性未確認",
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "花の名所"
   },
   {
     "region": "栃木",
@@ -28831,7 +28936,8 @@
       "木曜日（祝日の場合は翌日）",
       "※12〜3月は17:00閉館。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "genre": "温泉・スパ"
   },
   {
     "region": "栃木",
@@ -29012,7 +29118,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
-    }
+    },
+    "genre": "ものづくり体験"
   },
   {
     "region": "茨城",
@@ -29278,7 +29385,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人600円×2＋小学生900円×2＋幼児0円×1（幼児は無料）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "genre": "室内遊び場"
   },
   {
     "region": "埼玉",
@@ -29589,7 +29697,8 @@
       "sat": "10:00-20:00",
       "sun": "10:00-20:00",
       "holiday": "10:00-20:00"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -32430,7 +32539,7 @@
     "area": "秩父郡長瀞町井戸",
     "lat": 36.1051,
     "lng": 139.1185,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -32478,7 +32587,7 @@
     "area": "山武郡九十九里町",
     "lat": 35.5145,
     "lng": 140.439,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "4-6歳",
       "低学年",
@@ -32527,7 +32636,7 @@
     "area": "西多摩郡奥多摩町海沢",
     "lat": 35.8002,
     "lng": 139.1174,
-    "genre": "キャンプ場・グランピング",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -33231,7 +33340,7 @@
     "area": "市原市養老",
     "lat": 35.357343,
     "lng": 140.154125,
-    "genre": "キャンプ場・グランピング",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -33279,7 +33388,7 @@
     "area": "飯能市下名栗",
     "lat": 35.868259,
     "lng": 139.149704,
-    "genre": "キャンプ場・グランピング",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -33340,7 +33449,7 @@
     "area": "新宿区市谷田町",
     "lat": 35.692026,
     "lng": 139.735707,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -33406,7 +33515,7 @@
     "area": "秦野市蓑毛",
     "lat": 35.417452,
     "lng": 139.228919,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -33869,7 +33978,7 @@
     "area": "東大和市桜が丘",
     "lat": 35.752,
     "lng": 139.426,
-    "genre": "スケート・ボウリング",
+    "genre": "室内遊び場",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -33919,7 +34028,7 @@
     "area": "横浜市神奈川区広台太田町",
     "lat": 35.4757,
     "lng": 139.6302,
-    "genre": "スケート・ボウリング",
+    "genre": "室内遊び場",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -37481,7 +37590,7 @@
     "address": "山梨県笛吹市一宮町坪井1928",
     "lat": 35.6477,
     "lng": 138.6642,
-    "genre": "おでかけスポット",
+    "genre": "ものづくり体験",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -39533,7 +39642,7 @@
     "address": "神奈川県横浜市金沢区鳥浜町3-5",
     "lat": 35.3808,
     "lng": 139.6406,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "室内遊び場",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -39809,7 +39918,7 @@
     "area": "朝霞市浜崎",
     "lat": 35.8182405,
     "lng": 139.6037952,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -40008,7 +40117,7 @@
     "address": "神奈川県横浜市中区本牧ふ頭1",
     "lat": 35.430164,
     "lng": 139.686637,
-    "genre": "釣り堀・魚つかみ取り",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "4-6歳",
       "低学年",
@@ -40065,7 +40174,7 @@
     "address": "神奈川県横須賀市猿島1",
     "lat": 35.28608,
     "lng": 139.69476,
-    "genre": "おでかけスポット",
+    "genre": "アスレチック・アウトドア",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -40152,7 +40261,7 @@
     "address": "神奈川県横浜市中区港町1-1-1 BASEGATE横浜関内 タワー3F・4F",
     "lat": 35.4455,
     "lng": 139.637,
-    "genre": "おでかけスポット",
+    "genre": "室内遊び場",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -41763,7 +41872,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://bandainamco-am.co.jp/others/tondemi/heiwajima/"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -41827,7 +41937,8 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,800円×2＋小学生1,300円×2＋幼児300円×1（幼児料金あり）"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -41899,7 +42010,8 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人700円×2＋小学生1,400円×2＋幼児1,400円×1（幼児料金あり）"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "群馬",
@@ -41968,7 +42080,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://won-park.com/topics/news001/"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "神奈川",
@@ -42038,7 +42151,8 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://boukennokuni.com/shonantsuribori/"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "神奈川",
@@ -42109,7 +42223,8 @@
       "sat": "10:00-18:00",
       "sun": "10:00-18:00",
       "holiday": "10:00-18:00"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "神奈川",
@@ -42168,7 +42283,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
-    }
+    },
+    "genre": "博物館・科学館"
   },
   {
     "region": "千葉",
@@ -42314,7 +42430,8 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人700円×2＋小学生700円×2＋幼児700円×1（幼児料金あり）"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "埼玉",
@@ -42438,7 +42555,8 @@
       "source": "web",
       "sourceUrl": "https://iko-yo.net/facilities/173549",
       "checkedAt": "2026年10月13日"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "埼玉",
@@ -42496,7 +42614,8 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,900円×2＋小学生1,400円×2＋幼児0円×1（幼児は無料と仮定）"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "東京",
@@ -42568,7 +42687,8 @@
     },
     "image": "img/spots/tokyo-machida-町田リス園.jpg",
     "imageCredit": "📷 kaduki / CC BY 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%94%BA%E7%94%B0%E3%83%AA%E3%82%B9%E5%9C%92%E3%80%81%E3%82%A2%E3%82%AB%E3%83%AA%E3%82%B9_-_panoramio.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%94%BA%E7%94%B0%E3%83%AA%E3%82%B9%E5%9C%92%E3%80%81%E3%82%A2%E3%82%AB%E3%83%AA%E3%82%B9_-_panoramio.jpg",
+    "genre": "動物園"
   },
   {
     "region": "東京",
@@ -42853,7 +42973,8 @@
       "sat": "09:30-16:30",
       "sun": "09:30-16:30",
       "holiday": "09:30-16:30"
-    }
+    },
+    "genre": "遊園地・テーマパーク"
   },
   {
     "region": "東京",
@@ -43059,7 +43180,8 @@
       "sat": "10:00-22:00",
       "sun": "10:00-22:00",
       "holiday": "10:00-22:00"
-    }
+    },
+    "genre": "室内遊び場"
   },
   {
     "region": "埼玉",
@@ -43257,7 +43379,7 @@
     "area": "八王子市滝山町(イオン八王子滝山)",
     "lat": 35.654045,
     "lng": 139.338806,
-    "genre": "カフェ・工房見学",
+    "genre": "ものづくり体験",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -43445,7 +43567,7 @@
     "area": "江東区・夢の島公園内",
     "lat": 35.6469,
     "lng": 139.8258,
-    "genre": "植物園・博物館",
+    "genre": "博物館・科学館",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -43543,7 +43665,7 @@
     "area": "市川市大町",
     "lat": 35.763,
     "lng": 139.969,
-    "genre": "アミューズメント施設",
+    "genre": "遊園地・テーマパーク",
     "ages": [
       "4-6歳",
       "低学年",
@@ -43738,7 +43860,7 @@
     "area": "松本市中央",
     "lat": 36.23161,
     "lng": 137.97647,
-    "genre": "美術館",
+    "genre": "博物館・科学館",
     "ages": [
       "低学年",
       "高学年"
@@ -43808,7 +43930,7 @@
     "area": "松本市大手",
     "lat": 36.238,
     "lng": 137.9698,
-    "genre": "博物館",
+    "genre": "博物館・科学館",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -43879,7 +44001,7 @@
     "area": "松本市埋橋",
     "lat": 36.2408,
     "lng": 137.9659,
-    "genre": "食品工場見学・体験",
+    "genre": "ものづくり体験",
     "ages": [
       "4-6歳",
       "低学年",
@@ -44036,7 +44158,7 @@
     "area": "横浜市港南区・港南台駅前",
     "lat": 35.374563,
     "lng": 139.577563,
-    "genre": "商業施設屋上・遊具広場",
+    "genre": "公園",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -44216,7 +44338,7 @@
     "area": "旭市",
     "lat": 35.72493,
     "lng": 140.659424,
-    "genre": "クレーンゲーム専門店",
+    "genre": "室内遊び場",
     "ages": [
       "4-6歳",
       "低学年",
@@ -46011,7 +46133,7 @@
     "officialUrl": "https://www.numazu-deepsea.com/",
     "desc": "深海生物に特化した水族館で、シーラカンスの冷凍標本が見られるのは国内でここだけ（冷凍2体を含む5体を展示）。最深2,500mの駿河湾に住む生き物や、ダイオウグソクムシ・メンダコなど人気の深海生物も見られる。",
     "tip": "イルカなどのショーはなく、じっくり見て回るタイプの水族館。幼児は4歳以上から有料。専用駐車場はないので周辺の有料駐車場を利用。沼津駅南口からバスで約15分。1月にメンテナンス休業あり。",
-    "genre": "おでかけスポット",
+    "genre": "水族館",
     "address": "静岡県沼津市千本港町83",
     "needsReview": [
       "授乳室・おむつ替えなど館内設備は未確認"
@@ -46083,7 +46205,7 @@
     "officialUrl": "https://mitsui-shopping-park.com/lalaport/numazu/",
     "desc": "無料で使える屋内キッズスペース「こもりらのもり」（約300㎡）は、0歳・1〜2歳・3〜5歳の年齢別のエリアに分かれている。屋外の「うみの広場」には、水が噴き出すポップジェットや、5基のすべり台がつながった大型遊具（6〜12歳向け）がある。",
     "tip": "大型遊具の広場は10:00〜17:00の利用で、悪天候の日は使えないことがある。館内には授乳室・おむつ交換スペース、ミルクや離乳食をつくれるミニキッチンのある「こにわハウス」がある。フードコートは約1,100席。",
-    "genre": "おでかけスポット",
+    "genre": "室内遊び場",
     "address": "静岡県沼津市東椎路字東荒301-3",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
@@ -46128,7 +46250,7 @@
     "officialUrl": "https://www.suntomoon.co.jp/",
     "desc": "専門店街や映画館がそろう大型ショッピングセンター。本館2階には、0歳から遊べる全天候型の室内こども遊園地「遊キッズ」（2024年3月オープン・有料）がある。",
     "tip": "遊キッズの料金と利用条件は事前に確認を。近くの柿田川公園には、湧水広場で水遊びができる場所もある。",
-    "genre": "おでかけスポット",
+    "genre": "室内遊び場",
     "address": "静岡県駿東郡清水町玉川61-2",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
@@ -46225,7 +46347,7 @@
     "officialUrl": "https://www.fujikawarakuza.co.jp/",
     "desc": "道の駅「富士川楽座」の中にある体験型の科学館。身近な環境について遊びながら学べ、スタンプラリーや工作・実験教室もあり、テーマは季節ごとに変わる。同じ建物には、直径14mのドームのプラネタリウム「わいわい劇場」や、無料の「戸塚洋二ニュートリノ館」もある。",
     "tip": "屋内なので雨の日でも遊べる。子ども料金は3歳から。東名高速の富士川SA（上り）から直結で、一般道からも入れる。JR富士川駅から徒歩約30分、またはバスで。",
-    "genre": "おでかけスポット",
+    "genre": "博物館・科学館",
     "address": "静岡県富士市岩淵1488-1",
     "needsReview": [
       "座標は一般情報ベースの暫定値。要確認"
@@ -46284,7 +46406,7 @@
     "officialUrl": "https://www.mec-markis.jp/shizuoka/",
     "desc": "静岡市の大型ショッピングモール。1階には、伊豆シャボテン動物公園が運営する屋内型ふれあい動物園「アニタッチ」があり、動物に専用のおやつをあげられる。3階のアミューズメント施設内には、ボールプールやエアスライダーのあるキッズ向けの遊び場「Kids BANeT」（休憩コーナーあり）もあり、雨の日でも遊べる。",
     "tip": "Kids BANeTは10:00〜20:00（2023年オープン時の案内）。アニタッチとあわせて、料金や利用条件は事前に確認を。",
-    "genre": "おでかけスポット",
+    "genre": "室内遊び場",
     "address": "静岡県静岡市葵区柚木1026",
     "needsReview": [
       "座標は一般情報ベースの暫定値。要確認"
@@ -46334,7 +46456,7 @@
     "officialUrl": "https://takumishuku.jp/",
     "desc": "東海道の宿場・丸子宿にある、静岡の伝統工芸の体験施設。陶芸、藍染め・茶染め、駿河竹千筋細工、木工、漆の職人が常駐し、体験のほとんどは予約なしでもでき、所要は30〜60分ほど。タミヤ監修のプラバンやミニ四駆などの模型体験もある。",
     "tip": "入場無料（体験は有料）。無料駐車場あり。月曜休館。JR静岡駅からバスで約25分「吐月峰駿府匠宿入口」下車、徒歩約5分。",
-    "genre": "おでかけスポット",
+    "genre": "ものづくり体験",
     "address": "静岡県静岡市駿河区丸子3240-1",
     "needsReview": [
       "座標は一般情報ベースの暫定値。要確認"
@@ -46393,7 +46515,7 @@
     "officialUrl": "https://kadode-ooigawa.jp/",
     "desc": "大井川流域の緑茶や農産物、観光がそろう体験型フードパーク。自分が茶葉になりきって製茶工程を体験する緑茶アトラクション（体験料500円）や、室内外の大型遊具があるキッズパーク「ちゃめっけ」、SLの展示、農家レストラン、マルシェがあり、1日遊べる。",
     "tip": "新東名の島田金谷ICを降りてすぐで、駐車場は約550台。キッズパークは屋内にもあり、雨の日でも遊べる。",
-    "genre": "おでかけスポット",
+    "genre": "ものづくり体験",
     "address": "静岡県島田市竹下62",
     "needsReview": [
       "料金・営業時間・座標は一般情報ベースの暫定値。公式サイトで要確認"
@@ -54498,7 +54620,8 @@
     },
     "needsReview": [
       "営業時間は情報元により差があるため、公式サイトで要確認"
-    ]
+    ],
+    "genre": "ものづくり体験"
   },
   {
     "region": "埼玉",
