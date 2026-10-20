@@ -725,6 +725,26 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/150360/"
     },
+    "rideLimits": [
+      {
+        "name": "シナモロールの小さな大冒険",
+        "minCm": 111,
+        "note": "動くシートは身長110cm超。110cm以下は「動かないシート」を利用（魔法のステッキのシューティングは不可）。未就学児は中学生以上の保護者の同伴が必要"
+      },
+      {
+        "name": "ふわふわキッズランド",
+        "maxAge": 12,
+        "note": "小学生までが対象"
+      },
+      {
+        "name": "CHALLENGE PURO",
+        "minAge": 3,
+        "maxAge": 15,
+        "note": "パスポートとは別に有料の参加券が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.puroland.jp/qa/",
     "recommendedBooking": "asoview",
     "desc": "屋内型テーマパークなので天気の心配が要らない。パレードやふれあいが中心で乗り物は少なめ。",
     "tip": "授乳室・調乳スペースが充実しており乳児連れにもやさしい。",
@@ -860,9 +880,173 @@
         "name": "ファイト イッパーツ！",
         "minCm": 105,
         "note": "120cm未満および6歳未満は付き添いが必要"
+      },
+      {
+        "name": "バンデット",
+        "minCm": 120,
+        "minAge": 6,
+        "note": "小学生以上"
+      },
+      {
+        "name": "クレージーヒュー・ストン",
+        "minCm": 130,
+        "minAge": 6,
+        "note": "小学生以上"
+      },
+      {
+        "name": "ルーピングスターシップ",
+        "minCm": 120,
+        "minAge": 6,
+        "note": "小学生以上"
+      },
+      {
+        "name": "ハシビロGO！",
+        "minCm": 120
+      },
+      {
+        "name": "プテラサイクル",
+        "minCm": 120
+      },
+      {
+        "name": "U.F.O.バンプ！",
+        "minCm": 115
+      },
+      {
+        "name": "スプラッシュU.F.O.",
+        "minCm": 110,
+        "note": "130cm未満は付き添いが必要"
+      },
+      {
+        "name": "スピンランウェイ",
+        "minCm": 110,
+        "minAge": 4,
+        "note": "130cm未満は付き添いが必要。6歳未満は付き添いが必要"
+      },
+      {
+        "name": "えんぴつタワー",
+        "minCm": 110,
+        "note": "120cm未満は付き添いが必要"
+      },
+      {
+        "name": "ミルキーウェイ",
+        "minCm": 100,
+        "note": "シングルシートは身長120cm以上。ペアシートは100cm以上で、120cm未満は保護者の付き添いが必要"
+      },
+      {
+        "name": "アニマルコースター",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "5歳未満は付き添いが必要"
+      },
+      {
+        "name": "わんわんコースターわんデット",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "5歳未満は付き添いが必要"
+      },
+      {
+        "name": "ミラクルわんルーム～チュロス島の大冒険～",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "5歳未満は付き添いが必要"
+      },
+      {
+        "name": "フロッグホッパー",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "5歳未満は付き添いが必要"
+      },
+      {
+        "name": "ぐるぐるドライブ",
+        "minCm": 90,
+        "maxCm": 129,
+        "minAge": 3,
+        "note": "身長90cm以上130cm未満"
+      },
+      {
+        "name": "シーチキン GO！",
+        "minCm": 90,
+        "note": "120cm未満は付き添いが必要"
+      },
+      {
+        "name": "くるくるコンパス",
+        "minCm": 90,
+        "note": "120cm未満は付き添いが必要。大人は1台につき1名まで"
+      },
+      {
+        "name": "カスタムガレージ",
+        "minCm": 90,
+        "note": "110cm未満は中学生以上の付き添いが必要。小学生未満1名につき付き添い1名が必要。VRは7歳から（7〜12歳は保護者の同意が必要）"
+      },
+      {
+        "name": "マイレーシング",
+        "minCm": 90,
+        "note": "運転席は身長110cm以上、助手席は90cm以上"
+      },
+      {
+        "name": "ゴーカート ファミリーコース",
+        "minCm": 90,
+        "note": "運転席は身長130cm以上、助手席は90cm以上かつ3歳以上。助手席が5歳未満の場合は運転者は中学生以上"
+      },
+      {
+        "name": "ゴーカート シングルサーキットコース",
+        "minCm": 130
+      },
+      {
+        "name": "ev-グランプリ",
+        "minCm": 140,
+        "maxCm": 190,
+        "minAge": 10,
+        "note": "運転席は身長140〜190cmかつ10歳以上。助手席は身長90〜190cmかつ3歳以上で、助手席が5歳未満の場合は運転者は中学生以上"
+      },
+      {
+        "name": "SKYパト",
+        "minCm": 130,
+        "minAge": 6,
+        "note": "運転席は身長130cm以上かつ6歳以上。助手席は2歳以上で、助手席が6歳未満の場合は運転者は中学生以上"
+      },
+      {
+        "name": "スピンドライブ",
+        "minAge": 2,
+        "note": "2歳は付き添いが必要。身長90cm未満は付き添いが必要。大人は1台につき1名まで"
+      },
+      {
+        "name": "カドケシとろっこ",
+        "minAge": 2,
+        "note": "6歳未満は付き添いが必要"
+      },
+      {
+        "name": "ちえくらべ「たまゴロー」",
+        "minAge": 3,
+        "note": "6歳未満は付き添いが必要"
+      },
+      {
+        "name": "ヒーロートレーニングセンター “ミッション8”",
+        "minAge": 3,
+        "note": "小学生未満は付き添いが必要"
+      },
+      {
+        "name": "キャンパスチャレンジ",
+        "minAge": 5,
+        "note": "5歳以上7歳未満は付き添いが必要。VRは7歳から（7〜12歳は保護者の同意が必要）"
+      },
+      {
+        "name": "ジャイアントスカイリバー",
+        "minAge": 5,
+        "note": "10歳未満は付き添いが必要"
+      },
+      {
+        "name": "ひらめキッズ",
+        "maxAge": 12,
+        "note": "小学生以下が対象。小学生未満は付き添いが必要"
+      },
+      {
+        "name": "バンジージャンプ",
+        "minAge": 12,
+        "note": "体重38〜109kg、ウエスト102cm以下。18歳未満は保護者の同意・同伴が必要"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsCheckedAt": "2026-10-21",
     "rideLimitsSource": "https://www.yomiuriland.com/",
     "food": {
       "bento": "ok",
@@ -1459,6 +1643,32 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/155350/"
     },
+    "rideLimits": [
+      {
+        "name": "新滑空水上コースターカワセミ",
+        "minCm": 120,
+        "minAge": 6
+      },
+      {
+        "name": "水上木製コースターレジーナⅡ（ドゥーエ）",
+        "minCm": 120
+      },
+      {
+        "name": "POP'N DRIFT",
+        "minCm": 130,
+        "note": "身長130cm以上の8歳から1人で利用可。100cm以上130cm未満の4歳以上は中学生以上の付き添い（有料）で利用可"
+      },
+      {
+        "name": "ファミリーコースターてんとう虫",
+        "minAge": 3
+      },
+      {
+        "name": "ゴールデンシップ〜リバイブ〜",
+        "minCm": 110
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.tobuzoo.com/park/attraction/",
     "recommendedBooking": "asoview",
     "stayTime": {
       "minMinutes": 240,
@@ -1698,6 +1908,58 @@
       "asoview": "https://www.asoview.com/base/150064/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000151315/"
     },
+    "rideLimits": [
+      {
+        "name": "サーフコースター リヴァイアサン",
+        "minCm": 120,
+        "maxAge": 64
+      },
+      {
+        "name": "ソニックチューン",
+        "minCm": 120,
+        "minAge": 6,
+        "maxAge": 64,
+        "note": "小学生以上64才まで"
+      },
+      {
+        "name": "XRクロッシングミッション",
+        "minAge": 9,
+        "maxAge": 64,
+        "note": "9/17オープン予定として公式に記載"
+      },
+      {
+        "name": "ロッキーイーグル",
+        "minCm": 95,
+        "note": "110cm未満は保護者の付き添いが必要"
+      },
+      {
+        "name": "バタフライダー",
+        "minCm": 95,
+        "note": "110cm以上は1名で利用可。95〜110cm未満は保護者の付き添いが必要"
+      },
+      {
+        "name": "バブルシューティング",
+        "minCm": 110,
+        "note": "公式表では「110cm以上」とあわせて「110cm未満は保護者の付き添いが必要」とも記載。来園前に要確認"
+      },
+      {
+        "name": "アクアライドⅡ",
+        "minCm": 110,
+        "orMinAge": 5,
+        "orLabel": "5才以上"
+      },
+      {
+        "name": "バイキング",
+        "minCm": 110
+      },
+      {
+        "name": "シーボート",
+        "minAge": 3,
+        "note": "9才までは保護者の付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.seaparadise.co.jp/pleasureland/guide.html",
     "recommendedBooking": "asoview",
     "desc": "水族館・遊園地・海辺の散策が一体になった島全体がテーマパーク。屋内水族館は雨でも安心。",
     "tip": "島まで距離があるため、小さい子はベビーカー必須。",
@@ -2715,6 +2977,15 @@
       "asoview": "https://www.asoview.com/base/165016/",
       "jalan": "https://www.jalan.net/kankou/spt_12229cc3540155507/"
     },
+    "rideLimits": [
+      {
+        "name": "ブタ天キッズコースター",
+        "minCm": 90,
+        "note": "5歳以下は保護者の同乗（有料）が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://t-doitsumura.co.jp/attraction/butaten-kids-coaster/",
     "recommendedBooking": "asoview",
     "desc": "広大な敷地に芝生・動物ふれあい・小さな乗り物が点在。混雑が少なめでのんびり過ごせる。",
     "tip": "車移動が前提の立地。夜のイルミネーションは冬季限定。",
@@ -2890,6 +3161,58 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000184875/"
     },
+    "rideLimits": [
+      {
+        "name": "林間ジェットコースター",
+        "minCm": 110,
+        "minAge": 6,
+        "maxAge": 64,
+        "note": "小学生以上。身長110〜120cm未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "ディスク・オー",
+        "minCm": 120,
+        "minAge": 6,
+        "note": "小学生以上。65歳以上は不可"
+      },
+      {
+        "name": "スーパースイング",
+        "minCm": 120,
+        "minAge": 6,
+        "note": "小学生以上"
+      },
+      {
+        "name": "シーガーディアン",
+        "minCm": 100,
+        "minAge": 4,
+        "note": "小学生以上で120cm以上なら1人で利用可。4歳以上100cm以上は16歳以上の付き添い（有料）で利用可"
+      },
+      {
+        "name": "ドタバタVR旅行",
+        "minCm": 100,
+        "minAge": 6,
+        "note": "小学生以上"
+      },
+      {
+        "name": "ファミリー・バナナ・コースター",
+        "minCm": 95,
+        "minAge": 3,
+        "note": "小学生以上で120cm以上なら1人で利用可。95cm以上は16歳以上の付き添い（有料）で利用可"
+      },
+      {
+        "name": "ふわふわサイクリング",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "小学生以上で120cm以上なら1人で利用可。90〜120cm未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "ハチさんのぶんぶんモノレール",
+        "minAge": 3,
+        "note": "小学生以上で120cm以上なら1人で利用可。3歳〜小学生未満は16歳以上の付き添い（有料）が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://pleasure.hitachikaihin.jp/attractionlist.html",
     "layoutCompact": false,
     "strollerRental": true,
     "events": [
@@ -3602,6 +3925,82 @@
       "asoview": "https://www.asoview.com/base/154969/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000151410/"
     },
+    "rideLimits": [
+      {
+        "name": "撃音 ライブ コースター",
+        "minCm": 130
+      },
+      {
+        "name": "ハーフパイプ トーキョー",
+        "minCm": 130
+      },
+      {
+        "name": "トランスフォーマー・ヒューマンアライアンス スペシャル",
+        "minCm": 130
+      },
+      {
+        "name": "ストーム ジー",
+        "minCm": 140,
+        "maxCm": 199,
+        "note": "身長200cm以上、体重110kg以上は不可"
+      },
+      {
+        "name": "LASER SHOOTING 一閃 -ISSEN-",
+        "minCm": 110
+      },
+      {
+        "name": "ソニック アスレチックス",
+        "minCm": 110
+      },
+      {
+        "name": "妖屋敷 ～大江戸百鬼夜行奇譚～",
+        "minCm": 110
+      },
+      {
+        "name": "ワイルドウイング",
+        "minCm": 110
+      },
+      {
+        "name": "ワイルドジャングル ブラザーズ",
+        "minCm": 110
+      },
+      {
+        "name": "ワイルドリバー ザ・トレジャーハント",
+        "minCm": 110
+      },
+      {
+        "name": "Spicy Taxi",
+        "minCm": 90,
+        "note": "90〜110cm未満は乗り物の動きを止めての運行"
+      },
+      {
+        "name": "ハウス・オブ・ザ・デッド ～スカーレット・ドーン～ THE ATTRACTION",
+        "minCm": 90,
+        "note": "110cm未満は保護者の同伴が必要で、乗り物の動きを止めての運行（銃を操作できないと楽しめない場合あり）。体重160kg以上は不可"
+      },
+      {
+        "name": "きっと来る… 貞子 ～呪い占いの館～",
+        "minCm": 140,
+        "maxCm": 184,
+        "note": "身長185cm以上は不可"
+      },
+      {
+        "name": "MURDER LODGE",
+        "minAge": 7,
+        "note": "7歳以上11歳未満は保護者の同伴が必要"
+      },
+      {
+        "name": "Pirate's Plunder～ブラッディモーガンの宝～",
+        "minAge": 3,
+        "note": "3歳未満は不可"
+      },
+      {
+        "name": "ジョイポリス全体の目安",
+        "note": "身長は靴を履いた状態で入口にて確認。身長110cm未満は16歳以上の保護者の同伴が必要（アトラクション料金は無料）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://tokyo-joypolis.com/attraction/",
     "recommendedBooking": "asoview",
     "desc": "屋内型のアミューズメント施設。VRやライド系アトラクションが多く小学生以上が楽しみやすい。",
     "tip": "未就学児が乗れる乗り物は限られるので年齢確認を。",
@@ -4068,11 +4467,57 @@
         "name": "ワンダードロップ",
         "minCm": 110,
         "minAge": 5,
-        "note": "8歳までは付き添いが必要"
+        "note": "8歳まで、および身長130cm未満は付き添いが必要"
+      },
+      {
+        "name": "バ・バ・バ バイキング",
+        "minCm": 110,
+        "maxAge": 64,
+        "note": "6歳までは付き添いが必要"
+      },
+      {
+        "name": "バックダーン",
+        "minCm": 100,
+        "note": "120cm未満は付き添いが必要"
+      },
+      {
+        "name": "ブンブンビー",
+        "minCm": 105,
+        "maxCm": 190,
+        "note": "120cm未満は付き添いが必要"
+      },
+      {
+        "name": "ガンガンバトラーズ",
+        "minCm": 90,
+        "note": "6歳までは付き添いが必要"
+      },
+      {
+        "name": "パワータワー",
+        "minCm": 90,
+        "note": "6歳までは付き添いが必要"
+      },
+      {
+        "name": "コロッコ",
+        "minCm": 90,
+        "note": "5歳までは付き添いが必要"
+      },
+      {
+        "name": "暗闇婚礼 蠢一族お化け屋敷",
+        "minAge": 6
+      },
+      {
+        "name": "ゴジラAR ゴジラ VS 東京ドーム",
+        "minAge": 7,
+        "note": "Gスコープを装着できる体型であること。12歳までは保護者の同意と同行が必要"
+      },
+      {
+        "name": "XRミッション",
+        "minAge": 7,
+        "note": "デバイスを装着できる体型であること。12歳までは保護者の同意と同行が必要"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
-    "rideLimitsSource": "https://www.tokyo-dome.co.jp/tdcity/attraction/",
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.at-raku.com/rule/",
     "heat": {
       "roof": "partial",
       "note": "屋根付きエリアがあります。",
@@ -6239,10 +6684,45 @@
         "name": "バイキング",
         "minCm": 110,
         "note": "120cm未満は18歳以上の保護者と同乗"
+      },
+      {
+        "name": "ゴジラ・ザ・ライド グレートクラッシュ",
+        "minCm": 100,
+        "minAge": 4,
+        "note": "130cm未満は18歳以上の保護者と同乗（保護者1名につき子ども2名まで）"
+      },
+      {
+        "name": "スプリング・ライド・タワー",
+        "minCm": 100,
+        "note": "110cm未満は18歳以上の保護者と同乗"
+      },
+      {
+        "name": "ジャングル！ドライブ",
+        "minCm": 100,
+        "note": "100cm未満は中学生以上と同乗（公式の表記どおり）"
+      },
+      {
+        "name": "回転空中ブランコ",
+        "minCm": 120
+      },
+      {
+        "name": "オクトパス・アドベンチャー",
+        "minCm": 100,
+        "note": "120cm未満は中学生以上と同乗"
+      },
+      {
+        "name": "アトムの月面旅行",
+        "minAge": 3,
+        "note": "3〜5歳は中学生以上と同乗"
+      },
+      {
+        "name": "わんぱく共和国",
+        "maxAge": 12,
+        "note": "6〜12歳は1人で利用可。0〜5歳は18歳以上の保護者の付き添いが必要。13歳以上は利用不可"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
-    "rideLimitsSource": "https://www.seibu-leisure.co.jp/seibuen/",
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.seibuen-amusement-park.jp/restrictions/index.html",
     "food": {
       "bento": "ng",
       "bentoNote": "公式サイトの団体向けQ&Aで、飲食物の持ち込みはお断りと案内されています。個人向けの案内は今回確認できていないため、お出かけ前に公式サイトで確認してください。",
@@ -6992,9 +7472,25 @@
         "name": "フラッシュダンス",
         "minCm": 110,
         "note": "未就学児は保護者同伴"
+      },
+      {
+        "name": "キャメルコースター悟空",
+        "minCm": 110,
+        "note": "小学生未満は保護者の同伴が必要。雨天時運休"
+      },
+      {
+        "name": "リバーアドベンチャー",
+        "minAge": 3,
+        "note": "3歳未満は利用不可。小学生未満は保護者の同乗が必要"
+      },
+      {
+        "name": "ナスレチック～オブスタクルアクティビティ～",
+        "minCm": 110,
+        "minAge": 6,
+        "note": "小学生以上かつ身長110cm以上。体重100kg以上は利用不可。小学3年生までは保護者の同伴が必要"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsCheckedAt": "2026-10-21",
     "rideLimitsSource": "https://www.nasuhai.co.jp/attraction/",
     "food": {
       "bento": "ok",
@@ -13590,9 +14086,20 @@
         "minCm": 120,
         "maxCm": 190,
         "note": "190cm未満。小学3年生以上、体重30kg以上100kg未満。18歳未満は保護者の同意が必要。別途1デーパスが必要"
+      },
+      {
+        "name": "ヘムレンさんの遊園地",
+        "minAge": 3,
+        "maxAge": 12,
+        "note": "3歳〜小学生が対象。未就学児（3〜6歳）は中学生以上の付き添いが必要。メインツリーハウス内のチューブ滑り台は6歳〜小学生"
+      },
+      {
+        "name": "ムーミン谷のあそびのひろば",
+        "maxAge": 12,
+        "note": "0〜12歳が対象。必ず18歳以上の保護者と一緒に入場。13〜17歳は付き添いとして入場可（保護者1名につき子ども最大3名）"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsCheckedAt": "2026-10-21",
     "rideLimitsSource": "https://metsa-hanno.com/place/301/",
     "food": {
       "bento": "ng",
@@ -15683,6 +16190,63 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/150472/"
     },
+    "rideLimits": [
+      {
+        "name": "ネイブルコースター",
+        "minCm": 110,
+        "minAge": 3,
+        "note": "小学生未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "ロッキング・タグ",
+        "minCm": 90,
+        "note": "110cm未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "ゴーカート",
+        "minCm": 135,
+        "orMinAge": 3,
+        "orLabel": "2人乗車なら3歳以上",
+        "note": "1人乗車は135cm以上。2人乗車は3歳以上で、135cm未満は中学生以上（135cm以上）の保護者の同乗が必要"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minAge": 2,
+        "note": "小学生未満・120cm未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "アストロファイター",
+        "minAge": 2,
+        "note": "小学生未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "くるくるどんぐり",
+        "minAge": 2,
+        "note": "小学生未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "アドベンチャーツアーズ",
+        "minAge": 3,
+        "note": "小学生未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "おもしろ自転車",
+        "minAge": 3,
+        "note": "小学生未満は中学生以上の保護者の同乗が必要"
+      },
+      {
+        "name": "スカイスライダー",
+        "minAge": 3,
+        "note": "1人で滑れる方"
+      },
+      {
+        "name": "スカイはうす",
+        "minAge": 1,
+        "note": "小学生未満は中学生以上の保護者の同伴が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.skyland89.jp/attraction/",
     "verifiedAt": "2026年10月13日",
     "familyPrice": {
       "yen": 0,
@@ -18923,6 +19487,20 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/154624/"
     },
+    "rideLimits": [
+      {
+        "name": "ドラゴンコースター",
+        "minAge": 2,
+        "note": "身長110cm未満は15歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "空中自転車",
+        "minAge": 2,
+        "note": "身長130cm未満は15歳以上の付き添い（有料）が必要。ペダルがこげない場合は同乗"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.omochaoukoku.com/karuizawa/attraction/",
     "recommendedBooking": "asoview",
     "desc": "おもちゃの部屋・アスレチック・アトラクションの3エリアからなる子ども向けテーマパーク。",
     "tip": "【2026年11月24日〜2027年4月中旬はメンテナンスのため休園予定】屋内エリアもあるので雨の日でも楽しめる。小さい子連れに特におすすめ。",
@@ -21198,10 +21776,91 @@
         "minCm": 95,
         "minAge": 3,
         "note": "小学生未満および120cm未満は有料の付き添いが必要"
+      },
+      {
+        "name": "急流すべり「クリフ・ドロップ」",
+        "minCm": 110,
+        "minAge": 3,
+        "maxAge": 64,
+        "note": "小学生未満と120cm未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "スピニングコースター",
+        "minCm": 120,
+        "minAge": 6,
+        "maxAge": 64,
+        "note": "140cm未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "スーパープラネット",
+        "minCm": 120,
+        "minAge": 6,
+        "maxAge": 64
+      },
+      {
+        "name": "ギャラクシー",
+        "minCm": 120,
+        "minAge": 6,
+        "maxAge": 64
+      },
+      {
+        "name": "ディスク・オー",
+        "minCm": 120,
+        "minAge": 6,
+        "maxAge": 64
+      },
+      {
+        "name": "スーパーフレア",
+        "minCm": 120,
+        "minAge": 6,
+        "maxAge": 64
+      },
+      {
+        "name": "グレートムーン",
+        "minCm": 110,
+        "minAge": 3,
+        "maxAge": 64,
+        "note": "小学生未満と120cm未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "VRV 〜VIRTUAL REALITY VEHICLE〜",
+        "minCm": 100,
+        "minAge": 6,
+        "note": "体重100kg以上は利用不可"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minAge": 3,
+        "note": "小学生未満と120cm未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "オーシャン・スインガー",
+        "minAge": 4,
+        "note": "3歳以下は付き添いが必要"
+      },
+      {
+        "name": "ノースポール",
+        "minAge": 2,
+        "note": "小学生未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "Dr.エドガーの呪いのコレクション「恐怖の館」",
+        "minAge": 3,
+        "note": "小学生未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "ビックリ・ふしぎ館「コスモパニック」",
+        "minAge": 3,
+        "note": "小学生未満は16歳以上の付き添い（有料）が必要"
+      },
+      {
+        "name": "アイスワールド",
+        "minAge": 3,
+        "note": "小学生未満は16歳以上の付き添い（有料）が必要"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
-    "rideLimitsSource": "https://cosmoworld.jp/",
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://cosmoworld.jp/usage-restrictions/",
     "familyPrice": {
       "yen": 0,
       "yenMax": null,
@@ -23064,10 +23723,68 @@
         "name": "立体迷路「デテミーヤ」",
         "minAge": 3,
         "note": "付き添いが必要"
+      },
+      {
+        "name": "メガコースター「四次元」",
+        "minCm": 120,
+        "minAge": 7,
+        "maxAge": 64
+      },
+      {
+        "name": "ミニコースター",
+        "minCm": 100,
+        "minAge": 4,
+        "note": "4歳は中学生以上（有料）の同伴が必要"
+      },
+      {
+        "name": "ボンジョールノのくるくるクルーズ",
+        "minCm": 95,
+        "minAge": 3,
+        "note": "身長95〜110cm未満は高校生以上の同伴が必要"
+      },
+      {
+        "name": "キャプテンパレオの海賊船",
+        "minCm": 100
+      },
+      {
+        "name": "空中ブランコ「まわっタワ～」",
+        "minAge": 4
+      },
+      {
+        "name": "バルーンレース",
+        "minAge": 3
+      },
+      {
+        "name": "ゴーカート",
+        "minAge": 3
+      },
+      {
+        "name": "ミニＱレーシング",
+        "minAge": 3
+      },
+      {
+        "name": "ミズボー＆タマボーのレッツ！ブロックカート",
+        "minAge": 2
+      },
+      {
+        "name": "シューティングシアター「ポップコーンパニック」",
+        "minAge": 3
+      },
+      {
+        "name": "トマトーナのもりもりトマトーレ",
+        "minAge": 3
+      },
+      {
+        "name": "マスケラーナの4Ｄシアター",
+        "minAge": 3
+      },
+      {
+        "name": "ティーカップ「どんぐりーの」",
+        "minAge": 3
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
-    "rideLimitsSource": "https://pal2.co.jp/",
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://pal2.co.jp/attraction",
     "familyPrice": {
       "yen": 4400,
       "yenMax": null,
@@ -25899,6 +26616,32 @@
       "asoview": "https://www.asoview.com/base/152539/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000178516/"
     },
+    "rideLimits": [
+      {
+        "name": "FUJI SKY ATTACK",
+        "minCm": 130,
+        "minAge": 10,
+        "maxAge": 65,
+        "note": "体重100kg以下"
+      },
+      {
+        "name": "フジヤマバギー",
+        "minAge": 6,
+        "note": "運転は11歳以上で、運転免許保持者の同乗が必要"
+      },
+      {
+        "name": "忍びの掟",
+        "minAge": 3,
+        "note": "6歳以下は保護者同伴"
+      },
+      {
+        "name": "ココドコ",
+        "minAge": 3,
+        "note": "6歳以下は保護者の付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.grinpa.com/attraction.html",
     "recommendedBooking": "asoview",
     "desc": "富士山2合目、標高1200mの高原にあるアスレチック中心のテーマパーク。水上アスレチック「カッパ大作戦」や、忍者修行アトラクション「忍びの掟」など体を動かす仕掛けが豊富。屋内には1000点以上のおもちゃで遊べるエリアもあり雨の日でも楽しめ、犬同伴も可能。",
     "tip": "標高が高く夏でも涼しいので避暑を兼ねたお出かけに最適。冬季は休園期間があるため訪問前の確認がおすすめ。",
@@ -40766,9 +41509,24 @@
       {
         "name": "シラサギ",
         "minCm": 90
+      },
+      {
+        "name": "ヘリコプター",
+        "minAge": 2,
+        "note": "7歳までは中学生以上の付き添いが必要（8歳から1人で利用可）"
+      },
+      {
+        "name": "カーニバル",
+        "minAge": 2,
+        "note": "4歳までは中学生以上の付き添いが必要（5歳から1人で利用可）"
+      },
+      {
+        "name": "叫びのぴょんぴょん",
+        "minAge": 2,
+        "note": "4歳までは16歳以上の付き添いが必要（5歳から1人で利用可）"
       }
     ],
-    "rideLimitsCheckedAt": "2026-10-12",
+    "rideLimitsCheckedAt": "2026-10-21",
     "rideLimitsSource": "https://www.hanayashiki.net/",
     "familyPrice": {
       "yen": null,
