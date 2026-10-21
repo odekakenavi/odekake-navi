@@ -159,7 +159,8 @@
     ],
     "events": [
       "ハロウィン",
-      "水遊び"
+      "水遊び",
+      "イルミネーション"
     ],
     "eventInfo": {
       "ハロウィン": {
@@ -173,6 +174,11 @@
         "tentative": true,
         "type": "themepark",
         "note": "夏のイベント「爽快夏まつり」。2026年は水しぶきを浴びる人気企画や夏限定の展示、子ども向けワークショップがあった。来年の内容・日程は発表待ち。"
+      },
+      "イルミネーション": {
+        "periodLabel": "通年",
+        "type": "illumination",
+        "note": "屋上の「マリンガーデン」で「マリンガーデンイルミネーション」（約23,500球）を通年で点灯する。日没〜営業終了まで光り、夜間特別営業の18:15〜21:00は特別バージョンになることがある。見るには水族館の入場料が必要（大人2,600円〜、小中学生1,300円、幼児4歳以上800円、4歳未満は無料。時期により変動）。最終入場は終了30分前。イルミネーション情報サイト（ウォーカープラス）の2026-27掲載内容のため、お出かけ前に公式サイトで確認を。"
       }
     },
     "verifiedAt": "2026年10月2日",
@@ -1386,7 +1392,17 @@
     ],
     "image": "img/spots/tokyo-shibuya-yoyogi.jpg",
     "imageCredit": "📷 Shinjiro / CC BY 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mainstreet_Yoyogipark.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mainstreet_Yoyogipark.JPG",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は渋谷公園通りから代々木公園ケヤキ並木で「青の洞窟 SHIBUYA」（約50万球）を2025/12/4〜25の17:00〜22:00に開催した（入場無料、雨天等で変更の場合あり）。今年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "東京",
@@ -1571,13 +1587,21 @@
       "note": "大人450円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
     },
     "events": [
-      "紅葉"
+      "紅葉",
+      "イルミネーション"
     ],
     "eventInfo": {
       "紅葉": {
         "type": "spot",
         "note": "例年の見頃は11月中旬〜11月下旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
         "tentative": true
+      },
+      "イルミネーション": {
+        "start": "2026-10-11",
+        "end": "2026-11-29",
+        "periodLabel": "10/11〜11/29（第1章は10月の土日祝、第2章は11/14〜29予定）",
+        "type": "illumination",
+        "note": "約55万球のライトアップ＆イルミネーション「光と森のStory」。第1章「森のハロウィンナイト」は10/11〜10/31の土日祝（17:00〜20:30、最終入園20:00、17:00以降の入園は中央口ゲートのみ）、第2章「紅葉見ナイト」は11/14〜11/29の予定。最終章「スターライトイルミネーション」は昨季12/13・14・20〜25の16:00〜20:30に開催しており、今年の日程は発表待ち。入園料は大人450円、65歳以上210円、中学生以下は無料。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
       }
     },
     "businessHours": {
@@ -1965,13 +1989,19 @@
     "tip": "島まで距離があるため、小さい子はベビーカー必須。",
     "strollerRental": true,
     "events": [
-      "夏祭り・花火"
+      "夏祭り・花火",
+      "イルミネーション"
     ],
     "eventInfo": {
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
         "note": "花火イベント「花火シンフォニア」がある（屋外開催で、雨天時は変更の場合あり）。内容の詳細は公式サイトで確認を。来年の日程は発表待ち。"
+      },
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は、イルカと映像・光・音・噴水が合わせて動く約20分の夜のショー「LIGHTIA〜七色のキセキ〜」（アクアミュージアム4Fライブスタジアム、2025/11/15〜2026/3/1の17:30ごろから）と、高さ8mのクリスタルツリー（約52,000個のアクリルビーズ、16:00〜閉島）を実施した。今年の内容・日程は発表待ち。"
       }
     },
     "verifiedAt": "2026年10月12日",
@@ -3885,7 +3915,17 @@
     "image": "img/spots/tokyo-minato-aqua-park.jpg",
     "imageCredit": "📷 Dick Thomas Johnson from Tokyo, Japan / CC BY 2.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Avatar_The_Way_of_Water_Tokyo_Press_Conference_(52562513647).jpg",
-    "genre": "水族館"
+    "genre": "水族館",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は、星空の海をテーマにした光の演出「STAR AQUARIUM by NAKED」（2025/11/15〜12/25、10:00〜20:00、最終入場19:00）を開催した。今年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "東京",
@@ -3993,10 +4033,6 @@
         "name": "Pirate's Plunder～ブラッディモーガンの宝～",
         "minAge": 3,
         "note": "3歳未満は不可"
-      },
-      {
-        "name": "ジョイポリス全体の目安",
-        "note": "身長は靴を履いた状態で入口にて確認。身長110cm未満は16歳以上の保護者の同伴が必要（アトラクション料金は無料）"
       }
     ],
     "rideLimitsCheckedAt": "2026-10-21",
@@ -4024,7 +4060,17 @@
     "image": "img/spots/tokyo-minato-tokyo-joypolis.jpg",
     "imageCredit": "📷 Syced / パブリックドメイン / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Joypolis,_Decks.jpg",
-    "genre": "遊園地・テーマパーク"
+    "genre": "遊園地・テーマパーク",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は「デジタリアルイルミネーション2025」（2025/11/22〜2026/2/8、10:00〜20:00）として、大きなイルミネーションツリーが登場した。今年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "東京",
@@ -6648,7 +6694,8 @@
     "events": [
       "水遊び",
       "夏祭り・花火",
-      "ハロウィン"
+      "ハロウィン",
+      "イルミネーション"
     ],
     "eventInfo": {
       "水遊び": {
@@ -6666,6 +6713,11 @@
         "periodLabel": "10/3〜10/31",
         "type": "event",
         "note": "「西武園ゆうえんち ハイカラ・ハロウィン」。昭和レトロな夕日の丘商店街が緑や紫のハロウィン仕様になり、特大のジャック・オ・ランタンのオブジェが出迎える。参加型の「ハイカラ・ハロウィンパレード」は15:00〜15:20（10/23〜25は15:30〜15:50）。ハロウィン限定フードも登場。"
+      },
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は「ノスタルジック・クリスマス」（2025/11/21〜12/25）を開催し、夕日丘一丁目広場のイルミネーションスポットは2026/3/15まで点灯した（追加料金なしで入園券に含まれる）。今年の内容・日程は発表待ち。"
       }
     },
     "verifiedAt": "2026年10月12日",
@@ -7407,12 +7459,20 @@
       }
     ],
     "events": [
-      "GW"
+      "GW",
+      "クリスマス"
     ],
     "eventInfo": {
       "GW": {
         "tentative": true,
         "type": "play"
+      },
+      "クリスマス": {
+        "start": "2026-12-06",
+        "end": "2026-12-06",
+        "periodLabel": "12/6（日）",
+        "type": "event",
+        "note": "ビーグルの飼い主向けのオフ会「BEAGLE FRIEND クリスマスパーティー」（園の公式Xで告知）。ビーグル（ミックス・同居犬も可）が集まる1日限りの愛犬イベントで、一般向けのクリスマス催しではない。昨年は「クリスマスオフ会」として、フォレストプラザドッグランで10:30〜15:30に開催し、アトラクションは乗り放題パス等が別途必要だった。2026年の詳しい内容・料金は未確認。"
       }
     },
     "rideLimits": [
@@ -7636,6 +7696,41 @@
       "jalan": "https://www.jalan.net/kankou/spt_09201cc3540060071/",
       "asoview": "https://www.asoview.com/base/160664/"
     },
+    "rideLimits": [
+      {
+        "name": "ジェットコースター",
+        "minAge": 4,
+        "note": "小学3年生から1人で乗れる。付き添いは大人"
+      },
+      {
+        "name": "スカイシップ",
+        "minAge": 4,
+        "note": "小学1年生から1人で乗れる。付き添いは大人"
+      },
+      {
+        "name": "ナイアガラクルーザー",
+        "minCm": 95,
+        "minAge": 3,
+        "note": "小学1年生以上かつ身長110cm以上で1人で乗れる。付き添いは大人"
+      },
+      {
+        "name": "キッズウイング",
+        "minAge": 3,
+        "note": "小学1年生から1人で乗れる。付き添いは中学生以上"
+      },
+      {
+        "name": "パラトルーパー",
+        "minAge": 3,
+        "note": "小学1年生から1人で乗れる。付き添いは中学生以上"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minAge": 3,
+        "note": "小学3年生以上かつ身長130cm以上で1人で乗れる。付き添いは中学生以上"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.park-tochigi.com/tochinoki/information",
     "verifiedAt": "2026年10月13日",
     "familyPrice": {
       "yen": 0,
@@ -7758,6 +7853,18 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_10203cc3310040223/"
     },
+    "rideLimits": [
+      {
+        "name": "アドベンチャーシップ",
+        "minCm": 100
+      },
+      {
+        "name": "サイクルモノレール",
+        "minAge": 2
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.kiryu-kanrikyoukai.jp/amusementpark/information.html",
     "verifiedAt": "2026年10月2日",
     "familyPrice": {
       "yen": 0,
@@ -7840,7 +7947,26 @@
     },
     "image": "img/spots/gunma-maebashi-lunapark.jpg",
     "imageCredit": "📷 あばさー / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lunar_Park_(Maebashi).JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lunar_Park_(Maebashi).JPG",
+    "rideLimits": [
+      {
+        "name": "くるくるサーキット",
+        "minAge": 2,
+        "note": "4歳以上かつ身長110cm以上は1人で乗れる。それ以外は18歳以上の付き添い（無料）が必要"
+      },
+      {
+        "name": "ウェーブスターライド",
+        "minAge": 2,
+        "note": "4歳以上かつ身長110cm以上は1人で乗れる。それ以外は18歳以上の付き添い（無料）が必要"
+      },
+      {
+        "name": "立体迷路 とことこ迷城",
+        "minAge": 3,
+        "note": "小学生以上は1人で利用可。3歳〜小学生未満は18歳以上の付き添い（有料）が必要（付き添い1名につき子ども2名まで）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://lunapark.maebashi-park.com/rides/"
   },
   {
     "region": "神奈川",
@@ -8538,12 +8664,18 @@
     "desc": "チューリップの名所。中華街や関内エリアと組み合わせやすい。広場が開けていて、ボール遊びや追いかけっこもしやすい。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
     "events": [
-      "GW"
+      "GW",
+      "イルミネーション"
     ],
     "eventInfo": {
       "GW": {
         "tentative": true,
         "type": "flower"
+      },
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季はクリスマスイベント「BALLPARK Xmas YOKOHAMA KANNAI 2025」を2025/11/21〜12/25に開催した（入場無料、時期により11:00〜22:00ごろ）。2026年は11/20〜12/25の掲載があるが、公式サイトでは未確認。"
       }
     },
     "heat": {
@@ -11463,7 +11595,17 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は「もばら冬の七夕 イルミネーション」を2026/2/7〜3/4の17:00〜21:00に開催した（入場無料）。2/7は「もばら冬の七夕まつり」（12:00〜19:00）。来年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "千葉",
@@ -16049,7 +16191,19 @@
     },
     "image": "img/spots/gunma-fujioka-laran-fujioka.jpg",
     "imageCredit": "📷 Filler / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Michinoeki_fujioka.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Michinoeki_fujioka.jpg",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "start": "2026-10-24",
+        "end": "2027-01-31",
+        "periodLabel": "10/24〜2027/1/31",
+        "type": "illumination",
+        "note": "「ららん藤岡イルミネーション2026」。約20万球が、冬の夜の道の駅を幻想的に彩る。ライトアップは17:00〜22:00で、入場無料。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
+      }
+    }
   },
   {
     "region": "群馬",
@@ -18006,7 +18160,9 @@
       }
     ],
     "events": [
-      "ハロウィン"
+      "ハロウィン",
+      "イルミネーション",
+      "クリスマス"
     ],
     "eventInfo": {
       "ハロウィン": {
@@ -18015,6 +18171,20 @@
         "end": "2026-10-31",
         "periodLabel": "10/1〜10/31",
         "note": "「DISCOVER AUTUMN at TOKYO SKYTREE」。ハロウィン限定フォトサービス、ソラカラちゃんのグリーティング、ステッカー、記念スタンプがあり、10/29・10/31は特別ライティングも。詳細は公式サイトで確認を。"
+      },
+      "イルミネーション": {
+        "start": "2026-11-05",
+        "end": "2026-12-25",
+        "periodLabel": "11/5〜12/25（一部は2027/2/28まで）",
+        "type": "illumination",
+        "note": "「東京スカイツリータウン ドリームクリスマス2026」。「星に願いを」がコンセプトで、ゴールドを基調にした約40万球の光がタウン全体を彩る（16:00〜23:00、一部は2027/2/28まで点灯予定）。タワーのクリスマス特別ライティングは17:30〜22:00で、11/7・11/12・12/1・12/5・12/6・12/9・12/12・12/19は実施なし。12/24・25は24:00まで。点灯内容や時間は変更になる場合がある（東京スカイツリータウン発表、10/14）。"
+      },
+      "クリスマス": {
+        "start": "2026-11-05",
+        "end": "2026-12-25",
+        "periodLabel": "11/5〜12/25",
+        "type": "event",
+        "note": "「ドリームクリスマス2026」。4階スカイアリーナで「絵本の中のクリスマスマーケット」（11:00〜22:00、L.O.21:00）を開催し、日本最大級の巨大シュトーレンが登場する。展望台では、クリスマス限定の映像上映「SKYTREE ROUND THEATER」、ソラカラちゃんのグリーティング、フォトサービスなどを実施（天望デッキの入場券が必要）。"
       }
     },
     "familyPrice": {
@@ -18917,6 +19087,47 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/161916/"
     },
+    "rideLimits": [
+      {
+        "name": "ドリームコースター",
+        "minCm": 110,
+        "note": "小学生未満は付き添いが必要"
+      },
+      {
+        "name": "スカイトレイン",
+        "minCm": 110,
+        "note": "身長110cm以上の小学生から運転可。小学生未満は付き添いが必要"
+      },
+      {
+        "name": "ファイヤーバード",
+        "minCm": 100,
+        "note": "小学生未満は付き添いが必要"
+      },
+      {
+        "name": "ゴーカート",
+        "minCm": 135,
+        "minAge": 2,
+        "note": "身長135cm以上で運転可。2歳以上小学生未満は付き添いが必要。0〜1歳は利用不可"
+      },
+      {
+        "name": "スカイサイクル",
+        "minAge": 4,
+        "note": "4歳以上7歳未満は付き添いが必要。0〜3歳は利用不可"
+      },
+      {
+        "name": "チャイルドプレーン",
+        "minCm": 110,
+        "minAge": 3,
+        "note": "満5歳未満は付き添いが必要。0〜2歳は利用不可"
+      },
+      {
+        "name": "パールスレー",
+        "minAge": 3,
+        "note": "満5歳未満は付き添いが必要。0〜2歳は利用不可"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://kaminepark.or.jp/facility-03.html",
     "recommendedBooking": "asoview",
     "desc": "かみね動物園に隣接する小さな遊園地。観覧車やゴーカートなど昭和レトロなアトラクションが並ぶ。",
     "tip": "かみね動物園とセットで1日楽しめる。",
@@ -19024,6 +19235,83 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/155452/"
     },
+    "rideLimits": [
+      {
+        "name": "空のアスレチック広場 KONOMI",
+        "minAge": 3,
+        "note": "小学生未満は保護者の同伴が必要"
+      },
+      {
+        "name": "森感覚アスレチック DOKIDOKI",
+        "minAge": 6,
+        "note": "小学1年生から"
+      },
+      {
+        "name": "迷宮森殿 ITADAKI",
+        "minAge": 3,
+        "note": "小学生未満は保護者の同伴が必要"
+      },
+      {
+        "name": "巨大ネットの森 SUMIKA",
+        "minAge": 3,
+        "note": "小学生未満は保護者の同伴が必要"
+      },
+      {
+        "name": "オフロードアドベンチャー DEKOBOKO",
+        "minAge": 2,
+        "note": "2歳〜小学2年生は子ども1名につき中学生以上1名の同伴が必要。小学3年生以上は1人で運転可"
+      },
+      {
+        "name": "ワイルドレーサー",
+        "minAge": 3,
+        "note": "小学1年生未満は保護者の同伴が必要"
+      },
+      {
+        "name": "ぶんぶんスクーター",
+        "minAge": 3
+      },
+      {
+        "name": "チャレンジカート",
+        "minCm": 140,
+        "minAge": 9,
+        "note": "小学4年生以上かつ身長140cm以上"
+      },
+      {
+        "name": "レーシングカート",
+        "minCm": 140,
+        "minAge": 9,
+        "note": "小学4年生以上かつ身長140cm以上。普通運転免許保持者、またはチャレンジカートのクリアカード取得者"
+      },
+      {
+        "name": "モトレーサー",
+        "minAge": 8,
+        "note": "1人で乗れるのは補助輪なしで自転車に乗れる小学3年生以上。キッズバイクフィールドまたはRINDO BIKEのライセンス取得済みなら小学1年生以上"
+      },
+      {
+        "name": "オフロードツーリング RINDO BIKE",
+        "minAge": 6,
+        "note": "小学1年生以上で補助輪なしの自転車に乗れる方。小学1年生はキッズバイクフィールドのライセンスカード取得が必要"
+      },
+      {
+        "name": "キッズバイクフィールド",
+        "minAge": 3,
+        "maxAge": 12,
+        "note": "補助輪なしで自転車に乗れる3歳〜小学生"
+      },
+      {
+        "name": "メガジップライン つばさ",
+        "minAge": 6,
+        "note": "小学1年生以上、体重30〜90kg"
+      },
+      {
+        "name": "森のジップライン ムササビ",
+        "minCm": 135,
+        "minAge": 9,
+        "note": "小学4年生以上、身長135cm以上、体重100kg以下"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.mr-motegi.jp/park/guide/",
     "recommendedBooking": "asoview",
     "desc": "森の中でアスレチックやジップライン、キッズ向けの乗り物が楽しめる自然体験型レジャー施設。",
     "tip": "グランピングやBBQもできるので1日がかりのお出かけに向く。",
@@ -20986,7 +21274,19 @@
       "checkedAt": "2026年10月13日"
     },
     "verifiedAt": "2026年10月14日",
-    "genre": "花の名所"
+    "genre": "花の名所",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "start": "2026-10-10",
+        "end": "2026-11-23",
+        "periodLabel": "10/10〜11/23（火曜休園）",
+        "type": "illumination",
+        "note": "「Night Bloom 2026」。10万輪の花と光に包まれる秋の夜のガーデンで、ライトアップは17:00〜20:30（最終入場20:00）。大人1,200円、小中学生400円、未就学児は無料（ペット200円）。火曜休園（祝日の場合は開園して翌日休園）で、11/3は臨時開園、11/4は臨時休園。冬は体験型の「HARMONY OF LIGHT」を昨季2025/12/5〜2026/3/1（大人1,500円・子ども500円）に開催しており、今季の冬の日程は発表待ち。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
+      }
+    }
   },
   {
     "region": "東京",
@@ -21396,7 +21696,17 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/kanagawa-fujisawa-enoshima-seacandle.jpg",
     "imageCredit": "📷 photo: Qurren (トーク) Taken with Canon IXY 430F (Digital IXUS 245 HS) / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Enoshima_Sea_Candle_2.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Enoshima_Sea_Candle_2.jpg",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は「湘南の宝石〜江の島を彩る光と色の祭典〜」（2025/11/22〜2026/2/28）を開催し、江の島サムエル・コッキング苑とシーキャンドルを光で彩った。点灯は平日17:00〜20:00、土日祝と12/20〜30は17:00〜21:00（昨季）。入苑料は大人500円・小学生250円、シーキャンドルの昇塔料は大人800円・小学生400円（昨季）。今年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "千葉",
@@ -21611,7 +21921,17 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/tokyo-arakawa-yuuen.jpg",
     "imageCredit": "📷 jmho / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Arakawa_yuen_wheel.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Arakawa_yuen_wheel.jpg",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "periodLabel": "通年（夜間開園日のみ）",
+        "type": "illumination",
+        "note": "「光と遊ぶキラキラサーカス」。季節ごとの装飾が楽しめるイルミネーションで、夜間開園日（金・土・日・祝日・祝前日など。詳細は公式サイトで確認）に日没〜20:00まで点灯する。夜間開園日の営業は9:00〜20:00。16:00以降に入園できる「アフター4チケット」は入園料が大人500円・65歳以上200円・中学生200円・小学生100円（未就学児は3歳以上無料）。フリーパス（入園＋のりもの乗り放題）は大人1,000円・小学生300円・未就学児（3歳以上）200円（2歳以下は無料）。イルミネーション情報サイト（ウォーカープラス）の2026-27掲載内容のため、お出かけ前に公式サイトで確認を。"
+      }
+    }
   },
   {
     "region": "東京",
@@ -21886,7 +22206,19 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/kanagawa-yokohama-naka-cosmoworld.jpg",
     "imageCredit": "📷 Akonnchiroll / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Yokohama_Cosmoworld_2022.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Yokohama_Cosmoworld_2022.jpg",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "start": "2026-12-19",
+        "end": "2026-12-25",
+        "periodLabel": "通年（クリスマス特別 12/19〜12/25）",
+        "type": "illumination",
+        "note": "大観覧車「コスモクロック21」を彩る「大観覧車 光のアート」を通年で実施し、12/19〜25はクリスマスイルミネーションになる。点灯は日没〜24:00ごろ。遊園地は入園無料で、コスモクロック21は1人1,000円。イルミネーション情報サイト（ウォーカープラス）の2026-27掲載内容のため、お出かけ前に公式サイトで確認を。"
+      }
+    }
   },
   {
     "region": "神奈川",
@@ -22008,7 +22340,19 @@
     "image": "img/spots/ibaraki-ishioka-flowerpark.jpg",
     "imageCredit": "📷 Strangesnow / CC BY-SA 4.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ibaraki,_Ishioka,_Ibaraki_Flower_Park_Entrance.jpg",
-    "genre": "花の名所"
+    "genre": "花の名所",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "start": "2026-10-10",
+        "end": "2027-01-24",
+        "periodLabel": "10/10〜2027/1/24（休園日あり）",
+        "type": "illumination",
+        "note": "「Moonlight Rose Garden（ムーンライトローズガーデン）2026 〜月夜にひらく、まほうのとびら〜」。約25万球のイルミネーションで、10/10〜11/23は「フラワーイルミネイト」（9:00〜20:30）、11/28〜1/24は「ウィンターイルミネイト」（12:00〜20:30、最終入園20:00）。料金は、フラワーイルミネイト期が大人1,500円・小中学生500円、ウィンターイルミネイト期が大人1,200円・小中学生400円（未就学児は無料、ペット200円）。休園日は毎週火曜、11/4、11/25〜27、12/30〜1/1（11/3と12/29は営業）。イルミネーション情報サイト（ウォーカープラス）の2026-27掲載内容のため、お出かけ前に公式サイトで確認を。"
+      }
+    }
   },
   {
     "region": "栃木",
@@ -23974,7 +24318,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "秋の紅葉シーズンは、茅葺き集落とあわせて特に美しい。今年の見頃は発表待ち。",
+        "note": "秋の紅葉シーズンは、茅葺き集落とあわせて特に美しい。例年の見頃は11月。今年の見頃は発表待ち。",
         "tentative": true
       }
     },
@@ -24199,6 +24543,70 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/152181/"
     },
+    "rideLimits": [
+      {
+        "name": "スカイサイクル",
+        "minCm": 100,
+        "note": "幼児は保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "エアバルーン",
+        "minCm": 90,
+        "note": "身長130cm未満は保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "ファミリースイング",
+        "minCm": 110,
+        "minAge": 4
+      },
+      {
+        "name": "キッズコースター",
+        "minAge": 3,
+        "note": "身長110cm以下は保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "ディノエイジカート（ゴーカート）",
+        "minCm": 135,
+        "note": "運転者は身長135cm以上。幼児は保護者の同伴が必要"
+      },
+      {
+        "name": "ワーキングカーズ",
+        "maxCm": 138,
+        "minAge": 3,
+        "note": "3歳未満、身長139cm以上は利用不可"
+      },
+      {
+        "name": "ミニパイレーツ",
+        "minAge": 3,
+        "note": "身長110cm未満は保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "フロッグホッパー",
+        "minAge": 3
+      },
+      {
+        "name": "トップスインガー",
+        "minAge": 3,
+        "note": "幼児は保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "4D-KING",
+        "minAge": 3,
+        "note": "幼児は保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "ウォーターショット",
+        "minAge": 3,
+        "note": "3歳未満は無料で保護者の同伴（有料）が必要"
+      },
+      {
+        "name": "おもしろ自転車",
+        "minAge": 3,
+        "note": "幼児は保護者の同伴（有料）が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.granpal.com/attraction/vehicle/",
     "recommendedBooking": "asoview",
     "overnightRecommended": true,
     "hotelArea": "izu",
@@ -26809,7 +27217,17 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/shizuoka-gotemba-gotemba.jpg",
     "imageCredit": "📷 myself / CC BY-SA 3.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Gotemba_premium_outlets1.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Gotemba_premium_outlets1.jpg",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は「ウィンターイルミネーション」を2025/11/7〜2026/2/23に開催し、スクウェア・エニックス「ドラゴンクエスト」の装飾に合わせたクリスマスツリー（12/25まで）やモンスターのオブジェが登場した。点灯は日没〜営業終了。今年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "静岡",
@@ -26965,6 +27383,20 @@
       "jalan": "https://www.jalan.net/kankou/spt_19426ah3330044518/",
       "asoview": "https://www.asoview.com/base/150148/"
     },
+    "rideLimits": [
+      {
+        "name": "ロールグライダー～ポッポルのスカイウォーク～",
+        "minCm": 130,
+        "note": "体重30〜100kg。公式の運行情報では休止中の表示あり"
+      },
+      {
+        "name": "ふじのすけバギーランド",
+        "minAge": 4,
+        "note": "4歳〜中学生未満は保護者の同伴が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://www.subaruland.jp/attraction_info/",
     "familyPrice": {
       "yen": 4600,
       "yenMax": null,
@@ -29990,7 +30422,17 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "events": [
+      "イルミネーション"
+    ],
+    "eventInfo": {
+      "イルミネーション": {
+        "tentative": true,
+        "type": "illumination",
+        "note": "昨季は「第14回 光がつくる“Art”水郷桜イルミネーション」を2025/11/22〜2026/1/12の17:00〜21:00に開催した。高さ25mのオランダ型風車を中心に約19.5万球が輝き、入場無料。今年の内容・日程は発表待ち。"
+      }
+    }
   },
   {
     "region": "茨城",
@@ -40497,6 +40939,51 @@
     "bookingLinks": {
       "jalan": "https://www.jalan.net/kankou/spt_guide000000185244/"
     },
+    "rideLimits": [
+      {
+        "name": "ジェットコースター（コズミック・エキスプレス）",
+        "minCm": 120,
+        "note": "未就学児は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "急流すべり（スペースストリーム）",
+        "minCm": 120,
+        "note": "未就学児は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "スーパースインガーＮＥＯ",
+        "minAge": 6,
+        "note": "小学生以上"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minCm": 120,
+        "minAge": 2,
+        "note": "同乗者の身長が120cm以上の場合に利用可。未就学児は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "スーパーシューティングライド（モンスターＸヒーローズ３Ｄ）",
+        "minAge": 2,
+        "note": "未就学児は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "不思議な城",
+        "minAge": 2,
+        "note": "未就学児は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "マジカルグライダー",
+        "minAge": 3,
+        "note": "未就学児は16歳以上の付き添いが必要"
+      },
+      {
+        "name": "スカイファイター",
+        "minAge": 3,
+        "note": "未就学児は16歳以上の付き添いが必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://kezoujiyuenchi.com/attraction/",
     "familyPrice": {
       "yen": 0,
       "yenMax": null,
@@ -43705,6 +44192,16 @@
     "bookingLinks": {
       "asoview": "https://www.asoview.com/item/ticket/ticket0000030068/"
     },
+    "rideLimits": [
+      {
+        "name": "ライセンスカート",
+        "minAge": 9,
+        "maxAge": 18,
+        "note": "小学4年生から高校3年生まで"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-21",
+    "rideLimitsSource": "https://kidsdom.jp/access",
     "food": {
       "bento": "ok",
       "bentoNote": "アルコール以外の、お弁当や飲み物は持ち込めます。レストラン内への持ち込みはご遠慮ください。バーベキュー広場は、食材持ち込みの事前予約制です。",
