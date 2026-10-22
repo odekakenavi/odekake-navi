@@ -4630,7 +4630,7 @@
     "area": "あきる野市",
     "lat": 35.714405,
     "lng": 139.262833,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -11932,7 +11932,7 @@
     "image": "img/spots/ibaraki-oarai-oarai-sun-beach.jpg",
     "imageCredit": "📷 ブルーノ・プラス / CC BY 4.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ooarai_port.jpg",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "茨城",
@@ -17141,7 +17141,8 @@
     },
     "image": "img/spots/saitama-koshigaya-shirakobato-suijo-park.jpg",
     "imageCredit": "📷 星組背番号10 / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Shirakobato_Aquatic_Park.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Shirakobato_Aquatic_Park.JPG",
+    "genre": "プール・海"
   },
   {
     "region": "埼玉",
@@ -19123,7 +19124,7 @@
       "note": "大人1,900円×2＋小学生400円×2＋幼児200円×1（幼児料金あり）"
     },
     "verifiedAt": "2026年10月14日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "茨城",
@@ -20929,7 +20930,7 @@
       "※7/20〜8/31は9:30開始・月曜も営業。"
     ],
     "verifiedAt": "2026年10月13日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "埼玉",
@@ -20988,7 +20989,7 @@
       "年末年始"
     ],
     "verifiedAt": "2026年10月13日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "千葉",
@@ -21050,7 +21051,7 @@
       "年末年始（12/30〜1/1）"
     ],
     "verifiedAt": "2026年10月13日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "茨城",
@@ -21095,7 +21096,7 @@
     },
     "officialUrlStatus": "候補・公式性未確認",
     "verifiedAt": "2026年10月14日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "栃木",
@@ -21140,7 +21141,7 @@
     },
     "officialUrlStatus": "他ツールの検索結果・未確認（自治体の案内ページ）",
     "verifiedAt": "2026年10月14日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "群馬",
@@ -21192,7 +21193,7 @@
       "officialUrl": "https://www.city.kiryu.lg.jp/shisetsu/sports/caribbean/index.html"
     },
     "officialUrlStatus": "他ツールの検索結果・未確認（自治体ページ）",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "栃木",
@@ -26816,7 +26817,7 @@
     "image": "img/spots/shizuoka-atami-ataminews.jpg",
     "imageCredit": "📷 CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%86%B1%E6%B5%B701.JPG",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "静岡",
@@ -27028,7 +27029,7 @@
       "木曜日（8月は無休）"
     ],
     "verifiedAt": "2026年10月13日",
-    "genre": "プール・水遊び"
+    "genre": "プール・海"
   },
   {
     "region": "神奈川",
@@ -31501,7 +31502,7 @@
     "address": "千葉県木更津市北浜町1",
     "lat": 35.420733,
     "lng": 139.897638,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -31550,7 +31551,7 @@
     "area": "南埼玉郡宮代町須賀",
     "lat": 36.025559,
     "lng": 139.704191,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -32477,7 +32478,7 @@
     "area": "横浜市港北区小机町",
     "lat": 35.5197,
     "lng": 139.6109,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -32534,7 +32535,7 @@
     "area": "中郡大磯町国府本郷",
     "lat": 35.301812,
     "lng": 139.283438,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -33550,7 +33551,7 @@
     "area": "富津市富津",
     "lat": 35.313662,
     "lng": 139.803453,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "2-3歳",
       "4-6歳",
@@ -33625,7 +33626,7 @@
     "area": "横浜市金沢区幸浦",
     "lat": 35.362187,
     "lng": 139.650688,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -40710,7 +40711,7 @@
     "address": "神奈川県茅ヶ崎市中海岸4丁目",
     "lat": 35.316941,
     "lng": 139.399218,
-    "genre": "公園",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -41260,7 +41261,7 @@
     "area": "朝霞市溝沼",
     "lat": 35.813,
     "lng": 139.5745,
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -47423,7 +47424,7 @@
     "officialUrl": "https://ohama-pool.jp/",
     "desc": "夏に営業するプールのある静岡市の公園。プールは有料で、2026年の営業は7/4〜9/13でした。",
     "tip": "プールは夏季のみの営業。次は来夏なので、時期を確認してから。",
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "address": "静岡県静岡市駿河区西島1380",
     "needsReview": [
       "座標は一般情報ベースの暫定値。2027年の営業期間は発表後に要確認"
@@ -55942,7 +55943,7 @@
     "lat": 35.2918123,
     "lng": 139.5727322,
     "address": "神奈川県逗子市新宿1-2210-6",
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
@@ -55995,7 +55996,7 @@
     "lat": null,
     "lng": null,
     "address": "神奈川県三浦郡葉山町堀内",
-    "genre": "プール・水遊び",
+    "genre": "プール・海",
     "ages": [
       "0-1歳",
       "2-3歳",
