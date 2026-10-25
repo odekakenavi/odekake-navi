@@ -58594,67 +58594,6 @@
   },
   {
     "region": "群馬",
-    "name": "金井農園",
-    "slug": "gunma/nakanojo/kanai-nouen",
-    "area": "吾妻郡中之条町折田",
-    "lat": 36.600563,
-    "lng": 138.802313,
-    "address": "群馬県吾妻郡中之条町折田1192",
-    "genre": "果物狩り・収穫体験",
-    "ages": [
-      "0-1歳",
-      "2-3歳",
-      "4-6歳",
-      "低学年",
-      "高学年"
-    ],
-    "weather": [
-      "晴れ"
-    ],
-    "duration": [
-      "半日"
-    ],
-    "seasons": [
-      "秋"
-    ],
-    "price": "りんご持ち帰り1kg 600円（掲載プラン情報）",
-    "parking": "unknown",
-    "access": "要確認",
-    "baby": "授乳室・おむつ替えは公式情報なし（未確認）",
-    "lunch": "要確認",
-    "officialUrl": null,
-    "bookingLinks": {
-      "jalan": "https://www.jalan.net/kankou/spt_guide000000183170/activity/l0000665B6/"
-    },
-    "bookingNote": "じゃらん遊び・体験で予約可（体験プランのページに直接リンク）。",
-    "businessHoursNote": "2026年11月9日まで（掲載プラン情報）",
-    "closedDays": null,
-    "verifiedAt": "2026年10月25日",
-    "stayTime": {
-      "minMinutes": 45,
-      "maxMinutes": 45
-    },
-    "desc": "中之条町の農園で楽しむりんご狩り。0歳から参加できる。収穫したりんごは1kg 600円で持ち帰る。",
-    "tip": "りんご狩りは11月上旬まで。園内で食べる分と持ち帰り分の料金を、予約前に確認しておくと安心。",
-    "needsReview": [
-      "座標はGoogleマップのPlus Code（ユーザー確認）から換算した値",
-      "入園料・食べ放題の有無は未確認",
-      "駐車場は未確認"
-    ],
-    "familyPrice": {
-      "yen": null,
-      "yenMax": null,
-      "optionalYen": null,
-      "type": "official",
-      "approx": false,
-      "assumption": "大人2・小学生2・幼児1の5人",
-      "note": "料金の目安は出せません。公式サイトが不明のため、予約サイト（じゃらん）で料金をご確認ください",
-      "confirmVia": "booking",
-      "confirmUrl": "https://www.jalan.net/kankou/spt_guide000000183170/activity/l0000665B6/"
-    }
-  },
-  {
-    "region": "群馬",
     "name": "染谷りんご園",
     "slug": "gunma/numata/someya-ringoen",
     "area": "沼田市久屋原町",
