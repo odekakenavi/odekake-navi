@@ -69,7 +69,7 @@ function loadAppLegacy(indexPath) {
   let code = lines.slice(sp, end + 1).join('\n');
   code += '\n' + extractDecl(lines, 'GENRES');
   code += '\n' + extractDecl(lines, 'deriveCategory');
-  code += '\nthis.__app = { SPOTS, SLUG_OVERRIDES, PREF_SLUG, DESIGNATED_CITIES, GENRES, spotSlug, baseMunicipality, deriveCategory, cityRomajiSlug: (typeof cityRomajiSlug === "function" ? cityRomajiSlug : null) };';
+  code += '\nthis.__app = { SPOTS, SLUG_OVERRIDES, PREF_SLUG, DESIGNATED_CITIES, GENRES, spotSlug, baseMunicipality, deriveCategory };';
   const sandbox = {};
   vm.createContext(sandbox);
   if (external) {
@@ -107,7 +107,7 @@ function loadApp(indexPath) {
   // 施設データの読み込み直後に、index.html 側で deriveRainLevel などを包み直す行があるため、この環境では空の関数を先に用意しておく
   let code = 'var deriveRainLevel = function(){}, deriveWalletLevel = function(){}, deriveActivityLevel = function(){};\n';
   code += region + '\n' + gm[0] + '\n' + dm[0];
-  code += '\nthis.__app = { SPOTS, SLUG_OVERRIDES, PREF_SLUG, DESIGNATED_CITIES, GENRES, spotSlug, baseMunicipality, deriveCategory, cityRomajiSlug: (typeof cityRomajiSlug === "function" ? cityRomajiSlug : null) };';
+  code += '\nthis.__app = { SPOTS, SLUG_OVERRIDES, PREF_SLUG, DESIGNATED_CITIES, GENRES, spotSlug, baseMunicipality, deriveCategory };';
   const sandbox = {};
   vm.createContext(sandbox);
   if (external) {
@@ -313,12 +313,7 @@ function prepare(app) {
     const pinned = Object.prototype.hasOwnProperty.call(app.SLUG_OVERRIDES, spot.name);
     if (!pinned && !INCLUDE_UNPINNED) return;
     const slug = app.spotSlug(spot);
-    const [prefSlug, urlCitySlug] = slug.split('/');
-    // 政令市で施設URLが「市だけ」（例: saitama-city）でも、areaに区があれば区のページにまとめる（施設URLはそのまま）
-    let citySlug = urlCitySlug;
-    const muni = app.baseMunicipality(spot.area);
-    const dc = (app.DESIGNATED_CITIES || []).find(d => muni.indexOf(d) === 0);
-    if (dc && muni !== dc && app.cityRomajiSlug) citySlug = app.cityRomajiSlug(spot.region, spot.area) || urlCitySlug;
+    const [prefSlug, citySlug] = slug.split('/');
     rows.push({
       spot, slug, prefSlug, citySlug,
       prefFull: PREF_FULL[spot.region] || spot.region,
@@ -547,8 +542,20 @@ function sitemapXml(prefs, rows) {
 }
 
 // ------------------------------------------------------------------ 生成の本体
+// 配列であるべき項目の型チェック。崩れていたら、施設名つきで分かりやすく止める（値は変換しない）
+const ARRAY_FIELDS = ['ages', 'weather', 'duration', 'closedDays', 'seasons', 'events', 'holidays'];
+function validateSpots(spots) {
+  const errs = [];
+  spots.forEach(s => ARRAY_FIELDS.forEach(f => {
+    const v = s[f];
+    if (v !== undefined && v !== null && !Array.isArray(v)) errs.push(`${s.name}（${s.slug || '-'}）の ${f} は配列である必要があります（${typeof v} になっています）`);
+  }));
+  if (errs.length) throw new Error('施設データの形式エラー:\n  - ' + errs.join('\n  - '));
+}
+
 function main() {
   const app = loadAppAny(INDEX_PATH);
+  validateSpots(app.SPOTS);
   const rows = prepare(app);
   const files = new Map(); // 相対パス -> 内容
   rows.forEach(r => files.set(`${r.slug}/index.html`, facilityPage(r)));
