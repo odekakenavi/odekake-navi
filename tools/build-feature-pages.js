@@ -38,8 +38,10 @@ const PURPOSES = [
   { slug: 'ranch', genre: '牧場', icon: '🐮', label: '牧場', noun: '牧場' },
   { slug: 'athletic', genre: 'アスレチック・アウトドア', icon: '🌲', label: 'アスレチック・アウトドア', noun: 'アスレチック' },
   { slug: 'craft', genre: 'ものづくり体験', icon: '🎨', label: 'ものづくり体験', noun: 'ものづくり体験' },
-  { slug: 'pool', genre: 'プール・水遊び', icon: '🏊', label: 'プール・水遊び', noun: 'プール・水遊び' },
+  { slug: 'pool', genre: 'プール・海', icon: '🏊', label: 'プール・海', noun: 'プール・海' },
   { slug: 'flower', genre: '花の名所', icon: '🌼', label: '花の名所', noun: '花の名所' },
+  { slug: 'factory', genre: '工場見学', icon: '🏭', label: '工場見学', noun: '工場見学' },
+  { slug: 'snow', genre: '雪遊び・スケート', icon: '⛄', label: '雪遊び・スケート', noun: '雪遊びスポット・スケート場' },
   { slug: 'other', genre: 'おでかけスポット', icon: '📍', label: 'その他のおでかけスポット', noun: 'おでかけスポット' },
 ];
 // 関連ページに並べる主要ジャンル（これまでのページと同じ9つ）
