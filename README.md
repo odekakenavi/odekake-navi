@@ -13,6 +13,7 @@
 ├─ site-ui.js             特集ページ共通の翻訳ボタンなど（ルート固定・/odekake-navi/site-ui.js で読まれる）
 ├─ manifest.webmanifest   PWA設定
 ├─ sitemap.xml / robots.txt / llms.txt   検索・AI向け
+├─ adea0d8fbd70cf174a740d6ee8694a4a.txt   IndexNow用のキーファイル（消さない・名前を変えない）
 ├─ BingSiteAuth.xml, google….html        検索エンジンの所有権確認用（消さない）
 ├─ 画像                    header.webp, operator.webp, og-image.png, icon-192.png, pwa-*.png
 │
@@ -59,6 +60,37 @@ main に push すると GitHub Actions（`.github/workflows/pages.yml`）が次�
 node tools/check-site.js
 node tools/build-public.js --out _public && node tools/refresh-static-pages.js --public _public && node tools/check-site.js --public _public
 ```
+
+## AI検索・クローラー対応
+
+ChatGPT検索（OAI-SearchBot）などのAI検索や、Bingに見つけてもらうための設定です。
+
+**robots.txt（置き場所に注意）**
+
+- このサイトのURLは `/odekake-navi/` 配下（GitHub Pagesのプロジェクトページ）のため、このリポジトリの `robots.txt` はクローラーに読まれません。
+- 実際に効くのは、別リポジトリ `odekakenavi/odekakenavi.github.io` のルートに置いた `robots.txt` です（`https://odekakenavi.github.io/robots.txt` で表示できることを確認済み）。
+- robots.txt を変更するときは **そちらのリポジトリを編集**し、このリポジトリのファイルとも内容を揃えます。
+- `odekakenavi.github.io` リポジトリには robots.txt だけを置きます。`index.html` を置くとドメイン直下にそのページが公開されてしまうため置かないでください。
+- OAI-SearchBot・ChatGPT-User・GPTBot・PerplexityBot・Claude系などは `Allow: /` で許可しています。
+
+**sitemap.xml**
+
+- Google Search Console と Bing Webmaster Tools に登録済みです。
+- sitemap.xml は公開の流れ（自動）で毎回作り直されます。
+
+**IndexNow（Bingへの更新通知）**
+
+- ルートのキーファイル `adea0d8fbd70cf174a740d6ee8694a4a.txt` を使います。公開URLは `https://odekakenavi.github.io/odekake-navi/adea0d8fbd70cf174a740d6ee8694a4a.txt` です。
+- キーファイルを `/odekake-navi/` 配下に置いているため、通知できるのは `/odekake-navi/` 以下のURLだけです。
+- ページを追加・更新したときは、次のURLをブラウザで開くと1ページずつ通知できます。
+
+```
+https://api.indexnow.org/indexnow?url=<通知するURL>&key=adea0d8fbd70cf174a740d6ee8694a4a&keyLocation=https://odekakenavi.github.io/odekake-navi/adea0d8fbd70cf174a740d6ee8694a4a.txt
+```
+
+- 200または202が返れば受付済みです。
+- キーは公開される前提の文字列で、秘密情報ではありません。
+- `tools/build-public.js` が公開用の `_public/` を組み立てるため、キーファイルがそこに含まれていること（公開URLで表示できること）を確認してください。
 
 ## 更新の流れ（PCで作業するとき）
 
