@@ -2311,7 +2311,17 @@
       "bentoNote": "飲食物は持ち込めます（アルコール類は不可）。水槽展示エリアでは食べられません。屋根のない屋外ではトビが食べ物をねらうことがあるので、注意が必要です。",
       "source": "official",
       "sourceUrl": "https://www.enosui.com/faq.php",
-      "checkedAt": "2026年10月12日"
+      "checkedAt": "2026年10月12日",
+      "nearbyLunch": [
+        {
+          "name": "出口の外のカフェ",
+          "note": "出口を出たところにあります。"
+        },
+        {
+          "name": "館内の飲食物の売店",
+          "note": "館内にあります。"
+        }
+      ]
     },
     "familyPrice": {
       "yen": 9100,
@@ -3824,7 +3834,7 @@
     },
     "food": {
       "bento": "ok",
-      "bentoNote": "食堂施設はないので、園内の野外卓やベンチで食べます。",
+      "bentoNote": "食堂施設はないので、園内の野外卓やベンチで食べます。雨の日は、本園の東屋・資料館2階のテラス、分園の東屋でも食べられます。",
       "allergy": "label",
       "allergyNote": "特定原材料8品目（えび・かに・くるみ・小麦・そば・卵・乳・落花生）はメニューに表示されています。詳しくは売店の係員に聞けます。",
       "source": "official",
@@ -3917,6 +3927,10 @@
         {
           "name": "しながわ区民公園（ベンチ・芝生エリア）",
           "note": "当日は入館券の半券を見せれば何度でも再入館できるので、館外で食事をしてから戻れます。"
+        },
+        {
+          "name": "館内のドリンクコーナー",
+          "note": "休憩スペースがあります。"
         }
       ],
       "source": "official",
@@ -7388,7 +7402,46 @@
     ],
     "image": "img/spots/saitama-kazo-musashinomura.jpg",
     "imageCredit": "📷 あばさー / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Musashino-mura.JPG"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Musashino-mura.JPG",
+    "rideLimits": [
+      {
+        "name": "チェーンタワー",
+        "minCm": 80,
+        "minAge": 5,
+        "note": "5歳以上かつ身長80cm以上（付き添いなしで利用）"
+      },
+      {
+        "name": "Go!Go!トレイン",
+        "note": "付き添いありなら0歳から可。付き添いなしは小学生以上かつ身長110cm以上"
+      },
+      {
+        "name": "ゴーカート",
+        "minAge": 3,
+        "note": "付き添いありなら3歳から可。運転・付き添いなしは小学3年生以上かつ身長140cm以上"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minAge": 3,
+        "note": "付き添いありなら3歳から可。運転・付き添いなしは小学生以上かつ身長140cm以上"
+      },
+      {
+        "name": "サイクルコースター",
+        "minAge": 5,
+        "note": "5歳以上（小学生未満は付き添い必要）"
+      },
+      {
+        "name": "おもしろ自転車",
+        "minAge": 3,
+        "note": "3歳から付き添いありで可。付き添いなしは5歳以上"
+      },
+      {
+        "name": "キッズドリフト",
+        "minAge": 3,
+        "note": "3歳から付き添いありで可。付き添いなしは5歳以上"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-31",
+    "rideLimitsSource": "https://www.musashinomura.co.jp/area-guide/amusement-park/"
   },
   {
     "region": "埼玉",
@@ -8189,6 +8242,21 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "隣接する遊園地の中央噴水広場売店・食堂休憩所",
+          "note": "土日祝はお弁当の販売あり。"
+        },
+        {
+          "name": "キッチンカー",
+          "note": "出店するが日程は要確認。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.kiryu-kanrikyoukai.jp/amusementpark/information.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -8283,6 +8351,21 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内の販売",
+          "note": "おむすび・唐揚げ、焼きそば・フランクフルト等の販売情報あり。"
+        },
+        {
+          "name": "キッチンカー",
+          "note": "出店するが、曜日・日程で変わります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://lunapark.maebashi-park.com/souvenir/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -15259,6 +15342,12 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "食事・持ち込みに関する公式情報は今回確認できませんでした。来園前に確認してください。",
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -16625,6 +16714,12 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当を含め、園内での飲食は原則自由です。ただし、売店内と赤ちゃんハウス内は飲食できません。",
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -17393,6 +17488,19 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "お弁当の持ち込みOK。園内の休憩所・ベンチ等で食べられます。レストランへの持ち込みはできません。",
+      "nearbyLunch": [
+        {
+          "name": "園内レストラン",
+          "note": "お子さまカレーあり。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.skyland89.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -18875,6 +18983,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食物の持ち込みOK（アルコールは不可）。",
+      "nearbyLunch": [
+        {
+          "name": "館内フードエリア・ドリンクバー",
+          "note": "館内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -19141,7 +19261,19 @@
     "image": "img/spots/tochigi-otawara-tochigi-nakagawa.jpg",
     "imageCredit": "📷 CyberOyaji / CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%AA%E3%81%8B%E3%81%8C%E3%82%8F%E6%B0%B4%E9%81%8A%E5%9C%92_-_panoramio.jpg",
-    "genre": "水族館"
+    "genre": "水族館",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みについては今回確認できませんでした。水筒・ペットボトル等は持ち込めます。",
+      "nearbyLunch": [
+        {
+          "name": "館内カフェ・園内飲食店",
+          "note": "館内・園内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -20868,6 +21000,19 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内での飲食は、一部の休憩所を除いてできません。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "案内あり。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.trick-art.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -24036,6 +24181,18 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食物の持ち込みOK。レストランスペース奥のフリースペースで食べられます。",
+      "nearbyLunch": [
+        {
+          "name": "園内レストラン",
+          "note": "レストランスペースあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -24182,7 +24339,17 @@
       "babyFoodNote": "ベビーケアルームは、授乳やお食事、おむつ替えに使えます。",
       "source": "official",
       "sourceUrl": "https://www.aquamarine.or.jp/guide/faq/",
-      "checkedAt": "2026年10月12日"
+      "checkedAt": "2026年10月12日",
+      "nearbyLunch": [
+        {
+          "name": "1階レストラン",
+          "note": "館内にあります。"
+        },
+        {
+          "name": "2階寿司処",
+          "note": "館内にあります。"
+        }
+      ]
     },
     "heat": {
       "note": "お弁当を食べる場所（1階南テラス、屋外広場、じゃぶじゃぶ・めぐりの海）には屋根がなく、荒天時は使えません。",
@@ -26524,6 +26691,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内レストラン・軽食売店",
+          "note": "キッズカレーなどのメニューあり。展望レストランは繁忙期のみ営業の場合あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -26802,6 +26979,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "レストラン以外での飲食は原則できません（水分補給を除く）。",
+      "nearbyLunch": [
+        {
+          "name": "館内カフェ「ガブットリア」",
+          "note": "うどん・ラーメン等あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -29374,6 +29563,22 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食物・お弁当の持ち込みはできません。",
+      "nearbyLunch": [
+        {
+          "name": "食事処「雪月風花」",
+          "note": "公式ページで当面休業との案内あり。営業状況は要確認。"
+        },
+        {
+          "name": "茶屋",
+          "note": "園内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -30844,6 +31049,21 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "レストラン・フードコート",
+          "note": "施設内にあります。"
+        },
+        {
+          "name": "BBQ",
+          "note": "食材を持ち込めるプランあり。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.saku-parada.jp/green/restaurant/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -30901,6 +31121,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "お弁当を持ってきてOK。館内で飲食できるのは、入口近くの「もぐもぐスペース」だけです。館内での食事の販売はありません。",
+      "source": "official",
+      "sourceUrl": "https://kodomomiraikan.jp/pages/3/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -31605,6 +31832,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 180
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "飲食は指定の場所以外では禁止されています。飲食できる場所の詳細は、追加の確認が必要です。",
+      "source": "official",
+      "sourceUrl": "https://www.fra.go.jp/nikko/guide_admission.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -32310,6 +32544,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "遊び場内への食べ物の持ち込みはできません。飲み物は指定の場所で飲めます。",
+      "nearbyLunch": [
+        {
+          "name": "施設外のレストラン・カフェ・売店",
+          "note": "施設の外にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -32615,7 +32861,11 @@
     "tip": "イオン熊谷店の駐車場（1000台超）がそのまま使えるので車での来店がしやすい。ショッピングのついでに立ち寄りやすい立地。",
     "food": {
       "babyFood": "ok",
-      "source": "text"
+      "source": "official",
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     },
     "familyPrice": {
       "yen": null,
@@ -36178,6 +36428,17 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.bighop.jp/"
     },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "モール内の飲食店",
+          "note": "ラーメン・カツ丼・カフェ・インド料理などあり（遊び場内ではなくモール内の情報）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.bighop.jp/shop/index.jsp?bf=6&cat=3",
+      "checkedAt": "2026年10月31日"
+    },
     "heat": {
       "roof": "partial",
       "note": "【口コミ・紹介記事からの目安・実際と異なる場合があります】大きな屋根付きの「公園広場」があり、休日を中心にイベントを開催。日陰の具体的な記載はなし。",
@@ -39575,6 +39836,17 @@
     "verifiedAt": "2026年10月5日",
     "desc": "イオンモール座間の館内にある無料の木育キッズスペース「KIDS FIELD」。天然木のぬくもりを感じながら遊べる。フードコート内にも別のキッズスペースがあり、買い物や食事のついでに立ち寄りやすい。",
     "tip": "雨の日・猛暑日の「少しだけ子どもを遊ばせたい」に便利。駐車場も無料。",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "モール内のフードコート・レストラン・カフェ",
+          "note": "グルメ店舗は46件。遊び場内の飲食可否とは別の情報です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://zama-aeonmall.com/",
+      "checkedAt": "2026年10月31日"
+    },
     "heat": {
       "roof": "full",
       "summer": "cool",
@@ -39682,6 +39954,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "キンダープラッツ内での食事はできません。ペットボトル・水筒の飲み物は、指定の場所で飲めます。",
+      "source": "official",
+      "sourceUrl": "https://kinderplatz.froebel-kan.co.jp/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -39736,6 +40015,17 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "フードピクニックの飲食エリア",
+          "note": "施設内にあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://gbp.minamimachida-grandberrypark.com/service/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -39767,6 +40057,17 @@
     "verifiedAt": "2026年9月20日",
     "desc": "相鉄グループの商業施設「ゆめが丘ソラトス」の屋上にある約3000平米の無料広場。相鉄キャラクター「そうにゃん」をモチーフにしたカラフルな遊具が年齢別に2エリアに分かれて設置されている。3階のstation view terraceから外階段でアクセス。",
     "tip": "屋上・屋外のため夏場は日差しと熱中症に注意。水分補給をしながら遊ぶのがおすすめ。",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "館内のフードコート・レストラン",
+          "note": "フードコートは約700席で、キッズスペースとファミリーコートあり。屋上公園で遊んだ後に館内で食事できます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.yumegaoka-soratos.com/",
+      "checkedAt": "2026年10月31日"
+    },
     "heat": {
       "shade": "little",
       "roof": "none",
@@ -42863,6 +43164,20 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "2階のフードメニュー",
+          "note": "お子様プレート、ポテト、唐揚げなどあり。"
+        },
+        {
+          "name": "釣った魚の調理",
+          "note": "釣った魚を調理して、その場で食べることもできます。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -43020,6 +43335,18 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】お弁当は休憩所で食べられるという紹介情報があります。公式サイトでの確認はまだできていません。",
+      "nearbyLunch": [
+        {
+          "name": "園内の売店",
+          "note": "軽食・ドリンクを販売しています。"
+        }
+      ],
+      "source": "review",
+      "reviewCheckedAt": "2026年10月31日"
     }
   },
   {
@@ -43579,6 +43906,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "体験フロア内は、飴・ガムを含めて飲食できません。",
+      "nearbyLunch": [
+        {
+          "name": "併設カフェ",
+          "note": "食事・飲み物を提供しています。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -43626,6 +43965,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みの可否は確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "館内の飲食ルーム・飲水コーナー",
+          "note": "館内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -44191,6 +44542,21 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "一般の利用者は、お弁当の持ち込みが原則できません。学校団体は、条件付きで持ち込めます。",
+      "allergy": "partial",
+      "allergyNote": "低アレルゲンのメニューがあります（完全除去食ではありません）。",
+      "nearbyLunch": [
+        {
+          "name": "館内レストラン",
+          "note": "館内にあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.kandu.co.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -45334,7 +45700,24 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,800円×2＋小学生1,300円×2＋幼児300円×1（幼児料金あり）"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "一般のお弁当は持ち込めません。離乳食・アレルギー食・乳幼児用のおやつは持ち込めます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は持ち込めます。離乳食用のレンジと取り分け用の食器があります。",
+      "allergy": "ok",
+      "allergyNote": "アレルギー食は持ち込めます。",
+      "nearbyLunch": [
+        {
+          "name": "館内の食事メニュー・ドリンクバー・おやつバイキング",
+          "note": "館内にあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.shuminomori.jp/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -45477,7 +45860,19 @@
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://won-park.com/topics/news001/"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食できるエリアがあり、持ち込みOKです。",
+      "nearbyLunch": [
+        {
+          "name": "1階のカフェ",
+          "note": "1階にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "神奈川",
@@ -45548,7 +45943,20 @@
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://boukennokuni.com/shonantsuribori/"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "食事の持ち込みはできません。飲み物は持ち込めます。",
+      "nearbyLunch": [
+        {
+          "name": "施設入口横の自動販売機",
+          "note": "入口の横にあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://boukennokuni.com/question/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "神奈川",
@@ -46084,7 +46492,20 @@
     "image": "img/spots/tokyo-machida-町田リス園.jpg",
     "imageCredit": "📷 kaduki / CC BY 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%94%BA%E7%94%B0%E3%83%AA%E3%82%B9%E5%9C%92%E3%80%81%E3%82%A2%E3%82%AB%E3%83%AA%E3%82%B9_-_panoramio.jpg",
-    "genre": "動物園"
+    "genre": "動物園",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "食事の持ち込みの可否は確認できませんでした。園内に食事をする場所はありませんが、屋外にテーブルとベンチがあります。",
+      "nearbyLunch": [
+        {
+          "name": "園内の自動販売機",
+          "note": "飲み物とアイスを販売しています。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.machida-risuen.com/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -49682,6 +50103,18 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 180
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みの可否は確認できませんでした。館内は飲食できません。",
+      "nearbyLunch": [
+        {
+          "name": "隣接する港八十三番地の飲食店",
+          "note": "水族館のチケットを見せると割引があります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -50323,6 +50756,15 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "一般の飲食は、指定の場所だけでできます。館内のエントランスと、屋外の芝生広場・ウッドデッキ周辺のテーブルで食べられます。",
+      "babyFood": "ok",
+      "babyFoodNote": "離乳食は、授乳室を使います。",
+      "source": "official",
+      "sourceUrl": "https://www.kipokipo.jp/faq",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -58936,6 +59378,50 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "rideLimits": [
+      {
+        "name": "スーパースイング",
+        "minCm": 120,
+        "note": "身長120cm以上で小学生以上"
+      },
+      {
+        "name": "ふわふわサイクリング",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "身長90cm未満・3歳未満は不可。90〜120cm未満と未就学児は16歳以上の付添が必要（有料）"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minAge": 3,
+        "note": "3歳以上。未就学児・身長120cm以下は16歳以上の付添が必要（有料）"
+      },
+      {
+        "name": "ドラゴンコースター",
+        "minAge": 5,
+        "note": "5歳以上。未就学児は16歳以上の付添が必要（有料）"
+      },
+      {
+        "name": "サブマリンシューティング",
+        "minAge": 3,
+        "note": "3歳以上。未就学児は16歳以上の付添が必要（有料）"
+      },
+      {
+        "name": "ジャイアントホイール",
+        "note": "未就学児は16歳以上の付添が必要（有料）。2歳以下無料"
+      },
+      {
+        "name": "メリーゴーランド",
+        "note": "未就学児は16歳以上の付添が必要（有料）。2歳以下無料"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-31",
+    "rideLimitsSource": "https://www.senyo.co.jp/morinoyuenchi/list.html",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "お弁当の持ち込みOK。園内に売店・レストランはありません。再入園して、園外で食事できます。",
+      "source": "text",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -61297,7 +61783,17 @@
     "needsReview": [
       "料金・営業時間は地域情報サイトや口コミの情報（古い可能性あり）。公式で要確認",
       "座標はGoogleマップの掲載位置"
-    ]
+    ],
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "同じ商業施設内の飲食店・お弁当店",
+          "note": "ファーストフード店と弁当販売店があります（施設外の食事・購入場所）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "埼玉",
@@ -61577,6 +62073,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食物の持ち込みはできません。",
+      "nearbyLunch": [
+        {
+          "name": "同じ建物内の飲食店",
+          "note": "同じ建物内の飲食店を利用します。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/others/vspark/yokohama/faq.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -61755,6 +62264,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -61815,6 +62331,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食物の持ち込みOK。店内の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -61875,6 +62398,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -61935,6 +62465,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -61995,6 +62532,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -62055,6 +62599,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -62115,6 +62666,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "キッズランドUS共通のルールとして、飲食物の持ち込みOK。指定の飲食コーナーで食べられます。",
+      "source": "official",
+      "sourceUrl": "https://kidslandus.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
