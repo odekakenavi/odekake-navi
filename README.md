@@ -13,7 +13,6 @@
 ├─ site-ui.js             特集ページ共通の翻訳ボタンなど（ルート固定・/odekake-navi/site-ui.js で読まれる）
 ├─ manifest.webmanifest   PWA設定
 ├─ sitemap.xml / robots.txt / llms.txt   検索・AI向け
-├─ adea0d8fbd70cf174a740d6ee8694a4a.txt   IndexNow用のキーファイル（消さない・名前を変えない）
 ├─ BingSiteAuth.xml, google….html        検索エンジンの所有権確認用（消さない）
 ├─ 画像                    header.webp, operator.webp, og-image.png, icon-192.png, pwa-*.png
 │
@@ -80,7 +79,7 @@ ChatGPT検索（OAI-SearchBot）などのAI検索や、Bingに見つけてもら
 
 **IndexNow（Bingへの更新通知）**
 
-- ルートのキーファイル `adea0d8fbd70cf174a740d6ee8694a4a.txt` を使います。公開URLは `https://odekakenavi.github.io/odekake-navi/adea0d8fbd70cf174a740d6ee8694a4a.txt` です。
+- キーファイル `adea0d8fbd70cf174a740d6ee8694a4a.txt` を使います（**消さない・名前を変えない**）。置き場所は `site/root-files/` です。公開URLは `https://odekakenavi.github.io/odekake-navi/adea0d8fbd70cf174a740d6ee8694a4a.txt` です。
 - キーファイルを `/odekake-navi/` 配下に置いているため、通知できるのは `/odekake-navi/` 以下のURLだけです。
 - ページを追加・更新したときは、次のURLをブラウザで開くと1ページずつ通知できます。
 
@@ -90,7 +89,7 @@ https://api.indexnow.org/indexnow?url=<通知するURL>&key=adea0d8fbd70cf174a74
 
 - 200または202が返れば受付済みです。
 - キーは公開される前提の文字列で、秘密情報ではありません。
-- `tools/build-public.js` が公開用の `_public/` を組み立てるため、キーファイルがそこに含まれていること（公開URLで表示できること）を確認してください。
+- リポジトリ直下に置いても公開されません。`tools/build-public.js` は、`site/root-files/` の中身だけを公開のルート直下に配置します（robots.txt などと同じ扱い）。
 
 ## 更新の流れ（PCで作業するとき）
 
