@@ -9,7 +9,7 @@
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://aml.valuecommerce.com https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com;
   style-src 'self' 'unsafe-inline' https://www.gstatic.com https://translate.googleapis.com https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com https://www.gstatic.com;
-  connect-src 'self' https://script.google.com https://script.googleusercontent.com https://weather-proxy.odekakenavi2026.workers.dev https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://aml.valuecommerce.com https://ck.jp.ap.valuecommerce.com https://translate.googleapis.com https://translate-pa.googleapis.com;
+  connect-src 'self' https://odekake-push.odekakenavi2026.workers.dev https://script.google.com https://script.googleusercontent.com https://weather-proxy.odekakenavi2026.workers.dev https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://aml.valuecommerce.com https://ck.jp.ap.valuecommerce.com https://translate.googleapis.com https://translate-pa.googleapis.com;
   img-src 'self' data: https://lh3.googleusercontent.com https://drive.google.com https://*.cdninstagram.com https://*.fbcdn.net https://cyberjapandata.gsi.go.jp https://www.gstatic.com https://fonts.gstatic.com https://translate.google.com https://translate.googleapis.com https://www.google.com;
   frame-src https://translate.google.com;
   object-src 'none';
@@ -412,6 +412,15 @@ button.diag-back-link{display:block;width:100%;min-height:44px;margin-top:4px;pa
   </div>
   <div id="lastOutingSection" style="display:none;"></div>
 </div>
+<div class="a2hs-card push-card" id="pushCard">
+  <span class="a2hs-ic" aria-hidden="true">🔔</span>
+  <div class="a2hs-body">
+    <div class="a2hs-title">週末のおでかけ通知</div>
+    <div class="a2hs-sub" id="pushCardSub">金曜の夕方に、今週末のおでかけ情報をお知らせ</div>
+  </div>
+  <button type="button" class="a2hs-btn" id="pushCardBtn">受け取る</button>
+  <button type="button" class="a2hs-close" id="pushCardClose" aria-label="この案内を閉じる">×</button>
+</div>
 <div class="my-outing" id="myOutingSection" style="display:none;">
   <div id="recentWrap" style="display:none;">
     <div class="recent-title">🕒 最近見た場所</div>
@@ -790,6 +799,7 @@ async function fetchWeatherForSpot(spot){if(!WEATHER_API.enabled)return null;if(
         <li><b>Google翻訳（Google LLC）</b><br>送信される情報：翻訳ボタンを押した場合のみ、表示中のページの内容、IPアドレス、ブラウザ情報<br>目的：画面表示の翻訳</li>
         <li><b>国土地理院（地理院タイル）</b><br>送信される情報：「地図で見る」を開いた場合のみ、地図画像の取得のため、IPアドレス、ブラウザ情報、表示している範囲を示す地図画像の番号（おおよその表示範囲）<br>目的：地図の表示</li>
         <li><b>Google Apps Script・Googleスプレッドシート（Google LLC）</b><br>送信される情報：「🌈 みんなのおでかけ」の一覧の表示時のデータ取得の通信（IPアドレス等）、登録フォーム等の送信時に入力いただいた内容<br>目的：「みんなのおでかけ」の掲載・運営、いただいた内容への対応</li>
+        <li><b>プッシュ通知の配信（Cloudflare, Inc. のWorkers、およびお使いのブラウザが利用するGoogle・Apple・Mozilla・Microsoftなどの通知配信サービス）</b><br>送信される情報：「通知を受け取る」を押した場合のみ、ブラウザが発行する通知用の宛先URL（氏名・位置情報などは含みません）、IPアドレス、ブラウザ情報。通知はいつでもオフにでき、オフにすると宛先URLを削除します<br>目的：毎週のおでかけ情報の通知配信、配信回数の集計</li>
       </ul>
       <p>本サイトはGitHub Pages（GitHub, Inc.）で配信しており、アクセス時にIPアドレス等が配信元に届きます。</p>
       <p>「🌈 みんなのおでかけ」の登録フォームでいただいた情報（Instagramアカウント名・URL、表示名、Instagram投稿のURL、施設名、コメント、訪問日など）は、掲載および運営のために利用し、運営が管理するGoogleスプレッドシートに保存します。Instagramアカウント名、投稿へのリンク、施設名、コメント、最終入力日などは本サイト上で公開されます。内容の修正・削除をご希望の場合は、運営者までご連絡ください（フッターの「情報の誤りを報告する」からも受け付けます）。</p>
@@ -2363,6 +2373,82 @@ renderSeoAuditMode();try{window.dispatchEvent(new Event("odekakeAppReady"))}catc
 </style>
 <script>(function(){"use strict";var CONFIG={cardMinVisits:1,dismissDays:30};var K_DISMISS="odekakeNaviA2hsDismissedV1";var K_INSTALLED="odekakeNaviA2hsInstalledV1";var K_VISITS="odekakeNaviVisitCountV1";var K_SESSION="odekakeNaviVisitSessionV1";var K_LAUNCH="odekakeNaviPwaLaunchLoggedV1";function lsGet(k){try{return window.localStorage.getItem(k)}catch(e){return null}}function lsSet(k,v){try{window.localStorage.setItem(k,v)}catch(e){}}function ssGet(k){try{return window.sessionStorage.getItem(k)}catch(e){return null}}function ssSet(k,v){try{window.sessionStorage.setItem(k,v)}catch(e){}}function track(name,params){try{if(typeof window.gtag==="function")window.gtag("event",name,params||{})}catch(e){}}var ua=navigator.userAgent||"";var isIOS=/iPad|iPhone|iPod/.test(ua)||navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1;var isAndroid=/Android/i.test(ua);var inAppBrowser=/Line\/|FBAN|FBAV|Instagram|Twitter|MicroMessenger|KAKAOTALK|Snapchat|TikTok|; wv\)/i.test(ua);var isIOSSafari=isIOS&&/Safari\//.test(ua)&&!/CriOS|FxiOS|EdgiOS|OPiOS|OPT\/|DuckDuckGo|YaBrowser|GSA\//.test(ua)&&!inAppBrowser;function isStandalone(){try{if(window.navigator.standalone===true)return true}catch(e){}try{var modes=["standalone","fullscreen","minimal-ui"];for(var i=0;i<modes.length;i++){if(window.matchMedia("(display-mode: "+modes[i]+")").matches)return true}}catch(e){}return false}function isInstalledFlag(){return lsGet(K_INSTALLED)==="1"}function getVisitCount(){return parseInt(lsGet(K_VISITS),10)||0}function isDismissed(){var t=parseInt(lsGet(K_DISMISS),10);return!!t&&Date.now()-t<CONFIG.dismissDays*864e5}if(!ssGet(K_SESSION)){ssSet(K_SESSION,"1");lsSet(K_VISITS,String(getVisitCount()+1))}if(isStandalone()&&!ssGet(K_LAUNCH)){ssSet(K_LAUNCH,"1");track("pwa_launch",{display_mode:"standalone"})}var deferredPrompt=null;window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();deferredPrompt=e;refreshCard()});window.addEventListener("appinstalled",function(){deferredPrompt=null;lsSet(K_INSTALLED,"1");track("pwa_installed",{});refreshCard()});var card=document.getElementById("a2hsCard");var cardBtn=document.getElementById("a2hsCardBtn");var cardClose=document.getElementById("a2hsCardClose");function refreshCard(){if(!card)return;var mobile=isIOS||isAndroid;var show=!isStandalone()&&!isInstalledFlag()&&!isDismissed()&&getVisitCount()>=CONFIG.cardMinVisits&&(mobile||!!deferredPrompt);card.className="a2hs-card"+(show?" show":"");if(cardBtn)cardBtn.textContent=deferredPrompt?"\u8FFD\u52A0\u3059\u308B":"\u8FFD\u52A0\u65B9\u6CD5"}function openOverlay(){var el=document.getElementById("a2hsOverlay");if(!el)return;if(typeof window.openSheet==="function")window.openSheet("a2hsOverlay");else el.classList.add("open")}function closeOverlay(){var el=document.getElementById("a2hsOverlay");if(!el)return;if(typeof window.closeSheetById==="function")window.closeSheetById("a2hsOverlay");else el.classList.remove("open")}function stepsHtml(items){return'<ol class="a2hs-steps">'+items.map(function(it){return"<li>"+it[0]+(it[1]?'<span class="a2hs-note">'+it[1]+"</span>":"")+"</li>"}).join("")+"</ol>"}function sheetBody(){if(isStandalone()){return"<p>\u304A\u3067\u304B\u3051\u30CA\u30D3\u306F\u3001\u3059\u3067\u306B\u30A2\u30D7\u30EA\u3068\u3057\u3066\u958B\u3044\u3066\u3044\u307E\u3059 \u{1F389}</p>"}var lead="<p>\u304A\u3067\u304B\u3051\u30CA\u30D3\u3092\u30DB\u30FC\u30E0\u753B\u9762\u306B\u8FFD\u52A0\u3059\u308B\u3068\u3001\u6B21\u56DE\u304B\u3089\u30A2\u30A4\u30B3\u30F3\u3092\u30BF\u30C3\u30D7\u3059\u308B\u3060\u3051\u3067\u3059\u3050\u958B\u3051\u307E\u3059\u3002</p>";if(isIOS&&isIOSSafari){return lead+stepsHtml([["Safari\u306E\u300C\u5171\u6709\u300D\u30DC\u30BF\u30F3\uFF08\u25A1\u306B\u2191\u306E\u30DE\u30FC\u30AF\uFF09\u3092\u30BF\u30C3\u30D7","iPhone\u306F\u753B\u9762\u306E\u4E0B\u3001iPad\u306F\u753B\u9762\u306E\u4E0A\u306B\u3042\u308A\u307E\u3059\u3002\u898B\u3064\u304B\u3089\u306A\u3044\u6642\u306F\u300C\u2026\u300D\u3092\u30BF\u30C3\u30D7\u3057\u3066\u300C\u5171\u6709\u300D\u3092\u9078\u3073\u307E\u3059\u3002"],["\u30E1\u30CB\u30E5\u30FC\u306E\u300C\u30DB\u30FC\u30E0\u753B\u9762\u306B\u8FFD\u52A0\u300D\u3092\u30BF\u30C3\u30D7","\u898B\u3064\u304B\u3089\u306A\u3044\u6642\u306F\u3001\u30E1\u30CB\u30E5\u30FC\u3092\u4E0B\u306B\u30B9\u30AF\u30ED\u30FC\u30EB\u3059\u308B\u304B\u300C\u3082\u3063\u3068\u898B\u308B\u300D\u3092\u958B\u3044\u3066\u304F\u3060\u3055\u3044\u3002"],["\u53F3\u4E0A\u306E\u300C\u8FFD\u52A0\u300D\u3092\u30BF\u30C3\u30D7","\u30DB\u30FC\u30E0\u753B\u9762\u306B\u300C\u304A\u3067\u304B\u3051\u30CA\u30D3\u300D\u306E\u30A2\u30A4\u30B3\u30F3\u304C\u3067\u304D\u307E\u3059\u3002"]])+'<p class="a2hs-note" style="font-size:11.5px;color:var(--ink-soft)">\u203B iOS\u306E\u30D0\u30FC\u30B8\u30E7\u30F3\u306B\u3088\u3063\u3066\u3001\u753B\u9762\u306E\u8868\u793A\u304C\u5C11\u3057\u7570\u306A\u308B\u3053\u3068\u304C\u3042\u308A\u307E\u3059\u3002</p>'}if(isIOS){return"<p><b>iPhone\u3067\u306FSafari\u3067\u958B\u304F\u3068\u30DB\u30FC\u30E0\u753B\u9762\u306B\u8FFD\u52A0\u3067\u304D\u307E\u3059\u3002</b></p>"+stepsHtml([["\u4E0B\u306E\u30DC\u30BF\u30F3\u3067\u3053\u306E\u30DA\u30FC\u30B8\u306EURL\u3092\u30B3\u30D4\u30FC\u3057\u3066\u3001Safari\u3067\u958B\u304D\u307E\u3059","LINE\u30FBInstagram\u306A\u3069\u306E\u30A2\u30D7\u30EA\u5185\u30D6\u30E9\u30A6\u30B6\u306E\u5834\u5408\u306F\u3001\u753B\u9762\u53F3\u4E0A\uFF08\u307E\u305F\u306F\u53F3\u4E0B\uFF09\u306E\u30E1\u30CB\u30E5\u30FC\u304B\u3089\u300CSafari\u3067\u958B\u304F\u300D\u3092\u9078\u3093\u3067\u3082\u958B\u3051\u307E\u3059\u3002"],["Safari\u306E\u300C\u5171\u6709\u300D\u30DC\u30BF\u30F3 \u2192\u300C\u30DB\u30FC\u30E0\u753B\u9762\u306B\u8FFD\u52A0\u300D\u2192\u300C\u8FFD\u52A0\u300D",""]])+'<button type="button" class="a2hs-copy-btn" id="a2hsCopyBtn">\u{1F517} \u3053\u306E\u30DA\u30FC\u30B8\u306EURL\u3092\u30B3\u30D4\u30FC</button>'}if(isAndroid){var first=inAppBrowser?[["Chrome\u3067\u958B\u304D\u76F4\u3057\u307E\u3059","\u30A2\u30D7\u30EA\u5185\u30D6\u30E9\u30A6\u30B6\u306E\u5834\u5408\u306F\u3001\u753B\u9762\u53F3\u4E0A\uFF08\u307E\u305F\u306F\u53F3\u4E0B\uFF09\u306E\u30E1\u30CB\u30E5\u30FC\u304B\u3089\u300C\u30D6\u30E9\u30A6\u30B6\u3067\u958B\u304F\u300D\u300CChrome\u3067\u958B\u304F\u300D\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044\u3002"]]:[];return lead+stepsHtml(first.concat([["\u30D6\u30E9\u30A6\u30B6\u53F3\u4E0A\u306E\u300C\u22EE\u300D\u30E1\u30CB\u30E5\u30FC\u3092\u30BF\u30C3\u30D7",""],["\u300C\u30DB\u30FC\u30E0\u753B\u9762\u306B\u8FFD\u52A0\u300D\uFF08\u307E\u305F\u306F\u300C\u30A2\u30D7\u30EA\u3092\u30A4\u30F3\u30B9\u30C8\u30FC\u30EB\u300D\uFF09\u3092\u30BF\u30C3\u30D7",""],["\u300C\u8FFD\u52A0\u300D\uFF08\u307E\u305F\u306F\u300C\u30A4\u30F3\u30B9\u30C8\u30FC\u30EB\u300D\uFF09\u3092\u30BF\u30C3\u30D7","\u304A\u4F7F\u3044\u306E\u30D6\u30E9\u30A6\u30B6\u306B\u3088\u3063\u3066\u3001\u8868\u793A\u304C\u5C11\u3057\u7570\u306A\u308A\u307E\u3059\u3002"]]))}return"<p>\u30D1\u30BD\u30B3\u30F3\u3067\u306F\u3001\u30D6\u30E9\u30A6\u30B6\uFF08Chrome\u30FBEdge\uFF09\u306E\u30A2\u30C9\u30EC\u30B9\u30D0\u30FC\u53F3\u5074\u306B\u8868\u793A\u3055\u308C\u308B\u300C\u30A4\u30F3\u30B9\u30C8\u30FC\u30EB\u300D\u30A2\u30A4\u30B3\u30F3\u3001\u307E\u305F\u306F\u30E1\u30CB\u30E5\u30FC\u306E\u300C\u30A2\u30D7\u30EA\u3068\u3057\u3066\u30A4\u30F3\u30B9\u30C8\u30FC\u30EB\u300D\u304B\u3089\u8FFD\u52A0\u3067\u304D\u307E\u3059\u3002</p><p>Mac\u306ESafari\u3067\u306F\u3001\u300C\u5171\u6709\u300D\u2192\u300CDock\u306B\u8FFD\u52A0\u300D\u304B\u3089\u8FFD\u52A0\u3067\u304D\u307E\u3059\u3002</p>"}function renderSheet(){var sheet=document.getElementById("a2hsSheet");if(!sheet)return;sheet.innerHTML='<button class="sheet-close" id="a2hsCloseBtn" type="button" aria-label="\u9589\u3058\u308B">\xD7</button><div class="sheet-title">\u{1F4F1} \u30DB\u30FC\u30E0\u753B\u9762\u306B\u8FFD\u52A0</div><div class="about-body">'+sheetBody()+'</div><button class="detail-close-bottom" id="a2hsCloseBtnBottom" type="button">\u9589\u3058\u308B</button>';document.getElementById("a2hsCloseBtn").onclick=closeOverlay;document.getElementById("a2hsCloseBtnBottom").onclick=closeOverlay;var copy=document.getElementById("a2hsCopyBtn");if(copy){copy.onclick=function(){var done=function(){copy.textContent="\u2713 \u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F\u3002Safari\u306B\u8CBC\u308A\u4ED8\u3051\u3066\u958B\u3044\u3066\u304F\u3060\u3055\u3044"};var fail=function(){copy.textContent="\u30B3\u30D4\u30FC\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F\uFF08\u30A2\u30C9\u30EC\u30B9\u30D0\u30FC\u306EURL\u3092\u9577\u62BC\u3057\u3057\u3066\u30B3\u30D4\u30FC\u3057\u3066\u304F\u3060\u3055\u3044\uFF09"};try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(window.location.href).then(done,fail);else fail()}catch(e){fail()}}}}function open(source){track("pwa_a2hs_click",{source:source||"unknown"});if(deferredPrompt){var ev=deferredPrompt;deferredPrompt=null;refreshCard();try{ev.prompt();if(ev.userChoice&&ev.userChoice.then){ev.userChoice.then(function(c){track("pwa_install_prompt",{outcome:c&&c.outcome||"unknown"})})}return}catch(e){}}renderSheet();openOverlay()}if(cardBtn)cardBtn.addEventListener("click",function(){open("top_card")});if(cardClose)cardClose.addEventListener("click",function(){lsSet(K_DISMISS,String(Date.now()));refreshCard()});try{var mq=window.matchMedia("(display-mode: standalone)");var onChange=function(){refreshCard()};if(mq.addEventListener)mq.addEventListener("change",onChange);else if(mq.addListener)mq.addListener(onChange)}catch(e){}window.odekakeA2HS={open,isStandalone,getVisitCount,config:CONFIG};refreshCard()})();
 </script>
+<style>/* 通知カード（.push-card）。見た目はホーム画面追加カード(.a2hs-card)と同じ */.push-card .a2hs-btn:disabled{opacity:.55}.push-card.on{background:transparent;border-style:dashed}</style>
+<script>(function(){"use strict";
+/* ===== 週末おでかけ通知（Web Push）。Worker のURLだけ環境に合わせて変更 ===== */
+var PUSH_API="https://odekake-push.odekakenavi2026.workers.dev";
+var CONFIG={minVisits:2,dismissDays:30,resyncDays:7};
+var K_DISMISS="odekakeNaviPushDismissedV1",K_ON="odekakeNaviPushOnV1",K_SYNC="odekakeNaviPushSyncedV1",K_VISITS="odekakeNaviVisitCountV1";
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
+function track(n,p){try{if(typeof window.gtag==="function")window.gtag("event",n,p||{})}catch(e){}}
+var card=document.getElementById("pushCard"),sub=document.getElementById("pushCardSub"),btn=document.getElementById("pushCardBtn"),close=document.getElementById("pushCardClose");
+if(!card||!btn)return;
+var ua=navigator.userAgent||"";
+var isIOS=/iPad|iPhone|iPod/.test(ua)||navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1;
+var inApp=/Line\/|FBAN|FBAV|Instagram|Twitter|MicroMessenger|KAKAOTALK|Snapchat|TikTok|; wv\)/i.test(ua);
+function standalone(){try{if(navigator.standalone===true)return true}catch(e){}try{return matchMedia("(display-mode: standalone)").matches}catch(e){return false}}
+var supported="serviceWorker"in navigator&&"PushManager"in window&&"Notification"in window;
+var busy=false,mode="hidden",lastSub=null;
+function visits(){return parseInt(lsGet(K_VISITS),10)||0}
+function dismissed(){var t=parseInt(lsGet(K_DISMISS),10);return!!t&&Date.now()-t<CONFIG.dismissDays*864e5}
+function render(m,text,label){mode=m;card.className="a2hs-card push-card"+(m==="hidden"?"":" show")+(m==="on"?" on":"");
+  if(text)sub.textContent=text;if(label)btn.textContent=label;btn.disabled=busy;close.style.display=m==="promo"||m==="ios"?"":"none"}
+function b64uToBytes(s){s=s.replace(/-/g,"+").replace(/_/g,"/");while(s.length%4)s+="=";var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a}
+function post(path,endpoint){return fetch(PUSH_API+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({endpoint:endpoint})})}
+async function getReg(){return await navigator.serviceWorker.ready}
+async function refresh(){
+  try{
+    if(!supported){
+      // iPhone は「ホーム画面に追加したアプリ」でだけ通知を使える
+      if(isIOS&&!inApp&&!standalone()&&!dismissed()&&visits()>=CONFIG.minVisits)render("ios","iPhoneはホーム画面に追加すると、金曜の夕方に届きます","追加方法");
+      else render("hidden");return}
+    var reg=await getReg();lastSub=await reg.pushManager.getSubscription();
+    if(lastSub&&Notification.permission==="granted"){
+      render("on","通知オン：毎週金曜の夕方にお届けします","オフ");
+      var t=parseInt(lsGet(K_SYNC),10)||0; // 宛先が変わっていてもサーバーとずれないよう、週1回だけ登録し直す
+      if(Date.now()-t>CONFIG.resyncDays*864e5){post("/subscribe",lastSub.endpoint).then(function(r){if(r.ok)lsSet(K_SYNC,String(Date.now()))}).catch(function(){})}
+      return}
+    if(Notification.permission==="denied"||dismissed()||visits()<CONFIG.minVisits){render("hidden");return}
+    render("promo","金曜の夕方に、今週末のおでかけ情報をお知らせ","受け取る")
+  }catch(e){render("hidden")}
+}
+async function turnOn(){
+  busy=true;btn.disabled=true;
+  try{
+    var perm=await Notification.requestPermission(); // タップ直後に呼ぶ（iOSの条件）
+    track("push_permission",{outcome:perm});
+    if(perm!=="granted"){busy=false;return refresh()}
+    var reg=await getReg();
+    if(reg.waiting){sub.textContent="アプリを最新版に更新します。再読み込み後、もう一度押してください";reg.waiting.postMessage({type:"SKIP_WAITING"});busy=false;btn.disabled=false;return}
+    var s=await reg.pushManager.getSubscription();
+    if(!s){var k=(await(await fetch(PUSH_API+"/public-key")).json()).key;
+      s=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64uToBytes(k)})}
+    var r=await post("/subscribe",s.endpoint);
+    if(!r.ok)throw new Error("subscribe "+r.status);
+    lsSet(K_ON,"1");lsSet(K_SYNC,String(Date.now()));track("push_subscribed",{});
+    busy=false;await refresh()
+  }catch(e){busy=false;render("promo","うまく登録できませんでした。もう一度お試しください","受け取る");track("push_error",{step:"subscribe"})}
+}
+async function turnOff(){
+  busy=true;btn.disabled=true;
+  try{var s=lastSub||await(await getReg()).pushManager.getSubscription();
+    if(s){var ep=s.endpoint;await s.unsubscribe();try{await post("/unsubscribe",ep)}catch(e){}}
+    lsDel(K_ON);lsDel(K_SYNC);lsSet(K_DISMISS,String(Date.now()));track("push_unsubscribed",{})
+  }catch(e){}
+  busy=false;await refresh()
+}
+btn.addEventListener("click",function(){
+  if(busy)return;
+  if(mode==="ios"){if(window.odekakeA2HS&&window.odekakeA2HS.open)window.odekakeA2HS.open("push_card");return}
+  if(mode==="on")turnOff();else turnOn()
+});
+close.addEventListener("click",function(){lsSet(K_DISMISS,String(Date.now()));refresh()});
+refresh()
+})();
+</script>
+
 <style>/* みんなのおでかけ（.minna-*）専用スタイル。 */
 /* みんなのおでかけ：一覧・パートナー画面を全画面表示（投稿が増えても縦にスクロールできる） */
 #minnaListOverlay,#minnaCreatorOverlay{align-items:stretch;background:var(--paper)}
