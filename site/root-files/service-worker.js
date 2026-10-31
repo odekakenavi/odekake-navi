@@ -17,7 +17,7 @@
    ====================================================================== */
 "use strict";
 
-var SW_VERSION = "2026-09-26-2";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
+var SW_VERSION = "2026-10-31-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
 var SCOPE_URL  = new URL(self.registration.scope);
 var SCOPE_PATH = SCOPE_URL.pathname;                 // 例：/odekake-navi/
 var PREFIX     = "odekake:" + SCOPE_PATH + ":";
@@ -196,3 +196,36 @@ async function staleWhileRevalidate(event, req){
   }
   return net;
 }
+
+/* ---------- 通知（Web Push） ---------- */
+/* 受信：本文なしの合図が届いたら、Workerから文面を取って表示／タップ：サイトを開く */
+var PUSH_API = "https://odekake-push.odekakenavi2026.workers.dev"; // ← デプロイ後のWorkerのURL
+
+self.addEventListener("push", function (event) {
+  event.waitUntil((async function () {
+    var d = {};
+    try {
+      var r = await fetch(PUSH_API + "/latest", { cache: "no-store" });
+      if (r.ok) d = await r.json();
+    } catch (e) {}
+    // 文面を取れなかった場合でも、必ず通知は表示する（表示しないとブラウザが登録を取り消すことがある）
+    await self.registration.showNotification(d.title || "🧭 今週末、どこ行く？", {
+      body: d.body || "今週末のおでかけプランをチェックしましょう",
+      icon: new URL("icon-192.png", self.registration.scope).href,
+      tag: "weekly",
+      data: { url: d.url || self.registration.scope },
+    });
+  })());
+});
+
+self.addEventListener("notificationclick", function (event) {
+  event.notification.close();
+  var url = (event.notification.data && event.notification.data.url) || self.registration.scope;
+  event.waitUntil((async function () {
+    var list = await clients.matchAll({ type: "window", includeUncontrolled: true });
+    for (var i = 0; i < list.length; i++) {
+      try { await list[i].focus(); if (list[i].navigate) await list[i].navigate(url); return; } catch (e) {}
+    }
+    await clients.openWindow(url);
+  })());
+});
