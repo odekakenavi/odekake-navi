@@ -1508,6 +1508,29 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】芝生広場でレジャーシートを敷き、お弁当を食べる家族連れが多いと紹介されています。園内にバーベキュー広場（無料・要事前予約）があります。公式サイトでは持ち込みルールを確認できていません。",
+      "sheet": "ok",
+      "sheetNote": "【紹介記事からの目安】6万㎡の芝生広場でレジャーシートを広げる人が多いと紹介されています。バーベキュー広場ではテント・タープの設置はできません。",
+      "nearbyLunch": [
+        {
+          "name": "園内の売店「パークス光が丘」",
+          "note": "パンや飲料、軽食を売っています。"
+        },
+        {
+          "name": "光が丘駅前の「IMA」",
+          "note": "フードコートやファミリーレストランがあります（紹介記事）。"
+        },
+        {
+          "name": "バーベキュー広場",
+          "note": "無料・要事前予約。毎月5日10時から翌月分を受付、1組最大20名（予約ページの案内）。機材・食材は持ち込みです。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://kids.rurubu.jp/article/70968/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -1568,6 +1591,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店あり。近隣にファミレス・コンビニあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -1858,6 +1891,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店あり。大宮駅周辺にも飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -2391,6 +2434,8 @@
       "officialUrl": "https://www.hakone-oam.or.jp/"
     },
     "food": {
+      "bento": "ok",
+      "bentoNote": "持参のお弁当は、室内は丸太広場キトキ、屋外は園内各所のベンチで食べられます。ほかのお客様の妨げにならないよう配慮をお願いします。ゴミは持ち帰りです。",
       "nearbyLunch": [
         {
           "name": "ベラフォレスタ",
@@ -2399,11 +2444,15 @@
         {
           "name": "The Hakone Open-Air Museum Café",
           "note": "館内カフェ（公式掲載）。"
+        },
+        {
+          "name": "ベラフォレスタ・彫刻の森ダイニング",
+          "note": "入口・出口エリアのレストランです。2024年7月からレストランとショップは入館者のみの利用です。"
         }
       ],
       "source": "official",
-      "sourceUrl": "https://www.hakone-oam.or.jp/restaurantsandshops/",
-      "checkedAt": "2026年10月13日"
+      "sourceUrl": "https://www.hakone-oam.or.jp/contact/",
+      "checkedAt": "2026年10月31日"
     },
     "image": "img/spots/kanagawa-hakone-hakone-oam.jpg",
     "imageCredit": "📷 Σ64 / CC BY-SA 3.0 / Wikimedia Commons",
@@ -2477,6 +2526,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "隣接する元町・中華街エリアに飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -4472,6 +4531,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内に飲食する場所はありません。ツアー中は、キャップ付きの容器での水分補給のみ可能です。",
+      "source": "official",
+      "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/tokyo_bskan/faq.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -4532,6 +4598,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】公式サイトでは飲食のルールを確認できませんでした。施設情報サイトに「食事持込OK」の表示があります。",
+      "source": "web",
+      "sourceUrl": "https://iko-yo.net/facilities/118",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -4592,6 +4665,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "4階の休憩室で、持ち込んだ飲食物を食べられます。食事の販売はなく、飲料の自動販売機のみです。ゴミは持ち帰りです。団体は事前にWeb申請か電話での申し込みが必要です（定員96名）。",
+      "source": "official",
+      "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/tachikawa/20231203.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -5076,6 +5156,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式のよくある質問に「飲食物の持ち込みは可能」とあります。館内で食べたり休憩したりできる場所として、平日は2階の喫茶室スペース、土日祝は地下ホールを貸し出しています（地下ホールはイベントで使えない日あり）。屋外スペースはありません。再入館は原則できません。おむつ替えと授乳は、1階受付前の「赤ちゃんの駅」が使えます。",
+      "nearbyLunch": [
+        {
+          "name": "喫茶室クレア",
+          "note": "館内の喫茶室。土・日・祝日のみ営業（休業日あり）。予約不可。利用するには入館料が必要で、支払いは現金のみ。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.seibu-la.co.jp/nettaikan/faq.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -5286,6 +5379,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園内に売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -5522,6 +5625,19 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【目安・実際と異なる場合があります】公式のテント案内では、一般の草地広場で簡易テント（1辺2m以下のポップアップなど）を通年9〜17時に使えるとされ、広場で過ごす使い方が想定されています。お弁当の持ち込み自体の案内は確認できていません。バーベキュー広場は完全予約制・無料です。",
+      "nearbyLunch": [
+        {
+          "name": "バーベキュー広場の売店",
+          "note": "飲料・酒・アイス・BBQ用の調味料や木炭を売っています（紹介記事）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/mizumoto/news/2024/park_info_6.html",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -5576,6 +5692,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -6236,6 +6362,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "外部で購入した飲食物の持ち込みはご遠慮ください。館内カフェ「cafe Planetaria」で買った物のみ、ドーム内で飲食できます。",
+      "nearbyLunch": [
+        {
+          "name": "cafe Planetaria",
+          "note": "ホットドッグやアイスなどの軽食です。カフェだけの利用やお持ち帰りもできます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://planetarium.konicaminolta.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -6409,6 +6548,23 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】お弁当を食べられるベンチやテーブル付きのベンチがあると紹介されています。場所によってはシートを敷いて食べられそうとの記述もあります。公式サイトでは確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "本丸広場周辺の食事処・売店",
+          "note": "「本丸茶屋」でうどん・丼などが食べられ、ソフトクリームやかき氷の売店もあります（紹介記事）。"
+        },
+        {
+          "name": "小田原駅方面のコンビニ",
+          "note": "駅の方向に歩くとあります（紹介記事）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.kodomoto.info/spots/14206938O6",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -6613,6 +6769,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -6668,6 +6834,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園内に売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -6791,6 +6967,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園内の売店は少なめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -7496,6 +7682,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -7556,6 +7752,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -7618,6 +7824,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式のよくあるご質問に、持ち込みのお食事は1階のセミナーハウスで食べられるとあります。レストランは「ル・サンク」。野外施設へのテントや遊具の持ち込み、虫取り網・虫カゴの持ち込みは不可です。",
+      "nearbyLunch": [
+        {
+          "name": "レストラン「ル・サンク」",
+          "note": "館内のレストラン。平日11:00〜16:00、土日祝10:30〜16:00（ラストオーダー15:30）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.nat.museum.ibk.ed.jp/contact/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -7684,6 +7903,21 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "ピクニック",
+          "note": "ラーメン、うどん、そば、カレー、お子様セットなど。かみね公園の公式「園内店舗のご紹介」に掲載。"
+        },
+        {
+          "name": "フードハウス軽食堂",
+          "note": "ラーメン、うどん、そば、カレー、各種スナック。同上。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://kaminepark.or.jp/facility-06.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -7744,6 +7978,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "公式の「休憩・飲食」ページで、館内で飲食できるのは休憩室（第1〜第3の3室、合計で約255席）だけで、それ以外の場所での飲食は禁止とされています。館内にカフェ・レストランはないため、食事は持参するか、館外でとることになります。授乳室があり、ベビーベッドと長椅子が置かれています。",
+      "source": "official",
+      "sourceUrl": "https://www.expocenter.or.jp/information/cafe/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -8571,6 +8812,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "公式のよくある質問で、館内での飲食は禁止とされています。水分補給ができるスペースがあり、持ち込める飲み物はペットボトル・水筒・哺乳瓶など密閉できる容器のものに限ります。博物館の入るビルの外に、誰でも使えるテーブルとベンチの休憩スペースがあります。一度退館すると再入館はできません（通話のための一時退館は可）。",
+      "nearbyLunch": [
+        {
+          "name": "横浜三井ビルディング1階の飲食店・コンビニ",
+          "note": "博物館と同じビルの1階。公式のよくある質問で案内されています。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.hara-mrm.com/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -8686,6 +8940,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -8750,6 +9014,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -8876,6 +9150,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -8924,6 +9208,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -8978,6 +9272,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9029,6 +9333,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9083,6 +9397,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9155,6 +9479,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9216,6 +9550,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9319,6 +9663,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9375,6 +9729,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9428,6 +9792,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9474,6 +9848,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9521,6 +9905,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9574,6 +9968,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9628,6 +10032,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9686,6 +10100,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "公式のよくある質問で「食事をする場所はありますか？」に「ありません」と回答されています（学校などの団体は相談可）。お弁当の持ち込みそのものについての記載はありません。授乳室とベビールームはなく、おむつ交換用のベビーベッドがあります。同じ建物（厚木シティプラザ）内には、ベビー用の設備が一部あります。",
+      "source": "official",
+      "sourceUrl": "https://www.city.atsugi.kanagawa.jp/soshiki/seishonenka/kagakukan/6074.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -9740,6 +10161,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -9915,6 +10346,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "公式の「入館に際してのお願い」で、水・飴・ガムを含む飲食は、展示室ではなくレストラン・喫茶・テラス・前庭でするよう案内されています（標本害虫やカビを防ぐため）。持参したお弁当を食べてよいかは明記されていませんが、テラスや前庭は飲食できる場所とされています。",
+      "nearbyLunch": [
+        {
+          "name": "館内のレストラン・喫茶",
+          "note": "公式サイトで飲食できる場所として案内。メニューの詳細は公式サイトでは未確認。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://nh.kanagawa-museum.jp/nyukan-onegai.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -10037,6 +10481,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10413,6 +10867,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10459,6 +10923,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10502,6 +10976,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10555,6 +11039,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10599,6 +11093,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10775,6 +11279,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10821,6 +11335,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -10879,6 +11403,25 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】園内中央の自由広場などで、お弁当を持参してピクニックする人が多いと紹介されています。公式サイトでは確認できていません。",
+      "sheet": "ok",
+      "sheetNote": "【紹介記事からの目安】自由広場ではレジャーシートを敷いて過ごす家族が多いと紹介されています。",
+      "nearbyLunch": [
+        {
+          "name": "売店「パークス駒沢オリンピック中央広場店」",
+          "note": "中央広場の端にあり、軽食やソフトクリームを売っています（東急の紹介記事）。"
+        },
+        {
+          "name": "園内の売店・カフェ",
+          "note": "コッペパンサンドの売店や、パークカフェ「Mr.FARMER」があると紹介されています。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.tokyu.co.jp/area/komazawa-daigaku/article/arti-01KAZ73P0VKNJ330G27K7CSR96/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11033,6 +11576,25 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】アルコール以外の飲食物は持ち込めます。レジャーシートやテントは使えず、芝生には入れないため、ベンチで食べる形になります。公式サイトでは確認できていません。",
+      "sheet": "ng",
+      "sheetNote": "【紹介記事からの目安】レジャーシート・テントは利用できないと紹介されています。",
+      "nearbyLunch": [
+        {
+          "name": "吹上茶屋",
+          "note": "抹茶とお菓子（紹介記事）。"
+        },
+        {
+          "name": "園内の売店",
+          "note": "うどん、おでんなどの軽食（紹介記事）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://parknavi.info/rikugien_picnic",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11107,6 +11669,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【ブログからの目安・実際と異なる場合があります】お弁当の持ち込みはOKでアルコールは禁止との記述がありますが、確認できた記事は少なく、公式サイトでは確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "園内の茶屋「葵屋 びいどろ茶寮」",
+          "note": "てんぷらやそばの定食があり、1,000円以上のしっかりした食事です（ブログ）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://potsutabi.com/maple-review/comparison-of-rikugien-koishikawa-korakuen/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11163,6 +11738,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11207,6 +11792,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11255,6 +11850,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11302,6 +11907,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11349,6 +11964,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11460,6 +12085,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11730,6 +12365,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11836,6 +12481,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11883,6 +12538,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -11988,6 +12653,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -12034,6 +12709,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -12098,6 +12783,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -12144,6 +12839,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -12326,6 +13031,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -12490,6 +13205,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -12809,7 +13534,37 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "ジェットコースター",
+        "minAge": 4,
+        "note": "4歳から保護者同伴で乗車可、小学生から1人で乗車可"
+      },
+      {
+        "name": "ゴーカート",
+        "note": "運転は小学4年生かつ身長140cm以上。未満は保護者同伴で乗車のみ可（運転不可）"
+      },
+      {
+        "name": "ドラゴン",
+        "note": "身長100cm以上から1人で乗車可"
+      },
+      {
+        "name": "ロックンロール",
+        "minAge": 5,
+        "note": "5歳から保護者同伴で乗車可、小学生から1人で乗車可"
+      },
+      {
+        "name": "スワンカップ",
+        "note": "4歳未満は10歳以上の同伴が必要"
+      },
+      {
+        "name": "ボート",
+        "note": "中学生から1人で乗車可。小学生は中学生以上の同乗、未就学児は保護者の同乗が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-31",
+    "rideLimitsSource": "https://utsunomiya-zoo.com/amusement/"
   },
   {
     "region": "栃木",
@@ -13044,6 +13799,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -13177,6 +13942,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -13377,6 +14152,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -13437,7 +14222,20 @@
       "年末年始",
       "※10月〜3月の時間。4月〜9月は09:30-17:30。"
     ],
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "復元建造物の中は飲食できません。屋内で食べられるのは東ゾーンの店蔵型休憩棟です。テーブル付きベンチが園内各所にあります。アルコールの持ち込みは不可です。",
+      "nearbyLunch": [
+        {
+          "name": "たべもの処「蔵」（東ゾーン）・カフェ「武蔵野茶房」（西ゾーン）",
+          "note": "園内の飲食施設です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.tatemonoen.jp/about/faq.php",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -13614,6 +14412,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食事ができるのは10階の防災ラウンジだけで、持ち込んだ食事を食べられます。ゴミは持ち帰りです。自動販売機は飲料のみで、食べ物の販売はありません。飲み物は5階の屋外テラスなどでも飲めます。展示フロアは飲食禁止です。",
+      "source": "official",
+      "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/hkkan/mus-qa.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -13745,6 +14550,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内と建物周辺の屋内には、昼食を食べられる場所がありません。晴天時は建物前の広場で食べられますが、団体予約の状況によっては使えないことがあります。団体向けの案内の記載で、個人向けの明記はありません。",
+      "source": "official",
+      "sourceUrl": "https://www.nijinogesuidoukan.jp/wordpress/wp-content/uploads/2025/05/new_-dandai_yoyaku_goannnai.pdf",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -13974,6 +14786,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式のよくある質問で、1階と3階のラウンジで飲食できるとあります（持参のお弁当と明記はありませんが、飲食できる場所が館内に用意されています）。自動販売機も両方のラウンジにあります。ベビーカーは事務室で預かってもらえます。",
+      "source": "official",
+      "sourceUrl": "https://www.museum.yokosuka.kanagawa.jp/information/inquiries-and-faq",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -14064,7 +14883,35 @@
     "closedDays": [
       "※3〜11月の時間。12〜2月は09:30-17:00。遊具・飲食・温浴施設は別の営業時間。"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "rideLimits": [
+      {
+        "name": "疾風怒濤の鉄人舞台（大型アスレチック）",
+        "minCm": 120,
+        "note": "身長120cm以上、体重110kg以下。17歳までは保護者の同意書が必要"
+      },
+      {
+        "name": "ジップライン",
+        "minCm": 120,
+        "note": "身長120cm以上かつ体重30〜110kg。17歳までは保護者の同意書が必要"
+      },
+      {
+        "name": "GOGOカート",
+        "minCm": 130,
+        "note": "運転者は身長130cm以上（1〜2人乗り）"
+      },
+      {
+        "name": "フロッグホッパー",
+        "minAge": 3,
+        "note": "3歳以上（3歳未満は利用不可）。身長100cm以下は保護者（高校生以上）の同伴が必要"
+      },
+      {
+        "name": "観覧車",
+        "note": "全年齢。未就学児（6歳以下）は保護者（高校生以上）の付き添いが必要。付き添い1名につき2歳以下2名まで無料"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-31",
+    "rideLimitsSource": "https://soleil-park.jp/category/play"
   },
   {
     "region": "神奈川",
@@ -14107,6 +14954,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14150,6 +15007,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14193,6 +15060,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14243,6 +15120,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14301,6 +15188,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】1階のラウンジで飲食できると紹介されています。「食事持込OK」の表示もあります。公式サイトでは確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "2階のレストラン・カフェ",
+          "note": "紹介サイトによると、カフェは日・月曜休み、レストランは月1回月曜休みです（要確認）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://1000enpark.com/park/00129/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -14343,6 +15243,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14598,6 +15508,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14709,6 +15629,23 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは館内の飲食ルールを確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "盆栽レストラン大宮",
+          "note": "美術館の正面入口の斜め前です。11:00〜17:00で、木曜定休です。"
+        },
+        {
+          "name": "盆栽四季の家 休憩室",
+          "note": "盆栽村にある無料の休憩室で、誰でも自由に使えます。9:00〜17:00です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://visitsaitamacity.jp/spots/157",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -14770,6 +15707,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "公式の利用案内に「ふれあい広場」では休憩と飲食ができるとあります（長時間の利用や大声は不可）。それ以外の場所での飲食は原則お断りです。持参のお弁当と明記されてはいませんが、飲食できる場所がふれあい広場に限られている形です。",
+      "source": "official",
+      "sourceUrl": "https://www.city.saitama.lg.jp/kagakukan/access/p097412.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -14816,6 +15760,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14873,6 +15827,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -14941,6 +15905,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15052,6 +16026,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15213,6 +16197,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15257,6 +16251,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15395,6 +16399,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15438,6 +16452,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15499,6 +16523,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式の施設案内に「休憩・食事スペース（休憩コーナー／座席数に制限あり）」が載っています。持ち込みの可否を直接書いた記述は見つかりませんでしたが、食事ができる場所が館内に用意されています。混んでいると座れないことがあります。専用の授乳室やベビールームはなく、授乳は救護室を使えます（チケットカウンターに申し出）。水飲み場は現在休止中です。",
+      "source": "official",
+      "sourceUrl": "https://www.chiba-muse.or.jp/SCIENCE/visit/page-1517908555923/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -15611,7 +16642,20 @@
       "年末年始",
       "※10〜2月の時間。入館は16:00まで。"
     ],
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式の「レストラン・休憩所」に、館に隣接した芝生広場と館内の中庭で飲食できるとあります（「持ち込み」という書き方ではなく「ご飲食可能」）。食事のあとも、展示室入口でチケット半券を見せれば再入館できます。",
+      "nearbyLunch": [
+        {
+          "name": "レストランさくら",
+          "note": "館内のレストラン。ハーブソースかつ丼1,300円、古代カレー1,200円、お子様カレーセット700円など。食事の提供は11:00から（10月〜2月は16:00閉店、ラストオーダー15:30）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.rekihaku.ac.jp/information/restaurant/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "千葉",
@@ -15896,6 +16940,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内にレストラン・売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15941,6 +16995,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -15984,6 +17048,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -16028,6 +17102,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -16301,6 +17385,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -16828,7 +17922,54 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "ジャングルスウィング",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "3歳以上かつ90cm以上。105cm未満は保護者同伴（同伴者も有料）"
+      },
+      {
+        "name": "フロッグホッパー",
+        "minCm": 90,
+        "minAge": 3,
+        "note": "3歳以上かつ90cm以上。105cm未満は保護者同伴（同伴者も有料）"
+      },
+      {
+        "name": "GOGOカート1人乗り",
+        "minCm": 150,
+        "note": "運転者は150cm以上"
+      },
+      {
+        "name": "GOGOカート2人乗り",
+        "minCm": 130,
+        "note": "運転者は130cm以上（個別ページには150cm以上との記載もあり、要確認）。中学生以下は高校生以上の保護者が同伴（同伴者も有料）。助手席は3歳以上"
+      },
+      {
+        "name": "レッツ！ブロックカート",
+        "note": "運転者は身長150cm未満。未就学児は高校生以上の保護者の付き添いが必須"
+      },
+      {
+        "name": "てんとう虫のサンバライド",
+        "minAge": 3,
+        "note": "3歳は保護者同伴、4歳から1人で利用可（同伴者も有料）"
+      },
+      {
+        "name": "ジップラインKAKKU",
+        "note": "小学3年生以上、体重25〜85kg"
+      },
+      {
+        "name": "水上じてんしゃ",
+        "note": "1人乗りは中学生以上・体重100kgまで、2人乗りは小学4年生以上・体重合計150kgまで"
+      },
+      {
+        "name": "メリーゴーランド",
+        "note": "小学生未満は保護者同伴（同伴者も有料）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-31",
+    "rideLimitsSource": "https://www.rindo.co.jp/attraction/"
   },
   {
     "region": "栃木",
@@ -17196,6 +18337,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17316,6 +18467,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式の施設案内で、屋外展示場の「ビュウ広場」は「お弁当を広げたり、ひと息入れるのにぴったりの芝生の広場」と紹介されています。目の前に展示車両が並びます。",
+      "source": "official",
+      "sourceUrl": "https://www.usuitouge.com/bunkamura/installation/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -17549,6 +18707,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店がある場合あり。周辺の飲食店と組み合わせるのがおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17605,6 +18773,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店・コンビニあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17659,6 +18837,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に自動販売機あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17760,6 +18948,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17816,6 +19014,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17867,6 +19075,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -17927,6 +19145,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -18053,6 +19281,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -18213,6 +19451,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -18263,6 +19511,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -18309,6 +19567,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -18365,6 +19633,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -18500,6 +19778,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内での飲食は不可です。館内にロッカーはありません。おなかがすいたら、一度館外に出て食べてください。2026年4月に京橋から西五反田（TOCビル3階）へ移転しました。",
+      "source": "official",
+      "sourceUrl": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/welcome/museum_tour.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -18542,6 +19827,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。2階のJ's Cafeは平日の11:30〜14:00だけの営業で、土・日・祝日は休みです。週末は持ち込みか外食が前提になります。",
+      "nearbyLunch": [
+        {
+          "name": "J's Cafe（2階）",
+          "note": "平日ランチ11:30〜14:00です。エスニックメニューなどがあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.jica.go.jp/domestic/hiroba/about/map/index.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -18683,6 +19981,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食事ができるのは、館内のカフェ「ギャラクカフェ」と、フリースペースの地下2階・3階の「ホッとスペース」、2階の「ぷらっとプラネット」です。ちびっこガーデンのサロンの電子レンジで、離乳食やお弁当をあたためられると紹介されています（紹介記事）。",
+      "nearbyLunch": [
+        {
+          "name": "ギャラクカフェ内「つなぐ茶房」",
+          "note": "2025年4月からお茶とおにぎりの和カフェが入っています（運営会社の案内）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "http://www.galaxcity.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -18924,6 +20235,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "店内は出入り自由で、飲食物の持ち込みも自由です。お弁当を食べられるテーブル席があります。一度入場したあとの外出と再入場も自由です。昼どきは飲食スペースが混むという口コミがあります。",
+      "source": "official",
+      "sourceUrl": "https://www.odaiba-decks.com/shop/detail/23030003?tenant_cd=23030003",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -19096,6 +20414,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "公式のよくある質問で、食事の持ち込みは遠慮してほしいと案内されています。見学エリア内に食事ができる場所はありません。セキュリティエリア内の食堂とコンビニは平日のみ（要受付）で、食堂へのお弁当の持ち込みも不可です。授乳室はありますが、給湯器はありません。",
+      "nearbyLunch": [
+        {
+          "name": "セキュリティエリア内の食堂・コンビニ",
+          "note": "平日のみ利用可（要受付）。詳細は公式の「食堂・コンビニのご利用について」を参照。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://visit-tsukuba.jaxa.jp/faq.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -19517,6 +20848,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "一般の飲食物は持ち込み不可です。水筒、ペットボトル、小さなお子さんのおやつ、飴・ガムは持ち込めます。食物アレルギーでカフェの食事が難しい場合は、同行者がカフェのメニューを注文することを条件に、持ち込みで食べられます。取得した内容が古く、最新の公式ページとは照合できていません。",
+      "nearbyLunch": [
+        {
+          "name": "ミュージアムカフェ（2階）",
+          "note": "館内の飲食施設です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://smallworlds.jp/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -19562,6 +20906,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "ペットボトルや水筒での水分補給は可能です。こぼれやすい飲み物（テイクアウトのカップなど）の持ち込みと、お食事はご遠慮ください。再入場はできないため、食事は入館の前か後にとります。",
+      "nearbyLunch": [
+        {
+          "name": "ダイバーシティ東京 プラザ内の飲食店",
+          "note": "同じ建物内で、入館の前後に食事できます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://unkomuseum.com/tokyo/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -19927,15 +21284,21 @@
       "note": "大人1,800円×2＋子ども（大人の約半額900円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
     },
     "food": {
+      "bento": "ng",
+      "bentoNote": "館内でのお弁当はご遠慮ください。館内のレストランをご利用ください。",
       "nearbyLunch": [
         {
           "name": "カフェテラッツァうかい",
           "note": "園内のカフェ・レストラン。庭園を望むテラス席がある。"
+        },
+        {
+          "name": "館内レストラン",
+          "note": "入館者のみ利用できます。個人の予約は不可で、混雑時は番号券で順番待ちです。営業は10:00〜17:30です。"
         }
       ],
       "source": "official",
-      "sourceUrl": "https://www.hakone-garasunomori.jp/",
-      "checkedAt": "2026年10月13日"
+      "sourceUrl": "https://www.hakone-garasunomori.jp/faq",
+      "checkedAt": "2026年10月31日"
     },
     "businessHours": {
       "mon": "10:00-17:30",
@@ -20107,6 +21470,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "公式サイトの注意事項に「当施設で販売しているエサ以外はあげないようにお願いします。また食べ物の持ち込みもご遠慮ください」とあります。再入園は原則としてできない（トイレなどはスタッフに声をかける）ので、食事は入館の前後に、同じ横浜ワールドポーターズ内の店でとるのが現実的です。",
+      "source": "official",
+      "sourceUrl": "https://www.anitouch.jp/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -20232,7 +21602,20 @@
     "image": "img/spots/chiba-shibayama-aeromuseum.jpg",
     "imageCredit": "📷 photo: Qurren (トーク) Taken with Canon IXY 430F (Digital IXUS 245 HS) / CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Museum_of_Aeronautical_Sciences_2016-11.jpg",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内の食事は、屋外展示場や出口周辺の屋外休憩スペースで食べられます。中央棟4階のレストランへの持ち込みはできません。離乳食とアレルギーは、スタッフに相談できます。",
+      "nearbyLunch": [
+        {
+          "name": "展望レストラン「バルーン」（中央棟4階）",
+          "note": "個人の予約はできません。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.aeromuseum.or.jp/qa/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "千葉",
@@ -20449,6 +21832,21 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "ピクニック",
+          "note": "ラーメン、うどん、そば、カレー、お子様セットなど。公式の「園内店舗のご紹介」に掲載。"
+        },
+        {
+          "name": "フードハウス軽食堂",
+          "note": "ラーメン、うどん、そば、カレー、各種スナック。同上。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://kaminepark.or.jp/facility-06.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -20752,6 +22150,17 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "ごはん家 ポーチャイ",
+          "note": "園内唯一のレストランとの紹介あり。ガパオライス、ルーロー飯、フォーなどのアジア料理。授乳室でお湯が必要な場合はレストランで頼める（ウォーカープラスの施設掲載情報）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.walkerplus.com/spot/ar0309s03795/data.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -20811,6 +22220,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "ティールーム「Teddy's Garden」",
+          "note": "ケーキとお飲物だけで、お食事は出ません。入館料なしで利用できます（チケット販売ページの記載）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.teddynet.co.jp/nasu/qa/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -20872,6 +22294,12 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】公式サイトでは持ち込みのルールを確認できませんでした。併設のカフェがあるという紹介記事があります（公式では未確認）。",
+      "source": "web",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -20936,6 +22364,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。館内のカフェは2023年4月20日から営業を休止し、カフェスペースは体験教室になりました（公式お知らせ）。現在の食事の場所は確認できていません。",
+      "source": "official",
+      "sourceUrl": "https://sgm-nasu.com/news/cafe-20230420/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -21080,6 +22515,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。館内に食事ができる施設はありません。",
+      "nearbyLunch": [
+        {
+          "name": "スイーツカフェ「TrickY's」（敷地内の駐車場側）",
+          "note": "クレープ、ホットドッグなどの軽食とドリンクです。本格的なランチはありません（体験記）。鬼怒川温泉駅前にも2店舗目があります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://trickart-pia.com/contact/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -22976,6 +24424,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは飲食のルールを確認できませんでした。同じ公式FAQで、プラネタリアYOKOHAMAは館内カフェで買った物のみ飲食可、名古屋は飲食お断りと案内されています。池袋の項目には、飲食の記載がありません。",
+      "source": "official",
+      "sourceUrl": "https://planetarium.konicaminolta.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -23397,7 +24852,14 @@
     "image": "img/spots/tokyo-koto-planets.jpg",
     "imageCredit": "📷 Sasa0403 / CC BY-SA 4.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Photos_at_teamlab_planets_tokyo.jpg",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内での飲食は禁止です。出口ゲートを出たあとの再入場はできません。飲み物やおやつは、入館前にすませておくのが安心です。",
+      "source": "official",
+      "sourceUrl": "https://www.teamlab.art/jp/e/planets/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -23459,7 +24921,22 @@
     "closedDays": [
       "無休"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "ナンジャ餃子スタジアム",
+          "note": "ご当地餃子の店が集まるフードエリア（園内）。公式の「フード＆ショップ」に掲載。"
+        },
+        {
+          "name": "福袋デザート横丁",
+          "note": "デザートの店が集まる園内エリア。同上。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://bandainamco-am.co.jp/tp/namja/food/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "神奈川",
@@ -23631,6 +25108,19 @@
         "type": "illumination",
         "note": "大観覧車「コスモクロック21」を彩る「大観覧車 光のアート」を通年で実施し、12/19〜25はクリスマスイルミネーションになる。点灯は日没〜24:00ごろ。遊園地は入園無料で、コスモクロック21は1人1,000円。イルミネーション情報サイト（ウォーカープラス）の2026-27掲載内容のため、お出かけ前に公式サイトで確認を。"
       }
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "園内への飲食物の持ち込みはご遠慮くださいと案内されています。園内の軽食は「コスモコート」で買えます（焼きそば、ホットドッグ、チュロスなど）。",
+      "nearbyLunch": [
+        {
+          "name": "コスモコート",
+          "note": "園内のフードコーナー。焼きそば、ホットドッグ、ポテト、クレープなど、食べ歩きできる軽食が中心。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://cosmoworld.jp/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -23681,6 +25171,23 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】飲食物は原則持ち込み禁止で、乳幼児の離乳食とアレルギー対応食だけ例外とする記事が多くあります。水着のまま使える飲食店が館内にあります。公式サイトでは確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "フードコート「フォンターナ」",
+          "note": "水着のまま利用できます（紹介記事）。"
+        },
+        {
+          "name": "寿司としゃぶしゃぶ「くましろ」",
+          "note": "水着のまま利用できます（紹介記事）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://soto-asobi0723.com/yunessun-meal/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -23830,7 +25337,14 @@
       "※12〜3月は火曜休。最終入館16:30。"
     ],
     "verifiedAt": "2026年10月13日",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の料金・アクセスのページに「当館地下坑内での飲食は禁止」とあります。地上のスペースでの飲食については記載が見つかりませんでした。坑内は気温が低く（トップページに11℃の表示）、上着が必要です。車いす・ベビーカー・手押し車での入館はできません。",
+      "source": "official",
+      "sourceUrl": "https://www.oya909.co.jp/access/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "山梨",
@@ -24290,6 +25804,23 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食物（クーラーボックス・お弁当・おやつ・酒・ジュース類）の持ち込みは固くお断り、館内通路での飲食も禁止と公式に案内されています。離乳食とアレルギー食は例外とする紹介記事がありますが、公式では確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "館内のフードコート",
+          "note": "ハンバーガー、ピザ、たこ焼きなどがあります（紹介記事）。"
+        },
+        {
+          "name": "館内のレストラン・売店",
+          "note": "水着のまま使える店もあります（紹介記事）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.hawaiians.co.jp/guide/rule/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -24444,6 +25975,23 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】利用者の口コミに「お弁当を持っていれば、食べるスペースはたくさんある」とあります。しっかり食べるレストランはなく、2階の売店で土日に「いきものパン」などの軽食を売っているそうです。公式サイトでは持ち込みルールを確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "生物園2階のミュージアムショップ",
+          "note": "「いきものパン」などの軽食（口コミ。園の過去のお知らせでも軽食を扱うと案内）。"
+        },
+        {
+          "name": "近隣のファミリーレストラン",
+          "note": "口コミでは近くのココスでお昼をとった人がいます。"
+        }
+      ],
+      "source": "review",
+      "sourceUrl": "https://iko-yo.net/experiences/100512",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -24506,6 +26054,18 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "園内での食事・お弁当のルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "公園周辺の飲食店",
+          "note": "周辺にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -24568,6 +26128,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。同じビル内のレストランとカフェは、土・日・祝日と年末年始が休みです。土日に行く場合は、先に食事をすませるか、周辺で食べる前提にしてください。",
+      "nearbyLunch": [
+        {
+          "name": "小石川テラス（レストラン）・ハートフルカフェ",
+          "note": "どちらも11:30〜17:00で、土・日・祝日と年末年始は休みです。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.printing-museum.org/guide/floormap/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -24624,6 +26197,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは館内の飲食ルールを確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "深川 釜匠",
+          "note": "深川めしの店で、徒歩約1分と紹介されています（古い紹介記事で、営業状況は未確認）。"
+        }
+      ],
+      "source": "web",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -24724,6 +26309,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式のよくある質問に、持参した食べ物は園内各所のベンチ・東屋などの休憩所や、船越の舞台の客席などで食べられるとあります（日替わりで公開している古民家の一部も可）。当日の半券があれば再入園もできます。持ち込めないのは酒類、火器、模造刀などの長い物です。学校団体向けには昼食場所の提供はなし。",
+      "nearbyLunch": [
+        {
+          "name": "そば処「白川郷」",
+          "note": "園内の山下家1階にある飲食施設。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.nihonminkaen.jp/faq",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -24787,6 +26385,21 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】お弁当の持ち込みができ、芝生広場やベンチで食べられると紹介されています。レストランや売店はなく、自動販売機があります。休日はキッチンカーや屋台が出ることがあります。",
+      "sheet": "ok",
+      "sheetNote": "【紹介記事からの目安】芝生エリアでのピクニックが紹介されています。",
+      "nearbyLunch": [
+        {
+          "name": "キッチンカー・屋台",
+          "note": "出る日がありますが、出店は日によります。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://kids.rurubu.jp/article/35738/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -24914,6 +26527,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "公式のよくある質問で、科学館内は飴やガムも含め原則として飲食できないと案内されています。館内のゴミ箱もなく、ゴミは持ち帰りです。授乳室は1階にあり（個室ではなく共有）、おむつ替えは1階バリアフリートイレか2階女子トイレで。",
+      "nearbyLunch": [
+        {
+          "name": "Cafe 星めぐり",
+          "note": "併設カフェ。季節の星座ラテや限定メニューがあり、科学館を利用しなくても入れる。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.nature-kawasaki.jp/faq.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -25081,6 +26707,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "売店「佐蘭花」で軽食・ソフトクリームあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -25303,6 +26939,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "温泉街の散策・入浴スポットで、食事は周辺の飲食店を利用します。館内での飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "湯畑周辺に飲食店・土産店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -25366,6 +27014,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "温泉街の散策・入浴スポットで、食事は周辺の飲食店を利用します。館内での飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "石段沿いに飲食店・射的場・土産店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -25495,6 +27155,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の「ご利用上の注意」は、ルールの1番目に「食べ物を見せない、与えない」を挙げ、食べ物を持っていると手荷物を奪われるなどの危険があると説明しています。苑内での飲食そのものが禁止かどうかは明記されていません。来園前に確認を。",
+      "source": "official",
+      "sourceUrl": "https://jigokudani-yaenkoen.co.jp/caution/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -25564,6 +27231,21 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "フルーツパーラー（分園）",
+          "note": "ピラフ、ピザ、カレーなどの食事とバナナのスイーツ。土日祝の昼は待つことがあるとの紹介あり。"
+        },
+        {
+          "name": "ジューススタンド（本園入口）",
+          "note": "バナナジュースやソフトクリームなどの軽食・ドリンク。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://atagawa.net/guide/banana/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -25696,6 +27378,23 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】屋外のテーブルやベンチでお弁当を食べられるという紹介が複数あります（レストランなど飲食施設の中には持ち込めません）。公式のよくあるご質問に「食事の持ち込みはできますか？」の項目がありますが、回答本文は確認できませんでした。夏季のパルプール内は、公式の案内で持ち込みOK（コンロなどの火器は不可）です。",
+      "nearbyLunch": [
+        {
+          "name": "ぱくぱく大食堂",
+          "note": "園内のメインレストラン。離乳食やお子様向けの食器があると公式に案内されています。"
+        },
+        {
+          "name": "テイクアウトショップ・ラーメン店",
+          "note": "公式の「フード」ページに掲載。お湯サービスは授乳室、レストラン、各テイクアウトショップで提供。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://pal2.co.jp/faq",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -25832,6 +27531,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。ショップやレストランだけの利用でも、入館料がかかります。",
+      "nearbyLunch": [
+        {
+          "name": "森のレストラン",
+          "note": "11:00〜16:30です。予約は受け付けておらず、来た順の案内です。お子様用のスプーンとフォークがあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://kawaguchikomusicforest.jp/restaurant/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -25975,6 +27687,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】公式サイトでは持ち込みのルールを確認できませんでした。11月中旬から翌年4月中旬は休業です（情報源により日付が異なります）。",
+      "nearbyLunch": [
+        {
+          "name": "珈琲の館（敷地内）",
+          "note": "飲み物、ソフトクリーム、数量限定のケーキセットです。施設を使わなくても入れます。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.jalan.net/kankou/spt_guide000000152928/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -26087,6 +27812,23 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】園内はレストランがなく、広々とした園内でお弁当を広げる場所を見つけられると紹介されています。バーベキュー・花火・たき火など火気の使用は、史跡保全のため原則禁止です（上田市の案内）。",
+      "nearbyLunch": [
+        {
+          "name": "上田市観光会館",
+          "note": "公園東側にあり、1階に売店と喫茶スペース、2階に観光案内所・休憩スペースがあります（上田市）。"
+        },
+        {
+          "name": "上田駅周辺・Ario上田",
+          "note": "駅周辺の飲食店やショッピングモールのレストランが使えます（紹介記事）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.natsuzora.com/dew/nagano/uedajosekikoen.html",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -26536,7 +28278,7 @@
     "parking": "yes",
     "access": "伊豆箱根鉄道駿豆線「伊豆長岡駅」からバスで約25分",
     "baby": "おむつ替えあり／ベビーカーOK／キッズコーナーあり",
-    "lunch": "館内にレストランあり。",
+    "lunch": "館内にレストランはなく、ショースタジアム横のテイクアウトコーナーで軽食（フライドポテト、アイスなど）を販売。お弁当の持ち込みは可能で、館内にテーブル・ベンチあり。再入場も可。",
     "officialUrl": "https://www.mitosea.com/",
     "verifiedAt": "2026年10月13日",
     "bookingLinks": {
@@ -26572,7 +28314,20 @@
     "image": "img/spots/shizuoka-numazu-mitosea.jpg",
     "imageCredit": "📷 CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BC%8A%E8%B1%86%E3%83%BB%E4%B8%89%E6%B4%A5%E3%82%B7%E3%83%BC%E3%83%91%E3%83%A9%E3%83%80%E3%82%A4%E3%82%B9_%E3%82%B7%E3%83%A7%E3%83%BC_(4).JPG",
-    "genre": "水族館"
+    "genre": "水族館",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式のよくある質問に「館内へのお弁当のお持ち込みは可能」とあります。「みとしーminiパラダイス」やイルカの海の周辺にテーブル・イス・ベンチがあり、ショースタジアムとイルカの海ショーステージの観覧席も使えます。当日の入場券があれば再入場もできます（閉館30分前まで）。",
+      "nearbyLunch": [
+        {
+          "name": "ショースタジアム横のテイクアウトコーナー",
+          "note": "館内にレストランはなく、フライドポテトやアイスなどの軽食を販売。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.mitosea.com/infomation/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "静岡",
@@ -26623,6 +28378,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "山頂にカフェ「Cafe・321」あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -26701,7 +28466,21 @@
       ],
       "source": "text",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "メリーゴーランド",
+        "minCm": 110,
+        "note": "身長110cm未満は保護者同伴で乗車可"
+      },
+      {
+        "name": "ゴーカート",
+        "minCm": 150,
+        "note": "身長150cm以上"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-10-31",
+    "rideLimitsSource": "https://izu-animal-kingdom.com/status/"
   },
   {
     "region": "静岡",
@@ -26750,6 +28529,17 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店は少なめ。軽食の持参がおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -26812,6 +28602,27 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みのルールは確認できませんでした。園内の「ティールーム花の温室」でソフトクリームや軽食が食べられ（水曜定休）、レストランは土日祝のみの営業です。手ぶらでできるBBQもあります。営業時間は変わることがあるので、行く前に確認を。",
+      "nearbyLunch": [
+        {
+          "name": "ティールーム花の温室",
+          "note": "平日10:00〜16:00、土日祝9:00〜17:00。ソフトクリームや軽食、テイクアウトあり。"
+        },
+        {
+          "name": "レストラン",
+          "note": "土日祝のみ11:00〜15:00（LO14:30）。"
+        },
+        {
+          "name": "手ぶらBBQ",
+          "note": "事前予約制（レストランの案内）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.at-s.com/gourmet/article/126417",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -26931,6 +28742,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "園内での食事・お弁当のルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "周辺にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -27054,6 +28877,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "ティールーム「Teddy's Garden」",
+          "note": "ケーキとお飲物だけで、お食事は出ません（公式Q&A）。入館しなくても利用できると紹介されています。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.teddynet.co.jp/izu/qa/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -27848,7 +29684,30 @@
     "image": "img/spots/kanagawa-hakone-hakonenavi.jpg",
     "imageCredit": "📷 663highland / CC BY-SA 4.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:211126_Hakone-en_Station_Hakone_Japan01s3.jpg",
-    "genre": "水族館"
+    "genre": "水族館",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "ななかまど",
+          "note": "箱根園内のレストラン。公式サイトの「お食事」に掲載。館内通路はスロープがあり、ベビーカーでも入りやすい。"
+        },
+        {
+          "name": "どんぶり屋",
+          "note": "しらす大漁丼など丼料理の店（箱根園内）。"
+        },
+        {
+          "name": "カレー＆ラーメンハウス 麦わら屋",
+          "note": "箱根園内の軽食店。"
+        },
+        {
+          "name": "箱根 プリンスパン工房",
+          "note": "箱根園内のパン店。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.princehotels.co.jp/amuse/hakone-en/information/qanda.html",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "神奈川",
@@ -28163,6 +30022,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。3階に休憩スペースがあり、あげかまなどを食べながら休憩できます。飲み物の自動販売機があります。",
+      "nearbyLunch": [
+        {
+          "name": "かまぼこの里の飲食店",
+          "note": "バイキングの「えれんなごっそ」、そばと板わさの「美藏」、甘味の「且座」などです。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.kamaboko.com/museum/facility/3rdfloor/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -28474,6 +30346,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "カフェ「玄関テラス」あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -28532,6 +30414,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "熱海城の飲食施設（ヒルトップレストラン／ヒルトップテラス）",
+          "note": "同じ敷地にあります。公式サイトに「熱海城 ヒルトップレストラン」の記載があります。食券式で、丼や麺類の定食、ピザなどが500〜1,200円ほどという個人ブログの記載（2024年11月時点）で、名称と価格は未確認です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://atami-trickart.com/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -29027,6 +30922,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内にカフェあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -29517,6 +31422,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "森のレストランあり。BBQ場も利用可（要予約）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -29828,6 +31743,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "園内での食事・お弁当のルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "周辺にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -29877,6 +31804,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店・コンビニあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30184,6 +32121,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "茶屋「里見茶屋」あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30231,6 +32178,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店・道の駅あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30275,6 +32232,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店は少なめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30323,6 +32290,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "キッチンカーが出る日あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30485,6 +32462,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "道の駅内に食事処あり（舞茸天ざるうどんなど）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30529,6 +32516,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店は少なめ、事前準備がおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30576,6 +32573,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店は少なめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30667,6 +32674,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に足湯カフェや飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30726,6 +32743,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "温泉街の散策・入浴スポットで、食事は周辺の飲食店を利用します。館内での飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "西の河原公園内・周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30785,6 +32814,22 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みのルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "施設内の軽食コーナー",
+          "note": "施設内にあります。"
+        },
+        {
+          "name": "草津温泉街の飲食店",
+          "note": "徒歩圏内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30835,6 +32880,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "温泉街の散策・入浴スポットで、食事は周辺の飲食店を利用します。館内での飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "施設周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -30881,6 +32938,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "温泉街の散策・入浴スポットで、食事は周辺の飲食店を利用します。館内での飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "目の前の湯畑周辺に飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -31051,6 +33120,8 @@
       "maxMinutes": 150
     },
     "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】旅行ガイドの特徴欄に「弁当持込可」とあります。ただし古い記事で、公式サイトでは確認できていません。",
       "nearbyLunch": [
         {
           "name": "レストラン・フードコート",
@@ -31059,10 +33130,18 @@
         {
           "name": "BBQ",
           "note": "食材を持ち込めるプランあり。"
+        },
+        {
+          "name": "バーズカフェ",
+          "note": "石窯ピッツァ、カレー、ソフトクリームなどがあります。"
+        },
+        {
+          "name": "パラダ流BBQ",
+          "note": "食材持ち込み可で、屋根付きです（紹介記事）。"
         }
       ],
-      "source": "official",
-      "sourceUrl": "https://www.saku-parada.jp/green/restaurant/",
+      "source": "web",
+      "sourceUrl": "https://kids.rurubu.jp/article/1752/",
       "checkedAt": "2026年10月31日"
     }
   },
@@ -31221,6 +33300,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは飲食のルールを確認できませんでした。施設周辺の「ファミリー広場」は公園として整備され、休憩所として利用できます。",
+      "source": "official",
+      "sourceUrl": "https://www.city.saku.nagano.jp/star-dome/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -31346,6 +33432,27 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "園内への食べ物の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "レストラン湖水",
+          "note": "塩沢湖のほとりのオープンな店で、ハンバーグやカレー、キッズメニューがあります（紹介記事）。"
+        },
+        {
+          "name": "レストランソネット",
+          "note": "明治四十四年館の中にあり、パスタなどがあります（紹介記事）。"
+        },
+        {
+          "name": "園内のカフェ",
+          "note": "複数あり、軽食やお茶に使えます（紹介記事）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.hgp.co.jp/karuizawa/specialcontents/taliesin/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -31441,15 +33548,21 @@
       "note": "大人1,100円×2＋小学生700円×2＋幼児0円×1（幼児は無料と仮定）"
     },
     "food": {
+      "bento": "partial",
+      "bentoNote": "敷地内のベンチやガーデン内の東屋など所定の場所を除き、建物内での飲食はご遠慮ください。",
       "nearbyLunch": [
         {
           "name": "カフェ「ルーエ」",
           "note": "【口コミ・紹介記事からの目安・実際と異なる場合があります】併設。ランチやティータイムに利用できる。"
+        },
+        {
+          "name": "カフェ「RUHE tea house」（旧ルーエ）",
+          "note": "2026年3月中旬にオーナーが変わってリニューアルすると、公式サイトにあります。営業日時は美術館と同じとは限りません。ショップとカフェは、入館チケットなしで利用できます。"
         }
       ],
-      "source": "web",
-      "sourceUrl": "https://iko-yo.net/facilities/2472",
-      "checkedAt": "2026年10月13日"
+      "source": "official",
+      "sourceUrl": "https://museen.org/information/",
+      "checkedAt": "2026年10月31日"
     },
     "businessHours": {
       "mon": "09:30-17:00",
@@ -31769,6 +33882,23 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "邸内・庭園での飲食（飴やガムも含む）は禁止です。決められた場所での水分補給だけ認められています（公式FAQ）。",
+      "nearbyLunch": [
+        {
+          "name": "御用邸「茶寮」",
+          "note": "屋外休憩所内にあり、飲み物・甘味・ランチ（国産牛カレーなど）があります。営業は4〜11月の11:00〜15:30（オーダーストップ15:00）、火曜休み（公式）。"
+        },
+        {
+          "name": "日光駅周辺の飲食店",
+          "note": "公園周辺に食事処やカフェがあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.park-tochigi.com/tamozawa/faq",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -32066,6 +34196,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "温泉街の散策・入浴スポットで、食事は周辺の飲食店を利用します。館内での飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "塩原温泉郷内に飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -32129,6 +34271,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の利用案内に、酒類の持ち込みは遠慮してほしいこと、屋外ではバーベキュー・花火・たき火などの火気は使えないことが書かれています。お弁当の持ち込み可否は明記されていません。1階に休憩室があります。来園前に確認を。",
+      "nearbyLunch": [
+        {
+          "name": "キッチンカー",
+          "note": "公式サイトに「キッチンカー出店カレンダー」あり。出店日は公式のお知らせで確認。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://t-csm.jp/guide",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -32171,6 +34326,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。大谷資料館も徒歩圏内。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -32401,6 +34566,16 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内にレストランあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -32766,6 +34941,18 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "園内での食事・お弁当のルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "見沼ヘルシーランドの飲食店",
+          "note": "隣接の入浴施設内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -32823,6 +35010,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。館内に自動販売機とカフェがあります（コーヒーとソフトクリーム）。",
+      "nearbyLunch": [
+        {
+          "name": "Yoroken Caffé（にぎわい交流館いわつき）",
+          "note": "隣接する施設内で、岩槻のヨーロッパ野菜を使った料理が食べられます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://ningyo-muse.jp/modules/info/index.php?action=PageView&page_id=6",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -32943,7 +35143,19 @@
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-higashikurume-spadium-japon.jpg",
     "imageCredit": "📷 Souka Kinmei / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%82%B9%E3%83%91%E3%82%B8%E3%82%A2%E3%83%A0%E3%82%B8%E3%83%A3%E3%83%9D%E3%83%B3.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%82%B9%E3%83%91%E3%82%B8%E3%82%A2%E3%83%A0%E3%82%B8%E3%83%A3%E3%83%9D%E3%83%B3.jpg",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "フードコート・和食レストラン・ピッツァ等あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "埼玉",
@@ -32992,6 +35204,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,650円×2＋小学生600円×2＋幼児0円×1（幼児は無料と仮定）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処・フードコートあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -33170,6 +35394,19 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人900円×2＋小学生400円×2＋幼児400円×1（幼児料金あり）"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【他店舗の公式案内からの目安】極楽湯の他店（名取店）の公式案内では、館内への飲食物の持ち込みはご遠慮くださいとされています。この店舗の案内は確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "館内の食事処、オーツーパーク内の飲食店",
+          "note": "施設情報より。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://natori.gokurakuyu.jp/guide/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -33219,6 +35456,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,800円×2＋小学生900円×2＋幼児900円×1（幼児も子ども料金と仮定）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "館内に食事処・フードコートあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -33264,6 +35513,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人900円×2＋子ども（大人の約半額400円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "館内に食事処あり。ショッピングセンター内のため飲食店も豊富。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -34210,7 +36471,19 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人750円×2＋小学生380円×2＋幼児380円×1（幼児も子ども料金と仮定）"
     },
-    "verifiedAt": "2026年10月12日"
+    "verifiedAt": "2026年10月12日",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処「ごちそう屋」あり（お子様向けメニューもあり）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -34256,6 +36529,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人620円×2＋小学生320円×2＋幼児320円×1（幼児も子ども料金と仮定）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "ランチバイキング＋日帰り入浴のセットプランが人気。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -34304,7 +36589,19 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人900円×2＋小学生500円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "神奈川",
@@ -34985,7 +37282,20 @@
     "closedDays": [
       "月曜日（祝日の場合は翌日）",
       "年末年始（12/29〜1/3）"
-    ]
+    ],
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みのルールは公式ページに書かれていません。園内の直売所（ミルクハウス・めーめーハウス）は4〜11月の土日祝のみの営業で、雨天は休むことがあり、アイスクリームなどが食べられます。平日と冬季は原則営業していないので、食事をとりたい日は事前に問い合わせると安心です（電話0493-82-1500）。",
+      "nearbyLunch": [
+        {
+          "name": "直売所（ミルクハウス・めーめーハウス）",
+          "note": "4〜11月の土日祝のみ。アイスクリームなど。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.pref.saitama.lg.jp/kogen-bokujo/shisetsu/fureaibaiten.html",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "栃木",
@@ -35238,7 +37548,20 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,050円×2＋小学生550円×2＋幼児550円×1（幼児料金あり）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【他店舗の公式案内からの目安】極楽湯の他店（名取店）の公式案内では、館内への飲食物の持ち込みはご遠慮くださいとされています。この店舗の案内は確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "館内のお食事処",
+          "note": "施設情報より。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://natori.gokurakuyu.jp/guide/",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "神奈川",
@@ -35286,6 +37609,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人900円×2＋小学生715円×2＋幼児0円×1（幼児は無料と仮定）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -35331,7 +37666,19 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.ousama2603.com/ooimachi/"
     },
-    "verifiedAt": "2026年10月12日"
+    "verifiedAt": "2026年10月12日",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処あり。大井町駅周辺にも飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "東京",
@@ -35377,7 +37724,19 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,980円×2＋小学生1,070円×2＋幼児540円×1（幼児料金あり）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "和洋中の食事処あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -36429,6 +38788,8 @@
       "officialUrl": "https://www.bighop.jp/"
     },
     "food": {
+      "bento": "ask",
+      "bentoNote": "飲食の持ち込みルールは確認できませんでした。フードコート内の「キッズランド」は、10:00〜20:00で無料です。飲食スペースにもキッズエリアがあります。",
       "nearbyLunch": [
         {
           "name": "モール内の飲食店",
@@ -36436,7 +38797,7 @@
         }
       ],
       "source": "official",
-      "sourceUrl": "https://www.bighop.jp/shop/index.jsp?bf=6&cat=3",
+      "sourceUrl": "https://www.bighop.jp/shop/page.jsp?id=6",
       "checkedAt": "2026年10月31日"
     },
     "heat": {
@@ -36490,7 +38851,14 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食べられるのは、カフェエリアだけです。持ってきたお弁当や飲み物を飲食できます。ほかのスペースは飲食禁止と紹介されています（二次情報）。館内に売店はありません。",
+      "source": "official",
+      "sourceUrl": "https://www.city.utsunomiya.lg.jp/kosodate/kosodate/shien/1004047.html",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "群馬",
@@ -36538,7 +38906,14 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.lirica.sc/shoplist/1080.html"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】水筒やペットボトルでの水分補給はできますが、食事は禁止という口コミがあります。外出は1時間可能で、食事に出られるそうです。公式サイトでは飲食のルールを確認できていません。",
+      "source": "review",
+      "sourceUrl": "https://www.gunlabo.net/shop/shop.shtml?s=5906",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "千葉",
@@ -38056,6 +40431,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人980円×2＋小学生580円×2＋幼児580円×1（幼児料金あり）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "ビュッフェレストラン・お食事処あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -38153,6 +40540,18 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の目安は出せません。公式サイトが不明のため、現地や電話でご確認ください",
       "confirmVia": "onsite"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処あり。館内で大衆演劇の観劇も可能（別途観劇料）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -38448,7 +40847,19 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,300円×2＋子ども（大人の約半額600円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "フードコート「呑喰処 祭の宴」に9店舗あり（ラーメン・そば・アイス等）。お土産屋も併設。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "神奈川",
@@ -39837,14 +42248,20 @@
     "desc": "イオンモール座間の館内にある無料の木育キッズスペース「KIDS FIELD」。天然木のぬくもりを感じながら遊べる。フードコート内にも別のキッズスペースがあり、買い物や食事のついでに立ち寄りやすい。",
     "tip": "雨の日・猛暑日の「少しだけ子どもを遊ばせたい」に便利。駐車場も無料。",
     "food": {
+      "bento": "ng",
+      "bentoNote": "遊び場の中でのお食事はご遠慮ください。無料で、対象は3〜5歳、1回の利用は20分です。「もくいくひろば」という新しい遊び場の案内にも同じ注意があります。",
       "nearbyLunch": [
         {
           "name": "モール内のフードコート・レストラン・カフェ",
           "note": "グルメ店舗は46件。遊び場内の飲食可否とは別の情報です。"
+        },
+        {
+          "name": "イオンモール座間のフードコート",
+          "note": "3階の「Food Forest」（ナムコ前）のキッズスペースに、こあがり席があります。"
         }
       ],
       "source": "official",
-      "sourceUrl": "https://zama-aeonmall.com/",
+      "sourceUrl": "https://zama-aeonmall.com/news/information/354",
       "checkedAt": "2026年10月31日"
     },
     "heat": {
@@ -39908,6 +42325,11 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "飲食の持ち込みルールは確認できませんでした。グランドモール1階のホビーコートにあり、料金は30分で平日600円、休日700円、対象は身長125cm未満です。",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40017,14 +42439,20 @@
       "maxMinutes": 150
     },
     "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】一般のお弁当の持ち込みルールは確認できませんでした。1階のフードコート「フードピクニック」と一体の施設で、離乳食の持ち込みと温めができ、ミルク用のお湯サービスもあります。",
       "nearbyLunch": [
         {
           "name": "フードピクニックの飲食エリア",
           "note": "施設内にあります。"
+        },
+        {
+          "name": "KFCレストラン（ブッフェ）",
+          "note": "同じ施設内にあります。"
         }
       ],
-      "source": "official",
-      "sourceUrl": "https://gbp.minamimachida-grandberrypark.com/service/",
+      "source": "web",
+      "sourceUrl": "https://machidaclip.com/minami-machida/grandberrypark-food-court-special-feature/",
       "checkedAt": "2026年10月31日"
     }
   },
@@ -40058,14 +42486,24 @@
     "desc": "相鉄グループの商業施設「ゆめが丘ソラトス」の屋上にある約3000平米の無料広場。相鉄キャラクター「そうにゃん」をモチーフにしたカラフルな遊具が年齢別に2エリアに分かれて設置されている。3階のstation view terraceから外階段でアクセス。",
     "tip": "屋上・屋外のため夏場は日差しと熱中症に注意。水分補給をしながら遊ぶのがおすすめ。",
     "food": {
+      "bento": "ask",
+      "bentoNote": "屋上広場での飲食ルールは確認できませんでした。入園は無料で、10/20〜12/7の開園時間は10:00〜16:30です。雨で床が濡れているときは閉園になります。",
       "nearbyLunch": [
         {
           "name": "館内のフードコート・レストラン",
           "note": "フードコートは約700席で、キッズスペースとファミリーコートあり。屋上公園で遊んだ後に館内で食事できます。"
+        },
+        {
+          "name": "FOOD STATION（3階フードコート）",
+          "note": "9店舗、約700席で、ファミリーコートが64席あります。"
+        },
+        {
+          "name": "SORATOS DINING（1階）",
+          "note": "飲食店が並んでいます。1〜2階をつなぐ大階段は、ゆめが丘マルシェで買ったフードを持ち込んで食べられます（紹介記事）。"
         }
       ],
       "source": "official",
-      "sourceUrl": "https://www.yumegaoka-soratos.com/",
+      "sourceUrl": "https://www.yumegaoka-soratos.com/feature/?cd=000011",
       "checkedAt": "2026年10月31日"
     },
     "heat": {
@@ -40261,6 +42699,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】屋上のテーブルやベンチ、芝生で、持ち込んだ食べ物を食べられると紹介されています。公式サイトでは飲食のルールを確認できていません。",
+      "nearbyLunch": [
+        {
+          "name": "東急プラザ蒲田 地下1階〜1階の惣菜・お弁当売り場",
+          "note": "買って屋上で食べたという体験記があります（紹介記事）。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://note.com/wmama_odekake/n/n42c5560dad8d",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40385,6 +42836,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲み物のみパーク内で飲めます。蓋付きのものに限り、紙コップやタンブラーなどこぼれやすいものは不可です。食べ物の持ち込みはご遠慮ください。入場料のお支払いのない入れ替わりはご遠慮いただいています（全国共通の案内）。",
+      "nearbyLunch": [
+        {
+          "name": "イオンモール川口のフードコート・レストラン",
+          "note": "パークを出て食事します。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://litpla.com/space/litpla_aeonmall_kawaguchi/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40454,6 +42918,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲み物のみパーク内で飲めます。蓋付きのものに限り、紙コップやタンブラーなどこぼれやすいものは不可です。食べ物の持ち込みはご遠慮ください。フリーパスなら再入場できるという口コミがあります（チケットの種類で変わる可能性があります）。",
+      "nearbyLunch": [
+        {
+          "name": "ダイバーシティ東京 プラザ内のフードコート・レストラン",
+          "note": "パークを出て食事します。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://litpla.com/space/litpla_divercity_tokyo/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40499,6 +42976,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "遊び場エリア内は、衛生上、飲食できません。食事はカラオケ個室の中でとります。持ち込めるのは、幼児・未就学児用の離乳食やミルクなどだけです。スペース内に電子レンジがあります。",
+      "source": "official",
+      "sourceUrl": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shinjuku/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40608,6 +43092,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "外から持ち込む食べ物の可否は確認できませんでした。屋上広場では総菜などを販売し、芝生やキャンプテーブルで食事できます。禁止事項に飲食物の持ち込みの記載はありません。開場は10:00〜17:30（当面の間）で、悪天候時は閉場します。",
+      "nearbyLunch": [
+        {
+          "name": "青葉台 東急フードショー（地下1階）",
+          "note": "総菜やお弁当を買えます。イートインもあります（紹介記事）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.aobadai-square.com/event/detail/?cd=002013",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40805,6 +43302,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "飲食は決められた場所でお願いします。持ち込みは自由ですが、においの強いものや汚れやすいものは不可で、飲み物は蓋付きに限ります。ゴミは持ち帰りです。食事ができるのは、休憩エリア「タベルバ」です。土日祝と長期休みは、事前予約の入れ替え制です。",
+      "source": "official",
+      "sourceUrl": "https://fukaya.g-asuka.co.jp/guide/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -40852,6 +43356,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "隣接する「ふかや花園プレミアム・アウトレット」内に飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41089,6 +43603,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "公園内に売店、周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41399,6 +43923,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "公式のよくある質問で、飲食できるのは「どきどきリニア館」3階の展望ラウンジの一部と、「わくわくやまなし館」の2階・3階だけで、それ以外のエリアでの飲食は遠慮するよう案内されています。館内にレストランはなく、飲料・アイス・パン・お菓子の自動販売機があります。",
+      "nearbyLunch": [
+        {
+          "name": "道の駅つる",
+          "note": "見学センターから約600m。レストランあり（公式のよくある質問で案内）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.linear-museum.pref.yamanashi.jp/links/faq.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -41564,6 +44101,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に飲食店はないため、周辺のコンビニ等で調達推奨。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41611,6 +44158,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "隣接する三井アウトレットパーク横浜ベイサイド内に飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41656,6 +44213,17 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の飲食ルールは確認できませんでした。横浜市のこどもログハウスは館内飲食不可の施設が多く、ベランダやデッキを時間限定で使える施設もあります。来館前に電話での確認がおすすめです。",
+      "nearbyLunch": [
+        {
+          "name": "周辺のコンビニなど",
+          "note": "施設内に飲食設備はなく、周辺で調達します。"
+        }
+      ],
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41715,6 +44283,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内とベランダでは食べられません。飲み物はエントランスかベランダで飲めます（エントランスにウォータークーラーあり）。",
+      "source": "official",
+      "sourceUrl": "https://log.chiiki-support.jp/guide.html",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41775,6 +44350,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内での飲食はできません。11時から13時は、デッキ部分だけ飲食できます。ゴミは持ち帰りです。",
+      "source": "official",
+      "sourceUrl": "https://minami-rsk.sakura.ne.jp/house/howto/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -41835,6 +44417,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【口コミからの目安・実際と異なる場合があります】利用者の口コミに「ご飯は中で食べられない」とあります。食べ物は外で食べる流れで、飲み物の自販機は外にあります。気温がよければ裏山のあずま屋で食べる人もいるそうです。公式サイトでは確認できていません。",
+      "source": "review",
+      "sourceUrl": "https://iko-yo.net/experiences/98281",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41894,6 +44483,11 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の飲食ルールは確認できませんでした。横浜市のこどもログハウスは館内飲食不可の施設が多く、ベランダやデッキを時間限定で使える施設もあります。来館前に電話での確認がおすすめです。",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -41940,6 +44534,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "施設内では食べたり飲んだりできません。飲み物は玄関で飲めます。",
+      "source": "official",
+      "sourceUrl": "https://www.npo-ttk.jp/shirahatap_loghouse/shirahatalog_guide.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -41986,6 +44587,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内では飲食できません。水分補給はテラスで（雨の日は土間を開放）。",
+      "source": "official",
+      "sourceUrl": "https://www.kana-sisetu.jp/log/guide/log-guide.html",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42039,6 +44647,11 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の飲食ルールは確認できませんでした。横浜市のこどもログハウスは館内飲食不可の施設が多く、ベランダやデッキを時間限定で使える施設もあります。来館前に電話での確認がおすすめです。",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42085,6 +44698,17 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の飲食ルールは確認できませんでした。横浜市のこどもログハウスは館内飲食不可の施設が多く、ベランダやデッキを時間限定で使える施設もあります。来館前に電話での確認がおすすめです。",
+      "nearbyLunch": [
+        {
+          "name": "周辺の飲食店",
+          "note": "施設内に飲食設備はなく、周辺にあります。"
+        }
+      ],
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42131,6 +44755,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食と喫煙はできません。ゴミは持ち帰りです。",
+      "source": "official",
+      "sourceUrl": "https://www.asahikushisetsukyoukai.jp/loghouse/service.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -42191,6 +44822,17 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の飲食ルールは確認できませんでした。横浜市のこどもログハウスは館内飲食不可の施設が多く、ベランダやデッキを時間限定で使える施設もあります。来館前に電話での確認がおすすめです。",
+      "nearbyLunch": [
+        {
+          "name": "洋光台駅周辺の飲食店",
+          "note": "駅周辺にあります。"
+        }
+      ],
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42251,6 +44893,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "ログハウス内での飲食は原則できません。のどがかわいたらベランダか玄関で飲めます。",
+      "source": "official",
+      "sourceUrl": "https://www.woodcraft-npo.jp/log-house/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42442,6 +45091,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "【紹介ページからの目安・実際と異なる場合があります】地域子育て支援拠点「いっぽ」の施設紹介に「室内は飲食不可」とあります。天気のよい日は霧が丘公園内でお弁当を食べる使い方が紹介されています。横浜市の公式ページでは飲食ルールを確認できていません。",
+      "source": "web",
+      "sourceUrl": "https://www.midori-ippo.com/information/institution_info.html?id=22",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42488,6 +45144,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内では飲んだり食べたりできません（公式の「5つのおやくそく」）。ごみは持ち帰りです。",
+      "source": "official",
+      "sourceUrl": "https://yokohama-shisetsu.com/log/use/",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42783,6 +45446,11 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式の飲食ルールは確認できませんでした。横浜市のこどもログハウスは館内飲食不可の施設が多く、ベランダやデッキを時間限定で使える施設もあります。来館前に電話での確認がおすすめです。",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -42936,6 +45604,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "パークセンターに軽食スペースあり。周辺にコンビニ等あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -43117,6 +45795,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺（小川町中心部）に飲食店あり。園内の売店等は要確認。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -43166,6 +45856,8 @@
       "maxMinutes": 150
     },
     "food": {
+      "bento": "ask",
+      "bentoNote": "飲食の持ち込みルールは確認できませんでした。",
       "nearbyLunch": [
         {
           "name": "2階のフードメニュー",
@@ -43174,9 +45866,14 @@
         {
           "name": "釣った魚の調理",
           "note": "釣った魚を調理して、その場で食べることもできます。"
+        },
+        {
+          "name": "2階フードコート",
+          "note": "海鮮丼、お子様プレート、からあげなどがあります。釣った魚は無料でさばいてもらえ、その場で食べることも持ち帰ることもできます。"
         }
       ],
-      "source": "text",
+      "source": "official",
+      "sourceUrl": "https://www.tsuribori-okoku.jp/concept/",
       "checkedAt": "2026年10月31日"
     }
   },
@@ -43396,6 +46093,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -43497,6 +46204,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "スポッチャは、飲食物の持ち込みOKです。水筒やお弁当を持ち込む場合も、フードコートを利用できます。ボウリングとカラオケは持ち込みをお断りしています（二次情報）。",
+      "nearbyLunch": [
+        {
+          "name": "スポッチャ フードコート（朝霞店）",
+          "note": "持ち込んだ場合も利用できます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.round1.co.jp/service/spo-cha/about/food.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -43861,6 +46581,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "園内東側の芝生広場でバーベキューができ（無料・日没まで・夜間は不可）、ゴミは全て持ち帰りと公式に案内されています。園内に売店・飲食店はなく、近くにスーパーやホームセンターがあります（紹介サイト）。",
+      "nearbyLunch": [
+        {
+          "name": "公園周辺のスーパー・ファストフード店",
+          "note": "徒歩圏内にあり、食材やお弁当を買えます（紹介記事）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.kanagawaparks.com/umikaze/facility.html",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44022,6 +46755,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "要確認（近くのフレスポ長泉内に飲食店あり）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44068,6 +46813,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店はなし。飲食物は持参を。羽根木公園内や梅ヶ丘駅周辺に飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44116,6 +46872,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に飲食店はなし。飲食物は持参を。周辺にコンビニあり（徒歩3分ほど）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44176,6 +46943,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に飲食店はなし。飲食物は持参を。代々木公園周辺にも飲食店あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44235,6 +47013,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に飲食店はなし。飲食物・着替え・タオルなどは持参を。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44282,6 +47071,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に飲食店はなし。飲食物は持参を。浜田山駅前に飲食店・スーパーあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44386,6 +47186,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "館内に食事処あり。さがみ湖リゾート プレジャーフォレスト内にも飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -44495,6 +47307,19 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "公式のよくあるご質問に、園内のテーブルやベンチを使えるとの案内があります（質問文は取得できず、回答本文のみ確認）。同じ内容は、公式情報として掲載された観光情報サイトにも「お弁当の持ち込みが可能」と書かれています。園内にはフードコートや軽食の店があります。粉ミルクは園内で売っていないため持参し、お湯はインフォメーションで出してもらえます。",
+      "nearbyLunch": [
+        {
+          "name": "園内のフードコート・軽食店",
+          "note": "店舗ごとの案内は公式サイトの「ショップ&レストラン」に掲載。再入園できるので、園外で食べることもできます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.hanayashiki.net/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -44601,6 +47426,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "持ち込みのお食事はお断りです。蓋のあるペットボトルなど、こぼれにくい容器の飲み物は持ち込めます。紙カップは持ち込めません。",
+      "source": "official",
+      "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/makuharishintoshin/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -45043,7 +47875,19 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "要確認（キッチンカー出店イベントあり）"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "茨城",
@@ -45100,7 +47944,19 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "要確認"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -45160,7 +48016,17 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "道路を挟んだキャンプ広場でBBQ可（専用テーブル7基、グリル・水道栓無料貸出、要事前予約）"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -45377,7 +48243,17 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "「昭和の森フォレストビレッジ」でキャンプ・BBQ可"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -45435,7 +48311,17 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "いこいの広場（バーベキュー広場）あり"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -45491,7 +48377,17 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "キャンプ場・バーベキュー施設あり（要予約）"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "栃木",
@@ -45635,7 +48531,14 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://bandainamco-am.co.jp/others/tondemi/heiwajima/"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "ok",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】施設のイコーヨ公式ページに「食事持込OK」とあり、テーブルと椅子のある場所で、お弁当や近くで買った物を食べられると紹介されています。館内にレストランやカフェはなく、自動販売機があります。バンダイナムコの公式サイトでは確認できていません。",
+      "source": "web",
+      "sourceUrl": "https://iko-yo.net/facilities/109906",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -46028,7 +48931,14 @@
       "sun": "10:00-18:00",
       "holiday": "10:00-18:00"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】館内は食事禁止で、蓋付きの飲み物だけ可能という口コミがあります。食べられるのは屋上だけという口コミです。公式サイトでは食事のルールを確認できていません。平日のワンデープランは、途中退場ができます（公式の予約ページ）。",
+      "source": "review",
+      "sourceUrl": "https://www.jalan.net/kankou/spt_guide000000215732/kuchikomi/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "神奈川",
@@ -46088,7 +48998,14 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
     },
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内での飲食・飲酒・喫煙は禁止です。飲食物と酒類の持ち込みも禁止です（手荷物に収納できるものは除く）。館内にカフェはないという体験記が複数あります。取得したFAQは約2年前の内容です。",
+      "source": "official",
+      "sourceUrl": "https://yumesaki-g.com/faq/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "千葉",
@@ -46419,7 +49336,20 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,900円×2＋小学生1,400円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "水分補給を目的とした飲み物の持ち込みは可能です。食べ物の持ち込みはできません。施設内は飲食禁止で、飲み物は休憩エリアで飲めるという口コミがあります。",
+      "nearbyLunch": [
+        {
+          "name": "ウニクス南古谷のフードコート・レストラン",
+          "note": "サイゼリヤなどがあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.skywalker7058.jp/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -46855,10 +49785,21 @@
       "asoview": "https://www.asoview.com/base/156630/"
     },
     "food": {
-      "bentoNote": "飲食（ガム・飲み物を含む）は、決められた場所でお願いしますと案内されています。決められた場所の詳細は、公式サイトに記載が見つかりませんでした。",
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。2026年3月31日にリニューアルオープンしました。",
+      "nearbyLunch": [
+        {
+          "name": "和ダイニング こよみ（1階）",
+          "note": "2フロアにわたるレストランです。天ぷら、そば、寿司、洋食などです。"
+        },
+        {
+          "name": "ippuku café",
+          "note": "休憩向けのカフェです。"
+        }
+      ],
       "source": "official",
-      "sourceUrl": "https://www.edo-tokyo-museum.or.jp/information/guidelines/",
-      "checkedAt": "2026年10月12日"
+      "sourceUrl": "https://edohaku-restaurant.com/",
+      "checkedAt": "2026年10月31日"
     },
     "familyPrice": {
       "yen": 1600,
@@ -46946,7 +49887,20 @@
       "sun": "10:00-21:00",
       "holiday": "10:00-21:00"
     },
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "飲食物の持ち込みはお断りです。飲食できるのは、「LOUNGE Q」エリアの「TeNQ CAFE 138」だけです。一度退館すると再入館できないという紹介記事があります。",
+      "nearbyLunch": [
+        {
+          "name": "TeNQ CAFE 138",
+          "note": "入館者のみ利用できるイートイン専用です。平日11:30〜20:30、土日祝10:30〜20:30です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.tokyo-dome.co.jp/faq/facility/tenq/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -47015,7 +49969,14 @@
       "sun": "10:00-22:00",
       "holiday": "10:00-22:00"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "食べ物の持ち込みはご遠慮ください（店内で購入したアイスのみ食べられます）。飲み物（アルコール除く）は持ち込めます。「食事持込OK」と表示する紹介サイトもありますが、公式の記載と食い違います。",
+      "source": "official",
+      "sourceUrl": "https://www.taito.co.jp/bootverse/howtouse",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "埼玉",
@@ -47145,6 +50106,18 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://www.kouraku-onsen.jp/"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "館内に食事処あり(自家製から揚げなどが人気)"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -47208,6 +50181,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人900円×2＋小学生500円×2＋幼児500円×1（幼児料金あり）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "レストラン「江戸の台所」、川越産さつまいもスイーツのカフェ「十三里」あり"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -47337,6 +50322,18 @@
       "sat": "11:00-21:30",
       "sun": "11:00-21:30",
       "holiday": "11:00-21:30"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "お食事処あり"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -47396,6 +50393,18 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,200円×2＋小学生600円×2＋幼児600円×1（幼児料金あり）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "東南アジア料理を含むレストランあり"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -47482,15 +50491,21 @@
       "note": "大人250円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
     },
     "food": {
+      "bento": "ok",
+      "bentoNote": "館内カフェの営業時間外や平日は、空席があれば自由に使えます。館内廊下、イベントホール、前庭のベンチやソファも使えます。大温室内、映像ホール、企画展示室での飲食はご遠慮ください。",
       "nearbyLunch": [
         {
           "name": "熱帯植物館内カフェ",
           "note": "【口コミ・紹介記事からの目安・実際と異なる場合があります】温室を眺めながらロコモコ、ドライカレーなどが食べられる。"
+        },
+        {
+          "name": "夢の島カフェ",
+          "note": "土日祝のみの営業です。公式のカフェページでは11:00〜16:00（ラストオーダー15:30）、FAQでは11:00〜15:00と、記載が揺れています。"
         }
       ],
-      "source": "web",
-      "sourceUrl": "https://tabi-mag.jp/tk0216/",
-      "checkedAt": "2026年10月13日"
+      "source": "official",
+      "sourceUrl": "https://www.yumenoshima.jp/botanicalhall/contact",
+      "checkedAt": "2026年10月31日"
     },
     "image": "img/spots/tokyo-koto-yumenoshima.jpg",
     "imageCredit": "📷 Wiiii / CC BY-SA 3.0 / Wikimedia Commons",
@@ -47620,6 +50635,18 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人950円×2＋小学生700円×2＋幼児0円×1（幼児は無料と仮定）"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "食事処あり(深谷名物「煮ぼうとう」を提供)"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -47762,7 +50789,20 @@
     },
     "image": "img/spots/nagano-matsumoto-松本市美術館.jpg",
     "imageCredit": "📷 663highland / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:220728_Matsumoto_City_Museum_of_Art_Japan03s3.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:220728_Matsumoto_City_Museum_of_Art_Japan03s3.jpg",
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内での飲食は禁止です。お弁当やお茶は、市民創造ひろば（中庭）のテーブル等で食べてください。FAQの取得は約3年前の内容です。",
+      "nearbyLunch": [
+        {
+          "name": "SHOKUDO & CAFE yumyum",
+          "note": "敷地内にあり、レストランだけの利用もできます。ランチ11:00〜14:30、カフェ14:30〜17:00です。月曜休みで、日曜はランチとカフェのみです。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://matsumoto-artmuse.jp/faq/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "長野",
@@ -47833,7 +50873,20 @@
     },
     "image": "img/spots/nagano-matsumoto-松本市立博物館.jpg",
     "imageCredit": "📷 663highland / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:220728_Matsumoto_City_Museum_Japan01s3.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:220728_Matsumoto_City_Museum_Japan01s3.jpg",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式のご利用案内で、指定された場所以外での飲食が禁止されています。指定場所がどこか、お弁当の持ち込みの可否は確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "High-Five COFFEE STAND（1階）",
+          "note": "松本民芸家具の席があるカフェスペースです。1階は9:00〜21:00（第3火曜休）です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://matsumoto-city-museum.jp/guide",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "長野",
@@ -47947,6 +51000,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "未整備のため情報なし"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -48001,6 +51064,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺は住宅地のため飲食店は少なめ。持参がおすすめ"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -48059,6 +51133,16 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "港南台バーズ館内にレストラン・カフェ・フードコート多数"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -48242,6 +51326,11 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://chiba-kanteidan.jp/"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "2026年秋オープン予定の新店と紹介されていました。開店状況と飲食のルールは確認できていません。",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -48292,6 +51381,13 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人0円×2＋小学生1,200円×2＋幼児1,200円×1（幼児も子ども料金と仮定）"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "持ち込めるのはペットボトルと水筒（哺乳瓶・マグも可）だけです。それ以外の飲食物の持ち込みと店内でのお食事はお断りで、離乳食もご遠慮いただいています。平日フリータイムと土日祝の2時間パックは、一時退出と再入場ができます（退出中も利用時間に数えられます）。",
+      "source": "official",
+      "sourceUrl": "https://shop.soyu-am.jp/himitsu/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -48354,6 +51450,16 @@
       "sat": "00:00-24:00",
       "sun": "00:00-24:00",
       "holiday": "00:00-24:00"
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内にカフェあり（令和4年8月のリニューアルで開業）。周辺の飲食店も利用できる。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -48403,6 +51509,16 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料"
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "周辺の飲食店を利用（柳瀬川駅周辺）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -48515,6 +51631,19 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "入場・入園は無料（有料の施設・体験・駐車場などは別料金）"
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食事ができるのは、1階のイベントスペースと各階のテラスです。飲み物は、蓋のしまるものや施設内で買ったものなら、どこでも飲めます。",
+      "nearbyLunch": [
+        {
+          "name": "monacafe そらまめ",
+          "note": "飲み物、軽食、お弁当を買えます（紹介記事）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://mokamonaca.jp/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -48585,7 +51714,17 @@
     ],
     "image": "img/spots/tochigi-shimotsuke-グリムの森（グリムの館）.jpg",
     "imageCredit": "📷 Miyuki Meinaka / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Grimm_House,_Grimm_Forest.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Grimm_House,_Grimm_Forest.jpg",
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "カフェ・レストランあり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "栃木",
@@ -48870,7 +52009,20 @@
     },
     "image": "img/spots/kanagawa-yokohama-nishi-京急ミュージアム.jpg",
     "imageCredit": "📷 NEO-NEED / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Keikyu_Group_Headquarters_03_(KEIKYU_MUSEUM).jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Keikyu_Group_Headquarters_03_(KEIKYU_MUSEUM).jpg",
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内でのお食事はできません。お飲み物は指定場所でお願いします。入館案内には、お菓子もお断りとあります。",
+      "nearbyLunch": [
+        {
+          "name": "横浜駅東口の駅ビル（マルイ、そごう、ベイクォーター）",
+          "note": "徒歩圏で食事ができます（個人ブログの紹介）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.keikyu.co.jp/museum/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "東京",
@@ -48933,6 +52085,13 @@
       "sat": "09:00-17:00",
       "sun": "09:00-17:00",
       "holiday": "09:00-17:00"
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "館内での飲食・持ち込みはご遠慮ください。",
+      "source": "official",
+      "sourceUrl": "https://www.city.katsushika.lg.jp/institution/1030224/1006933.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -48999,6 +52158,13 @@
       "sat": "09:30-17:30",
       "sun": "09:30-17:30",
       "holiday": "09:30-17:30"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】公式サイトでは持ち込みのルールを確認できませんでした。休憩所にテーブルと椅子があり、飲み物を買って休めると紹介されています。",
+      "source": "web",
+      "sourceUrl": "https://4travel.jp/dm_shisetsu/11371008",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -49458,6 +52624,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内の売店は限られる。事前の飲食準備がおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -49522,6 +52698,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "近隣の豊洲エリアの商業施設に飲食店多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -49658,6 +52844,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "隣接の「おおいがわ温泉 伊太和里の湯」に食事処あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -50164,6 +53360,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "モール全体の持ち込みルールは確認できませんでした。コロナワールドのキッズパークは、パーク内での飲食をご遠慮ください。リトルプラネットは飲み物のみ可で、食べ物の持ち込みはご遠慮ください。2階のこにわハウスには、ミルクや離乳食を食べられるキッチン・リビングがあります。屋外の「うみの広場」や「こもりらのもり」の飲食ルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "ららぽーと沼津のフードコート・レストラン",
+          "note": "モール内で食事をとります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://mitsui-shopping-park.com/lalaport/numazu/cp/2104_family/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -50213,6 +53422,19 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "本館2階の室内遊び場「遊キッズ」の飲食の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "本館1階フードコート・オアシス2階のレストラン",
+          "note": "パスタ屋、はなまるうどん、モスバーガー、大戸屋などがあります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.suntomoon.co.jp/topics/6592/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -50270,6 +53492,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "【口コミ・紹介記事からの目安・実際と異なる場合があります】公式サイトでは持ち込みのルールを確認できませんでした。屋外でお弁当を広げて過ごせると、文化庁の博物館ポータルで紹介されています。",
+      "nearbyLunch": [
+        {
+          "name": "Cafe pierre（軽食コーナー）",
+          "note": "土日祝、GW、学校の長期休みの期間のみの営業です。冬季は休業日もあります。本格的なレストランはありません。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://meguri.bunka.go.jp/museum/6at3tklc83n6rd3t",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -50332,6 +53567,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。チケットがあれば、1日中再入場できます。",
+      "nearbyLunch": [
+        {
+          "name": "道の駅 富士川楽座のレストラン・フードコート",
+          "note": "道の駅の中にあります（口コミ情報）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://fujikawarakuza.co.jp/donbura/about",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -50387,6 +53635,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "遊び場内への飲食持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "MARK IS 静岡内のフードコート・レストラン",
+          "note": "多数あります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -50577,6 +53837,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "飲食は指定エリア（エントランス）のみでお願いします。フロア内で飲めるのは水とお茶だけで、ジュースは持ち込めません。",
+      "nearbyLunch": [
+        {
+          "name": "そば処 たくみの郷",
+          "note": "道向かいで、御殿場の郷土料理「みくりやそば」が食べられます。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://mtfuji-toymuseum.jp/about/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -50819,6 +54092,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "博物館の飲食ルールは確認できませんでした。入館無料で、道の駅なるさわの中にあります。",
+      "nearbyLunch": [
+        {
+          "name": "道の駅なるさわの軽食堂・休憩室",
+          "note": "食券制でセルフの軽食堂（せんどそば、富士桜ソフトなど）と、富士山が見える休憩室があります。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.yamanashi-kankou.jp/kankou/spot/p_9624.html",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -57876,6 +61162,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "バーベキュー広場あり（利用は申込制）。インフォメーション棟に自動販売機あり。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -57982,6 +61278,27 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "喫茶・お食事処（2階）",
+          "note": "公式トップページに「食べて楽しむ」として案内。ペット同伴の場合、砂金館と喫茶・お食事処（2階）には入れない。"
+        },
+        {
+          "name": "お食事処 葵（本館2階）",
+          "note": "食事のみの利用もできます。予約は不可です。営業9:00〜17:00（ラストオーダー平日14:30、土日祝15:30）、12月の一部に休業があります。"
+        },
+        {
+          "name": "土肥金山「TOI KITCHEN」",
+          "note": "敷地内の食事処として案内されています。「葵」との関係は未確認です。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://www.at-s.com/gourmet/article/891034",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -58091,6 +61408,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ng",
+      "bentoNote": "場内での飲食と喫煙は禁止です。本人に限り、当日の再入場ができます。食事は一度出て、同じ建物（エスパルスドリームプラザ）のレストランや清水すし横丁でとります。",
+      "source": "official",
+      "sourceUrl": "https://chibimarukochan-land.com/guide/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -58417,6 +61741,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内でのお食事はご遠慮ください。団体向けの案内では、昼食は館外の芝生で、雨天は相談となっています。",
+      "source": "official",
+      "sourceUrl": "https://ranzan-shiseki.spec.ed.jp/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -58660,6 +61991,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。庭園のあずまやでお弁当やおやつを食べられるという二次情報がありますが、文章が途中までしか取得できていません。",
+      "nearbyLunch": [
+        {
+          "name": "レストラン「オランジュ・ブルー」",
+          "note": "観覧料なしで利用できます。展示替え期間中も、月曜以外は営業します。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.moma.pref.kanagawa.jp/hayama/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -58880,6 +62224,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "飲食施設の有無は要確認。お弁当の持ち込み可否も要確認。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。"
     }
   },
   {
@@ -58997,6 +62353,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "芝生の「草地広場」にベンチ・テーブルがありピクニックに向く。園内にレストハウスあり（飲食提供の有無は要確認）。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59180,6 +62547,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内の飲食施設は要確認。お弁当持参がおすすめ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59246,6 +62624,19 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "館内の休憩コーナーで飲食できます（公式サイト）。お弁当の持ち込みOKは、館長の話として紹介された古い記事（2017年）の記載で、公式には明記がありません。自動販売機があります。",
+      "nearbyLunch": [
+        {
+          "name": "ファミリーマート（隣）",
+          "note": "イートインとキッズスペースがあり、再入場もできると紹介されています（紹介記事、公式では未確認）。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.shiden.yokohama/facility/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -59312,6 +62703,11 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "飲食の可否・持ち込みルールは確認できませんでした。来館前に公式サイトか電話で確認を。",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59471,6 +62867,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "飲食施設は要確認"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59521,6 +62929,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "お弁当の持ち込みOKとの口コミあり。園内の飲食施設は要確認。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59655,6 +63074,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "館内にフードコート「マリーナキッチン」やレストランが多数。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59791,6 +63220,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "「えほんのもり」のテーブルで離乳食や食事ができます。グループ・団体で飲食する場合は事前に職員へ相談します（品川区の案内）。",
+      "source": "text",
+      "sourceUrl": "https://www.city.shinagawa.tokyo.jp/ct/pdf/hpg000011147_54.pdf",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59858,6 +63294,12 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "館内の決まった飲食スペースでのみ飲食できます。外出・再入場は利用時間内なら自由との口コミがあります（公式では未確認）。",
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59908,6 +63350,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "飲食施設は要確認。南側の広場でお弁当を広げる使い方ができる。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -59958,6 +63411,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "partial",
+      "bentoNote": "飲食は「GARDEN」側の席でします。",
+      "nearbyLunch": [
+        {
+          "name": "1階のフードコート・飲食店",
+          "note": "同じ施設内にあります。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60012,6 +63477,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "飲食施設は要確認"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60064,6 +63541,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内に売店はなし。近くにコンビニがある。花見広場でお弁当を広げる人が多い。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60176,6 +63664,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内の飲食施設は要確認。芝生広場でピクニックができる。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60230,6 +63729,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "売店あり（9:00〜16:30、月曜休。パン・飲料・菓子・季節のソフトクリームなど）。園内の飲食店はなし。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60284,6 +63793,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "飲食施設は要確認"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60338,6 +63859,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内の飲食施設は要確認。しながわ水族館やデイキャンプ場（予約制）が併設。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60391,6 +63924,16 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "売店あり（焼きそば・フランクフルトなどの軽食）。土日はキッチンカーが出店することも。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60451,6 +63994,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内の飲食施設は要確認。渓谷の奥に児童遊園（すべり台・ジャングルジム・砂場）がある。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60519,6 +64074,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ok",
+      "bentoNote": "食事ができるのは、1階のコミュニティラウンジだけです（7:00〜21:30）。展示室内は飲食禁止です。敷地内へのアルコールの持ち込みと飲酒は禁止です。館内にレストランはありません。",
+      "source": "official",
+      "sourceUrl": "https://ecoru-togoshi.jp/guide/faq/",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -60584,6 +64146,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "飲み物の持ち込みはOK（掲載情報）。館内にイートインスペースがあり、30分刻みの予約制との口コミがあります。食べ物の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "館内のイートインスペース",
+          "note": "30分刻みの予約制との口コミ。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -60635,6 +64209,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "飲食施設は要確認"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -61733,6 +65319,18 @@
     ],
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/159762/"
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "店内への飲食持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "同じ商業施設内の飲食店",
+          "note": "利用できます。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -61843,7 +65441,19 @@
     "needsReview": [
       "料金・営業時間はイオンタウン公式のショップ情報（2026年）。定休日は施設に準ずるか要確認",
       "座標はGoogleマップの掲載位置"
-    ]
+    ],
+    "food": {
+      "bento": "ask",
+      "bentoNote": "店内への飲食持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "同じ商業施設内の飲食店",
+          "note": "利用できます。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "千葉",
@@ -61893,7 +65503,19 @@
     "needsReview": [
       "料金は口コミの情報。公式で要確認（もとは2023年9月の期間限定出店で、その後も営業が続いている）",
       "座標はGoogleマップの掲載位置"
-    ]
+    ],
+    "food": {
+      "bento": "ask",
+      "bentoNote": "店内への飲食持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "同じ商業施設内の飲食店",
+          "note": "利用できます。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
+    }
   },
   {
     "region": "東京",
@@ -61952,6 +65574,18 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "遊び場内への飲食持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "同じ商業施設内の飲食店",
+          "note": "利用できます。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -62015,6 +65649,18 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "店内への飲食持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "同じ商業施設内の飲食店",
+          "note": "利用できます。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -62144,6 +65790,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは飲食のルールを確認できませんでした。",
+      "source": "official",
+      "sourceUrl": "https://minatomirai21.com/art-culture/128395",
+      "checkedAt": "2026年10月31日"
     }
   },
   {
@@ -62204,6 +65857,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "同じ商業施設内の飲食店を利用できる。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -62726,6 +66391,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "食事持ち込みOK。大森駅周辺に飲食店が多い。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -62775,6 +66451,17 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
+    },
+    "food": {
+      "bento": "ok",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "お弁当を持って行くとピクニックにちょうどいい。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
@@ -62915,7 +66602,24 @@
       "年末年始"
     ],
     "priceSource": "museum.or.jp（日本の美術館・博物館情報）",
-    "priceCheckedAt": "2026年10月28日"
+    "priceCheckedAt": "2026年10月28日",
+    "food": {
+      "bento": "ask",
+      "bentoNote": "公式サイトでは持ち込みのルールを確認できませんでした。FAQの取得は約1年前の内容です。",
+      "nearbyLunch": [
+        {
+          "name": "本館1階 La Pâtisserie du musée par Toshi Yoroizuka",
+          "note": "11:00〜16:00（ラストオーダー15:30）です。"
+        },
+        {
+          "name": "茶の庭 和食「花の茶屋」・「そばの坊」",
+          "note": "花の茶屋は11:00〜15:30、そばの坊は11:00〜15:00です。"
+        }
+      ],
+      "source": "official",
+      "sourceUrl": "https://www.moaart.or.jp/guide/qa/",
+      "checkedAt": "2026年10月31日"
+    }
   },
   {
     "region": "埼玉",
@@ -62973,6 +66677,18 @@
     "stayTime": {
       "minMinutes": 150,
       "maxMinutes": 240
+    },
+    "food": {
+      "bento": "ask",
+      "bentoNote": "持ち込みルールは確認できませんでした。今回確認できた温泉・スパ施設では持ち込み不可の所が多いため、事前に確認すると安心です。",
+      "nearbyLunch": [
+        {
+          "name": "館内・周辺の飲食",
+          "note": "館内に和食・洋食・中華のレストランがある。"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月1日"
     }
   },
   {
