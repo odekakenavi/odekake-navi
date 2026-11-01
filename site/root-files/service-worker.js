@@ -17,7 +17,7 @@
    ====================================================================== */
 "use strict";
 
-var SW_VERSION = "2026-10-31-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
+var SW_VERSION = "2026-11-01-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
 var SCOPE_URL  = new URL(self.registration.scope);
 var SCOPE_PATH = SCOPE_URL.pathname;                 // 例：/odekake-navi/
 var PREFIX     = "odekake:" + SCOPE_PATH + ":";
@@ -198,22 +198,83 @@ async function staleWhileRevalidate(event, req){
 }
 
 /* ---------- 通知（Web Push） ---------- */
-/* 受信：本文なしの合図が届いたら、Workerから文面を取って表示／タップ：サイトを開く */
+/* 受信：本文なしの合図が届いたら、文面を作って表示／タップ：サイトを開く */
 var PUSH_API = "https://odekake-push.odekakenavi2026.workers.dev"; // ← デプロイ後のWorkerのURL
+
+/* 「今週末で終わるイベント」は、端末に保存済みの data/spots.json から数える（Worker側は重い処理をしない）。
+   EV_UNTIL は index.html の EVENT_UNTIL と同じ値にしておくこと。 */
+var EV_UNTIL = { "クリスマス": "2026-12-25" };
+var EV_EMOJI = { "紅葉": "🍁", "ハロウィン": "🎃", "イルミネーション": "✨", "クリスマス": "🎄", "いちご狩り": "🍓", "お花見": "🌸", "GW": "🎏", "水遊び": "💦", "夏祭り・花火": "🎆" };
+
+function evUtcMs(s){ return Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)); }
+function evYmd(ms){ return new Date(ms).toISOString().slice(0, 10); }
+
+async function loadSpotsForPush(){
+  var url = new URL("data/spots.json", self.registration.scope).href;
+  try{
+    var cache = await caches.open(CACHE_DATA);
+    var hit = await cache.match(dataKey(url));
+    if(hit) return await hit.json();
+  }catch(e){}
+  try{   // 保存が無いときだけネットワークから取る（4秒で諦める）
+    var res = await Promise.race([fetch(url), delay(4000).then(function(){ throw new Error("timeout"); })]);
+    if(res && res.ok) return await res.json();
+  }catch(e){}
+  return null;
+}
+
+async function weekendEndingSummary(){
+  try{
+    var spots = await loadSpotsForPush();
+    if(!Array.isArray(spots)) return null;
+    var today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);   // 日本時間の今日
+    var t = evUtcMs(today), dow = new Date(t).getUTCDay();
+    var sun = t + ((7 - dow) % 7) * 864e5;                                        // 今週末（土日）の日曜
+    var satS = evYmd(sun - 864e5), sunS = evYmd(sun);
+    var perKey = {}, total = 0;
+    spots.forEach(function(sp){
+      if(!sp || sp.operationStatus === "closed" || !sp.events || !sp.eventInfo) return;
+      var hit = false;
+      sp.events.forEach(function(key){
+        var i = sp.eventInfo[key];
+        if(!i || i.tentative) return;                     // 日程未定は数えない
+        var end = i.end, u = EV_UNTIL[key];
+        if(u && (!end || end > u)) end = u;
+        if(!end || end < today) return;                   // すでに終了
+        if(end !== satS && end !== sunS) return;          // 土日に終わるものだけ
+        if(i.start && i.start > sunS) return;
+        perKey[key] = (perKey[key] || 0) + 1; hit = true;
+      });
+      if(hit) total++;
+    });
+    if(!total) return null;
+    var tops = Object.keys(perKey).sort(function(a, b){ return perKey[b] - perKey[a]; }).slice(0, 2)
+      .map(function(k){ return (EV_EMOJI[k] || "") + k; });
+    return { total: total, label: tops.join("・") };
+  }catch(e){ return null; }
+}
 
 self.addEventListener("push", function (event) {
   event.waitUntil((async function () {
-    var d = {};
-    try {
-      var r = await fetch(PUSH_API + "/latest", { cache: "no-store" });
-      if (r.ok) d = await r.json();
-    } catch (e) {}
-    // 文面を取れなかった場合でも、必ず通知は表示する（表示しないとブラウザが登録を取り消すことがある）
+    var latest = fetch(PUSH_API + "/latest", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+    var both = await Promise.race([
+      Promise.all([latest, weekendEndingSummary()]),
+      delay(6000).then(function () { return [{}, null]; })
+    ]);
+    var d = both[0] || {}, ending = both[1];
+    var body = d.body || "今週末のおでかけプランをチェックしましょう";
+    var url = d.url || self.registration.scope;
+    if (ending) {
+      body = "🔥今週末で終わるイベントが" + ending.total + "件" + (ending.label ? "（" + ending.label + "）" : "");
+      url += (url.indexOf("?") === -1 ? "?" : "&") + "utm_content=ending";
+    }
+    // 文面を作れなかった場合でも、必ず通知は表示する（表示しないとブラウザが登録を取り消すことがある）
     await self.registration.showNotification(d.title || "🧭 今週末、どこ行く？", {
-      body: d.body || "今週末のおでかけプランをチェックしましょう",
+      body: body,
       icon: new URL("icon-192.png", self.registration.scope).href,
       tag: "weekly",
-      data: { url: d.url || self.registration.scope },
+      data: { url: url },
     });
   })());
 });
