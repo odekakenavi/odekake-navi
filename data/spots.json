@@ -152,7 +152,6 @@
     "recommendedBooking": "asoview",
     "desc": "ビルの屋上という立地で、天候に左右されず楽しめる都会型水族館。ペンギンの空飛ぶ姿が名物。",
     "tip": "【2026年11月12日は設備メンテナンスのため休館】授乳室・おむつ替えスペースあり。ベビーカーOK。",
-    "strollerRental": false,
     "eventCandidates": [
       {
         "category": "ハロウィン",
@@ -180,7 +179,7 @@
       "水遊び": {
         "tentative": true,
         "type": "themepark",
-        "note": "夏のイベント「爽快夏まつり」。2026年は水しぶきを浴びる人気企画や夏限定の展示、子ども向けワークショップがあった。来年の内容・日程は発表待ち。"
+        "note": "夏のイベント「爽快夏まつり」。2026年は水しぶきを浴びる人気企画や夏限定の展示、子ども向けワークショップがあった。来年の内容・日程は不明。"
       },
       "イルミネーション": {
         "periodLabel": "通年",
@@ -225,6 +224,7 @@
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sunshine_Aquarium_200819q.jpg",
     "genre": "水族館",
     "strollerOk": "partial",
+    "strollerRental": false,
     "strollerRentalNote": "水族館での貸出なし。サンシャインシティ内アルパで貸出あり。",
     "strollerNote": "館内移動は優先エレベーター。混雑時は移動困難となり、パフォーマンス観覧エリアも制限される場合あり。入口に置き場あり。",
     "strollerSourceUrl": "https://sunshinecity.jp/aquarium/information/child.html",
@@ -538,7 +538,6 @@
     },
     "desc": "恐竜の骨格標本から宇宙・人体まで、展示のスケールが大きい。じっくり読む子は1日でも足りない。",
     "tip": "未就学児にはやや文字情報が多め。シアター360は整理券制。",
-    "strollerRental": true,
     "food": {
       "lunch": "館内レストランあり。上野公園周辺にも飲食店多数。",
       "bento": "ok",
@@ -567,6 +566,7 @@
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:NMNC01s3200.jpg",
     "genre": "博物館・科学館",
     "strollerOk": "ask",
+    "strollerRental": true,
     "strollerRentalNote": "無料・2台。入口の総合案内で貸出。予約不可・空きがある場合のみ。",
     "strollerNote": "ベビーカーの館内持ち込み・利用範囲について公式記載を確認できず。",
     "strollerSourceUrl": "https://www.kahaku.go.jp/riyou/kannai-guide/accessibility.html",
@@ -678,7 +678,6 @@
       "jalan": "https://www.jalan.net/kankou/spt_13202ah3330042640/"
     },
     "layoutCompact": false,
-    "strollerRental": true,
     "events": [
       "GW",
       "水遊び",
@@ -695,7 +694,7 @@
       },
       "紅葉": {
         "type": "event",
-        "note": "「黄葉・紅葉まつり＆秋の夜散歩2026」を10/29〜11/29に開催。かたらいのイチョウ並木・カナール・日本庭園をライトアップする（点灯16:30〜20:30、最終入園20:30）。日本庭園の夜間観賞には別途ライトアップ観賞券が必要（10/29〜31は入園料のみ）。公園全体の見頃は例年10月下旬〜11月下旬。",
+        "note": "「黄葉・紅葉まつり＆秋の夜散歩2026」を10/29〜11/29に開催。かたらいのイチョウ並木・カナール・日本庭園をライトアップする（点灯16:30〜20:30、最終入園20:30）。日本庭園の夜間観賞には別途ライトアップ観賞券が必要（10/29〜31は入園料のみ）。11/2時点はほんのり色づき始めで、見頃予想は11/17ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-10-29",
         "end": "2026-11-29",
         "periodLabel": "10/29〜11/29"
@@ -743,6 +742,7 @@
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%9B%BD%E5%96%B6%E6%98%AD%E5%92%8C%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92_-_panoramio.jpg",
     "genre": "公園",
     "strollerOk": "ok",
+    "strollerRental": true,
     "strollerRentalNote": "無料・立川12台、西立川15台、砂川8台。各ゲートで当日先着順。",
     "strollerNote": "園内各所に赤ちゃん休憩室あり。サイクリングコースではベビーカーを預ける。",
     "strollerSourceUrl": "https://www.showakinen-koen.jp/park-information/child/",
@@ -931,7 +931,7 @@
       "水遊び": {
         "tentative": true,
         "type": "themepark",
-        "note": "夏は、都内有数のレジャープール「プールWAI」が開く。2026年は流れるプールやスライダーのほか、ナイトプールもあった。来年の内容・日程は発表待ち。"
+        "note": "夏は、都内有数のレジャープール「プールWAI」が開く。2026年は流れるプールやスライダーのほか、ナイトプールもあった。来年の内容・日程は不明。"
       },
       "イルミネーション": {
         "start": "2026-10-29",
@@ -1139,10 +1139,10 @@
     "image": "img/spots/tokyo-inagi-yomiuriland.jpg",
     "imageCredit": "📷 Rsa / CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Yomiuriland-20100411.jpg",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRental": true,
     "strollerRentalNote": "スカイゲートで貸出。500円/台、予約不可、台数限定。",
-    "strollerNote": "園内のベビーカー使用に関する詳細な制限は確認できず。",
+    "strollerNote": "園内のベビーカー使用に関する詳細な制限は今回確認できず。",
     "strollerSourceUrl": "https://www.yomiuriland.com/faq",
     "strollerCheckedAt": "2026年11月2日",
     "strollerSource": "official"
@@ -1329,7 +1329,14 @@
     "image": "img/spots/saitama-saitama-omiya-railway-museum.jpg",
     "imageCredit": "📷 小父 / CC BY-SA 4.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%AC%E9%83%BD%E9%89%84%E9%81%93%E5%8D%9A%E7%89%A9%E9%A4%A8.jpg",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "1階エントランスカウンターで有料貸出。ベビカルの予約貸出もあり。",
+    "strollerNote": "館内利用の可否・制限について、確認した公式資料では明記なし。",
+    "strollerSourceUrl": "https://www.railway-museum.jp/information/pdf/floor_guide.pdf",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -1504,7 +1511,7 @@
       "イルミネーション": {
         "tentative": true,
         "type": "illumination",
-        "note": "昨季は渋谷公園通りから代々木公園ケヤキ並木で「青の洞窟 SHIBUYA」（約50万球）を2025/12/4〜25の17:00〜22:00に開催した（入場無料、雨天等で変更の場合あり）。今年の内容・日程は発表待ち。"
+        "note": "昨季は渋谷公園通りから代々木公園ケヤキ並木で「青の洞窟 SHIBUYA」（約50万球）を2025/12/4〜25の17:00〜22:00に開催した（入場無料、雨天等で変更の場合あり）。今年の内容・日程は不明。"
       }
     },
     "genre": "公園"
@@ -1563,8 +1570,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "ウェザーニュースの2026年版予想で、見頃は11/21ごろ〜、落葉は12/7ごろ〜（10/13時点は緑が濃い状態）。ライトアップはない。",
-        "periodLabel": "見頃予想：11月21日ごろ〜"
+        "note": "11/2時点は色づき状況の情報なしで、見頃予想は11/20ごろ（11/2時点・ウェザーニュース）。ライトアップはない。",
+        "periodLabel": "見頃予想：11月20日ごろ〜"
       }
     },
     "businessHours": {
@@ -1768,15 +1775,15 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月中旬〜11月下旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
-        "tentative": true
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/22ごろ（11/2時点・ウェザーニュース）。ライトアップ＆イルミネーション「光と森のStory」の第2章「紅葉見ナイト」は11/14〜11/29の予定。",
+        "periodLabel": "見頃予想：11月22日ごろ〜"
       },
       "イルミネーション": {
         "start": "2026-10-11",
         "end": "2026-11-29",
         "periodLabel": "10/11〜11/29（第1章は10月の土日祝、第2章は11/14〜29予定）",
         "type": "illumination",
-        "note": "約55万球のライトアップ＆イルミネーション「光と森のStory」。第1章「森のハロウィンナイト」は10/11〜10/31の土日祝（17:00〜20:30、最終入園20:00、17:00以降の入園は中央口ゲートのみ）、第2章「紅葉見ナイト」は11/14〜11/29の予定。最終章「スターライトイルミネーション」は昨季12/13・14・20〜25の16:00〜20:30に開催しており、今年の日程は発表待ち。入園料は大人450円、65歳以上210円、中学生以下は無料。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
+        "note": "約55万球のライトアップ＆イルミネーション「光と森のStory」。第1章「森のハロウィンナイト」は10/11〜10/31の土日祝（17:00〜20:30、最終入園20:00、17:00以降の入園は中央口ゲートのみ）、第2章「紅葉見ナイト」は11/14〜11/29の予定。最終章「スターライトイルミネーション」は昨季12/13・14・20〜25の16:00〜20:30に開催しており、今年の日程は不明。入園料は大人450円、65歳以上210円、中学生以下は無料。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
       }
     },
     "businessHours": {
@@ -1894,7 +1901,7 @@
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
-        "note": "夏には夜間イベント「サマーナイトZOO」（開園を20時まで延長）や打ち上げ花火がある。花火の観覧は無料（別途入園料が必要）。来年の内容・日程は発表待ち。"
+        "note": "夏には夜間イベント「サマーナイトZOO」（開園を20時まで延長）や打ち上げ花火がある。花火の観覧は無料（別途入園料が必要）。来年の内容・日程は不明。"
       },
       "イルミネーション": {
         "type": "illumination",
@@ -2011,7 +2018,13 @@
       "source": "web",
       "sourceUrl": "https://parknavi.info/ohmiya/newpage1.htm",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料。公園事務所に2台。先着順・予約不可。",
+    "strollerSourceUrl": "https://www.pref.saitama.lg.jp/omiya-park/shisetsu.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -2052,7 +2065,6 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人410円×2＋小学生0円×2＋幼児0円×1（幼児も子ども料金と仮定）"
     },
-    "strollerRental": true,
     "food": {
       "lunch": "園内に軽食店あり。周辺は住宅街のため飲食店は少なめ。",
       "bento": "ok",
@@ -2084,7 +2096,14 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料貸出。ベビーカー5台。",
+    "strollerNote": "ベビーカーの持ち込み・利用可。",
+    "strollerSourceUrl": "https://parks.or.jp/chikozan/guide/000/000867.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -2202,12 +2221,12 @@
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
-        "note": "花火イベント「花火シンフォニア」がある（屋外開催で、雨天時は変更の場合あり）。内容の詳細は公式サイトで確認を。来年の日程は発表待ち。"
+        "note": "花火イベント「花火シンフォニア」がある（屋外開催で、雨天時は変更の場合あり）。内容の詳細は公式サイトで確認を。来年の日程は不明。"
       },
       "イルミネーション": {
         "tentative": true,
         "type": "illumination",
-        "note": "昨季は、イルカと映像・光・音・噴水が合わせて動く約20分の夜のショー「LIGHTIA〜七色のキセキ〜」（アクアミュージアム4Fライブスタジアム、2025/11/15〜2026/3/1の17:30ごろから）と、高さ8mのクリスタルツリー（約52,000個のアクリルビーズ、16:00〜閉島）を実施した。今年の内容・日程は発表待ち。"
+        "note": "昨季は2025/11/15〜2026/3/1に、イルカと光・映像・音・噴水が合わせて動く夜のショー「LIGHTIA〜七色のキセキ〜」などを開催した。今季のイルミネーション期間は不明。現在はLIGHTIAを土日祝・特定日に開催している。"
       }
     },
     "verifiedAt": "2026年10月12日",
@@ -2413,7 +2432,13 @@
     "image": "img/spots/kanagawa-yokohama-naka-cupnoodles-museum.jpg",
     "imageCredit": "📷 Rs1421 / CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cupnoodles-Museum-Yokohama.jpg",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。大型ベビーカーは預かり不可。",
+    "strollerNote": "館内利用可否は明記なし。カップヌードルパークはベビーカー持ち込み不可。館内にエレベーターあり。",
+    "strollerSourceUrl": "https://www.cupnoodles-museum.jp/ja/yokohama/guide/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -2549,7 +2574,6 @@
     "hotelArea": "hakone",
     "desc": "日本初の野外美術館「彫刻の森美術館」は、子どもが登って遊べるカラフルな「ネットの森」や目玉焼き型のベンチ、星形の迷路など、遊びながらアートにふれられる作品が人気。源泉かけ流しの足湯もある。",
     "tip": "彫刻の森美術館は小学生未満が無料で、ベビーカーは無料でレンタルできる。授乳室・おむつ交換スペースあり。箱根登山鉄道の彫刻の森駅から徒歩2分で、有料駐車場もある。ロープウェイの運行状況は公式サイトで確認を。",
-    "strollerRental": true,
     "verifiedAt": "2026年10月5日",
     "familyPrice": {
       "yen": null,
@@ -2590,7 +2614,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": true,
+    "strollerRentalNote": "彫刻の森美術館は無料貸出。本館・新館インフォメーション。予約不可。",
+    "strollerNote": "彫刻の森は階段・急坂・石畳・狭い園路あり。シートベルトなしのベビーカー、三輪車、ワゴンは禁止。",
+    "strollerSourceUrl": "https://www.hakone-oam.or.jp/contact/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -2725,7 +2756,6 @@
     "hotelArea": "tokyodisney",
     "desc": "ミッキーやディズニーキャラクターに会える王道のテーマパーク。屋内アトラクションも多く、多少の雨でも進行できるプログラムが多い。隣接する東京ディズニーシーとは別のチケットが必要（1枚での行き来は基本不可）。",
     "tip": "未就学児はキャラクターグリーティングだけでも大満足なことが多い。",
-    "strollerRental": true,
     "layoutCompact": false,
     "kidsToilet": "urinal",
     "kidsToiletNote": "女性用レストルームに男児用小便器があります（チャイナボイジャー前とトムソーヤ島の砦のレストルームを除く）（公式サイトより）",
@@ -2810,6 +2840,7 @@
     "imageCredit": "📷 Emran Kassim / CC BY 2.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_Disneyland_002.jpg",
     "strollerOk": "ok",
+    "strollerRental": true,
     "strollerRentalNote": "1,000円/日。B型、生後7か月以上・身長100cm以下・体重15kg以下。正面入口付近で貸出。",
     "strollerNote": "持ち込みベビーカーも使用可能。アトラクション利用時は指定場所に置く。",
     "strollerSourceUrl": "https://www.tokyodisneyresort.co.jp/tdl/service/detail/010/",
@@ -3022,17 +3053,19 @@
       "水遊び": {
         "tentative": true,
         "type": "themepark",
-        "note": "夏のイベント「夏フェス」。2026年はスプリンクラーや大型ホースで全身ずぶぬれになれる水遊びイベント（着替え必須）や、動物ふれあいの水遊び企画があった。来年の内容・日程は発表待ち。"
+        "note": "夏のイベント「夏フェス」。2026年はスプリンクラーや大型ホースで全身ずぶぬれになれる水遊びイベント（着替え必須）や、動物ふれあいの水遊び企画があった。来年の内容・日程は不明。"
       },
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
-        "note": "夏の夜間イベント「サマーナイトファーム」。営業を夜まで延長し、約15分の打ち上げ花火や夕方限定の動物ふれあい、ライトアップされた「ナイト遊園地」を楽しめる。芝生に寝転がって花火を見られる。来年の内容・日程は発表待ち。"
+        "note": "夏の夜間イベント「サマーナイトファーム」。営業を夜まで延長し、約15分の打ち上げ花火や夕方限定の動物ふれあい、ライトアップされた「ナイト遊園地」を楽しめる。芝生に寝転がって花火を見られる。来年の内容・日程は不明。"
       },
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "「マザーイルミ」。昨年は光の帯が花畑のように広がる「光の花畑」や、ライトアップされた「ナイト遊園地」が登場した。開催は土日祝と年末年始が中心で、点灯は夕方から19:30ごろ。今年の内容・日程は発表待ち。参考（2025年実績）：2025/11/1〜2026/3/1の土日祝と12/24・25・年末年始、16:00〜19:30。"
+        "start": "2026-10-31",
+        "end": "2027-02-28",
+        "periodLabel": "10/31〜2027/2/28の土日祝（12/24〜1/4は毎日）",
+        "note": "「マザーイルミ」（15年目）。2027年の干支「ひつじ」をモチーフにした光の演出が登場し、光の花畑と富士山が一緒に収まる「巨大フォトフレーム」も設置される。点灯は16:00〜19:30。16時以降の入場料は大人（中学生以上）900円・小人（4歳〜小学6年生）450円・3歳以下無料で、日中からの入場は大人1,800円・小人900円。16時以降の駐車は無料（日中利用は1,000円）。"
       }
     },
     "verifiedAt": "2026年10月13日",
@@ -3057,7 +3090,6 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,800円×2＋小学生900円×2＋幼児900円×1（幼児料金あり）"
     },
-    "strollerRental": true,
     "businessHours": {
       "mon": "09:30-16:30",
       "tue": "09:30-16:30",
@@ -3079,6 +3111,7 @@
       "maxMinutes": 150
     },
     "strollerOk": "ok",
+    "strollerRental": true,
     "strollerRentalNote": "20台・1,000円/日。A型、生後1か月～48か月・体重20kgまで。まきば・山の上案内所で貸出。",
     "strollerNote": "ツアー乗車時は使用不可で専用置き場へ。周遊バスは折りたたんで乗車。屋内イベントは混雑時置き場利用。",
     "strollerSourceUrl": "https://www.motherfarm.co.jp/service/kids/",
@@ -3275,7 +3308,14 @@
     "closedDays": [
       "月曜日（祝日の場合は開園）"
     ],
-    "genre": "公園"
+    "genre": "公園",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "各入園ゲートで1回100円。B型、3歳以下・腰が座った子・体重15kg以下が対象。",
+    "strollerNote": "ベビーカー持ち込み可。",
+    "strollerSourceUrl": "https://www.park-funabashi.or.jp/and/faq",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -3338,7 +3378,7 @@
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
-        "note": "夏の一大イベント「炎と水のカーニバル」がある。2026年は開園25周年を記念した5,000発の特別花火（有料観覧エリアあり）も行われた。来年の内容・日程は発表待ち。"
+        "note": "夏の一大イベント「炎と水のカーニバル」がある。2026年は開園25周年を記念した5,000発の特別花火（有料観覧エリアあり）も行われた。来年の内容・日程は不明。"
       },
       "イルミネーション": {
         "start": "2026-10-31",
@@ -3581,8 +3621,8 @@
       },
       "紅葉": {
         "type": "spot",
-        "note": "みはらしの丘のコキア（約4万本）が10/10に見頃入り。ウェザーニュースは、ピークは10/20ごろまでで、その後は赤から茶色のグラデーションになり、10月下旬まで楽しめると予想している（10/10時点）。",
-        "periodLabel": "10/10から見頃・10月下旬まで（予想）"
+        "note": "みはらしの丘のコキア（約4万本）は10/10に見頃入りし、ピークは10/20ごろまで、その後は赤から茶色のグラデーションで10月下旬まで楽しめる予想だった。11/2時点のウェザーニュースには現況の掲載がなく、シーズンは終盤以降の可能性が高いので、訪問前に公式サイトで確認を。",
+        "periodLabel": "コキアは10月下旬までの予想（現在は終盤以降の可能性）"
       }
     },
     "verifiedAt": "2026年10月12日",
@@ -3761,7 +3801,6 @@
     "desc": "屋内王国（雨でも安心）と屋外王国が分かれている高原の動物園。ふれあい体験が豊富。",
     "tip": "標高が高く夏でも涼しいが、朝晩は羽織るものを。",
     "layoutCompact": false,
-    "strollerRental": true,
     "verifiedAt": "2026年10月2日",
     "food": {
       "lunch": "園内にレストラン・カフェ複数あり。",
@@ -3797,6 +3836,7 @@
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E7%89%A7%E5%A0%B4_-_panoramio.jpg",
     "genre": "動物園",
     "strollerOk": "ok",
+    "strollerRental": true,
     "strollerRentalNote": "500円/日・入国ゲート横・予約不可。7～24か月、体重12kgまで。",
     "strollerNote": "王国タウンは全天候型回廊でベビーカー利用可。リスの森・熱帯の森・わんにゃんリビング・キャッツは入場不可、専用置場あり。",
     "strollerSourceUrl": "https://nasu-oukoku.com/?page_id=2750",
@@ -3836,7 +3876,6 @@
     "hotelArea": "nikko",
     "desc": "世界の有名建築や遺跡を25分の1の大きさで再現した、屋外のミニチュアパーク。22か国102点の建物があり、世界遺産が50物件含まれる。日本、アメリカ、ヨーロッパ、エジプト、アジアのゾーンに分かれ、地上から見上げる目線で、本物そっくりの街並みを歩ける。",
     "tip": "入園料は大人2,800円、4歳〜小学生1,400円、3歳以下は無料。駐車場は有料。夏季は9:00〜17:00、冬季は9:30〜16:00で、入園は閉園の1時間前まで。鬼怒川温泉駅からバスで約5分。",
-    "strollerRental": true,
     "verifiedAt": "2026年10月5日",
     "food": {
       "lunch": "園内にレストラン・売店あり。",
@@ -3862,7 +3901,14 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビカルによる有料レンタル。事前会員登録・予約が必要。インフォメーションで予約画面を提示。",
+    "strollerNote": "園内はバリアフリー対応と公式案内。ベビーカーの通行範囲・路面状況の詳細は記載なし。",
+    "strollerSourceUrl": "https://www.tobuws.co.jp/park-guide/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -3905,7 +3951,6 @@
     "desc": "自家用車やサファリバスに乗ったまま動物を間近に見られる。車移動なので雨天でも楽しめる。",
     "tip": "車内から見るスタイルなので、寝てしまった乳児がいても安心。",
     "layoutCompact": false,
-    "strollerRental": true,
     "verifiedAt": "2026年10月13日",
     "food": {
       "lunch": "園内にレストラン・売店あり。",
@@ -3955,6 +4000,7 @@
       "maxMinutes": 120
     },
     "strollerOk": "ask",
+    "strollerRental": true,
     "strollerRentalNote": "100円/回。受付窓口で貸出。ウォーキングサファリゾーンにも貸出あり。",
     "strollerNote": "飼育体験バス・エサやりバス・サファリバスにはベビーカーを載せられない。",
     "strollerSourceUrl": "https://safari.co.jp/faq/faq_tax/infants/",
@@ -4032,8 +4078,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "日本気象協会tenki.jpの10/13発表の見頃予想は11月下旬〜12月上旬（現況は青葉）。",
-        "periodLabel": "見頃予想：11月下旬〜12月上旬"
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/30ごろ（11/2時点・ウェザーニュース）。日本気象協会tenki.jpの10/13発表では11月下旬〜12月上旬の予想。",
+        "periodLabel": "見頃予想：11月30日ごろ〜"
       }
     },
     "businessHours": {
@@ -4143,7 +4189,14 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "ベビーカー通行可能な園路を示す公式マップあり。授乳室など一部施設内には持ち込めない場所あり。",
+    "strollerSourceUrl": "https://www.tokyo-zoo.net/inokashira/visitor-info/infant-care/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -4227,7 +4280,14 @@
     "image": "img/spots/tokyo-shinagawa-shinagawa-aquarium.jpg",
     "imageCredit": "📷 Punkssand / パブリックドメイン / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%97%E3%81%AA%E3%81%8C%E3%82%8F%E6%B0%B4%E6%97%8F%E9%A4%A8.jpg",
-    "genre": "水族館"
+    "genre": "水族館",
+    "strollerOk": "ok",
+    "strollerRental": false,
+    "strollerRentalNote": "ベビーカー貸出なし。",
+    "strollerNote": "ベビーカーのまま館内見学可能。エレベーター2か所・スロープあり。混雑時は入口前の置き場を推奨。",
+    "strollerSourceUrl": "https://www.aquarium.gr.jp/guide/baby",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -4308,9 +4368,11 @@
     ],
     "eventInfo": {
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "昨季は、星空の海をテーマにした光の演出「STAR AQUARIUM by NAKED」（2025/11/15〜12/25、10:00〜20:00、最終入場19:00）を開催した。今年の内容・日程は発表待ち。"
+        "start": "2026-11-13",
+        "end": "2026-12-25",
+        "periodLabel": "11/13〜12/25",
+        "note": "「LittleTwinStars AQUARIUM」。光と映像を使ったクリスマスイベント。"
       }
     },
     "strollerOk": "ok",
@@ -4462,7 +4524,7 @@
       "イルミネーション": {
         "tentative": true,
         "type": "illumination",
-        "note": "昨季は「デジタリアルイルミネーション2025」（2025/11/22〜2026/2/8、10:00〜20:00）として、大きなイルミネーションツリーが登場した。今年の内容・日程は発表待ち。"
+        "note": "昨季は「デジタリアルイルミネーション2025」を2025/11/22〜2026/2/8に開催した。今季の開催は不明。"
       }
     },
     "stayTime": {
@@ -4517,7 +4579,6 @@
       "asoview": "https://www.asoview.com/spot/spot0000007179/",
       "jalan": "https://www.jalan.net/kankou/spt_guide000000173973/"
     },
-    "strollerRental": true,
     "temporaryClosures": [
       {
         "start": "2026-10-01",
@@ -4564,6 +4625,7 @@
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:National_Museum_of_Emerging_Science_and_Innovation_%E6%97%A5%E6%9C%AC%E7%A7%91%E5%AD%A6%E6%9C%AA%E6%9D%A5%E9%A4%A8_-_panoramio.jpg",
     "genre": "博物館・科学館",
     "strollerOk": "ask",
+    "strollerRental": true,
     "strollerRentalNote": "1階エントランスで貸出。台数限定。料金・対象年齢は記載なし。",
     "strollerNote": "館内のベビーカー持ち込み・利用制限について公式記載を確認できず。",
     "strollerSourceUrl": "https://www.miraikan.jst.go.jp/visit/accessibility/",
@@ -4835,7 +4897,13 @@
       "source": "web",
       "sourceUrl": "https://iko-yo.net/facilities/118",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/honjo/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -4948,7 +5016,6 @@
     },
     "desc": "都心にありながら絶叫系から幼児向けまで揃う遊園地。屋根付きエリアもあり小雨でも遊べる。",
     "tip": "入園無料なので乗る分だけ払えて予算調整しやすい。",
-    "strollerRental": true,
     "events": [
       "イルミネーション"
     ],
@@ -5061,6 +5128,7 @@
     "imageCredit": "📷 コンピュータが読み取れる情報は提供されていませんが、Fg2だと推定されます（著作権の主張に基づく） / パブリックドメイン / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:TokyoDome8945.jpg",
     "strollerOk": "ok",
+    "strollerRental": true,
     "strollerRentalNote": "無料。後楽園ホールビル1階ベビールーム等。生後1か月～4歳・18kgまで。予約不可。",
     "strollerNote": "シティ内で利用可能。ただし東京ドーム内は持込不可。ラクーアにコイン式貸出もあり。",
     "strollerSourceUrl": "https://www.tokyo-dome.co.jp/guide/child.html",
@@ -5251,8 +5319,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "色づき始めは山頂付近で11/6〜20ごろ、見頃は11/22ごろ〜の予想（日本気象・ウェザーニュース、9月発表）。紅葉や連休は乗り場が1時間以上並ぶこともあり、午前の早い時間が狙い目。リフトは3歳未満は乗れないので、乳幼児連れはケーブルカーを。 tenki.jpの10/12発表では11月19日ごろ〜の予想（現況は見頃前）。",
-        "periodLabel": "見頃予想：11月22日ごろ〜"
+        "note": "11/2時点はほんのり色づき始めで、見頃予想は11/12〜13ごろ（ウェザーニュース、10/29発表と11/2時点の掲載）。紅葉や連休は乗り場が1時間以上並ぶこともあり、午前の早い時間が狙い目。リフトは3歳未満は乗れないので、乳幼児連れはケーブルカーを。",
+        "periodLabel": "見頃予想：11月12〜13日ごろ〜"
       }
     },
     "image": "img/spots/tokyo-hachioji-takaotozan.jpg",
@@ -5352,7 +5420,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": true,
+    "strollerRentalNote": "エントランスホールで無料貸出。",
+    "strollerNote": "展示室など館内はベビーカーで移動可能。プラネタリウム・大型映像への持ち込みは不可。",
+    "strollerSourceUrl": "https://www.tamarokuto.or.jp/guide/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -5425,7 +5500,14 @@
       "source": "official",
       "sourceUrl": "https://www.seibu-la.co.jp/nettaikan/faq.html",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料貸出。1階受付に申し出。",
+    "strollerNote": "ベビーカーで館内を回れる。館内はバリアフリーで、階移動にはエレベーターを利用。",
+    "strollerSourceUrl": "https://www.seibu-la.co.jp/nettaikan/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -5475,8 +5557,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月下旬〜12月中旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
-        "tentative": true
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/25ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月25日ごろ〜"
       }
     },
     "food": {
@@ -5586,7 +5668,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "木場ミドリアム館内はベビーカー利用不可。入口外の置き場を利用。公園全体の利用条件とは区別が必要。",
+    "strollerSourceUrl": "https://www.tokyo-park.or.jp/park/kiba/facility/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -5650,7 +5738,12 @@
       "source": "web",
       "sourceUrl": "https://seaside-park.jp/search_park/park_jonan/bbq",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -5765,7 +5858,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://www.city.itabashi.tokyo.jp/bousai/kouen/kouen/doubutsuen/1006627",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -5869,8 +5968,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月上旬〜12月上旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
-        "tentative": true
+        "note": "11/2時点はまだ色づき前で、見頃予想は12/5ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：12月5日ごろ〜"
       }
     },
     "businessHours": {
@@ -6048,7 +6147,12 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -6122,7 +6226,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "館内にベビーカー対応エレベーターあり。園地は段差がなく、ベビーカーで利用しやすい。",
+    "strollerSourceUrl": "https://www.tokyorinkai-koen.jp/universal/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6221,7 +6331,14 @@
     "image": "img/spots/kanagawa-yokohama-asahi-zoorasia.jpg",
     "imageCredit": "📷 Toshihiro Gamo / CC BY 2.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg",
-    "genre": "動物園"
+    "genre": "動物園",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "600円・B型・生後7か月～4歳頃・18kg/身長100cmまで。正門・北門で貸出。",
+    "strollerNote": "園内バス乗車時は折りたたみ必須。園内利用可能。",
+    "strollerSourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/rental.php",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6308,7 +6425,13 @@
     "image": "img/spots/kanagawa-yokohama-nishi-nogeyama-zoo.jpg",
     "imageCredit": "📷 Dddeco / CC BY 2.5 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Nogeyama_Zoo.JPG",
-    "genre": "動物園"
+    "genre": "動物園",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "入口案内所でB型ベビーカーを無料貸出。対象は7〜24か月。台数に限りあり。",
+    "strollerSourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/nogeyama/rental.php",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6404,7 +6527,14 @@
       "approx": false,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人600円×2＋小学生200円×2＋幼児0円×1（幼児は無料と仮定）"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "A型1回1,000円、B型1回300円。保証料は返却時に返金。正面入口改札等で貸出。",
+    "strollerNote": "園内でベビーカー利用可。改札外への持ち出し不可。",
+    "strollerSourceUrl": "https://www.kodomonokuni.org/service/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6468,7 +6598,13 @@
     "image": "img/spots/kanagawa-kawasaki-tama-fujiko-museum.jpg",
     "imageCredit": "📷 Wei-Te Wong from Taipei City, Taiwan, Republic of China / CC BY-SA 2.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%97%A4%E5%AD%90_F_%E4%B8%8D%E4%BA%8C%E9%9B%84%E5%8D%9A%E7%89%A9%E9%A4%A8_(49292081636).jpg",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "館内でベビーカー利用不可。専用置き場で預かり。抱っこひもの利用を推奨。",
+    "strollerSourceUrl": "https://fujiko-museum.com/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6517,8 +6653,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月中旬〜12月中旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
-        "tentative": true
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/21ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月21日ごろ〜"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -6540,7 +6676,14 @@
       "source": "official",
       "sourceUrl": "https://www.nature-kawasaki.jp/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "科学館内のみ利用できるベビーカー貸出あり。",
+    "strollerNote": "科学館内はベビーカーで見学可。プラネタリウム投影中はドーム内に持ち込めず、指定場所に置く。",
+    "strollerSourceUrl": "https://www.nature-kawasaki.jp/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6804,7 +6947,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQで貸出なしと明記。",
+    "strollerNote": "館内では自走式ベビーカーを利用できない。入口外側にベビーカー置き場あり。",
+    "strollerSourceUrl": "https://www.sagamigawa-fureai.com/term/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -6957,7 +7107,13 @@
     "image": "img/spots/chiba-chiba-wakaba-chiba-zoo.jpg",
     "imageCredit": "📷 Misei sen / パブリックドメイン / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8D%83%E8%91%89%E5%B8%82%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92%E6%AD%A3%E9%96%80.jpg",
-    "genre": "動物園"
+    "genre": "動物園",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "1回250円。正門・西口・北口ゲートで貸出。当日貸出あり。事前予約も可能。",
+    "strollerSourceUrl": "https://www.city.chiba.jp/zoo/guide/kurumaisu.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -7030,7 +7186,13 @@
     ],
     "image": "img/spots/chiba-ichihara-zounokuni.jpg",
     "imageCredit": "📷 Xser21 / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B8%82%E5%8E%9F%E3%81%9E%E3%81%86%E3%81%AE%E5%9B%BD2015.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B8%82%E5%8E%9F%E3%81%9E%E3%81%86%E3%81%AE%E5%9B%BD2015.jpg",
+    "strollerOk": "ask",
+    "strollerRentalNote": "市原ぞうの国のベビーカー貸出について公式記載なし。",
+    "strollerNote": "併設のサユリワールドはベビーカー持ち込み・使用不可。市原ぞうの国側の利用可否は確認できず。",
+    "strollerSourceUrl": "https://zounokuni.com/caution/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -7243,7 +7405,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "入口ゲートで1台50円で貸出。",
+    "strollerSourceUrl": "https://www.city.ichikawa.lg.jp/site/zoo/6709.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -7452,7 +7620,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "公式FAQでベビーカー貸出の記載を確認できず。",
+    "strollerNote": "公式FAQにベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://www.yumebokujo.com/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -7518,7 +7692,7 @@
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
-        "note": "夏のイベント「大夏祭り」。2026年は盆踊りを進化させたプログラムや、サーカスのショー、打ち上げ花火「満天打上花火」などがあった。来年の内容・日程は発表待ち。"
+        "note": "夏のイベント「大夏祭り」。2026年は盆踊りを進化させたプログラムや、サーカスのショー、打ち上げ花火「満天打上花火」などがあった。来年の内容・日程は不明。"
       },
       "ハロウィン": {
         "start": "2026-10-03",
@@ -7530,7 +7704,7 @@
       "イルミネーション": {
         "tentative": true,
         "type": "illumination",
-        "note": "昨季は「ノスタルジック・クリスマス」（2025/11/21〜12/25）を開催し、夕日丘一丁目広場のイルミネーションスポットは2026/3/15まで点灯した（追加料金なしで入園券に含まれる）。今年の内容・日程は発表待ち。"
+        "note": "昨季は2025/11/21から「ノスタルジック・クリスマス」でクリスマスイルミネーションを実施した。2026-2027シーズンの開催は不明。"
       }
     },
     "verifiedAt": "2026年10月12日",
@@ -7780,7 +7954,12 @@
       "source": "official",
       "sourceUrl": "https://greencenter.1110city.com/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカーの貸出は行っていないと明記。",
+    "strollerSourceUrl": "https://www.city.kawaguchi.lg.jp/faq/sisetu/greencenter/18194.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -7936,7 +8115,6 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人3,000円×2＋子ども（大人の約半額1,500円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
     },
-    "strollerRental": true,
     "businessHours": {
       "mon": "09:30-16:00",
       "tue": "09:30-16:00",
@@ -7994,6 +8172,7 @@
     "rideLimitsCheckedAt": "2026-10-31",
     "rideLimitsSource": "https://www.musashinomura.co.jp/area-guide/amusement-park/",
     "strollerOk": "ask",
+    "strollerRental": true,
     "strollerRentalNote": "中央入園ゲートで貸出。300円/日。台数の詳細は記載なし。",
     "strollerNote": "持ち込み・園内の通行条件について公式情報を確認できず。",
     "strollerSourceUrl": "https://www.musashinomura.co.jp/faq/",
@@ -8224,7 +8403,13 @@
       "source": "official",
       "sourceUrl": "https://www.nat.museum.ibk.ed.jp/contact/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "エントランスホールで無料貸出。",
+    "strollerSourceUrl": "https://www.nat.museum.ibk.ed.jp/news/8698",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -8307,7 +8492,13 @@
       "checkedAt": "2026年11月1日",
       "bento": "ok",
       "bentoNote": "日立市の公式資料に、園内のおべんとう広場やベンチなど飲食できる場所の案内あり（資料の発行時期は未確認）"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "入園口を入ってすぐ右側で貸出。1台200円。",
+    "strollerSourceUrl": "https://www.city.hitachi.lg.jp/faq/kanko_bunka/1006761/1006769.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -8563,7 +8754,7 @@
     "image": "img/spots/tochigi-nasu-nasuhighlandpark.jpg",
     "imageCredit": "📷 Tomokazu Kitjaima / CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%82%A3%E9%A0%88%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%91%E3%83%BC%E3%82%AF%E5%85%A8%E6%99%AF.jpg",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRental": true,
     "strollerRentalNote": "入園ゲートで貸出。600円/台。",
     "strollerNote": "車いす利用者向けに園内階段脇の専用スロープあり。ベビーカーの詳細な通行制限は記載なし。",
@@ -8767,7 +8958,14 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "案内所で無料貸出。B型10台・7か月～3歳頃対象。",
+    "strollerNote": "持ち込み・園内利用の可否は公式FAQに明記なし。",
+    "strollerSourceUrl": "https://www.park-tochigi.com/tochinoki/faq",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -8921,7 +9119,13 @@
       "checkedAt": "2026年11月1日",
       "bento": "ask",
       "bentoNote": "市の公式ページに動物園の利用案内あり。ゴミの持ち帰り等の注意はあるが、弁当持ち込み・飲食場所・レジャーシートの可否は記載なし"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "公式サイトでベビーカー貸出の情報を確認できず。",
+    "strollerNote": "園内は丘陵地。ベビーカーの持ち込み・利用可否は公式に明記なし。",
+    "strollerSourceUrl": "https://www.city.kiryu.lg.jp/zoo/1004752.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -9032,7 +9236,14 @@
       "checkedAt": "2026年11月1日",
       "bento": "ask",
       "bentoNote": "市の公式ページに園内施設・利用案内あり。弁当持ち込み・飲食場所・レジャーシートの可否は記載なし"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーバギー2台を貸出。管理棟スタッフに申し出。料金は公式ページに記載なし。",
+    "strollerNote": "持ち込み・利用条件の明確な案内は確認できず。",
+    "strollerSourceUrl": "https://lunapark.maebashi-park.com/facilities/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -9173,7 +9384,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "横浜市観光情報サイトで貸出なしと案内。",
+    "strollerNote": "1階インフォメーション横と地下2階にベビーカー置き場あり。",
+    "strollerSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=24",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -9602,7 +9820,13 @@
       "source": "web",
       "sourceUrl": "https://4travel.jp/dm_shisetsu/10008964",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "パークセンターで無料貸出。台数に限りがあり、利用後は返却。",
+    "strollerSourceUrl": "https://kanagawa-park.or.jp/mitsuike/baria.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -9919,9 +10143,11 @@
         "type": "flower"
       },
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "昨季はクリスマスイベント「BALLPARK Xmas YOKOHAMA KANNAI 2025」を2025/11/21〜12/25に開催した（入場無料、時期により11:00〜22:00ごろ）。2026年は11/20〜12/25の掲載があるが、公式サイトでは未確認。"
+        "start": "2026-11-20",
+        "end": "2026-12-25",
+        "periodLabel": "11/20〜12/25（36日間）",
+        "note": "「BALLPARK Xmas YOKOHAMA KANNAI 2026」（2年目）。テーマは「Highlight」。横浜公園いっぱいにイルミネーションとクリスマスマーケットが広がり、BASEGATE横浜関内や日本大通りのイルミネーションとも連携する。入場無料（一部コンテンツは有料）。"
       }
     },
     "heat": {
@@ -10293,7 +10519,13 @@
       "source": "official",
       "sourceUrl": "https://www.kanagawa-park.or.jp/tujidou/pool-faq.html",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "園内はなだらかで、ベビーカーで散策できると公式案内に記載。",
+    "strollerSourceUrl": "https://www.kanagawa-park.or.jp/tujidou/kouen.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -10888,7 +11120,13 @@
       "source": "official",
       "sourceUrl": "https://nh.kanagawa-museum.jp/nyukan-onegai.html",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "1階総合案内で貸出。台数に限りがあり先着順。",
+    "strollerSourceUrl": "https://nh.kanagawa-museum.jp/contact/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -11029,7 +11267,13 @@
       "source": "web",
       "sourceUrl": "https://www.itigonousagi.com/entry/zama-yatoyamakouen/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "一部の木道は段差があり、ベビーカーでの通行が困難と公式案内。園内全域の利用可否は確認できず。",
+    "strollerSourceUrl": "https://www.kanagawa-park.or.jp/zamayatoyama/barrierfree.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -11186,7 +11430,13 @@
       "source": "official",
       "sourceUrl": "https://www.kanagawaparks.com/kurihama/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "現在利用できる園路にはすべて階段があり、急坂・傾斜もある。ベビーカーでの通行は大変困難。",
+    "strollerSourceUrl": "https://www.kanagawaparks.com/kurihama/news/2026101916220410559.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -11326,7 +11576,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "園内のどこからでも見える三重塔と、秋の紅葉が見どころ。紅葉の遊歩道開放を11/20（金）〜12/13（日）に実施（三溪園公式）。",
+        "note": "園内のどこからでも見える三重塔と、秋の紅葉が見どころ。紅葉の遊歩道開放を11/20（金）〜12/13（日）に実施（三溪園公式）。11/2時点はまだ色づき前で、見頃予想は12/3ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-11-20",
         "end": "2026-12-13",
         "periodLabel": "11/20〜12/13"
@@ -11350,7 +11600,14 @@
       "source": "official",
       "sourceUrl": "https://www.sankeien.or.jp/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQで貸出なしと明記。",
+    "strollerNote": "園内のベビーカー持ち込み・使用可否、段差・坂道の詳細は確認できず。",
+    "strollerSourceUrl": "https://www.sankeien.or.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -11777,7 +12034,14 @@
       "bento": "ok",
       "bentoNote": "園内で弁当を食べられる。冷暖房付き休憩所・屋外休憩所・芝生広場が利用可能。シート利用可（公式FAQより）",
       "sourceUrl": "https://kana-garden.com/faq/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビカルによるベビーカー貸出サービスあり。",
+    "strollerNote": "園内はバリアフリー。ベビカルでベビーカーをレンタル可能。",
+    "strollerSourceUrl": "https://kana-garden.com/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -12111,8 +12375,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月中旬〜12月中旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
-        "tentative": true
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/30ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月30日ごろ〜"
       }
     },
     "food": {
@@ -12127,7 +12391,14 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "貸出あり。台数に限りあり。原則1グループ1台。",
+    "strollerNote": "貸出ベビーカーは有料区域内のみ利用可。持ち込みベビーカーの利用条件は公式案内で確認できず。",
+    "strollerSourceUrl": "https://www.tokyo-park.or.jp/park/jindai/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -12173,7 +12444,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "「庭紅葉の六義園」夜間特別観賞を11/25（水）〜12/6（日）の18:00〜20:30（最終入園19:30）に開催予定（東京都公園協会の9/3付発表として報じられた内容。前売1,000円・当日1,200円）。お出かけ前に公式サイトで確認を。",
+        "note": "「庭紅葉の六義園」夜間特別観賞を11/25（水）〜12/6（日）の18:00〜20:30（最終入園19:30）に開催予定（東京都公園協会の9/3付発表として報じられた内容。前売1,000円・当日1,200円）。11/2時点はまだ色づき前で、見頃予想は12/1ごろ（11/2時点・ウェザーニュース）。お出かけ前に公式サイトで確認を。",
         "start": "2026-11-25",
         "end": "2026-12-06",
         "periodLabel": "11/25〜12/6"
@@ -12220,7 +12491,13 @@
       "source": "web",
       "sourceUrl": "https://parknavi.info/rikugien_picnic",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "ベビーカー貸出について公式記載なし。",
+    "strollerNote": "公式FAQは車いす通行可能ルートを案内。ベビーカーの利用可否は明記なし。園路には狭い場所や段差あり。",
+    "strollerSourceUrl": "https://www.tokyo-park.or.jp/park/rikugien/faq/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -12266,7 +12543,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "夜間特別開園「深山光葉を楽しむ」を11/13（金）〜11/24（火）の18:00〜21:00（最終入園20:00）に開催。17時にいったん閉園し18時に再開園、入園は西門のみ。中学生以上は夜間特別観賞券が必要（前売1,000円・当日1,200円、前売はオンライン販売のみ）。",
+        "note": "夜間特別開園「深山光葉を楽しむ」を11/13（金）〜11/24（火）の18:00〜21:00（最終入園20:00）に開催。17時にいったん閉園し18時に再開園、入園は西門のみ。中学生以上は夜間特別観賞券が必要（前売1,000円・当日1,200円、前売はオンライン販売のみ）。11/2時点はまだ色づき前で、見頃予想は11/30ごろ（11/2時点・ウェザーニュース）のため、夜間開園の期間は見頃予想より前。",
         "start": "2026-11-13",
         "end": "2026-11-24",
         "periodLabel": "11/13〜11/24"
@@ -12640,7 +12917,13 @@
       "source": "web",
       "sourceUrl": "https://inakadaisuki.com/heiwanomori-bring-your-own-lunch/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公園内カフェはベビーカーで入店可。公園全体の利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.city.tokyo-nakano.lg.jp/kanko/machiaruki/heiwanomoripark.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -12910,7 +13193,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "本館入口にベビーカーあり。料金・対象年齢・台数は公式ページに記載なし。",
+    "strollerNote": "園内はスロープで移動可能。ベビーカーの利用範囲や制限は明記なし。",
+    "strollerSourceUrl": "https://www.river-museum.jp/about/barrier-free/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -12960,8 +13250,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "ウェザーニュースの2026年版で、10/8時点で約2割が色づき始め。見頃予想は10/28ごろ〜、落葉は11/24ごろ〜。",
-        "periodLabel": "見頃予想：10月28日ごろ〜"
+        "note": "11/2時点で見頃（例年の見頃は11月上旬）（11/2時点・ウェザーニュース）。以前の予想では落葉は11/24ごろ〜。",
+        "periodLabel": "11/2時点で見頃"
       }
     },
     "food": {
@@ -13366,7 +13656,13 @@
       "source": "official",
       "sourceUrl": "https://www.parks.or.jp/kumagaya/guide/001/001191.html",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "熊谷ラグビー場西側の広場へ、ベビーカーでも行き来できるようスロープを整備。",
+    "strollerSourceUrl": "https://www.parks.or.jp/kumagaya/guide/004/004017.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -13766,7 +14062,7 @@
       "イルミネーション": {
         "tentative": true,
         "type": "illumination",
-        "note": "昨季は「もばら冬の七夕 イルミネーション」を2026/2/7〜3/4の17:00〜21:00に開催した（入場無料）。2/7は「もばら冬の七夕まつり」（12:00〜19:00）。来年の内容・日程は発表待ち。"
+        "note": "「もばら冬の七夕 イルミネーション」は2026/2/7〜3/4に開催済み（17:00〜21:00、入場無料）。2027年の開催日は不明。"
       }
     },
     "genre": "公園",
@@ -13856,7 +14152,13 @@
       "source": "official",
       "sourceUrl": "https://www.chiba-muse.or.jp/MURA/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "受付で無料貸出。台数に限りあり。",
+    "strollerSourceUrl": "https://www.chiba-muse.or.jp/MURA/page-1518537659308/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -13903,7 +14205,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "もみじ谷のライトアップを11/7〜11/29の日没〜21:00に予定（偕楽園公式、9/27発表）。紅葉の色づき具合で変わることがあり、変更は公式サイトで案内される。",
+        "note": "もみじ谷のライトアップを11/7〜11/29の日没〜21:00に予定（偕楽園公式、9/27発表）。紅葉の色づき具合で変わることがあり、変更は公式サイトで案内される。11/2時点はまだ色づき前で、もみじ谷の見頃予想は11/22ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-11-07",
         "end": "2026-11-29",
         "periodLabel": "11/7〜11/29"
@@ -13931,7 +14233,13 @@
       "bento": "ok",
       "bentoNote": "公式FAQで園内への食べ物の持ち込み可。ただし好文亭内は飲食禁止",
       "sourceUrl": "https://ibaraki-kairakuen.jp/contact/"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式バリアフリーマップにベビーカーで通行できるルートの案内あり。園路によって通行条件が異なる。",
+    "strollerSourceUrl": "https://ibaraki-kairakuen.jp/barrierfree/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -14038,7 +14346,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "「竜神峡 紅葉まつり」を2026年11/1（日）〜11/30（月）の8:30〜17:00に開催。竜神峡の見頃は例年11月上旬〜下旬（気象条件で前後）。歩行者専用の吊橋の上から、渓谷の紅葉を見渡せる。",
+        "note": "「竜神峡 紅葉まつり」を2026年11/1（日）〜11/30（月）の8:30〜17:00に開催。歩行者専用の吊橋の上から、渓谷の紅葉を見渡せる。竜神峡は11/2時点でほんのり色づき始め、見頃予想は11/9ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-11-01",
         "end": "2026-11-30",
         "periodLabel": "11/1〜11/30"
@@ -14174,8 +14482,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "日本気象協会tenki.jpの10/13発表の見頃予想は11月上旬〜11月下旬（現況は青葉）。",
-        "periodLabel": "見頃予想：11月上旬〜11月下旬"
+        "note": "11/2時点で山頂・中腹はほんのり色づき始め（見頃予想は11/7ごろ）、山麓はまだ色づき前（見頃予想は11/16ごろ）（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：山頂・中腹11月7日ごろ、山麓11月16日ごろ"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -14280,7 +14588,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "こどもの城2階管理事務所で無料貸出。台数に限りあり。",
+    "strollerSourceUrl": "https://www.park-tochigi.com/wanpaku/faq",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -14543,7 +14857,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "一万人プール内へのベビーカー持ち込みは可能。公園全域の利用条件は確認できず。",
+    "strollerSourceUrl": "https://www.park-tochigi.com/pool/faq",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -14591,8 +14911,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "日本気象協会tenki.jpの見頃予想は、中禅寺湖が10月中旬〜11月上旬（10/13発表、現況は青葉）、いろは坂・華厳滝が10/21ごろ〜（10/12発表、現況は見頃前）。",
-        "periodLabel": "見頃予想：中禅寺湖は10月中旬〜11月上旬"
+        "note": "11/2時点で、中禅寺湖・いろは坂・華厳滝はいずれも見頃（11/2時点・ウェザーニュース）。例年の見頃は10月中旬〜11月上旬で、シーズンは終盤に入る。",
+        "periodLabel": "11/2時点で見頃（例年は11月上旬まで）"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -14612,7 +14932,13 @@
       "bento": "ask",
       "bentoNote": "華厳滝エレベーターへの飲食物の持ち込みは禁止。周辺の湖畔・観瀑エリアでの弁当持ち込みや飲食場所は記載なし",
       "sourceUrl": "https://www.kegon.jp/info/"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "ベビーカー貸出について公式記載なし。",
+    "strollerNote": "公式観光案内にベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://www.nikko-kankou.org/spot/list?category_l=2",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -14754,7 +15080,14 @@
       "minMinutes": 90,
       "maxMinutes": 150
     },
-    "officialUrlStatus": "群馬県東京事務所の観光情報（2025年7月号）に、施設提供の情報として記載"
+    "officialUrlStatus": "群馬県東京事務所の観光情報（2025年7月号）に、施設提供の情報として記載",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビカル・5台。最初の1時間250円、以降30分100円。入場ゲートで貸出。7か月～4歳頃、18kg以下。",
+    "strollerNote": "ベビーカーで場内を回れるが、榛名山麓のため坂道が多い。",
+    "strollerSourceUrl": "https://www.greenbokujo.jp/service/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -14951,7 +15284,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": true,
+    "strollerRentalNote": "南ゲート・事務室で無料貸出。",
+    "strollerNote": "昆虫観察館周辺ではベビーカー利用可。それ以外の場所では利用を推奨していない。",
+    "strollerSourceUrl": "https://www.pref.gunma.jp/site/giw/617214.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -15110,7 +15450,14 @@
       "source": "official",
       "sourceUrl": "https://www.tatemonoen.jp/about/faq.php",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": true,
+    "strollerRentalNote": "無料貸出。ビジターセンター内インフォメーション。5台。生後1か月〜18kgまで。",
+    "strollerNote": "園内で利用可。ただし、建造物内を見学する際は入口手前に置く。",
+    "strollerSourceUrl": "https://www.tatemonoen.jp/about/faq.php",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -15478,8 +15825,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "ウェザーニュースの2026年版予想で、見頃は12/6ごろ〜、落葉は12/23ごろ〜。",
-        "periodLabel": "見頃予想：12月6日ごろ〜"
+        "note": "11/2時点はまだ色づき前で、見頃予想は12/3ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：12月3日ごろ〜"
       }
     },
     "businessHours": {
@@ -15506,7 +15853,13 @@
       "source": "official",
       "sourceUrl": "https://ins.kahaku.go.jp/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "ベビーカー貸出について公式記載なし。",
+    "strollerNote": "園内は舗装されておらず、階段箇所もある。車いす貸出の案内はあるが、ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://ins.kahaku.go.jp/riyou/barrierfree.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -15577,7 +15930,13 @@
       "source": "official",
       "sourceUrl": "https://www.ffpri.go.jp/tmk/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "山の地形を生かした園路。歩き慣れた靴での来園を案内しているが、ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.ffpri.go.jp/tmk/visit/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -15697,7 +16056,13 @@
       "source": "official",
       "sourceUrl": "https://www.museum.yokosuka.kanagawa.jp/information/inquiries-and-faq",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーは事務室で預かる案内あり。館内での利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.museum.yokosuka.kanagawa.jp/information/inquiries-and-faq",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -15746,7 +16111,7 @@
       "イルミネーション": {
         "tentative": true,
         "type": "illumination",
-        "note": "クリスマスイルミネーション。昨年は観覧車やメリーゴーランドが期間限定でライトアップされた。今年の内容・日程は発表待ち。"
+        "note": "クリスマスイルミネーション。昨年は観覧車やメリーゴーランドが期間限定でライトアップされた。2026-2027シーズンの開催情報は不明。"
       }
     },
     "food": {
@@ -15815,7 +16180,14 @@
       }
     ],
     "rideLimitsCheckedAt": "2026-10-31",
-    "rideLimitsSource": "https://soleil-park.jp/category/play"
+    "rideLimitsSource": "https://soleil-park.jp/category/play",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "7〜36か月・体重15kg以下向けのB型ベビーカーを1台400円で貸出。台数に限りがあり予約不可。",
+    "strollerNote": "ベビーカーで園内を移動しやすい旨の案内あり。",
+    "strollerSourceUrl": "https://soleil-park.jp/forkids",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -16959,7 +17331,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "「長瀞紅葉まつり2026」を11/1〜11/30に開催（長瀞町観光協会、9/14発表）。月の石もみじ公園のライトアップは11/6〜11/29の16:00〜21:00で、色づき状況により前後する。",
+        "note": "「長瀞紅葉まつり2026」を11/1〜11/30に開催（長瀞町観光協会、9/14発表）。月の石もみじ公園のライトアップは11/6〜11/29の16:00〜21:00で、色づき状況により前後する。11/2時点で岩畳・月の石もみじ公園とも色づき始めで、見頃予想は11/11ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-11-01",
         "end": "2026-11-30",
         "periodLabel": "11/1〜11/30"
@@ -17104,12 +17476,12 @@
         "end": "2026-12-25",
         "periodLabel": "10/31〜12/25",
         "type": "event",
-        "note": "「ムーミン谷のクリスマス2026」。ムーミン一家がクリスマスを誤解したところから始まる絵本の物語を、装飾や展示で再現（一風変わったツリー、ごちそう、プレゼントなど）。隣のメッツァビレッジでも同じ期間に「メッツァの北欧クリスマス2026」を開催。12月の土日（12/12・13・19・20）は湖畔のクリスマスマーケット。12/6（日）にはメッツァアウキオのクリスマスツリー前でフィンランドから来るサンタとのグリーティング（11:00／13:00／15:00の各回、1組1,500円、事前予約制・先着、キャンセル不可、1組最大6名）。 ライトアップやキャラクターのナイトパレード、冬の湖上花火大会なども予定されているが、営業時間やパレード・花火の日程は未発表（メッツァ公式、9/6更新）。"
+        "note": "「ムーミン谷のクリスマス2026」。ムーミン一家がクリスマスを誤解したところから始まる絵本の物語を、装飾や展示で再現（一風変わったツリー、ごちそう、プレゼントなど）。隣のメッツァビレッジでも同じ期間に「メッツァの北欧クリスマス2026」を開催。12月の土日（12/12・13・19・20）は湖畔のクリスマスマーケット。12/6（日）にはメッツァアウキオのクリスマスツリー前でフィンランドから来るサンタとのグリーティング（11:00／13:00／15:00の各回、1組1,500円、事前予約制・先着、キャンセル不可、1組最大6名）。 ライトアップやキャラクターのナイトパレード、冬の湖上花火大会なども予定されているが、営業時間やパレード・花火の日程は不明（メッツァ公式、9/6更新時点）。"
       },
       "水遊び": {
         "tentative": true,
         "type": "themepark",
-        "note": "夏の水遊びイベント「ムーミン谷でみずあそび」。2026年は水しぶきを浴びるショーや、スプラッシュゾーン、水に入って遊べる「じゃぶじゃぶクリーク」、パーク全体をミストで包む「ムーミン谷の雲海」などがあった。来年の内容・日程は発表待ち。"
+        "note": "夏の水遊びイベント「ムーミン谷でみずあそび」。2026年は水しぶきを浴びるショーや、スプラッシュゾーン、水に入って遊べる「じゃぶじゃぶクリーク」、パーク全体をミストで包む「ムーミン谷の雲海」などがあった。来年の内容・日程は不明。"
       }
     },
     "rideLimits": [
@@ -17574,7 +17946,13 @@
       "source": "official",
       "sourceUrl": "https://www.chiba-muse.or.jp/SCIENCE/visit/page-1517908555923/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカー5台を無料貸出。チケットカウンターで申し出る。",
+    "strollerSourceUrl": "https://www.chiba-muse.or.jp/SCIENCE/visit/page-1517908555923/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -17909,7 +18287,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "貸出用ベビーカー9台。受付スタッフまたは各フロアスタッフに申し出る。",
+    "strollerSourceUrl": "https://www.kagakukanq.com/static/guide/facilities/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -18014,8 +18398,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "広い自然公園で、春は桜、秋は紅葉も楽しめる。アスレチックの営業は11月以降、16:15までと早くなる。今年の見頃は発表待ち。 例年の見頃は11月下旬〜12月上旬（tenki.jp調べ）。",
-        "tentative": true
+        "note": "広い自然公園で、春は桜、秋は紅葉も楽しめる。アスレチックの営業は11月以降、16:15までと早くなる。11/2時点はまだ色づき前で、見頃予想は11/24ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月24日ごろ〜"
       }
     },
     "image": "img/spots/chiba-noda-shimizu-park.jpg",
@@ -18623,8 +19007,9 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "例年、11月に「花貫渓谷紅葉まつり」を開催し（2025年実績：11/1〜11/30）、日没〜19:00ごろにライトアップもある。入場は無料だが、まつり期間中は駐車場が有料。見頃は例年11月中旬〜下旬（色づき始めは11月上旬）。今年の日程は発表待ち。",
-        "tentative": true
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/13ごろ（11/2時点・ウェザーニュース）。例年、11月に「花貫渓谷紅葉まつり」を開催し（2025年実績：11/1〜11/30）、日没〜19:00ごろにライトアップもある。入場は無料だが、まつり期間中は駐車場が有料。今年のまつりの日程は不明。",
+        "tentative": true,
+        "periodLabel": "見頃予想：11月13日ごろ〜"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -18684,8 +19069,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "ウェザーニュースの2026年版予想で、見頃は11/13ごろ〜、落葉は11/26ごろ〜。",
-        "periodLabel": "見頃予想：11月13日ごろ〜"
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/9ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月9日ごろ〜"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -18705,7 +19090,14 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "大子町公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "持ち込み・利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.town.daigo.ibaraki.jp/faq.php?c=7&code=64&lc=0&mode=detail",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -18752,8 +19144,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "茶臼岳の紅葉は10/11時点で7〜8割が色づく見頃（ウェザーニュース）。ロープウェイは2026年3/20〜12/13の営業予定で、8:30〜16:30（強風・雷雲時は運休）。紅葉シーズンの土日祝は、山麓駅の駐車場が渋滞対策で施錠されることがある。",
-        "periodLabel": "10月中旬が見頃・ロープウェイは12/13まで"
+        "note": "那須岳の紅葉は11/2時点で終わり（11/2時点・ウェザーニュース）（例年の見頃は10月上旬）。ロープウェイは2026年3/20〜12/13の営業予定で、8:30〜16:30（強風・雷雲時は運休）。紅葉シーズンの土日祝は、山麓駅の駐車場が渋滞対策で施錠されることがある。",
+        "periodLabel": "紅葉は終了（11/2時点）・ロープウェイは12/13まで"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -18773,7 +19165,13 @@
       "bento": "ok",
       "bentoNote": "公式FAQで、弁当を食べる場所として山頂駅駅舎内・展望台のテーブルと椅子を案内。登山道から少し外れた場所で食べる利用者もいるとの記載あり",
       "sourceUrl": "https://www.nasu-ropeway.jp/faq/"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式案内にベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://www.nasu-ropeway.jp/information/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -18857,7 +19255,14 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカーのレンタルあり。希望者は千本松事務所スタッフに申し出。",
+    "strollerNote": "園内の遊歩道・散策道は舗装・整地されているが、ベビーカー利用可否の明記はなし。",
+    "strollerSourceUrl": "https://senbonmatsu.com/bfree/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -19200,7 +19605,14 @@
       }
     ],
     "rideLimitsCheckedAt": "2026-10-31",
-    "rideLimitsSource": "https://www.rindo.co.jp/attraction/"
+    "rideLimitsSource": "https://www.rindo.co.jp/attraction/",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "有料500円/日。入園ゲートまたはプレイハウスで貸出。台数限定。",
+    "strollerNote": "ベビーカーの持ち込み・園内利用可否は公式FAQに明記なし。",
+    "strollerSourceUrl": "https://www.rindo.co.jp/qa",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -19270,7 +19682,14 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "「庄屋」で1台貸出。当日申込順・予約不可。",
+    "strollerNote": "ベビーカーで入場可。ただし場内は傾斜地・未舗装箇所が多い。",
+    "strollerSourceUrl": "https://mail.minamigaoka.co.jp/qa/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -19390,7 +19809,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ふれあいの森にベビーカーで通行できる舗装路（約300m）がある。ほかの散策路は未確認。",
+    "strollerSourceUrl": "https://www.mlit.go.jp/tagengo-db/R2-00662.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -19465,7 +19890,13 @@
       "bento": "ng",
       "bentoNote": "公式の注意事項で、場内での食事は禁止。飲み物は建物の外で飲むよう案内。周辺の飲食店の利用を推奨",
       "sourceUrl": "https://www.tomioka-silk.jp/_tomioka-silk-mill/visit/notes.html"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "場内は基本的に舗装されているが、一部に段差・未舗装箇所あり。ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.tomioka-silk.jp/_faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -19515,7 +19946,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "グリーンシーズンの運行は2026年4/18〜11/15（予定）。天神平周辺の紅葉は例年10月上旬〜中旬が目安だが、年によって10月下旬〜11月上旬にずれ込むこともある。山麓（土合・湯檜曽）は10月下旬〜11月上旬。 日本気象協会tenki.jpの10/12発表では、谷川岳ヨッホは部分的に紅葉が見られる状態で、見頃予想は9月下旬〜10月下旬。",
+        "note": "グリーンシーズンの運行は2026年4/18〜11/15（予定）。紅葉は11/2時点で、天神平は終わり、土合口駅周辺は落葉中（11/2時点・ウェザーニュース）。",
         "periodLabel": "ロープウェイは11/15（予定）まで運行"
       }
     },
@@ -19535,7 +19966,13 @@
       "bento": "ask",
       "bentoNote": "施設内に展望レストランとテイクアウトカフェあり（公式FAQ）。弁当持ち込み・レストラン以外での飲食ルールは記載なし",
       "sourceUrl": "https://tanigawadake-joch.com/faq/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "ベビーカー貸出の記載なし。",
+    "strollerNote": "ベビーカーのままロープウェイ乗車可。専用置き場なし、スタッフに相談。山頂周辺には段差・ハイキングルートあり。",
+    "strollerSourceUrl": "https://tanigawadake-joch.com/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -19977,7 +20414,14 @@
       "source": "official",
       "sourceUrl": "https://www.skyland89.jp/faq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "持ち込み・園内利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.skyland89.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -20433,7 +20877,12 @@
       "source": "web",
       "sourceUrl": "https://parknavi.info/ohifutou/newpage2.html",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -20506,7 +20955,13 @@
       "bento": "ask",
       "bentoNote": "公園の公式案内に弁当・飲食物の持ち込み可否の記載なし（要問い合わせ）",
       "sourceUrl": "https://www.tokyo-park.or.jp/park/higashi-ayase/"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://tokyo-eastpark.com/parksearch/higashiayase",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -20572,7 +21027,12 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式情報を確認できず。",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -20708,7 +21168,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式アクセス案内にベビーカー利用者向けルートあり。帰真園もベビーカー通行可。",
+    "strollerSourceUrl": "https://futako-tamagawa-park.ces-net.jp/?page_id=230",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -21099,7 +21565,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー置き場あり。あそびエリア内でのベビーカー利用不可。",
+    "strollerSourceUrl": "https://asobimare.jp/tokyo/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -21290,7 +21762,14 @@
     "image": "img/spots/tokyo-edogawa-chikahaku.jpg",
     "imageCredit": "📷 User:Jmho / パブリックドメイン / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chikatetsu_Museum.jpg",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカー無料貸出あり。",
+    "strollerNote": "公式FAQでベビーカーでの見学可と明記。一部を除きバリアフリー。",
+    "strollerSourceUrl": "https://chikahaku.jp/about/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -21373,7 +21852,14 @@
       "source": "official",
       "sourceUrl": "http://www.galaxcity.jp/faq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "館内移動は可能だが、一部コーナーや混雑時は利用困難。1・2階に置き場あり。",
+    "strollerSourceUrl": "https://www.galaxcity.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -21692,7 +22178,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "2階キッズランド手前にベビーカー置き場あり。",
+    "strollerSourceUrl": "https://cro-spo.com/concept-hours-play-price-plan-howto-service-facilities-access/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -21746,7 +22238,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式店舗案内でベビーカー利用条件を確認できず。",
+    "strollerSourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/loc/minatomirai.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -21806,7 +22304,13 @@
       "source": "official",
       "sourceUrl": "https://visit-tsukuba.jaxa.jp/faq.html",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "展示室「スペースドーム」内はベビーカーで見学可能。施設全域の利用条件は確認できず。",
+    "strollerSourceUrl": "https://visit-tsukuba.jaxa.jp/guideline.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -22010,7 +22514,14 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://tnap.jp/subcontents/faq.php"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": true,
+    "strollerRentalNote": "無料貸出。台数に限りあり。インフォメーションで受付。",
+    "strollerNote": "ベビーカーの利用はおもしろ魚館内のみ。園内全域では利用できない。",
+    "strollerSourceUrl": "https://tnap.jp/subcontents/faq.php",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -22102,7 +22613,7 @@
       "bentoNote": "弁当・飲食物の持ち込み可否、食事場所、シート利用は公式に記載なし",
       "sourceUrl": "https://www.tokyotower.co.jp/access/faq/"
     },
-    "strollerOk": "ok",
+    "strollerOk": "partial",
     "strollerRental": true,
     "strollerRentalNote": "フットタウン1階インフォメーション。新生児～4歳未満・20kgまで。予約不可・台数限定。",
     "strollerNote": "フットタウン全館・メインデッキで使用可。トップデッキは途中に階段があり、1階に預けることを推奨。",
@@ -22307,7 +22818,13 @@
       "source": "official",
       "sourceUrl": "https://smallworlds.jp/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "ベビーカー貸出について公式記載なし。",
+    "strollerNote": "公式案内でベビーカー入場可。館内各所にスロープ・エレベーターあり。",
+    "strollerSourceUrl": "https://smallworlds.jp/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -22438,7 +22955,14 @@
       "年末休館（12/26〜12/31）"
     ],
     "verifiedAt": "2026年10月13日",
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "本館インフォメーションで貸出。台数限定。2歳まで推奨。",
+    "strollerNote": "構内・展示室内で使用可能。混雑時は展示室内で使用を断られる場合あり。各展示館にエレベーター・スロープあり。",
+    "strollerSourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=2670&lang=ja",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -22725,18 +23249,20 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "庭園のクリスタルガラスのアーチと紅葉の共演が楽しめる。紅葉の見頃は例年10月下旬〜11月中旬。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "庭園のクリスタルガラスのアーチと紅葉の共演が楽しめる。仙石原エリアでは、11/2時点で箱根湿生花園がほんのり色づき始めで見頃予想は11/12ごろ、箱根 長安寺はまだ色づき前で11/14ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：仙石原周辺は11月12〜14日ごろ"
       },
       "クリスマス": {
         "type": "event",
-        "note": "冬の見どころは、クリスタルガラスで作られた高さ約10mのクリスマスツリー「アベーテ」。今年の内容・日程は発表待ち。",
+        "note": "冬の見どころは、クリスタルガラスで作られた高さ約10mのクリスマスツリー「アベーテ」。今年の内容・日程は不明。",
         "tentative": true
       },
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "冬の見どころは、クリスタルガラスで作られた高さ約10mのクリスマスツリー「アベーテ」（電飾を使わず、日中は陽光で、夕方からはライトアップで輝く）。2026年の展示期間は未発表。参考（2025年実績）：2025/11/1〜2026/1/12に展示、16:00からライトアップ。今年の日程は公式発表待ち。"
+        "start": "2026-11-01",
+        "end": "2027-01-11",
+        "periodLabel": "11/1〜2027/1/11（クリスマス特別ナイト営業は一部日のみ）",
+        "note": "クリスタル・イルミネーション。電飾を使わず、クリスタルガラスで作られた高さ約10mのクリスマスツリー「アベーテ」などが、日中は陽光で、夕方からはライトアップで輝く。クリスマス特別ナイト営業は11/7・14・21・28、12/5・12・19・23・24・25で、19:00まで（最終入館18:30）。"
       }
     },
     "familyPrice": {
@@ -22880,7 +23406,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 90
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。園外エントランス付近にベビーカー置き場あり。",
+    "strollerNote": "園内利用の可否は明記なし。ベビーカーを離れる場合は園外の置き場を利用。",
+    "strollerSourceUrl": "https://y-eg.jp/raien/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -23100,7 +23632,14 @@
       "source": "official",
       "sourceUrl": "https://www.aeromuseum.or.jp/qa/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": true,
+    "strollerRentalNote": "館内用ベビーカー3台を用意。料金・貸出場所は公式案内に記載なし。",
+    "strollerNote": "屋上展望台の見学はベビーカー不可。",
+    "strollerSourceUrl": "https://www.aeromuseum.or.jp/guide/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -23241,7 +23780,13 @@
       "source": "official",
       "sourceUrl": "https://wanwan-land.co.jp/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "入園ゲートスタッフに申し出。無料貸出。台数に限りあり。",
+    "strollerSourceUrl": "https://wanwan-land.co.jp/faq",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -23361,7 +23906,13 @@
       "checkedAt": "2026年11月1日",
       "bento": "ask",
       "bentoNote": "園内に飲食店あり。飲食店への飲食物の持ち込みは原則遠慮する旨の案内。遊園地エリア全体の弁当持ち込み・食事場所のルールは記載なし"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式施設案内にベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://kaminepark.or.jp/facility-03.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -23704,7 +24255,14 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "車椅子・ベビーカーともに無料貸出。台数限定・予約不可。",
+    "strollerNote": "持ち込み・園内利用の可否は公式案内に明記なし。",
+    "strollerSourceUrl": "https://www.nasumonkey.com/guide/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -23776,7 +24334,14 @@
       "source": "official",
       "sourceUrl": "https://www.teddynet.co.jp/nasu/qa/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "ベビーカーでの入館可否は公式FAQに明記なし。",
+    "strollerSourceUrl": "https://www.teddynet.co.jp/nasu/qa/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -23914,7 +24479,13 @@
       "source": "official",
       "sourceUrl": "https://sgm-nasu.com/news/cafe-20230420/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "ベビーカー貸出・一時預かりとも公式記載なし。",
+    "strollerNote": "入館可能だが館内は段差が多く、抱っこひもを推奨。",
+    "strollerSourceUrl": "https://sgm-nasu.com/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -23991,7 +24562,13 @@
       "source": "official",
       "sourceUrl": "https://www.trick-art.jp/faq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "ベビーカー貸出について公式記載なし。",
+    "strollerNote": "公式FAQでベビーカーでの入館可と明記。FAQは約3年前の情報。",
+    "strollerSourceUrl": "https://www.trick-art.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -24071,7 +24648,14 @@
       "source": "official",
       "sourceUrl": "https://trickart-pia.com/contact/faq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRental": false,
+    "strollerRentalNote": "ベビーカー貸出なし。",
+    "strollerNote": "入館可能。2階へは階段のみで、ベビーカーを持ち上げる必要あり。エレベーターなし。",
+    "strollerSourceUrl": "https://trickart-pia.com/contact/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -24161,7 +24745,14 @@
         "end": "2027-04-15",
         "reason": "メンテナンスのため休園予定（2027年4月中旬まで）"
       }
-    ]
+    ],
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "総合案内所でA型を無料貸出。約50台。",
+    "strollerNote": "ベビーカーの持ち込み可。ベビーカー以外の乗り物の持ち込みは禁止。",
+    "strollerSourceUrl": "https://www.omochaoukoku.com/karuizawa/kids/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -24431,7 +25022,13 @@
       "bento": "ng",
       "bentoNote": "施設内に食事場所なし。弁当持ち込みも不可。羽田空港ターミナルで食事可能",
       "sourceUrl": "https://www.jal.com/ja/kengaku/faq/"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "階段移動を伴う見学コースのため、ベビーカーでの参加不可。",
+    "strollerSourceUrl": "https://www.jal.co.jp/jp/ja/jmb/kengaku_coupon/special.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -25084,7 +25681,13 @@
       "source": "official",
       "sourceUrl": "https://www.okashinoshiro.co.jp/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式施設案内にベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://www.okashinoshiro.co.jp/facilities/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -25998,13 +26601,20 @@
         "end": "2026-11-23",
         "periodLabel": "10/10〜11/23（火曜休園）",
         "type": "illumination",
-        "note": "「Night Bloom 2026」。10万輪の花と光に包まれる秋の夜のガーデンで、ライトアップは17:00〜20:30（最終入場20:00）。大人1,200円、小中学生400円、未就学児は無料（ペット200円）。火曜休園（祝日の場合は開園して翌日休園）で、11/3は臨時開園、11/4は臨時休園。冬は体験型の「HARMONY OF LIGHT」を昨季2025/12/5〜2026/3/1（大人1,500円・子ども500円）に開催しており、今季の冬の日程は発表待ち。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
+        "note": "「Night Bloom 2026」。10万輪の花と光に包まれる秋の夜のガーデンで、ライトアップは17:00〜20:30（最終入場20:00）。大人1,200円、小中学生400円、未就学児は無料（ペット200円）。火曜休園（祝日の場合は開園して翌日休園）で、11/3は臨時開園、11/4は臨時休園。冬は体験型の「HARMONY OF LIGHT」を昨季2025/12/5〜2026/3/1（大人1,500円・子ども500円）に開催しており、今季の冬の日程は不明。イルミネーション情報サイト（ウォーカープラス）の掲載内容のため、お出かけ前に公式サイトで確認を。"
       }
     },
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 90
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "ベビーカーでの園内移動可否は明記なし。ベビーカー対応トイレはあり。",
+    "strollerSourceUrl": "https://www.flower-park.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -26196,8 +26806,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "ウェザーニュースの2026年版予想で、見頃は11/17ごろ〜、落葉は12/3ごろ〜。",
-        "periodLabel": "見頃予想：11月17日ごろ〜"
+        "note": "11/2時点はほんのり色づき始めで、見頃予想は11/6ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月6日ごろ〜"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -26301,7 +26911,14 @@
         "https://sunshinecity.jp/observatory/information/rules.html",
         "https://sunshinecity.jp/observatory/enjoy/family.html"
       ]
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": false,
+    "strollerRentalNote": "展望台独自の貸出なし。サンシャインシティ内で無料貸出あり。",
+    "strollerNote": "ベビーカー持ち込み可能。臨時置き場あり。主要導線はバリアフリー対応。",
+    "strollerSourceUrl": "https://sunshinecity.jp/observatory/information/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -26504,9 +27121,11 @@
     ],
     "eventInfo": {
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "昨季は「湘南の宝石〜江の島を彩る光と色の祭典〜」（2025/11/22〜2026/2/28）を開催し、江の島サムエル・コッキング苑とシーキャンドルを光で彩った。点灯は平日17:00〜20:00、土日祝と12/20〜30は17:00〜21:00（昨季）。入苑料は大人500円・小学生250円、シーキャンドルの昇塔料は大人800円・小学生400円（昨季）。今年の内容・日程は発表待ち。"
+        "start": "2026-12-01",
+        "end": "2027-02-28",
+        "periodLabel": "12/1〜2027/2/28（90日間）",
+        "note": "「湘南の宝石2026-2027」（27回目）。江の島サムエル・コッキング苑を中心に、江の島島内から片瀬海岸エリアまで光に包まれる。2025年に「日本三大イルミネーション」に認定された。点灯は平日と12/31〜1/3が17:00〜20:00、土日祝と12/19〜30が17:00〜21:00。"
       }
     },
     "food": {
@@ -26587,7 +27206,7 @@
         "start": "2026-10-03",
         "end": "2026-10-31",
         "name": "千葉ポートタワーハローウィーンイベント",
-        "note": "公式サイトで告知。詳細は追加発表待ち",
+        "note": "公式サイトで告知。詳細は不明（公式サイトで確認を）",
         "url": "https://chiba-porttower.com/",
         "source": "ユーザー提供の調査表（2026-09-28）。公式ページでの確認は未完了"
       }
@@ -26602,7 +27221,7 @@
         "start": "2026-10-03",
         "end": "2026-10-31",
         "periodLabel": "10/3〜10/31",
-        "note": "「千葉ポートタワーハローウィーンイベント」。公式サイトで告知されていて、詳細は追加発表待ち。"
+        "note": "「千葉ポートタワーハローウィーンイベント」。公式サイトで告知されていて、詳細は不明（公式サイトで確認を）。"
       }
     },
     "priceSource": "千葉市公式サイト（2025年9月更新）",
@@ -26646,7 +27265,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "ベビーカー貸出の公式記載なし。車椅子2台は無料貸出。",
+    "strollerNote": "館内にエレベーター2基。ベビーカーの持ち込み・使用可否は公式記載なし。",
+    "strollerSourceUrl": "https://www.chiba-porttower.com/guide.php",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -26849,7 +27474,13 @@
       "source": "official",
       "sourceUrl": "https://www.teamlab.art/jp/e/planets/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "館内貸出の記載なし。",
+    "strollerNote": "ベビーカーは館内持ち込み不可。入場ゲート通過後に無料ロッカーあり。",
+    "strollerSourceUrl": "https://www.teamlabplanet.org/group/ticket",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -26928,7 +27559,13 @@
       "checkedAt": "2026年11月1日",
       "bento": "ask",
       "bentoNote": "飲食店・フードエリアあり。弁当持ち込みや飲食禁止場所のルールは公式に記載なし"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "一部アトラクションはベビーカー利用可。一方、利用不可のアトラクションもある。",
+    "strollerSourceUrl": "https://bandainamco-am.co.jp/tp/namja/attraction/tanteidan.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -27187,7 +27824,13 @@
       "source": "web",
       "sourceUrl": "https://soto-asobi0723.com/yunessun-meal/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "館内でベビーカー利用可。タイヤの消毒が必要。段差・階段があり、完全バリアフリーではない。",
+    "strollerSourceUrl": "https://www.yunessun.com/service/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -27279,7 +27922,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 90
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "持ち込み・園内利用の可否は公式FAQに明記なし。",
+    "strollerSourceUrl": "https://www.flowerpark.or.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -27651,7 +28301,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "サファリショップで有料貸出。1台1,000円。",
+    "strollerNote": "ジャングルバス・ウォーキングサファリにはベビーカー持ち込み不可。その他の園内利用範囲は要確認。",
+    "strollerSourceUrl": "https://www.fujisafari.co.jp/faq/baby/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -27714,7 +28371,14 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://k-hana-tori.com/qa/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカー8台。予約不可。",
+    "strollerNote": "園内はバリアフリー構造。",
+    "strollerSourceUrl": "https://k-hana-tori.com/qa/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -27844,7 +28508,13 @@
       "source": "official",
       "sourceUrl": "https://www.hawaiians.co.jp/guide/rule/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。ベビーカーは無料で預かり。",
+    "strollerNote": "ベビーカーの館内使用可否・預かり場所の詳細は公式案内に記載なし。",
+    "strollerSourceUrl": "https://www.hawaiians.co.jp/guide/rule/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "福島",
@@ -27938,7 +28608,14 @@
     "image": "img/spots/fukushima-iwaki-aquamarine.jpg",
     "imageCredit": "📷 DAJF / CC BY-SA 3.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Aquamarine_Fukushima_20100124.JPG",
-    "genre": "水族館"
+    "genre": "水族館",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料・B型・生後2か月頃～。メインゲート（券売所）で貸出。台数限定・予約不可。",
+    "strollerNote": "施設内全面バリアフリー。混雑時は貸出中止の場合あり。",
+    "strollerSourceUrl": "https://www.aquamarine.or.jp/guide/baby/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -28171,7 +28848,14 @@
       "source": "official",
       "sourceUrl": "https://www.printing-museum.org/guide/floormap/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料貸出。ミュージアムショップまたはチケットカウンターでスタッフに申し出。",
+    "strollerNote": "ベビーカーで館内見学可。地下展示室へは専用エレベーターを利用。",
+    "strollerSourceUrl": "https://www.printing-museum.org/etc/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -28650,7 +29334,13 @@
         "https://www.umihotaru.com/guide/information/information/"
       ],
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカー貸出あり。",
+    "strollerSourceUrl": "https://www.umihotaru.com/guide/information/information/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -29110,7 +29800,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "河鹿橋の紅葉ライトアップを10/27〜11/15の16:30〜22:00に開催（伊香保温泉観光協会、10/9更新）。10/31（土）からはハワイ王国公使別邸池周辺と石段街下広場でもライトアップ。天候により変更や中止の場合がある。",
+        "note": "河鹿橋の紅葉ライトアップを10/27〜11/15の16:30〜22:00に開催（伊香保温泉観光協会、10/9更新）。10/31（土）からはハワイ王国公使別邸池周辺と石段街下広場でもライトアップ。天候により変更や中止の場合がある。伊香保温泉は11/2時点で色づき進み、見頃予想は11/7ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-10-27",
         "end": "2026-11-15",
         "periodLabel": "10/27〜11/15"
@@ -29137,7 +29827,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "石段街は365段。ベビーカーでの通行可否は明記なし。",
+    "strollerSourceUrl": "https://ikaho-kankou.com/aboutikaho/ishidan/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -29509,7 +30205,14 @@
       "source": "web",
       "sourceUrl": "https://pal2.co.jp/faq",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "500円。センターハウス1階インフォメーション。B型・台数限定。",
+    "strollerNote": "公式園内マップに貸出場所あり。ベビーカーの園内使用可否は明確な記載を確認できず。",
+    "strollerSourceUrl": "https://pal2.co.jp/papamama",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -29710,8 +30413,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "秋の紅葉シーズンは、茅葺き集落とあわせて特に美しい。例年の見頃は11月。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "秋の紅葉シーズンは、茅葺き集落とあわせて特に美しい。根場自体の情報はないが、近隣の河口湖畔は11/2時点でほんのり色づき始めで、見頃予想は11/9ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：河口湖畔は11月9日ごろ"
       }
     },
     "businessHours": {
@@ -30090,7 +30793,7 @@
         "start": "2026-11-06",
         "end": "2027-08-31",
         "periodLabel": "11/6〜2027/8/31（4/6〜7/17は土日祝のみ）",
-        "note": "「伊豆高原グランイルミ 12th SEASON」。光が音楽に合わせて動く体験型のイルミネーションで、ミュージックタイム（開園〜20:00）とサイレントタイム（20:00〜閉園）がある。今季は乙姫のフォトスポットと海底火山エリアが追加。料金は平日が大人1,800円・小学生1,000円・幼児（4歳以上）500円、土日祝とシーズンは大人1,900円・小学生1,100円・幼児500円（公式）。点灯時間は公式サイトで発表待ち。クリスマス専用の企画は確認できていない。"
+        "note": "「伊豆高原グランイルミ 12th SEASON」。光が音楽に合わせて動く体験型のイルミネーションで、ミュージックタイム（開園〜20:00）とサイレントタイム（20:00〜閉園）がある。今季は乙姫のフォトスポットと海底火山エリアが追加。料金は平日が大人1,800円・小学生1,000円・幼児（4歳以上）500円、土日祝とシーズンは大人1,900円・小学生1,100円・幼児500円（公式）。点灯時間は不明（公式サイトで確認を）。クリスマス専用の企画は確認できていない。"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -30160,7 +30863,13 @@
       "note": "大人2,500円×2＋小学生1,250円×2＋幼児0円×1（4歳未満は無料と仮定）"
     },
     "verifiedAt": "2026年10月14日",
-    "genre": "水族館"
+    "genre": "水族館",
+    "strollerOk": "ok",
+    "strollerRentalNote": "ベビーカー貸出について公式記載なし。",
+    "strollerNote": "ベビーカーでの入場可。付添いが必要。浮き桟橋は揺れや干満でスロープが急になる場合あり。",
+    "strollerSourceUrl": "https://shimoda-aquarium.com/information/information-2/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -30235,7 +30944,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "園内に段差や階段が多数あり、ベビーカー利用には大きな制約がある。",
+    "strollerSourceUrl": "https://izoo.co.jp/information.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -30300,7 +31015,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "「もみじライトアップ」を17:00〜21:00（期間中無休）に開催。会場は園内の「匠の村」と「伊豆の村」で、同じ期間に冬のイルミネーション「イルミtheナイト」も行う。修善寺エリアの紅葉の見頃は例年11月中旬〜12月上旬。11/14・22・28の19:30には打ち上げ花火の予定もある。",
+        "note": "「もみじライトアップ」を17:00〜21:00（期間中無休）に開催。会場は園内の「匠の村」と「伊豆の村」で、同じ期間に冬のイルミネーション「イルミtheナイト」も行う。11/2時点はまだ色づき前で、見頃予想は11/28ごろ（11/2時点・ウェザーニュース）。11/14・22・28の19:30には打ち上げ花火の予定もある。",
         "start": "2026-11-07",
         "end": "2026-12-13",
         "periodLabel": "11/7〜12/13"
@@ -30475,7 +31190,14 @@
       "source": "official",
       "sourceUrl": "https://www.mitosea.com/infomation/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料・24か月未満対象・台数限定。入場券売場で貸出。予約不可。",
+    "strollerNote": "各所にスロープあり。一部は傾斜が急、または遠回りになる。",
+    "strollerSourceUrl": "https://www.mitosea.com/infomation/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -30539,7 +31261,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式観光案内でベビーカーは使用できないと明記。",
+    "strollerSourceUrl": "https://itospa.com/spot/detail_54008.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -30857,7 +31585,10 @@
       "bento": "ng",
       "bentoNote": "公式FAQで、衛生面の理由から飲食物の持ち込みは遠慮するよう明記（離乳食のみ持ち込み可）。館内に飲食スペースあり",
       "sourceUrl": "https://mentai-park.com/izu/help/"
-    }
+    },
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカーの貸出は行っていないと明記。",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -31068,7 +31799,14 @@
       "source": "official",
       "sourceUrl": "https://www.teddynet.co.jp/izu/qa/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQでベビーカー貸出なしと明記。",
+    "strollerNote": "車いすはスロープ・エレベーターで移動可能だが、ベビーカーの館内利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.teddynet.co.jp/izu/qa/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -31126,7 +31864,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "山頂遊歩道はベビーカーでの散策不可。リフト乗り場付近の展望台までは利用可能。",
+    "strollerSourceUrl": "https://omuroyama.com/question/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -31369,8 +32113,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "日本気象協会tenki.jpの10/12発表で、現況は全体的に紅葉している見頃の状態。見頃予想は9月下旬〜10月下旬。",
-        "periodLabel": "現在見頃（10/12時点）・見頃予想：9月下旬〜10月下旬"
+        "note": "奥日光エリアは終盤に入っている。11/2時点で湯滝・湯ノ湖畔は落葉中、竜頭滝は終わり（11/2時点・ウェザーニュース）。戦場ヶ原単体の情報はなく、10/12時点（tenki.jp）では全体的に見頃だった。",
+        "periodLabel": "奥日光は終盤（11/2時点）"
       }
     },
     "image": "img/spots/tochigi-nikko-senjogahara.jpg",
@@ -31389,7 +32133,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式観光案内に自然研究路・ハイキングコースの案内あり。ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.nikko-kankou.org/spot/10/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -31438,8 +32188,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年、10月上旬〜中旬の紅葉シーズンは特に人気で混雑する。戦場ヶ原とセットで訪れるのが定番。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "11/2時点は落葉中（11/2時点・ウェザーニュース）。例年の見頃は10月上旬〜中旬で、今年の見頃は終わり。戦場ヶ原とセットで訪れるのが定番。",
+        "periodLabel": "11/2時点は落葉中"
       }
     },
     "image": "img/spots/tochigi-nikko-yutaki-falls.jpg",
@@ -31458,7 +32208,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式観光案内に湯滝下の観瀑台やハイキングコースの案内あり。ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.nikko-kankou.org/spot/115",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -31681,7 +32437,13 @@
       "source": "web",
       "sourceUrl": "https://iko-yo.net/facilities/89221",
       "checkedAt": "2026年10月13日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "森林と傾斜地を利用した施設。ベビーカーの通行可否は公式記載なし。",
+    "strollerSourceUrl": "https://nozaru.net/nozaru/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -31737,7 +32499,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。ベビーカーの預かりは受付で対応。",
+    "strollerNote": "迷路内は階段が複数あるため、ベビーカーでの入場不可。",
+    "strollerSourceUrl": "https://kyodaimeiro-paradeiamu.com/よくあるお問い合わせ/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -32168,7 +32936,13 @@
       "bento": "ask",
       "bentoNote": "館内施設・飲食施設の案内はあるが、弁当持ち込み・館内での飲食ルールは記載なし",
       "sourceUrl": "https://atamijyo.com/"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み・館内利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://atamijyo.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -32428,7 +33202,13 @@
       "source": "official",
       "sourceUrl": "https://www.kamaboko.com/museum/facility/3rdfloor/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "1階にベビーカー置き場あり。エレベーターがなく、2・3階の見学は抱っこひも等を案内。",
+    "strollerSourceUrl": "https://www.kamaboko.com/museum/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -32547,8 +33327,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月下旬〜12月上旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
-        "tentative": true
+        "note": "11/2時点はほんのり色づき始めで、見頃予想は11/11ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月11日ごろ〜"
       }
     },
     "food": {
@@ -32586,7 +33366,13 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 240
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式案内でベビーカー利用不可と明記。園内は坂や階段が多い。",
+    "strollerSourceUrl": "https://www.hakonenavi.jp/gorapark/intro/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -32759,8 +33545,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年、紅葉シーズンは11月中旬〜12月上旬で、渓流沿いのモミジが見事。温泉街散策と合わせて訪れやすい。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "万葉公園自体の情報はなく、同じ湯河原の「池峯 もみじの郷」は11/2時点でまだ色づき前、見頃予想は11/25ごろ（11/2時点・ウェザーニュース）。例年、紅葉シーズンは11月中旬〜12月上旬で、渓流沿いのモミジが見事。温泉街散策と合わせて訪れやすい。",
+        "periodLabel": "見頃予想：湯河原周辺は11月25日ごろ"
       }
     },
     "genre": "公園",
@@ -33154,7 +33940,14 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,900円×2＋子ども（大人の約半額1,000円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "公式園内マップにベビーカー貸出の記載あり。料金・台数・対象年齢は記載なし。",
+    "strollerNote": "園内の使用範囲・段差・坂の詳細は確認できず。",
+    "strollerSourceUrl": "https://test.grinpa.com/map/map.pdf",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -33338,9 +34131,11 @@
     ],
     "eventInfo": {
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "昨季は「ウィンターイルミネーション」を2025/11/7〜2026/2/23に開催し、スクウェア・エニックス「ドラゴンクエスト」の装飾に合わせたクリスマスツリー（12/25まで）やモンスターのオブジェが登場した。点灯は日没〜営業終了。今年の内容・日程は発表待ち。"
+        "start": "2026-11-06",
+        "end": "2027-02-24",
+        "periodLabel": "11/6〜2027/2/24",
+        "note": "ウィンターイルミネーション。点灯は日没〜営業終了まで。クリスマス装飾は12/25まで。期間は全国のプレミアム・アウトレット共通の発表に基づく。"
       }
     },
     "food": {
@@ -33356,7 +34151,14 @@
       "bento": "ask",
       "bentoNote": "公式案内で店舗内への飲食物の持ち込みは遠慮するよう明記。屋外共用部への弁当持ち込み・飲食は明確な記載なし",
       "sourceUrl": "https://www.premiumoutlets.co.jp/gotemba/information/info238.html"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "コイン式ベビーカー。100円硬貨が必要（返却時返金）。対象年齢4か月〜48か月未満。",
+    "strollerNote": "貸出場所はWEST・EAST・HILL SIDEの各指定駐車場付近。",
+    "strollerSourceUrl": "https://www.premiumoutlets.co.jp/gotemba/kidscare/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -33508,7 +34310,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "貸出用ベビーカーあり。",
+    "strollerSourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_29983.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -33591,7 +34399,14 @@
     "stayTime": {
       "minMinutes": 180,
       "maxMinutes": 300
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカー3台。チケット売り場で申出。有料500円。",
+    "strollerNote": "貸出は確認できたが、持ち込み・園内利用条件は公式FAQで確認できず。",
+    "strollerSourceUrl": "https://www.subaruland.jp/qanda/qanda-174/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -34015,7 +34830,13 @@
         "https://www.oshinoninja.com/faq/index.html"
       ],
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーで入園可。ただし、からくり屋敷・しのび物見櫓は段差等のため入場不可。",
+    "strollerSourceUrl": "https://www.oshinoninja.com/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -34060,8 +34881,8 @@
       },
       "紅葉": {
         "type": "spot",
-        "note": "メタセコイア並木の紅葉（11月）が見応え。広大なので歩きやすい服装で。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "メタセコイア並木の紅葉が見応え。広大なので歩きやすい服装で。11/2時点で色づき始め（例年の見頃は11月中旬〜12月上旬）（11/2時点・ウェザーニュース）。",
+        "periodLabel": "11/2時点で色づき始め"
       }
     },
     "bookingLinks": {
@@ -34227,7 +35048,13 @@
       "bento": "ask",
       "bentoNote": "洞穴内の飲食は禁止（ソフトクリーム等も入洞前に食べ終える）。洞穴外の飲食場所・弁当持ち込みは明確な記載なし",
       "sourceUrl": "https://www.mtfuji-cave.com/contents/attention/"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式ガイドツアー申込案内では、ベビーカーでの入洞不可。通常入洞時の扱いは別途確認が必要。",
+    "strollerSourceUrl": "https://www.mtfuji-cave.com/reserve/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -34748,7 +35575,13 @@
       "source": "web",
       "sourceUrl": "https://bosotown.com/archives/848",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式利用案内にベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://tateyamacastle.jp/guide/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -34975,8 +35808,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "ウェザーニュースの2026年版で、10/8時点で約2割が色づき始め。見頃予想は11/7ごろ〜、落葉は11/21ごろ〜。",
-        "periodLabel": "見頃予想：11月7日ごろ〜"
+        "note": "11/2時点で見頃（11/2時点・ウェザーニュース）（例年の見頃は11月上旬〜中旬）。",
+        "periodLabel": "11/2時点で見頃"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -34993,7 +35826,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "遊歩道あり。ベビーカー利用可否は明記なし。落石による一部通行止め情報あり。",
+    "strollerSourceUrl": "https://www.enjoy-minakami.jp/spot/8037/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -35136,7 +35975,13 @@
       "bento": "ask",
       "bentoNote": "芝生広場・遊具・無料BBQスペースの案内あり。BBQは指定スペースを利用し、片付け・ゴミ持ち帰りが必要。通常の弁当持ち込み・広場での飲食ルールは記載なし",
       "sourceUrl": "https://www.tsukiyono-harvest.com/guidance.html"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "http://www.tsukiyono-harvest.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -35311,7 +36156,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "滝の裏側は落石の危険により通行不可。ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://www.enjoy-minakami.jp/spot/8053/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -35578,7 +36429,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否は公式FAQで確認できず。",
+    "strollerSourceUrl": "https://onsen-kusatsu.com/ohtakinoyu/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -35636,7 +36493,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーは館内に置けると公式案内あり。観覧場所まで持ち込めるかは明記なし。",
+    "strollerSourceUrl": "https://www.kusatsu-onsen.ne.jp/netsunoyu/0001.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -36218,7 +37081,13 @@
       "source": "web",
       "sourceUrl": "https://www.hgp.co.jp/karuizawa/specialcontents/taliesin/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み・園内利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.town.karuizawa.lg.jp/page/1267.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -36283,7 +37152,13 @@
       "bento": "ask",
       "bentoNote": "町の公式ページに滝・駐車場・公衆トイレ等の記載あり。弁当持ち込み・飲食可能な場所・レジャーシートのルールは記載なし",
       "sourceUrl": "https://www.town.karuizawa.lg.jp/page/1193.html"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "滝まで駐車場から約200mの登り坂。車いす利用は介助者がいれば可能との案内があるが、ベビーカー利用可否は明記なし。",
+    "strollerSourceUrl": "https://karuizawa-shw.com/contact/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -36482,7 +37357,13 @@
       "source": "official",
       "sourceUrl": "https://www.karuizawa-psp.jp/",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "コインロック式ベビーカーを貸出。100円硬貨が必要（返却時返金）。",
+    "strollerSourceUrl": "https://www.karuizawa-psp.jp/service/detail4/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -36554,7 +37435,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 90
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "園路に砕石・チップや坂道・階段があり、ベビーカーで移動できる場所は限られる。",
+    "strollerSourceUrl": "https://www.karuizawa-lakegarden.jp/未分類/車いす、ベビーカーをご利用のお客様へ/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -36603,8 +37490,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は10月中旬〜11月上旬（色づき始めは10月上旬）。紅葉祭りとライトアップは行っていない。専用駐車場がないため、矢ケ崎公園駐車場など周辺の駐車場を利用する。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "11/2時点の公式ページで、10/30時点は見頃（7〜8割色づき）、落葉はじめは11/11ごろ〜の予想（11/2時点・ウェザーニュース）。紅葉祭りとライトアップは行っていない。専用駐車場がないため、矢ケ崎公園駐車場など周辺の駐車場を利用する。",
+        "periodLabel": "見頃（10/30時点）・落葉はじめは11月11日ごろ〜"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -36671,7 +37558,7 @@
     "eventInfo": {
       "紅葉": {
         "type": "event",
-        "note": "日光市の観光月報（9/1付）に、御食堂の室内特別公開が10/19〜11/15と記載。時間は10月9:00〜17:00（受付16:00まで）、11月9:00〜16:30（受付15:45まで）。",
+        "note": "日光市の観光月報（9/1付）に、御食堂の室内特別公開が10/19〜11/15と記載。時間は10月9:00〜17:00（受付16:00まで）、11月9:00〜16:30（受付15:45まで）。周辺の日光の社寺は11/2時点でほんのり色づき始めで、見頃予想は11/6ごろ（11/2時点・ウェザーニュース）。",
         "start": "2026-10-19",
         "end": "2026-11-15",
         "periodLabel": "10/19〜11/15"
@@ -36841,8 +37728,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "春のヤシオツツジと並び、秋の紅葉シーズンは特に見事。営業は4月中旬〜11月下旬で、天候・水位により運休することがある。今年の見頃は発表待ち。",
-        "tentative": true
+        "note": "春のヤシオツツジと並び、秋の紅葉シーズンは特に見事。営業は4月中旬〜11月下旬で、天候・水位により運休することがある。11/2時点は色づき進み（例年の見頃は10月下旬〜11月中旬）（11/2時点・ウェザーニュース）。",
+        "periodLabel": "11/2時点で色づき進み"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -36859,7 +37746,13 @@
       "bento": "ask",
       "bentoNote": "乗船案内・運航情報はあるが、弁当持ち込み・乗船中や待合所での飲食ルールは記載なし",
       "sourceUrl": "https://linekudari.com"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式案内にベビーカーの持ち込み・乗船可否の記載なし。",
+    "strollerSourceUrl": "https://linekudari.com/access/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -36922,7 +37815,13 @@
       "bento": "ask",
       "bentoNote": "施設案内はあるが、弁当持ち込み・園内飲食・レジャーシートのルールは記載なし",
       "sourceUrl": "https://www.nikko-hanaichimonme.jp/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベゴニア園（温室）は段差がほとんどなく、ベビーカーで来園可能。いちご狩りは予約時に申告が必要。",
+    "strollerSourceUrl": "https://nikko-hanaichimonme.jp/faq",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -37472,9 +38371,11 @@
     ],
     "eventInfo": {
       "イルミネーション": {
-        "tentative": true,
         "type": "illumination",
-        "note": "昨季は「第14回 光がつくる“Art”水郷桜イルミネーション」を2025/11/22〜2026/1/12の17:00〜21:00に開催した。高さ25mのオランダ型風車を中心に約19.5万球が輝き、入場無料。今年の内容・日程は発表待ち。"
+        "start": "2026-11-21",
+        "end": "2027-01-11",
+        "periodLabel": "11/21〜2027/1/11",
+        "note": "水郷桜イルミネーション。点灯は17:00〜21:00。12/31は翌朝6:30ごろまで点灯する。昨季は高さ25mのオランダ型風車を中心に約19.5万球が輝き、入場無料だった。"
       }
     },
     "genre": "公園",
@@ -37567,7 +38468,13 @@
       "bento": "ask",
       "bentoNote": "天球劇場内は上映中の飲食禁止、食べ物の持ち込みも不可（飲み物は場内が明るい間のみ可）。センター全館共通のルールではなく、休憩スペース等の飲食可否は記載なし",
       "sourceUrl": "https://www.civic.jp/science/planetarium/page000394.html"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "プラネタリウム内は階段が続くため、ベビーカー利用者はスタッフに声をかけるよう案内あり。",
+    "strollerSourceUrl": "https://www.civic.jp/science/planetarium/page000394.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -38433,7 +39340,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "館内でのベビーカー利用は遠慮するよう公式案内あり。",
+    "strollerSourceUrl": "https://chi-hotelsresorts.com/yurakujo/guide/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -38691,7 +39604,13 @@
       "approx": true,
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人3,800円×2＋子ども（大人の約半額1,900円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "プール場内へのベビーカー持ち込み可。",
+    "strollerSourceUrl": "https://www.tobuzoo.com/faq/pool/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -39155,7 +40074,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "http://www.harada-nouen.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -39232,7 +40157,13 @@
       "bento": "ask",
       "bentoNote": "公式FAQで練乳の持ち込みは自由。弁当持ち込みやいちご狩り施設周辺での食事場所は記載なし",
       "sourceUrl": "https://itigo.co.jp/"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーはハウス入口まで利用可。ハウス内は通路が狭く利用不可。",
+    "strollerSourceUrl": "https://www.itigo.co.jp/yoyaku/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -39310,7 +40241,13 @@
     "closedDays": [
       "※冬季（11〜2月）は金曜休み（祝日は営業）"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "神奈川県の子育て応援パスポートに、ベビーカーのまま売店へ入店する際の配慮ありと掲載。牧場全域の利用可否は確認できず。",
+    "strollerSourceUrl": "https://c.rakuraku.or.jp/k-pass/search/details?id=1530",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -39372,7 +40309,13 @@
       "sourceUrl": "https://iko-yo.net/facilities/280",
       "checkedAt": "2026年10月13日"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーで入園可能。ただし未舗装エリアがあるため移動時は注意。",
+    "strollerSourceUrl": "https://dacho.co.jp/faq/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -39816,7 +40759,13 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人4,900円×2＋小学生2,600円×2＋幼児1,400円×1（幼児料金あり）"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み可。ただし安全のためプール近くでの利用は不可。",
+    "strollerSourceUrl": "https://www.princehotels.co.jp/pool/oiso/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -39971,7 +40920,13 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/ibaraki-inashiki-ibaraido.jpg",
     "imageCredit": "📷 こもれび森のイバライド / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%93%E3%82%82%E3%82%8C%E3%81%B3%E6%A3%AE%E3%81%AE%E3%82%A4%E3%83%90%E3%83%A9%E3%82%A4%E3%83%89.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%93%E3%82%82%E3%82%8C%E3%81%B3%E6%A3%AE%E3%81%AE%E3%82%A4%E3%83%90%E3%83%A9%E3%82%A4%E3%83%89.jpg",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "入園ゲートのインフォメーションで貸出。1台200円。事前予約不可。",
+    "strollerSourceUrl": "https://www.ibaraido.co.jp/schedule/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -40183,7 +41138,13 @@
       "bento": "ask",
       "bentoNote": "公式FAQでいちごへのトッピング持ち込みは可。弁当の持ち込みや園内での食事場所は記載なし",
       "sourceUrl": "https://granberry-ichigo.jp/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "通路幅が広く、全面シート張りのためベビーカーで入園可能。",
+    "strollerSourceUrl": "https://granberry-ichigo.jp/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -40571,7 +41532,13 @@
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/gunma-shimonita-kouzubokujyo.jpg",
     "imageCredit": "📷 photo: Qurren (トーク) Taken with Canon PowerShot G9 X / CC BY-SA 4.0 / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kouzu_Dairy_Farm_survey.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kouzu_Dairy_Farm_survey.jpg",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "牧場内マップ等にベビーカー利用可否の記載なし。",
+    "strollerSourceUrl": "https://www.kouzubokujyo.or.jp/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -40861,7 +41828,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://www.nagomino-yu.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -41782,7 +42755,13 @@
       "sourceUrl": "https://iko-yo.net/facilities/22095",
       "checkedAt": "2026年10月13日"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み・利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.hgp.co.jp/cortina/ski/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -42463,7 +43442,12 @@
     "closedDays": [
       "無休",
       "※11〜2月は16:00閉館。"
-    ]
+    ],
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -42615,7 +43599,13 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人800円×2＋小学生500円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "strollerRental": true
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "1日500円。台数限定。",
+    "strollerNote": "主な通路は舗装され、ベビーカーで移動可能。坂道や起伏には注意。",
+    "strollerSourceUrl": "https://www.makaino.com/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -42687,7 +43677,13 @@
       "sourceUrl": "https://tenki.jp/leisure/3/23/152/5337/",
       "checkedAt": "2026年10月13日"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "牧場内のベビーカー利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.famiboku.jp/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -43172,8 +44168,8 @@
       },
       "紅葉": {
         "type": "spot",
-        "note": "秋はコキアの紅葉と富士山の共演が楽しめる。今年の見頃は発表待ち。 例年の見頃は11月上旬〜11月下旬（河口湖畔）（tenki.jp調べ）。",
-        "tentative": true
+        "note": "秋はコキアの紅葉と富士山の共演が楽しめる。河口湖畔は11/2時点でほんのり色づき始めで、見頃予想は11/9ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：河口湖畔は11月9日ごろ"
       }
     },
     "familyPrice": {
@@ -43243,8 +44239,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "2026年の見頃予想は11月下旬〜12月上旬（ウェザーニュースは11/30ごろ〜、落葉は12/14ごろ〜と予想）。10/12時点ではまだ色づいていない。ライトアップやイベントの情報は未定。聖徳記念絵画館の保存修理工事（2027年5月末ごろまで）の足場があり、景観が少し変わっている。",
-        "periodLabel": "見頃予想：11月下旬〜12月上旬"
+        "note": "11/2時点はまだ色づき前で、見頃予想は11/27ごろ（11/2時点・ウェザーニュース）（10/12時点では11/30ごろ〜、落葉は12/14ごろ〜の予想だった）。ライトアップやイベントの情報は未定。聖徳記念絵画館の保存修理工事（2027年5月末ごろまで）の足場があり、景観が少し変わっている。",
+        "periodLabel": "見頃予想：11月27日ごろ〜"
       }
     },
     "verifiedAt": "2026年10月14日",
@@ -43567,7 +44563,12 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://www.city.ichikawa.lg.jp/site/gyo01/7460.html"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerNote": "公式イベント案内に、ベビーカーでも自然散策会に参加できると記載。",
+    "strollerSourceUrl": "https://www.city.ichikawa.lg.jp/common/env09/file/0000489398.pdf",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -43992,7 +44993,13 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人2,000円×2＋子ども（大人の約半額1,000円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
     },
-    "verifiedAt": "2026年10月14日"
+    "verifiedAt": "2026年10月14日",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式FAQで確認できず。",
+    "strollerSourceUrl": "https://tokyo-toyosu.manyo.co.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -44064,7 +45071,13 @@
     "closedDays": [
       "年中無休"
     ],
-    "verifiedAt": "2026年10月13日"
+    "verifiedAt": "2026年10月13日",
+    "strollerRental": false,
+    "strollerRentalNote": "横浜市観光情報サイトではベビーカー貸出なし、置き場あり。",
+    "strollerNote": "ベビーカー置き場の設置は確認できるが、館内での利用可否は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=609",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -44452,7 +45465,13 @@
       "bento": "ask",
       "bentoNote": "運営会社の公式FAQで、いちご園内での食事は禁止と明記。いちご狩り後の園外での飲食場所・弁当持ち込みは記載なし",
       "sourceUrl": "https://tanpopo-nouen.com/faq/index.html"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "千葉県公式観光サイトで、ハウス内はベビーカーで通行可能と案内。",
+    "strollerSourceUrl": "https://maruchiba.jp/spot/detail_12533.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -44888,7 +45907,11 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://mkt.green-farm.co.jp/the_berry-yokohama/"
-    }
+    },
+    "strollerNote": "ベビーカー・車いすでの来園可。",
+    "strollerSourceUrl": "https://mkt.green-farm.co.jp/the_berry-yokohama/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -45123,7 +46146,13 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://www.miyakonouen.jp/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "園内にシートが敷かれており、ベビーカーで利用できると公式サイトに明記。",
+    "strollerSourceUrl": "https://www.miyakonouen.jp/about/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -45458,7 +46487,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://chisana-ohashifarm.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -46496,7 +47531,13 @@
       "source": "official",
       "sourceUrl": "https://litpla.com/space/litpla_divercity_tokyo/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式サイトにベビーカー置き場あり。館内への持ち込み可否は明記なし。",
+    "strollerSourceUrl": "https://www.litpla.com/space/litpla_divercity_tokyo/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -47081,7 +48122,13 @@
       "bento": "ask",
       "bentoNote": "カフェ・レストラン・弁当販売店等の案内あり。外部からの弁当持ち込みや園内での飲食ルールは記載なし",
       "sourceUrl": "https://themepark.kikyouya.co.jp/info/"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "工場見学用のベビーカー置き場あり。見学ルートには段差・階段が多数あるため、ベビーカーでの移動には制約あり。",
+    "strollerSourceUrl": "https://kikyouyafactory.kikyouya.co.jp/archives/ベビーカー置き場.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -47186,7 +48233,7 @@
       "夏祭り・花火": {
         "tentative": true,
         "type": "event",
-        "note": "相模湖畔の県立公園で、夏には花火大会が開かれると紹介されている。湖では足漕ぎボートや遊覧船にも乗れる。来年の日程は発表待ち。"
+        "note": "相模湖畔の県立公園で、夏には花火大会が開かれると紹介されている。湖では足漕ぎボートや遊覧船にも乗れる。来年の日程は不明。"
       }
     },
     "familyPrice": {
@@ -49388,7 +50435,14 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "館内にベビーカーが若干あり。貸出条件・料金は公式記載なし。",
+    "strollerNote": "公式アクセス案内でベビーカー持ち込み可と明記。",
+    "strollerSourceUrl": "https://fantasyresort.jp/ebina/access/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -49753,7 +50807,13 @@
       ],
       "source": "review",
       "reviewCheckedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "公式サイトで貸出情報を確認できず。",
+    "strollerNote": "ベビーカー貸出ありとの外部情報はあるが、公式情報で裏付けられないため未反映。",
+    "strollerSourceUrl": "https://kezoujiyuenchi.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -50041,7 +51101,6 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "展望デッキは入場無料（駐車場は有料）"
     },
-    "strollerRental": true,
     "food": {
       "lunch": "各ターミナルにレストラン・フードコートが多数。",
       "nearbyLunch": [
@@ -50055,7 +51114,14 @@
       "bento": "ask",
       "bentoNote": "有料ラウンジ内は食べ物持ち込み不可。一般エリアの弁当持ち込みルールは公式に記載なし",
       "sourceUrl": "https://tokyo-haneda.com/faq/facilities.html"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "館内案内カウンターで貸出。背面式・対面式あり。対象月齢は背面式2か月〜4歳、対面式4か月〜3歳。",
+    "strollerNote": "ターミナル内の貸出用ベビーカーあり。空港外使用の有料レンタルは別サービス。",
+    "strollerSourceUrl": "https://tokyo-haneda.com/faq/with_children.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -50097,7 +51163,6 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人1,100円×2＋小学生200円×2＋幼児0円×1（幼児料金あり）"
     },
-    "strollerRental": true,
     "businessHours": {
       "mon": "09:00-17:00",
       "tue": "09:00-17:00",
@@ -50127,7 +51192,14 @@
       "bento": "ask",
       "bentoNote": "公式の利用案内で吊橋の上は飲食禁止。橋以外の園内での弁当持ち込み・飲食場所は明確な記載なし",
       "sourceUrl": "https://mishima-skywalk.jp/guide/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "車いす・ベビーカーともに無料貸出。南ゲートのスタッフに申し出。",
+    "strollerNote": "ベビーカーで吊橋を渡ることができる。",
+    "strollerSourceUrl": "https://mishima-skywalk.jp/question/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -50397,7 +51469,13 @@
       "source": "official",
       "sourceUrl": "https://www.kanagawaparks.com/umikaze/facility.html",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "横須賀市公式施設案内ではベビーカーの利用条件を確認できず。",
+    "strollerSourceUrl": "https://www.city.yokosuka.kanagawa.jp/5820/sisetu/fc00000441.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -51001,7 +52079,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "温泉施設内でのベビーカー利用可否について公式情報を確認できず。",
+    "strollerSourceUrl": "https://www.sagamiko-resort.jp/ururi/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -51192,7 +52276,12 @@
       "source": "official",
       "sourceUrl": "https://www.kandu.co.jp/faq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerNote": "自身のベビーカーは施設内に持ち込み可能。イオンモールのベビーカーも持ち込み可能。",
+    "strollerSourceUrl": "https://www.kandu.co.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -51450,14 +52539,21 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "例年の見頃は11月上旬〜12月中旬（tenki.jp調べ）。2026年の見頃は平年並みか遅い見通しで、現地の色づき状況は事前に確認を。",
+        "note": "例年の見頃は11月上旬〜12月中旬（tenki.jp調べ）。園単体の2026年の情報はないが、関東の11月中旬以降の見頃は平年よりやや遅めの予想（ウェザーニュース10/29発表）。現地の色づき状況は事前に確認を。",
         "tentative": true
       }
     },
     "image": "img/spots/kanagawa-yokohama-kanazawa-横浜市立金沢動物園.jpg",
     "imageCredit": "📷 Quercus acuta / パブリックドメイン / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kanazawa-Shizen-Koen_Park_06.jpg",
-    "genre": "動物園"
+    "genre": "動物園",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "300円。券売所・ののはな館で貸出。3歳未満または20kg未満対象。",
+    "strollerNote": "園内のベビーカー利用範囲・坂道などの詳細は今回確認できず。",
+    "strollerSourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/kanazawa/rental.php",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -51719,7 +52815,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "パークゴルフ場のコース内はベビーカー入場不可。舗装された場所から観覧するよう案内。",
+    "strollerSourceUrl": "https://www.tachibana-park.jp/faq/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -51925,7 +53027,13 @@
       "sourceUrl": "https://iko-yo.net/facilities/3902",
       "checkedAt": "2026年10月13日"
     },
-    "genre": "公園"
+    "genre": "公園",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "パークセンターまたは各ゲートで貸出。",
+    "strollerSourceUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/riyouannnai.html",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "茨城",
@@ -52095,7 +53203,13 @@
       "sourceUrl": "https://www.showanomori.jp/",
       "checkedAt": "2026年11月1日",
       "bento": "ask"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式利用案内にベビーカーの持ち込み・利用可否の記載なし。",
+    "strollerSourceUrl": "https://www.showano-mori.jp/guide",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -52472,7 +53586,13 @@
       "source": "official",
       "sourceUrl": "https://www.shuminomori.jp/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式サイトでベビーカーOKと案内。屋外にベビーカー置き場あり。台数に限りあり。",
+    "strollerSourceUrl": "https://www.shuminomori.jp/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -52545,7 +53665,13 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人700円×2＋小学生1,400円×2＋幼児1,400円×1（幼児料金あり）"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーでの入場不可。施設入口付近にベビーカー置き場あり。",
+    "strollerSourceUrl": "https://bandainamco-am.co.jp/others/docodoco/tachikawa-takashimaya/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -52711,7 +53837,13 @@
       "source": "official",
       "sourceUrl": "https://boukennokuni.com/question/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーで入場可。狭い通路や段差があり、一部アトラクションは利用しにくい場合あり。混雑時は入口付近の置き場を案内される場合あり。",
+    "strollerSourceUrl": "https://boukennokuni.com/question/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -52790,7 +53922,13 @@
       "source": "review",
       "sourceUrl": "https://www.jalan.net/kankou/spt_guide000000215732/kuchikomi/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーで入場可。狭い通路や段差があり、一部アトラクションは利用しにくい場合あり。混雑時は入口付近の置き場を案内される場合あり。",
+    "strollerSourceUrl": "https://boukennokuni.com/question/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -52938,7 +54076,13 @@
       "sat": "10:00-17:00",
       "sun": "10:00-17:00",
       "holiday": "10:00-17:00"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "場内でベビーカー利用可。一部未舗装の通路や階段があるため注意。",
+    "strollerSourceUrl": "https://kurkkufields.jp/map/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -53004,7 +54148,13 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人700円×2＋小学生700円×2＋幼児700円×1（幼児料金あり）"
     },
-    "genre": "室内遊び場"
+    "genre": "室内遊び場",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式店舗案内でベビーカー利用条件を確認できず。",
+    "strollerSourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/loc/odawara.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -53293,7 +54443,13 @@
       "source": "official",
       "sourceUrl": "https://www.machida-risuen.com/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "リスの放し飼い広場近くにベビーカー置き場あり。園内の使用制限は明記なし。",
+    "strollerSourceUrl": "https://www.machida-risuen.com/contact.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -53363,7 +54519,12 @@
       "bentoNote": "お弁当・飲食物の持ち込みのルールは公式情報で確認できませんでした。来園前に確認してください。",
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -53520,7 +54681,14 @@
     "image": "img/spots/tokyo-edogawa-kasai.jpg",
     "imageCredit": "📷 Patrick Bolduan from Tokyo, Japan / CC BY-SA 2.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_See_Life_Park_01.jpg",
-    "genre": "水族館"
+    "genre": "水族館",
+    "strollerOk": "ok",
+    "strollerRental": false,
+    "strollerRentalNote": "水族園での貸出なし。",
+    "strollerNote": "ベビーカーで入館可能。館内に置き場なし。階段を使う展示が一部あり。チケット売場に置き場あり。",
+    "strollerSourceUrl": "https://www.tokyo-zoo.net/kasai/visitor-info/infant-care/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "千葉",
@@ -53614,7 +54782,14 @@
       "sun": "09:30-16:30",
       "holiday": "09:30-16:30"
     },
-    "genre": "遊園地・テーマパーク"
+    "genre": "遊園地・テーマパーク",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "入園口のインフォメーションで貸出。1日100円・2歳以下対象・台数限定。",
+    "strollerNote": "公式FAQではベビーカー持ち込み・利用可否の明記を確認できず。",
+    "strollerSourceUrl": "https://kidsdom.jp/faq",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -53688,7 +54863,6 @@
       "assumption": "大人2・小学生2・幼児1の5人",
       "note": "大人800円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
     },
-    "strollerRental": true,
     "businessHours": {
       "mon": "定休日",
       "tue": "09:30-17:30",
@@ -53699,7 +54873,14 @@
       "sun": "09:30-17:30",
       "holiday": "09:30-17:30"
     },
-    "genre": "博物館・科学館"
+    "genre": "博物館・科学館",
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "1階・5階・6階で貸出。料金・台数・対象年齢は記載なし。",
+    "strollerNote": "ベビーカーで入館・観覧可能。",
+    "strollerSourceUrl": "https://www.edo-tokyo-museum.or.jp/information/accessibility/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -53778,7 +54959,13 @@
       "source": "official",
       "sourceUrl": "https://www.tokyo-dome.co.jp/faq/facility/tenq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "VR体験エリアにはベビーカーで入場不可。その他の展示エリアの利用条件は公式情報で確認できず。",
+    "strollerSourceUrl": "https://www.tokyo-dome.co.jp/tenq/ticket/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -54641,7 +55828,13 @@
       "bento": "ok",
       "bentoNote": "公式FAQで本丸庭園内は飲食禁止。お弁当は内堀外周の松本城公園で食べるよう案内。ゴミは持ち帰り",
       "sourceUrl": "https://www.matsumoto-castle.jp/faq"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーは管理事務所または天守入口で預かり。天守内は約140段の急な階段があり、ベビーカーでの見学はできない。",
+    "strollerSourceUrl": "https://www.matsumoto-castle.jp/faq",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -54724,7 +55917,14 @@
       "source": "official",
       "sourceUrl": "https://matsumoto-artmuse.jp/faq/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "無料貸出。エントランスホール受付で申出。台数に限りあり。",
+    "strollerNote": "館内はバリアフリーで、ベビーカー利用可。",
+    "strollerSourceUrl": "https://matsumoto-artmuse.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -54808,7 +56008,14 @@
       "source": "official",
       "sourceUrl": "https://matsumoto-city-museum.jp/guide",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "貸出用ベビーカーあり。貸出場所・料金・台数は公式ページに記載なし。",
+    "strollerNote": "持ち込み・館内利用条件の明確な記載は確認できず。",
+    "strollerSourceUrl": "https://matsumoto-city-museum.jp/facility",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "長野",
@@ -54882,7 +56089,13 @@
       "bento": "ask",
       "bentoNote": "公式情報を確認できていません。お出かけ前に施設へご確認ください。",
       "bentoSource": "unverified"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "味噌蔵見学・店舗案内はあるが、ベビーカーの持ち込み・利用可否は明記なし。",
+    "strollerSourceUrl": "https://ishiimiso.com/kengaku",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -55267,7 +56480,7 @@
     "price": "未確認（オープン後に公式で確認。ブランド公式では10円から遊べる台もあるとの記載があるが、この店舗の料金は不明）",
     "parking": "yes",
     "access": "千葉県旭市ニ365（旧ハッピーランド旭店の跡地）。最寄り駅・バスは未確認",
-    "businessHoursNote": "未オープンの可能性あり。営業時間は未発表",
+    "businessHoursNote": "未オープンの可能性あり。営業時間は不明",
     "closedDays": [
       "未確認"
     ],
@@ -55844,7 +57057,13 @@
     },
     "image": "img/spots/kanagawa-ebina-romansukaamyuujiamu.jpg",
     "imageCredit": "📷 Tokyo-Good / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Romancecar-Museum-SE-NSE-LSE.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Romancecar-Museum-SE-NSE-LSE.jpg",
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーで館内移動可。移動時はエレベーターを利用。ベビーカー置き場あり。",
+    "strollerSourceUrl": "https://www.odakyu.jp/romancecarmuseum/guide/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -55906,8 +57125,8 @@
     "eventInfo": {
       "紅葉": {
         "type": "spot",
-        "note": "昇仙峡（仙娥滝周辺）の見頃予想は、日本気象協会tenki.jpの10/13発表で10月下旬〜11月下旬（現況は青葉）。",
-        "periodLabel": "見頃予想：10月下旬〜11月下旬（昇仙峡）"
+        "note": "昇仙峡（御嶽昇仙峡）は11/2時点でほんのり色づき始めで、見頃予想は11/8ごろ（11/2時点・ウェザーニュース）。",
+        "periodLabel": "見頃予想：11月8日ごろ〜"
       }
     },
     "image": "img/spots/yamanashi-kofu-昇仙峡ロープウェイ.jpg",
@@ -57031,7 +58250,13 @@
       "bento": "ng",
       "bentoNote": "公式FAQでキャンプサイトへの食材持ち込みは禁止（飲料は可）。レストランでは食材・飲料の持ち込みを遠慮するよう案内",
       "sourceUrl": "https://www.pica-resort.jp/hatsushima/faq/"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "島内は坂道が多く、客室まで91段の石段がある場所もある。平坦な場所ではベビーカー利用可。",
+    "strollerSourceUrl": "https://www.pica-resort.jp/hatsushima/faq/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -57376,7 +58601,14 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": false,
+    "strollerRentalNote": "公式FAQで貸出用ベビーカーなしと明記。",
+    "strollerNote": "持ち込み・館内利用可否は公式FAQで確認できず。",
+    "strollerSourceUrl": "https://www.numazu-deepsea.com/question/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -57941,7 +59173,13 @@
       "source": "official",
       "sourceUrl": "https://mtfuji-toymuseum.jp/about/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーでの入館不可。入口に畳んで置くよう公式FAQに記載。",
+    "strollerSourceUrl": "https://mtfuji-toymuseum.jp/faq/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -57996,7 +59234,12 @@
     "stayTime": {
       "minMinutes": 120,
       "maxMinutes": 210
-    }
+    },
+    "strollerRental": true,
+    "strollerRentalNote": "入場ゲート（総合案内所）でB型ベビーカーを1日200円で貸出。",
+    "strollerSourceUrl": "https://www.csc.or.jp/faq/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -59056,7 +60299,14 @@
     },
     "image": "img/spots/shizuoka-hamamatsu-はままつフルーツパーク時之栖.jpg",
     "imageCredit": "📷 しゅんしゅん / パブリックドメイン / Wikimedia Commons",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hamamatsu_fruit_park01,_2007.jpg"
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hamamatsu_fruit_park01,_2007.jpg",
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "車いす・ベビーカーともに有料300円。台数限定。",
+    "strollerNote": "ベビーカーの持ち込み・園内利用可否はFAQに明記なし。",
+    "strollerSourceUrl": "https://hamamatsu-fp.co.jp/contact/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -60274,7 +61524,13 @@
       "bento": "ask",
       "bentoNote": "公式サイトに園内飲食・弁当持ち込みルールの記載なし",
       "sourceUrl": "https://fuchu-ichigogari.com/ja/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式サイトでベビーカー利用者も歩きやすい設計と案内。通路は段差が少ない。",
+    "strollerSourceUrl": "https://fuchu-ichigogari.com/ja/concept/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -60355,7 +61611,13 @@
       "bento": "ng",
       "bentoNote": "公式FAQで園内へのお弁当持ち込みは遠慮するよう明記。公式の食事メニュー案内にも飲食物の持ち込み不可と記載",
       "sourceUrl": "https://www.fujipa.orepa.jp/faq/index.html"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "いちご・みかん・メロン狩りのハウスによってはベビーカーが入れない。抱っこひもの持参を案内。",
+    "strollerSourceUrl": "https://www.fujipa.orepa.jp/fruit/strawberry.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -60756,7 +62018,13 @@
       "bento": "ask",
       "bentoNote": "クラフトハウス店内での食事は禁止。強羅公園内の飲食店は利用可能。弁当持ち込みは公式に記載なし",
       "sourceUrl": "https://www.crafthouse.org/faq.html"
-    }
+    },
+    "strollerOk": "ng",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "強羅公園内ではベビーカーを利用できないと公式FAQに明記。",
+    "strollerSourceUrl": "https://www.crafthouse.org/faq.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -60902,7 +62170,13 @@
       "bento": "ask",
       "bentoNote": "公式ページに弁当持ち込み・食事場所・シートの記載なし",
       "sourceUrl": "http://sycro.co.jp/nakanoni_plus/index.html"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み・利用可否について公式記載なし。",
+    "strollerSourceUrl": "http://sycro.co.jp/nakanoni_plus/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -61129,7 +62403,13 @@
         "note": "神奈川県で初めての吊り下げ式「空中いちご狩り」ができる農園で、かがまずに立ったまま摘み取れる。白い果肉の「天使のいちご」など12品種を育てていて、食べ比べが楽しめる。ハウスなので雨の日も大丈夫。 営業期間・予約の要否・料金は園ごとに異なるため、今年の営業は公式サイトで確認を。",
         "tentative": true
       }
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "温室はバリアフリー。ベビーカーのままいちご狩りを利用可。予約時に台数を連絡。",
+    "strollerSourceUrl": "https://ichigos.jp/faq/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -61727,7 +63007,13 @@
         "note": "栃木県北で最大規模のいちご園で、全面高設栽培なのでしゃがまずに摘み取れる。50分間の食べ放題で、複数の品種から選んで食べ比べができる。 営業期間・予約の要否・料金は園ごとに異なるため、今年の営業は公式サイトで確認を。",
         "tentative": true
       }
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "全面高設栽培で、ベビーカーでも安心して楽しめると公式サイトに記載。※該当案内は2022年掲載。",
+    "strollerSourceUrl": "https://www.oshima-cf.com/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "群馬",
@@ -62015,7 +63301,13 @@
         "note": "石和温泉の近くにある観光農園で、いちご狩りと直売を行っている。 営業期間・予約の要否・料金は園ごとに異なるため、今年の営業は公式サイトで確認を。",
         "tentative": true
       }
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式観光案内で、ベビーカーでハウス内を移動できると案内。",
+    "strollerSourceUrl": "https://www.fuefuki-kanko.jp/detail/194/index.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "山梨",
@@ -64588,7 +65880,13 @@
         "note": "いちご狩りが中心の農園で、12月下旬〜5月上旬に、高設栽培で育てた「紅ほっぺ」をハサミで摘み取って味わえる。季節によっては桃やぶどうも扱っている。 営業期間・予約の要否・料金は園ごとに異なるため、今年の営業は公式サイトで確認を。",
         "tentative": true
       }
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否は、今回確認した運営者公式情報では確認できず。",
+    "strollerSourceUrl": "https://www.maruseinouen.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -64857,7 +66155,13 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://www.elegant-glass.com/taiken.html"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ビルにエレベーターあり。ベビーカーの持ち込み・利用可否は公式記載なし。",
+    "strollerSourceUrl": "https://www.elegant-glass.com/sp1/access.html",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -65127,7 +66431,13 @@
       "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
       "officialUrl": "https://takaranokama.com/"
     },
-    "officialUrlStatus": "候補・公式性未確認"
+    "officialUrlStatus": "候補・公式性未確認",
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み・利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://www.takaranokama.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -65409,7 +66719,13 @@
       "sat": "10:00-16:00",
       "sun": "10:00-16:00",
       "holiday": "10:00-16:00"
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカーの持ち込み・利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://www.do-tougeikan.jp/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -65955,7 +67271,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 135
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式の場内ルールで、ベビーカーは持ち込み禁止の車輪付き器具から除外されている。",
+    "strollerSourceUrl": "https://www.kawasaki-keiba.jp/visitors/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -66494,7 +67816,14 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRental": true,
+    "strollerRentalNote": "エントランスゲート・東門ゲートで貸出。1回300円。首がすわっている2歳までが対象。",
+    "strollerNote": "貸出は確認できたが、持ち込み・園内利用条件の明確な記載は確認できず。",
+    "strollerSourceUrl": "https://www.nhdzoo.jp/info/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "静岡",
@@ -66988,7 +68317,14 @@
       "source": "official",
       "sourceUrl": "https://www.moma.pref.kanagawa.jp/hayama/",
       "checkedAt": "2026年10月31日"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRental": true,
+    "strollerRentalNote": "ベビーカー無料貸出。受付に申し出る。",
+    "strollerNote": "館内はバリアフリー設計。主要施設は1階にあり、地下階へはエレベーターを利用。",
+    "strollerSourceUrl": "https://www.moma.pref.kanagawa.jp/hayama/visit/accessibility/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -67868,7 +69204,10 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://www.senyo.co.jp/morinoyuenchi/question.html"
-    }
+    },
+    "strollerRental": false,
+    "strollerRentalNote": "ベビーカーの貸出は行っていないと公式FAQに記載。",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -68063,7 +69402,13 @@
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 150
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "2階にベビーカー置き場あり。階段での移動が難しい場合はスタッフが迎えに来る案内あり。",
+    "strollerSourceUrl": "https://kodomo-asobiba.com/shop-nogata/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -69241,7 +70586,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "屋外に指定のベビーカー置き場あり。",
+    "strollerSourceUrl": "https://tamahime-tokyo.jp/guide/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "東京",
@@ -69372,7 +70723,13 @@
       "note": "料金の目安は出せません。公式サイトが不明のため、予約サイト（じゃらん）で料金をご確認ください",
       "confirmVia": "booking",
       "confirmUrl": "https://www.jalan.net/kankou/spt_guide000000212008/activity/l00004EEFA/"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "いちご狩り中はベビーカーを受付またはハウス内に置き、前抱きの抱っこ紐を使用する案内あり。",
+    "strollerSourceUrl": "https://www.shizenkanizumi.jp/contact/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -69581,7 +70938,13 @@
       "note": "料金の目安は出せません。公式サイトが不明のため、予約サイト（じゃらん）で料金をご確認ください",
       "confirmVia": "booking",
       "confirmUrl": "https://www.jalan.net/kankou/spt_guide000000214171/activity/l00005ADDE/"
-    }
+    },
+    "strollerOk": "ok",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "公式サイトで、園内は全面シート敷きのためベビーカーで入園できると明記。",
+    "strollerSourceUrl": "https://kawato-nouen.com/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
@@ -69922,7 +71285,13 @@
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 120
-    }
+    },
+    "strollerOk": "ask",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "ベビーカー利用可否について公式記載なし。",
+    "strollerSourceUrl": "https://www.taiyonoie-vc.com/terrafarm/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "神奈川",
@@ -70394,7 +71763,13 @@
       "source": "official",
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://www.nagasawamaruyu-mikan.com/よくある質問/"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "園内の通路が狭いため、ベビーカーは入口に置くよう公式FAQに記載。",
+    "strollerSourceUrl": "https://www.nagasawamaruyu-mikan.com/よくある質問/",
+    "strollerCheckedAt": "2026年11月2日",
+    "strollerSource": "official"
   },
   {
     "region": "栃木",
@@ -70774,7 +72149,13 @@
       ],
       "source": "text",
       "checkedAt": "2026年11月1日"
-    }
+    },
+    "strollerOk": "partial",
+    "strollerRentalNote": "貸出について公式記載なし。",
+    "strollerNote": "パーク入口付近にベビーカー置き場あり。",
+    "strollerSourceUrl": "https://playec.jp/faq/",
+    "strollerCheckedAt": "2026年11月3日",
+    "strollerSource": "official"
   },
   {
     "region": "埼玉",
