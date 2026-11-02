@@ -1,108 +1,30 @@
-# おでかけナビ 〜今日、子どもとどこ行く？
+# おでかけナビ 追加機能 まとめ（最新）
 
-子連れ向けのおでかけスポット検索サイト。関東1都6県＋山梨・静岡・福島・長野の施設とファミリー向けホテルを掲載しています。
+## 反映するファイル（サイトのリポジトリへ。同じ名前で上書き）
+- `index.html` … 通知カード（初回の大きなカード・設定画面のスイッチ）、「今だけ」バッジ、位置情報の自動確認の見直し
+- `service-worker.js` … 通知の受信・タップ、「今週末で終わるイベント◯件」（端末内のデータから集計）
 
-公開URL: https://odekakenavi.github.io/odekake-navi/
+## Cloudflare（Worker）側
+- `odekake-push/worker/src/index.js` … 登録の受付・毎週金曜の配信・件数カウント（すでにデプロイ済み。今回の変更なし）
+- `odekake-push/worker/wrangler.toml` … 参考（ダッシュボードで設定した内容と同じ）
+- 配信状況: `https://odekake-push.odekakenavi2026.workers.dev/admin/stats?key=（ADMIN_TOKEN）`
 
-## フォルダ構成
+## 動き
+- 通知カード：2回目の訪問から表示。×で閉じる／設定からオフにしたら二度と出さない。オン・オフは「☰メニュー」→「設定」
+- 位置情報：断った人には自動では聞かない（「現在地から探す」「診断の現在地」ボタンのときだけ）。許可を覚えていないブラウザでは、聞かずに保存済みの位置を使う
+- 今だけバッジ：終了が近いイベントに「今週末まで」「あと◯日」など
+- 金曜17時（日本時間）の通知：今週末に終わるイベントがあれば件数入り、なければ月ごとの文面
+- イベント終了日の上限（現在はクリスマス 12/25）は `index.html` の `EVENT_UNTIL` にだけ書く。「12-25」のように月-日で書けば、毎年そのイベント自身の年に当てはまる（年の書き換えは不要）。サイトを開くと端末に保存され、通知の集計（`service-worker.js`）が自動で読む
+- iPhoneで通知を使うには、`manifest.webmanifest` の `display` が `standalone`（または `fullscreen`）である必要がある
 
-```
-/
-├─ index.html             アプリ本体（データは data/ から読み込み）
-├─ service-worker.js      キャッシュ制御（ルート固定）
-├─ site-ui.js             特集ページ共通の翻訳ボタンなど（ルート固定・/odekake-navi/site-ui.js で読まれる）
-├─ manifest.webmanifest   PWA設定
-├─ sitemap.xml / robots.txt / llms.txt   検索・AI向け
-├─ BingSiteAuth.xml, google….html        検索エンジンの所有権確認用（消さない）
-├─ 画像                    header.webp, operator.webp, og-image.png, icon-192.png, pwa-*.png
-│
-├─ data/                  施設・ホテル・イベントのデータ
-│   ├─ spots.json           施設データ
-│   ├─ hotels.json          ホテルデータ
-│   └─ event-data.json      イベント特集用データ（merge-event-data.js で spots.json に反映）
-│
-├─ tools/                 ページ生成・チェック用スクリプト（PCで実行）
-│   ├─ build-static-pages.js   施設ページ・地域ページの生成
-│   ├─ build-area-pages.js     複数市区町村をまとめたエリア特集の生成
-│   ├─ build-event-pages.js    イベント特集（/event/…）の生成
-│   ├─ merge-event-data.js     event-data.json を spots.json に反映
-│   ├─ check-data-blocks.js    データ整合チェック（ファイルは書き換えない）
-│   └─ archive/                一回きりの作業ファイル
-│
-├─ backend/               サイトからは読まれない運用用コード
-│   ├─ weather-proxy-worker.js   天気APIのプロキシ（Cloudflare Worker）
-│   ├─ worker-hardening.js       Worker側の対策サンプル
-│   └─ gas-hardening.js          みんなのおでかけ（GAS）側の入力対策サンプル
-│
-├─ docs/                  仕様メモ（experiences.md ＝「実際に行ったよ」の設計メモ）
-│
-└─ chiba/ tokyo/ kanagawa/ …   公開ページ（都道府県・市区町村・施設）
-   event/ season/ purpose/ free/ rainy-day/   特集ページ
-```
+## 補足
+- `odekake-push/sw-push-snippet.js` は参考用（通常は使わない）
 
-公開URLになるフォルダは、フォルダ名を変えると検索結果・シェアされたURLが切れるため移動しないでください。
-
-## 公開の流れ（自動）
-
-main に push すると GitHub Actions（`.github/workflows/pages.yml`）が次を自動で行います。
-
-1. `tools/check-site.js` … データの自動チェック（JSONの破損・slug重複・緯度経度・URLの形など）。エラーなら**公開せず止まる**（いまのサイトはそのまま）
-2. `tools/build-public.js` … 公開用の形（_public/）を組み立て
-3. `tools/refresh-static-pages.js` … 施設・地域・季節・エリア特集ページと sitemap.xml を、いまの data/spots.json から自動で作り直す（目的別 /purpose/…・雨の日・無料・赤ちゃん向けの特集ページは `tools/build-feature-pages.js` が作る）
-4. `tools/check-site.js --public _public` … sitemapとページの対応・noindex・canonical・リンク切れを最終確認
-
-→ 施設データ（data/spots.json）を更新するだけで、静的ページもsitemapも自動で最新になります。生成したページをリポジトリにアップする必要はありません。
-結果は GitHub の「Actions」タブ → 最新の実行 → Summary で確認できます（⚠注意は公開を止めず一覧表示のみ）。
-
-手元で同じチェックをする場合：
-```
-node tools/check-site.js
-node tools/build-public.js --out _public && node tools/refresh-static-pages.js --public _public && node tools/check-site.js --public _public
-```
-
-## AI検索・クローラー対応
-
-ChatGPT検索（OAI-SearchBot）などのAI検索や、Bingに見つけてもらうための設定です。
-
-**robots.txt（置き場所に注意）**
-
-- このサイトのURLは `/odekake-navi/` 配下（GitHub Pagesのプロジェクトページ）のため、このリポジトリの `robots.txt` はクローラーに読まれません。
-- 実際に効くのは、別リポジトリ `odekakenavi/odekakenavi.github.io` のルートに置いた `robots.txt` です（`https://odekakenavi.github.io/robots.txt` で表示できることを確認済み）。
-- robots.txt を変更するときは **そちらのリポジトリを編集**し、このリポジトリのファイルとも内容を揃えます。
-- `odekakenavi.github.io` リポジトリには robots.txt だけを置きます。`index.html` を置くとドメイン直下にそのページが公開されてしまうため置かないでください。
-- OAI-SearchBot・ChatGPT-User・GPTBot・PerplexityBot・Claude系などは `Allow: /` で許可しています。
-
-**sitemap.xml**
-
-- Google Search Console と Bing Webmaster Tools に登録済みです。
-- sitemap.xml は公開の流れ（自動）で毎回作り直されます。
-
-**IndexNow（Bingへの更新通知）**
-
-- キーファイル `adea0d8fbd70cf174a740d6ee8694a4a.txt` を使います（**消さない・名前を変えない**）。置き場所は `site/root-files/` です。公開URLは `https://odekakenavi.github.io/odekake-navi/adea0d8fbd70cf174a740d6ee8694a4a.txt` です。
-- キーファイルを `/odekake-navi/` 配下に置いているため、通知できるのは `/odekake-navi/` 以下のURLだけです。
-- ページを追加・更新したときは、次のURLをブラウザで開くと1ページずつ通知できます。
-
-```
-https://api.indexnow.org/indexnow?url=<通知するURL>&key=adea0d8fbd70cf174a740d6ee8694a4a&keyLocation=https://odekakenavi.github.io/odekake-navi/adea0d8fbd70cf174a740d6ee8694a4a.txt
-```
-
-- 200または202が返れば受付済みです。
-- キーは公開される前提の文字列で、秘密情報ではありません。
-- リポジトリ直下に置いても公開されません。`tools/build-public.js` は、`site/root-files/` の中身だけを公開のルート直下に配置します（robots.txt などと同じ扱い）。
-
-## 更新の流れ（PCで作業するとき）
-
-リポジトリ直下で実行します。
-
-```
-node tools/check-data-blocks.js index.html
-node tools/merge-event-data.js data/spots.json data/event-data.json
-node tools/build-area-pages.js --index index.html --spots data/spots.json --sitemap sitemap.xml --out _build_area
-```
-
-各スクリプトの詳しい使い方・オプションは、ファイル先頭のコメントを見てください。
-
-## ライセンス
-
-All rights reserved（詳細は `LICENSE`）。
+## 「ごはん事情」と「lunch」を1つにまとめる（正は `food.lunch`）
+`index.html` は、新しい形（`food.lunch`）でも、移行前の形（`lunch`）でも読めます。そのため、次の順で進めれば途中で何が起きてもサイトは壊れません。
+1. 新しい `index.html` をアップロードする（データはまだ触らない）
+2. `tools/migrate_lunch_to_food.py` で確認だけ行う：`python3 tools/migrate_lunch_to_food.py data/spots.json`
+3. 「要確認」が出たら、その分だけ手で直す（スクリプトは触りません）
+4. 問題なければ `--write` を付けて実行 → `data/spots.json` を差し替える（元は `.bak` に残る）
+5. サイトで、何件かのスポットの詳細「🍙 ごはん事情」が移行前と同じ表示か確認する
+- リポジトリ内に他にも `lunch` を読むファイル（ページ生成の道具など）がないか、GitHubの検索で「lunch」を探してから進めてください
