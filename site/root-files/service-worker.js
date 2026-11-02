@@ -17,7 +17,7 @@
    ====================================================================== */
 "use strict";
 
-var SW_VERSION = "2026-11-01-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
+var SW_VERSION = "2026-11-02-1";   // 目印（このファイルを書き換えるとブラウザが新版として検知する）
 var SCOPE_URL  = new URL(self.registration.scope);
 var SCOPE_PATH = SCOPE_URL.pathname;                 // 例：/odekake-navi/
 var PREFIX     = "odekake:" + SCOPE_PATH + ":";
@@ -202,8 +202,7 @@ async function staleWhileRevalidate(event, req){
 var PUSH_API = "https://odekake-push.odekakenavi2026.workers.dev"; // ← デプロイ後のWorkerのURL
 
 /* 「今週末で終わるイベント」は、端末に保存済みの data/spots.json から数える（Worker側は重い処理をしない）。
-   EV_UNTIL は index.html の EVENT_UNTIL と同じ値にしておくこと。 */
-var EV_UNTIL = { "クリスマス": "2026-12-25" };
+   イベント終了日の上限（EVENT_UNTIL）は index.html にだけ書く。サイトを開いたときに端末へ保存され、ここで読む。 */
 var EV_EMOJI = { "紅葉": "🍁", "ハロウィン": "🎃", "イルミネーション": "✨", "クリスマス": "🎄", "いちご狩り": "🍓", "お花見": "🌸", "GW": "🎏", "水遊び": "💦", "夏祭り・花火": "🎆" };
 
 function evUtcMs(s){ return Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)); }
@@ -223,10 +222,31 @@ async function loadSpotsForPush(){
   return null;
 }
 
+/* 上限は「12-25」のように月-日で持つ。そのイベント自身の年に当てはめる（index.html の evCap と同じ考え方。年つきの旧形式もそのまま使える） */
+function evCapFor(u, i){
+  if(!u) return null;
+  if(/^\d{4}-/.test(u)) return u;
+  var st = i && i.start, en = i && i.end, y;
+  if(st) y = +st.slice(0, 4);
+  else if(en){ y = +en.slice(0, 4); if(+en.slice(5, 7) <= 6) y -= 1; }
+  else y = +new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 4);   // 手がかりが無ければ「今年」
+  return y + "-" + u;
+}
+
+async function loadEventUntil(){
+  try{
+    var cache = await caches.open(CACHE_DATA);
+    var hit = await cache.match(dataKey(new URL("_meta/event-until.json", self.registration.scope).href));
+    if(hit){ var o = await hit.json(); if(o && typeof o === "object") return o; }
+  }catch(e){}
+  return {};   // まだ保存されていない（新版を開いていない）ときは上限なし。サイトを開けば自動で入る
+}
+
 async function weekendEndingSummary(){
   try{
     var spots = await loadSpotsForPush();
     if(!Array.isArray(spots)) return null;
+    var EV_UNTIL = await loadEventUntil();
     var today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);   // 日本時間の今日
     var t = evUtcMs(today), dow = new Date(t).getUTCDay();
     var sun = t + ((7 - dow) % 7) * 864e5;                                        // 今週末（土日）の日曜
@@ -238,7 +258,7 @@ async function weekendEndingSummary(){
       sp.events.forEach(function(key){
         var i = sp.eventInfo[key];
         if(!i || i.tentative) return;                     // 日程未定は数えない
-        var end = i.end, u = EV_UNTIL[key];
+        var end = i.end, u = evCapFor(EV_UNTIL[key], i);
         if(u && (!end || end > u)) end = u;
         if(!end || end < today) return;                   // すでに終了
         if(end !== satS && end !== sunS) return;          // 土日に終わるものだけ
