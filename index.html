@@ -320,10 +320,6 @@ button.diag-back-link{display:block;width:100%;min-height:44px;margin-top:4px;pa
 .rl-set{display:block;margin-top:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer}
 .rl-foot{font-size:10.5px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
 .wish-block{margin:6px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
-.wish-block{border-left-width:5px}.wish-b-pair{border-left-color:#E2603A}.wish-b-vote{border-left-color:#4F7942}.wish-b-sns{border-left-color:#6B7AA1}
-.wish-tag{font-size:13.5px;font-weight:900}.wish-b-pair .wish-tag{color:#E2603A}.wish-b-vote .wish-tag{color:#4F7942}.wish-b-sns .wish-tag{color:#6B7AA1}
-.wish-vote-btn{display:block;width:100%;height:44px;margin-top:8px;border:none;border-radius:10px;background:#4F7942;color:#fff;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
-.wish-b-pair .wish-send{background:#E2603A}
 .wish-title{font-size:13px;font-weight:800}
 .wish-desc{font-size:11px;color:var(--ink-soft);margin-top:4px;line-height:1.5}
 .wish-row{display:flex;gap:8px;margin-top:8px}
@@ -2333,10 +2329,7 @@ if(label)u+="&by="+encodeURIComponent(label);
 return u}
 function wishShareBlockHtml(count){
 if(!count)return"";
-return ''
-+'<div class="wish-block wish-b-pair"><div class="wish-tag">\u{1F46B} \u30D1\u30FC\u30C8\u30CA\u30FC\u3068\u898B\u305B\u5408\u3046</div><div class="wish-desc">\u304A\u4E92\u3044\u306E\u2764\uFE0F\u3092\u6BD4\u3079\u3066\u3001\u300C\u3075\u305F\u308A\u3068\u3082\u884C\u304D\u305F\u3044\u5834\u6240\u300D\u3092\u898B\u3064\u3051\u308B\u3002\u76F8\u624B\u3082\u3042\u306A\u305F\u306E\u30EA\u30B9\u30C8\u3092\u898B\u3066\u3001\u81EA\u5206\u306E\u2764\uFE0F\u3068\u898B\u6BD4\u3079\u307E\u3059\uFF08\u30ED\u30B0\u30A4\u30F3\u4E0D\u8981\uFF09\u3002</div><div class="wish-row"><input type="text" class="wish-label" id="wishLabelInput" maxlength="10" placeholder="\u3042\u306A\u305F\u306E\u547C\u3073\u540D\uFF08\u4F8B\uFF1A\u30D1\u30D1\uFF09" value="'+rlEsc(wishLabelLoad())+'"><button type="button" class="wish-send" id="wishSendBtn">\u{1F517} \u898B\u305B\u5408\u3046\u30EA\u30F3\u30AF\u3092\u9001\u308B</button></div></div>'
-+'<div class="wish-block wish-b-vote"><div class="wish-tag">\u{1F5F3} \u5BB6\u65CF\u3067\u6295\u7968\u3057\u3066\u6C7A\u3081\u308B</div><div class="wish-desc">\u5019\u88DC\u3092 2\u301C5\u304B\u6240\u306B\u7D5E\u3063\u3066\u3001\u{1F44D}\u{1F914}\u{1F44E}\u3067\u6295\u7968\u3002\u300C\u7D50\u5C40\u3069\u3053\u306B\u884C\u304F\uFF1F\u300D\u30921\u304B\u6240\u306B\u6C7A\u3081\u305F\u3044\u3068\u304D\u7528\uFF08\u5148\u7740\u0033\u4EBA\u30FB7\u65E5\u9593\uFF09\u3002</div><button type="button" class="wish-vote-btn" id="wishVoteBtn">\u{1F5F3} \u6295\u7968\u30EA\u30F3\u30AF\u3092\u4F5C\u308B</button></div>'
-+'<div class="wish-block wish-b-sns"><div class="wish-tag">\u{1F4F8} SNS\u306B\u6295\u7A3F\u3059\u308B</div><div class="wish-desc">\u884C\u304D\u305F\u3044\u30EA\u30B9\u30C8\u3092\u753B\u50CF\u306B\u3057\u307E\u3059\uFF08\u30B9\u30C8\u30FC\u30EA\u30FC\u30BA\u7528\uFF09\u3002\u76F8\u624B\u3068\u306E\u6BD4\u8F03\u3084\u6295\u7968\u306F\u3067\u304D\u307E\u305B\u3093\u3002</div><button type="button" class="wish-img-btn" id="wishImgBtn">\u{1F4F8} \u6295\u7A3F\u7528\u306E\u753B\u50CF\u3092\u4F5C\u308B</button><div class="wish-img-msg" id="wishImgMsg"></div></div>'}
+return'<div class="wish-block"><div class="wish-title">\u{1F46B} \u30D1\u30FC\u30C8\u30CA\u30FC\u3068\u300C\u884C\u304D\u305F\u3044\u300D\u3092\u898B\u305B\u5408\u3046</div><div class="wish-desc">\u30EA\u30F3\u30AF\u3092\u9001\u308B\u3068\u3001\u76F8\u624B\u306E\u753B\u9762\u3067\u300C\u3075\u305F\u308A\u3068\u3082\u884C\u304D\u305F\u3044\u5834\u6240\u300D\u304C\u5206\u304B\u308A\u307E\u3059\uFF08\u30ED\u30B0\u30A4\u30F3\u4E0D\u8981\uFF09\u3002</div><div class="wish-row"><input type="text" class="wish-label" id="wishLabelInput" maxlength="10" placeholder="\u3042\u306A\u305F\u306E\u547C\u3073\u540D\uFF08\u4F8B\uFF1A\u30D1\u30D1\uFF09" value="'+rlEsc(wishLabelLoad())+'"><button type="button" class="wish-send" id="wishSendBtn">\u{1F517} \u30EA\u30F3\u30AF\u3092\u9001\u308B</button></div><button type="button" class="wish-img-btn" id="wishImgBtn">📸 ストーリーズ用の画像にする</button><div class="wish-img-msg" id="wishImgMsg"></div></div>'}
 function wishParse(params){
 var raw=params.get("wish")||"";
 var names=raw.split("|").map(function(s){return s.trim()}).filter(Boolean).slice(0,40);
@@ -2430,7 +2423,6 @@ var k=t.closest("[data-rl-open-kids]");
 if(k){ev.preventDefault();window.__rlReturnSpot=window.__rlLastSpot||null;var ko=document.getElementById("kidsOverlay");if(ko)document.body.appendChild(ko);kidsUI={view:"list",editingChildId:null,draft:null,quizStep:1,quizDraft:null};renderKidsSheet();openSheet("kidsOverlay");return}
 if(t.closest("#wishSendBtn")){var inp=document.getElementById("wishLabelInput");wishShareOut(inp?inp.value.trim():"");return}
 if(t.closest("#wishReplyBtn")){wishShareOut(wishLabelLoad());return}
-if(t.closest("#wishVoteBtn")){closeSheetById("favOverlay");try{trackEvent("vote_open",{from:"wish"})}catch(e){}if(typeof voteOpenCreate==="function")voteOpenCreate();return}
 if(t.closest("#planIcsBtn")){planExportIcs();return}
 var wo=t.closest("[data-wish-open]");
 if(wo){var sp=SPOT_BY_NAME.get(wo.getAttribute("data-wish-open"));if(sp)openDetail(sp);return}
