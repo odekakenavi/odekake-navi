@@ -320,6 +320,10 @@ button.diag-back-link{display:block;width:100%;min-height:44px;margin-top:4px;pa
 .rl-set{display:block;margin-top:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer}
 .rl-foot{font-size:10.5px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
 .wish-block{margin:6px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+.wish-block{border-left-width:5px}.wish-b-pair{border-left-color:#E2603A}.wish-b-vote{border-left-color:#4F7942}.wish-b-sns{border-left-color:#6B7AA1}
+.wish-tag{font-size:13.5px;font-weight:900}.wish-b-pair .wish-tag{color:#E2603A}.wish-b-vote .wish-tag{color:#4F7942}.wish-b-sns .wish-tag{color:#6B7AA1}
+.wish-vote-btn{display:block;width:100%;height:44px;margin-top:8px;border:none;border-radius:10px;background:#4F7942;color:#fff;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.wish-b-pair .wish-send{background:#E2603A}
 .wish-title{font-size:13px;font-weight:800}
 .wish-desc{font-size:11px;color:var(--ink-soft);margin-top:4px;line-height:1.5}
 .wish-row{display:flex;gap:8px;margin-top:8px}
@@ -1248,114 +1252,59 @@ const label=years.length===1?years[0]+"歳のお子さん":"うちの子";
 const t=document.createElement("div");t.className="recent-title";t.textContent="👶 "+label+"に、まだ行ったことのない場所";el.appendChild(t);
 const sub=document.createElement("p");sub.className="kh-sub";sub.textContent="年齢・今の季節・天気・距離から選びました";el.appendChild(sub);
 const chips=document.createElement("div");chips.className="recent-chips";out.forEach(sp=>{const c=document.createElement("div");c.className="recent-chip";c.textContent=sp.name;c.onclick=()=>{try{trackEvent("kids_home_click",{facility_name:sp.name})}catch(e){}openDetail(sp)};chips.appendChild(c)});el.appendChild(chips);el.style.display="block"}catch(e){try{const el=document.getElementById("kidsHomeWrap");if(el)el.style.display="none"}catch(e2){}}}
-/* ---- 家族で決める（投票）：Cloudflare Workers / Durable Objects ---- */
+/* ---- 家族で決める（投票）：Workers API 経由。URLは ?vote=ID ---- */
 const VOTE_API="https://odekake-vote.odekakenavi2026.workers.dev";
-const VK_DEVICE="odekakeVoteDeviceV2",VK_OWN="odekakeVoteOwnV2",VK_DONE="odekakeVoteDoneV2",VK_NAME="odekakeVoteNameV2",VK_MINE="odekakeVoteMineV2";
+const VK_VOTER="odekakeVoterV1",VK_OWN="odekakeVoteOwnV1",VK_DONE="odekakeVoteDoneV1",VK_NAME="odekakeVoteNameV1",VK_MINE="odekakeVoteMineV1";
 function vLs(k,d){try{const v=JSON.parse(localStorage.getItem(k)||"null");return v==null?d:v}catch(e){return d}}
-function vSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}
-function vDevice(){let id=vLs(VK_DEVICE,null);if(!id){try{id="d"+crypto.getRandomValues(new Uint32Array(4)).join("")+Date.now().toString(36)}catch(e){id="v"+Math.random().toString(36).slice(2)+Date.now().toString(36)}vSet(VK_DEVICE,id)}return id}
-async function vApi(path,body){const r=await fetch(VOTE_API+path,body?{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}:{cache:"no-store"});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||("HTTP "+r.status));return j}
+function vSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function vVoter(){let v=vLs(VK_VOTER,null);if(!v){v="v"+Math.random().toString(36).slice(2,12)+Date.now().toString(36);vSet(VK_VOTER,v)}return v}
+async function vApi(path,body){const r=await fetch(VOTE_API+path,body?{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}:{cache:"no-store"});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"error");return j}
 function vEl(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
 function vBtn(text,cls,fn){const b=vEl("button",cls,text);b.type="button";b.onclick=fn;return b}
-function vShare(id){const path=location.pathname;const base=location.origin+(path.indexOf("/odekake-navi/")===0?"/odekake-navi/":path.replace(/[^\/]*$/,""));return base+"?vote="+encodeURIComponent(id)}
+function vShare(id){const base=location.origin+(location.pathname.indexOf("/odekake-navi/")===0?"/odekake-navi/":location.pathname.replace(/[^\/]*$/,""));return base+"?vote="+id}
 function vSheet(){let ov=document.getElementById("voteOverlay");if(!ov){ov=vEl("div","vt-ov");ov.id="voteOverlay";ov.addEventListener("click",e=>{if(e.target===ov)vClose()});document.body.appendChild(ov)}ov.innerHTML="";const sh=vEl("div","vt-sheet");sh.appendChild(vBtn("×","vt-x",vClose));ov.appendChild(sh);ov.style.display="flex";document.body.style.overflow="hidden";return sh}
 function vClose(){const ov=document.getElementById("voteOverlay");if(ov)ov.style.display="none";document.body.style.overflow=""}
 function vMsg(sh,text){sh.appendChild(vEl("p","vt-msg",text));sh.appendChild(vBtn("閉じる","vt-btn vt-sub",vClose))}
-function vOptions(d){return Array.isArray(d&&d.options)?d.options:[]}
-function vVoteCount(d){return vOptions(d).reduce((n,o)=>n+(Number(o.votes)||0),0)}
-function vErrorText(e){const m=String(e&&e.message||"");if(m==="not_found")return"この投票は見つかりません。リンクが正しいか確認してください。";if(m==="already_voted")return"この端末からは、すでに投票済みです。";if(m==="already_decided")return"この投票はすでに決定しています。";if(m==="unauthorized")return"決定できるのは投票を作成した端末だけです。";if(m==="invalid_option")return"選択した候補を確認できませんでした。画面を更新してください。";return"通信に失敗しました。通信状況を確認して、もう一度お試しください。"}
 
-function voteOpenCreate(){
- const sh=vSheet();sh.appendChild(vEl("h3","vt-h","🗳 家族で行き先を決める"));
- const favs=[...state.favorites].filter(n=>SPOT_BY_NAME.get(n));
- const mine=(vLs(VK_MINE,[])||[]).filter(m=>m&&m.id&&Date.now()-m.at<30*864e5).slice(0,5);
- sh.appendChild(vEl("p","vt-msg","家族それぞれのスマホから、行きたい場所に1票ずつ投票できます。"));
- if(favs.length<2){sh.appendChild(vEl("p","vt-sub-t","まず「❤️ 行きたい」に候補を2か所以上追加してください。"))}
- else{
-  sh.appendChild(vEl("p","vt-sub-t","候補を2〜5か所選んでください。"));
-  const checks=[];
-  favs.slice(0,30).forEach((n,i)=>{const l=vEl("label","vt-row");const c=document.createElement("input");c.type="checkbox";c.checked=i<Math.min(5,Math.max(2,favs.length));c.value=n;checks.push(c);l.appendChild(c);l.appendChild(vEl("span",null,n));sh.appendChild(l)});
-  const err=vEl("p","vt-err","");sh.appendChild(err);
-  const go=vBtn("投票リンクを作る","vt-btn",async()=>{
-   const picked=checks.filter(c=>c.checked).map(c=>c.value);
-   if(picked.length<2||picked.length>5){err.textContent="候補は2〜5か所選んでください。";return}
-   go.disabled=true;go.textContent="作成中…";
-   try{
-    const r=await vApi("/create",{title:"家族のおでかけ先",options:picked});
-    const own=vLs(VK_OWN,{})||{};own[r.id]=r.ownerToken;vSet(VK_OWN,own);
-    const ml=vLs(VK_MINE,[])||[];ml.unshift({id:r.id,at:Date.now()});vSet(VK_MINE,ml.slice(0,10));
-    try{trackEvent("vote_create",{count:picked.length})}catch(e){}
-    vShowShare(r.id);
-   }catch(e){go.disabled=false;go.textContent="投票リンクを作る";err.textContent=vErrorText(e)}
-  });sh.appendChild(go)
- }
- if(mine.length){sh.appendChild(vEl("p","vt-sub-t","最近作った投票"));mine.forEach(m=>sh.appendChild(vBtn("結果を見る（"+new Date(m.at).toLocaleDateString("ja-JP",{month:"numeric",day:"numeric"})+"作成）","vt-btn vt-sub",()=>voteShowBoard(m.id))))}
-}
+function voteOpenCreate(){const sh=vSheet();sh.appendChild(vEl("h3","vt-h","🗳 家族で行き先を決める"));
+const favs=[...state.favorites].filter(n=>SPOT_BY_NAME.get(n));
+const mine=(vLs(VK_MINE,[])||[]).filter(m=>Date.now()-m.at<6048e5).slice(0,3);
+if(favs.length<2){sh.appendChild(vEl("p","vt-msg","「❤️ 行きたい」に2か所以上入れると、家族に投票してもらえます。"));}
+else{sh.appendChild(vEl("p","vt-sub-t","候補を選んでください（2〜5か所）"));const checks=[];favs.slice(0,30).forEach((n,i)=>{const l=vEl("label","vt-row");const c=document.createElement("input");c.type="checkbox";c.checked=i<3;c.value=n;checks.push(c);l.appendChild(c);l.appendChild(vEl("span",null,n));sh.appendChild(l)});
+const nm=document.createElement("input");nm.className="vt-in";nm.placeholder="あなたの呼び名（任意・10文字まで）";nm.maxLength=10;nm.value=vLs(VK_NAME,"")||"";sh.appendChild(nm);
+const err=vEl("p","vt-err","");sh.appendChild(err);
+const go=vBtn("投票リンクを作る","vt-btn",async()=>{const picked=checks.filter(c=>c.checked).map(c=>c.value);if(picked.length<2||picked.length>5){err.textContent="2〜5か所を選んでください";return}go.disabled=true;go.textContent="作成中…";try{vSet(VK_NAME,nm.value.trim());const r=await vApi("/create",{spots:picked,by:nm.value.trim()});const own=vLs(VK_OWN,{});own[r.id]=r.token;vSet(VK_OWN,own);const ml=vLs(VK_MINE,[]);ml.unshift({id:r.id,at:Date.now()});vSet(VK_MINE,ml.slice(0,10));try{trackEvent("vote_create",{count:picked.length})}catch(e){}vShowShare(r.id)}catch(e){go.disabled=false;go.textContent="投票リンクを作る";err.textContent="作成できませんでした。通信状況を確認してもう一度お試しください。"}});sh.appendChild(go)}
+if(mine.length){sh.appendChild(vEl("p","vt-sub-t","最近作った投票"));mine.forEach(m=>{sh.appendChild(vBtn("結果を見る（"+new Date(m.at).toLocaleDateString("ja-JP",{month:"numeric",day:"numeric"})+"作成）","vt-btn vt-sub",()=>voteShowBoard(m.id)))})}}
 
-function vShowShare(id){
- const sh=vSheet(),url=vShare(id);sh.appendChild(vEl("h3","vt-h","✅ 投票リンクができました"));
- sh.appendChild(vEl("p","vt-msg","このリンクを家族それぞれのスマホに送ってください。1端末につき1票です。投票結果はいつでも更新して確認でき、投票データは30日間保存されます。"));
- sh.appendChild(vEl("div","vt-url",url));const msg=vEl("p","vt-ok","");sh.appendChild(msg);
- sh.appendChild(vBtn("リンクをコピー","vt-btn",async()=>{try{await navigator.clipboard.writeText(url);msg.textContent="コピーしました"}catch(e){msg.textContent="コピーできない場合は、上のURLを長押ししてコピーしてください。"}}));
- if(navigator.share)sh.appendChild(vBtn("LINEなどで送る","vt-btn vt-sub",()=>{navigator.share({title:"おでかけナビ｜家族で決める",text:"今度のおでかけ先を投票してね！",url}).catch(()=>{})}));
- sh.appendChild(vBtn("投票結果を見る","vt-btn vt-sub",()=>voteShowBoard(id)))
-}
+function vShowShare(id){const sh=vSheet();const url=vShare(id);sh.appendChild(vEl("h3","vt-h","✅ 投票リンクができました"));sh.appendChild(vEl("p","vt-msg","家族に送ってください。投票は先着3人まで（あなたを含む）、7日間有効です。名前の入力やログインは不要です。"));
+const box=vEl("div","vt-url",url);sh.appendChild(box);
+const msg=vEl("p","vt-ok","");
+sh.appendChild(vBtn("リンクをコピー","vt-btn",async()=>{try{await navigator.clipboard.writeText(url);msg.textContent="コピーしました"}catch(e){msg.textContent="長押ししてコピーしてください"}}));
+if(navigator.share)sh.appendChild(vBtn("LINEなどで送る","vt-btn",()=>{navigator.share({title:"おでかけナビ",text:"今度のおでかけ、どこがいい？投票してね",url}).catch(()=>{})}));
+sh.appendChild(msg);sh.appendChild(vBtn("結果を見る","vt-btn vt-sub",()=>voteShowBoard(id)))}
 
-async function voteShowBoard(id){
- const sh=vSheet();sh.appendChild(vEl("p","vt-msg","投票を読み込み中…"));
- try{
-  const d=await vApi("/get?id="+encodeURIComponent(id));
-  const done=(vLs(VK_DONE,[])||[]).includes(id);
-  if(d.decided!==null&&d.decided!==undefined)vRenderResult(id,d);
-  else if(done)vRenderResult(id,d,true);
-  else vRenderVote(id,d);
- }catch(e){sh.innerHTML="";sh.appendChild(vBtn("×","vt-x",vClose));vMsg(sh,vErrorText(e))}
-}
+async function voteShowBoard(id){const sh=vSheet();sh.appendChild(vEl("p","vt-msg","読み込み中…"));let d;try{d=await vApi("/get?id="+encodeURIComponent(id))}catch(e){sh.innerHTML="";sh.appendChild(vBtn("×","vt-x",vClose));vMsg(sh,e.message==="not_found"?"この投票は期限切れ（7日）か、見つかりませんでした。":"読み込めませんでした。通信状況を確認してください。");return}
+const done=(vLs(VK_DONE,[])||[]).includes(id);if(done||d.decided!=null)vRenderResult(id,d);else vRenderVote(id,d)}
 
-function vRenderVote(id,d){
- const sh=vSheet(),opts=vOptions(d);sh.appendChild(vEl("h3","vt-h","🗳 どこに行きたい？"));
- sh.appendChild(vEl("p","vt-msg","家族が選んだ候補です。行きたい場所を1つ選んで投票してください。"));
- if(!opts.length){vMsg(sh,"投票候補がありません。");return}
- let selected=null;
- opts.forEach(o=>{const row=vEl("div","vt-card");const b=vBtn(o.name,"vt-name vt-choice",()=>{selected=o.id;sh.querySelectorAll(".vt-choice").forEach(x=>x.classList.toggle("on",x===b))});b.style.width="100%";b.style.textAlign="left";b.style.padding="8px";b.style.border="1px solid #ddd";b.style.borderRadius="9px";b.style.background="#fff";row.appendChild(b);row.appendChild(vEl("div","vt-area","現在の票："+(Number(o.votes)||0)));sh.appendChild(row)});
- const err=vEl("p","vt-err","");sh.appendChild(err);
- const go=vBtn("この候補に投票する","vt-btn",async()=>{
-  if(selected===null){err.textContent="投票したい候補を1つ選んでください。";return}
-  go.disabled=true;go.textContent="送信中…";
-  try{await vApi("/vote",{id,optionId:String(selected),deviceId:vDevice()});const dn=vLs(VK_DONE,[])||[];if(!dn.includes(id))dn.push(id);vSet(VK_DONE,dn.slice(-100));try{trackEvent("vote_cast",{})}catch(e){}voteShowBoard(id)}
-  catch(e){go.disabled=false;go.textContent="この候補に投票する";err.textContent=vErrorText(e);if(String(e.message)==="already_voted")setTimeout(()=>voteShowBoard(id),700)}
- });sh.appendChild(go);
- sh.appendChild(vBtn("🔄 現在の結果を確認","vt-btn vt-sub",()=>voteShowBoard(id)))
-}
+function vRenderVote(id,d){const sh=vSheet();sh.appendChild(vEl("h3","vt-h","🗳 どこに行きたい？"));sh.appendChild(vEl("p","vt-msg",(d.by?d.by+"さんが":"家族が")+"候補を選びました。気持ちをタップしてください。"));
+const sel=d.spots.map(()=>0);d.spots.forEach((n,i)=>{const row=vEl("div","vt-card");const sp=SPOT_BY_NAME.get(n);const t=vEl("div","vt-name",n);row.appendChild(t);if(sp&&sp.area)row.appendChild(vEl("div","vt-area",sp.area));
+const seg=vEl("div","vt-seg");[[1,"👍 行きたい"],[0,"🤔 どっちでも"],[-1,"👎 今回はパス"]].forEach(([v,l])=>{const b=vBtn(l,"vt-opt"+(v===0?" on":""),()=>{sel[i]=v;[...seg.children].forEach(x=>x.classList.remove("on"));b.classList.add("on")});seg.appendChild(b)});row.appendChild(seg);
+if(sp)row.appendChild(vBtn("詳しく見る","vt-link",()=>{vClose();openDetail(sp)}));sh.appendChild(row)});
+const nm=document.createElement("input");nm.className="vt-in";nm.placeholder="呼び名（任意）";nm.maxLength=10;nm.value=vLs(VK_NAME,"")||"";sh.appendChild(nm);const err=vEl("p","vt-err","");sh.appendChild(err);
+const go=vBtn("この内容で投票する","vt-btn",async()=>{go.disabled=true;go.textContent="送信中…";try{vSet(VK_NAME,nm.value.trim());await vApi("/vote",{id,voter:vVoter(),name:nm.value.trim(),c:sel});const dn=vLs(VK_DONE,[]);dn.push(id);vSet(VK_DONE,dn.slice(-30));try{trackEvent("vote_cast",{})}catch(e){}voteShowBoard(id)}catch(e){go.disabled=false;go.textContent="この内容で投票する";err.textContent=e.message==="full"?"この投票は3人までです。上限に達しました。":"送信できませんでした。もう一度お試しください。"}});sh.appendChild(go)}
 
-function vRenderResult(id,d,alreadyVoted){
- const sh=vSheet(),opts=vOptions(d),own=(vLs(VK_OWN,{})||{})[id],total=vVoteCount(d);
- sh.appendChild(vEl("h3","vt-h",d.decided!==null&&d.decided!==undefined?"🏁 投票結果・決定！":"📊 家族の投票結果"));
- sh.appendChild(vEl("p","vt-msg","投票数："+total+"票。更新ボタンで最新の結果を確認できます。"));
- if(d.decided!==null&&d.decided!==undefined){
-  const chosen=opts.find(o=>String(o.id)===String(d.decided));
-  const b=vEl("div","vt-decided","✅ 決定："+(chosen?chosen.name:"選択された候補"));sh.appendChild(b);
-  const sp=chosen&&SPOT_BY_NAME.get(chosen.name);if(sp)sh.appendChild(vBtn("施設の詳しい情報を見る","vt-btn",()=>{vClose();openDetail(sp)}));
- }else if(alreadyVoted){sh.appendChild(vEl("p","vt-ok","この端末からは投票済みです。結果は引き続き確認できます。"))}
- opts.forEach(o=>{
-  const count=Number(o.votes)||0,row=vEl("div","vt-card"+(d.decided!==null&&d.decided!==undefined&&String(o.id)===String(d.decided)?" top":""));
-  row.appendChild(vEl("div","vt-name",o.name));const bar=vEl("div","vt-bar");const pct=total?count/total*100:0;const seg=vEl("span","vt-b-y");seg.style.width=pct+"%";bar.appendChild(seg);row.appendChild(bar);row.appendChild(vEl("div","vt-cnt",count+"票（"+Math.round(pct)+"%）"));
-  if(own&&(d.decided===null||d.decided===undefined)){row.appendChild(vBtn("ここに決定","vt-link",async()=>{try{await vApi("/decide",{id,optionId:String(o.id),ownerToken:own});voteShowBoard(id)}catch(e){const msg=vEl("p","vt-err",vErrorText(e));row.appendChild(msg)}}))}
-  sh.appendChild(row)
- });
- const act=vEl("div","vt-actions");act.appendChild(vBtn("🔄 更新","vt-btn vt-sub",()=>voteShowBoard(id)));act.appendChild(vBtn("リンクを送る","vt-btn vt-sub",()=>vShowShare(id)));sh.appendChild(act)
-}
+function vRenderResult(id,d){const sh=vSheet();const own=(vLs(VK_OWN,{})||{})[id];sh.appendChild(vEl("h3","vt-h","📊 みんなの投票（"+d.voters+"人）"));
+if(d.decided!=null){const n=d.spots[d.decided];const b=vEl("div","vt-decided","✅ 決定：");b.appendChild(vEl("strong",null,n));sh.appendChild(b);const sp=SPOT_BY_NAME.get(n);if(sp)sh.appendChild(vBtn("詳しく見る","vt-btn",()=>{vClose();openDetail(sp)}))}
+const score=d.tally.map(t=>t.yes*2+t.maybe-t.no);const top=Math.max(...score);
+d.spots.forEach((n,i)=>{const t=d.tally[i];const row=vEl("div","vt-card"+(d.voters>0&&score[i]===top&&d.decided==null?" top":""));row.appendChild(vEl("div","vt-name",(d.voters>0&&score[i]===top&&d.decided==null?"🏆 ":"")+n));
+const bar=vEl("div","vt-bar");const tot=Math.max(1,d.voters);[["y",t.yes],["m",t.maybe],["n",t.no]].forEach(([k,v])=>{const s=vEl("span","vt-b-"+k);s.style.width=(v/tot*100)+"%";bar.appendChild(s)});row.appendChild(bar);
+row.appendChild(vEl("div","vt-cnt","👍 "+t.yes+"　🤔 "+t.maybe+"　👎 "+t.no));if(t.names.length)row.appendChild(vEl("div","vt-area","行きたい："+t.names.join("、")));
+if(own&&d.decided==null)row.appendChild(vBtn("ここに決定","vt-link",async()=>{try{await vApi("/decide",{id,token:own,idx:i});voteShowBoard(id)}catch(e){}}));sh.appendChild(row)});
+const act=vEl("div","vt-actions");act.appendChild(vBtn("🔄 更新","vt-btn vt-sub",()=>voteShowBoard(id)));act.appendChild(vBtn("リンクを送る","vt-btn vt-sub",()=>vShowShare(id)));sh.appendChild(act);
+if(typeof childrenRegistered==="function"&&!childrenRegistered()){const n=vEl("div","vt-nudge");n.appendChild(vEl("div",null,"お子さんの年齢を登録すると、年齢に合う新しい行き先をおすすめします。"));n.appendChild(vBtn("設定する","vt-link",()=>{vClose();const b=document.getElementById("kidsSuggestOpenBtn");if(b)b.click()}));sh.appendChild(n)}}
 
-function voteInit(){
- try{
-  const b=document.getElementById("voteOpenBtn");if(b)b.onclick=()=>{try{trackEvent("vote_open",{})}catch(e){}voteOpenCreate()};
-  const params=new URLSearchParams(location.search),id=params.get("vote");
-  if(id&&/^[a-f0-9]{32}$/i.test(id)){
-   params.delete("vote");const rest=params.toString();try{history.replaceState(null,"",location.pathname+(rest?"?"+rest:"")+location.hash)}catch(e){}
-   trackEventSafe("vote_url_open");voteShowBoard(id)
-  }
- }catch(e){}
-}
+function voteInit(){try{const b=document.getElementById("voteOpenBtn");if(b)b.onclick=()=>{try{trackEvent("vote_open",{})}catch(e){}voteOpenCreate()};
+const v=new URLSearchParams(location.search).get("vote");if(v&&/^[a-z2-7]{8}$/.test(v)){try{history.replaceState(null,"",location.pathname)}catch(e){}trackEventSafe("vote_url_open");voteShowBoard(v)}}catch(e){}}
 function trackEventSafe(n){try{trackEvent(n,{})}catch(e){}}
 if(document.readyState==="complete")setTimeout(voteInit,0);else window.addEventListener("load",()=>setTimeout(voteInit,0));
 
@@ -2384,7 +2333,10 @@ if(label)u+="&by="+encodeURIComponent(label);
 return u}
 function wishShareBlockHtml(count){
 if(!count)return"";
-return'<div class="wish-block"><div class="wish-title">\u{1F46B} \u30D1\u30FC\u30C8\u30CA\u30FC\u3068\u300C\u884C\u304D\u305F\u3044\u300D\u3092\u898B\u305B\u5408\u3046</div><div class="wish-desc">\u30EA\u30F3\u30AF\u3092\u9001\u308B\u3068\u3001\u76F8\u624B\u306E\u753B\u9762\u3067\u300C\u3075\u305F\u308A\u3068\u3082\u884C\u304D\u305F\u3044\u5834\u6240\u300D\u304C\u5206\u304B\u308A\u307E\u3059\uFF08\u30ED\u30B0\u30A4\u30F3\u4E0D\u8981\uFF09\u3002</div><div class="wish-row"><input type="text" class="wish-label" id="wishLabelInput" maxlength="10" placeholder="\u3042\u306A\u305F\u306E\u547C\u3073\u540D\uFF08\u4F8B\uFF1A\u30D1\u30D1\uFF09" value="'+rlEsc(wishLabelLoad())+'"><button type="button" class="wish-send" id="wishSendBtn">\u{1F517} \u30EA\u30F3\u30AF\u3092\u9001\u308B</button></div><button type="button" class="wish-img-btn" id="wishImgBtn">📸 ストーリーズ用の画像にする</button><div class="wish-img-msg" id="wishImgMsg"></div></div>'}
+return ''
++'<div class="wish-block wish-b-pair"><div class="wish-tag">\u{1F46B} \u30D1\u30FC\u30C8\u30CA\u30FC\u3068\u898B\u305B\u5408\u3046</div><div class="wish-desc">\u304A\u4E92\u3044\u306E\u2764\uFE0F\u3092\u6BD4\u3079\u3066\u3001\u300C\u3075\u305F\u308A\u3068\u3082\u884C\u304D\u305F\u3044\u5834\u6240\u300D\u3092\u898B\u3064\u3051\u308B\u3002\u76F8\u624B\u3082\u3042\u306A\u305F\u306E\u30EA\u30B9\u30C8\u3092\u898B\u3066\u3001\u81EA\u5206\u306E\u2764\uFE0F\u3068\u898B\u6BD4\u3079\u307E\u3059\uFF08\u30ED\u30B0\u30A4\u30F3\u4E0D\u8981\uFF09\u3002</div><div class="wish-row"><input type="text" class="wish-label" id="wishLabelInput" maxlength="10" placeholder="\u3042\u306A\u305F\u306E\u547C\u3073\u540D\uFF08\u4F8B\uFF1A\u30D1\u30D1\uFF09" value="'+rlEsc(wishLabelLoad())+'"><button type="button" class="wish-send" id="wishSendBtn">\u{1F517} \u898B\u305B\u5408\u3046\u30EA\u30F3\u30AF\u3092\u9001\u308B</button></div></div>'
++'<div class="wish-block wish-b-vote"><div class="wish-tag">\u{1F5F3} \u5BB6\u65CF\u3067\u6295\u7968\u3057\u3066\u6C7A\u3081\u308B</div><div class="wish-desc">\u5019\u88DC\u3092 2\u301C5\u304B\u6240\u306B\u7D5E\u3063\u3066\u3001\u{1F44D}\u{1F914}\u{1F44E}\u3067\u6295\u7968\u3002\u300C\u7D50\u5C40\u3069\u3053\u306B\u884C\u304F\uFF1F\u300D\u30921\u304B\u6240\u306B\u6C7A\u3081\u305F\u3044\u3068\u304D\u7528\uFF08\u5148\u7740\u0033\u4EBA\u30FB7\u65E5\u9593\uFF09\u3002</div><button type="button" class="wish-vote-btn" id="wishVoteBtn">\u{1F5F3} \u6295\u7968\u30EA\u30F3\u30AF\u3092\u4F5C\u308B</button></div>'
++'<div class="wish-block wish-b-sns"><div class="wish-tag">\u{1F4F8} SNS\u306B\u6295\u7A3F\u3059\u308B</div><div class="wish-desc">\u884C\u304D\u305F\u3044\u30EA\u30B9\u30C8\u3092\u753B\u50CF\u306B\u3057\u307E\u3059\uFF08\u30B9\u30C8\u30FC\u30EA\u30FC\u30BA\u7528\uFF09\u3002\u76F8\u624B\u3068\u306E\u6BD4\u8F03\u3084\u6295\u7968\u306F\u3067\u304D\u307E\u305B\u3093\u3002</div><button type="button" class="wish-img-btn" id="wishImgBtn">\u{1F4F8} \u6295\u7A3F\u7528\u306E\u753B\u50CF\u3092\u4F5C\u308B</button><div class="wish-img-msg" id="wishImgMsg"></div></div>'}
 function wishParse(params){
 var raw=params.get("wish")||"";
 var names=raw.split("|").map(function(s){return s.trim()}).filter(Boolean).slice(0,40);
@@ -2478,6 +2430,7 @@ var k=t.closest("[data-rl-open-kids]");
 if(k){ev.preventDefault();window.__rlReturnSpot=window.__rlLastSpot||null;var ko=document.getElementById("kidsOverlay");if(ko)document.body.appendChild(ko);kidsUI={view:"list",editingChildId:null,draft:null,quizStep:1,quizDraft:null};renderKidsSheet();openSheet("kidsOverlay");return}
 if(t.closest("#wishSendBtn")){var inp=document.getElementById("wishLabelInput");wishShareOut(inp?inp.value.trim():"");return}
 if(t.closest("#wishReplyBtn")){wishShareOut(wishLabelLoad());return}
+if(t.closest("#wishVoteBtn")){closeSheetById("favOverlay");try{trackEvent("vote_open",{from:"wish"})}catch(e){}if(typeof voteOpenCreate==="function")voteOpenCreate();return}
 if(t.closest("#planIcsBtn")){planExportIcs();return}
 var wo=t.closest("[data-wish-open]");
 if(wo){var sp=SPOT_BY_NAME.get(wo.getAttribute("data-wish-open"));if(sp)openDetail(sp);return}
@@ -3483,14 +3436,5 @@ scan(document);
 window.__smartWrap={breaks:breaks,smart:smart};
 })();
 </script>
-
-<style id="family-vote-v2-style">
-.vt-choice{display:block;font-family:inherit;font-size:14px;font-weight:800;color:var(--ink,#2B2620);cursor:pointer}
-.vt-choice.on{background:#EAF4F8!important;border:2px solid var(--sun,#3E8FB0)!important;color:var(--sun,#3E8FB0)}
-.vt-card.top .vt-name{color:var(--sun,#3E8FB0)}
-.vt-actions{align-items:stretch}
-.vt-actions .vt-btn{flex:1;min-width:0}
-@media(min-width:600px){.vt-ov{align-items:center;padding:20px}.vt-sheet{border-radius:18px;max-height:86vh}}
-</style>
 </body>
 </html>
