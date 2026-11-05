@@ -54,12 +54,12 @@ else for (const e of fs.readdirSync(SITE, { withFileTypes: true })) {
       if (e.name === 'area' && !c.isDirectory()) { errors.push(`site/area/ にはフォルダだけを置いてください: ${c.name}`); continue; }
       put(path.join(abs, c.name), c.name);
     }
-  } else if (e.isDirectory() && (e.name === 'event' || e.name === 'season')) {
+  } else if (e.isDirectory() && (e.name === 'event' || e.name === 'season' || e.name === 'age')) {
     put(abs, e.name);
   } else if (e.isDirectory() && e.name === 'img') {
     // site/img/spots/ は旧い画像置き場。ここでは公開せず、下の「施設画像の確認」で必要な分だけ補う
   } else {
-    errors.push(`site/${e.name} の置き場所が決まっていません（area / feature / event / season / root-files のどれかに入れてください）`);
+    errors.push(`site/${e.name} の置き場所が決まっていません（area / feature / event / season / age / root-files のどれかに入れてください）`);
   }
 }
 
