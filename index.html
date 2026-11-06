@@ -9,7 +9,7 @@
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://aml.valuecommerce.com https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com;
   style-src 'self' 'unsafe-inline' https://www.gstatic.com https://translate.googleapis.com https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com https://www.gstatic.com;
-  connect-src 'self' https://odekake-vote.odekakenavi2026.workers.dev https://odekake-push.odekakenavi2026.workers.dev https://script.google.com https://script.googleusercontent.com https://weather-proxy.odekakenavi2026.workers.dev https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://aml.valuecommerce.com https://ck.jp.ap.valuecommerce.com https://translate.googleapis.com https://translate-pa.googleapis.com;
+  connect-src 'self' https://odekake-vote2.odekakenavi2026.workers.dev https://odekake-push.odekakenavi2026.workers.dev https://script.google.com https://script.googleusercontent.com https://weather-proxy.odekakenavi2026.workers.dev https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://aml.valuecommerce.com https://ck.jp.ap.valuecommerce.com https://translate.googleapis.com https://translate-pa.googleapis.com;
   img-src 'self' data: https://lh3.googleusercontent.com https://drive.google.com https://*.cdninstagram.com https://*.fbcdn.net https://cyberjapandata.gsi.go.jp https://www.gstatic.com https://fonts.gstatic.com https://translate.google.com https://translate.googleapis.com https://www.google.com;
   frame-src https://translate.google.com;
   object-src 'none';
@@ -1250,7 +1250,7 @@ const out=[],gc={};for(const it of scored){if(out.length>=6)break;const g=derive
 const label=years.length===1?years[0]+"歳のお子さん":"うちの子";
 const chips=document.createElement("div");chips.className="recent-chips";out.forEach(sp=>{const c=document.createElement("div");c.className="recent-chip";c.textContent=sp.name;c.onclick=()=>{try{trackEvent("kids_home_click",{facility_name:sp.name})}catch(e){}openDetail(sp)};chips.appendChild(c)});el.appendChild(chips);el.style.display="block"}catch(e){try{const el=document.getElementById("kidsHomeWrap");if(el)el.style.display="none"}catch(e2){}}}
 /* ---- 家族で決める（投票）：Workers API 経由。URLは ?vote=ID ---- */
-const VOTE_API="https://odekake-vote.odekakenavi2026.workers.dev";
+const VOTE_API="https://odekake-vote2.odekakenavi2026.workers.dev";
 const VK_VOTER="odekakeVoterV1",VK_OWN="odekakeVoteOwnV1",VK_DONE="odekakeVoteDoneV1",VK_NAME="odekakeVoteNameV1",VK_MINE="odekakeVoteMineV1";
 function vLs(k,d){try{const v=JSON.parse(localStorage.getItem(k)||"null");return v==null?d:v}catch(e){return d}}
 function vSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
