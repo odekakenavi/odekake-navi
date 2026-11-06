@@ -1270,6 +1270,7 @@ function vClose(){const ov=document.getElementById("voteOverlay");if(ov)ov.style
 function vMsg(sh,text){sh.appendChild(vEl("p","vt-msg",text));sh.appendChild(vBtn("閉じる","vt-btn vt-sub",vClose))}
 
 function voteOpenCreate(pre){const sh=vSheet();sh.appendChild(vEl("h3","vt-h","🗳 家族で行き先を決める"));
+if(typeof pre==="string"&&SPOT_BY_NAME.get(pre)){const nb=vEl("div","vt-nudge");nb.appendChild(vEl("div",null,"共有した「"+pre+"」を、行きたいにも入れておけます。"));nb.appendChild(vFavBtn(pre));sh.appendChild(nb)}
 let favs=[...state.favorites].filter(n=>SPOT_BY_NAME.get(n));if(typeof pre==="string"&&SPOT_BY_NAME.get(pre))favs=[pre].concat(favs.filter(n=>n!==pre));
 const mine=vMineActive();
 if(favs.length<2){sh.appendChild(vEl("p","vt-msg","「❤️ 行きたい」に2か所以上入れると、家族に投票してもらえます。"));}
