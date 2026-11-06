@@ -73237,5 +73237,120 @@
       "checkedAt": "2026年11月1日",
       "sourceUrl": "https://www.saitama-icearena.com/"
     }
+  },
+  {
+    "region": "静岡",
+    "name": "長伏公園",
+    "slug": "shizuoka/mishima/nagabushi-park",
+    "area": "三島市長伏",
+    "address": "静岡県三島市長伏274-3",
+    "lat": 35.083437,
+    "lng": 138.910813,
+    "genre": "公園",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認（駐車場は無料）",
+    "parking": "yes",
+    "access": "要確認（駐車場420台・無料）",
+    "baby": "要確認",
+    "officialUrl": null,
+    "verifiedAt": "2026年11月7日",
+    "desc": "2026年4月25日にリニューアルオープンした三島市の公園。閉園した長伏プールの跡地に大型複合遊具の広場ができた。中心の「絵本のまちの湧くわくタワー」は高さ約10mから滑り降りる全長約40mのロングローラースライダー。20mのターザンロープや、虹をモチーフにした幼児向け遊具広場「とびだす絵本広場」もあり、年齢に合わせて遊べる。",
+    "tip": "幼児向けの「とびだす絵本広場」と大きい子向けのローラースライダー・ターザンロープで遊び分けられる。駐車場は420台（無料）。利用ルールや設備の詳細は、三島市みどりと水のまちづくり課（TEL 055-983-2643）などで事前に確認を。",
+    "familyPrice": {
+      "yen": null,
+      "yenMax": null,
+      "optionalYen": null,
+      "type": "official",
+      "approx": false,
+      "assumption": "大人2・小学生2・幼児1の5人",
+      "note": "料金の目安は出せません。公式サイトが不明のため、現地や電話でご確認ください",
+      "confirmVia": "onsite"
+    },
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 135
+    },
+    "food": {
+      "lunch": "要確認（園内・周辺の飲食は未確認）",
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "要確認（園内・周辺の飲食は未確認）"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月7日"
+    }
+  },
+  {
+    "region": "静岡",
+    "name": "鮎壺公園",
+    "slug": "shizuoka/nagaizumi/ayutsubo-park",
+    "area": "駿東郡長泉町下土狩",
+    "address": "静岡県駿東郡長泉町下土狩1069-1",
+    "lat": 35.130563,
+    "lng": 138.893188,
+    "genre": "公園",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認（駐車場は無料）",
+    "parking": "yes",
+    "access": "要確認（駐車場約40台・無料、開放時間9:00〜18:00）",
+    "baby": "要確認",
+    "businessHoursNote": "休憩施設「鮎壺テラス」は9:00〜17:30（12/29〜1/3休館）",
+    "officialUrl": null,
+    "verifiedAt": "2026年11月7日",
+    "desc": "2025年3月にリニューアルした長泉町の多目的公園。大型複合遊具のある「こども広場」、広い芝生広場、水遊び場、砂場があり、休憩施設「鮎壺テラス」では本を自由に読める。隣接する名勝「鮎壺の滝」や、世界かんがい施設遺産の「本宿用水」も近くで見られる。",
+    "tip": "遊んだあとは鮎壺テラスで読書の時間を。隣の鮎壺の滝までは散歩がてら。水遊び場の利用期間や開放時間は、長泉町工事管理課（TEL 055-989-5518）などで事前に確認を。",
+    "familyPrice": {
+      "yen": null,
+      "yenMax": null,
+      "optionalYen": null,
+      "type": "official",
+      "approx": false,
+      "assumption": "大人2・小学生2・幼児1の5人",
+      "note": "料金の目安は出せません。公式サイトが不明のため、現地や電話でご確認ください",
+      "confirmVia": "onsite"
+    },
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 135
+    },
+    "food": {
+      "lunch": "要確認（園内・周辺の飲食は未確認）",
+      "bento": "ask",
+      "bentoNote": "お弁当の持ち込みルールは確認できませんでした。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "要確認（園内・周辺の飲食は未確認）"
+        }
+      ],
+      "source": "text",
+      "checkedAt": "2026年11月7日"
+    }
   }
 ]
