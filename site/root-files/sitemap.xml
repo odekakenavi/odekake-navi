@@ -5096,6 +5096,16 @@
 <priority>0.7</priority>
 </url>
 <url>
+<loc>https://odekakenavi.github.io/odekake-navi/shizuoka/mishima/nagabushi-park/</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://odekakenavi.github.io/odekake-navi/shizuoka/nagaizumi/ayutsubo-park/</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
 <loc>https://odekakenavi.github.io/odekake-navi/tokyo/setagaya/%E7%BE%BD%E6%A0%B9%E6%9C%A8%E3%83%97%E3%83%AC%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF/</loc>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
