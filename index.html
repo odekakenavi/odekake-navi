@@ -218,11 +218,10 @@
 
 .kf-toilet-note{font-size:11px;color:var(--ink);background:#EAF3E0;border-radius:8px;padding:6px 10px;margin-top:8px;line-height:1.6}
 .kf-lb-long{white-space:nowrap;font-size:clamp(6.5px,2.05vw,8.5px);letter-spacing:-.02em}
-.kf-fdbtn{font:inherit;cursor:pointer;border:0;background:#E4E2DE;-webkit-appearance:none;appearance:none;width:100%;box-sizing:border-box}
-.kf-fdbtn .kf-ic{filter:grayscale(1);opacity:.5}
-.kf-fdbtn .kf-lb{color:#7d786f;font-weight:600}
-.kf-fdbtn .kf-st{color:#7d786f;font-weight:600;text-decoration:underline;text-underline-offset:2px}
-.kf-fdbtn.open{background:#D6D3CD}
+.kf-fdbtn{font:inherit;cursor:pointer;border:0;-webkit-appearance:none;appearance:none;width:100%;box-sizing:border-box}
+.kf-fdbtn.kf-unknown{border:1px dashed var(--line)}
+.kf-fdbtn .kf-st{text-decoration:underline;text-underline-offset:2px}
+.kf-fdbtn.open{filter:brightness(.95)}
 .kf-fdbtn:active{transform:scale(.97)}
 .kf-fdbtn:focus-visible{outline:2px solid #8f8a82;outline-offset:2px}
 .fd-panel{margin-top:8px}
@@ -2317,7 +2316,10 @@ return'<div class="detail-section fd-block">'+head.replace('</h3>',' '+srcBadge+
 function foodTileHtml(spot){
 var panel="";try{panel=foodInfoHtml(spot)}catch(e){}
 if(!panel)return'<div class="kf-item kf-unknown"><span class="kf-ic">\u{1F359}</span><span class="kf-lb">ごはん事情</span><span class="kf-st">情報なし</span></div>';
-return'<button type="button" class="kf-item kf-fdbtn" data-fd-toggle="1" aria-expanded="false"><span class="kf-ic">\u{1F359}</span><span class="kf-lb">ごはん事情</span><span class="kf-st" data-fd-st="1">詳細を見る \u203A</span></button>'}
+var bn=spot&&spot.food&&typeof spot.food==="object"?spot.food.bento:"";
+var stc=bn==="ok"?"yes":bn==="ng"?"no":(bn==="ask"||bn==="partial")?"check":"unknown";
+var lab=bn==="ok"?"お弁当OK":bn==="ng"?"お弁当不可":bn==="partial"?"お弁当 一部のみ":bn==="ask"?"お弁当 要確認":"詳細を見る";
+return'<button type="button" class="kf-item kf-'+stc+' kf-fdbtn" data-fd-toggle="1" aria-expanded="false"><span class="kf-ic">\u{1F359}</span><span class="kf-lb">ごはん事情</span><span class="kf-st" data-fd-st="1" data-fd-label="'+lab+'">'+lab+' \u203A</span></button>'}
 function foodPanelHtml(spot){
 var panel="";try{panel=foodInfoHtml(spot)}catch(e){}
 return panel?'<div class="fd-panel" hidden>'+panel+'</div>':""}
@@ -2331,7 +2333,7 @@ var blk=b.closest(".kf-block");var p=blk&&blk.querySelector(".fd-panel");if(!p)r
 var open=p.hasAttribute("hidden");
 if(open){p.removeAttribute("hidden")}else{p.setAttribute("hidden","")}
 b.setAttribute("aria-expanded",open?"true":"false");b.classList.toggle("open",open);
-var st=b.querySelector("[data-fd-st]");if(st)st.textContent=open?"閉じる \u2303":"詳細を見る \u203A";
+var st=b.querySelector("[data-fd-st]");if(st)st.textContent=open?"閉じる \u2303":(st.getAttribute("data-fd-label")||"詳細を見る")+" \u203A";
 if(open&&p.scrollIntoView)p.scrollIntoView({block:"nearest",behavior:"smooth"})
 }catch(e){}});
 
