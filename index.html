@@ -218,6 +218,14 @@
 
 .kf-toilet-note{font-size:11px;color:var(--ink);background:#EAF3E0;border-radius:8px;padding:6px 10px;margin-top:8px;line-height:1.6}
 .kf-lb-long{white-space:nowrap;font-size:clamp(6.5px,2.05vw,8.5px);letter-spacing:-.02em}
+.kf-fdbtn{font:inherit;cursor:pointer;border:1px solid #E8B45A;background:#FFF1D6;-webkit-appearance:none;appearance:none;width:100%;box-sizing:border-box}
+.kf-fdbtn .kf-st{color:#8a5a12}
+.kf-fdbtn.open{background:#FBE3B3;border-color:#D79A2E}
+.kf-fdbtn:active{transform:scale(.97)}
+.kf-fdbtn:focus-visible{outline:2px solid #D79A2E;outline-offset:2px}
+.fd-panel{margin-top:8px}
+.fd-panel[hidden]{display:none}
+.fd-panel .fd-block{margin:0}
 .fd-block{background:#FFFBF2;border:1px solid var(--line);border-radius:12px;padding:12px}
 .fd-lunch{font-size:12px;color:var(--ink);line-height:1.6;margin-top:8px}
 .fd-note{font-size:11px;color:var(--ink);background:#FBF0DC;border-radius:8px;padding:6px 10px;margin-top:6px;line-height:1.6}
@@ -1675,7 +1683,7 @@ function kidsFacilityList(spot){const baby=spot.baby==null?"":String(spot.baby);
 function kfOffLink(spot){var u=typeof parkingSafeHttpUrl==="function"?parkingSafeHttpUrl(spot&&spot.officialUrl):"";return u?'<a href="'+u.replace(/"/g,"&quot;")+'" target="_blank" rel="noopener">公式サイト</a>':"公式サイト"}
 function kfSrcHtml(spot){var b=String(spot&&spot.baby||"");if(/口コミ|公式未確認|公式情報なし|未確認/.test(b))return"";var u=typeof parkingSafeHttpUrl==="function"?parkingSafeHttpUrl(spot&&spot.officialUrl):"";if(!u)return"";return'<div class="kf-src">出典：<a href="'+u.replace(/"/g,"&quot;")+'" target="_blank" rel="noopener">公式サイト</a></div>'}
 var KF_REF_LABELS=["駐車場","ベビーカー","授乳室","おむつ替え"],KF_REF_MIN=10,KF_REF_MIN_NO=2;function kfRefStats(){if(window.__kfRef)return window.__kfRef;var m={};try{SPOTS.forEach(function(sp){var g=deriveCategory(sp);kidsFacilityList(sp).forEach(function(f){if(KF_REF_LABELS.indexOf(f.lb)<0)return;var k=g+"|"+f.lb;var o=m[k]||(m[k]={y:0,t:0,n:0});if(f.state==="yes"){o.y++;o.t++}else if(f.state==="no"){o.t++;o.n++}})})}catch(e){}window.__kfRef=m;return m}
-function facilityIconsHtml(spot){const list=kidsFacilityList(spot);let refShown=false,refGenre="";try{const rs=kfRefStats(),g=deriveCategory(spot);refGenre=g;list.forEach(function(f){f.ref="";if(KF_REF_LABELS.indexOf(f.lb)<0)return;const un=f.state==="unknown"||(f.state==="check"&&(f.text==="要確認"||f.text==="要問合せ"));if(!un)return;const o=rs[g+"|"+f.lb];if(o&&o.t>=KF_REF_MIN&&o.n>=KF_REF_MIN_NO){f.ref="他は"+o.y+"/"+o.t+"件あり";f.refFs=(19/(5+.55*(String(o.y).length+String(o.t).length+1))).toFixed(2);refShown=true}})}catch(e){}return `<div class="detail-section kf-block"><h3>\u{1F17F}\uFE0F \u99D0\u8ECA\u5834\u30FB\u5B50\u9023\u308C\u8A2D\u5099</h3><div class="kf-grid">${list.map(f=>`<div class="kf-item kf-${f.state}">${f.bd?`<span class="kf-bd" title="ベビーカーの貸出あり" aria-label="ベビーカーの貸出あり">${expEsc(f.bd)}</span>`:""}<span class="kf-ic">${f.ic}</span><span class="kf-lb${f.lb.length>8?" kf-lb-long":""}">${f.lb}</span><span class="kf-st">${expEsc(f.text)}</span>${f.ref?`<span class="kf-ref" style="font-size:clamp(6.5px,${f.refFs||2.4}vw,9px)">${f.ref}</span>`:""}</div>`).join("")}</div>${spot.kidsToiletNote?`<div class="kf-toilet-note">\u{1F6BB} ${expEsc(spot.kidsToiletNote)}</div>`:""}<div class="kf-note">\u203B\u300C\u60C5\u5831\u306A\u3057\u300D\u306F\u300C\u306A\u3044\u300D\u3068\u3044\u3046\u610F\u5473\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u304A\u51FA\u304B\u3051\u524D\u306B${kfOffLink(spot)}\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div>${refShown?`<div class="kf-note">※「○件中○件あり」は、同じジャンル（${expEsc(refGenre)}）で有無を確認できた施設のうち、設備があった施設の数です（この施設の情報ではありません）。</div>`:""}${kfSrcHtml(spot)}</div>`}
+function facilityIconsHtml(spot){const list=kidsFacilityList(spot);let refShown=false,refGenre="";try{const rs=kfRefStats(),g=deriveCategory(spot);refGenre=g;list.forEach(function(f){f.ref="";if(KF_REF_LABELS.indexOf(f.lb)<0)return;const un=f.state==="unknown"||(f.state==="check"&&(f.text==="要確認"||f.text==="要問合せ"));if(!un)return;const o=rs[g+"|"+f.lb];if(o&&o.t>=KF_REF_MIN&&o.n>=KF_REF_MIN_NO){f.ref="他は"+o.y+"/"+o.t+"件あり";f.refFs=(19/(5+.55*(String(o.y).length+String(o.t).length+1))).toFixed(2);refShown=true}})}catch(e){}return `<div class="detail-section kf-block"><h3>\u{1F17F}\uFE0F \u99D0\u8ECA\u5834\u30FB\u5B50\u9023\u308C\u8A2D\u5099</h3><div class="kf-grid">${list.map(f=>f.lb==="キッズスペース"?foodTileHtml(spot):`<div class="kf-item kf-${f.state}">${f.bd?`<span class="kf-bd" title="ベビーカーの貸出あり" aria-label="ベビーカーの貸出あり">${expEsc(f.bd)}</span>`:""}<span class="kf-ic">${f.ic}</span><span class="kf-lb${f.lb.length>8?" kf-lb-long":""}">${f.lb}</span><span class="kf-st">${expEsc(f.text)}</span>${f.ref?`<span class="kf-ref" style="font-size:clamp(6.5px,${f.refFs||2.4}vw,9px)">${f.ref}</span>`:""}</div>`).join("")}</div>${foodPanelHtml(spot)}${kidsSpaceLineHtml(list)}${spot.kidsToiletNote?`<div class="kf-toilet-note">\u{1F6BB} ${expEsc(spot.kidsToiletNote)}</div>`:""}<div class="kf-note">\u203B\u300C\u60C5\u5831\u306A\u3057\u300D\u306F\u300C\u306A\u3044\u300D\u3068\u3044\u3046\u610F\u5473\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u304A\u51FA\u304B\u3051\u524D\u306B${kfOffLink(spot)}\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002</div>${refShown?`<div class="kf-note">※「○件中○件あり」は、同じジャンル（${expEsc(refGenre)}）で有無を確認できた施設のうち、設備があった施設の数です（この施設の情報ではありません）。</div>`:""}${kfSrcHtml(spot)}</div>`}
 function detailDrivingUrl(spot){const destination=typeof spot.lat==="number"&&typeof spot.lng==="number"?`${spot.lat},${spot.lng}`:spot.name+" "+(spot.area||"");let url="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(destination)+"&travelmode=driving";if(state.homeLoc&&typeof state.homeLoc.lat==="number"&&typeof state.homeLoc.lng==="number"){url+="&origin="+encodeURIComponent(`${state.homeLoc.lat},${state.homeLoc.lng}`)}return url}
 function parkingSafeHttpUrl(u){return typeof u==="string"&&/^https?:\/\//i.test(u.trim())?u.trim():""}
 function parkingSpotInfo(spot){if(!spot||typeof spot!=="object")return null;const name=typeof spot.name==="string"?spot.name.trim():"";const address=typeof spot.address==="string"?spot.address.trim():"";const lat=typeof spot.lat==="number"&&isFinite(spot.lat)?spot.lat:null;const lng=typeof spot.lng==="number"&&isFinite(spot.lng)?spot.lng:null;if(!name&&!address&&(lat===null||lng===null))return null;return{name:name,address:address,lat:lat,lng:lng}}
@@ -1709,7 +1717,7 @@ function openDetail(spot,silent,backTarget){if(!silent){__detailFoldState={}}if(
       <button type="button" class="sheet-close" id="detailCloseBtn">\xD7</button>
     </div>
     <div class="detail-area">${fullAreaLabel(spot)}\u3000${category}\u3000${activityLabel}</div>\n    ${spotDetailPhotoHTML(spot)}\n    ${visitedBadgeHtml(spot)}\n    ${detailTopActionsHtml(spot,isFav)}\n    <div class="detail-desc">${spot.desc}</div>
-    ${eventDetailHtml(spot)}\n    ${kidsPointHtml(spot)}\n    ${todayGoHtml(spot)}\n    ${familyCostHtml(spot)}\n    ${facilityIconsHtml(spot)}${foodInfoHtml(spot)}${rideLimitsHtml(spot)}\n    ${detailActionGridHtml(spot,bookingInfo)}\n    <div class="action-row detail-actions-row" style="margin-top:10px;">
+    ${eventDetailHtml(spot)}\n    ${kidsPointHtml(spot)}\n    ${todayGoHtml(spot)}\n    ${familyCostHtml(spot)}\n    ${facilityIconsHtml(spot)}${rideLimitsHtml(spot)}\n    ${detailActionGridHtml(spot,bookingInfo)}\n    <div class="action-row detail-actions-row" style="margin-top:10px;">
       
       <button type="button" class="abtn ${isPlanned?"on":""}" data-act="plan">\u{1F5D3} ${isPlanned?"\u30D7\u30E9\u30F3\u8FFD\u52A0\u6E08\u307F":"\u30D7\u30E9\u30F3\u306B\u8FFD\u52A0"}</button>
       <button type="button" class="abtn" data-act="copylink">\u{1F517} \u30EA\u30F3\u30AF\u3092\u30B3\u30D4\u30FC</button>
@@ -2302,6 +2310,28 @@ var nearHtml=near.length?'<div class="fd-near"><div class="fd-near-t">\u{1F4CD} 
 var link=f.sourceUrl&&/^https:\/\//.test(f.sourceUrl)?' <a href="'+E(f.sourceUrl)+'" target="_blank" rel="noopener">\u516C\u5F0F\u306E\u6848\u5185\u30DA\u30FC\u30B8</a>':"";var foot=f.checkedAt?"\u78BA\u8A8D\u65E5: "+E(f.checkedAt)+"\u3002\u6700\u65B0\u60C5\u5831\u306F\u516C\u5F0F\u30B5\u30A4\u30C8\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002":"\u63B2\u8F09\u60C5\u5831\u304B\u3089\u6574\u7406\u3057\u305F\u76EE\u5B89\u3067\u3059\u3002\u30EB\u30FC\u30EB\u306F\u5909\u308F\u308B\u3053\u3068\u304C\u3042\u308B\u305F\u3081\u3001\u516C\u5F0F\u30B5\u30A4\u30C8\u3067\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044\u3002";
 return'<div class="detail-section fd-block">'+head.replace('</h3>',' '+srcBadge+'</h3>')+(chips?'<div class="kf-grid">'+chips+"</div>":"")+fdUnkHtml+notes+lunchHtml+nearHtml+'<div class="kf-note">\u203B\u300C\u60C5\u5831\u306A\u3057\u300D\u306F\u300C\u4E0D\u53EF\u300D\u3068\u3044\u3046\u610F\u5473\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002'+foot+link+"</div></div>"
 }catch(e){return""}}
+
+/* ---- ごはん事情ボタン（施設設備グリッド内のタイル → タップで詳細を開閉） ---- */
+function foodTileHtml(spot){
+var panel="";try{panel=foodInfoHtml(spot)}catch(e){}
+if(!panel)return'<div class="kf-item kf-unknown"><span class="kf-ic">\u{1F359}</span><span class="kf-lb">ごはん事情</span><span class="kf-st">情報なし</span></div>';
+return'<button type="button" class="kf-item kf-fdbtn" data-fd-toggle="1" aria-expanded="false"><span class="kf-ic">\u{1F359}</span><span class="kf-lb">ごはん事情</span><span class="kf-st" data-fd-st="1">詳細を見る \u203A</span></button>'}
+function foodPanelHtml(spot){
+var panel="";try{panel=foodInfoHtml(spot)}catch(e){}
+return panel?'<div class="fd-panel" hidden>'+panel+'</div>':""}
+function kidsSpaceLineHtml(list){
+var k=(list||[]).filter(function(f){return f.lb==="キッズスペース"})[0];
+if(!k||k.state==="unknown")return"";
+return'<div class="kf-toilet-note">\u{1F9F8} キッズスペース：'+expEsc(k.text)+'</div>'}
+document.addEventListener("click",function(ev){try{
+var b=ev.target&&ev.target.closest?ev.target.closest("[data-fd-toggle]"):null;if(!b)return;
+var blk=b.closest(".kf-block");var p=blk&&blk.querySelector(".fd-panel");if(!p)return;
+var open=p.hasAttribute("hidden");
+if(open){p.removeAttribute("hidden")}else{p.setAttribute("hidden","")}
+b.setAttribute("aria-expanded",open?"true":"false");b.classList.toggle("open",open);
+var st=b.querySelector("[data-fd-st]");if(st)st.textContent=open?"閉じる \u2303":"詳細を見る \u203A";
+if(open&&p.scrollIntoView)p.scrollIntoView({block:"nearest",behavior:"smooth"})
+}catch(e){}});
 
 /* ---- 暑さ・日よけ（spots.json の任意項目 heat があれば優先表示。無い施設はジャンル・雨天対応からの目安のみ） ---- */
 var HEAT_INDOOR_GENRES=["室内遊び場","博物館・科学館","博物館","美術館","アミューズメント施設","スケート・ボウリング","クレーンゲーム専門店","回転寿司・レストラン","食品工場見学・体験","カフェ・工房見学","水族館"];
