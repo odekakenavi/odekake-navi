@@ -912,7 +912,12 @@
     "businessHoursSourceUrl": "https://www.puroland.jp/schedule/",
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "www.puroland.jp",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "ディスカバリープラザのトイレにキッズ用トイレがあります（2018年リニューアル時の公式発表）。口コミにも「トイレによっては子ども用トイレ・便座あり」の記載。全トイレにはないため要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://resemom.jp/release/prtimes/20180301/40656.html"
   },
   {
     "region": "東京",
@@ -1200,7 +1205,11 @@
     "businessHoursSourceUrl": "https://www.yomiuriland.com/information/",
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "www.yomiuriland.com",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "園内のトイレに子ども用の補助便座・子ども用トイレがあるという記載が、複数の記事にあります（2018〜2019年頃の情報で古いため、最新の状況と場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "東京",
@@ -2463,7 +2472,12 @@
     "strollerNote": "3Fミュージアム内は利用不可。2Fにベビーカー置場あり。1Fショップ・レストランでは利用可。",
     "strollerSourceUrl": "https://www.yokohama-anpanman.jp/qa/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "子ども用トイレは1階のファミリーステーションと3階にあります（公式Q&Aより）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.yokohama-anpanman.jp/qa/"
   },
   {
     "region": "神奈川",
@@ -3927,7 +3941,12 @@
     "businessHoursSourceUrl": "https://www.aquaworld-oarai.com/guide/",
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "www.aquaworld-oarai.com",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "3階のシャークダディズルーム前トイレ隣にある授乳室内に、お子さま用トイレがあります（公式キッズサービスより。2026年9月の確認記事でも同じ記載）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.aquaworld-oarai.com/floor/kids/"
   },
   {
     "region": "栃木",
@@ -4090,7 +4109,12 @@
     "strollerSource": "official",
     "businessHoursNote": "営業時間：季節・日付により異なる（例：11月は9:00〜16:00または17:00）。入園は閉園1時間前まで。冬季などに休園日設定あり",
     "businessHoursSourceUrl": "https://www.tobuws.co.jp/information/",
-    "businessHoursCheckedAt": "2026年11月9日"
+    "businessHoursCheckedAt": "2026年11月9日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "園内の「キッズハウス」（アジアゾーン）にお子様トイレがあります（公式サイトより）。他のトイレは未確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.tobuws.co.jp/park-guide/service/"
   },
   {
     "region": "群馬",
@@ -4829,7 +4853,12 @@
     "strollerNote": "台数限定。館内のベビーカー利用についてはバリアフリー対応。",
     "strollerSourceUrl": "https://www.miraikan.jst.go.jp/visit/accessibility/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "3階にロケットと宇宙飛行士のイラストが描かれた子ども用トイレがあります（2024〜2026年の口コミ複数に同じ記載）。公式サイトには記載なし・要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://mako-odekakebiyori.hatenablog.jp/entry/2025/09/09/162440"
   },
   {
     "region": "東京",
@@ -5352,7 +5381,12 @@
     "strollerNote": "対象は生後1か月以上4歳まで・体重18kgまで。東京ドーム内への持込不可。アトラクション利用時は制限あり。",
     "strollerSourceUrl": "https://www.tokyo-dome.co.jp/en/guide/child.html",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "アトラクションズ内のバイキングゾーン1Fのトイレに子ども用トイレ（女性用に子ども用小便器あり）。隣接するラクーア1F・2Fには補助便座やお子様トイレがあります（ラクーア1Fは公式案内にも記載）。全トイレにはないため、場所は口コミ・トイレ情報サイトの記載で要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://www.motenashi-toilet.com/toilet-detail/tokyo-dome_viking-zone/"
   },
   {
     "region": "東京",
@@ -5491,7 +5525,11 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "priceSource": "www.summerland.co.jp",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "トイレに男児用の便器があり、キッズトイレもあるという口コミがあります（2024年・2026年の口コミ2件に基づく情報。場所は要確認）。公式サイトには記載なし",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "東京",
@@ -6032,7 +6070,12 @@
     "strollerNote": "ベビーカーのまま入場できるか、貸出があるかについて店舗公式情報を確認できず。",
     "strollerRentalNote": "ベビーカーのまま入場できるか、貸出があるかについて店舗公式情報を確認できず。",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "店舗が入るアリオ北砂の各トイレに、お子様サイズの小さな便器の専用コーナーがあります。3階の赤ちゃん休憩室にもお子さま専用トイレあり（アリオ北砂公式より。キドキド店内ではなくモール側の設備）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://kitasuna.ario.jp/information/service/"
   },
   {
     "region": "東京",
@@ -6104,7 +6147,12 @@
     "strollerNote": "ベビーカー利用・貸出について公式情報を確認できず。",
     "strollerSourceUrl": "https://www.city.itabashi.tokyo.jp/bousai/kouen/kouen/doubutsuen/1006627",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "板橋こども動物園（東板橋公園内）に幼児用トイレ・親子トイレがあります（板橋区公式サイトより。高島平分園は多目的トイレのみ）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.city.itabashi.tokyo.jp/bousai/kouen/kouen/doubutsuen/1006627.html"
   },
   {
     "region": "東京",
@@ -6491,7 +6539,12 @@
     "strollerNote": "館内にベビーカー対応エレベーターあり。園地は段差がなく、ベビーカーで利用しやすい。",
     "strollerSourceUrl": "https://www.tokyorinkai-koen.jp/universal/",
     "strollerCheckedAt": "2026年11月2日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "booster",
+    "kidsToiletNote": "通常の便座に取り付けるお子様用の補助便座（乳幼児用トイレ）を、管理センターで貸し出しています。利用時はスタッフに声がけが必要です（公式「ユニバーサルデザイン」ページより）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.tokyorinkai-koen.jp/universal/"
   },
   {
     "region": "神奈川",
@@ -6691,7 +6744,12 @@
     "strollerSourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/nogeyama/rental.php",
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
-    "strollerNote": "対象7〜24か月。"
+    "strollerNote": "対象7〜24か月。",
+    "kidsToilet": true,
+    "kidsToiletNote": "なかよし広場の横に子ども用トイレがあります（横浜市の公式バリアフリー情報より。口コミでも同じ場所の記載あり）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=112"
   },
   {
     "region": "神奈川",
@@ -6795,7 +6853,12 @@
     "strollerSourceUrl": "https://www.kodomonokuni.org/infants/",
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
-    "genre": "公園"
+    "genre": "公園",
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内の男女両方のトイレで、洋便器にこども用便座を設置しているトイレが多数あります。女子トイレには幼児用小便器のある場所もあります（横浜市の公式バリアフリー情報、公園の公式案内より）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=116"
   },
   {
     "region": "神奈川",
@@ -6881,7 +6944,11 @@
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "fujiko-museum.com",
     "priceCheckedAt": "2026年11月10日",
-    "strollerRental": false
+    "strollerRental": false,
+    "kidsToilet": "partial",
+    "kidsToiletNote": "1階に子ども用トイレがあるという記載が、館のブログや各種掲載情報にあります（4年以上前の情報が中心のため、最新の状況は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "神奈川",
@@ -8125,7 +8192,12 @@
     "businessHoursSourceUrl": "https://www.seibuen-amusement-park.jp/information/",
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "www.seibuen-amusement-park.jp",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "パーク内の複数箇所にキッズトイレがあり、一部の男性用トイレにも設置されています（公式「お子さまをお連れの方へ」より。2024年の口コミにも記載あり）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.seibuen-amusement-park.jp/family/index.html"
   },
   {
     "region": "埼玉",
@@ -8774,7 +8846,12 @@
     "strollerRentalNote": "エントランスホールで無料貸出。",
     "strollerSourceUrl": "https://www.nat.museum.ibk.ed.jp/news/8698",
     "strollerCheckedAt": "2026年11月3日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "booster",
+    "kidsToiletNote": "館内の女子トイレの個室に子ども用の補助便座があります（2階「自然のしくみ」近くなど）。屋外トイレの女子トイレにも取り外し式の幼児用便座の記載あり。2025〜2026年の口コミ2件に基づく情報のため要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://harunatsu15.com/archives/4921"
   },
   {
     "region": "茨城",
@@ -9117,7 +9194,11 @@
     "businessHoursSourceUrl": "https://www.nasuhai.co.jp/",
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "www.nasuhai.co.jp",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "園内のトイレに子ども用の補助便座・こどもトイレがあるという記載が複数あります（2026年の口コミを含むが、日付の古い情報も多く、場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "栃木",
@@ -9405,7 +9486,12 @@
     "strollerRentalNote": "サービスセンターで無料貸出。",
     "strollerSourceUrl": "https://gunma-kodomonokuni.jp/guide/index.php",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "booster",
+    "kidsToiletNote": "児童会館では、1階多目的トイレ、1・2階の男女洋式トイレ、2階プレイルームに幼児用の便座が用意されています（公式「よくある質問」より）。園内のその他の場所は未確認",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://kodomonokuni.or.jp/guide/faq/"
   },
   {
     "region": "群馬",
@@ -23095,7 +23181,12 @@
     "strollerRentalNote": "貸出について明確な記載なし。",
     "strollerSourceUrl": "https://kidspark.hapipiland.com/guide/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "パーク内にキッズ用トイレがあります（公式サイトより。男女トイレ・多目的トイレとは別に設置）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://kidspark.hapipiland.com/guide/"
   },
   {
     "region": "東京",
@@ -25432,7 +25523,12 @@
     "strollerRentalNote": "公式FAQでベビーカーの有料貸出を確認。1日500円、対象は生後6か月〜36か月・体重15kg以下。",
     "strollerSourceUrl": "https://www.mobilityresort.jp/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "パーク内にお子さま専用トイレがあります（着替えられる更衣室、親子で入れる個室、低い洗面台）。場内各所にお子さまと一緒に入れる個室トイレもあります（公式サービスガイドより）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.mr-motegi.jp/service_m/child.html"
   },
   {
     "region": "栃木",
@@ -28906,7 +29002,12 @@
     "strollerNote": "ベビーステーション・ベビールームも設置。",
     "strollerSourceUrl": "https://www.city.arakawa.tokyo.jp/yuuen/guide/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "子供用トイレは園内2か所：もぐもぐハウス1階、わくわくハウス2階（荒川区公式FAQより。便器・洗面台が子ども用サイズ）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.city.arakawa.tokyo.jp/a038/yuuen/faq/service_q8.html"
   },
   {
     "region": "東京",
@@ -29334,7 +29435,12 @@
     "businessHoursSourceUrl": "https://www.yunessun.com/service/faq/",
     "businessHoursCheckedAt": "2026年11月9日",
     "priceSource": "www.yunessun.com",
-    "priceCheckedAt": "2026年11月10日"
+    "priceCheckedAt": "2026年11月10日",
+    "kidsToilet": true,
+    "kidsToiletNote": "こども用トイレが男性・女性のロッカールーム内にそれぞれあります（公式「よくあるご質問」より）。ベビールームにはおむつ交換台あり",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.yunessun.com/service/faq/"
   },
   {
     "region": "茨城",
@@ -29734,7 +29840,12 @@
     "strollerNote": "生後7か月以降向け、台数限定。",
     "strollerSourceUrl": "https://www.fujiq.jp/service/list/index.html",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "トーマスランド内にお子様向けトイレがあります（公式サイトより）。口コミでは、補助便座付きの洋式トイレと低めの洗面台があるとの記載。園内の他エリアは未確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.fujiq.jp/area/thomas/index.html"
   },
   {
     "region": "静岡",
@@ -30254,7 +30365,12 @@
     "strollerRentalNote": "貸出については明確な記載なし。",
     "strollerSourceUrl": "https://seibutuen.jp/guidance/information_c.html",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "子ども用に低めに設計した洗面台と、小型の便房が複数設置されています（公式「お客様の声」への回答より）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.seibutuen.jp/_src/78867404/r5.pdf"
   },
   {
     "region": "東京",
@@ -30712,7 +30828,12 @@
     "strollerNote": "園内は起伏のある地形。",
     "strollerSourceUrl": "https://odawara-jigyo-kyokai.jp/wanpaku/wanpakuland.php",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内の多くのトイレに子ども用の補助便座があります（2024年以降の口コミ2件の記載。「各トイレにある」とするものと「半分ほど」とするものがあり、場所は要確認）。小田原市の公式情報では、トイレにベビーキープ・おむつ交換台があります",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://www.odakyu-life.jp/entry/006975.html"
   },
   {
     "region": "神奈川",
@@ -31553,7 +31674,11 @@
     "strollerOk": "ask",
     "strollerSourceUrl": "https://izushaboten.com/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内のトイレに補助便座があるという口コミがあります（カピバラ露天風呂近くのトイレなど。3〜5年前の情報のため、最新の状況は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "長野",
@@ -40985,7 +41110,12 @@
     "strollerOk": "ask",
     "strollerSourceUrl": "https://www.kawaguchi-highwayoasis.com/asoboon/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "隣のトイレ棟の親子トイレに子ども用の大・小各1基があるほか、ASOBooN施設内にも男女トイレ・多目的トイレにキッズトイレがあります（首都高の施設概要より。2023〜2025年の口コミでも同じ記載）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.shutoko.co.jp/-/media/pdf/responsive/corporate/company/press/2021/02/21_kawaguchi_hwo.pdf"
   },
   {
     "region": "埼玉",
@@ -50839,7 +50969,12 @@
     "strollerRentalNote": "イオンモール公式案内で館内ベビーカー貸出を確認。貸出対象は生後2か月〜3歳、体重15kgまで。",
     "strollerSourceUrl": "https://zama.aeonmall.jp/guide/equipment",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "イオンモール座間の2階（WONDER DINING 串家物語 横通路奥）と3階（Food Forest 丸亀製麺付近）に、子どもサイズの便器・手洗いのキッズトイレがあります（モール公式キッズナビゲーションより）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://zama-aeonmall.com/special/lists/kidsnavigation"
   },
   {
     "region": "千葉",
@@ -50895,7 +51030,12 @@
     "strollerOk": "ask",
     "strollerSourceUrl": "https://makuharishintoshin.aeonmall.jp/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。ズーアドベンチャーワールド店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "千葉",
@@ -50954,7 +51094,12 @@
     "strollerOk": "ask",
     "strollerSourceUrl": "https://kinderplatz.froebel-kan.co.jp/allstorelist/aeon-kisarazu/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール木更津に、キッズトイレがあります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/55405/news/97633"
   },
   {
     "region": "東京",
@@ -51030,7 +51175,12 @@
     "strollerNote": "運営会社公式案内でベビーカー置き場ありと確認。",
     "strollerSourceUrl": "https://www.gigo.co.jp/shops/minami-machida-kids",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "キッズディスカバリー1階の「ウィズキッズトイレ」に子ども用トイレがあります。ギャザリングマーケット1F東側と、マーケットプラザ1F西側の女性トイレにも子ども用トイレがあります（公式FAQより）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://gbp.minamimachida-grandberrypark.com/faq/"
   },
   {
     "region": "神奈川",
@@ -51255,7 +51405,12 @@
     "strollerOk": "ask",
     "strollerSourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/loc/kawasaki.html",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "入っているラゾーナ川崎プラザの2階（kakimoto arms前）ベビー休憩室内に、男児用小便器と個室のキッズトイレがあります。3階の赤ちゃん本舗内にも子ども用トイレあり（施設公式・かながわ子育て応援パスポートより）。あそびパーク店内ではなくモール側の設備",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lazona-kawasaki/campaign/2017_mama/"
   },
   {
     "region": "東京",
@@ -51403,7 +51558,12 @@
     "strollerOk": "ask",
     "strollerSourceUrl": "https://fantasyresort.jp/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "ららぽーとTOKYO-BAYに、お子さま用のひとまわり小さな「こどもトイレ」があります（施設公式「ママwith」より）。店内ではなくモール側の設備で、設置場所は館ごとに異なるため要確認",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lalaport/mamawith/tokyo-bay/approach/185.html"
   },
   {
     "region": "埼玉",
@@ -51575,7 +51735,12 @@
     "strollerNote": "運営会社公式案内でベビーカー置き場ありと確認。",
     "strollerSourceUrl": "https://www.litpla.com/space/litpla_divercity_tokyo/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "入っているダイバーシティ東京 プラザの2階・6階の西アトリウム側トイレに、お子様用のひとまわり小さいキッズトイレがあります（施設公式より）。リトルプラネット店内にはトイレがないため、モール側の設備です",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/divercity-tokyo/service/kids.html"
   },
   {
     "region": "東京",
@@ -51705,7 +51870,12 @@
     "strollerRentalNote": "MARK IS館内ではベビーカー貸出あり。",
     "strollerSourceUrl": "https://kidokid.bornelund.co.jp/markis-minatomirai/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "マークイズみなとみらいの3階中央エレベーター裏と、3階キッズルーム「おやこの森」に、お子さま用のひとまわり小さなキッズトイレがあります（施設公式より）。店舗内ではなくモール側の設備",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/19689/attractions/13175"
   },
   {
     "region": "神奈川",
@@ -57008,7 +57178,12 @@
     "strollerNote": "運営会社公式サイトで施設案内を確認。遊び場内のベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "千葉",
@@ -57089,7 +57264,12 @@
     "strollerRentalNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
     "strollerNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "千葉",
@@ -57149,7 +57329,12 @@
     "strollerNote": "運営会社公式案内で入場時に利用するベビーカー置き場を確認。場内利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://bandainamco-am.co.jp/kids/shimaguruland/",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "神奈川",
@@ -75105,7 +75290,12 @@
     "strollerNote": "公式案内でベビーカー貸出ありと明記。エントランスゲート・東門ゲートで貸出、料金は1回300円。対象は首がすわっている2歳までの子。",
     "strollerSourceUrl": "https://www.nhdzoo.jp/info/index.php",
     "strollerCheckedAt": "2026年11月10日",
-    "strollerSource": "official"
+    "strollerSource": "official",
+    "kidsToilet": "partial",
+    "kidsToiletNote": "お子様用トイレが事務所横トイレ・ビジターセンター・ふれあい動物園の3か所にあります（公式サイト「総合案内」より）。多目的トイレにはおむつ替えシートもあります",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.nhdzoo.jp/info/index.html"
   },
   {
     "region": "静岡",
@@ -80219,7 +80409,12 @@
       "basis": "施設公式・商業施設公式",
       "checkedAt": "2026年11月11日",
       "sourceUrl": "https://www.yim.co.jp/features/kids"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "入っている横浜ワールドポーターズの1階駐車場側トイレにキッズトイレ（子ども用洋式便座）があり、各階の女性トイレに男児用小便器、優先トイレに子ども用補助便座があります（シネマ内を除く）。店内ではなくモール側の設備。第三者サイトの情報のため要確認",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://www.kodomoto.info/spots/1410460Vus"
   },
   {
     "region": "神奈川",
@@ -85270,7 +85465,12 @@
       "basis": "商業施設公式",
       "checkedAt": "2026年11月11日",
       "sourceUrl": "https://mitsui-shopping-park.com/lalaport/yokohama/service/babyroom.html"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているららぽーと横浜の各フロアにキッズトイレがあります（施設公式のお知らせより。2016年の情報のため、場所を含め要確認。店内ではなくモール側の設備）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/2026/news/17584"
   },
   {
     "region": "神奈川",
