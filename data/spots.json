@@ -90985,9 +90985,9 @@
     "lng": 139.707688,
     "genre": "公園",
     "ages": [
-      "0-1歳",
       "2-3歳",
-      "4-6歳"
+      "4-6歳",
+      "低学年"
     ],
     "weather": [
       "晴れ"
@@ -90998,11 +90998,11 @@
     "price": "無料",
     "parking": "no",
     "access": "京急「雑色」駅から徒歩約13分",
-    "baby": "ベビーカーOK（いこーよの掲載情報）。授乳室・おむつ替えは要確認／トイレあり（和式の記載あり）",
-    "officialUrl": "https://www.city.ota.tokyo.jp/",
+    "baby": "トイレ・水飲みあり（区公式の主な施設）。ベビーカーOK（いこーよの掲載情報）。授乳室・おむつ替えは要確認",
+    "officialUrl": "https://www.city.ota.tokyo.jp/shisetsu/park/michizukaminami.html",
     "verifiedAt": "2026年11月13日",
-    "desc": "住宅街にある小さな近隣公園。ブランコ、砂場、幼児用遊具があり、水道とベンチも備わっている。小さな子どもの身近な遊び場にちょうどいい。",
-    "tip": "売店や飲食店は園内になく、周辺で買い物をしてから行くと安心。飲み物は事前に用意しておこう。駐車場はないので、徒歩か自転車で。",
+    "desc": "旧国鉄の引き込み線跡地にある細長い公園で、電車好きの子におすすめ。京浜東北線の電車型やドクターイエロー型のコンビネーション遊具、信号機型ブランコ、踏切型シーソー、スイング新幹線など、鉄道モチーフの遊具がそろう。2023年12月にリニューアルオープンした。公園のすぐ隣がJRの車両基地で、電車が並ぶ様子も見られる。",
+    "tip": "入口の車輪型の園名板が目印。道路を渡った先の道塚第三児童公園と合わせて遊べるし、徒歩5〜10分の西六郷公園（タイヤ公園）にも足を延ばせる。園内に売店はない（確認できず）ので、飲み物は事前に用意しよう。駐車場もないので電車か徒歩・自転車で。",
     "familyPrice": {
       "yen": 0,
       "yenMax": null,
@@ -91017,13 +91017,13 @@
       "maxMinutes": 75
     },
     "food": {
-      "lunch": "園内に売店・飲食施設の情報は確認できず。食事持込OK（いこーよの掲載情報）。",
+      "lunch": "園内に売店・飲食施設の記載なし（区公式）。食事持込OK（いこーよの掲載情報）。",
       "bento": "ok",
       "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】いこーよの掲載情報で「食事持込OK」とされています。公式の案内は確認できていません。ベンチと水道があります。",
       "nearbyLunch": [
         {
           "name": "園内・周辺の飲食",
-          "note": "園内の売店・飲食施設は確認できず。周辺の店は来園前に要確認。"
+          "note": "園内の売店・飲食施設の記載なし。周辺の店は来園前に要確認。"
         }
       ],
       "source": "web",
@@ -91031,29 +91031,29 @@
       "checkedAt": "2026年11月13日"
     },
     "strollerOk": "ok",
-    "strollerNote": "いこーよの掲載情報で「ベビーカーOK」とされています。公式の案内は確認できていません。",
-    "strollerSourceUrl": "https://tenki.jp/leisure/3/16/97/66964/",
+    "strollerNote": "いこーよの掲載情報で「ベビーカーOK」とされています。大田区公式ページにはベビーカーの記載なし。",
+    "strollerSourceUrl": "https://www.city.ota.tokyo.jp/shisetsu/park/michizukaminami.html",
     "strollerCheckedAt": "2026年11月13日",
     "strollerSource": "web",
     "babyFacility": {
       "nursingRoom": "ask",
       "diaperChange": "ask",
       "hotWater": "ask",
-      "note": "トイレありとの情報（和式の記載）。授乳室・おむつ交換台は確認できず。",
+      "note": "大田区公式の主な施設にトイレ・水飲みあり。授乳室・おむつ交換台の記載は確認できず。",
       "status": "ask",
-      "basis": "いこーよ掲載情報・設備情報不足",
+      "basis": "大田区公式・いこーよ掲載情報",
       "checkedAt": "2026年11月13日",
-      "sourceUrl": "https://report.iko-yo.net/articles/14758"
+      "sourceUrl": "https://www.city.ota.tokyo.jp/shisetsu/park/michizukaminami.html"
     },
     "shop": {
       "status": "unknown",
-      "note": "園内の売店・自動販売機の記載は確認できず（設備はブランコ・砂場・幼児用遊具・水道・ベンチ）。",
-      "source": "iko-yo"
+      "note": "大田区公式の主な施設はトイレ・水飲みのみで、園内の売店の記載は確認できず。",
+      "source": "official"
     },
     "restaurant": {
       "status": "unknown",
-      "note": "園内の飲食施設の記載は確認できず。",
-      "source": "iko-yo"
+      "note": "園内の飲食施設の記載は確認できず（区公式）。",
+      "source": "official"
     }
   },
   {
