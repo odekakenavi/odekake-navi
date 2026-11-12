@@ -234,14 +234,14 @@
     "priceSource": "sunshinecity.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内2階にショップ「アクアポケット」あり（お菓子・ぬいぐるみ・文房具など）",
+      "source": "web:castel.jp/p/4306"
     },
     "restaurant": {
-      "status": "check",
-      "note": "サンシャインシティ内にフードコート・レストラン多数。 / サンシャインシティ内のレストラン街：水族館は再入場ができないため、食事は入館の前後にとります。",
-      "source": "mixed"
+      "status": "unknown",
+      "note": "るるぶKidsで「飲食施設あり」。館内か、サンシャインシティ内かは未確認",
+      "source": "web:kids.rurubu.jp/article/189/"
     }
   },
   {
@@ -363,14 +363,14 @@
       }
     },
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内にショップあり（オリジナル商品・グッズコーナー）。ローチケの紹介ページ（2020年ごろの情報）",
+      "source": "web:l-tike.com/leisure/mevent/?mid=370210"
     },
     "restaurant": {
       "status": "yes",
-      "note": "スカイツリータウン内に飲食店・フードコート多数。",
-      "source": "food.lunch"
+      "note": "館内に「ペンギンカフェ」あり（軽食・デザート・ドリンク）。ローチケの紹介ページ（2020年ごろの情報）",
+      "source": "web:l-tike.com/leisure/mevent/?mid=370210"
     }
   },
   {
@@ -2208,14 +2208,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にショップ「ふれあいショップ わとと」あり。ほか売店・お土産ショップ複数（紹介記事）",
+      "source": "web:news.livedoor.com/article/detail/31211172/, castel.jp/p/2349"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストラン・フードコート多数。",
-      "source": "food.lunch"
+      "note": "園内に「中央レストラン」ほかレストラン計5か所・フードコートあり（紹介記事）",
+      "source": "web:news.livedoor.com/article/detail/31211172/, castel.jp/p/2349"
     }
   },
   {
@@ -4362,14 +4362,14 @@
     "priceSource": "nasu-oukoku.com",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店あり（「レストランや売店も充実」。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/10056/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストラン・カフェ複数あり。",
-      "source": "food.lunch"
+      "note": "園内に「カフェマヌルヌマ」「バーベキューガーデン」「ヤマネコテラス」「BOCCA」など",
+      "source": "web:mapple.net/sp_spot/479899/"
     }
   },
   {
@@ -4867,14 +4867,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "マリンショップ「シーガル」あり（館外に併設。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/12788/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "食事はしながわ区民公園のベンチやレストランを利用します。",
-      "source": "food.bentoNote"
+      "note": "水上レストラン「ドルフィン」あり（館外に併設。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/12788/"
     }
   },
   {
@@ -7229,14 +7229,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にギフトショップあり（オカピのグッズ・スイーツ。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/10153/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストランあり。",
-      "source": "food.lunch"
+      "note": "園内にレストラン「サバンナテラス」（約160席）、テイクアウト専門のフレッシュネスバーガー、アクアテラスにサーティワンあり",
+      "source": "web:report.iko-yo.net/articles/14605, castel.jp/p/6547"
     }
   },
   {
@@ -8149,14 +8149,14 @@
     "strollerSource": "official",
     "strollerNote": "正門・西口・北口ゲート。オンラインで事前予約可能。",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店あり（展望デッキ売店、お土産屋さん。千葉市公式の「飲食店・売店マップ」）",
+      "source": "web:city.chiba.jp/zoo/guide/shop.html"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストランあり。",
-      "source": "food.lunch"
+      "note": "園内にレストラン「森のレストラン」、「森のおみせやさん」、「サバンナカフェ」あり（千葉市公式）",
+      "source": "web:city.chiba.jp/zoo/guide/shop.html"
     }
   },
   {
@@ -8238,14 +8238,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にショップあり（グッズ、おみやげ。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/11824/, enjoytokyo.jp/spot/l_00015893/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストランあり。",
-      "source": "food.lunch"
+      "note": "園内にフードコートあり（タイ料理、カレー、うどんなど。ちばバリアフリー情報）",
+      "source": "web:maruchiba.jp/barrierfree/spot/detail_10281.html"
     }
   },
   {
@@ -10658,14 +10658,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内に「カワスイ オフィシャルショップ」あり（GLTjp公式確認済み。入館しなくても利用可）",
+      "source": "web:gltjp.com/ja/directory/item/15709/, walkerplus.com/article/1014026/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "紹介記事では、館内への飲食物の持ち込みはできないが、10階のカフェ「CAFE CRAM」で買った軽食やおやつは館内に持ち込める、当日は再入場できるという声が複数あります。",
-      "source": "food.bentoNote"
+      "note": "館内にカフェとネコカフェ、ビュッフェ形式レストラン「AOW」あり",
+      "source": "web:gltjp.com/ja/directory/item/15709/, castel.jp/p/5717"
     }
   },
   {
@@ -11951,8 +11951,8 @@
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
-      "note": "定型文のみ（実在未確認）",
-      "source": "food.lunch"
+      "note": "売店の記載は見つからず（横浜市資料の主要施設にレストハウスあり）",
+      "source": "web:city.yokohama.lg.jp 三ツ沢公園 維持管理基本水準書"
     },
     "restaurant": {
       "status": "unknown",
@@ -23922,14 +23922,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": "定型文のみ（実在未確認）",
-      "source": "food.lunch"
+      "status": "yes",
+      "note": "園内の群馬県立近代美術館にミュージアムショップあり（飲食物の売店は未確認）",
+      "source": "web:artscape.jp/museum/1712/, tokyoartbeat.com/venues/-/DDBF061C"
     },
     "restaurant": {
       "status": "yes",
-      "note": "森のレストランころむす：【口コミ・紹介記事からの目安・実際と異なる場合があります】群馬県立近代美術館に併設。",
-      "source": "food.nearbyLunch"
+      "note": "園内の近代美術館に併設の「森のレストランころむす」あり（喫茶・食事。地場産品を使った料理）",
+      "source": "web:tabi-mag.jp/gu0233/"
     }
   },
   {
@@ -28555,14 +28555,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店あり（「売店横の車イス用トイレ」の記載）。動物グッズのショップもあり（口コミ）",
+      "source": "web:mapple.net/sp_spot/479932/, ekiten.jp/shop_4216718/review/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストランあり。",
-      "source": "food.lunch"
+      "note": "園内にカフェ「ジャングルステーキカフェ」あり",
+      "source": "web:mapple.net/sp_spot/479932/"
     }
   },
   {
@@ -33505,13 +33505,13 @@
     "priceCheckedAt": "2026年11月10日",
     "shop": {
       "status": "unknown",
-      "note": null,
-      "source": null
+      "note": "売店の明記は見つからず。餌販売所「とりのごはんやさん」あり（GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/11683/"
     },
     "restaurant": {
-      "status": "yes",
-      "note": "園内にレストランあり。",
-      "source": "food.lunch"
+      "status": "check",
+      "note": "園内レストランがあるとの紹介文のみ（みんなのカメラ）。公式では未確認",
+      "source": "web:minnacamera.com/spots/1488"
     }
   },
   {
@@ -33793,14 +33793,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "いこーよの施設アイコンに売店あり（公式ページでは未確認）",
+      "source": "web:iko-yo.net/facilities/4746"
     },
     "restaurant": {
       "status": "yes",
-      "note": "館内にレストラン・カフェあり。",
-      "source": "food.lunch"
+      "note": "いこーよの施設アイコンにレストランあり。お寿司が食べられるとの紹介記事（2024年8月）もあり",
+      "source": "web:iko-yo.net/facilities/4746, timesclub.jp/sp/tanomachi_ex/fukushima/iwaki/002.html"
     }
   },
   {
@@ -35355,14 +35355,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に「シャボテン狩り工房」で多肉植物を販売。いこーよ・museum.or.jpの設備欄にもショップ・売店あり",
+      "source": "web:gltjp.com/ja/directory/item/11835/, iko-yo.net/facilities/2524, museum.or.jp/museum/4343"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストラン・カフェあり。",
-      "source": "food.lunch"
+      "note": "園内に「森のどうぶつレストランGIBBONTEI（ギボン亭）」と食堂街あり",
+      "source": "web:mapple.net/sp_spot/479956/, asoview.com/base/149993/"
     }
   },
   {
@@ -40848,14 +40848,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内に関連商品を扱う売店あり（るるぶKids、2025年1〜5月取材）",
+      "source": "web:kids.rurubu.jp/article/15327/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "「レストランサイエンスシップ」あり（入館不要で利用可）。",
-      "source": "food.lunch"
+      "note": "科学館内にレストランまたはカフェあり（るるぶKids、2025年1〜5月取材。詳細は未確認）",
+      "source": "web:kids.rurubu.jp/article/15327/"
     }
   },
   {
@@ -58721,14 +58721,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "check",
+      "note": "こどもの国自体に売店なし。敷地内の県立科学館に関連商品の売店あり。キッチンカーが不定期に出店（るるぶKids、2025年1〜5月取材）",
+      "source": "web:kids.rurubu.jp/article/15327/"
     },
     "restaurant": {
-      "status": "yes",
-      "note": "園内の山梨県立科学館内にレストランあり。",
-      "source": "food.lunch"
+      "status": "check",
+      "note": "こどもの国自体にレストラン・カフェなし。県立科学館内にあり（るるぶKids、2025年1〜5月取材）。お弁当持ち込み可",
+      "source": "web:kids.rurubu.jp/article/15327/"
     }
   },
   {
@@ -65039,14 +65039,14 @@
       "sourceUrl": "https://www.pref.ibaraki.jp/doboku/kogai/kikaku/geimori_park.html"
     },
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "茨城県陶芸美術館内にミュージアムショップ、「笠間工芸の丘」で工芸品を販売（飲食物の売店は未確認）",
+      "source": "web:rurubu.jp/andmore/spot/80006115, iko-yo.net/facilities/6591"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "陶芸美術館内にレストラン「風の丘」あり（そば・うどん）",
+      "source": "web:rurubu.jp/andmore/spot/80006115"
     }
   },
   {
@@ -84327,14 +84327,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園に売店あり（静岡市の資料に動物園協会の収益事業として「売店、レストラン等」と記載）。テイクアウト専門のショップもあり（口コミ）",
+      "source": "web:city.shizuoka.lg.jp/documents/7365/000143840.pdf, tabelog.com/en/shizuoka/A2201/A220101/22026821/"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にレストラン1か所（日本平動物園レストハウス。カレー、そばなど）",
+      "source": "web:mapple.net/sp_spot/479954/, tabelog.com/en/shizuoka/A2201/A220101/22026821/"
     }
   },
   {
@@ -90973,6 +90973,87 @@
       "status": "nearby",
       "note": "大森駅周辺に飲食店が多い。",
       "source": "food.lunch"
+    }
+  },
+  {
+    "region": "東京",
+    "name": "道塚南公園",
+    "slug": "tokyo/ota/michizuka-minami-park",
+    "area": "大田区新蒲田",
+    "address": "東京都大田区新蒲田3-29-1",
+    "lat": 35.554688,
+    "lng": 139.707688,
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "無料",
+    "parking": "no",
+    "access": "京急「雑色」駅から徒歩約13分",
+    "baby": "ベビーカーOK（いこーよの掲載情報）。授乳室・おむつ替えは要確認／トイレあり（和式の記載あり）",
+    "officialUrl": "https://www.city.ota.tokyo.jp/",
+    "verifiedAt": "2026年11月13日",
+    "desc": "住宅街にある小さな近隣公園。ブランコ、砂場、幼児用遊具があり、水道とベンチも備わっている。小さな子どもの身近な遊び場にちょうどいい。",
+    "tip": "売店や飲食店は園内になく、周辺で買い物をしてから行くと安心。飲み物は事前に用意しておこう。駐車場はないので、徒歩か自転車で。",
+    "familyPrice": {
+      "yen": 0,
+      "yenMax": null,
+      "optionalYen": null,
+      "type": "free",
+      "approx": false,
+      "assumption": "大人2・小学生2・幼児1の5人",
+      "note": "入場・入園は無料"
+    },
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 75
+    },
+    "food": {
+      "lunch": "園内に売店・飲食施設の情報は確認できず。食事持込OK（いこーよの掲載情報）。",
+      "bento": "ok",
+      "bentoNote": "【紹介記事からの目安・実際と異なる場合があります】いこーよの掲載情報で「食事持込OK」とされています。公式の案内は確認できていません。ベンチと水道があります。",
+      "nearbyLunch": [
+        {
+          "name": "園内・周辺の飲食",
+          "note": "園内の売店・飲食施設は確認できず。周辺の店は来園前に要確認。"
+        }
+      ],
+      "source": "web",
+      "sourceUrl": "https://tenki.jp/leisure/3/16/97/66964/",
+      "checkedAt": "2026年11月13日"
+    },
+    "strollerOk": "ok",
+    "strollerNote": "いこーよの掲載情報で「ベビーカーOK」とされています。公式の案内は確認できていません。",
+    "strollerSourceUrl": "https://tenki.jp/leisure/3/16/97/66964/",
+    "strollerCheckedAt": "2026年11月13日",
+    "strollerSource": "web",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "note": "トイレありとの情報（和式の記載）。授乳室・おむつ交換台は確認できず。",
+      "status": "ask",
+      "basis": "いこーよ掲載情報・設備情報不足",
+      "checkedAt": "2026年11月13日",
+      "sourceUrl": "https://report.iko-yo.net/articles/14758"
+    },
+    "shop": {
+      "status": "unknown",
+      "note": "園内の売店・自動販売機の記載は確認できず（設備はブランコ・砂場・幼児用遊具・水道・ベンチ）。",
+      "source": "iko-yo"
+    },
+    "restaurant": {
+      "status": "unknown",
+      "note": "園内の飲食施設の記載は確認できず。",
+      "source": "iko-yo"
     }
   },
   {
