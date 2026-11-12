@@ -393,11 +393,11 @@ button.diag-back-link{display:block;width:100%;min-height:44px;margin-top:4px;pa
 <style id="kf-dg-polish">
 /* ===== 駐車場・子連れ設備（8タイル）：あり/要確認を目立たせ、なし/情報なしは引っ込める ===== */
 .kf-group .kf-grid{grid-template-columns:repeat(3,1fr);gap:8px;justify-items:stretch}
-.kf-group .kf-item{min-height:90px;padding:10px 3px 8px;gap:3px;border-radius:14px;border:2px solid transparent;box-sizing:border-box}
-.kf-group .kf-ic{font-size:26px;line-height:1.1}
+.kf-group .kf-item{min-height:68px;padding:6px 3px 5px;gap:1px;border-radius:14px;border:2px solid transparent;box-sizing:border-box}
+.kf-group .kf-ic{font-size:22px;line-height:1.1}
 .kf-group .kf-lb{font-size:11px;font-weight:700;line-height:1.25;color:var(--ink)}
 .kf-group .kf-lb.kf-lb-long{font-size:10px;white-space:normal;letter-spacing:0;text-wrap:balance}
-.kf-group .kf-st{font-size:11.5px;font-weight:800;line-height:1.25;padding:2px 8px;border-radius:999px;margin-top:2px}
+.kf-group .kf-st{font-size:11.5px;font-weight:800;line-height:1.25;padding:1px 8px;border-radius:999px;margin-top:1px}
 .kf-group .kf-ref{font-size:9px!important;white-space:normal;letter-spacing:0;line-height:1.2;color:#7a6f62;font-weight:700;text-wrap:balance}
 /* あり */
 .kf-group .kf-item.kf-yes{background:#E3F0D6;border-color:#7CA35E}
@@ -422,30 +422,29 @@ button.diag-back-link{display:block;width:100%;min-height:44px;margin-top:4px;pa
 
 /* ===== 行き方・アクション（9ボタン）：主要→購入→補助→駐車場→控えめの順にメリハリ ===== */
 .dg-block .dg-grid3{gap:10px 8px}
-.dg-grid3>.dg-btn{min-height:50px;border-radius:14px;line-height:1.3;transition:transform .1s}
-.dg-grid3>.dg-btn:active{transform:scale(.97)}
+.dg-grid3>.dg-btn{min-height:48px;border-radius:12px;line-height:1.3}
 /* ① 主要：車・電車（大きく濃く） */
-.dg-grid3>.dg-btn.dg-route{grid-column:span 3;min-height:58px;font-size:15.5px;font-weight:900;border:0;box-shadow:0 3px 0 rgba(0,0,0,.16)}
+.dg-grid3>.dg-btn.dg-route{grid-column:span 3;min-height:52px;font-size:14px;font-weight:700}
 .dg-grid3>.dg-btn.dg-route.dg-s3{grid-column:span 6}
 /* ② チケット：横いっぱいの目立つCTA */
-.dg-grid3>.dg-btn.dg-ticket{grid-column:1/-1;min-height:60px;font-size:16.5px;font-weight:900;border:0;box-shadow:0 3px 0 #b84a28}
+.dg-grid3>.dg-btn.dg-ticket{grid-column:1/-1;min-height:52px;font-size:15px;font-weight:700}
 .dg-grid3>.dg-pr{grid-column:1/-1;margin:-4px 2px 2px;font-size:10.5px;line-height:1.5;color:#8a6a3f}
 /* ③ 補助：地図・公式サイト・Google検索（白地で統一・3列） */
 .dg-grid3>.dg-btn.dg-map,.dg-grid3>.dg-btn.dg-official,.dg-grid3>.dg-btn.dg-google{grid-column:span 2;background:#fff;border:1.5px solid #D9CFBA;color:var(--ink);font-size:12.5px;font-weight:700}
 /* ④ 駐車場：薄いグリーンで横いっぱい */
-.dg-grid3>.dg-btn.dg-parking{grid-column:1/-1;background:#EAF3E0;border:1.5px solid #7CA35E;color:#2f5a22;font-size:14px;font-weight:800}
+.dg-grid3>.dg-btn.dg-parking{grid-column:1/-1;background:#EAF3E0;border:1.5px solid #7CA35E;color:#2f5a22;font-size:13px;font-weight:700}
 .dg-grid3>.dg-btn.dg-parking[aria-expanded="true"]{background:#fff}
 /* ⑤ 控えめ：除外・比較に追加（点線の小さめボタン） */
-.dg-grid3>.dg-btn.dg-excl,.dg-grid3>.dg-btn.dg-cmp{grid-column:span 3;min-height:44px;font-size:12.5px;margin-top:6px}
+.dg-grid3>.dg-btn.dg-excl,.dg-grid3>.dg-btn.dg-cmp{grid-column:span 3;min-height:34px;padding:4px 6px;font-size:11.5px;border-radius:10px;margin-top:4px}
 .dg-grid3>.dg-btn.dg-excl:not(.on),.dg-grid3>.dg-btn.dg-cmp:not(.on){background:transparent;border:1.5px dashed #D9CFBA;color:var(--ink-soft);font-weight:700}
-.kf-group{margin-top:14px}
+.kf-group{margin-top:10px}
 .kf-group:first-of-type{margin-top:6px}
 .kf-group-title{font-size:12px;font-weight:800;color:var(--ink-soft);margin:0 0 6px 2px;padding-left:8px;border-left:3px solid var(--yellow)}
 .kf-group-main .kf-group-title{color:var(--ink);font-size:13px;border-left-color:var(--coral)}
-.kf-group-main .kf-item{min-height:104px}
-.kf-group-main .kf-ic{font-size:30px}
-.kf-group-main .kf-lb{font-size:12px}
-.kf-group-main .kf-st{font-size:12.5px}
+.kf-group-main .kf-item{min-height:76px}
+.kf-group-main .kf-ic{font-size:24px}
+.kf-group-main .kf-lb{font-size:11.5px}
+.kf-group-main .kf-st{font-size:12px}
 </style>
 </head>
 <body>
