@@ -454,9 +454,9 @@
     "businessHoursSourceUrl": "https://www.kidzania.jp/tokyo/",
     "businessHoursCheckedAt": "2026年11月9日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "パーク内にお土産ショップあり（東奥日報、2026年11月）",
+      "source": "web:toonippo.co.jp/articles/-/2400824"
     },
     "restaurant": {
       "status": "yes",
@@ -984,15 +984,20 @@
     "priceSource": "www.puroland.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内にショップあり（キャラクターにこだわった商品。アソビュー取材記事）",
+      "source": "web:asoview.com/note/1924/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "館内にキャラクターカフェ・フードコートあり。",
-      "source": "food.lunch"
-    }
+      "note": "館内に「館のレストラン」「キャラクターフードコート」「フードマシンレストラン」ほかあり（キャステル、アソビュー）",
+      "source": "web:castel.jp/p/2716, asoview.com/note/2078/"
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "ディスカバリープラザのトイレにキッズ用トイレがあります（2018年リニューアル時の公式発表）。口コミにも「トイレによっては子ども用トイレ・便座あり」の記載。全トイレにはないため要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://resemom.jp/release/prtimes/20180301/40656.html"
   },
   {
     "region": "東京",
@@ -1282,15 +1287,19 @@
     "priceSource": "www.yomiuriland.com",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店・ショップあり（いこーよの施設アイコンに売店、GLTjpに園内店舗「ジェリーズポップコーン」、ボーネルンドショップ）",
+      "source": "web:iko-yo.net/facilities/173, gltjp.com/en/directory/item/19141/, yomiuriland.co.jp"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にフードコート・レストラン複数あり。",
-      "source": "food.lunch"
-    }
+      "note": "園内にレストランあり（いこーよの施設アイコン、キャステルのレストラン紹介）。食事持込もOK",
+      "source": "web:iko-yo.net/facilities/173, castel.jp/p/7907"
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "園内のトイレに子ども用の補助便座・子ども用トイレがあるという記載が、複数の記事にあります（2018〜2019年頃の情報で古いため、最新の状況と場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "東京",
@@ -1589,14 +1598,14 @@
     "priceSource": "www.wbstudiotour.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内にショップ「メインショップ」「レイルウェイショップ」あり（入場チケットが必要）",
+      "source": "web:game.watch.impress.co.jp/docs/kikaku/1508249.html, ciatr.jp/topics/323760"
     },
     "restaurant": {
       "status": "yes",
-      "note": "館内にカフェ・グレートホール風レストランあり。",
-      "source": "food.lunch"
+      "note": "館内にフードホール、バックロットカフェ、チョコレートフロッグカフェ、バタービールバーの4か所あり",
+      "source": "web:travel.watch.impress.co.jp/docs/news/1508443.html, news.livedoor.com/article/detail/31333293/"
     }
   },
   {
@@ -2554,14 +2563,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "島内にお土産ショップ約20店（ベイマーケットC棟・D棟が中心。キャステル）",
+      "source": "web:castel.jp/p/4398, airtrip.jp/travel-column/12182"
     },
     "restaurant": {
       "status": "yes",
-      "note": "島内にレストラン・フードコート多数。",
-      "source": "food.lunch"
+      "note": "バイキングの「パラダイスキッチン」「ラ・タラフク」、ファストフード、「海のバーベキュー 焼屋」、カフェあり",
+      "source": "web:airtrip.jp/travel-column/12182, asoview.com/base/150064/"
     }
   },
   {
@@ -2673,7 +2682,12 @@
       "status": "yes",
       "note": "モール内にパン屋・カフェ・レストランあり（離乳食メニューも）。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "子ども用トイレは1階のファミリーステーションと3階にあります（公式Q&Aより）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.yokohama-anpanman.jp/qa/"
   },
   {
     "region": "神奈川",
@@ -3213,14 +3227,14 @@
     "priceSource": "www.tokyodisneyresort.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "パーク内にショップ全43店舗（キャステル、2025年11月）。両パークで全80店舗（講談社のガイドブック紹介、2026年）",
+      "source": "web:castel.jp/item/5570/, news.livedoor.com/article/detail/30991022/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "パーク内にレストラン・軽食店が非常に豊富。",
-      "source": "food.lunch"
+      "note": "パーク内にレストラン多数あり（モバイルオーダー対象店舗あり）。ピクニックエリアでは持ち込み飲食可（キャステル）",
+      "source": "web:castel.jp/item/140/, castel.jp/item/88998/"
     }
   },
   {
@@ -3373,14 +3387,14 @@
     "priceSource": "www.tokyodisneyresort.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "パーク内にショップあり。ランドと合わせて全80店舗（講談社のガイドブック紹介、2026年）",
+      "source": "web:news.livedoor.com/article/detail/30991022/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "パーク内にレストラン・軽食店が非常に豊富。",
-      "source": "food.lunch"
+      "note": "パーク内にレストラン多数あり（東京ディズニーリゾート公式アプリで事前受付できる施設）。ピクニックエリアでは持ち込み飲食可",
+      "source": "web:tokyodisneyresort.jp/tdl/guide.html, castel.jp/item/140/"
     }
   },
   {
@@ -4267,7 +4281,12 @@
       "status": "yes",
       "note": "館内にレストラン・売店あり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "3階のシャークダディズルーム前トイレ隣にある授乳室内に、お子さま用トイレがあります（公式キッズサービスより。2026年9月の確認記事でも同じ記載）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.aquaworld-oarai.com/floor/kids/"
   },
   {
     "region": "栃木",
@@ -4450,7 +4469,12 @@
       "status": "yes",
       "note": "園内にレストラン・売店あり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "園内の「キッズハウス」（アジアゾーン）にお子様トイレがあります（公式サイトより）。他のトイレは未確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.tobuws.co.jp/park-guide/service/"
   },
   {
     "region": "群馬",
@@ -4980,13 +5004,13 @@
     "priceCheckedAt": "2026年11月10日",
     "shop": {
       "status": "unknown",
-      "note": null,
-      "source": null
+      "note": "水族館自体のショップは確認できず（品川プリンスホテルのショップ・レストランとの共通利用の記載のみ）",
+      "source": "web:report.iko-yo.net/articles/14400"
     },
     "restaurant": {
       "status": "yes",
-      "note": "品川駅構内・周辺に飲食店多数。",
-      "source": "food.lunch"
+      "note": "館内に「Coral Cafe Bar（コーラルカフェバー）」あり（東京観光財団、2025年12月更新）",
+      "source": "web:gotokyo.org/en/spot/294/"
     }
   },
   {
@@ -5147,14 +5171,14 @@
     "businessHoursSourceUrl": "https://tokyo-joypolis.com/calendar/",
     "businessHoursCheckedAt": "2026年11月9日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "nearby",
+      "note": "ジョイポリス自体のショップは確認できず。入っているデックス東京ビーチ（94店舗、2014年時点）にショップが多数。入退場自由",
+      "source": "web:tokyu-fudosan-hd.co.jp/news/pdf/349.pdf, iko-yo.net/facilities/193"
     },
     "restaurant": {
-      "status": "yes",
-      "note": "デックス東京ビーチ内に飲食店多数。",
-      "source": "food.lunch"
+      "status": "nearby",
+      "note": "ジョイポリス自体の飲食施設は確認できず。同じ建物のデックス東京ビーチ5〜6階などにレストランが多数",
+      "source": "web:tokyu-fudosan-hd.co.jp/news/pdf/349.pdf, gltjp.com/ja/directory/item/11054/"
     }
   },
   {
@@ -5259,7 +5283,12 @@
       "status": "yes",
       "note": "館内にレストランあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "3階にロケットと宇宙飛行士のイラストが描かれた子ども用トイレがあります（2024〜2026年の口コミ複数に同じ記載）。公式サイトには記載なし・要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://mako-odekakebiyori.hatenablog.jp/entry/2025/09/09/162440"
   },
   {
     "region": "東京",
@@ -5834,15 +5863,20 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "アトラクションズ/バイキングゾーンにギフトショップ「THE土産SHOP」あり（公式）",
+      "source": "web:tokyo-dome.co.jp/shops/s-giftshop.html"
     },
     "restaurant": {
       "status": "yes",
-      "note": "東京ドームシティ内に飲食店多数。",
-      "source": "food.lunch"
-    }
+      "note": "東京ドームシティ内にフードコート「GO-FUN」「FOOD STADIUM TOKYO」ほかカフェ&レストランあり（公式）",
+      "source": "web:tokyo-dome.co.jp/city_delivery/"
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "アトラクションズ内のバイキングゾーン1Fのトイレに子ども用トイレ（女性用に子ども用小便器あり）。隣接するラクーア1F・2Fには補助便座やお子様トイレがあります（ラクーア1Fは公式案内にも記載）。全トイレにはないため、場所は口コミ・トイレ情報サイトの記載で要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://www.motenashi-toilet.com/toilet-detail/tokyo-dome_viking-zone/"
   },
   {
     "region": "東京",
@@ -5991,7 +6025,11 @@
       "status": "yes",
       "note": "園内にレストラン・売店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "トイレに男児用の便器があり、キッズトイレもあるという口コミがあります（2024年・2026年の口コミ2件に基づく情報。場所は要確認）。公式サイトには記載なし",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "東京",
@@ -6602,7 +6640,12 @@
       "status": "yes",
       "note": "アリオ北砂内にフードコートあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "店舗が入るアリオ北砂の各トイレに、お子様サイズの小さな便器の専用コーナーがあります。3階の赤ちゃん休憩室にもお子さま専用トイレあり（アリオ北砂公式より。キドキド店内ではなくモール側の設備）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://kitasuna.ario.jp/information/service/"
   },
   {
     "region": "東京",
@@ -6684,7 +6727,12 @@
       "status": "nearby",
       "note": "周辺に飲食店あり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "板橋こども動物園（東板橋公園内）に幼児用トイレ・親子トイレがあります（板橋区公式サイトより。高島平分園は多目的トイレのみ）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.city.itabashi.tokyo.jp/bousai/kouen/kouen/doubutsuen/1006627.html"
   },
   {
     "region": "東京",
@@ -7121,7 +7169,12 @@
       "status": "yes",
       "note": "シートの可否は公式に記載なし／防災グッズや軽食を販売する売店「そなえカフェ」がある。",
       "source": "food.bentoNote"
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "通常の便座に取り付けるお子様用の補助便座（乳幼児用トイレ）を、管理センターで貸し出しています。利用時はスタッフに声がけが必要です（公式「ユニバーサルデザイン」ページより）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.tokyorinkai-koen.jp/universal/"
   },
   {
     "region": "神奈川",
@@ -7341,7 +7394,12 @@
       "status": "nearby",
       "note": "桜木町周辺に飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "なかよし広場の横に子ども用トイレがあります（横浜市の公式バリアフリー情報より。口コミでも同じ場所の記載あり）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=112"
   },
   {
     "region": "神奈川",
@@ -7455,7 +7513,12 @@
       "status": "unknown",
       "note": null,
       "source": null
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内の男女両方のトイレで、洋便器にこども用便座を設置しているトイレが多数あります。女子トイレには幼児用小便器のある場所もあります（横浜市の公式バリアフリー情報、公園の公式案内より）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=116"
   },
   {
     "region": "神奈川",
@@ -7551,7 +7614,11 @@
       "status": "yes",
       "note": "館内にカフェあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "1階に子ども用トイレがあるという記載が、館のブログや各種掲載情報にあります（4年以上前の情報が中心のため、最新の状況は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "神奈川",
@@ -8937,15 +9004,20 @@
     "priceSource": "www.seibuen-amusement-park.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店あり（「おみやげ 萬屋雑貨店」「駄菓子 夢見堂」「キネマ売店」「レッツゴー!バザール」。るるぶ&more）",
+      "source": "web:rurubu.jp/andmore/article/16213"
     },
     "restaurant": {
       "status": "yes",
-      "note": "昭和レトロな商店街エリアに飲食店多数。",
-      "source": "food.lunch"
-    }
+      "note": "園内にレトロ喫茶・食べ歩きグルメあり（るるぶ&more）",
+      "source": "web:rurubu.jp/andmore/article/16198"
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "パーク内の複数箇所にキッズトイレがあり、一部の男性用トイレにも設置されています（公式「お子さまをお連れの方へ」より。2024年の口コミにも記載あり）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.seibuen-amusement-park.jp/family/index.html"
   },
   {
     "region": "埼玉",
@@ -9231,9 +9303,9 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "オリジナルグッズが手に入るショップあり（GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/11106/"
     },
     "restaurant": {
       "status": "unknown",
@@ -9382,14 +9454,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店あり（いこーよのお知らせ「お食事処や売店も充実」、2016年）。運営会社の現在の売店は未確認",
+      "source": "web:iko-yo.net/facilities/206/news/12956"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストランあり。",
-      "source": "food.lunch"
+      "note": "園内に飲食施設とバーベキューあり。お弁当の持ち込みも可（るるぶKids、2026年）",
+      "source": "web:kids.rurubu.jp/article/90/, iko-yo.net/facilities/206/news/12956"
     }
   },
   {
@@ -9664,7 +9736,12 @@
       "status": "yes",
       "note": "レストランは「ル・サンク」。",
       "source": "food.bentoNote"
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "館内の女子トイレの個室に子ども用の補助便座があります（2階「自然のしくみ」近くなど）。屋外トイレの女子トイレにも取り外し式の幼児用便座の記載あり。2025〜2026年の口コミ2件に基づく情報のため要確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://harunatsu15.com/archives/4921"
   },
   {
     "region": "茨城",
@@ -10029,15 +10106,19 @@
     "priceSource": "www.nasuhai.co.jp",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にショップ「ウーピーズキングダム」あり（オリジナルグッズ・地元の産品。アソビュー、GLTjp）",
+      "source": "web:asoview.com/base/150476/, gltjp.com/en/directory/item/12212"
     },
     "restaurant": {
-      "status": "check",
-      "note": "園内にレストランあり。 / ただしレストラン内では食べられないため、園内のベンチなどを使います（公式サイトのQ&Aより）",
-      "source": "mixed"
-    }
+      "status": "yes",
+      "note": "園内にレストラン「スマイルサニーレストラン」「レストラントロピカーナ」ほかあり（公式）。お弁当は園内持ち込み可、レストラン内は不可",
+      "source": "web:naspot.nasuhai.co.jp/article/nasuhai-restaurant, asoview.com/base/150476/"
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "園内のトイレに子ども用の補助便座・こどもトイレがあるという記載が複数あります（2026年の口コミを含むが、日付の古い情報も多く、場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "栃木",
@@ -10132,14 +10213,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にお土産処あり（浮世絵やニャンまげグッズなど。LIVE JAPAN、MATCHA）",
+      "source": "web:livejapan.com/ja/in-tokyo/in-pref-tochigi/in-nikko/spot-lj0000714, matcha-jp.com/jp/place-master/17"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内に飲食店多数。",
-      "source": "food.lunch"
+      "note": "園内に食事処・甘味処あり。大きな食事処は団体客用が中心で、軽食は休憩スペースでテイクアウトして食べる形（利用者の口コミ、2024年3月）",
+      "source": "web:livejapan.com/ja/in-tokyo/in-pref-tochigi/in-nikko/spot-lj0000714, veltra.com/jp/japan/tochigi/a/171520"
     }
   },
   {
@@ -10355,7 +10436,12 @@
       "status": "yes",
       "note": "レストハウス：園内にあります。",
       "source": "food.nearbyLunch"
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "児童会館では、1階多目的トイレ、1・2階の男女洋式トイレ、2階プレイルームに幼児用の便座が用意されています（公式「よくある質問」より）。園内のその他の場所は未確認",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://kodomonokuni.or.jp/guide/faq/"
   },
   {
     "region": "群馬",
@@ -20544,14 +20630,14 @@
     "priceSource": "metsa-hanno.com",
     "priceCheckedAt": "2026年11月10日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店「ムーミン谷の売店」「はじまりの店」あり（運営会社の2026年夏のイベント発表）",
+      "source": "web:haveagood-holiday.com/en/articles/moomin-valley-park-summer-water-play-2026"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストラン・カフェ多数。",
-      "source": "food.lunch"
+      "note": "園内に「ムーミン谷の食堂」「レットゥラ ラウンジ」、テイクアウトフードあり（運営会社の2026年夏のイベント発表）。隣の無料エリア「メッツァビレッジ」にもレストラン・カフェあり",
+      "source": "web:news.livedoor.com/pr_article/detail/31655129/, castel.jp/p/3906"
     }
   },
   {
@@ -25704,7 +25790,12 @@
       "status": "nearby",
       "note": "葛西駅周辺に飲食店あり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "男女のトイレ内に子ども用の小さなトイレと、おむつ交換台があります。子ども用の高さの手洗いもあります（2023〜2026年の口コミ3件に基づく情報。公式サイトには記載なし・要確認）",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://denen-city.com/subwaymuseum/"
   },
   {
     "region": "東京",
@@ -25895,7 +25986,12 @@
       "status": "yes",
       "note": "1階「アソビル横丁」に飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "パーク内にキッズ用トイレがあります（公式サイトより。男女トイレ・多目的トイレとは別に設置）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://kidspark.hapipiland.com/guide/"
   },
   {
     "region": "東京",
@@ -26669,14 +26765,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "ミュージアムショップ「フィッシュパル」（オリジナルグッズ）と直売所「水遊マート」（地場産野菜）あり（GLTjp公式確認済み、tabi-mag）",
+      "source": "web:gltjp.com/ja/directory/item/12113/, tabi-mag.jp/tg0300/"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "「アマゾンカフェ」とそば処「味処ゆづかみ」が営業",
+      "source": "web:tabi-mag.jp/tg0300/, gltjp.com/ja/directory/item/12113/"
     }
   },
   {
@@ -28482,7 +28578,12 @@
       "status": "yes",
       "note": "園内にレストラン・BBQエリアあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "パーク内にお子さま専用トイレがあります（着替えられる更衣室、親子で入れる個室、低い洗面台）。場内各所にお子さまと一緒に入れる個室トイレもあります（公式サービスガイドより）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.mr-motegi.jp/service_m/child.html"
   },
   {
     "region": "栃木",
@@ -30402,14 +30503,14 @@
     "strollerSource": "official",
     "genre": "遊園地・テーマパーク",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "工場に隣接する売店あり（菓子、地酒などの土産。ウォーカープラス2025年6月、るるぶ&more）",
+      "source": "web:summer.walkerplus.com/odekake/detail/ar0309s217001/, rurubu.jp/andmore/spot/80007356/ichigo"
     },
     "restaurant": {
       "status": "yes",
-      "note": "館内にレストラン・カフェあり。",
-      "source": "food.lunch"
+      "note": "いこーよの施設アイコンにレストランあり（公式では未確認）。ソフトクリームや飲むヨーグルトの口コミもあり",
+      "source": "web:iko-yo.net/facilities/2138, co-trip.jp/post/669355"
     }
   },
   {
@@ -32416,7 +32517,12 @@
       "status": "nearby",
       "note": "周辺にも飲食店あり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "子供用トイレは園内2か所：もぐもぐハウス1階、わくわくハウス2階（荒川区公式FAQより。便器・洗面台が子ども用サイズ）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.city.arakawa.tokyo.jp/a038/yuuen/faq/service_q8.html"
   },
   {
     "region": "東京",
@@ -32583,14 +32689,14 @@
     "strollerCheckedAt": "2026年11月2日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にグッズショップ「ナジャモジャマーケット」あり（運営会社の公式ページ）",
+      "source": "web:bandainamco-am.co.jp/tp/namja/food"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に「ナンジャ餃子スタジアム」「福袋デザート横丁」あり（運営会社の公式ページ）",
+      "source": "web:bandainamco-am.co.jp/tp/namja/food"
     }
   },
   {
@@ -32785,14 +32891,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に「コスモショップ」あり（横浜みやげやオリジナルグッズを販売。エアトリ、運営会社発表）",
+      "source": "web:airtrip.jp/travel-column/12170, news.livedoor.com/pr_article/detail/31064336/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "みなとみらいエリアに飲食店多数。",
-      "source": "food.lunch"
+      "note": "飲食施設「コスモコート」あり（ホットドッグ、フライドポテトなどの軽食、クレープ・アイス。エアトリ）",
+      "source": "web:airtrip.jp/travel-column/12170"
     }
   },
   {
@@ -32884,7 +32990,12 @@
       "status": "yes",
       "note": "館内にレストラン・軽食コーナーあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "こども用トイレが男性・女性のロッカールーム内にそれぞれあります（公式「よくあるご質問」より）。ベビールームにはおむつ交換台あり",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.yunessun.com/service/faq/"
   },
   {
     "region": "茨城",
@@ -33306,15 +33417,20 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にお土産ショップ「SHOP FUJIYAMA」「ナチュラルチョイス」、トーマスランドに「トーマスステーションショップ」あり（キャステル）",
+      "source": "web:castel.jp/p/2610, castel.jp/p/2961"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストラン・フードコート多数。",
-      "source": "food.lunch"
-    }
+      "note": "園内に大型レストラン「フードスタジアム」ほかレストラン全7店（2022年時点）",
+      "source": "web:castel.jp/item/39246/, resemom.jp/release/prtimes/20230725/101768.html"
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "トーマスランド内にお子様向けトイレがあります（公式サイトより）。口コミでは、補助便座付きの洋式トイレと低めの洗面台があるとの記載。園内の他エリアは未確認",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.fujiq.jp/area/thomas/index.html"
   },
   {
     "region": "静岡",
@@ -33894,7 +34010,12 @@
       "status": "no",
       "note": "しっかり食べるレストランはなく、2階の売店で土日に「いきものパン」などの軽食を売っているそうです。",
       "source": "food.bentoNote"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "子ども用に低めに設計した洗面台と、小型の便房が複数設置されています（公式「お客様の声」への回答より）",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.seibutuen.jp/_src/78867404/r5.pdf"
   },
   {
     "region": "東京",
@@ -34412,7 +34533,12 @@
       "status": "no",
       "note": "レストランはなし。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内の多くのトイレに子ども用の補助便座があります（2024年以降の口コミ2件の記載。「各トイレにある」とするものと「半分ほど」とするものがあり、場所は要確認）。小田原市の公式情報では、トイレにベビーキープ・おむつ交換台があります",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://www.odakyu-life.jp/entry/006975.html"
   },
   {
     "region": "神奈川",
@@ -34667,7 +34793,12 @@
       "status": "yes",
       "note": "5階建て施設内にレストラン・フードコートが充実。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "子ども用トイレ（洋式）が1〜5階の各階にあり、男児用小便器が1・4・5階のトイレにあります。4階には男女別トイレの間に子ども用トイレと補助便座があります（Wikipediaの最新の施設情報と、複数の旅行情報サイトの記載。公式サイトには記載なし・要確認）",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E3%81%BB%E3%81%9F%E3%82%8B%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%82%A8%E3%83%AA%E3%82%A2"
   },
   {
     "region": "千葉",
@@ -35363,7 +35494,11 @@
       "status": "yes",
       "note": "園内に「森のどうぶつレストランGIBBONTEI（ギボン亭）」と食堂街あり",
       "source": "web:mapple.net/sp_spot/479956/, asoview.com/base/149993/"
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "園内のトイレに補助便座があるという口コミがあります（カピバラ露天風呂近くのトイレなど。3〜5年前の情報のため、最新の状況は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review"
   },
   {
     "region": "長野",
@@ -35538,14 +35673,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "本園に売店あり（ワニグミなどのお菓子を販売、マイナビニュース2026年9月）",
+      "source": "web:news.mynavi.jp/article/20260907-4911743/"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "高台に併設の「フルーツパーラー」あり（園内で収穫したバナナ・パパイヤが食べられる）",
+      "source": "web:mapple.net/sp_spot/479958/, summer.walkerplus.com/odekake/detail/ar0622s16371/"
     }
   },
   {
@@ -35707,14 +35842,14 @@
     "businessHoursSourceUrl": "https://www.pal2.co.jp/fee",
     "businessHoursCheckedAt": "2026年11月9日",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内にショップ「パルショップ」あり（キャステル）",
+      "source": "web:castel.jp/item/105551/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内にレストラン「ぱくぱく大食堂」あり。",
-      "source": "food.lunch"
+      "note": "レストラン「ぱくぱく大食堂」とテイクアウトショップあり（いこーよ、アソビュー）",
+      "source": "web:iko-yo.net/facilities/3169, asoview.com/item/ticket/ticket0000013896/"
     }
   },
   {
@@ -36600,13 +36735,13 @@
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
-      "note": null,
-      "source": null
+      "note": "オリジナルグッズ（かめの種、Tシャツなど）の販売の記載はあるが2013年のお知らせのみ。現在の売店は未確認",
+      "source": "web:iko-yo.net/facilities/15758/news/1775"
     },
     "restaurant": {
-      "status": "nearby",
-      "note": "周辺に飲食店あり。",
-      "source": "food.lunch"
+      "status": "unknown",
+      "note": "レストランの記載なし。飲食は中庭のみ可（mapple）",
+      "source": "web:mapple.net/sp_spot/479959/"
     }
   },
   {
@@ -36889,9 +37024,9 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "おみやげショップあり（「大充実のおみやげショップ」。るるぶ&more）",
+      "source": "web:rurubu.jp/andmore/article/20383"
     },
     "restaurant": {
       "status": "no",
@@ -37779,8 +37914,8 @@
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
-      "note": null,
-      "source": null
+      "note": "売店の記載は見つからず。BBQエリア「伊豆オーシャンバーベキュー」（3月中旬〜9月下旬、手ぶらプランあり）と磯プール（夏期）がある",
+      "source": "web:gltjp.com/ja/directory/item/15100/"
     },
     "restaurant": {
       "status": "unknown",
@@ -39941,14 +40076,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "売店あり（熱海・伊豆の土産物のほか、水着・ゴーグル・キャップも販売。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/15096/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "館内にレストラン「シーガル」あり。",
-      "source": "food.lunch"
+      "note": "2階にレストラン「シーガル」あり（定食・丼・軽食。水着のまま食事可。GLTjp公式確認済み、食べログ）",
+      "source": "web:gltjp.com/ja/directory/item/15096/, ssl.tabelog.com/en/shizuoka/A2205/A220502/22039502/"
     }
   },
   {
@@ -40933,8 +41068,8 @@
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
-      "note": null,
-      "source": null
+      "note": "売店の記載は見つからず（県公式・GLTjp）",
+      "source": "web:pref.yamanashi.jp/shokusui/suizokukan.html"
     },
     "restaurant": {
       "status": "unknown",
@@ -45995,7 +46130,12 @@
       "status": "nearby",
       "note": "隣接のレストラン・カフェ・売店利用可。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "隣のトイレ棟の親子トイレに子ども用の大・小各1基があるほか、ASOBooN施設内にも男女トイレ・多目的トイレにキッズトイレがあります（首都高の施設概要より。2023〜2025年の口コミでも同じ記載）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.shutoko.co.jp/-/media/pdf/responsive/corporate/company/press/2021/02/21_kawaguchi_hwo.pdf"
   },
   {
     "region": "埼玉",
@@ -47178,14 +47318,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内に売店あり（運営会社のリリースに「売店・飲食店利用時はQRリストバンドをかざす」の記載）",
+      "source": "web:origin.digitalpr.jp/pdf.php?r=91132"
     },
     "restaurant": {
       "status": "yes",
-      "note": "館内にレストラン・軽食コーナーあり。",
-      "source": "food.lunch"
+      "note": "館内に飲食店あり。バイキングホール「若汐亭」など（運営会社のリリース、Yahoo!トラベル）",
+      "source": "web:origin.digitalpr.jp/pdf.php?r=91132, travel.yahoo.co.jp/00901937/info/"
     }
   },
   {
@@ -47290,7 +47430,12 @@
       "status": "yes",
       "note": "園内にレストラン・売店あり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "プールサイド（流れるプール横・中央エリア）にお子様用トイレ（洋式）があります（公式サイトより。2026年のリニューアル後の口コミ・公式お知らせでも確認）",
+    "kidsToiletCheckedAt": "2026年11月13日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.tobuzoo.com/pool/"
   },
   {
     "region": "神奈川",
@@ -48829,8 +48974,8 @@
     "businessHoursCheckedAt": "2026年11月9日",
     "shop": {
       "status": "unknown",
-      "note": null,
-      "source": null
+      "note": "売店の記載は見つからず。公式FAQで「食べものの持込はご遠慮いただいております」（飲み物はアルコール以外・ビン類以外なら可）",
+      "source": "web:princehotels.co.jp/pool/oiso/faq/"
     },
     "restaurant": {
       "status": "unknown",
@@ -57079,7 +57224,12 @@
       "status": "yes",
       "note": "フードコートあり（フードコート内にもキッズスペースあり）。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "イオンモール座間の2階（WONDER DINING 串家物語 横通路奥）と3階（Food Forest 丸亀製麺付近）に、子どもサイズの便器・手洗いのキッズトイレがあります（モール公式キッズナビゲーションより）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://zama-aeonmall.com/special/lists/kidsnavigation"
   },
   {
     "region": "千葉",
@@ -57145,7 +57295,12 @@
       "status": "yes",
       "note": "館内に多数の飲食店・フードコートあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。ズーアドベンチャーワールド店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "千葉",
@@ -57214,7 +57369,12 @@
       "status": "yes",
       "note": "イオンモール木更津内にフードコートあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール木更津に、キッズトイレがあります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/55405/news/97633"
   },
   {
     "region": "東京",
@@ -57300,7 +57460,12 @@
       "status": "yes",
       "note": "「ギャザリングマーケット」など館内に飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "キッズディスカバリー1階の「ウィズキッズトイレ」に子ども用トイレがあります。ギャザリングマーケット1F東側と、マーケットプラザ1F西側の女性トイレにも子ども用トイレがあります（公式FAQより）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://gbp.minamimachida-grandberrypark.com/faq/"
   },
   {
     "region": "神奈川",
@@ -57555,7 +57720,12 @@
       "status": "yes",
       "note": "館内に約350店舗、フードコートあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "入っているラゾーナ川崎プラザの2階（kakimoto arms前）ベビー休憩室内に、男児用小便器と個室のキッズトイレがあります。3階の赤ちゃん本舗内にも子ども用トイレあり（施設公式・かながわ子育て応援パスポートより）。あそびパーク店内ではなくモール側の設備",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lazona-kawasaki/campaign/2017_mama/"
   },
   {
     "region": "東京",
@@ -57723,7 +57893,12 @@
       "status": "yes",
       "note": "ららぽーとTOKYO-BAY内にフードコート・飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "ららぽーとTOKYO-BAYに、お子さま用のひとまわり小さな「こどもトイレ」があります（施設公式「ママwith」より）。店内ではなくモール側の設備で、設置場所は館ごとに異なるため要確認",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lalaport/mamawith/tokyo-bay/approach/185.html"
   },
   {
     "region": "埼玉",
@@ -57915,7 +58090,12 @@
       "status": "yes",
       "note": "ダイバーシティ東京プラザ内にフードコート・飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "入っているダイバーシティ東京 プラザの2階・6階の西アトリウム側トイレに、お子様用のひとまわり小さいキッズトイレがあります（施設公式より）。リトルプラネット店内にはトイレがないため、モール側の設備です",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/divercity-tokyo/service/kids.html"
   },
   {
     "region": "東京",
@@ -58065,7 +58245,12 @@
       "status": "yes",
       "note": "MARK ISみなとみらい内にフードコート・飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "マークイズみなとみらいの3階中央エレベーター裏と、3階キッズルーム「おやこの森」に、お子さま用のひとまわり小さなキッズトイレがあります（施設公式より）。店舗内ではなくモール側の設備",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/19689/attractions/13175"
   },
   {
     "region": "神奈川",
@@ -59308,7 +59493,12 @@
       "status": "check",
       "note": "館内にレストランはなく、飲料・アイス・パン・お菓子の自動販売機があります。 / レストランあり（公式のよくある質問で案内）。",
       "source": "mixed"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "どきどきリニア館1階のキッズコーナー内に、子供用トイレ（男の子用・女の子用）があります（公式「お子様連れ・バリアフリー情報」より。利用はキッズコーナーの利用者向け）",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.linear-museum.pref.yamanashi.jp/sp/facility/facilities.html"
   },
   {
     "region": "静岡",
@@ -61334,14 +61524,16 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "condition": "夏季の海の家",
+      "note": "海の家で飲食料・雑貨・水泳遊具などを販売・レンタル（茅ヶ崎市の海水浴場ルール）。海の家は8軒（飲食のみ2軒）。2026年の開設は7月4日〜8月31日",
+      "source": "web:city.chigasaki.kanagawa.jp 海水浴場ルール令和8年度, iko-yo.net/facilities/827, nta.co.jp/kokunai/special/eventinfo/10625803.htm"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "condition": "夏季の海の家",
+      "note": "海の家で飲食可（飲食のみの店が2軒。飲食は20時まで営業。2026年）",
+      "source": "web:nta.co.jp/kokunai/special/eventinfo/10625803.htm, iko-yo.net/facilities/827"
     }
   },
   {
@@ -62478,7 +62670,12 @@
       "status": "yes",
       "note": "各ターミナルにレストラン・フードコートが多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "第1・第2ターミナルの一部の授乳室・女性トイレ内にキッズトイレがあり、子ども用の補助便座も設置されています（第1ターミナルは1階ベビールーム内に大小そろったキッズトイレ2か所など）。第3ターミナルには設置されていません（公式FAQ・トイレ案内より）",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://tokyo-haneda.com/faq/with_children.html"
   },
   {
     "region": "静岡",
@@ -62566,7 +62763,12 @@
       "status": "unknown",
       "note": null,
       "source": null
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "吊橋を渡る手前の「ラグジュアリートイレ」の男性・女性トイレに、幼児用補助便座（取付用）とおむつ交換台が用意されています（公式サイトのお手洗い案内より）。吊橋の先のトイレは個室が少なく、補助便座の記載は未確認",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://mishima-skywalk.jp/information/38049/"
   },
   {
     "region": "神奈川",
@@ -63911,14 +64113,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "園内に売店あり（いこーよの施設アイコン）。遊園地デザインの雑貨・ぬいぐるみなどのお土産を販売",
+      "source": "web:iko-yo.net/facilities/202, san-tatsu.jp/spots/3283/"
     },
     "restaurant": {
       "status": "yes",
-      "note": "園内に飲食店舗あり。",
-      "source": "food.lunch"
+      "note": "園内にレストランあり（いこーよの施設アイコン）。食事の持ち込みもOK",
+      "source": "web:iko-yo.net/facilities/202"
     }
   },
   {
@@ -64088,7 +64290,12 @@
       "status": "yes",
       "note": "イオンモール幕張新都心内に飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "千葉",
@@ -64179,7 +64386,12 @@
       "status": "yes",
       "note": "イオンモール幕張新都心内に飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "千葉",
@@ -64249,7 +64461,12 @@
       "status": "yes",
       "note": "イオンモール幕張新都心内に飲食店多数。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているイオンモール幕張新都心に「こどもトイレ」があります（モール公式のお知らせより。店内ではなくモール側の設備。設置場所は要確認）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/20677/news/87592"
   },
   {
     "region": "神奈川",
@@ -66178,14 +66395,14 @@
       "sourceUrl": "https://kurkkufields.jp/map/"
     },
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "敷地内に、収穫した食材（野菜・卵・ミルクなど）を買えるショップあり（ちば観光、環境省資料）",
+      "source": "web:maruchiba.jp/spot/detail_10323.html, env.go.jp/policy/keizai_portal/B_industry/frontrunner/reports/r3engine16_kurkku.pdf"
     },
     "restaurant": {
       "status": "yes",
-      "note": "敷地内レストラン・チーズ工房・カフェあり。",
-      "source": "food.lunch"
+      "note": "レストラン「DINING」とミルクスタンド（ソフトクリーム）あり。飲食物の持ち込みは不可（タイムズクラブ）",
+      "source": "web:eleminist.com/article/450, timesclub.jp/sp/tanomachi_ex/chiba/kisarazu/004.html"
     }
   },
   {
@@ -69628,7 +69845,12 @@
       "status": "check",
       "note": "3階のミュージアムカフェ「ビナキッチン」（入館しなくても利用可）。 / ビナキッチン（ミュージアム併設のレストラン）：入口は海老名駅のペデストリアンデッキに面していて、どなたでも入店できます。",
       "source": "mixed"
-    }
+    },
+    "kidsToilet": "booster",
+    "kidsToiletNote": "男女トイレとみんなのトイレに、幼児用便器（おまる）が用意されています。みんなのトイレには補助便座もあります。男女トイレにはベビーチェア付きの個室あり（公式ご利用案内より）",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.odakyu.jp/romancecarmuseum/guide/"
   },
   {
     "region": "山梨",
@@ -69825,7 +70047,12 @@
       "status": "nearby",
       "note": "横浜駅・みなとみらい周辺に飲食店が多い。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "館内にキッズトイレがあります（洋式。個室にベビーチェアあり）。多機能トイレ・授乳室も完備（のりもの博物館の公式施設案内と、来館レポートより）",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.transport-pf.or.jp/norimono/museum/kqm/"
   },
   {
     "region": "東京",
@@ -71575,14 +71802,14 @@
       "sourceUrl": "https://www.numazu-deepsea.com/question/"
     },
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "note": "館内にミュージアムショップあり（深海生物グッズ・お菓子。GLTjp公式確認済み）",
+      "source": "web:gltjp.com/ja/directory/item/11724/, tabi-mag.jp/sz526/"
     },
     "restaurant": {
-      "status": "yes",
-      "note": "沼津港に海鮮丼などの飲食店が多数。",
-      "source": "food.lunch"
+      "status": "nearby",
+      "note": "水族館に飲食設備はなく、同じ複合施設「港八十三番地」内に飲食店と「cafe ラティメリア」あり",
+      "source": "web:gltjp.com/ja/directory/item/11724/, news.livedoor.com/article/detail/31113127/"
     }
   },
   {
@@ -84237,7 +84464,12 @@
       "status": "yes",
       "note": "飲食店・テイクアウト店の案内はあるが、外部弁当の持ち込み可否は不明。",
       "source": "food.bentoNote"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "本館の1階・2階の「みんなのトイレ」内に小児用トイレがあります（公式の便利ガイドより。3階キッズパラダイスにも小児用トイレありとの記載）。ほかのトイレ内にはおむつ替えベッドがあります",
+    "kidsToiletCheckedAt": "2026年11月14日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.dream-plaza.co.jp/about/guide/"
   },
   {
     "region": "静岡",
@@ -84335,7 +84567,12 @@
       "status": "yes",
       "note": "園内にレストラン1か所（日本平動物園レストハウス。カレー、そばなど）",
       "source": "web:mapple.net/sp_spot/479954/, tabelog.com/en/shizuoka/A2201/A220101/22026821/"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "お子様用トイレが事務所横トイレ・ビジターセンター・ふれあい動物園の3か所にあります（公式サイト「総合案内」より）。多目的トイレにはおむつ替えシートもあります",
+    "kidsToiletCheckedAt": "2026年11月11日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://www.nhdzoo.jp/info/index.html"
   },
   {
     "region": "静岡",
@@ -84772,14 +85009,16 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "shop": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "condition": "夏季の海の家",
+      "note": "海の家が約40軒（2026年の営業期間は7月3日〜9月6日。ウォーカープラス、逗子市広報）",
+      "source": "web:summer.walkerplus.com/odekake/detail/ar0314s16313/data.html, city.zushi.kanagawa.jp 広報ずし2026年7月号"
     },
     "restaurant": {
-      "status": "unknown",
-      "note": null,
-      "source": null
+      "status": "yes",
+      "condition": "夏季の海の家",
+      "note": "海の家で食事ができる（砂浜での飲酒とバーベキューは禁止だが、海の家の中は可。逗子市広報）",
+      "source": "web:city.zushi.kanagawa.jp 広報ずし2026年7月号"
     }
   },
   {
@@ -90089,7 +90328,12 @@
       "status": "yes",
       "note": "同じ商業施設内の飲食店を利用できる。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": "partial",
+    "kidsToiletNote": "入っている横浜ワールドポーターズの1階駐車場側トイレにキッズトイレ（子ども用洋式便座）があり、各階の女性トイレに男児用小便器、優先トイレに子ども用補助便座があります（シネマ内を除く）。店内ではなくモール側の設備。第三者サイトの情報のため要確認",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "review",
+    "kidsToiletSourceUrl": "https://www.kodomoto.info/spots/1410460Vus"
   },
   {
     "region": "神奈川",
@@ -95841,7 +96085,12 @@
       "status": "yes",
       "note": "ららぽーと横浜内に飲食店・フードコートあり。",
       "source": "food.lunch"
-    }
+    },
+    "kidsToilet": true,
+    "kidsToiletNote": "入っているららぽーと横浜の各フロアにキッズトイレがあります（施設公式のお知らせより。2016年の情報のため、場所を含め要確認。店内ではなくモール側の設備）",
+    "kidsToiletCheckedAt": "2026年11月12日",
+    "kidsToiletSource": "official",
+    "kidsToiletSourceUrl": "https://iko-yo.net/facilities/2026/news/17584"
   },
   {
     "region": "神奈川",
