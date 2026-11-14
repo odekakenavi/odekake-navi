@@ -112,7 +112,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺に民間有料駐車場あり。土日祝は周辺駐車場が早い時間に満車となる可能性あり",
       "sourceUrl": "https://www.tokyo-zoo.net/ueno/visitor-info/access/index.html",
       "sourceLabel": "施設公式",
@@ -255,7 +254,6 @@
       "type": "サンシャインシティ共用駐車場",
       "location": "サンシャインシティ内",
       "note": "水族館入場料合計2,000円以上で1時間無料、条件により2時間無料。対象条件・併用制限あり",
-      "available": true,
       "sourceUrl": "https://sunshinecity.jp/aquarium/information/faq.html",
       "sourceLabel": "施設公式FAQ",
       "checkedAt": "2026-11-14"
@@ -391,11 +389,9 @@
     },
     "parkingDetail": {
       "priceLabel": "30分450円",
-      "priceShort": "450円",
       "type": "東京スカイツリータウン共用駐車場",
       "location": "東京スカイツリータウン内",
       "note": "水族館専用・提携駐車場ではない。水族館利用による割引なし",
-      "available": true,
       "sourceUrl": "https://www.sumida-aquarium.com/faq/index.html",
       "sourceLabel": "施設公式FAQ・アクセス",
       "checkedAt": "2026-11-14"
@@ -503,7 +499,6 @@
       "type": "商業施設共用駐車場",
       "location": "ららぽーと豊洲1・2",
       "note": "プランに応じた駐車サービスあり。駐車券をキッザニア手続き時に提示。高さ制限2.1m。豊洲3は対象外",
-      "available": true,
       "sourceUrl": "https://www.kidzania.jp/tokyo/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -612,7 +607,6 @@
       "type": "デックス東京ビーチ共用駐車場",
       "location": "デックス東京ビーチ内",
       "note": "施設専用ではなく商業施設駐車場を利用",
-      "available": true,
       "sourceUrl": "https://www.legolanddiscoverycenter.com/tokyo/plan/before-you-visit/how-to-get-here/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -718,7 +712,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "上野公園周辺に有料駐車場あり。周辺駐車場は別事業者",
       "sourceUrl": "https://www.kahaku.go.jp/",
       "checkedAt": "2026-11-14"
@@ -917,7 +910,6 @@
       "roof": "none",
       "location": "立川口・西立川口・砂川口の3か所",
       "note": "障害者手帳等の提示で本人と付添人1名の駐車料無料。予約不可。西立川口は大型車スペースなし",
-      "available": true,
       "sourceUrl": "https://www.showakinen-koen.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -1075,14 +1067,12 @@
     "kidsToiletSourceUrl": "https://resemom.jp/release/prtimes/20180301/40656.html",
     "parkingDetail": {
       "priceLabel": "地下駐車場1日1,800円",
-      "priceShort": "1,800円",
       "capacity": "約80台",
       "hours": "営業日の6:00〜閉館30分後",
       "type": "地下駐車場",
       "roof": "covered",
       "location": "施設地下。満車・正午以降は近隣提携駐車場へ案内",
       "note": "正午で地下駐車場の入庫案内終了。高さ2.1m・長さ4.8m・幅2.0m以内",
-      "available": true,
       "sourceUrl": "https://www.puroland.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -1397,7 +1387,6 @@
       "roof": "区画により異なる（立体駐車場・屋外駐車場等（区画別形態は要確認））",
       "location": "遊園地周辺にA〜E駐車場",
       "note": "B・Dは対象店舗利用で無料サービスあり。A・Cは一時入庫でも料金発生",
-      "available": true,
       "sourceUrl": "https://www.yomiuriland.com/traffic/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -1518,7 +1507,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "正門周辺に民間有料駐車場あり。駅舎下に障害者用駐車場あり。障害者用は手帳を警備員に提示。台数に限りあり",
       "sourceUrl": "https://www.tokyo-zoo.net/tama/visitor-info/access/index.html",
       "sourceLabel": "施設公式",
@@ -1621,7 +1609,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺駐車場の利用案内は別途確認が必要。施設専用駐車場の有無を公式情報で確定できず",
       "sourceUrl": "https://www.railway-museum.jp/",
       "checkedAt": "2026-11-14"
@@ -1724,12 +1711,10 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車・バイク2,000円／台。大型車5,000円／台",
-      "priceShort": "2,000円〜",
       "hours": "ツアーオープン時刻から利用可能",
       "type": "専用駐車場",
       "location": "施設敷地内・エントランス付近",
       "note": "2026年12月31日来場分までは事前予約制。ツアーチケット所持者限定。大型車も事前予約必要",
-      "available": true,
       "sourceUrl": "https://www.wbstudiotour.jp/plan-your-visit/arrival/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -1853,7 +1838,6 @@
       "type": "屋外・屋内の別は公式記載なし",
       "location": "公園内駐車場",
       "note": "有料。詳細料金は公式案内で追加確認が必要",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/yoyogi/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -1986,7 +1970,6 @@
       "type": "屋外・屋内の別は公式記載なし",
       "location": "公園内駐車場",
       "note": "大型バスは予約必要。料金免除制度あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/hikarigaoka/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -2098,7 +2081,6 @@
       "type": "屋外・屋内の別は公式記載なし",
       "location": "公園内に3か所",
       "note": "土日祝・イベント時は混雑。満車時の公道での入庫待ちは不可。大型バスは土日祝利用不可の駐車場あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/toneri/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -2224,7 +2206,6 @@
     },
     "parkingDetail": {
       "location": "公園周辺の駐車場配置・入口別情報は追加確認が必要",
-      "available": true,
       "sourceUrl": "https://www.shinrinkoen.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -2398,7 +2379,6 @@
     },
     "parkingDetail": {
       "location": "施設周辺の駐車場案内は追加確認が必要",
-      "available": true,
       "sourceUrl": "https://www.tobuzoo.com/",
       "checkedAt": "2026-11-14"
     }
@@ -2506,7 +2486,6 @@
       "type": "屋外・屋内の別は公式記載なし",
       "location": "東駐車場は産業道路とNACK5スタジアム大宮の間。西駐車場は公園北西側",
       "note": "障害者手帳等の提示で無料出庫。公園利用以外の駐車不可。大型車区画なし",
-      "available": true,
       "sourceUrl": "https://www.pref.saitama.lg.jp/omiya-park/access.html",
       "sourceLabel": "埼玉県公式",
       "checkedAt": "2026-11-14"
@@ -2603,13 +2582,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車75台・車いす専用2台。大型車専用7台は別駐車場",
       "hours": "9:15〜16:45",
       "type": "屋外・屋内の別は公式記載なし",
       "location": "こども動物園駐車場",
       "note": "所定の位置に駐車。駐車場開放時間に注意",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/chikozan/guide/000/000849.html",
       "sourceLabel": "埼玉県公園緑地協会公式",
       "checkedAt": "2026-11-14"
@@ -2777,13 +2754,11 @@
     },
     "parkingDetail": {
       "priceLabel": "A駐車場：平日1日1,500円、土日祝・特定日2,000円",
-      "priceShort": "1,500円〜",
       "capacity": "A駐車場1,500台",
       "hours": "平日7:30〜22:00、土休日7:30〜23:00。最終入場20:00",
       "type": "屋外・屋内の別は公式記載なし",
       "location": "八景島周辺。A駐車場はシーパラダイスパーキング",
       "note": "車高2.1m。A駐車場にEV・PHV充電設備あり",
-      "available": true,
       "sourceUrl": "https://www.seaparadise.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -2913,7 +2888,6 @@
       "roof": "covered",
       "location": "施設地下1階",
       "note": "高さ制限2.3m（一部2.1m）。右折入庫不可。2026年4月4日から料金改定",
-      "available": true,
       "sourceUrl": "https://www.yokohama-anpanman.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -3020,7 +2994,6 @@
       "type": "屋内外の別は公式記載なし",
       "location": "施設敷地内",
       "note": "休館日は駐車場利用不可。車高3m・車幅1.9m・車長5.3mまでを目安",
-      "available": true,
       "sourceUrl": "https://www.cupnoodles-museum.jp/ja/yokohama/guide/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -3144,7 +3117,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺の有料駐車場を利用。水族館利用による駐車料金割引なし",
       "sourceUrl": "https://www.enosui.com/faq.php",
       "sourceLabel": "施設公式FAQ",
@@ -3246,7 +3218,6 @@
     },
     "parkingDetail": {
       "location": "美術館敷地内駐車場の詳細は公式情報で追加確認が必要",
-      "available": true,
       "sourceUrl": "https://www.hakone-oam.or.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -3353,14 +3324,12 @@
     },
     "parkingDetail": {
       "priceLabel": "平日30分300円、当日最大2,400円。土日祝・年末年始30分400円",
-      "priceShort": "300円〜",
       "capacity": "普通車222台、バス26台、二輪車23台",
       "hours": "24時間",
       "type": "地下1階・1階",
       "roof": "covered",
       "location": "山下公園隣接の山下公園駐車場",
       "note": "障害者等の料金減免制度あり。減免は6時間まで",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/yamashita/yamashita/",
       "sourceLabel": "横浜市緑の協会公式",
       "checkedAt": "2026-11-14"
@@ -3400,13 +3369,9 @@
     "price": "1デーパスポート：大人8900円〜／中人7400円〜／小人5300円〜。日付による変動価格制。3歳以下無料。来園日を指定して公式カレンダーで確認",
     "parking": "yes",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "普通車4,000円、大型車6,000円、二輪車1,000円",
       "priceShort": "4,000円〜",
-      "stars": 3,
-      "symbol": "○",
-      "ratingLabel": "○ 普通（台数は多いが繁忙期は早朝から混雑）",
-      "note": "前払い制。当日の状況により別駐車場へ案内される場合あり",
+      "note": "前払い制。当日の状況により別駐車場へ案内される場合あり。台数は多いが、繁忙期は早朝から混雑する。",
       "hours": "当日の状況により開場時間が異なる。日をまたぐ利用不可",
       "type": "立体・平面",
       "roof": "区画により異なる（立体・平面）",
@@ -3551,13 +3516,9 @@
     "price": "1デーパスポート：大人8900円〜／中人7400円〜／小人5300円〜。日付による変動価格制。3歳以下無料。来園日を指定して公式カレンダーで確認",
     "parking": "yes",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "普通車4,000円、大型車6,000円、二輪車1,000円",
       "priceShort": "4,000円〜",
-      "stars": 3,
-      "symbol": "○",
-      "ratingLabel": "○ 普通（台数は多いが繁忙期は早朝から混雑）",
-      "note": "工事により駐車区画が少なくなっている。混雑時は別駐車場へ案内される場合あり",
+      "note": "工事により駐車区画が少なくなっている。混雑時は別駐車場へ案内される場合あり。台数は多いが、繁忙期は早朝から混雑する。",
       "hours": "当日の状況により開場時間が異なる。日をまたぐ利用不可",
       "type": "立体・平面",
       "roof": "区画により異なる（立体・平面）",
@@ -3817,7 +3778,6 @@
       "roof": "none",
       "location": "牧場敷地内・各ゲート周辺",
       "note": "大型専用レーンなし。係員が誘導",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/corporate/material/detail_10327.html",
       "sourceLabel": "自治体観光公式",
       "checkedAt": "2026-11-14"
@@ -3963,7 +3923,6 @@
       "roof": "none",
       "location": "施設隣接の専用駐車場",
       "note": "入館者のみ利用可。現金払い。年間パスポート会員のみ駐車料金割引あり。閉門後の出庫不可",
-      "available": true,
       "sourceUrl": "https://www.kamogawa-seaworld.jp/access/parking/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -4080,7 +4039,6 @@
       "roof": "none",
       "location": "北・南・西ゲート付近",
       "note": "大型車は要予約。障害者手帳等の提示で本人と介護者1名の駐車料金無料。バイク無料",
-      "available": true,
       "sourceUrl": "https://www.park-funabashi.or.jp/and/faq.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -4235,7 +4193,6 @@
       "roof": "none",
       "location": "園内各エリアに駐車可能。車で園内を移動できる",
       "note": "土日祝・大型連休・イルミネーション時期は入退園渋滞に注意",
-      "available": true,
       "sourceUrl": "https://t-doitsumura.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -4325,7 +4282,6 @@
     "parkingDetail": {
       "location": "バラ園・干潟公園それぞれの駐車場区分を要確認",
       "note": "施設共用か、近隣公共駐車場かの区別が必要",
-      "available": true,
       "sourceUrl": "http://www.yatsu-rosegarden.jp",
       "checkedAt": "2026-11-14"
     }
@@ -4522,7 +4478,6 @@
       "roof": "none",
       "location": "西口・中央口／南口・海浜口の各ゲート付近",
       "note": "年間パスポート割引あり。障害者手帳等の提示で普通車・二輪車無料",
-      "available": true,
       "sourceUrl": "https://www.hitachikaihin.jp/guide/ticket.html",
       "sourceLabel": "国営公園公式",
       "checkedAt": "2026-11-14"
@@ -4649,14 +4604,12 @@
     "kidsToiletSourceUrl": "https://www.aquaworld-oarai.com/floor/kids/",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "水族館駐車場約750台、県営駐車場約1,000台",
       "hours": "水族館駐車場は8:00開場。県営駐車場は24時間",
       "type": "屋外",
       "roof": "none",
       "location": "水族館敷地周辺。県営駐車場も利用可能",
       "note": "障害者用駐車場は大型バス駐車場入口から入り係員に申し出る。バイク駐輪場あり",
-      "available": true,
       "sourceUrl": "https://www.aquaworld-oarai.com/guide/access-car/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -4771,7 +4724,6 @@
       "roof": "none",
       "location": "施設敷地内",
       "note": "予約不可。車体長5m以上の大型車両は事前予約。車いす専用区画あり。駐車料金割引なし",
-      "available": true,
       "sourceUrl": "https://nasu-oukoku.com/?page_id=416",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -4864,7 +4816,6 @@
     "parkingDetail": {
       "location": "施設敷地内の駐車場",
       "note": "料金・台数・利用時間は公式情報の追加確認が必要",
-      "available": true,
       "sourceUrl": "https://www.tobuws.co.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -4977,14 +4928,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約1,000台",
       "hours": "朝7:00頃から入庫可能。閉園後はトンネルゲート閉鎖",
       "type": "屋外・複数区画",
       "roof": "none",
       "location": "第1〜第5駐車場。第1駐車場はチケット売場・売店・レストランに近い",
       "note": "第2駐車場は繁忙期にシャトルバス運行。第4・第5駐車場は誘導員の案内に従う",
-      "available": true,
       "sourceUrl": "https://safari.co.jp/faq/faq_tax/admission/",
       "sourceLabel": "施設公式FAQ",
       "checkedAt": "2026-11-14"
@@ -5111,7 +5060,6 @@
       "roof": "none",
       "location": "第一は公園南東側、第二は三鷹市下連雀側",
       "note": "吉祥寺通りからの右折入出庫不可。第二は大型バスの入庫時間制限あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/inokashira/",
       "sourceLabel": "東京都公園協会・東京都公式",
       "checkedAt": "2026-11-14"
@@ -5221,7 +5169,6 @@
       "source": "mixed"
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺の井の頭恩賜公園駐車場または民間駐車場を利用。文化園専用駐車場ではない。土日祝は周辺駐車場が混雑",
       "sourceUrl": "https://www.tokyo-zoo.net/inokashira/visitor-info/access/index.html",
       "sourceLabel": "施設公式",
@@ -5330,13 +5277,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車20分200円",
-      "priceShort": "200円",
       "capacity": "96台",
       "type": "屋外",
       "roof": "none",
       "location": "しながわ区民公園内・水族館駐車場",
       "note": "台数に限りあり。満車時は待機の可能性あり。二輪車は公園駐輪場を利用",
-      "available": true,
       "sourceUrl": "https://www.aquarium.gr.jp/access_car",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -5456,11 +5401,9 @@
     },
     "parkingDetail": {
       "priceLabel": "30分500円",
-      "priceShort": "500円",
       "type": "品川プリンスホテル駐車場",
       "location": "品川プリンスホテル内。水族館から徒歩圏",
       "note": "水族館・ホテル対象施設で当日合計5,000円以上利用すると最大3時間無料。対象外店舗あり",
-      "available": true,
       "sourceUrl": "https://www.aqua-park.jp/aqua/access/index.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -5635,12 +5578,10 @@
     },
     "parkingDetail": {
       "priceLabel": "平日30分300円・最大1,500円。土日祝30分400円・最大料金なし",
-      "priceShort": "300円〜",
       "hours": "1Fは24時間、2Fは9:30〜24:30（最終入場22:45）",
       "type": "デックス東京ビーチ共用駐車場",
       "location": "デックス東京ビーチ内",
       "note": "高さ2.1m・幅2.3m・長さ5.0m制限。平日3,000円利用で2時間、5,000円で4時間サービス。土日祝は3,000円で1時間、5,000円で2時間",
-      "available": true,
       "sourceUrl": "https://tokyo-joypolis.com/access/index.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -5758,14 +5699,12 @@
     "kidsToiletSourceUrl": "https://mako-odekakebiyori.hatenablog.jp/entry/2025/09/09/162440",
     "parkingDetail": {
       "priceLabel": "1時間440円、当日最大1,650円",
-      "priceShort": "440円〜",
       "capacity": "167台（障害者用4台含む）",
       "hours": "7:00〜23:00",
       "type": "地下駐車場",
       "roof": "covered",
       "location": "建物地下1階",
       "note": "高さ2.1m・全長5m・全幅1.9m・重量2.5t制限。23時以降出庫不可",
-      "available": true,
       "sourceUrl": "https://www.miraikan.jst.go.jp/visit/location-directions/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -5865,7 +5804,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺の有料駐車場を利用。一般来館者用駐車場なし。公共交通機関利用を案内",
       "sourceUrl": "https://www.mizunokagaku.jp/",
       "sourceLabel": "施設公式",
@@ -5954,7 +5892,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "四谷ひろば内。周辺の民間駐車場を利用。公共交通機関利用を案内",
       "sourceUrl": "https://www.art-play.or.jp/ttm/info/",
       "sourceLabel": "施設公式",
@@ -6029,7 +5966,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "施設専用駐車場の有無を公式情報で確定できず。周辺駐車場と施設専用駐車場を区別して再確認が必要",
       "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/ikebukuro/",
       "checkedAt": "2026-11-14"
@@ -6118,7 +6054,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "施設専用駐車場の有無を公式情報で確定できず。周辺駐車場と施設専用駐車場を区別して再確認が必要",
       "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/honjo/",
       "checkedAt": "2026-11-14"
@@ -6209,7 +6144,6 @@
     "parkingDetail": {
       "location": "施設専用駐車場の有無を公式情報で確定できず",
       "note": "周辺駐車場と施設専用駐車場を区別して再確認が必要",
-      "available": true,
       "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/taiken/tachikawa/",
       "checkedAt": "2026-11-14"
     }
@@ -6393,13 +6327,11 @@
     "kidsToiletSourceUrl": "https://www.motenashi-toilet.com/toilet-detail/tokyo-dome_viking-zone/",
     "parkingDetail": {
       "priceLabel": "平日30分400円、土日祝・特定日30分500円",
-      "priceShort": "400円〜",
       "hours": "駐車場営業時間は施設共用駐車場に準ずる",
       "type": "地下・立体等（駐車場ごとに異なる）",
       "roof": "区画により異なる（地下・立体等（駐車場ごとに異なる））",
       "location": "東京ドームシティ内の共用駐車場",
       "note": "対象店舗等で3,000円以上1時間、5,000円以上2時間、9,000円以上4時間、25,000円以上12時間割引。対象チケット購入時もサービスあり",
-      "available": true,
       "sourceUrl": "https://www.at-raku.com/ticket/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -6565,7 +6497,6 @@
       "roof": "none",
       "location": "施設敷地内・第1駐車場ほか",
       "note": "駐車料金の福祉割引なし。支払いは現金のみ",
-      "available": true,
       "sourceUrl": "https://www.summerland.co.jp/price/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -6662,14 +6593,12 @@
     },
     "parkingDetail": {
       "priceLabel": "薬王院祈祷殿駐車場：公式料金記載なし。市営山麓駐車場：普通車30分150円、平日12時間最大800円・土日祝1,000円（料金は観光案内情報）",
-      "priceShort": "150円〜",
       "capacity": "祈祷殿250台。市営山麓83台（大型車8台）",
       "hours": "祈祷殿駐車場：8:00〜16:00受付。市営山麓駐車場：24時間",
       "type": "屋外",
       "roof": "none",
       "location": "高尾山麓。登山口・ケーブルカー乗り場周辺",
       "note": "祈祷殿駐車場は行事等で利用不可の場合あり。自転車・バイク不可",
-      "available": true,
       "sourceUrl": "https://www.takaosan.or.jp/access/",
       "sourceLabel": "薬王院公式・市営駐車場案内",
       "checkedAt": "2026-11-14"
@@ -6770,14 +6699,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車30分100円、1日最大700円。入庫後30分無料。大型車1日2,000円",
-      "priceShort": "100円〜",
       "capacity": "普通車170台・大型車20台",
       "hours": "9:15〜17:15（休館日は閉場。イベント時延長あり）",
       "type": "屋外",
       "roof": "none",
       "location": "科学館東側",
       "note": "大型車は事前電話予約。対象の障害者手帳提示で駐車料金免除",
-      "available": true,
       "sourceUrl": "https://www.tamarokuto.or.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -6880,7 +6807,6 @@
       "type": "屋外・屋内の別は公式記載なし",
       "location": "隣接する高島平温水プール駐車場",
       "note": "駐車券を植物館受付に提示。障害者手帳等を持つ方用の専用スペースは少数あり、事前電話予約が必要",
-      "available": true,
       "sourceUrl": "https://www.seibu-la.co.jp/nettaikan/faq.html",
       "sourceLabel": "施設公式FAQ",
       "checkedAt": "2026-11-14"
@@ -6991,7 +6917,6 @@
       "roof": "none",
       "location": "公園内・世田谷区砧公園1-1",
       "note": "大型バスは予約制。土日祝は混雑し入庫規制の場合あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/kinuta/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -7101,7 +7026,6 @@
       "roof": "none",
       "location": "第一駐車場：木場4-1-1。第二駐車場：平野4-6-1",
       "note": "大型バスは予約制。第二駐車場も同料金。公園利用者向け",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/kiba/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -7195,7 +7119,6 @@
       "roof": "none",
       "location": "公園内に第一・第二駐車場",
       "note": "公園・公園施設利用者向け。公園利用以外の駐車不可",
-      "available": true,
       "sourceUrl": "https://tokyo-south-seaside-parks.com/jonanjima-access/",
       "sourceLabel": "東京都立海上公園指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -7275,7 +7198,6 @@
       "type": "アリオ北砂共用駐車場",
       "location": "アリオ北砂内",
       "note": "キドキド利用による駐車サービスの有無・条件は未確認",
-      "available": true,
       "sourceUrl": "https://www.bornelund.co.jp/",
       "sourceLabel": "施設公式・商業施設公式情報要確認",
       "checkedAt": "2026-11-14"
@@ -7368,7 +7290,6 @@
     "kidsToiletSource": "official",
     "kidsToiletSourceUrl": "https://www.city.itabashi.tokyo.jp/bousai/kouen/kouen/doubutsuen/1006627.html",
     "parkingDetail": {
-      "available": false,
       "note": "東板橋公園内。近隣の有料駐車場を利用。公園内に駐車場なし。公共交通機関利用を案内",
       "sourceUrl": "https://www.city.itabashi.tokyo.jp/bousai/kouen/kouen/doubutsuen/1006627.html",
       "sourceLabel": "板橋区公式・指定管理者公式",
@@ -7447,7 +7368,6 @@
       "roof": "none",
       "location": "世田谷区粕谷1-25。公園区域に隣接",
       "note": "大型車の利用条件は要確認。障害者等の料金免除制度あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/rokakoshun-en/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -7571,7 +7491,6 @@
       "roof": "none",
       "location": "公園内。第一・第二・第三駐車場",
       "note": "土日祝の夕方は出庫渋滞の可能性あり。大型バス料金は2時間1,500円、以後30分500円",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/mizumoto/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -7674,7 +7593,6 @@
       "roof": "none",
       "location": "第一・第二駐車場。公園内の別区画",
       "note": "大型バス料金は2時間1,500円、以後30分500円",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/shinozaki/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -7772,7 +7690,6 @@
       "roof": "none",
       "location": "公園内・練馬区氷川台1-2",
       "note": "大型車両（バス・マイクロバス・トラック等）は駐車不可",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/johoku-chuo/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -7873,7 +7790,6 @@
     "kidsToiletSource": "official",
     "kidsToiletSourceUrl": "https://www.tokyorinkai-koen.jp/universal/",
     "parkingDetail": {
-      "available": false,
       "note": "そなエリア東京正面に障害者用スペース。11人乗り以上の団体バスは事前申込。障害者用駐車場は事前電話連絡",
       "sourceUrl": "https://www.tokyorinkai-koen.jp/qaa/",
       "sourceLabel": "施設公式FAQ・アクセス",
@@ -7997,14 +7913,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車1日1回1,000円。11月の土日祝日は1,500円。バス1日1回2,500円",
-      "priceShort": "1,000円〜",
       "capacity": "2,200台",
       "hours": "開園1時間前〜閉園1時間後。入場は閉園30分前まで",
       "type": "屋外・詳細形態は公式記載なし",
       "roof": "none",
       "location": "正門・北門側の駐車場",
       "note": "駐車料金の障害者割引・シニア割引なし。駐輪場は正門・北門の2か所",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/access.php",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -8119,7 +8033,6 @@
     "kidsToiletSource": "official",
     "kidsToiletSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=112",
     "parkingDetail": {
-      "available": false,
       "note": "動物園入口付近に障害者用スペース。教育団体バスは事前予約制。障害者用は予約不可、当日電話で利用状況確認",
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/nogeyama/access.php",
       "sourceLabel": "施設公式",
@@ -8246,14 +8159,12 @@
     "kidsToiletSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=116",
     "parkingDetail": {
       "priceLabel": "普通車・小型車・軽自動車1回1,000円。中型・大型車・バス1回2,000円",
-      "priceShort": "1,000円〜",
       "capacity": "正面820台。牧場口臨時700台",
       "hours": "正面駐車場8:30〜（入場15:20まで。7・8月は15:50まで）",
       "type": "屋外・平面（公式画像・案内上）",
       "roof": "none",
       "location": "正面駐車場は正面入口付近。牧場口は正面満車が見込まれる場合に開場",
       "note": "中型車以上は事前予約制。土日祝は周辺道路を含め混雑",
-      "available": true,
       "sourceUrl": "https://www.kodomonokuni.org/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -8363,7 +8274,6 @@
     "kidsToiletCheckedAt": "2026年11月12日",
     "kidsToiletSource": "review",
     "parkingDetail": {
-      "available": false,
       "note": "近隣のコインパーキングを利用。登戸駅から直行シャトルバスあり。歩行困難者で駐車場利用希望の場合は施設へ電話相談",
       "sourceUrl": "https://fujiko-museum.com/faq.html",
       "sourceLabel": "施設公式FAQ・アクセス",
@@ -8468,7 +8378,6 @@
       "roof": "none",
       "location": "科学館を含む生田緑地内施設の共用駐車場",
       "note": "平日に科学館と日本民家園を見学すると、乗用車は最初の2時間経過後の追加料金を最大2時間分割引。西口は坂道・階段あり",
-      "available": true,
       "sourceUrl": "https://www.ikutaryokuti.jp/access.html",
       "sourceLabel": "生田緑地公式",
       "checkedAt": "2026-11-14"
@@ -8561,7 +8470,6 @@
       "roof": "covered",
       "location": "技術館の入居ビル地下",
       "note": "技術館との割引提携なし。駐車場に関する問い合わせは運営会社へ",
-      "available": true,
       "sourceUrl": "https://www.mhi.com/jp/company/overview/museum/minatomirai/about_museum/faq.html",
       "sourceLabel": "施設公式FAQ",
       "checkedAt": "2026-11-14"
@@ -8654,13 +8562,11 @@
     },
     "parkingDetail": {
       "priceLabel": "30分300円。平日・土日祝とも1日最大2,000円",
-      "priceShort": "300円〜",
       "hours": "7:00〜23:00",
       "type": "横濱ゲートタワー機械式駐車場",
       "roof": "covered",
       "location": "横濱ゲートタワー内。プラネタリウム専用ではない",
       "note": "駐車割引サービスなし。全長5,300mm・全幅1,950mm・全高2,050mm以内。バイク駐輪場なし",
-      "available": true,
       "sourceUrl": "https://planetarium.konicaminolta.jp/planetariayokohama/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -8744,7 +8650,6 @@
       "type": "ラゾーナ川崎プラザ共用駐車場",
       "location": "ラゾーナ川崎プラザ内",
       "note": "科学館利用による駐車割引の有無は未確認",
-      "available": true,
       "sourceUrl": "https://toshiba-mirai-kagakukan.jp/",
       "sourceLabel": "施設・商業施設公式情報要確認",
       "checkedAt": "2026-11-14"
@@ -8844,14 +8749,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1：乗用車29台・障害者用2台。第2：23台。第3：45台（合計97台）",
       "hours": "9:15〜16:45。時間外は施錠",
       "type": "屋外。第2駐車場は砂利敷き",
       "roof": "none",
       "location": "第1は公園正門前、第2は第1駐車場正面の道路向かい、第3は科学館北西側",
       "note": "科学館入館者限定。利用は2時間程度。大型連休等は満車の場合あり、河川敷駐車場へ案内される場合あり",
-      "available": true,
       "sourceUrl": "https://sagamigawa-fureai.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -8944,7 +8847,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "公園内に観光バス・障害者用車両・バイク用の駐車場。一般車は周辺駐車場へ。観光バスは1回3,000円。バイク・障害者用車両は1回200円。利用時間9:00〜17:00",
       "sourceUrl": "https://www.city.odawara.kanagawa.jp/kanko/spot/jyousikouen.html",
       "sourceLabel": "小田原市公式",
@@ -9051,14 +8953,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車800円、大型車3,200円。自転車・オートバイ無料",
-      "priceShort": "800円〜",
       "capacity": "普通車約1,600台・障害者専用21台",
       "hours": "9:00〜17:00",
       "type": "屋外",
       "roof": "none",
       "location": "動物公園敷地内",
       "note": "障害者手帳等の提示で普通車の駐車料金免除。現金・クレジットカード・QR決済対応",
-      "available": true,
       "sourceUrl": "https://www.city.chiba.jp/zoo/guide/index.html",
       "sourceLabel": "千葉市公式",
       "checkedAt": "2026-11-14"
@@ -9154,12 +9054,10 @@
     },
     "parkingDetail": {
       "priceLabel": "1回1,000円。現金のみ",
-      "priceShort": "1,000円",
       "type": "屋外",
       "roof": "none",
       "location": "市原ぞうの国入口手前。サユリワールドにも別駐車場あり",
       "note": "市原ぞうの国とサユリワールドの駐車場は別。共通駐車券なし。園間は無料シャトルバス利用",
-      "available": true,
       "sourceUrl": "https://zounokuni.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -9259,7 +9157,6 @@
       "roof": "none",
       "location": "公園A・B・Cブロック内",
       "note": "大型車・バイク入庫不可。障害者は駐車料金無料",
-      "available": true,
       "sourceUrl": "https://www.seibu-la.co.jp/makuhari/access.html",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -9349,13 +9246,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車572台・大型バス21台",
       "type": "屋外",
       "roof": "none",
       "location": "公園内・各施設周辺",
       "note": "公園利用者向け。個別施設付近の駐車位置は現地案内に従う",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10337.html",
       "sourceLabel": "千葉県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -9453,13 +9348,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車1日500円、バス1日2,000円",
-      "priceShort": "500円〜",
       "capacity": "240台",
       "type": "屋外",
       "roof": "none",
       "location": "動植物園入口ゲートに隣接",
       "note": "駐車場運営者への直接問い合わせ案内あり。園の直営駐車場ではない",
-      "available": true,
       "sourceUrl": "https://www.city.ichikawa.lg.jp/site/zoo/2639.html",
       "sourceLabel": "市川市公式",
       "checkedAt": "2026-11-14"
@@ -9546,7 +9439,6 @@
       "roof": "none",
       "location": "公園敷地内",
       "note": "駐車場の料金・台数・利用時間について、今回確認できた公式資料では詳細未確認。袖ケ浦公園の駐車場情報とは別施設のため混同しない",
-      "available": true,
       "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/toshi/kaihinkouen.html",
       "sourceLabel": "袖ケ浦市公式",
       "checkedAt": "2026-11-14"
@@ -9631,12 +9523,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "屋外",
       "roof": "none",
       "location": "施設敷地内・大駐車場",
       "note": "大型バス用スペースあり。障害者対応駐車スペースあり",
-      "available": true,
       "sourceUrl": "https://kusabue.shiteikanri-sakura.jp/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -9752,7 +9642,6 @@
       "roof": "none",
       "location": "牧場敷地内",
       "note": "駐車料金・台数・利用時間の公式記載を今回確認できず。料金を推測しない",
-      "available": true,
       "sourceUrl": "https://www.yumebokujo.com/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -9952,7 +9841,6 @@
       "roof": "none",
       "location": "遊園地入口付近",
       "note": "事前精算。一度出庫すると再入場不可。大型車は事前予約",
-      "available": true,
       "sourceUrl": "https://www.seibuen-amusement-park.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -10071,14 +9959,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車900円、大型・中型車2,000円",
-      "priceShort": "900円〜",
       "capacity": "正面600台・東臨時120台",
       "hours": "開園時間〜閉園1時間前まで入庫可能",
       "type": "屋外",
       "roof": "none",
       "location": "正面駐車場および正面満車時の東臨時駐車場",
       "note": "再入場不可。東臨時駐車場は正面駐車場混雑時のみ開場",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/sczoo/guide/000/000195.html",
       "sourceLabel": "埼玉県公園緑地協会公式",
       "checkedAt": "2026-11-14"
@@ -10173,13 +10059,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第175台・第2243台・第3304台・第4270台（合計892台）",
       "type": "屋外",
       "roof": "none",
       "location": "正門周辺に複数駐車場",
       "note": "バスは平日のみ第2駐車場を利用可能。上限30台・事前問い合わせ",
-      "available": true,
       "sourceUrl": "https://greencenter.1110city.com/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -10282,14 +10166,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "水族館側約600台・遊具広場側約170台（合計約770台）",
       "hours": "8:00〜18:00",
       "type": "屋外",
       "roof": "none",
       "location": "羽生水郷公園内。水族館側と遊具広場側の2か所",
       "note": "大型車スペースあり。障害者用区画あり",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html",
       "sourceLabel": "埼玉県公園緑地協会公式",
       "checkedAt": "2026-11-14"
@@ -10447,12 +10329,10 @@
     },
     "parkingDetail": {
       "priceLabel": "自家用車1,000円／日、バス1,500円／日",
-      "priceShort": "1,000円〜",
       "type": "屋外",
       "roof": "none",
       "location": "施設敷地内",
       "note": "再入場不可。出庫後に再入庫する場合は再度料金が必要",
-      "available": true,
       "sourceUrl": "https://www.musashinomura.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -10561,7 +10441,6 @@
       "roof": "none",
       "location": "公園内に南・東・北・記念館横の4か所",
       "note": "障害者手帳等の提示で無料。2027年3月末まで記念館横駐車場閉鎖予定",
-      "available": true,
       "sourceUrl": "https://parks.or.jp/tokorozawa-kokuu/guide/001/001581.html",
       "sourceLabel": "埼玉県公園緑地協会公式",
       "checkedAt": "2026-11-14"
@@ -10660,7 +10539,6 @@
       "roof": "none",
       "location": "公園内",
       "note": "プール営業期間と通常期で利用条件が異なる可能性あり。料金・台数は追加確認が必要",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/kawagoesuijo/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -10765,13 +10643,11 @@
     "kidsToiletSourceUrl": "https://harunatsu15.com/archives/4921",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車1,000台・バス24台",
       "type": "屋外",
       "roof": "none",
       "location": "博物館敷地内",
       "note": "博物館来館者向け。大型バス区画あり",
-      "available": true,
       "sourceUrl": "https://www.nat.museum.ibk.ed.jp/information/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -10882,7 +10758,6 @@
       "roof": "none",
       "location": "動物園正門前およびかみね公園内各駐車場",
       "note": "日曜・祝日等は駐車場間の無料周回バス運行あり",
-      "available": true,
       "sourceUrl": "https://www.city.hitachi.lg.jp/zoo/1004402.html",
       "sourceLabel": "日立市公式",
       "checkedAt": "2026-11-14"
@@ -10979,7 +10854,6 @@
       "roof": "none",
       "location": "施設敷地内",
       "note": "大型車・バスは予約制で別料金。満車時は近隣民間駐車場を案内。2027年2月1日から駐車場運営・料金変更予定",
-      "available": true,
       "sourceUrl": "https://www.expocenter.or.jp/information/price_list/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -11180,12 +11054,10 @@
     "kidsToiletSource": "review",
     "parkingDetail": {
       "priceLabel": "乗用車等1,000円。GW・お盆等の特定日は1,500円。二輪車無料",
-      "priceShort": "1,000円〜",
       "type": "屋外・自動ゲート式",
       "roof": "none",
       "location": "施設入口前",
       "note": "30分以内の退場無料。当日事前決済なら特定日も1,000円。出庫後の再入庫は再度料金発生",
-      "available": true,
       "sourceUrl": "https://www.nasuhai.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -11298,7 +11170,6 @@
       "roof": "none",
       "location": "施設敷地内",
       "note": "料金・台数・利用時間の公式記載を今回確認できず。推測しない",
-      "available": true,
       "sourceUrl": "https://edowonderland.net/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -11427,13 +11298,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車2時間まで無料、2〜6時間200円、6時間以上300円。中・大型車2時間まで無料、以後1,000円",
-      "priceShort": "200円〜",
       "hours": "5:00〜21:30。21:30〜翌5:00は入出庫不可・夜間料金1,000円",
       "type": "屋外",
       "roof": "none",
       "location": "栃木県総合運動公園内の駐車場",
       "note": "大型車は北第一または南第一駐車場を利用。現金・キャッシュレス対応",
-      "available": true,
       "sourceUrl": "https://www.park-tochigi.com/tochinoki/information/fee",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -11538,13 +11407,11 @@
     "kidsToiletSourceUrl": "https://kodomonokuni.or.jp/guide/faq/",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約600台",
       "type": "屋外",
       "roof": "none",
       "location": "金山総合公園内",
       "note": "バス利用は事前問い合わせ。長期休暇・連休・週末は混雑",
-      "available": true,
       "sourceUrl": "https://gunma-kodomonokuni.jp/guide/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -11646,13 +11513,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "301台",
       "type": "屋外",
       "roof": "none",
       "location": "動物園・遊園地に隣接する桐生が岡公園",
       "note": "園・公園利用者向け",
-      "available": true,
       "sourceUrl": "https://www.city.kiryu.lg.jp/shisetsu/kouen/1005242.html",
       "sourceLabel": "桐生市公式",
       "checkedAt": "2026-11-14"
@@ -11794,7 +11659,6 @@
       "roof": "none",
       "location": "P1・P2はるなぱあく専用。P3・P4は周辺公園駐車場",
       "note": "土日祝は臨時駐車場を開放する場合あり。無料駐車場と専用駐車場の区別に注意",
-      "available": true,
       "sourceUrl": "https://lunapark.maebashi-park.com/access/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -11888,7 +11752,6 @@
       "source": "web:gltjp.com/ja/directory/item/15709/, castel.jp/p/5717"
     },
     "parkingDetail": {
-      "available": false,
       "note": "川崎ルフロン内。周辺に有料駐車場あり。水族館専用駐車場の案内なし。商業施設駐車場の割引適用は別途条件確認が必要",
       "sourceUrl": "https://kawa-sui.com/",
       "sourceLabel": "施設公式",
@@ -11983,14 +11846,12 @@
     },
     "parkingDetail": {
       "priceLabel": "乗用車1回700円",
-      "priceShort": "700円",
       "capacity": "約70台。利用日によって台数変動",
       "hours": "9:00〜17:00（最終入車16:00）",
       "type": "屋外",
       "roof": "none",
       "location": "施設敷地内",
       "note": "入館時にチケット売場で精算し出庫専用メダルを受け取る",
-      "available": true,
       "sourceUrl": "https://www.yokohama-kagakukan.jp/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -12094,7 +11955,6 @@
       "roof": "covered",
       "location": "博物館と同じビル地下1階",
       "note": "博物館専用駐車場ではない。駐車料金割引サービスなし",
-      "available": true,
       "sourceUrl": "https://www.hara-mrm.com/faq/",
       "sourceLabel": "施設公式FAQ",
       "checkedAt": "2026-11-14"
@@ -12183,7 +12043,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "施設内。一般利用者は公共交通機関利用。近隣コインパーキングは別施設",
       "sourceUrl": "https://www.yumepark.net/410_faq/",
       "sourceLabel": "施設公式",
@@ -12266,14 +12125,12 @@
     },
     "parkingDetail": {
       "priceLabel": "平日無料。6/1～10/31の土日祝は普通車600円、大型車880円、二輪無料",
-      "priceShort": "600円〜",
       "capacity": "112台",
       "hours": "8:30～19:00。時間外は翌朝まで出庫不可",
       "type": "平面駐車場",
       "roof": "none",
       "location": "公園入口付近",
       "note": "公園利用者向け",
-      "available": true,
       "sourceUrl": "https://higashitakane.com/access/",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -12384,7 +12241,6 @@
       "type": "園内駐車場3か所",
       "location": "緑地内",
       "note": "大型車は市民ミュージアム前のみ7台・事前予約。イベント時は利用制限あり。障がい者手帳等で免除",
-      "available": true,
       "sourceUrl": "https://kawasaki-todoroki-park.co.jp/guide/parking/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -12473,13 +12329,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "19台",
       "hours": "9:00～16:30",
       "type": "園内駐車場",
       "location": "公園入口へ続く坂道上",
       "note": "イベント時は利用不可の場合あり。混雑時は公共交通機関推奨",
-      "available": true,
       "sourceUrl": "https://www.city.kawasaki.jp/shisei/category/288-7-22-4-0-0-0-0-0-0.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -12580,13 +12434,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車510円。繁忙期（3/16～4/15、4/29～5/5）は830円。大型車830円（繁忙期1,250円）、二輪無料",
-      "priceShort": "510円〜",
       "capacity": "普通車計146台、身障者用4台、大型車6台",
       "hours": "5:30～19:30（11/1～3/15は17:30まで）",
       "type": "正門・北門駐車場",
       "location": "正門・北門の2か所",
       "note": "通年有料。繁忙期料金あり",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/mitsuike/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -12683,7 +12535,6 @@
       "roof": "none",
       "location": "公園南側入口付近",
       "note": "大型車専用スペースなし。障がい者手帳等提示で免除",
-      "available": true,
       "sourceUrl": "https://kanagawa-park.or.jp/shikinomori/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -12781,7 +12632,6 @@
       "type": "公園駐車場",
       "location": "公園内・周辺の駐車場",
       "note": "料金・利用時間・台数は公式情報で確認できず",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/kodomonokuni/",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -12876,7 +12726,6 @@
       "roof": "none",
       "location": "公園駐車場",
       "note": "土日祝は周辺道路混雑。減免制度あり",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/maioka/maioka/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -12974,7 +12823,6 @@
       "roof": "none",
       "location": "公園内の第1・第2駐車場",
       "note": "駐車券紛失時は特別料金。減免制度あり",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/negishi/negishi1/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -13093,7 +12941,6 @@
       "type": "施設専用駐車場の情報なし",
       "location": "周辺の民間・公共駐車場は別施設",
       "note": "公園利用者向け専用駐車場の有無・詳細は未確認",
-      "available": true,
       "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/koen/daihyoteki/kouen012.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -13192,14 +13039,12 @@
     },
     "parkingDetail": {
       "priceLabel": "30分100円",
-      "priceShort": "100円",
       "capacity": "普通車157台",
       "hours": "5:00～21:00",
       "type": "有料平面駐車場",
       "roof": "none",
       "location": "公園駐車場",
       "note": "バイク利用不可。減免制度あり",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/kishine/kishinep/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -13288,7 +13133,6 @@
       "type": "公園内駐車場（第1・第2・第3）",
       "location": "公園内各所",
       "note": "夜間留め置き不可。プリペイドカードあり",
-      "available": true,
       "sourceUrl": "https://www.nissan-stadium.jp/shinyoko-park/access/car.php/index.php",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -13373,7 +13217,6 @@
       "type": "公園内駐車場",
       "location": "公園内",
       "note": "バイク利用不可（第3）。減免制度あり",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/mitsuzawa/mituzawa3/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -13468,7 +13311,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "特別期間は通常と異なる料金の場合あり",
-      "available": true,
       "sourceUrl": "https://fujisawa-park.com/topics/公園駐車場の有料化に関するお知らせ-2/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -13568,7 +13410,6 @@
       "type": "公園内有料駐車場",
       "location": "公園内",
       "note": "プール営業期間中は普通車の最大料金なし。二輪無料",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/tujidou/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -13650,7 +13491,6 @@
       "type": "施設専用駐車場の情報なし",
       "location": "周辺の稲村ガ崎駐車場等は別施設",
       "note": "公園専用駐車場と周辺駐車場を区別。公園公式情報で詳細未確認",
-      "available": true,
       "sourceUrl": "https://www.city.kamakura.kanagawa.jp/koen/p_kaihin.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -13733,13 +13573,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車1,000円、大型車2,000円／回。有料期間以外の平日（夏休み除く）は無料",
-      "priceShort": "1,000円〜",
       "capacity": "88台（大型車3台）",
       "hours": "1月・11月・12月：8:00～17:30、2～4月・10月：8:00～18:30、5～9月：8:00～19:30",
       "type": "公園駐車場",
       "location": "公園入口付近",
       "note": "土日祝および7/20～8/31が有料。二輪無料。障がい者手帳等で免除",
-      "available": true,
       "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000433.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -13835,13 +13673,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車：平日2時間以内100円、2～3時間150円、3時間超200円。土日祝：310円、460円、610円。西駐車場は無料",
-      "priceShort": "100円〜",
       "capacity": "中央282台（身障者用8台、EV用3台）、大型5台。西駐車場の台数は公式記載なし",
       "hours": "中央駐車場6:00～20:00。西駐車場7:00～19:00",
       "type": "中央駐車場・西駐車場",
       "location": "中央駐車場は公園内。西駐車場はせせらぎの園地区併設",
       "note": "二輪無料。障がい者手帳等またはミライロID提示で免除",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/sagamihara/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -13938,7 +13774,6 @@
       "type": "公園内駐車場（中央口・第2・北口・第3）",
       "location": "公園内各入口",
       "note": "北口駐車場は通年無料",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/nanasawa/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -14023,7 +13858,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "本厚木駅東口すぐ。周辺駐車場は別施設。周辺の有料駐車場を利用",
       "sourceUrl": "https://www.city.atsugi.kanagawa.jp/acsc",
       "sourceLabel": "施設公式・自治体関連",
@@ -14114,13 +13948,11 @@
     },
     "parkingDetail": {
       "priceLabel": "平日：普通車200円／回、大型車610円／回。土日祝：普通車410円／回、大型車1,220円／回。北駐車場は無料",
-      "priceShort": "200円〜",
       "capacity": "東42台、西260台＋身障者用2台・大型10台、北99台＋身障者用2台",
       "hours": "東8:30～18:00、西・北9:00～18:00。7/15～8月は19:00まで",
       "type": "東・西・北駐車場",
       "location": "園内3か所。BBQ場利用者は北駐車場",
       "note": "大型車は西駐車場のみ。年末年始は土日祝料金",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/satoyama/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -14213,7 +14045,6 @@
       "type": "公園内複数駐車場",
       "location": "園内各所（南・西・東・北）",
       "note": "大型バスは事前連絡。宿泊研修所駐車場は宿泊者専用",
-      "available": true,
       "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/koen/page-c_00837.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -14302,7 +14133,6 @@
       "type": "頂上駐車場・大駐車場",
       "location": "頂上および山側の大駐車場",
       "note": "大型バスは大駐車場を利用。頂上駐車場は旋回不可",
-      "available": true,
       "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/kanko/page-c_02820.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -14404,13 +14234,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "110台（福祉車両スペース4台含む）",
       "hours": "入庫8:50～16:00、出庫9:00～16:40",
       "type": "博物館駐車場",
       "location": "博物館敷地内",
       "note": "土日祝・雨天・行楽期は満車の場合あり",
-      "available": true,
       "sourceUrl": "https://nh.kanagawa-museum.jp/visit/access.html",
       "sourceLabel": "博物館公式",
       "checkedAt": "2026-11-14"
@@ -14506,13 +14334,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1 20台、第2 70台、キャンプ場32台、臨時34台",
       "hours": "第1・第2・臨時：9:00～17:00（6/1～9/30は19:00まで）。キャンプ場：9:00～16:00（7/1～8/31は18:00まで）",
       "type": "公園周辺の複数駐車場",
       "location": "公園内各所",
       "note": "臨時駐車場は土日祝のみ。キャンプ場駐車場は12～2月の平日休業",
-      "available": true,
       "sourceUrl": "https://www.yamato-zaidan.or.jp/z_new/zaidan_izuminomori.php",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -14602,14 +14428,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "合計146台（東78・北39・多目的広場29）",
       "hours": "4～5月・7～10月：7:00～18:00（休日は21:00まで）。6月：7:00～21:00。11～3月：7:00～17:00（休日は21:00まで）",
       "type": "公園内平面駐車場（東入口・北入口・多目的広場）",
       "roof": "none",
       "location": "公園内3か所",
       "note": "無料。季節・曜日により利用時間が異なる",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/zamayatoyama/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -14712,7 +14536,6 @@
       "type": "施設駐車場",
       "location": "施設入口付近",
       "note": "4月下旬～6月の休日など混雑時は右折入庫できない場合あり。誘導員の指示に従う",
-      "available": true,
       "sourceUrl": "https://www.fcofuna-kanagawa.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -14819,7 +14642,6 @@
       "type": "第1・第2駐車場、臨時大型車駐車場",
       "location": "第1は園内、第2から園内へはアーチェリー場横の連絡通路を利用",
       "note": "障がい者手帳等で免除。花の国プール利用者は半額。飲食店利用による減免は終了",
-      "available": true,
       "sourceUrl": "https://www.kanagawaparks.com/kurihama/news/2026101916203510549.html",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -14919,12 +14741,10 @@
     },
     "parkingDetail": {
       "priceLabel": "平日：30分未満無料、30分～1時間100円、1～2時間200円、2～3時間300円、3～4時間400円、4時間超500円。土日祝・夏季・年末年始：30分未満無料、30分～1時間200円、1～2時間400円、2～3時間600円、3時間以上800円（当日最大）",
-      "priceShort": "100円〜",
       "hours": "入庫6:30～21:00、出庫24時間",
       "type": "公園内駐車場（水無川・諏訪丸・大倉等）",
       "location": "公園内各所",
       "note": "中型車以上は大倉駐車場のみ。料金区分は曜日・季節で異なる",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/hadanotokawa/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -15044,7 +14864,6 @@
       "type": "正門入口横の乗用車・バス兼用駐車場",
       "location": "正門入口横",
       "note": "バスは事前予約。駐車料金の割引なし。隣接する本牧市民公園駐車場は別施設",
-      "available": true,
       "sourceUrl": "https://www.sankeien.or.jp/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -15118,12 +14937,10 @@
     },
     "parkingDetail": {
       "priceLabel": "入庫後60分無料、以降60分200円。最大1,400円／日。大型車2,000円／台",
-      "priceShort": "200円〜",
       "hours": "5:30～21:30",
       "type": "公園内駐車場",
       "location": "運動公園内",
       "note": "高さ制限2.1m。障がい者手帳等で減免。海老名市民割引カードで半額",
-      "available": true,
       "sourceUrl": "https://www.ebinasportspark.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -15201,7 +15018,6 @@
     "parkingDetail": {
       "type": "駐車場の詳細未確認",
       "note": "駐車場の位置・利用対象・料金の公式根拠を確認できず",
-      "available": true,
       "sourceUrl": "https://www.town.samukawa.kanagawa.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -15293,7 +15109,6 @@
       "type": "公園内駐車場（地区別・複数箇所）",
       "location": "旧吉田茂邸地区・旧三井別邸地区それぞれに設置",
       "note": "中型車以上は予約。障がい者手帳等で減免",
-      "available": true,
       "sourceUrl": "https://kanagawa-park.or.jp/ooisojoyama/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -15371,14 +15186,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車20分100円。最大料金：平日1,200円、土日祝1,500円。大型バス20分400円、当日最大8,000円",
-      "priceShort": "100円〜",
       "capacity": "北側80台（大型バス予約5台）、南側立体291台（車いす用6台含む）",
       "hours": "24時間",
       "type": "北側平面・南側立体のタイムズ駐車場",
       "roof": "区画により異なる（北側平面・南側立体のタイムズ駐車場）",
       "location": "公園北側・南側",
       "note": "大型バスは予約専用。公園専用ではなくタイムズ運営の時間貸し駐車場",
-      "available": true,
       "sourceUrl": "https://www.fujimi-park.com/guide/parking.php",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -15474,7 +15287,6 @@
       "type": "公園内A・B駐車場、臨時駐車場",
       "location": "公園内各所",
       "note": "大型車は事前予約必須。障がい者手帳等で免除",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-park.or.jp/hodogaya/access.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -15550,7 +15362,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺の民間駐車場は別施設。近隣駐車場を利用",
       "sourceUrl": "https://www.city.kawasaki.jp/",
       "checkedAt": "2026-11-14"
@@ -15651,11 +15462,9 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車500円／回、大型車2,000円／回、二輪無料",
-      "priceShort": "500円〜",
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "年間パスポート（大人・中人・シニア）利用者は普通車無料。レストラン・ショップ合計2,000円以上利用で普通車無料。小人パスポートは対象外",
-      "available": true,
       "sourceUrl": "https://kana-garden.com/info/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -15745,13 +15554,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車100円／1時間、1日上限600円。大型車1,500円／回",
-      "priceShort": "100円〜",
       "capacity": "東198台＋身障者用5台。南99台＋身障者用3台。南第2 197台＋身障者用5台。大型6台",
       "hours": "普通車24時間。大型車の入出庫は9:00～21:00",
       "type": "東側・南側・南側第2駐車場",
       "location": "公園内3か所",
       "note": "大型車は事前予約。障がい者手帳で免除",
-      "available": true,
       "sourceUrl": "https://www.sakata-greenservice.co.jp/yutori/guide/parking/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -15829,14 +15636,12 @@
     },
     "parkingDetail": {
       "priceLabel": "平日：30分以内無料、1時間まで100円、以降30分ごと100円、上限700円。土日祝：30分以内無料、1時間まで150円、以降30分ごと150円、上限800円",
-      "priceShort": "100円〜",
       "capacity": "常設127台、臨時80台（混雑時のみ）",
       "hours": "常設5:00～21:30、出庫24時間。臨時6:00～21:15",
       "type": "機械式有料駐車場・臨時駐車場",
       "roof": "covered",
       "location": "公園内",
       "note": "高さ2.1m以下等の車両制限。障がい者手帳等で免除",
-      "available": true,
       "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000039.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -15930,7 +15735,6 @@
       "roof": "covered",
       "location": "公園内",
       "note": "バイク・大型車の駐車場なし。障がい者手帳等で免除。2027年4月予定のリニューアルに向け再整備中",
-      "available": true,
       "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000436.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -16035,7 +15839,6 @@
       "type": "専用・きりんさん・第1・第2の4か所",
       "location": "公園内各所",
       "note": "障がい者手帳で無料。大会・イベント等による貸切・利用不可日あり",
-      "available": true,
       "sourceUrl": "https://www.tef.or.jp/kopgp/parking.html",
       "sourceLabel": "運動場公式",
       "checkedAt": "2026-11-14"
@@ -16146,7 +15949,6 @@
       "type": "第一・第二駐車場",
       "location": "公園正門付近・深大寺方面",
       "note": "障がい者等の利用料金免除制度あり。バラフェスタ等の繁忙期は混雑",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/jindai/index.html",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -16261,7 +16063,6 @@
       "source": "food.nearbyLunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "近隣の民間有料駐車場を利用。近隣駐車場は別施設",
       "sourceUrl": "https://www.tokyo-park.or.jp/park/rikugien/faq/index.html",
       "sourceLabel": "東京都公園協会公式",
@@ -16371,7 +16172,6 @@
       "source": "food.nearbyLunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "近隣の民間時間貸し駐車場を利用。体の不自由な方は庭園管理車両用駐車場のスペースを利用できる場合あり。事前電話連絡が必要",
       "sourceUrl": "https://www.tokyo-park.or.jp/park/koishikawakorakuen/faq/index.html",
       "sourceLabel": "東京都公園協会公式",
@@ -16480,7 +16280,6 @@
       "type": "中央駐車場・北口駐車場",
       "location": "中央は園内中央エリア、北口は台場公園寄り",
       "note": "障がい者手帳等による減免あり。バイクは指定駐輪場を利用",
-      "available": true,
       "sourceUrl": "https://www.tptc.co.jp/park/01_02/access",
       "sourceLabel": "東京港埠頭株式会社公式",
       "checkedAt": "2026-11-14"
@@ -16560,13 +16359,11 @@
     },
     "parkingDetail": {
       "priceLabel": "平日：30分300円、当日最大2,400円。土日祝：30分300円、最大料金なし",
-      "priceShort": "300円〜",
       "capacity": "31台（身障者用1台）",
       "hours": "24時間",
       "type": "公園駐車場",
       "location": "公園内",
       "note": "障がい者手帳等の交付を受けている方は免除",
-      "available": true,
       "sourceUrl": "https://www.tptc.co.jp/park/02_07/access",
       "sourceLabel": "東京港埠頭株式会社公式",
       "checkedAt": "2026-11-14"
@@ -16661,7 +16458,6 @@
       "type": "第一駐車場",
       "location": "石神井公園第一駐車場（石神井町5丁目）",
       "note": "大型バスは利用時間制限あり。障がい者等の利用料金免除制度あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/shakujii/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -16742,7 +16538,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "近隣の民間駐車場を利用。近隣駐車場は別施設",
       "sourceUrl": "https://www.tokyo-park.or.jp/park/zenpukuji/",
       "sourceLabel": "東京都公園協会公式",
@@ -16837,7 +16632,6 @@
       "type": "施設駐車場の詳細未確認",
       "location": "公園名・slugと照合できる公式駐車場情報を特定できず",
       "note": "大田区の同名公園情報とは混同しない",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -16915,7 +16709,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "低公害車駐車料金割引カード制度あり。バスは要予約",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/nogawa/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -17016,7 +16809,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "大型車不可。低公害車駐車料金割引カード制度あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/ukima/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -17095,7 +16887,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "料金・利用時間・台数は公式情報で確認できず",
-      "available": true,
       "sourceUrl": "https://www.city.setagaya.lg.jp/",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -17208,11 +16999,9 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車300円、大型・バス1,030円",
-      "priceShort": "300円〜",
       "type": "博物館駐車場",
       "location": "博物館敷地内",
       "note": "障がい者手帳等の提示で駐車料金免除。介護者1人も免除",
-      "available": true,
       "sourceUrl": "https://www.river-museum.jp/about/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -17313,12 +17102,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "県管理800台（障がい者用26台）、市管理791台（障がい者用3台）",
       "type": "公園内各ゾーンの駐車場",
       "location": "広大な公園内に分散。各施設の最寄り駐車場を利用",
       "note": "利用施設により駐車場の場所が異なる",
-      "available": true,
       "sourceUrl": "https://midorinoportal.pref.saitama.lg.jp/map/titibumyu-zupark/",
       "sourceLabel": "埼玉県公式ポータル",
       "checkedAt": "2026-11-14"
@@ -17400,7 +17187,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "料金・台数・利用時間は未確認",
-      "available": true,
       "sourceUrl": "https://www.city.gyoda.lg.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -17481,12 +17267,10 @@
     },
     "parkingDetail": {
       "priceLabel": "土日祝：2時間以下200円（最初の15分無料）、2～3時間300円、3～4時間400円、4～5時間500円、5～6時間700円、6～7時間900円、7～8時間1,100円、8時間超1,200円。平日は半額・最初の1時間無料",
-      "priceShort": "200円〜",
       "hours": "平日8:00以降開門。駐車場の閉門時刻は公式ページで要確認",
       "type": "公園内複数駐車場",
       "location": "園内各所",
       "note": "準中型車以上2,100円／回。障がい者手帳所持者が乗車する車は免除",
-      "available": true,
       "sourceUrl": "https://www.toda-kousha.com/park/saikodoman/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -17570,13 +17354,11 @@
     },
     "parkingDetail": {
       "priceLabel": "通常期無料。夏季プール期間は普通車1,000円、大型車2,000円",
-      "priceShort": "1,000円〜",
       "capacity": "1,200台",
       "hours": "6:00～19:00。19:00以降閉門・施錠",
       "type": "公園駐車場",
       "location": "公園入口付近",
       "note": "夏季プール期間のみ有料",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/kazohanasaki/guide/001/001278.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -17669,7 +17451,6 @@
       "type": "公園内駐車場（第1～第3）",
       "location": "公園内各所",
       "note": "料金・利用時間は公式記載なし",
-      "available": true,
       "sourceUrl": "https://www.sgp.or.jp/iwatsukijyoshi",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -17752,13 +17533,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "水族館側約600台（障がい者用9台）、大型17台。遊具広場側約170台（障がい者用7台）、大型5台",
       "hours": "8:00～18:00",
       "type": "北・南駐車場",
       "location": "北側・南側の2か所",
       "note": "水族館側と遊具広場側で駐車場が分かれる",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -17853,7 +17632,6 @@
       "type": "公園内複数駐車場",
       "location": "園内各競技施設周辺に分散",
       "note": "大会・イベント時は混雑や利用制限の可能性あり",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/kumagaya/guide/005/005500.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -17934,13 +17712,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車245台、大型車11台",
       "hours": "夏期（6～9月）9:00～21:00、冬期（10～5月）9:00～19:00。入場は施錠30分前まで",
       "type": "公園駐車場",
       "location": "公園内",
       "note": "季節で閉門時刻が異なる",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10647.html",
       "sourceLabel": "千葉県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -18044,7 +17820,6 @@
       "type": "公園内第1・第2駐車場",
       "location": "第1はプール・運動施設・いなげの浜方面、第2は稲毛記念館・芝生広場方面",
       "note": "障がい者手帳等の提示で免除。2026年度は千葉市地方卸売市場の臨時駐車場なし",
-      "available": true,
       "sourceUrl": "https://sunsetbeachpark.jp/access/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -18128,7 +17903,6 @@
       "type": "公園周辺駐車場の詳細未確認",
       "location": "公園周辺",
       "note": "公園専用駐車場か周辺公共駐車場かの区別を含め未確認",
-      "available": true,
       "sourceUrl": "https://www.city.abiko.chiba.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -18242,7 +18016,6 @@
       "type": "公園内第1・第2駐車場",
       "location": "第1・第2に分散",
       "note": "障がい者手帳等の提示で免除。現金払い",
-      "available": true,
       "sourceUrl": "https://www.cue-net.or.jp/kouen/kasiwa/access/index.html",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -18332,13 +18105,11 @@
     },
     "parkingDetail": {
       "priceLabel": "市公式案内に掲載された周辺駐車場は無料",
-      "priceShort": "無料",
       "capacity": "君ケ浜灯台下広場200台、自由広場50台、しおさい公園156台、海岸北側150台、長崎防災空地50台、愛宕山126台など",
       "hours": "駐車場ごとの通常利用時間は公式記載なし",
       "type": "君ケ浜灯台下広場・君ケ浜自由広場・君ケ浜しおさい公園等の周辺駐車場",
       "location": "犬吠埼周辺に分散。犬吠埼灯台直近の専用駐車場とは区別",
       "note": "初日の出時は大混雑。掲載台数は周辺駐車場を含む",
-      "available": true,
       "sourceUrl": "https://www.city.choshi.chiba.jp/kanko/page110005.html",
       "sourceLabel": "銚子市公式",
       "checkedAt": "2026-11-14"
@@ -18425,12 +18196,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1 82台、第2 55台、中部約20台。大型車は第1 4台、第2 3台",
       "type": "公園駐車場（第1・第2・中部）",
       "location": "公園内各所",
       "note": "料金無料。利用時間は未確認",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10644.html",
       "sourceLabel": "千葉県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -18524,12 +18293,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車約300台、大型バス12台",
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "利用時間は公式記載なし",
-      "available": true,
       "sourceUrl": "https://www.chiba-muse.or.jp/MURA/visit/page-1519754757602/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -18627,13 +18394,11 @@
     },
     "parkingDetail": {
       "priceLabel": "偕楽園下駐車場：普通車500円／日（梅まつり期間は異なる）",
-      "priceShort": "500円",
       "capacity": "偕楽園下駐車場168台",
       "hours": "偕楽園下駐車場8:00～17:00。時間外無料開放",
       "type": "周辺公共駐車場",
       "location": "東門まで徒歩約5分（階段利用）、約8分（スロープ経由）",
       "note": "先着順・予約不可。梅まつり期間は料金変更",
-      "available": true,
       "sourceUrl": "https://mitokoumon.com/access/parking/",
       "sourceLabel": "水戸観光コンベンション協会公式",
       "checkedAt": "2026-11-14"
@@ -18720,7 +18485,6 @@
       "type": "公園周辺の公共駐車場",
       "location": "千波湖周辺に分散",
       "note": "偕楽園周辺駐車場と共用・近接する場所あり。施設ごとの駐車場と区別",
-      "available": true,
       "sourceUrl": "https://www.city.mito.lg.jp/site/senbako/4710.html",
       "sourceLabel": "水戸市公式",
       "checkedAt": "2026-11-14"
@@ -18827,12 +18591,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "合計265台",
       "type": "第1・第2・第3駐車場",
       "location": "吊橋周辺。大型車は第1・第2駐車場",
       "note": "無料駐車場を利用",
-      "available": true,
       "sourceUrl": "https://ohtsuribashi.ryujinkyo.jp/guide.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -18927,7 +18689,6 @@
       "type": "海水浴場駐車場",
       "location": "砂浜周辺",
       "note": "海水浴シーズンは有料・交通規制等の可能性があるため、利用前に町の最新案内を確認",
-      "available": true,
       "sourceUrl": "https://www.town.oarai.lg.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -19027,7 +18788,6 @@
       "type": "市営第1～第4駐車場、つつじヶ丘駐車場",
       "location": "筑波山神社周辺と山頂側つつじヶ丘に分散",
       "note": "駐車場ごとに料金・営業時間が異なる",
-      "available": true,
       "sourceUrl": "https://ttca.jp/tourisminfo/mttsukuba/",
       "sourceLabel": "つくば観光コンベンション協会公式",
       "checkedAt": "2026-11-14"
@@ -19131,13 +18891,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "正門303台、北232台、東407台、北側228台、東側160台。合計1,330台",
       "hours": "公園開園時間に準ずる。3～9月8:30～18:30、10～2月8:30～17:30",
       "type": "公園内複数駐車場",
       "location": "正門・北・東など園内各所",
       "note": "大型バスは指定駐車場を利用。公園利用目的以外の駐車不可",
-      "available": true,
       "sourceUrl": "https://www.park-tochigi.com/wanpaku/overview",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -19273,7 +19031,6 @@
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "料金・台数・利用時間は公式情報で確認できず",
-      "available": true,
       "sourceUrl": "https://www.utsunomiya-zoo.com/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -19379,7 +19136,6 @@
       "type": "施設駐車場の詳細未確認",
       "location": "公式情報で位置・台数を確認できず",
       "note": "営業期間・天候等による営業状況とあわせて事前確認推奨",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -19476,7 +19232,6 @@
       "type": "公園内複数駐車場",
       "location": "園内各所",
       "note": "東駐車場は工事等で一部利用制限あり。北駐車場は大型・中型車不可",
-      "available": true,
       "sourceUrl": "https://www.park-tochigi.com/igashira/overview",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -19578,13 +19333,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車500円／回。15分以内無料。駐車場により6時間超1,000円の区分あり",
-      "priceShort": "500円〜",
       "capacity": "湖畔第一218台、湖畔第二58台、華厳第一138台、華厳第二62台",
       "hours": "各駐車場の利用時間は公式記載なし",
       "type": "県営湖畔・華厳の滝駐車場など",
       "location": "湖畔・滝周辺に分散。華厳の滝観瀑台付近は華厳第一・第二",
       "note": "大型バス2,000円／回、二輪200円／回。駐車場ごとに料金区分が異なる",
-      "available": true,
       "sourceUrl": "https://www.nikko-nsm.co.jp/access.html",
       "sourceLabel": "栃木県条例・日光自然博物館公式",
       "checkedAt": "2026-11-14"
@@ -19662,7 +19415,6 @@
       "type": "公園専用駐車場の詳細未確認",
       "location": "周辺の市営・民間駐車場は別施設",
       "note": "近隣駐車場を公園専用として扱わない",
-      "available": true,
       "sourceUrl": "https://www.city.takasaki.gunma.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -19770,13 +19522,11 @@
     },
     "parkingDetail": {
       "priceLabel": "乗用車700円／日。入庫後30分無料。バス2,500円／日、要予約。バイク無料",
-      "priceShort": "700円〜",
       "capacity": "乗用車700台、バス50台",
       "hours": "施設営業時間に準ずる。駐車場独自の時間は公式記載なし",
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "バスは予約制",
-      "available": true,
       "sourceUrl": "https://www.greenbokujo.jp/price",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -19859,7 +19609,6 @@
       "type": "公園内複数駐車場",
       "location": "園内各スポーツ施設周辺",
       "note": "大会・イベント時は混雑・利用制限の可能性あり",
-      "available": true,
       "sourceUrl": "https://www.city.ota.gunma.jp/page/1040700.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -19941,13 +19690,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車555台、軽自動車専用9台、思いやり駐車場9台。臨時駐車場を含む",
       "hours": "第1・第2は6:30～21:30（夜間施錠）。その他は公式記載なし",
       "type": "公園内複数駐車場",
       "location": "公園内各所",
       "note": "第1・第2は21:30～6:30出入り不可。ばら園駐車場はばら園利用者向け",
-      "available": true,
       "sourceUrl": "https://shikishima-park.org/access/",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -20052,12 +19799,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "300台",
       "type": "施設駐車場",
       "location": "施設入口付近",
       "note": "公式案内に駐車料金なし",
-      "available": true,
       "sourceUrl": "https://www.pref.gunma.jp/site/giw/612072.html",
       "sourceLabel": "群馬県公式",
       "checkedAt": "2026-11-14"
@@ -20167,13 +19912,11 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車30分150円。大型車30分600円",
-      "priceShort": "150円〜",
       "capacity": "普通車19台、身障者用3台、大型車3台",
       "hours": "24時間",
       "type": "公園駐車場",
       "location": "公園南側付近",
       "note": "イベント等による貸切・臨時休場あり。高さ250cm以上は大型車扱い",
-      "available": true,
       "sourceUrl": "https://www.city.kita.lg.jp/parks/list/1009531.html",
       "sourceLabel": "北区公式",
       "checkedAt": "2026-11-14"
@@ -20269,7 +20012,6 @@
       "source": "food.nearbyLunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "園入口まで公園内を徒歩移動。バスは事前予約。園専用駐車場ではない",
       "sourceUrl": "https://www.tatemonoen.jp/raien/access.php",
       "sourceLabel": "施設・公園公式",
@@ -20367,7 +20109,6 @@
       "type": "第一・第二駐車場",
       "location": "園内各所",
       "note": "バスは予約制。イベント時は混雑・利用制限あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/koganei/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -20443,13 +20184,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "平日・土曜午前23台、土曜12～17時・日祝40台",
       "hours": "開園時間内",
       "type": "公園駐車場",
       "location": "公園入口付近",
       "note": "台数に限りあり。イベント等で駐車場が利用できない日あり",
-      "available": true,
       "sourceUrl": "https://www.tptc.co.jp/park/03_08",
       "sourceLabel": "東京港埠頭株式会社公式",
       "checkedAt": "2026-11-14"
@@ -20534,7 +20273,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "周辺の民間有料駐車場を利用。周辺駐車場は別施設",
       "sourceUrl": "https://www.tfd.metro.tokyo.lg.jp/hp-hkkan/museum.html",
       "sourceLabel": "東京消防庁公式",
@@ -20627,7 +20365,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": false,
       "note": "北の丸公園内駐車場は徒歩圏。北の丸公園駐車場はイベント等で利用可能台数・時間が変わる",
       "sourceUrl": "https://www.jsf.or.jp/guide/",
       "sourceLabel": "施設公式",
@@ -20714,7 +20451,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "同じ有明水再生センター内。団体バス用無料駐車場は事前申込・予約順。一般利用は別施設駐車場",
       "sourceUrl": "https://www.nijinogesuidoukan.jp/access/",
       "sourceLabel": "施設公式",
@@ -20811,7 +20547,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "目黒通り沿い。近隣の民間駐車場を利用。障がい者用スペースの利用は事前相談",
       "sourceUrl": "https://ins.kahaku.go.jp/riyou/access.html",
       "sourceLabel": "施設公式",
@@ -20907,7 +20642,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": false,
       "note": "高尾駅周辺の民間有料駐車場を利用。観光バスの降車場所もなし",
       "sourceUrl": "https://www.ffpri.go.jp/tmk/visit/question.html",
       "sourceLabel": "森林総合研究所公式",
@@ -20982,7 +20716,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "岩屋までは島内を徒歩移動。駐車場ごとに料金・営業時間が異なる。岩屋専用駐車場ではない",
       "sourceUrl": "https://www.s-n-p.jp/parking/p7enoshima",
       "sourceLabel": "藤沢市観光公式・湘南なぎさパーク公式",
@@ -21073,7 +20806,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "博物館に隣接。学校・児童福祉施設の団体利用、障がい者利用等は見学時間中の無料処理対象",
       "sourceUrl": "https://www.museum.yokosuka.kanagawa.jp/information/access",
       "sourceLabel": "博物館公式",
@@ -21222,7 +20954,6 @@
       "type": "施設駐車場",
       "location": "施設入口付近",
       "note": "障がい者手帳等で免除。市民感謝デー等は無料の場合あり",
-      "available": true,
       "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/faq/shisei/gaiyo/shisetsu/0745.html",
       "sourceLabel": "横須賀市公式",
       "checkedAt": "2026-11-14"
@@ -21307,7 +21038,6 @@
       "type": "タイムズ大師公園駐車場",
       "location": "公園内",
       "note": "障がい者手帳提示で無料。1/1～2/15は最大料金休止",
-      "available": true,
       "sourceUrl": "https://daishi-park.com/access/",
       "sourceLabel": "公園公式",
       "checkedAt": "2026-11-14"
@@ -21384,7 +21114,6 @@
       "type": "公園専用駐車場の詳細未確認",
       "location": "周辺の民間駐車場は別施設",
       "note": "公園専用駐車場の有無を含め未確認",
-      "available": true,
       "sourceUrl": "https://www.city.kawasaki.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -21460,7 +21189,6 @@
       "type": "公園専用駐車場の詳細未確認",
       "location": "周辺施設・民間駐車場は別施設",
       "note": "公園専用駐車場の有無・利用条件を未確認",
-      "available": true,
       "sourceUrl": "https://www.city.yokohama.lg.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -21544,13 +21272,11 @@
     },
     "parkingDetail": {
       "priceLabel": "30分100円",
-      "priceShort": "100円",
       "capacity": "普通車24台",
       "hours": "24時間",
       "type": "公園駐車場",
       "location": "公園内",
       "note": "バイク利用不可。駐車券紛失時は特別料金。減免制度あり",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/tomioka/tomiso/",
       "sourceLabel": "横浜市緑の協会公式",
       "checkedAt": "2026-11-14"
@@ -21647,14 +21373,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車20分100円、4時間超は当日24時まで最大1,200円。大型車30分400円",
-      "priceShort": "100円〜",
       "capacity": "地下1階普通車90台（身障者用2台）、1階大型車10台",
       "hours": "6:30～24:00",
       "type": "施設地下1階・1階駐車場",
       "roof": "covered",
       "location": "施設内",
       "note": "障がい者手帳提示で無料。年末年始は利用不可",
-      "available": true,
       "sourceUrl": "https://www.earthplaza.jp/ep/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -21734,7 +21458,6 @@
       "type": "湖畔の駐車スペース",
       "location": "湖畔周辺",
       "note": "太鼓橋架替工事に伴い散策路・駐車スペースに規制あり。2026年11月12日現在の工事情報を要確認",
-      "available": true,
       "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/4/1019/8/5/3/2/2290.html",
       "sourceLabel": "秦野市公式",
       "checkedAt": "2026-11-14"
@@ -21823,7 +21546,6 @@
       "roof": "none",
       "location": "第1はバス終点から約600m下、第2はバス終点すぐ上。ケーブルカー乗り場までは徒歩約15分",
       "note": "第2は中型車以上不可。満車時は近隣民間駐車場を利用",
-      "available": true,
       "sourceUrl": "https://www.ooyama-cable.co.jp/access/",
       "sourceLabel": "運営会社公式",
       "checkedAt": "2026-11-14"
@@ -21922,9 +21644,7 @@
       "asoview": "https://www.asoview.com/spot/14363ah3332073715/"
     },
     "parkingDetail": {
-      "available": true,
       "priceLabel": "1時間100円、上限500円。イベント時変更あり",
-      "priceShort": "100円〜",
       "capacity": "70台",
       "type": "公園駐車場",
       "location": "公園入口付近",
@@ -22030,7 +21750,6 @@
       "type": "臨時駐車場等。常設専用駐車場の有無は未確認",
       "location": "あじさいの里周辺",
       "note": "駐車場の場所・料金は開催年やイベント運営により異なる可能性あり。通常時の情報は未確認",
-      "available": true,
       "sourceUrl": "https://www.town.kaisei.kanagawa.jp/info/19",
       "sourceLabel": "自治体公式（駐車場詳細未確認）",
       "checkedAt": "2026-11-14"
@@ -22120,14 +21839,12 @@
     },
     "parkingDetail": {
       "priceLabel": "1時間240円、12時間最大700円",
-      "priceShort": "240円〜",
       "capacity": "120台",
       "hours": "24時間",
       "type": "港周辺の平面駐車場",
       "roof": "none",
       "location": "うらり付近（三浦市三崎5-3-1付近）",
       "note": "うらりで一定額以上の買い物をすると無料駐車券あり。大型車は事前連絡",
-      "available": true,
       "sourceUrl": "https://miura-info.ne.jp/access/parking/",
       "sourceLabel": "三浦市観光協会公式",
       "checkedAt": "2026-11-14"
@@ -22206,14 +21923,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "北72台（身障者用2台・バス2台）、東81台（身障者用3台）、西15台、南5台",
       "hours": "5/1～10/31：8:30～18:00、11/1～4/30：8:30～17:00",
       "type": "公園内の複数平面駐車場",
       "roof": "none",
       "location": "園内各所",
       "note": "西駐車場周辺道路は狭いため注意",
-      "available": true,
       "sourceUrl": "https://www.city.zama.kanagawa.jp/bunkasports/kouen/kouen/1003345.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -22289,7 +22004,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "公園入口まで徒歩10～15分程度。二輪車駐車不可。役場口横の駐車場は公園来園者用ではないため駐車不可",
       "sourceUrl": "https://www.town.ninomiya.kanagawa.jp/0000001277.html",
       "sourceLabel": "自治体公式・観光協会公式",
@@ -22391,7 +22105,6 @@
       "type": "美術館駐車場",
       "location": "美術館敷地内",
       "note": "障害者用駐車場無料",
-      "available": true,
       "sourceUrl": "https://www.city.saitama.lg.jp/004/005/002/001/p007717.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -22485,7 +22198,6 @@
       "roof": "none",
       "location": "館の東隣",
       "note": "土日祝は混雑が予想されるため公共交通機関利用を推奨",
-      "available": true,
       "sourceUrl": "https://www.city.saitama.lg.jp/kagakukan/access/p067036.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -22567,7 +22279,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "利用時間外は入出庫不可",
-      "available": true,
       "sourceUrl": "https://www.city.saitama.lg.jp/004/006/003/003/p033466.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -22669,12 +22380,10 @@
     },
     "parkingDetail": {
       "priceLabel": "桜まつり期間中1,000円/台/回。それ以外は公式記載なし",
-      "priceShort": "1,000円",
       "hours": "桜まつり時：P1は6:00～22:00、その他は8:00～（閉場時間は開花状況等で変動）",
       "type": "県営公園駐車場・イベント時の臨時駐車場",
       "location": "公園周辺にP1～P7等",
       "note": "桜まつり期間のみ有料。混雑時は希望の駐車場を利用できない場合あり",
-      "available": true,
       "sourceUrl": "https://www.satte-k.com/access/access_sakura/",
       "sourceLabel": "観光協会公式",
       "checkedAt": "2026-11-14"
@@ -22785,7 +22494,6 @@
       "type": "公園内複数駐車場・臨時駐車場",
       "location": "園内各所",
       "note": "シーズン外の料金・利用条件は公式記載なし。繁忙期は誘導員の指示に従う",
-      "available": true,
       "sourceUrl": "https://navi.city.chichibu.lg.jp/p_flower/1808/",
       "sourceLabel": "秩父市観光公式",
       "checkedAt": "2026-11-14"
@@ -22876,7 +22584,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": false,
       "note": "長瀞駅周辺から岩畳まで徒歩約5分。観光用無料駐車場はない。飲食店・川下り利用者は各店舗へ確認",
       "sourceUrl": "https://www.nagatoro.gr.jp/faq/",
       "sourceLabel": "観光協会公式",
@@ -22968,13 +22675,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "170台",
       "hours": "8:30～21:00",
       "type": "公園駐車場",
       "location": "公園内",
       "note": "12/29～1/3は管理人不在",
-      "available": true,
       "sourceUrl": "https://www.town.kawajima.saitama.jp/2224.htm",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -23138,13 +22843,11 @@
     },
     "parkingDetail": {
       "priceLabel": "平日1,000円/日（土日祝・指定日1,500円/日）。2時間まで無料",
-      "priceShort": "1,000円〜",
       "hours": "9:30～20:00",
       "type": "平面駐車場P1・立体駐車場P2",
       "roof": "区画により異なる（平面駐車場P1・立体駐車場P2）",
       "location": "メッツァ敷地内",
       "note": "予約不可・現地精算。一時出庫不可。車両サイズ制限あり。混雑時は敷地外臨時駐車場へ案内の場合あり",
-      "available": true,
       "sourceUrl": "https://metsa-hanno.com/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -23223,13 +22926,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "南口第1：普通車142台・身障者用4台・大型車11台、南口第2：150台、北口：普通車95台・身障者用2台、北：普通車60台・身障者用1台",
       "hours": "20:00閉鎖",
       "type": "公園内複数駐車場",
       "location": "公園内各所",
       "note": "20:00以降は利用不可",
-      "available": true,
       "sourceUrl": "https://www.city.ageo.lg.jp/page/46-maruyama.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -23312,7 +23013,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "詳細未確認",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -23384,11 +23084,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "駐車場無料。台数・利用可能時間の記載は確認できず",
-      "available": true,
       "sourceUrl": "https://faq.saiboku.co.jp/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -23459,12 +23157,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約300台",
       "type": "公共施設共用駐車場",
       "location": "コスモスアリーナふきあげと共用",
       "note": "団体利用・イベント等により入館制限の場合あり",
-      "available": true,
       "sourceUrl": "https://www.city.kounosu.saitama.jp/site/konotori/1294.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -23547,14 +23243,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1：47台、第2：6台、計53台（身障者用3台含む）",
       "hours": "4～10月：9:00～19:00、11～3月：9:00～17:00",
       "type": "公園内平面駐車場",
       "roof": "none",
       "location": "公園内",
       "note": "利用時間外は入出庫不可。桜・バラの開花時期は混雑",
-      "available": true,
       "sourceUrl": "https://yono-park.com/access",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -23631,13 +23325,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "750台",
       "hours": "9:00～17:00",
       "type": "運動公園駐車場",
       "location": "公園内複数箇所",
       "note": "混雑時は利用できない場合あり",
-      "available": true,
       "sourceUrl": "https://arakawa-sports-park.jp/arakawasougou/",
       "sourceLabel": "施設管理者公式",
       "checkedAt": "2026-11-14"
@@ -23729,12 +23421,10 @@
     },
     "parkingDetail": {
       "priceLabel": "普通・準中型：90分無料、その後30分ごと100円。大型・中型：90分無料、その後30分ごと300円",
-      "priceShort": "100円〜",
       "capacity": "普通車約80台、大型バス8台",
       "type": "館敷地内駐車場",
       "location": "館敷地内",
       "note": "障害者手帳等提示で無料。バスは来館予約時に申し出。県民の日は駐車料金無料",
-      "available": true,
       "sourceUrl": "https://www.chiba-muse.or.jp/SCIENCE/visit/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -23810,7 +23500,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "桜・菖蒲シーズンは満車・周辺道路混雑のため公共交通機関推奨",
-      "available": true,
       "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/3/13/4609.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -23906,12 +23595,10 @@
     },
     "parkingDetail": {
       "priceLabel": "通常無料",
-      "priceShort": "無料",
       "capacity": "通常は第1・第2合計約250台。ただし博物館専用駐車場は現在利用不可",
       "type": "博物館駐車場・植物苑駐車場",
       "location": "博物館・植物苑周辺",
       "note": "2026年9月29日更新情報で博物館専用駐車場の利用不可を告知。植物苑駐車場・市営駐車場は台数限定",
-      "available": true,
       "sourceUrl": "https://www.rekihaku.ac.jp/news/20260929.html",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -23982,12 +23669,10 @@
     },
     "parkingDetail": {
       "priceLabel": "当面無料（分館改修工事中）",
-      "priceShort": "無料",
       "capacity": "普通車80台、大型バス駐車可",
       "type": "町営駐車場",
       "location": "城周辺。町営城下駐車場を利用",
       "note": "分館改修工事中のため休館。敷地内研修館で展示公開",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10437.html",
       "sourceLabel": "千葉県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -24060,13 +23745,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1：普通車26台・障がい者用2台、第2：20台、第3：約80台（合計約130台）",
       "type": "清水渓流広場の駐車場（平面）",
       "roof": "none",
       "location": "清水渓流広場に隣接",
       "note": "シーズン中は混雑。大型バスは約2km離れた専用駐車場を利用し、広場駐車場での乗降のみ可",
-      "available": true,
       "sourceUrl": "https://www.city.kimitsu.lg.jp/soshiki/24/2123.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -24143,12 +23826,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "湖畔の平面駐車場",
       "roof": "none",
       "location": "高滝湖第一駐車場（ふれあいの広場駐車場）など",
       "note": "湖全体の観光駐車場。利用場所により駐車場が異なる",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_16110.html",
       "sourceLabel": "千葉県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -24248,13 +23929,11 @@
     },
     "parkingDetail": {
       "priceLabel": "8:00～22:00：20分100円、22:00～8:00：60分100円、最大1,500円/日",
-      "priceShort": "100円〜",
       "hours": "24時間",
       "type": "複合施設地下駐車場",
       "roof": "covered",
       "location": "同じ建物「きぼーる」内",
       "note": "車両制限：全長5.0m・全幅1.9m・全高2.1m・重量2.5t。団体バスは別途要確認",
-      "available": true,
       "sourceUrl": "https://www.kagakukanq.com/guide/access/index.html",
       "sourceLabel": "施設公式・自治体公式",
       "checkedAt": "2026-11-14"
@@ -24333,7 +24012,6 @@
     },
     "parkingDetail": {
       "note": "施設の営業状況・駐車場情報とも現行の公式情報を確認できず",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -24438,7 +24116,6 @@
       "type": "園内複数の有料駐車場",
       "location": "園内各所。第2・第3駐車場に大型バス区画",
       "note": "GW等の繁忙期は料金が上がる場合あり",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10004.html",
       "sourceLabel": "千葉県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -24517,13 +24194,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "68台",
       "hours": "常時開設（駐車場の利用時間は公式記載なし）",
       "type": "公園駐車場",
       "location": "公園内",
       "note": "大型バス駐車場なし",
-      "available": true,
       "sourceUrl": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shigaichiseibi/1/park/2596.html",
       "sourceLabel": "自治体公式・県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -24602,14 +24277,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車約500台",
       "hours": "4/1～9/30：6:00～19:00、10/1～3/31：8:30～17:15",
       "type": "園内4か所の平面駐車場",
       "roof": "none",
       "location": "園内各所",
       "note": "マイクロバスを含むバスは事前連絡推奨",
-      "available": true,
       "sourceUrl": "https://www.city.mito.lg.jp/site/kankouinfo/28544.html",
       "sourceLabel": "自治体公式・観光協会公式",
       "checkedAt": "2026-11-14"
@@ -24688,13 +24361,11 @@
     },
     "parkingDetail": {
       "priceLabel": "20分まで無料、20分～1時間100円、1～3時間210円、以降段階加算、10～24時間1,050円",
-      "priceShort": "100円〜",
       "capacity": "北160台、南172台（各障害者等用3台含む）",
       "hours": "駐車場利用時間は管理事務所へ要確認",
       "type": "北・南駐車場",
       "location": "公園北側・南側",
       "note": "駐車券紛失時は24時間までごとに1,050円",
-      "available": true,
       "sourceUrl": "https://www.city.tsukuba.lg.jp/shisetsu/kouensports/kouen/1002827.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -24768,7 +24439,6 @@
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "2026年9月1日～2028年4月末頃まで改修工事のため、考古資料館・駐車場・広場を全面閉鎖",
-      "available": true,
       "sourceUrl": "https://www.city.tsuchiura.lg.jp/kamitakatsukaizuka/news/page023002.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -24850,7 +24520,6 @@
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "料金・台数・利用時間の公式記載を確認できず",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -24936,12 +24605,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "820台",
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "大型バス等の区画・利用条件は要確認",
-      "available": true,
       "sourceUrl": "https://www.ibarakiguide.jp/spot.php?code=1468&mode=detail",
       "sourceLabel": "茨城県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -25035,7 +24702,6 @@
       "type": "公園周辺・臨時駐車場",
       "location": "公園周辺。イベント時は臨時駐車場を設置",
       "note": "つつじまつり期間は入園料が別途必要。駐車料金・台数は年度ごとの案内確認が必要",
-      "available": true,
       "sourceUrl": "https://www.ibarakiguide.jp/spot.php?code=758&mode=detail",
       "sourceLabel": "茨城県公式観光サイト",
       "checkedAt": "2026-11-14"
@@ -25129,7 +24795,6 @@
       "roof": "none",
       "location": "第一は大鳥居脇、第二は徒歩約5分、市営宮中地区は徒歩約3分",
       "note": "第一は2026年7月1日から利用方法変更。正月・祭礼時は料金等が異なる場合あり",
-      "available": true,
       "sourceUrl": "https://kashimajingu.jp/info/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%BB%E9%A7%90%E8%BB%8A%E5%A0%B4/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -25206,7 +24871,6 @@
       "type": "公園駐車場",
       "location": "公園周辺",
       "note": "駐車場の料金・台数・利用時間は未確認",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -25291,13 +24955,11 @@
     },
     "parkingDetail": {
       "priceLabel": "通常時無料。2026年紅葉まつり期間：普通車1,000円、バス3,000円",
-      "priceShort": "1,000円〜",
       "capacity": "花貫：普通車110台・バス12台、大能：普通車40台",
       "hours": "通常時の利用時間は公式記載なし。紅葉まつり期間はイベント案内に準ずる",
       "type": "花貫駐車場・大能駐車場",
       "location": "渓谷周辺。駐車場から吊り橋等へ徒歩移動",
       "note": "2026年紅葉まつり期間は有料。期間外は無料",
-      "available": true,
       "sourceUrl": "https://www.city.takahagi.ibaraki.jp/kankou/news/page008436.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -25395,7 +25057,6 @@
       "roof": "none",
       "location": "町営第1から滝まで約1.2km、第2から約1.4km",
       "note": "滝周辺まで徒歩移動が必要。民間駐車場は料金・条件が異なる",
-      "available": true,
       "sourceUrl": "https://www.daigo-kanko.jp/fukuroda-falls/access.html",
       "sourceLabel": "観光協会公式",
       "checkedAt": "2026-11-14"
@@ -25495,14 +25156,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車約150台（公式FAQ）。観光協会案内では普通車約163台・大型車等別枠",
       "hours": "通常は時間制限なし。混雑期は渋滞対策で施錠する場合あり",
       "type": "山麓駅周辺の複数平面駐車場",
       "roof": "none",
       "location": "山麓駅周辺",
       "note": "夏休み土日・紅葉シーズン土日祝は駐車場を施錠する場合あり。峠の茶屋・県営大丸駐車場への案内あり",
-      "available": true,
       "sourceUrl": "https://www.nasu-ropeway.jp/faq/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -25610,12 +25269,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車約1,263台、大型バス20台（公式FAQは普通車1,200台）",
       "type": "牧場敷地内の大型駐車場",
       "location": "牧場敷地内",
       "note": "混雑時は満車の可能性あり",
-      "available": true,
       "sourceUrl": "https://www.senbonmatsu.com/info/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -25703,14 +25360,12 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "東口：普通車233台・大型6台、南口：普通車215台、西口：普通車365台・大型20台",
       "hours": "3～9月：8:30～18:30、10～2月：8:30～17:30",
       "type": "東口・南口・西口の平面駐車場",
       "roof": "none",
       "location": "公園各入口付近",
       "note": "駐車場の開閉時間は公園開園時間と同じ",
-      "available": true,
       "sourceUrl": "https://www.park-tochigi.com/mikamo/overview",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -25793,7 +25448,6 @@
       "type": "公園内複数駐車場",
       "location": "公園南側・西側など",
       "note": "イベント開催時は駐車場の利用制限・混雑あり",
-      "available": true,
       "sourceUrl": "https://www.city.oyama.tochigi.jp/shisei/shisetsu/kinkyuuhinan/page003167.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -25872,7 +25526,6 @@
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "料金・台数・利用時間の公式情報を確認できず",
-      "available": true,
       "sourceUrl": "https://www.osaruland.jp",
       "sourceLabel": "施設公式（詳細未確認）",
       "checkedAt": "2026-11-14"
@@ -25954,7 +25607,6 @@
       "type": "施設内駐車場",
       "location": "施設内各所",
       "note": "施設・エリアにより駐車場所が異なる可能性あり",
-      "available": true,
       "sourceUrl": "https://tochi-mori.jp/",
       "sourceLabel": "施設公式（詳細未確認）",
       "checkedAt": "2026-11-14"
@@ -26098,7 +25750,6 @@
       "type": "牧場敷地内駐車場",
       "location": "施設敷地内",
       "note": "大型連休等は混雑。入場時に駐車券発券、退園口の精算機で支払い",
-      "available": true,
       "sourceUrl": "https://www.rindo.co.jp/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -26192,13 +25843,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車約400台、大型バス5台",
       "type": "牧場内複数の平面駐車場",
       "roof": "none",
       "location": "牧場入口周辺・場内",
       "note": "入口近くに障害者用の広めの駐車枠8台。繁忙期は早い時間に満車となる場合あり",
-      "available": true,
       "sourceUrl": "https://minamigaoka.co.jp/qa/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -26270,11 +25919,9 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車の料金は公式記載なし。大型バスは赤見フィッシングフラワーパーク利用で1台2,000円",
-      "priceShort": "2,000円",
       "type": "周辺駐車場",
       "location": "池周辺",
       "note": "大型バスは指定された別施設の駐車場を利用",
-      "available": true,
       "sourceUrl": "https://sano-kankokk.jp/?sightseeing=04-2",
       "sourceLabel": "観光協会公式",
       "checkedAt": "2026-11-14"
@@ -26370,7 +26017,6 @@
       "type": "フィールドセンター駐車場",
       "location": "那須平成の森フィールドセンター前",
       "note": "大型バス駐車場なし。バスの乗り入れは2021年4月から行われていない",
-      "available": true,
       "sourceUrl": "https://nasuheisei-f.jp/access",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -26468,7 +26114,6 @@
       "source": "food.nearbyLunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "宮本町・上町は徒歩約10分（約500m）、富岡駅東は徒歩約20分（約1km）。製糸場への車両乗り入れ不可",
       "sourceUrl": "https://www.tomioka-silk.jp/_tomioka-silk-mill/about/parking.html",
       "sourceLabel": "富岡市観光公式",
@@ -26581,13 +26226,11 @@
     },
     "parkingDetail": {
       "priceLabel": "2026年紅葉期：普通車1～5階1,000円/日、6階1,200円/日。通常期の料金は公式記載なし",
-      "priceShort": "1,000円〜",
       "hours": "通常期の詳細は公式記載なし。紅葉期の土日祝前日は18:00～翌6:30閉鎖",
       "type": "立体駐車場",
       "roof": "立体駐車場（屋根の有無は要確認）",
       "location": "ロープウェイ土合口駅隣接",
       "note": "紅葉期は夜間閉鎖あり。早朝利用は谷川岳インフォメーションセンター駐車場を案内",
-      "available": true,
       "sourceUrl": "https://tanigawadake-joch.com/information/20261026/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -26666,13 +26309,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料（公式ページに料金記載なし）",
-      "priceShort": "無料",
       "capacity": "約853台",
       "type": "施設隣接の複数平面駐車場（P1～P7）",
       "roof": "none",
       "location": "各駐車場から施設中心部までの距離はおおむね同程度",
       "note": "大型バスはP3で乗降し、駐車は川場村役場の大型バス専用駐車場を利用",
-      "available": true,
       "sourceUrl": "https://denenplaza.co.jp/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -26754,7 +26395,6 @@
       "roof": "none",
       "location": "東・西・北の3か所",
       "note": "大型車用駐車場は東西2か所",
-      "available": true,
       "sourceUrl": "https://www.city.numata.gunma.jp/shisetsu/kouen/1001672.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -26853,7 +26493,6 @@
       "roof": "none",
       "location": "施設隣接",
       "note": "土日祝の混雑時は臨時駐車場を利用。高速道路側は上信越道上り線から利用可能",
-      "available": true,
       "sourceUrl": "https://www.laranfujioka.com/access",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -26948,7 +26587,6 @@
       "type": "施設駐車場",
       "location": "施設隣接",
       "note": "週末・お盆は混雑。駐車のみの利用は有料",
-      "available": true,
       "sourceUrl": "https://www.usuitouge.com/bunkamura/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -27022,12 +26660,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "hours": "4～9月：7:30～17:30、10～3月：8:00～17:30",
       "type": "県立公園の大駐車場",
       "location": "群馬の森公園内。美術館に隣接",
       "note": "公園閉園後は駐車場利用不可。大型バス複数台は要予約",
-      "available": true,
       "sourceUrl": "https://mmag.pref.gunma.jp/access",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -27186,12 +26822,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "800台",
       "type": "園外の複数駐車場",
       "location": "施設入口周辺に第1～第7駐車場",
       "note": "繁忙期は混雑の可能性あり",
-      "available": true,
       "sourceUrl": "https://www.skyland89.jp/faq/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -27275,7 +26909,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "利用時間・料金の記載なし",
-      "available": true,
       "sourceUrl": "https://www.city.kiryu.lg.jp/shisetsu/kouen/1007115.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -27363,7 +26996,6 @@
       "source": "food.nearbyLunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "公園周辺。周辺駐車場は公園管理外。料金・台数は各駐車場による",
       "checkedAt": "2026-11-14"
     }
@@ -27457,7 +27089,6 @@
       "roof": "none",
       "location": "公園内",
       "note": "障害者手帳等による減免制度あり。大型バス駐車不可",
-      "available": true,
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/parking/kuraki/kuraki/",
       "sourceLabel": "自治体公式・指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -27531,7 +27162,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "公園周辺の民間駐車場を利用。公園利用者用の駐車場はなし",
       "sourceUrl": "https://yokosuka-kanko.com/loca-spot/loca-spot-11920/",
       "sourceLabel": "観光協会公式",
@@ -27627,14 +27257,12 @@
     },
     "parkingDetail": {
       "priceLabel": "正面口：1日600円（高速側の料金は別途確認）",
-      "priceShort": "600円",
       "capacity": "合計1,180台（高速側750台、正面口430台）",
       "hours": "正面口：9:00～17:00",
       "type": "正面口立体駐車場・高速側駐車場",
       "roof": "立体駐車場（屋根の有無は要確認）",
       "location": "高速側は横浜横須賀道路釜利谷料金所から直結。正面口は駐車場からシャトルバス利用",
       "note": "正面口駐車場は動物園休園日に休業する場合あり",
-      "available": true,
       "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/koen/ohanami/kanashihana.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -27725,14 +27353,12 @@
     },
     "parkingDetail": {
       "priceLabel": "普通車：3時間未満200円、3～5時間400円、5～8時間600円、8時間以上800円。大型車は各2倍",
-      "priceShort": "200円〜",
       "capacity": "227台（身障者用区画あり）",
       "hours": "入庫5:00～20:30、出庫24時間可能",
       "type": "公園駐車場・平面",
       "roof": "none",
       "location": "公園敷地内",
       "note": "障害者手帳等による駐車料金免除あり。大型車は事前連絡推奨",
-      "available": true,
       "sourceUrl": "https://www.city.kawasaki.jp/580/page/0000001282.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -27821,7 +27447,6 @@
       "type": "公園駐車場",
       "location": "公園内複数エリア",
       "note": "駐車場ごとの料金・台数・営業時間は公式情報で未確認",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -27921,7 +27546,6 @@
       "roof": "none",
       "location": "公園北側、すいすいらんど綾瀬前",
       "note": "大型車不可。障害者手帳等による減免制度あり",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/higashi-ayase/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -28010,14 +27634,12 @@
     },
     "parkingDetail": {
       "priceLabel": "1時間200円、1日最大1,200円。大型バス・マイクロバスは1回2,000円",
-      "priceShort": "200円〜",
       "capacity": "第1：95台、第2：166台",
       "hours": "第1：24時間（12/29～1/3を除く）。第2：6:00～21:00",
       "type": "公園駐車場・平面（第1・第2）",
       "roof": "none",
       "location": "第1は東京辰巳アイスアリーナ横、第2は東京アクアティクスセンター東側",
       "note": "障害者手帳による料金免除あり。バスは平日のみ第2駐車場、事前連絡が必要",
-      "available": true,
       "sourceUrl": "https://www.tptc.co.jp/park/03_01/access",
       "sourceLabel": "施設管理者公式",
       "checkedAt": "2026-11-14"
@@ -28120,7 +27742,6 @@
       "roof": "none",
       "location": "公園内",
       "note": "バス・マイクロバス・トラック等の大型車は駐車不可",
-      "available": true,
       "sourceUrl": "https://www.tokyo-park.or.jp/park/akatsuka/",
       "sourceLabel": "東京都公園協会公式",
       "checkedAt": "2026-11-14"
@@ -28214,7 +27835,6 @@
       "roof": "none",
       "location": "公園内",
       "note": "障害者手帳等による料金免除あり",
-      "available": true,
       "sourceUrl": "https://www.city.setagaya.lg.jp/documents/26186/kouen.pdf",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -28302,12 +27922,10 @@
     },
     "parkingDetail": {
       "priceLabel": "プール営業期間：普通車1,000円、大型車2,000円。通常期は公式記載なし",
-      "priceShort": "1,000円〜",
       "capacity": "約1,900台",
       "type": "公園内複数駐車場",
       "location": "公園内",
       "note": "プール期間はプール利用者以外も有料。第2駐車場はプール営業期間の土日祝・お盆に開門",
-      "available": true,
       "sourceUrl": "https://parks.or.jp/shirakobatosuijo/guide/006/006640.html",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -28382,7 +28000,6 @@
     },
     "parkingDetail": {
       "note": "公園駐車場の詳細を公式情報で特定できず",
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -28468,7 +28085,6 @@
       "type": "公園駐車場",
       "location": "公園内",
       "note": "利用時間・台数・料金は公式情報で未確認",
-      "available": true,
       "sourceUrl": "https://www.parks.or.jp/oomiya2-3/",
       "sourceLabel": "施設管理者公式（詳細未確認）",
       "checkedAt": "2026-11-14"
@@ -28548,14 +28164,12 @@
     },
     "parkingDetail": {
       "priceLabel": "入庫後30分無料、以降60分ごと100円。昼間・夜間それぞれ最大600円",
-      "priceShort": "100円〜",
       "capacity": "152台（身障者用2台）",
       "hours": "24時間・年中無休",
       "type": "公園駐車場・平面",
       "roof": "none",
       "location": "公園敷地内",
       "note": "公式ページに利用条件の追加記載なし",
-      "available": true,
       "sourceUrl": "https://www.city.urayasu.lg.jp/shisetsu/kouen/1005634.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -28649,7 +28263,6 @@
       "type": "公園駐車場",
       "location": "公園敷地内",
       "note": "公園利用者向け。利用時間の記載なし",
-      "available": true,
       "sourceUrl": "https://www.city.ichikawa.lg.jp/page/4330.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -28748,13 +28361,11 @@
     },
     "parkingDetail": {
       "priceLabel": "第2：20分100円、23:15～翌8:30は60分100円。最大800円（平日）・900円（土日祝）。第1：20分100円、23:15～翌8:30は60分100円、最大900円",
-      "priceShort": "100円〜",
       "capacity": "第1：369台、第2：268台",
       "hours": "第1：8:30～23:15。第2：24時間",
       "type": "ビア長池屋上の時間貸し駐車場（第1・第2）",
       "location": "施設と同じビア長池内",
       "note": "あそびマーレ利用者は最大4時間無料",
-      "available": true,
       "sourceUrl": "https://asobimare.jp/tokyo/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -28849,7 +28460,6 @@
     },
     "parkingDetail": {
       "note": "車での来館案内・駐車場情報を公式ページで確認できず",
-      "available": true,
       "sourceUrl": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/welcome/museum.html",
       "sourceLabel": "警視庁公式（駐車場詳細未確認）",
       "checkedAt": "2026-11-14"
@@ -28936,7 +28546,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": false,
       "note": "市ヶ谷ビル内。駐車場利用希望者は施設利用担当へ事前問い合わせ",
       "sourceUrl": "https://www.jica.go.jp/domestic/hiroba/faq/answer.html",
       "sourceLabel": "JICA公式",
@@ -29040,7 +28649,6 @@
       "type": "博物館駐車場",
       "location": "葛西駅高架下・博物館付近",
       "note": "平日は受付で車種・ナンバー申告。土日祝は係員から仮駐車券を受け取る。台数に限りあり",
-      "available": true,
       "sourceUrl": "https://chikahaku.jp/about/access.html",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -29147,13 +28755,11 @@
     },
     "parkingDetail": {
       "priceLabel": "30分100円",
-      "priceShort": "100円",
       "capacity": "41台",
       "type": "施設地下2階駐車場",
       "roof": "covered",
       "location": "施設地下2階",
       "note": "障害者手帳等の提示で駐車料金免除。満車時は利用不可の場合あり",
-      "available": true,
       "sourceUrl": "https://galaxcity.jp/about/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -29255,7 +28861,6 @@
     "kidsToiletSource": "official",
     "kidsToiletSourceUrl": "https://kidspark.hapipiland.com/guide/",
     "parkingDetail": {
-      "available": false,
       "note": "横浜駅東口から徒歩約2分。アソビル自体に駐車場なし。公共交通機関利用を推奨",
       "sourceUrl": "https://kidspark.hapipiland.com/",
       "sourceLabel": "施設運営者公式",
@@ -29347,13 +28952,11 @@
     },
     "parkingDetail": {
       "priceLabel": "250円/30分",
-      "priceShort": "250円",
       "capacity": "94台",
       "hours": "施設営業時間に準ずる駐車場営業時間は公式記載なし",
       "type": "商業施設共用駐車場",
       "location": "浅草エキミセ内",
       "note": "2,000円以上の買い物で1時間無料、5,000円以上で2時間無料",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/tokyo-asakusa/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -29444,7 +29047,6 @@
       "type": "商業施設駐車場",
       "location": "クロスガーデン多摩内。2階店舗",
       "note": "利用パックに応じて追加無料時間あり。タイムパック＋2時間、トワイライト・ファンタジーパック＋4時間。1階駐車場はサービス対象外",
-      "available": true,
       "sourceUrl": "https://fantasyresort.jp/tama/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -29536,14 +29138,12 @@
     },
     "parkingDetail": {
       "priceLabel": "平日：30分300円、当日最大1,500円。土日祝・特定日は料金変更あり",
-      "priceShort": "300円〜",
       "capacity": "約550台",
       "hours": "1階24時間、2階9:30～24:30（最終入場22:45）",
       "type": "自走式立体駐車場",
       "roof": "立体駐車場（屋根の有無は要確認）",
       "location": "デックス東京ビーチ内",
       "note": "高さ2.1m・幅2.3m・長さ5.0mまで。店舗利用による駐車サービスは施設規定による",
-      "available": true,
       "sourceUrl": "https://odaiba-decks-jp.pro/access/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -29652,7 +29252,6 @@
       "type": "商業施設・近隣施設の共用駐車場",
       "location": "店舗が入る万町モールおよび近隣施設",
       "note": "マクドナルド400円以上購入で追加90分、エニタイム利用で追加3時間",
-      "available": true,
       "sourceUrl": "https://cro-spo.com/concept-hours-play-price-plan-howto-service-facilities-access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -29748,14 +29347,12 @@
     },
     "parkingDetail": {
       "priceLabel": "30分280円。平日最大1,600円、土日祝最大2,000円",
-      "priceShort": "280円〜",
       "capacity": "約1,700台",
       "hours": "7:00～24:00（24時までに出庫）",
       "type": "地下・施設共用駐車場",
       "roof": "covered",
       "location": "みなとみらい東急スクエア・クイーンズスクエア横浜内",
       "note": "1店舗2,500円以上で1時間サービス。1店舗最大2時間、複数店舗合計最大3時間。特定日除外",
-      "available": true,
       "sourceUrl": "https://www.minatomirai-square.com/access/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -29850,13 +29447,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "50台",
       "hours": "見学者駐車場の利用時間は公式記載なし",
       "type": "見学者用駐車場",
       "location": "施設敷地内・正門から入場",
       "note": "バス駐車は事前予約が必要",
-      "available": true,
       "sourceUrl": "https://visit-tsukuba.jaxa.jp/access.html",
       "sourceLabel": "JAXA公式",
       "checkedAt": "2026-11-14"
@@ -29941,12 +29536,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "施設隣接の複数平面駐車場（第1～第7）",
       "roof": "none",
       "location": "施設隣接",
       "note": "休日・GW・夏休みなど混雑時は周辺駐車場を順次開設",
-      "available": true,
       "sourceUrl": "https://www.konnyaku-park.com/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -30034,7 +29627,6 @@
       "type": "工場敷地内駐車スペース",
       "location": "野田工場敷地内。野田市駅から徒歩約3分",
       "note": "駐車場が狭いため公共交通機関利用を推奨。満車時は一般有料駐車場を案内する場合あり。見学は完全予約制",
-      "available": true,
       "sourceUrl": "https://www.kikkoman.com/jp/shokuiku/factory/noda/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -30146,13 +29738,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車700台",
       "type": "公園内大型平面駐車場",
       "roof": "none",
       "location": "水遊園敷地内",
       "note": "大型車の駐車条件は公式記載なし",
-      "available": true,
       "sourceUrl": "https://www.tnap.jp/park/access.php",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -30274,7 +29864,6 @@
       "roof": "covered",
       "location": "タワー隣接",
       "note": "一般車の乗降は東側専用スペースを利用",
-      "available": true,
       "sourceUrl": "https://www.tokyotower.co.jp/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -30411,14 +30000,12 @@
     },
     "parkingDetail": {
       "priceLabel": "30分450円",
-      "priceShort": "450円",
       "capacity": "地下645台、立体273台（駐車場情報掲載値）",
       "hours": "7:30～22:00（出庫のみ23:00まで）",
       "type": "地下自走式・機械式駐車場、立体自走式駐車場",
       "roof": "区画により異なる（地下自走式・機械式駐車場、立体自走式駐車場）",
       "location": "東京スカイツリータウン内",
       "note": "東京ソラマチ等の買い物金額に応じた駐車料金割引あり。対象店舗・条件は施設確認",
-      "available": true,
       "sourceUrl": "https://www.tokyo-skytree.jp/access/",
       "sourceLabel": "駐車場運営情報（公式情報との照合要）",
       "checkedAt": "2026-11-14"
@@ -30510,7 +30097,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "有明物流センター内。周辺に複数の時間貸し駐車場。施設公式は近隣時間貸し駐車場の利用を案内",
       "sourceUrl": "https://smallworlds.jp/",
       "sourceLabel": "施設運営者公式",
@@ -30597,7 +30183,6 @@
       "type": "商業施設共用駐車場",
       "location": "ダイバーシティ東京プラザ2階",
       "note": "店舗独自の駐車割引は公式記載なし。商業施設の駐車サービス条件を確認",
-      "available": true,
       "sourceUrl": "https://unkomuseum.com/tokyo/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -30694,7 +30279,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": false,
       "note": "上野公園周辺。上野パーキングセンター等。一般来館者向け駐車場なし。周辺駐車場は各施設の条件による",
       "sourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=113-1",
       "sourceLabel": "施設運営者公式",
@@ -30941,7 +30525,6 @@
       "type": "園内複数駐車場",
       "location": "園内各所",
       "note": "車高2.1m以上は大型車料金。さがみ湖温泉うるり利用者は駐車料金無料。再入場時は再度料金発生",
-      "available": true,
       "sourceUrl": "https://www.sagamiko-resort.jp/tickets/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -31077,7 +30660,6 @@
       "roof": "none",
       "location": "隣接駐車場は美術館隣、第3駐車場は徒歩約5分",
       "note": "身障者用駐車スペースは第2駐車場（御殿場方面）",
-      "available": true,
       "sourceUrl": "https://www.hakone-garasunomori.jp/entrance/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -31193,7 +30775,6 @@
       "type": "複合施設敷地内駐車場",
       "location": "tvk ecom park内",
       "note": "モデルハウス・ショールーム見学、または園内ショップ・カフェで2,000円以上利用すると入庫から2時間無料",
-      "available": true,
       "sourceUrl": "https://y-eg.jp/access/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -31290,7 +30871,6 @@
       "roof": "立体駐車場（屋根の有無は要確認）",
       "location": "横浜ワールドポーターズ2階",
       "note": "留め置き駐車不可。25:00～翌7:00は出庫不可。アニタッチ独自の割引は公式記載なし",
-      "available": true,
       "sourceUrl": "https://www.yim.co.jp/static-pages/access",
       "sourceLabel": "施設運営者公式・商業施設公式",
       "checkedAt": "2026-11-14"
@@ -31394,7 +30974,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "狭山スキー場周辺。狭山スキー場専用駐車場はなし。近隣駐車場を案内",
       "sourceUrl": "https://www.sayamaski.jp/price.html",
       "sourceLabel": "施設運営者公式",
@@ -31509,7 +31088,6 @@
       "roof": "none",
       "location": "博物館敷地内",
       "note": "団体バスは事前予約",
-      "available": true,
       "sourceUrl": "https://www.aeromuseum.or.jp/guide/",
       "sourceLabel": "施設運営者公式",
       "checkedAt": "2026-11-14"
@@ -31610,7 +31188,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": true,
       "sourceUrl": "http://watergarden.hasunuma.co.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -31709,11 +31286,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約1,000台",
       "type": "施設駐車場",
       "location": "施設併設",
-      "available": true,
       "sourceUrl": "https://wanwan-land.co.jp/access",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -31858,7 +31433,6 @@
       "type": "かみね公園共用駐車場",
       "location": "公園内に複数駐車場。動物園正門40台・公園南220台・頂上150台・見晴らし60台・公園北330台",
       "note": "レジャーランド専用台数ではない",
-      "available": true,
       "sourceUrl": "https://www.city.hitachi.lg.jp/citypromotion/1018000/1018003/1018016/1018028.html",
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
@@ -31961,7 +31535,6 @@
       "type": "屋外駐車場",
       "roof": "none",
       "location": "タワー前",
-      "available": true,
       "sourceUrl": "https://www.oarai-mt.jp/access.html",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32140,7 +31713,6 @@
       "type": "場内駐車場",
       "location": "施設敷地内",
       "note": "車両サイズが2.5m×5.0mを超える場合は2台分の料金。レース・イベント日は運用変更の場合あり",
-      "available": true,
       "sourceUrl": "https://www.mr-motegi.jp/fee_m/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32227,7 +31799,6 @@
       "source": "web:mapple.net/sp_spot/479932/"
     },
     "parkingDetail": {
-      "available": true,
       "sourceUrl": "http://www.nasusafari.com/",
       "checkedAt": "2026-11-14"
     }
@@ -32328,13 +31899,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約350台",
       "hours": "開園日営業時間内（EV充電器の利用時間。駐車場自体の利用時間は公式記載なし）",
       "type": "施設駐車場",
       "location": "施設併設",
       "note": "EV充電器2台あり（有料）",
-      "available": true,
       "sourceUrl": "https://www.nasumonkey.com/guide/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32431,11 +32000,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1駐車場60台・第2駐車場90台",
       "type": "施設駐車場",
       "location": "施設併設",
-      "available": true,
       "sourceUrl": "https://www.teddynet.co.jp/nasu/qa/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32524,7 +32091,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": true,
       "sourceUrl": "https://www.nasuorgel.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -32618,12 +32184,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "台数公式記載なし",
       "type": "敷地内・周辺の複数駐車場",
       "location": "美術館敷地内を含む第1～第3駐車場",
       "note": "バス駐車場は事前予約",
-      "available": true,
       "sourceUrl": "https://sgm-nasu.com/faq/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32724,13 +32288,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車200台・バス10台",
       "type": "屋外駐車場",
       "roof": "none",
       "location": "施設併設。第2駐車場あり",
       "note": "公式案内の駐車場誘導に従う",
-      "available": true,
       "sourceUrl": "https://www.trick-art.jp/access/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32834,12 +32396,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車100台・大型バス5台",
       "type": "屋外駐車場",
       "roof": "none",
       "location": "施設併設",
-      "available": true,
       "sourceUrl": "https://trickart-pia.com/access/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -32959,12 +32519,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約1,000台",
       "type": "屋外駐車場",
       "roof": "none",
       "location": "施設隣接",
-      "available": true,
       "sourceUrl": "https://www.omochaoukoku.com/karuizawa/faq/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33058,11 +32616,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "300台",
       "type": "施設敷地内駐車場",
       "location": "施設敷地内",
-      "available": true,
       "sourceUrl": "https://www.meiken-bokujou.com/price/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33136,7 +32692,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": true,
       "checkedAt": "2026-11-14"
     }
   },
@@ -33209,7 +32764,6 @@
       "type": "工場敷地内駐車場",
       "location": "工場敷地内",
       "note": "公共交通機関の利用を推奨。車いす利用者・介助が必要な人は優先利用可。大型バスは事前問い合わせ",
-      "available": true,
       "sourceUrl": "https://www.suntory.co.jp/factory/musashino/access/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33283,7 +32837,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "工場内に来場者用駐車場なし。公共交通機関で来場",
       "sourceUrl": "https://www.ccbji.co.jp/plant/tama.php",
       "sourceLabel": "公式",
@@ -33357,7 +32910,6 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
-      "available": true,
       "sourceUrl": "https://www.jal.com/ja/kengaku/",
       "checkedAt": "2026-11-14"
     }
@@ -33436,7 +32988,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": true,
       "sourceUrl": "https://www.kirin.co.jp/experience/factory/yokohama/access/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33510,7 +33061,6 @@
     },
     "parkingDetail": {
       "location": "横浜市都筑区川向町675番1号",
-      "available": true,
       "sourceUrl": "https://kiyoken.com/factory/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33584,7 +33134,6 @@
       "source": null
     },
     "parkingDetail": {
-      "available": false,
       "note": "工場敷地内に自家用車用駐車場なし。公共交通機関で来場。自転車用駐輪場はあり",
       "sourceUrl": "https://www.morinaga.co.jp/factory/tsurumi/",
       "sourceLabel": "公式",
@@ -33661,12 +33210,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "hours": "開館日。売店営業時間10:00～15:30",
       "type": "敷地内駐車場",
       "location": "施設敷地内",
       "note": "完全予約制。駐車場はアイドリングストップ",
-      "available": true,
       "sourceUrl": "https://www.glico.com/jp/enjoy/experience/glicopia/east/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33738,7 +33285,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": false,
       "note": "見学者用駐車場なし。公共交通機関を利用",
       "sourceUrl": "https://www.meiji.co.jp/learned/factory/sakado/access.html",
       "sourceLabel": "公式",
@@ -33816,7 +33362,6 @@
     "parkingDetail": {
       "location": "武蔵浦和駅西口から徒歩5分",
       "note": "公式アクセス案内は徒歩経路を掲載。駐車場の有無・利用条件は確認できず",
-      "available": true,
       "sourceUrl": "https://www.lotte.co.jp/kengaku/",
       "sourceLabel": "公式",
       "checkedAt": "2026-11-14"
@@ -33891,7 +33436,6 @@
       "source": "food.bentoNote"
     },
     "parkingDetail": {
-      "available": true,
       "sourceUrl": "https://www.sapporobeer.jp/brewery/chiba/",
       "checkedAt": "2026-11-14"
     }
@@ -46386,9 +45930,7 @@
     "tip": "2025年オープンの新しい公園でとても綺麗。駐車場も60台以上と広く利用しやすい。",
     "address": "千葉県南房総市和田町下三原360番地1",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車61台・身障者用3台"
     },
     "verifiedAt": "2026年10月2日",
@@ -72419,9 +71961,7 @@
       }
     ],
     "parkingDetail": {
-      "available": true,
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "160台"
     },
     "familyPrice": {
@@ -74841,7 +74381,6 @@
     "genre": "公園",
     "address": "東京都中央区晴海5-8",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "60分500円（平日は最大1,500円）",
       "priceShort": "500円/60分",
       "note": "入園は無料ですが、駐車場は有料です。"
@@ -74925,7 +74464,6 @@
     "genre": "公園",
     "address": "東京都江東区海の森3-3-76",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "普通車 平日500円／土日祝1,000円",
       "priceShort": "500〜1,000円",
       "note": "入園は無料ですが、駐車場は有料です。"
@@ -75667,7 +75205,6 @@
     "genre": "公園",
     "address": "静岡県伊豆市日向413-1",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "無料（82台）",
       "priceShort": "無料",
       "capacity": "82台",
@@ -75762,7 +75299,6 @@
     ],
     "businessHoursNote": "平日9:30〜17:00（最終入場16:00）／土日祝は90分入れ替え制（9:30・11:30・13:30・15:30開始）／お盆期間は土日祝と同じ時間割",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "無料（約202台）",
       "priceShort": "無料",
       "capacity": "約202台",
@@ -75854,7 +75390,6 @@
     "address": "静岡県沼津市千本港町83",
     "businessHoursNote": "10:00〜18:00（最終入館17:30）／季節により変更あり／年中無休（1月にメンテナンス休館あり）",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "専用駐車場なし。近隣の有料駐車場（港八十三番地駐車場：6〜18時 60分300円など）を利用",
       "priceShort": "有料",
       "capacity": "近隣の有料駐車場 約500台",
@@ -76126,7 +75661,6 @@
       "水曜日（祝日の場合は木曜日）※7/20〜8/31は無休"
     ],
     "parkingDetail": {
-      "available": true,
       "priceLabel": "無料（約200台）",
       "priceShort": "無料",
       "capacity": "約200台",
@@ -76310,7 +75844,6 @@
     "genre": "室内遊び場",
     "address": "静岡県静岡市葵区柚木1026",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "最初の3時間まで無料、以降60分ごとに200円",
       "priceShort": "3時間無料",
       "note": "最初の3時間まで無料。以降は60分ごとに200円です。"
@@ -81943,7 +81476,6 @@
       "capacity": "約80台",
       "type": "農園敷地内駐車場",
       "location": "施設敷地内",
-      "available": true,
       "sourceUrl": "https://www.tochigiji.or.jp/spot/s9419/",
       "sourceLabel": "栃木県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -82167,7 +81699,6 @@
       "hours": "農場営業時間9:00〜15:00（駐車場独自の時間は公式記載なし）",
       "type": "農場駐車場",
       "location": "農場敷地内",
-      "available": true,
       "sourceUrl": "https://farmdo.com/farmclub_classic.html",
       "sourceLabel": "観光情報サイト",
       "checkedAt": "2026-11-14"
@@ -82270,7 +81801,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "生育状況により営業時間変更の場合あり。掲載元は民間地域情報サイト。農園公式による確認は未了",
-      "available": true,
       "sourceUrl": "https://www.dan-b.com/farm_nakajima/",
       "sourceLabel": "民間地域情報サイト",
       "checkedAt": "2026-11-14"
@@ -82609,7 +82139,6 @@
       "type": "農園隣接駐車場",
       "location": "農園に隣接",
       "note": "30名以上の団体予約は電話またはFAX",
-      "available": true,
       "sourceUrl": "https://komazawafarm.com/access.html",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -82726,7 +82255,6 @@
       "type": "第1・第2駐車場",
       "location": "受付棟前および道路沿い",
       "note": "みかん狩りシーズンは駐車場プランで予約した人のみ利用可能。バスは事前問い合わせ",
-      "available": true,
       "sourceUrl": "https://www.mitake-en.jp/about",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -83014,7 +82542,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "来園前に園へ直接問い合わせ",
-      "available": true,
       "sourceUrl": "https://www.town.oiso.kanagawa.jp/isotabi/meguru/pagedate/14460.html",
       "sourceLabel": "大磯町公式",
       "checkedAt": "2026-11-14"
@@ -83115,7 +82642,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "来園前に園へ直接問い合わせ",
-      "available": true,
       "sourceUrl": "https://www.town.oiso.kanagawa.jp/isotabi/meguru/pagedate/14460.html",
       "sourceLabel": "大磯町公式",
       "checkedAt": "2026-11-14"
@@ -83300,7 +82826,6 @@
       "type": "農園駐車場",
       "location": "農園周辺",
       "note": "バス駐車は要相談",
-      "available": true,
       "sourceUrl": "https://www.pref.saitama.lg.jp/greentourism/shisetsu/103024.html",
       "sourceLabel": "埼玉県公式",
       "checkedAt": "2026-11-14"
@@ -83411,7 +82936,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "バス駐車不可。団体は平日も相談可能",
-      "available": true,
       "sourceUrl": "https://www.pref.saitama.lg.jp/greentourism/shisetsu/108040.html",
       "sourceLabel": "埼玉県公式",
       "checkedAt": "2026-11-14"
@@ -83616,7 +83140,6 @@
     "parkingDetail": {
       "type": "農園駐車場",
       "location": "農園敷地内",
-      "available": true,
       "sourceUrl": "https://www.odaka-pear.com/?page_id=22",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -83987,7 +83510,6 @@
       "type": "果樹園駐車場・第1、第2",
       "location": "第1は果樹園脇、第2は約500m先・徒歩約7分",
       "note": "第1が混雑時は第2駐車場を利用",
-      "available": true,
       "sourceUrl": "https://shimamurakaju.wixsite.com/home/contact",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -84171,7 +83693,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "農園利用者向け",
-      "available": true,
       "sourceUrl": "https://www.yamanashi-kankou.jp/kankou/spot/p2_3520.html",
       "sourceLabel": "山梨県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -84272,7 +83793,6 @@
       "hours": "施設営業時間8:00〜17:00（駐車場独自の時間は公式記載なし）",
       "type": "農園駐車場",
       "location": "農園敷地内",
-      "available": true,
       "sourceUrl": "https://www.yamanashi-kankou.jp/kankou/spot/d-52.html",
       "sourceLabel": "山梨県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -84391,12 +83911,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "乗用車50台、バス30台",
       "hours": "施設営業時間8:00〜17:00（駐車場独自の時間は公式記載なし）",
       "type": "農園敷地内駐車場",
       "location": "施設敷地内",
-      "available": true,
       "sourceUrl": "https://miharashien.com/facilitie.html",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -84494,7 +84012,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "掲載情報は2024年5月20日現在",
-      "available": true,
       "sourceUrl": "https://www.yamanashi-kankou.jp/kankou/spot/c-15.html",
       "sourceLabel": "山梨県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -84596,7 +84113,6 @@
       "hours": "施設営業時間8:00〜17:00",
       "type": "農園駐車場",
       "location": "農園敷地内",
-      "available": true,
       "sourceUrl": "https://www.satominouen.com/about.html",
       "sourceLabel": "農園公式・山梨県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -84786,7 +84302,6 @@
       "type": "駐車場あり（厚木市農協玉川支所の利用案内もあり）",
       "location": "園から徒歩約3〜4分の玉川農協前周辺",
       "note": "駐車場所の詳細・利用条件は来園前に要確認",
-      "available": true,
       "sourceUrl": "https://www.atsugi-kankou.jp/soshiki/atsugi-ta/atugi-iine-grape.html",
       "sourceLabel": "厚木市観光協会公式",
       "checkedAt": "2026-11-14"
@@ -84982,7 +84497,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内。道の駅水の郷さわらに隣接",
       "note": "大型車は道の駅駐車場を利用",
-      "available": true,
       "sourceUrl": "https://r-farm.biz/",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -85088,7 +84602,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "食べ放題は要予約。営業日は主に土日祝",
-      "available": true,
       "sourceUrl": "https://budougadaisuki.wixsite.com/kuransa",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -85201,7 +84714,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "ぶどう狩りは要予約。マイクロバスも駐車可能",
-      "available": true,
       "sourceUrl": "https://yorii-kanko.jp/hirakurabudo.html",
       "sourceLabel": "寄居町観光協会公式",
       "checkedAt": "2026-11-14"
@@ -85317,7 +84829,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "バス駐車可",
-      "available": true,
       "sourceUrl": "https://www.pref.saitama.lg.jp/greentourism/shisetsu/108069.html",
       "sourceLabel": "埼玉県公式",
       "checkedAt": "2026-11-14"
@@ -85424,7 +84935,6 @@
       "type": "農園駐車場",
       "location": "直売所前およびいちごハウス脇",
       "note": "バス駐車不可。大型ワンボックスは進入路・駐車時に注意",
-      "available": true,
       "sourceUrl": "https://numataen.com/info",
       "sourceLabel": "農園公式・埼玉県公式",
       "checkedAt": "2026-11-14"
@@ -85528,7 +85038,6 @@
       "type": "ハウス前の路肩駐車スペース",
       "location": "ハウス前",
       "note": "台数に限りあり。満車時は徒歩約9分の見沼自然公園駐車場を案内。路肩の駐車スペースで、一般的な区画駐車場とは異なる",
-      "available": true,
       "sourceUrl": "https://budou.fulltime-farm.co.jp/",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -85801,7 +85310,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "混雑が予想される土日祝は予約推奨",
-      "available": true,
       "sourceUrl": "https://www.numata-kankou.jp/fruit/grape/h14.html",
       "sourceLabel": "沼田市観光協会公式・農園公式",
       "checkedAt": "2026-11-14"
@@ -86078,7 +85586,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "車で来園する場合は「駐車場あり」の予約枠を選択。駐車場不要の予約枠と分かれている",
-      "available": true,
       "sourceUrl": "https://naito-fg.jp/reservation/",
       "sourceLabel": "農園公式",
       "checkedAt": "2026-11-14"
@@ -86277,13 +85784,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車20台",
       "hours": "8:00〜17:00（公式サイト掲載）",
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "山梨県公式観光情報には10台の掲載あり（台数差に注意）",
-      "available": true,
       "sourceUrl": "https://fugakuen.com/",
       "sourceLabel": "農園公式・自治体公式",
       "checkedAt": "2026-11-14"
@@ -86398,7 +85903,6 @@
       "hours": "施設営業時間10:00〜15:00（駐車場独自の時間は公式記載なし）",
       "type": "農園駐車場",
       "location": "農園敷地内",
-      "available": true,
       "sourceUrl": "https://www.yamanashi-kankou.jp/fruits/peach/yamanashi/a-14.html",
       "sourceLabel": "山梨県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -86778,7 +86282,6 @@
     },
     "parkingDetail": {
       "note": "専用駐車場なし。近隣有料駐車場・元町通りパーキングメーター（有料）を利用。パーキングメーターは土日祝12:00〜18:00使用不可（歩行者天国時間帯に注意）",
-      "available": false,
       "sourceUrl": "https://www.elegant-glass.com/sp1/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -87077,11 +86580,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "工房前駐車場",
       "location": "工房前",
       "note": "曜日・時間帯によって駐車できない場合があるため事前確認推奨",
-      "available": true,
       "sourceUrl": "https://yakimono.org/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -87195,7 +86696,6 @@
     },
     "parkingDetail": {
       "note": "専用駐車場なし。近隣コインパーキングは有料。浄智寺内・周辺の路上駐車は禁止",
-      "available": false,
       "sourceUrl": "https://takaranokama.com/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -87311,7 +86811,6 @@
       "type": "店舗前コインパーキング",
       "location": "店舗目の前",
       "note": "コインパーキングの料金・条件は現地表示を確認",
-      "available": true,
       "sourceUrl": "https://www.harajuku.yokohama/shonankibun",
       "sourceLabel": "店舗公式",
       "checkedAt": "2026-11-14"
@@ -87414,12 +86913,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "2台",
       "type": "敷地内駐車場",
       "location": "工房敷地内",
       "note": "利用前に駐車希望を事前連絡",
-      "available": true,
       "sourceUrl": "https://www.jalan.net/kankou/spt_guide000000217442/",
       "sourceLabel": "民間体験情報サイト",
       "checkedAt": "2026-11-14"
@@ -87520,7 +87017,6 @@
       "capacity": "4台",
       "type": "工房駐車場",
       "location": "工房敷地内",
-      "available": true,
       "sourceUrl": "https://www.jalan.net/kankou/spt_guide000000183018/",
       "sourceLabel": "民間体験情報サイト",
       "checkedAt": "2026-11-14"
@@ -87630,12 +87126,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "6台",
       "hours": "施設営業時間10:00〜16:00（駐車場独自の時間は公式記載なし）",
       "type": "施設駐車場",
       "location": "施設敷地内",
-      "available": true,
       "sourceUrl": "https://www.yugawara.or.jp/sightseeing/2435/",
       "sourceLabel": "湯河原町観光公式",
       "checkedAt": "2026-11-14"
@@ -87748,7 +87242,6 @@
     },
     "parkingDetail": {
       "note": "専用駐車場なし。田奈駅周辺のコインパーキング（有料）を利用",
-      "available": false,
       "sourceUrl": "https://ceramic-art-qum.wixsite.com/ceramic-studio-qum/tougeikyoushitsu-access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -88066,7 +87559,6 @@
       "type": "工房駐車スペース",
       "location": "工房敷地内",
       "note": "来訪前に事前連絡。台数は公式サイト内で3台・4台の記載に差異あり",
-      "available": true,
       "sourceUrl": "https://www.sunaasobi.com/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -88172,7 +87664,6 @@
       "type": "敷地内駐車場",
       "location": "工房敷地内",
       "note": "駐車位置は現地案内に従う",
-      "available": true,
       "sourceUrl": "https://www.yubana-glass.com/アクセス/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -88265,12 +87756,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "3台",
       "type": "工房専用駐車場",
       "location": "工房敷地内",
       "note": "予約時に要確認",
-      "available": true,
       "sourceUrl": "https://www.jalan.net/kankou/spt_guide000000205610/",
       "sourceLabel": "民間体験情報サイト",
       "checkedAt": "2026-11-14"
@@ -88382,7 +87871,6 @@
       "type": "施設駐車場",
       "location": "店舗・体験施設周辺",
       "note": "体験施設の利用者も同じ駐車場を利用できるか要確認",
-      "available": true,
       "sourceUrl": "https://www.gunma-fc.jp/location/chikyu-ya/",
       "sourceLabel": "公的観光関連団体",
       "checkedAt": "2026-11-14"
@@ -88483,7 +87971,6 @@
       "type": "競馬場内馬場駐車場",
       "location": "競馬場内。内馬場芝生広場へは場内通路を利用",
       "note": "競馬開催日と非開催日で利用条件が異なる。場内駐車場の位置と非開催日無料を確認。台数・開催日の料金は未確認",
-      "available": true,
       "sourceUrl": "https://www.kawasaki-keiba.jp/guide/park/family/",
       "sourceLabel": "競馬場公式",
       "checkedAt": "2026-11-14"
@@ -88581,7 +88068,6 @@
       "type": "公園駐車場",
       "location": "公園隣接駐車場",
       "note": "大型・中型車は駐車不可",
-      "available": true,
       "sourceUrl": "https://www.city.machida.tokyo.jp/bunka/park/shisetu/park03.html",
       "sourceLabel": "町田市公式",
       "checkedAt": "2026-11-14"
@@ -88674,10 +88160,8 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "公園駐車場",
       "location": "公園内",
-      "available": true,
       "sourceUrl": "https://www.city.isesaki.lg.jp/soshiki/tokeibu/koen/ijikannri/kouen/1430.html",
       "sourceLabel": "伊勢崎市公式",
       "checkedAt": "2026-11-14"
@@ -88792,13 +88276,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車110台、大型バス8台",
       "hours": "施設営業時間9:00〜17:00（駐車場独自の時間は公式記載なし）",
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "普通車予約不要。大型バスは事前連絡。施設利用者以外の駐車は不可",
-      "available": true,
       "sourceUrl": "https://www.ikoyo-nishiizu.jp/crystal/facility/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -88914,7 +88396,6 @@
       "capacity": "普通車200台、大型9台、車椅子利用者用6台",
       "type": "施設駐車場",
       "location": "施設敷地内",
-      "available": true,
       "sourceUrl": "https://www.pref.shizuoka.jp/kurashikankyo/shizenkankyo/sakura/1057743/1058411/1058420.html",
       "sourceLabel": "静岡県公式",
       "checkedAt": "2026-11-14"
@@ -89009,12 +88490,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "500台",
       "type": "サンセットプラザ堂ヶ島共用駐車場",
       "location": "遊覧船乗り場まで徒歩約2分",
       "note": "サンセットプラザ堂ヶ島との共用",
-      "available": true,
       "sourceUrl": "https://dogashimamarine.jp/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -89107,13 +88586,11 @@
     },
     "parkingDetail": {
       "priceLabel": "有料",
-      "priceShort": "有料",
       "capacity": "P1：450台、P2：50台、P3：88台、P4：27台。契約P-A：570台、P-B：470台",
       "hours": "P1は24時間。P2・P3・P4は各駐車場の営業時間による",
       "type": "エスパルスドリームプラザ駐車場・契約駐車場",
       "location": "エスパルスドリームプラザ内。ランドは本館3階",
       "note": "館内利用額に応じて最大6時間無料。映画利用は2時間無料",
-      "available": true,
       "sourceUrl": "https://www.dream-plaza.co.jp/access/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -89222,7 +88699,6 @@
       "type": "立体・平面駐車場、契約駐車場",
       "location": "施設周辺に複数箇所",
       "note": "最初の1時間無料。買物額に応じて最大6時間無料。P1は平日最大800円",
-      "available": true,
       "sourceUrl": "https://www.dream-plaza.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -89336,7 +88812,6 @@
       "type": "動物園駐車場",
       "location": "正面入口周辺",
       "note": "二輪車・自転車は無料",
-      "available": true,
       "sourceUrl": "https://www.city.shizuoka.lg.jp/shisetsu/s0001089.html",
       "sourceLabel": "静岡市公式",
       "checkedAt": "2026-11-14"
@@ -89432,7 +88907,6 @@
     "kidsToiletNote": "3階男女トイレにおむつ替えベッド。授乳室あり",
     "parkingDetail": {
       "note": "専用駐車場なし。近隣有料駐車場を利用（駐車料金サービスなし）",
-      "available": false,
       "sourceUrl": "https://maaru-ct.jp/faq/",
       "sourceLabel": "施設公式・静岡市公式",
       "checkedAt": "2026-11-14"
@@ -89536,7 +89010,6 @@
       "type": "施設駐車場",
       "location": "バーベキュー場隣接",
       "note": "大型・マイクロバスはスペース確保のため要予約。普通車料金にごみ処理費含む",
-      "available": true,
       "sourceUrl": "https://www.ranzan-kanko.jp/price",
       "sourceLabel": "観光協会公式・埼玉県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -89646,7 +89119,6 @@
       "type": "屋外駐車場",
       "location": "博物館敷地内",
       "note": "大型バスは事前連絡が必要。菅谷館跡内の砂利道は駐車・停車禁止。駐車料金の公式記載なし（無料とされる情報あり）",
-      "available": true,
       "sourceUrl": "https://ranzan-shiseki.spec.ed.jp/利用案内-1/交通案内",
       "sourceLabel": "公式（埼玉県）",
       "checkedAt": "2026-11-14"
@@ -89740,7 +89212,6 @@
       "type": "屋外駐車場",
       "location": "公園内",
       "note": "活性化施設の利用時間は9:00〜17:00。駐車場の利用時間とは別。駐車料金の公式記載なし（公園利用は無料）",
-      "available": true,
       "sourceUrl": "https://chocotabi-saitama.jp/spot/19214/",
       "sourceLabel": "自治体関連観光公式",
       "checkedAt": "2026-11-14"
@@ -89832,7 +89303,6 @@
     },
     "parkingDetail": {
       "note": "専用駐車場なし。周辺民間駐車場を利用（海岸付近に約150台・市公式案内）。海水浴場専用ではなく、夏季は周辺道路の混雑に注意",
-      "available": false,
       "sourceUrl": "https://www.city.zushi.kanagawa.jp/shiminkatsudo/kanko/1007363/1004379/1014343.html",
       "sourceLabel": "公式（逗子市）",
       "checkedAt": "2026-11-14"
@@ -89924,7 +89394,6 @@
     },
     "parkingDetail": {
       "note": "専用駐車場なし。近隣の真名瀬駐車場（公営・50台・終日）を利用。7・8月以外は平日20分100円（上限500円）、土日祝15分100円（上限1,000円）。7・8月は30分500円、平日上限2,500円、土日祝上限なし。海水浴場専用ではなく夏季は混雑に注意",
-      "available": false,
       "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/sangyou/1/7935.html",
       "sourceLabel": "公式（葉山町・神奈川県）",
       "checkedAt": "2026-11-14"
@@ -90034,7 +89503,6 @@
       "type": "屋外・平地",
       "location": "美術館敷地内",
       "note": "企画展観覧券で1時間無料（7〜8月は1時間半）。レストラン・ショップ2,000円以上利用で1時間無料。バスは事前連絡",
-      "available": true,
       "sourceUrl": "https://www.moma.pref.kanagawa.jp/hayama/visit/access/",
       "sourceLabel": "公式（神奈川県）",
       "checkedAt": "2026-11-14"
@@ -90133,7 +89601,6 @@
       "type": "屋外駐車場",
       "location": "道の駅敷地内",
       "note": "隣接施設と駐車場を共用する可能性あり。台数・料金は公式情報未確認。隣接施設と駐車場を共用する可能性あり。台数・料金は公式情報未確認",
-      "available": true,
       "sourceUrl": "https://www.michinoeki-washinosato.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -90245,7 +89712,6 @@
       "type": "屋外駐車場",
       "location": "道の駅 和紙の里ひがしちちぶと同一敷地",
       "note": "No.931と同じ駐車場を利用する施設として扱う。別施設分の台数加算はしない。道の駅 和紙の里ひがしちちぶと同一敷地の共用駐車場（別施設分の台数加算はしない）",
-      "available": true,
       "sourceUrl": "https://www.michinoeki-washinosato.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -90351,12 +89817,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "30台",
       "type": "屋外駐車場",
       "location": "施設敷地内",
       "note": "利用者向け",
-      "available": true,
       "sourceUrl": "https://yoshidake-ogawa.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -90446,7 +89910,6 @@
     },
     "parkingDetail": {
       "note": "公園利用者用の駐車場なし。公共交通機関・自転車等の利用を案内",
-      "available": false,
       "sourceUrl": "https://www.city.ota.tokyo.jp/shisetsu/park/nishirokugou.html",
       "sourceLabel": "公式（大田区）",
       "checkedAt": "2026-11-14"
@@ -90561,13 +90024,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車36台・身障者用2台・大型バス1台",
       "hours": "9:00〜18:00（イルミネーション期間は点灯終了まで）",
       "type": "屋外駐車場",
       "location": "公園内",
       "note": "マリーゴールド開花時期の土日祝は臨時駐車場あり。JA埼玉ひびきの本店には駐車不可",
-      "available": true,
       "sourceUrl": "https://www.city.honjo.lg.jp/kosodate/mokutekidesagasu/asobi_koryu/11325.html",
       "sourceLabel": "公式（本庄市）",
       "checkedAt": "2026-11-14"
@@ -90661,7 +90122,6 @@
       "type": "屋外駐車場",
       "location": "第1は主体公園、第2は第二庭球場",
       "note": "障害者手帳所持者は駐車料金免除",
-      "available": true,
       "sourceUrl": "https://midocomi.com/nagasakadani/access/",
       "sourceLabel": "施設公式（指定管理者）",
       "checkedAt": "2026-11-14"
@@ -90753,12 +90213,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約90台",
       "type": "屋外駐車場",
       "location": "施設敷地内",
       "note": "夏休み期間中は混雑に注意",
-      "available": true,
       "sourceUrl": "https://www.city.hachioji.tokyo.jp/shisetsu/003/p030481.html",
       "sourceLabel": "公式（八王子市）",
       "checkedAt": "2026-11-14"
@@ -90870,13 +90328,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車330台・大型車約5台",
       "hours": "第1・第2は年中開放。第3は有料開園期間のみ",
       "type": "屋外駐車場",
       "location": "園内",
       "note": "有料開園期間は開花状況等により設定。駐車場は第3のみ期間限定開放",
-      "available": true,
       "sourceUrl": "https://www.city.higashimatsuyama.lg.jp/soshiki/35/3919.html",
       "sourceLabel": "公式（東松山市・指定管理者）",
       "checkedAt": "2026-11-14"
@@ -90973,7 +90429,6 @@
       "type": "屋外駐車場",
       "location": "鹿沼公園内",
       "note": "公園共用駐車場。左折入場・左折退場。満車時の路上待ちは不可",
-      "available": true,
       "sourceUrl": "https://kanuma-park.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -91084,12 +90539,10 @@
     "kidsToiletNote": "男女トイレ・多機能トイレ・授乳室あり",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "16台",
       "type": "屋外駐車場",
       "location": "施設敷地内",
       "note": "高さ制限2.2m。休日は混雑し、道路上での空車待ちは不可",
-      "available": true,
       "sourceUrl": "https://www.shiden.yokohama/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -91311,12 +90764,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約1,800台",
       "type": "商業施設共用駐車場",
       "location": "イオンノア店駐車場（遊園地隣接）",
       "note": "遊園地専用ではなくイオンノア店の駐車場を利用",
-      "available": true,
       "sourceUrl": "https://www.senyo.co.jp/morinoyuenchi/question.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -91569,7 +91020,6 @@
     },
     "parkingDetail": {
       "note": "店舗専用駐車場なし。近隣コインパーキングを利用。公式サイトではリニューアル中の案内あり",
-      "available": false,
       "sourceUrl": "https://kodomo-asobiba.com/shop-nogata/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -91672,7 +91122,6 @@
       "type": "商業施設共用・屋内駐車場",
       "location": "ららぽーと豊洲駐車場",
       "note": "買い物・飲食等の駐車サービスあり。高さ制限2.1m。豊洲ベイサイドクロスタワー駐車場は別扱い",
-      "available": true,
       "sourceUrl": "https://mitsui-shopping-park.com/lalaport/toyosu/access/parking.html",
       "sourceLabel": "施設公式（三井不動産商業マネジメント）",
       "checkedAt": "2026-11-14"
@@ -91843,7 +91292,6 @@
     },
     "parkingDetail": {
       "note": "施設専用駐車場なし。公共交通機関の利用を案内",
-      "available": false,
       "sourceUrl": "https://www.city.shinagawa.tokyo.jp/kodomo/kodomoshisetsu/1002259.html",
       "sourceLabel": "公式（品川区）",
       "checkedAt": "2026-11-14"
@@ -91935,7 +91383,6 @@
     },
     "parkingDetail": {
       "note": "施設専用駐車場なし（近隣コインパーキング利用）。公共交通機関の利用を案内",
-      "available": false,
       "sourceUrl": "https://www.growthlink-k.com/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -92024,7 +91471,6 @@
     },
     "parkingDetail": {
       "note": "公園内に駐車場なし。公共交通機関の利用を案内",
-      "available": false,
       "sourceUrl": "https://www.city.shinagawa.tokyo.jp/ct/pdf/20251212144353_10.pdf",
       "sourceLabel": "公式（品川区）",
       "checkedAt": "2026-11-14"
@@ -92111,7 +91557,6 @@
       "type": "商業施設共用・タイムズ駐車場",
       "location": "施設敷地内",
       "note": "店舗間の買い上げ合算で最大3時間無料。駐車サービス券をレジで受け取り。台数は公式ページ内で515台・538台の両記載あり",
-      "available": true,
       "sourceUrl": "https://tsurumi.licopa.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -92387,7 +91832,6 @@
       "type": "屋外・平地駐車場",
       "location": "公園脇および環七下",
       "note": "公園利用者向け。年末年始やイベント等で利用制限の可能性あり。営業時間は民間駐車場情報。区公式ページには記載なし",
-      "available": true,
       "sourceUrl": "https://www.city.ota.tokyo.jp/shisetsu/park/heiwanomori.html",
       "sourceLabel": "公式（大田区）",
       "checkedAt": "2026-11-14"
@@ -92475,7 +91919,6 @@
       "type": "屋外・平地駐車場",
       "location": "公園内",
       "note": "公園利用者以外の駐車不可。土日祝は入庫待ちの可能性あり",
-      "available": true,
       "sourceUrl": "https://www.city.ota.tokyo.jp/shisetsu/park/heiwajima.html",
       "sourceLabel": "公式（大田区）",
       "checkedAt": "2026-11-14"
@@ -92572,7 +92015,6 @@
       "type": "屋外駐車場",
       "location": "公園内",
       "note": "公園利用者向け",
-      "available": true,
       "sourceUrl": "https://www.city.setagaya.lg.jp/documents/5694/3.pdf",
       "sourceLabel": "公式（世田谷区資料）",
       "checkedAt": "2026-11-14"
@@ -92759,7 +92201,6 @@
       "type": "屋外・平地駐車場",
       "location": "公園内",
       "note": "大型車不可。高さ2.3m・長さ5m等の車両制限情報あり。料金・台数・時間は公式未掲載。民間駐車場情報では15分100円・51台（うち身障者用2台）、入庫8:00〜20:30・出庫21:30まで",
-      "available": true,
       "sourceUrl": "https://www.city.shinagawa.tokyo.jp/",
       "sourceLabel": "公式情報未確認（駐車場情報は民間）",
       "checkedAt": "2026-11-14"
@@ -93043,7 +92484,6 @@
     "strollerRental": false,
     "parkingDetail": {
       "note": "一般用の駐車場なし。障がい者等専用スペース1台のみ（予約不可）。公共交通機関の利用を案内",
-      "available": false,
       "sourceUrl": "https://ecoru-togoshi.jp/guide/faq/",
       "sourceLabel": "公式（品川区・施設）",
       "checkedAt": "2026-11-14"
@@ -93141,7 +92581,6 @@
       "type": "施設駐車場",
       "location": "施設敷地内",
       "note": "駐車台数が限られるため、公共交通機関の利用を推奨",
-      "available": true,
       "sourceUrl": "https://tamahime-tokyo.jp/guide/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -93431,7 +92870,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "農園利用者向け。駐車場完備との記載あり",
-      "available": true,
       "sourceUrl": "https://www.minnanoinaka.com/experiencefarm",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -93622,7 +93060,6 @@
       "type": "農園専用・屋外",
       "location": "農園敷地内",
       "note": "満車時は近隣の東俣野中央公園駐車場（有料）を利用する案内あり。大型車は周辺道路に注意",
-      "available": true,
       "sourceUrl": "https://kawato-nouen.com/access/",
       "sourceLabel": "施設公式・自治体関連観光情報",
       "checkedAt": "2026-11-14"
@@ -93724,7 +93161,6 @@
       "type": "農園駐車場",
       "location": "農園敷地内",
       "note": "大型バス駐車可",
-      "available": true,
       "sourceUrl": "https://www.pref.saitama.lg.jp/greentourism/shisetsu/101018.html",
       "sourceLabel": "公式（埼玉県）",
       "checkedAt": "2026-11-14"
@@ -93990,12 +93426,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "農園：普通車25台・大型バス3台。レストラン：普通車35台・大型バス2台",
       "type": "農園・レストラン別の屋外駐車場",
       "location": "各施設敷地内",
       "note": "レストラン大型バスは事前連絡",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_12571.html",
       "sourceLabel": "千葉県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -94747,7 +94181,6 @@
       "type": "屋外駐車場",
       "location": "セブンイレブン三浦赤羽根店の裏",
       "note": "農園の駐車場として公式案内あり。料金・台数は未掲載",
-      "available": true,
       "sourceUrl": "https://www.nagasawamaruyu-mikan.com/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -94945,7 +94378,6 @@
       "type": "商業施設共用駐車場",
       "location": "OSC湘南シティ敷地内",
       "note": "2026年7月1日からカメラ式・車両ナンバー認識方式。事前精算が必要",
-      "available": true,
       "sourceUrl": "https://shonan-city.com/access",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -95036,12 +94468,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "621台",
       "type": "平面・立体・屋上駐車場",
       "location": "あかやまJOY敷地内",
       "note": "店舗専用ではなくショッピングセンター共用",
-      "available": true,
       "sourceUrl": "https://akayamajoy.com/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -95151,7 +94581,6 @@
       "type": "商業施設共用・タイムズ駐車場",
       "location": "イオンタウン吉川美南の各街区",
       "note": "アプリクーポン等の駐車サービスあり。料金変更直後のため現地表示を確認",
-      "available": true,
       "sourceUrl": "https://www.aeontown.co.jp/yoshikawaminami/access/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -95259,13 +94688,11 @@
     "strollerRental": false,
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "1,510台",
       "hours": "終日",
       "type": "屋外・平面・屋上駐車場",
       "location": "フレスポ稲毛敷地内",
       "note": "屋上駐車場は高さ2.3m制限。EV充電スタンドは8:00〜24:00",
-      "available": true,
       "sourceUrl": "https://www.e-frespo.com/inage/shop/access.jsp",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -95369,7 +94796,6 @@
       "type": "商業施設共用駐車場",
       "location": "二子玉川ライズ・ショッピングセンター",
       "note": "施設入場者向け3時間無料。施設公式FAQに記載",
-      "available": true,
       "sourceUrl": "https://playec.jp/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -95476,7 +94902,6 @@
       "type": "商業施設共用・屋外／立体／屋上",
       "location": "P・A・P・A上尾ショッピングアヴェニュー",
       "note": "店舗利用なしでも1時間無料。店舗利用で無料時間延長",
-      "available": true,
       "sourceUrl": "https://papa-ageo.com/wp/access/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -95586,7 +95011,6 @@
       "type": "商業施設共用立体駐車場",
       "location": "横浜ワールドポーターズ駐車場",
       "note": "高さ2.2m。施設で税込3,000円以上利用で2時間無料。シネマ利用は4時間無料",
-      "available": true,
       "sourceUrl": "https://www.yim.co.jp/static-pages/access",
       "sourceLabel": "施設公式・商業施設公式",
       "checkedAt": "2026-11-14"
@@ -95682,7 +95106,6 @@
     "parking": "no",
     "parkingDetail": {
       "note": "施設専用駐車場なし。周辺の有料駐車場を利用",
-      "available": false,
       "sourceUrl": "https://tutankhamen.jp/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -95787,7 +95210,6 @@
       "type": "商業施設共用駐車場",
       "location": "港北みなも敷地内",
       "note": "高さ2.3m制限。スパ利用者に3時間無料サービス",
-      "available": true,
       "sourceUrl": "https://www.sportsoasis.co.jp/coco/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -95887,7 +95309,6 @@
       "type": "商業施設共用駐車場",
       "location": "越谷サンシティ5階",
       "note": "買い物金額による駐車サービス。遊園地利用料金が対象かは要確認",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/saitama-koshigaya/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -95988,7 +95409,6 @@
       "type": "平面・屋上駐車場",
       "location": "K-1ショッピングセンター",
       "note": "施設利用で最大4時間無料。他店との合算不可。2026年3月10日からナンバー式精算機",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/yokohama-kibogaoka/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96084,12 +95504,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "1,044台",
       "type": "屋外駐車場",
       "location": "M.E.M柏店敷地内",
       "note": "店舗専用ではなく施設共用",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/chiba-kashiwa/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96185,12 +95603,10 @@
     },
     "parkingDetail": {
       "priceLabel": "有料",
-      "priceShort": "有料",
       "capacity": "306台",
       "type": "商業施設共用駐車場",
       "location": "西友常盤平4階",
       "note": "駐車場は有料。料金・サービス条件は公式ページに記載なし",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/tokiwadaira/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96286,12 +95702,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "998台",
       "type": "商業施設共用・屋外駐車場",
       "location": "ベイシア渋川店2階",
       "note": "店舗専用ではなく商業施設共用",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/shibukawa/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96387,11 +95801,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "商業施設共用駐車場",
       "location": "イオン笠間店2階",
       "note": "駐車台数は店舗公式ページに記載なし",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/ibaraki-kasama/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96487,12 +95899,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "800台",
       "type": "商業施設共用駐車場",
       "location": "アクロスモール守谷店2階",
       "note": "店舗専用ではなく商業施設共用",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/ibaraki-moriya/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96743,7 +96153,6 @@
     "parking": "no",
     "parkingDetail": {
       "note": "一般利用者向けの駐車場なし。公園内に車いす利用者など配慮が必要な方向けの駐車スペースが2台あり",
-      "available": false,
       "sourceUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/kouen/1005194/1004241.html",
       "sourceLabel": "公式（国分寺市）",
       "checkedAt": "2026-11-14"
@@ -96806,12 +96215,10 @@
     "verifiedAt": "2026年10月28日",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約340台",
       "type": "屋外駐車場",
       "location": "施設敷地内",
       "note": "駐車場の台数・料金・入出庫時間は公式情報で確認できず",
-      "available": true,
       "sourceUrl": "https://kiraranosato.com/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -96918,13 +96325,11 @@
     "verifiedAt": "2026年10月28日",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "200台",
       "hours": "9:00〜17:00",
       "type": "屋内・立体駐車場（美術館3階）",
       "location": "美術館入口向かい",
       "note": "大型バスは事前連絡が必要。満車時は市内駐車場等を利用",
-      "available": true,
       "sourceUrl": "https://www.moaart.or.jp/guide/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97033,7 +96438,6 @@
       "type": "屋外駐車場",
       "location": "ホテル・温泉施設敷地内",
       "note": "日帰り温泉利用者は利用金額による無料サービスあり",
-      "available": true,
       "sourceUrl": "https://hotel-heritage.co.jp/rootmap/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97194,7 +96598,6 @@
       "type": "屋外駐車場",
       "location": "北パラダ側",
       "note": "駐車場内にトイレなし。南パラダ側の駐車場情報は別途確認が必要",
-      "available": true,
       "sourceUrl": "https://www.saku-parada.jp/ski/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97307,7 +96710,6 @@
       "type": "屋外駐車場",
       "location": "池の平ホテル周辺",
       "note": "宿泊者はフロントで無料駐車券を受け取る。日帰り利用は季節・曜日で料金が異なる",
-      "available": true,
       "sourceUrl": "https://www.shirakabaresort.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97407,7 +96809,6 @@
       "type": "屋外駐車場",
       "location": "スキー場周辺",
       "note": "送迎・タクシーは最初の30分無料。営業時間外の4〜10月は全日500円",
-      "available": true,
       "sourceUrl": "https://www.princehotels.co.jp/ski/karuizawa/winter/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97514,12 +96915,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "1,300台",
       "type": "屋外駐車場",
       "location": "施設敷地内",
       "note": "駐車スペース以外への駐車は禁止",
-      "available": true,
       "sourceUrl": "https://www.fujimipanorama.com/summer/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97716,7 +97115,6 @@
       "type": "各ゲレンデ周辺の屋外駐車場",
       "location": "奥ダボス・表ダボス・裏太郎・天狗・日の出・表太郎・パインビーク等",
       "note": "宿泊施設専用駐車場への駐車は禁止。シーズン券提示で対象駐車場無料の案内あり",
-      "available": true,
       "sourceUrl": "https://sugadaira-snowresort.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97811,12 +97209,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "hours": "日帰りスキーセンター駐車場：7:00〜17:30",
       "type": "屋外駐車場",
       "location": "日帰りスキーセンター前",
       "note": "指定営業日のみ日帰り駐車場を利用可能。対象日以外はホテル宿泊者専用駐車場となる",
-      "available": true,
       "sourceUrl": "https://www.minakami-ski.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -97918,7 +97314,6 @@
       "type": "屋外駐車場・複数駐車場",
       "location": "第1〜第3はセンターハウス徒歩2〜5分。第4〜第7は場内シャトルバス利用",
       "note": "土日祝・年末年始の料金設定あり。滑り止め装着が必要",
-      "available": true,
       "sourceUrl": "https://norn.co.jp/winter/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -98014,7 +97409,6 @@
       "type": "屋外駐車場・複数駐車場",
       "location": "スキー場敷地内",
       "note": "ふじてんメンバーズ等の提示で普通車・二輪車無料。駐車場内の火気使用は禁止",
-      "available": true,
       "sourceUrl": "https://www.fujiten.net/charges/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -98113,7 +97507,6 @@
       "type": "屋外駐車場",
       "location": "スキー場敷地内",
       "note": "大型車料金は別途確認。営業日・積雪状況により運営変更の可能性あり",
-      "available": true,
       "sourceUrl": "https://www.utsunomiya-cvb.org/feature/detail_135.html",
       "sourceLabel": "栃木県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -98205,12 +97598,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車約100台（かまくら祭案内）",
       "type": "屋外駐車場",
       "location": "湯西川水の郷観光センター周辺",
       "note": "大型バス・身障者用駐車場あり。冬季はスタッドレスタイヤ等が必要",
-      "available": true,
       "sourceUrl": "https://www.nikko-kankou.org/public/spot/52",
       "sourceLabel": "自治体関連観光公式",
       "checkedAt": "2026-11-14"
@@ -98316,12 +97707,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "1,500台",
       "type": "屋外駐車場",
       "location": "スキー場敷地内",
       "note": "土日祝・年末年始は混雑が予想されるため早めの来場を案内",
-      "available": true,
       "sourceUrl": "https://edelsnow.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -98430,11 +97819,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "屋外駐車場",
       "location": "ゲレンデ・施設の目の前",
       "note": "駐車場から施設まで徒歩1〜2分程度",
-      "available": true,
       "sourceUrl": "https://www.numajiri-ski.jp/faq.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -98529,11 +97916,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "type": "屋外駐車場・複数駐車場",
       "location": "はやま中央・ミネロ・はやま西・さんすい等",
       "note": "夜間駐車は除雪作業の妨げとなるため禁止。大型バスは事前予約・問い合わせが必要",
-      "available": true,
       "sourceUrl": "https://inawashiro-ski.com/parking/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -98635,7 +98020,6 @@
       "type": "屋外駐車場",
       "location": "スキー場併設",
       "note": "オフィシャルホテル宿泊者は全日無料。障がい者用駐車場はマウンテンセンター横",
-      "available": true,
       "sourceUrl": "https://grandecoresort.co.jp/snow/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -98732,7 +98116,6 @@
       "type": "ホテル・スキー場共用駐車場",
       "location": "ホテルリステル猪苗代敷地内",
       "note": "宿泊者用・日帰り利用者用の区分や料金は公式情報未確認。宿泊者用・日帰り利用者用の区分や料金は公式情報未確認",
-      "available": true,
       "sourceUrl": "https://www.listel-inawashiro.jp/",
       "checkedAt": "2026-11-14"
     }
@@ -98923,7 +98306,6 @@
       "type": "屋外駐車場・複数エリア",
       "location": "南・北の各スキー場エリア",
       "note": "南Aは14時以降入庫無料。北エリアはシーズン券提示で土日祝無料。南B〜Dは全日無料",
-      "available": true,
       "sourceUrl": "https://www.nekoma.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -99019,7 +98401,6 @@
       "type": "周辺提携・商業施設駐車場",
       "location": "スケートセンター周辺・新横浜プリンスホテル",
       "note": "専用駐車場ではない。イベント開催時は満車・割引対象外となる場合あり",
-      "available": true,
       "sourceUrl": "https://www.princehotels.co.jp/skate/shinyokohama/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -99108,12 +98489,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "敷地内70台（障がい者用屋根付2台）・臨時200台",
       "type": "屋外駐車場・臨時芝生駐車場",
       "location": "施設敷地内および臨時駐車場",
       "note": "大型バスは臨時駐車場に駐車可能。臨時駐車場は芝生",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10113.html",
       "sourceLabel": "千葉県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -99398,7 +98777,6 @@
       "type": "屋外駐車場・臨時駐車場",
       "location": "公園内および北側",
       "note": "臨時駐車場は土日祝のみ。複数駐車場の合計は約420台。駐車料金の公式記載なし（公園駐車場として案内）",
-      "available": true,
       "sourceUrl": "https://www.city.mishima.shizuoka.jp/page/18709.html",
       "sourceLabel": "公式（三島市）",
       "checkedAt": "2026-11-14"
@@ -99501,7 +98879,6 @@
       "type": "屋外駐車場",
       "location": "公園第1駐車場",
       "note": "時間外の出入り不可。指定場所以外への駐車禁止。駐車料金の公式記載なし",
-      "available": true,
       "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/kouji/park/5143.html",
       "sourceLabel": "公式（長泉町）",
       "checkedAt": "2026-11-14"
@@ -99617,7 +98994,6 @@
       "type": "商業施設共用・複数駐車場",
       "location": "三井アウトレットパーク横浜ベイサイド駐車場",
       "note": "UNIQLO PARKで3,000円以上購入すると2時間無料。アウトレットとの購入金額合算不可",
-      "available": true,
       "sourceUrl": "https://mitsui-shopping-park.com/mop/yokohama/access/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -99689,7 +99065,6 @@
       "type": "立体駐車場",
       "location": "イオンモール津田沼South等の共用駐車場",
       "note": "対象店舗利用で無料時間延長あり。認証機での処理が必要",
-      "available": true,
       "sourceUrl": "https://www.aeon.com/store/イオン/イオンスタイル津田沼South/shop_info/hours/",
       "sourceLabel": "公式（イオン）",
       "checkedAt": "2026-11-14"
@@ -99835,7 +99210,6 @@
       "type": "商業施設共用駐車場",
       "location": "EAST館はイオンタウン吉川美南東街区。WEST館は三郷市",
       "note": "WEST館に一般利用者用駐車場なし。EAST館からおもちゃバスで移動",
-      "available": true,
       "sourceUrl": "https://museum.socialimpact.ed.jp/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -99941,7 +99315,6 @@
       "type": "商業施設共用駐車場",
       "location": "トライアル西友河辺店3階",
       "note": "店舗利用者向けの駐車サービス。買い物金額により無料時間が異なる",
-      "available": true,
       "sourceUrl": "https://kidslandus.com/shop/tokyo-ome/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -100045,7 +99418,6 @@
       "type": "商業施設共用駐車場",
       "location": "ウニクス南古谷敷地内",
       "note": "店舗専用ではなく商業施設共用。料金・無料サービス条件は公式情報未確認",
-      "available": true,
       "sourceUrl": "https://www.unicus-sc.jp/minamifuruya/times/",
       "sourceLabel": "施設・商業施設公式",
       "checkedAt": "2026-11-14"
@@ -100150,7 +99522,6 @@
       "type": "平面・立体駐車場",
       "location": "第1ターミナル側の空港駐車場",
       "note": "繁忙期は満車・入庫待ちに注意。Kinder Platz専用駐車場ではない",
-      "available": true,
       "sourceUrl": "https://www.narita-airport.jp/ja/access/parking/",
       "sourceLabel": "成田国際空港公式",
       "checkedAt": "2026-11-14"
@@ -100250,7 +99621,6 @@
       "type": "商業施設共用駐車場",
       "location": "そよらひたち野うしく敷地内",
       "note": "施設は2026年11月18日グランドオープン予定。駐車場の料金・台数は公式情報未確認。施設は2026年11月18日グランドオープン予定。料金・台数は公式情報未確認",
-      "available": true,
       "sourceUrl": "https://www.aeon.jp/sc/soyora-hitachinoushiku/",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -100360,7 +99730,6 @@
       "type": "商業施設共用駐車場",
       "location": "イオンレイクタウンkaze駐車場",
       "note": "アプリ会員・映画館利用で追加無料サービスあり。最大7時間無料",
-      "available": true,
       "sourceUrl": "https://laketown.aeonmall.jp/access",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -100438,7 +99807,6 @@
       "type": "屋外・施設共用駐車場",
       "location": "彩の国ビジュアルプラザ駐車場",
       "note": "障がい者手帳等の提示で24時間まで無料。産業技術総合センター側の駐車場は別料金・8:00〜22:00",
-      "available": true,
       "sourceUrl": "https://www.skipcity.jp/visit/info/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -100646,13 +100014,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "台数制限なし",
       "hours": "宿泊期間中（当日9:30〜翌日20:00まで利用可）",
       "type": "屋外駐車場",
       "location": "グランピング施設専用駐車場",
       "note": "宿泊者専用。東武動物公園の専用駐車場とは別。東武動物公園利用時も宿泊期間中は施設専用駐車場を利用可能",
-      "available": true,
       "sourceUrl": "https://www.tobuzoo-glamping.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -100768,7 +100134,6 @@
       "type": "屋外駐車場",
       "location": "モビリティリゾートもてぎパーク内",
       "note": "2.5m×5.0mを超える車両は2台分の料金",
-      "available": true,
       "sourceUrl": "https://www.mr-motegi.jp/fee_m/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -100884,7 +100249,6 @@
       "type": "立体・屋外等の複数駐車場",
       "location": "アカフーパーク敷地内・周辺",
       "note": "第1・第3・西はアカフーパーク利用者向け。第2はジアス上大岡利用者向け。高さ制限は駐車場ごとに異なる",
-      "available": true,
       "sourceUrl": "https://www.akafoopark.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -100976,11 +100340,9 @@
     "strollerRental": false,
     "parkingDetail": {
       "priceLabel": "有料",
-      "priceShort": "有料",
       "type": "施設併設・時間貸し駐車場",
       "location": "施設敷地内",
       "note": "満車時の入庫待ち不可。車寄せなし。公共交通機関の利用を推奨。料金詳細は公式リンク先で確認",
-      "available": true,
       "sourceUrl": "https://tdp.tv-asahi.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -101175,13 +100537,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "平面505台・屋上733台・南側289台・東側350台",
       "hours": "平面6:30〜翌1:00、屋上9:00〜22:00、南側11:00〜23:00",
       "type": "平面・屋上・屋外駐車場",
       "location": "イオンモール小山敷地内",
       "note": "東側は臨時駐車場。利用可能時間は日によって変わる",
-      "available": true,
       "sourceUrl": "https://www.aeon.com/store/イオン/イオン小山店/shop_info/hours/",
       "sourceLabel": "公式（イオン）",
       "checkedAt": "2026-11-14"
@@ -101283,7 +100643,6 @@
       "type": "地下・立体駐車場",
       "location": "イオンモール津田沼North",
       "note": "対象店舗利用で無料時間延長あり。高さ制限2.3m",
-      "available": true,
       "sourceUrl": "https://www.aeon.com/store/イオン/イオンスタイル津田沼North/shop_info/hours/",
       "sourceLabel": "公式（イオン）",
       "checkedAt": "2026-11-14"
@@ -101384,7 +100743,6 @@
       "type": "商業施設共用駐車場",
       "location": "イオンモール柏敷地内",
       "note": "入庫後2時間無料。アプリ登録で追加1時間、税込2,000円以上の買い物でさらに1時間無料。2026年8月3日から有料化",
-      "available": true,
       "sourceUrl": "https://www.aeon.jp/sc/chiba-kashiwa/access/parking.html",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -101475,7 +100833,6 @@
       "type": "商業施設共用駐車場",
       "location": "そよら成田ニュータウン敷地内",
       "note": "駐車場の料金・台数・入出庫時間は公式情報未確認",
-      "available": true,
       "sourceUrl": "https://www.fantasy.co.jp/info/info-35652/",
       "checkedAt": "2026-11-14"
     }
@@ -101576,7 +100933,6 @@
     "kidsToiletNote": "各階トイレにおむつ替え台。北棟1階バリアフリートイレ、南棟3階授乳室",
     "parkingDetail": {
       "note": "施設専用駐車場なし。近隣のコインパーキングを利用",
-      "available": false,
       "sourceUrl": "https://www.imaginus-suginami.jp/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -101615,7 +100971,6 @@
       "type": "立体駐車場",
       "location": "中町立体駐車場（厚木ガーデンシティ隣接）",
       "note": "イオン直営店で税込1,000円以上の買い物で2時間無料。専門店利用でさらに1時間無料（対象外店舗あり）",
-      "available": true,
       "sourceUrl": "https://www.aeon.com/store/イオン/イオン厚木店/shop_info/hours/",
       "sourceLabel": "公式（イオン）",
       "checkedAt": "2026-11-14"
@@ -101719,12 +101074,10 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "1,247台",
       "type": "商業施設共用駐車場",
       "location": "ベイシア富里店敷地内",
       "note": "店舗専用ではなく商業施設共用",
-      "available": true,
       "sourceUrl": "https://map.beisia.co.jp/map/338",
       "sourceLabel": "施設・商業施設公式",
       "checkedAt": "2026-11-14"
@@ -101824,7 +101177,6 @@
     "price": "子供 1時間パック800円／平日1日パック1,000円／休日3時間パック1,300円、保護者 1日パック700円、0歳無料（公式サイトより）",
     "parking": "yes",
     "parkingDetail": {
-      "available": true,
       "priceLabel": "有料（当店利用でユーカリが丘ワイパーク駐車場が最大14時間無料・サービス券を発行）",
       "priceShort": "有料",
       "note": "ユーカリが丘ワイパーク駐車場（駅北口側6か所）が対象です。"
@@ -101999,7 +101351,6 @@
       "type": "平面・立体・屋上駐車場",
       "location": "ららぽーと横浜敷地内",
       "note": "高さ制限は平面2.4m、その他2.2m。幅1.9m・長さ5.0mまで",
-      "available": true,
       "sourceUrl": "https://mitsui-shopping-park.com/lalaport/yokohama/access/parking.html",
       "sourceLabel": "商業施設公式",
       "checkedAt": "2026-11-14"
@@ -102108,7 +101459,6 @@
       "type": "商業施設共用・立体等",
       "location": "ノースポート・モール内",
       "note": "ザキッズ利用で平日6時間、土日祝3時間無料（お試しパック等対象外）",
-      "available": true,
       "sourceUrl": "https://www.northport.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102199,7 +101549,6 @@
       "type": "アクアシティお台場共用・自走式",
       "location": "同施設東エリア5F",
       "note": "1会計3,000円以上で平日2時間・休日1時間無料（上限等条件あり）",
-      "available": true,
       "sourceUrl": "https://aquacity.jp/access/parking/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102305,7 +101654,6 @@
       "type": "提携・隣接立体駐車場",
       "location": "建物隣接、1階パチンコ店駐車場",
       "note": "ボウリング利用者はフロントで駐車料金精算。高さ制限2.1m",
-      "available": true,
       "sourceUrl": "https://strikers.jp/knowledge-service/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102409,7 +101757,6 @@
       "type": "デックス東京ビーチ共用",
       "location": "デックス東京ビーチ内",
       "note": "平日3,000円以上で2時間、5,000円以上で4時間無料。土日祝はそれぞれ1時間・2時間無料",
-      "available": true,
       "sourceUrl": "https://www.odaiba-decks.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102506,7 +101853,6 @@
     "kidsToiletNote": "屋外に多目的トイレ。授乳室あり",
     "parkingDetail": {
       "note": "専用駐車場なし。近隣有料駐車場を利用（公共交通機関の利用も案内）。山下ふ頭4号上屋",
-      "available": false,
       "sourceUrl": "https://global.toyota/info/themoveum/faq/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102608,7 +101954,6 @@
       "type": "イオンタウン吉川美南東街区共用・平面／立体",
       "location": "東街区1F",
       "note": "買物・施設利用による追加無料サービスあり",
-      "available": true,
       "sourceUrl": "https://www.aeon.com/store/イオン/イオン吉川美南店/shop_info/hours/",
       "sourceLabel": "施設・運営会社公式",
       "checkedAt": "2026-11-14"
@@ -102707,7 +102052,6 @@
       "type": "ベルモール共用・平面／地下／立体",
       "location": "ベルモール2F",
       "note": "対象店舗の買物・サービス利用で最大5時間無料。映画・温浴施設等の優待あり",
-      "available": true,
       "sourceUrl": "https://www.bellmall.co.jp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102812,7 +102156,6 @@
       "type": "イオンレイクタウンmori共用",
       "location": "mori 3F",
       "note": "アプリ会員・映画利用等で最大7時間無料",
-      "available": true,
       "sourceUrl": "https://laketown.aeonmall.jp/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -102912,12 +102255,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "hours": "閉園後閉鎖（イベント時除く）。道の駅駐車場は24時間",
       "type": "施設・公園共用駐車場",
       "location": "霞ケ浦ふれあいランド内に複数駐車場",
       "note": "繁忙期・イベント時は臨時駐車場へ誘導。周辺店舗等の駐車場とは区別",
-      "available": true,
       "sourceUrl": "https://doubutsutominna.jp/faq",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -103021,7 +102362,6 @@
       "type": "デックス東京ビーチ共用",
       "location": "デックス東京ビーチ シーサイドモール5F",
       "note": "平日3,000円以上で2時間、5,000円以上で4時間無料。土日祝はそれぞれ1時間・2時間無料",
-      "available": true,
       "sourceUrl": "https://www.odaiba-decks.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -103128,7 +102468,6 @@
       "type": "マリナガーデン新浦安共用",
       "location": "施設所在地のマリナガーデン新浦安",
       "note": "駐車場詳細ページへの案内あり",
-      "available": true,
       "sourceUrl": "https://trampoland.com/facility/tokyo-bayside",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -103227,7 +102566,6 @@
       "type": "ジャイロライドパーク敷地内駐車場",
       "location": "同じ敷地内",
       "note": "無料・有料の別、利用条件とも公式記載なし",
-      "available": true,
       "sourceUrl": "https://lbcg.net/psp/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -103333,7 +102671,6 @@
       "type": "東京ドームシティ共用駐車場",
       "location": "東京ドームシティ内",
       "note": "対象店舗・チケット等の利用金額に応じて割引あり（条件あり）",
-      "available": true,
       "sourceUrl": "https://www.at-raku.com/ticket/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -103430,13 +102767,11 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "平面192台、立体等合計1,468台",
       "hours": "7:30～23:00",
       "type": "イオンモール東久留米共用・平面／立体",
       "location": "専門店街3F",
       "note": "高さ制限2.3m",
-      "available": true,
       "sourceUrl": "https://www.aeon.com/store/イオン/イオン東久留米店/shop_info/hours/",
       "sourceLabel": "施設・運営会社公式",
       "checkedAt": "2026-11-14"
@@ -103549,7 +102884,6 @@
       "type": "来園者用駐車場",
       "location": "施設敷地内",
       "note": "来園者専用",
-      "available": true,
       "sourceUrl": "https://maruchiba.jp/spot/detail_10297.html",
       "sourceLabel": "千葉県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -103683,7 +103017,6 @@
       "type": "湖畔園地駐車場",
       "location": "湖畔園地周辺",
       "note": "大型車は全日1,500円",
-      "available": true,
       "sourceUrl": "https://www.kanagawa-kankou.or.jp/kanagawayokohamadc/spot/7387",
       "sourceLabel": "神奈川県公式観光情報",
       "checkedAt": "2026-11-14"
@@ -103868,7 +103201,6 @@
       "type": "HANA・BIYORI専用立体駐車場",
       "location": "施設専用駐車場",
       "note": "花景の湯利用者は終日無料。遊園地側駐車場では割引対象外",
-      "available": true,
       "sourceUrl": "https://www.yomiuriland.com/hanabiyori/charge/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -103991,7 +103323,6 @@
       "type": "大井競馬場駐車場",
       "location": "大井競馬場北門側",
       "note": "一部区画は高さ1.95m制限",
-      "available": true,
       "sourceUrl": "https://www.tokyomegaillumi.jp/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104094,13 +103425,11 @@
     "kidsToiletNote": "身障者用・ユニバーサルトイレ5か所。おむつ交換シート6か所、授乳室・ベビーベッドあり",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車約2,500台、大型バス約20台",
       "hours": "営業終了後1時間で閉鎖",
       "type": "施設共用駐車場",
       "location": "施設敷地内",
       "note": "P4は高さ2.6m以下",
-      "available": true,
       "sourceUrl": "https://www.nasu-gardenoutlet.com/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104132,12 +103461,10 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約100台",
       "type": "施設敷地内・平面",
       "location": "正面入口前",
       "note": "満車時は高座クリーンセンター環境プラザ駐車場を利用。障がい者・高齢者優先区画あり",
-      "available": true,
       "sourceUrl": "https://kouzapool.jp/top/guide/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104251,7 +103578,6 @@
       "type": "施設敷地内駐車場",
       "location": "施設敷地内",
       "note": "障害者手帳所持者は無料（受付手続き）",
-      "available": true,
       "sourceUrl": "https://www.sumispo.com/info/info_001-2/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104413,7 +103739,6 @@
       "type": "施設併設・立体駐車場",
       "location": "施設併設",
       "note": "障がい者手帳所持者と付き添い運転者は無料。シニア料金は60歳以上の運転者に適用",
-      "available": true,
       "sourceUrl": "https://www.tama-pool.org/informations/access/",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104511,12 +103836,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "hours": "8:30～22:00",
       "type": "施設駐車場",
       "location": "施設敷地内。混雑時は総合体育館駐車場も利用可",
       "note": "障がい者等用5台あり",
-      "available": true,
       "sourceUrl": "https://www.s-kenbun.jp/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104615,13 +103938,11 @@
     },
     "parkingDetail": {
       "priceLabel": "1時間まで100円、以降30分ごと50円",
-      "priceShort": "50円〜",
       "capacity": "屋外31台、地下100台",
       "hours": "8:30～21:30",
       "type": "屋外・地下駐車場",
       "location": "施設敷地内",
       "note": "障がい者手帳所持者・妊婦・車いす利用者向け優先区画2台",
-      "available": true,
       "sourceUrl": "https://www.sportsoasis.co.jp/sh41/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -104718,7 +104039,6 @@
       "type": "施設併設・立体",
       "location": "施設敷地内",
       "note": "障がい者・低公害車割引あり。立体駐車場は高さ制限あり。1団体3台まで、予約不可",
-      "available": true,
       "sourceUrl": "https://genkiplaza.tokyo.jp/access.html",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -104749,12 +104069,10 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "732台（うち身障者用2台）",
       "hours": "8:30～21:00",
       "type": "公園共用駐車場",
       "location": "園内各施設周辺",
-      "available": true,
       "sourceUrl": "https://nem-shiteikanri.jp/shisetsu/menuma/access/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -104893,7 +104211,6 @@
       "type": "公園共用駐車場",
       "location": "園内各施設周辺",
       "note": "子供広場・屋内プール等の利用者共用",
-      "available": true,
       "sourceUrl": "https://www.saispo.jp/sakura/access/",
       "sourceLabel": "市・施設公式",
       "checkedAt": "2026-11-14"
@@ -104922,13 +104239,11 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "340台",
       "hours": "6:30～19:30",
       "type": "公園内・複数駐車場",
       "location": "西・中央第1・中央第2・南・東の計5か所",
       "note": "開門時間外は利用不可",
-      "available": true,
       "sourceUrl": "https://nem-shiteikanri.jp/shisetsu/menuma/beppunuma/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -105067,7 +104382,6 @@
       "type": "公園内駐車場",
       "location": "園内",
       "note": "路上駐車禁止。駐車場を利用",
-      "available": true,
       "sourceUrl": "https://www.city.kumagaya.lg.jp/shisetsu/sports/sakura_river.html",
       "sourceLabel": "市公式",
       "checkedAt": "2026-11-14"
@@ -105098,7 +104412,6 @@
       "capacity": "約200台",
       "type": "公園内駐車場",
       "location": "園内",
-      "available": true,
       "sourceUrl": "https://www.city.kumagaya.lg.jp/shisetsu/sports/konansogokoen.html",
       "sourceLabel": "市公式",
       "checkedAt": "2026-11-14"
@@ -105256,12 +104569,10 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "合計755台（東側438台、体育館東側254台、西側62台）",
       "type": "公園共用駐車場",
       "location": "公園・総合体育館周辺",
       "note": "公園利用者共用",
-      "available": true,
       "sourceUrl": "https://ikiiki-zaidan.or.jp/greenarena/facility/sogo/",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -105349,7 +104660,6 @@
       "type": "公園内駐車場",
       "location": "園内",
       "note": "障がい者手帳提示で有料期間も免除。予約不可",
-      "available": true,
       "sourceUrl": "https://ikiiki-zaidan.or.jp/kodaihasu/facility/riyoannai.html",
       "sourceLabel": "指定管理者公式",
       "checkedAt": "2026-11-14"
@@ -105489,7 +104799,6 @@
       "type": "公園内駐車場",
       "location": "園内",
       "note": "親水施設の稼働時間は8:30～16:30（駐車場の利用時間ではない）",
-      "available": true,
       "sourceUrl": "https://www.city.kounosu.saitama.jp/page/33597.html",
       "sourceLabel": "市公式",
       "checkedAt": "2026-11-14"
@@ -105572,7 +104881,6 @@
       "type": "公園内駐車場",
       "location": "園内",
       "note": "親水施設の稼働時間は8:30～16:30（駐車場の利用時間ではない）",
-      "available": true,
       "sourceUrl": "https://www.city.kounosu.saitama.jp/page/33597.html",
       "sourceLabel": "市公式",
       "checkedAt": "2026-11-14"
@@ -105658,7 +104966,6 @@
       "type": "公園内駐車場",
       "location": "園内",
       "note": "親水施設の稼働時間は8:30～16:30（駐車場の利用時間ではない）",
-      "available": true,
       "sourceUrl": "https://chocotabi-saitama.jp/business/location/632/",
       "sourceLabel": "県観光情報",
       "checkedAt": "2026-11-14"
@@ -105761,12 +105068,10 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "782台",
       "type": "公園内・複数駐車場",
       "location": "第1・第2駐車場が通常利用。第3駐車場はイベント開催時に開放",
       "note": "バーベキュー広場利用者は第2駐車場が近い",
-      "available": true,
       "sourceUrl": "https://kfp-tomo.org/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
@@ -105907,12 +105212,10 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "約500台",
       "type": "公園・墓地共用駐車場",
       "location": "園内各所",
       "note": "墓地利用者と共用",
-      "available": true,
       "sourceUrl": "https://www.maebashi-cvb.com/spot/1007",
       "sourceLabel": "前橋市観光情報",
       "checkedAt": "2026-11-14"
@@ -105941,13 +105244,11 @@
     "parking": "yes",
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "第1駐車場：一般237台、身障者3台、バス3台。第2駐車場：約150台",
       "hours": "8:30～17:30",
       "type": "道路を挟んだ北側の平面駐車場",
       "location": "公園の北側（道路向かい）",
       "note": "第2駐車場は第1駐車場満車時に開放。混雑時は臨時駐車場を案内",
-      "available": true,
       "sourceUrl": "https://www.city.maebashi.gunma.jp/soshiki/kyoiku/jidobunkasenta/47756.html",
       "sourceLabel": "市公式",
       "checkedAt": "2026-11-14"
@@ -106084,11 +105385,9 @@
     },
     "parkingDetail": {
       "priceLabel": "無料",
-      "priceShort": "無料",
       "capacity": "普通車約110台、大型車数台",
       "type": "公園駐車場",
       "location": "園内",
-      "available": true,
       "sourceUrl": "https://www.takasaki-kankoukyoukai.or.jp/?p=7547",
       "sourceLabel": "高崎観光協会",
       "checkedAt": "2026-11-14"
@@ -106185,7 +105484,6 @@
       "type": "公園内・複数駐車場",
       "location": "体育館前・北ゾーン等",
       "note": "駐車場の夜間閉鎖あり。施設・区域ごとに利用条件が異なる",
-      "available": true,
       "sourceUrl": "https://www.city.tomioka.gunma.jp/www/contents/1770868998186/simple/momijidaira2.pdf",
       "sourceLabel": "市公式資料",
       "checkedAt": "2026-11-14"
