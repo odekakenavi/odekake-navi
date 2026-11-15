@@ -807,6 +807,16 @@
       "4-6歳": "△",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kahaku.go.jp/riyou/kannai-guide/accessibility.html"
     }
   },
   {
@@ -1717,7 +1727,7 @@
       "毎週火曜日",
       "年末年始"
     ],
-    "baby": "おむつ替え・授乳室あり",
+    "baby": "おむつ替え・授乳室あり。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.railway-museum.jp/",
     "verifiedAt": "2026年10月5日",
     "bookingLinks": {
@@ -1747,12 +1757,12 @@
     "imageCredit": "📷 小父 / CC BY-SA 4.0 / Wikimedia Commons",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%AC%E9%83%BD%E9%89%84%E9%81%93%E5%8D%9A%E7%89%A9%E9%A4%A8.jpg",
     "genre": "鉄道・観光",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRental": true,
     "strollerRentalNote": "ベビカルによる貸出あり。A型・新幹線モデルB型、30分100円、12時間最大1,500円。",
     "strollerNote": "1階エントランスカウンター。館内持ち込み・利用制限は公式案内を追加確認",
     "strollerSourceUrl": "https://babycal-jre.com/railway-museum_babycar_rental/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -1776,7 +1786,9 @@
       "rentalMemo": "ベビカルによる貸出あり",
       "useNote": "館内持ち込み・利用制限は公式案内を追加確認",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://babycal-jre.com/railway-museum_babycar_rental/"
+      "sourceUrl": "https://babycal-jre.com/railway-museum_babycar_rental/",
+      "rentalPlace": "1階エントランスカウンター",
+      "rentalTarget": "公式案内に対象年齢・体重の記載なし"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -1784,6 +1796,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.railway-museum.jp/news/pdf/20250904_1.pdf"
     }
   },
   {
@@ -1812,7 +1834,7 @@
     "price": "大人6600〜7300円／中人5500〜6000円／小人4000〜4400円。2026年7月1日以降の一般チケット。入場日による変動価格制",
     "parking": "yes",
     "access": "西武線「豊島園」駅から徒歩1分",
-    "baby": "おむつ替えあり／小さい子には長時間向き",
+    "baby": "おむつ替えあり／小さい子には長時間向き。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.wbstudiotour.jp/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/163469/"
@@ -1864,7 +1886,7 @@
     "strollerRentalNote": "館内で無料貸出あり。",
     "strollerNote": "一般的なベビーカーは持ち込み可。事前予約相談可、台数に限りあり。ワゴンタイプや取っ手付き三輪車などは持ち込み不可",
     "strollerSourceUrl": "https://www.wbstudiotour.jp/faqs/facilities/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHoursNote": "休館日・営業時間は日ごとに異なる。来場前に公式カレンダーで確認",
     "businessHoursSourceUrl": "https://www.wbstudiotour.jp/plan-your-visit/opening-times/",
@@ -1896,7 +1918,10 @@
       "rentalFee": "無料",
       "useNote": "一般的なベビーカーは持ち込み可。ワゴンタイプや取っ手付き三輪車などは持ち込み不可",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.wbstudiotour.jp/faqs/facilities/"
+      "sourceUrl": "https://www.wbstudiotour.jp/faqs/facilities/",
+      "rentalPlace": "館内ビジターサービスカウンター",
+      "rentalTarget": "生後1か月〜48か月・体重20kg以下",
+      "rentalType": "A"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -1904,6 +1929,16 @@
       "4-6歳": "×",
       "低学年": "△",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.wbstudiotour.jp/plan-your-visit/help-center/accessibility/"
     }
   },
   {
@@ -2345,7 +2380,7 @@
     "price": "大人450円／中学生以下 無料",
     "parking": "yes",
     "access": "東武東上線「森林公園」駅からバス15分",
-    "baby": "授乳室は南口・中央口・西口・都市緑化植物園の4か所。ベビーカーは各入園口（改札）で無料貸出（台数限りあり、土日祝は早めになくなることも）。ベビーシート付きの多目的トイレが園内各所にある。園内は広く、園内バスにもベビーカーで乗れる（重量制限あり）。授乳室（南口・中央口・西口・都市緑化植物園）には簡易ベッド・流し台・ミルク用の給湯器あり。中央口は授乳室が2か所あり、給湯器があるのは駐車場側のみ（埼玉県の子育てマップ）。",
+    "baby": "授乳室は南口・中央口・西口・都市緑化植物園の4か所。ベビーカーは各入園口（改札）で無料貸出（台数限りあり、土日祝は早めになくなることも）。ベビーシート付きの多目的トイレが園内各所にある。園内は広く、園内バスにもベビーカーで乗れる（重量制限あり）。授乳室（南口・中央口・西口・都市緑化植物園）には簡易ベッド・流し台・ミルク用の給湯器あり。中央口は授乳室が2か所あり、給湯器があるのは駐車場側のみ（埼玉県の子育てマップ）。おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.shinrinkoen.jp/",
     "desc": "広さ日本有数の国営公園。大型アスレチック遊具やサイクリングコースがあり体を動かし放題。",
     "tip": "園内が広いのでレンタサイクル利用が移動の鍵。",
@@ -2456,6 +2491,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/search/detail/31362"
     }
   },
   {
@@ -3034,7 +3079,7 @@
     "strollerRentalNote": "ベビカルによる貸出。最初の1時間250円、以降30分ごと150円。",
     "strollerNote": "センターハウス1Fサービスセンター、生後1か月〜4歳・18kgまで。水族館・ベイマーケットはエレベーターで移動可",
     "strollerSourceUrl": "https://www.seaparadise.co.jp/institution/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -3064,7 +3109,8 @@
       "rentalMemo": "ベビカルによる貸出",
       "terrainNote": "水族館・ベイマーケットはエレベーターで移動可",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.seaparadise.co.jp/institution/"
+      "sourceUrl": "https://www.seaparadise.co.jp/institution/",
+      "rentalPlace": "センターハウス1階サービスセンター"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -3072,6 +3118,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.seaparadise.co.jp/institution/"
     }
   },
   {
@@ -3440,7 +3496,7 @@
     "strollerRentalNote": "B型ベビーカーを有料300円で貸出。",
     "strollerNote": "7か月〜2歳頃向け。台数限定・予約不可。",
     "strollerSourceUrl": "https://www.enosui.com/faq.php",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -3466,7 +3522,8 @@
       "rentalNote": "予約不可",
       "storage": "館内はスロープ・エレベーターで移動でき、イルカショー会場にベビーカー置き場あり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.enosui.com/faq.php"
+      "sourceUrl": "https://www.enosui.com/faq.php",
+      "rentalPlace": "当日チケット売り場横の発券事務室"
     },
     "ageFit": {
       "0-1歳": "◎",
@@ -3474,6 +3531,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.enosui.com/faq.php"
     }
   },
   {
@@ -3496,7 +3563,7 @@
     "price": "彫刻の森：大人2,000円・高校大学生1,600円・小中学生800円／未就学児無料。彫刻の森の当日窓口料金。WEBチケットは各200円引き。ロープウェイ運賃は別途",
     "parking": "yes",
     "access": "箱根登山鉄道「彫刻の森」駅から徒歩2分",
-    "baby": "おむつ替えあり／屋外中心で長距離歩行あり",
+    "baby": "おむつ替えあり／屋外中心で長距離歩行あり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.hakone-oam.or.jp/",
     "overnightRecommended": true,
     "hotelArea": "hakone",
@@ -3548,7 +3615,7 @@
     "strollerRentalNote": "彫刻の森美術館は無料貸出あり。",
     "strollerNote": "階段・坂道・石畳など移動に不便な場所あり。シートベルトのないベビーカー等は持込不可。ロープウェイ側は別途確認が必要。",
     "strollerSourceUrl": "https://www.hakone-oam.or.jp/info/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "closedDays": [
       "彫刻の森美術館：年中無休"
@@ -3582,7 +3649,8 @@
       "slope": "some",
       "stairs": "some",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.hakone-oam.or.jp/info/"
+      "sourceUrl": "https://www.hakone-oam.or.jp/info/",
+      "rentalPlace": "本館インフォメーション・新館インフォメーション"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -3590,6 +3658,16 @@
       "4-6歳": "△",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.hakone-oam.or.jp/info/"
     }
   },
   {
@@ -3768,7 +3846,7 @@
       "checkedAt": "2026-11-14"
     },
     "access": "JR「舞浜」駅から徒歩5分",
-    "baby": "授乳室・おむつ替え多数完備／ベビーカーOK（貸出あり）",
+    "baby": "授乳室・おむつ替え多数完備／ベビーカーOK（貸出あり）。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tokyodisneyresort.jp/",
     "overnightRecommended": true,
     "hotelArea": "tokyodisney",
@@ -3851,7 +3929,7 @@
     "strollerRentalNote": "パーク内で有料レンタルあり。",
     "strollerNote": "自分のベビーカー持込可。予約不可。",
     "strollerSourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa66738a1ebab2162dd86/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHoursNote": "日ごとに営業時間が異なる。公式運営カレンダーで当日確認",
     "businessHoursSourceUrl": "https://www.tokyodisneyresort.jp/tdl/monthly/calendar.html",
@@ -3874,7 +3952,10 @@
       "rentalMemo": "パーク内で有料レンタルあり",
       "useNote": "自分のベビーカー持込可",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa66738a1ebab2162dd86/"
+      "sourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa66738a1ebab2162dd86/",
+      "rentalPlace": "ワールドバザール正面入口付近のベビーカー＆車イス・レンタル窓口",
+      "rentalTarget": "生後7か月以上・身長100cm以下・体重15kg以下・一人座り可能",
+      "rentalType": "B"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -3882,6 +3963,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tokyodisneyresort.jp/tdr/guide/baby/babycar.html"
     }
   },
   {
@@ -3930,7 +4021,7 @@
       "checkedAt": "2026-11-14"
     },
     "access": "JR「舞浜」駅からディズニーリゾートライン（モノレール）で約10分、東京ディズニーシー駅から徒歩1分（徒歩のみの場合は約15〜20分）",
-    "baby": "授乳室・おむつ替え多数完備／ベビーカーOK（貸出あり）",
+    "baby": "授乳室・おむつ替え多数完備／ベビーカーOK（貸出あり）。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tokyodisneyresort.jp/",
     "overnightRecommended": true,
     "hotelArea": "tokyodisney",
@@ -4029,7 +4120,7 @@
     "strollerRentalNote": "パーク内で有料レンタルあり。",
     "strollerNote": "自分のベビーカー持込可。予約不可。",
     "strollerSourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa66738a1ebab2162dd86/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHoursNote": "日ごとに営業時間が異なる。公式運営カレンダーで当日確認",
     "businessHoursSourceUrl": "https://www.tokyodisneyresort.jp/tds/monthly/calendar.html",
@@ -4052,7 +4143,10 @@
       "rentalMemo": "パーク内で有料レンタルあり",
       "useNote": "自分のベビーカー持込可",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa66738a1ebab2162dd86/"
+      "sourceUrl": "https://faq.tokyodisneyresort.jp/answer/67eaa66738a1ebab2162dd86/",
+      "rentalPlace": "パーク内ベビーカー＆車イス・レンタル",
+      "rentalTarget": "生後7か月以上・身長100cm以下・体重15kg以下・一人座り可能",
+      "rentalType": "B"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -4060,6 +4154,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tokyodisneyresort.co.jp/tdr/guide/baby/babycar.html"
     }
   },
   {
@@ -4644,7 +4748,7 @@
     "strollerRentalNote": "マーケットエリアで無料貸出。",
     "strollerNote": "台数限定。園内は車で移動可能。",
     "strollerSourceUrl": "https://t-doitsumura.co.jp/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -4671,7 +4775,9 @@
       "rentalFee": "無料",
       "rentalNote": "予約不可",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://t-doitsumura.co.jp/faq/"
+      "sourceUrl": "https://t-doitsumura.co.jp/faq/",
+      "rentalPlace": "マーケットエリア内の救護室",
+      "terrainNote": "車で入園し園内各所へ移動可能"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -4679,6 +4785,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://t-doitsumura.co.jp/park-guide/"
     }
   },
   {
@@ -4707,7 +4823,7 @@
     "price": "バラ園：5〜6月・10〜11月 大人800円／7〜8月400円／9月100円／12〜4月200円。高校生以下無料。65歳以上は各期間の大人料金の半額。谷津干潟公園は無料",
     "parking": "yes",
     "access": "京成線「京成谷津」駅から徒歩10分",
-    "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "http://www.yatsu-rosegarden.jp",
     "desc": "谷津バラ園は、世界のバラ約800種7,500株が立体的な花壇に咲くローズガーデン。バラの見頃は5〜6月と10〜11月で、今の秋バラの時期にも楽しめる。近くの谷津干潟は、ラムサール条約に登録された約40haの干潟で、110種以上の野鳥を観察でき、周囲には約3.5kmの遊歩道と観察デッキがある。",
     "tip": "谷津バラ園は月曜休園（祝日の場合は翌日）。京成谷津駅から徒歩5〜7分。谷津干潟は、JR新習志野駅から徒歩約20分。",
@@ -4774,6 +4890,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.narashino.lg.jp/shisetu/koenshiseki/yaturose.html"
     }
   },
   {
@@ -5332,7 +5458,7 @@
     "strollerRentalNote": "ベビカルによる貸出。",
     "strollerNote": "事前会員登録・予約画面の提示が必要。",
     "strollerSourceUrl": "https://www.tobuws.co.jp/park-guide/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHoursNote": "営業時間：季節・日付により異なる（例：11月は9:00〜16:00または17:00）。入園は閉園1時間前まで。冬季などに休園日設定あり",
     "businessHoursSourceUrl": "https://www.tobuws.co.jp/information/",
@@ -5362,7 +5488,8 @@
       "rental": true,
       "rentalMemo": "ベビカルによる貸出",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.tobuws.co.jp/park-guide/"
+      "sourceUrl": "https://www.tobuws.co.jp/park-guide/",
+      "terrainNote": "屋外展示が中心。園内に坂道・階段あり"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -6061,7 +6188,7 @@
     "price": "入場大人1500円＋アトラクション料金（フリーパス大人5800円）",
     "parking": "yes",
     "access": "ゆりかもめ「お台場海浜公園」駅から徒歩2分",
-    "baby": "おむつ替えあり／小さい子には物足りない場合あり",
+    "baby": "おむつ替えあり／小さい子には物足りない場合あり。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://tokyo-joypolis.com/",
     "verifiedAt": "2026年9月16日",
     "bookingLinks": {
@@ -6222,6 +6349,16 @@
       "4-6歳": "△",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tokyo-joypolis.com/qa/index.html"
     }
   },
   {
@@ -7369,7 +7506,7 @@
     "price": "大人510円／中学生以下 無料",
     "parking": "yes",
     "access": "西武新宿線「田無」駅からバス15分",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tamarokuto.or.jp/",
     "desc": "直径27.5mの大型ドーム「サイエンスエッグ」で、1億4,000万個を超える星を映すプラネタリウムが目玉。5つのテーマの展示室は体験型で、月の重力を体験できるムーンウォーカーが人気。赤ちゃんと一緒に楽しめる「0歳からのプラネタリウム」もある。",
     "tip": "ムーンウォーカーは身長110cm以上・体重22〜70kgが目安。休憩スペースは食事の持ち込みができる。駐車場は30分無料（以降30分100円、1日最大700円）。",
@@ -7465,6 +7602,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tamarokuto.or.jp/qanda/"
     }
   },
   {
@@ -7950,7 +8097,7 @@
     "price": "時間制 子供1000円前後",
     "parking": "yes",
     "access": "都営新宿線「西大島」駅からバス",
-    "baby": "おむつ替え・授乳室あり",
+    "baby": "おむつ替え・授乳室あり。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "ショッピングモール内の室内遊び場。天候に左右されず気軽に立ち寄れる。",
     "tip": "買い物のついでに立ち寄りやすく、雨の日の急な予定変更にも便利。",
@@ -8012,6 +8159,16 @@
       "4-6歳": "◎",
       "低学年": "△",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://kitasuna.ario.jp/mamakids/facility/"
     }
   },
   {
@@ -8788,7 +8945,7 @@
     "strollerRentalNote": "B型ベビーカーを600円で貸出。",
     "strollerNote": "生後7か月〜4歳頃、体重18kg・身長100cmまで。園内バス乗車時は折りたたみが必要。",
     "strollerSourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/rental.php",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -8818,7 +8975,9 @@
       "rentalType": "B",
       "rentalTarget": "生後7か月〜4歳頃",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/rental.php"
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/rental.php",
+      "rentalPlace": "正門レンタルコーナー・北門レンタルコーナー（北門開放日のみ）",
+      "terrainNote": "園内全域でベビーカー利用可。園内バス乗車時は折りたたみ"
     },
     "ageFit": {
       "0-1歳": "○",
@@ -8826,6 +8985,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/rental.php"
     }
   },
   {
@@ -10761,7 +10930,17 @@
     "kidsToiletNote": "ベビーベッド3か所・計4台の記載あり。子ども用便器の明記は確認できず",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.yumebokujo.com/access.html"
+    "kidsToiletSourceUrl": "https://www.yumebokujo.com/access.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.yumebokujo.com/access.html"
+    }
   },
   {
     "region": "埼玉",
@@ -11157,7 +11336,7 @@
       "12/25〜1/4"
     ],
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://greencenter.1110city.com/",
     "desc": "広さ15haの「日本の都市公園100選」で、滝や噴水、花壇、熱帯・水生・サボテンの温室がある植物公園。ミニ鉄道や展望すべり台、大型遊具のあるわんぱく広場、フィールドアスレチック「冒険の森」もあり、親子で1日遊べる。",
     "tip": "入園料は一般310円、4歳〜中学生100円で、3歳以下は無料。駐車場は無料（630台）。火曜休園（祝日の場合は翌日）。埼玉高速鉄道の新井宿駅から徒歩約10分。",
@@ -11228,6 +11407,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "授乳室は東門売札所とわんぱく広場。おむつ交換所は園内複数",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.kawaguchi.lg.jp/faq/sisetu/greencenter/18194.html"
     }
   },
   {
@@ -11258,7 +11447,7 @@
     "price": "大人730円／小中学生310円",
     "parking": "yes",
     "access": "東武伊勢崎線「羽生」駅からバス20分",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.parks.or.jp/suizokukan/",
     "desc": "羽生水郷公園の中にある淡水魚専門の水族館。天然記念物のミヤコタナゴやムサシトミヨなど荒川の生き物を展示し、水槽の下にもぐって見上げる「金魚ドーム」もある。庭の池では大きなコイやソウギョにエサをあげられる。",
     "tip": "未就学児は無料で、小・中学生も通常期は100円と手ごろ。駐車場は無料。駅からは車で約15分なので車が便利。",
@@ -11311,7 +11500,7 @@
     "strollerRental": true,
     "strollerRentalNote": "ベビーカーは無料貸出。貸出・返却場所は入場券売り場。",
     "strollerSourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -11342,7 +11531,8 @@
       "rentalFee": "無料",
       "rentalMemo": "貸出・返却場所は入場券売り場",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html"
+      "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html",
+      "rentalPlace": "券売所"
     },
     "ageFit": {
       "0-1歳": "○",
@@ -11350,6 +11540,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html"
     }
   },
   {
@@ -11384,7 +11584,7 @@
     "price": "入園＋のりもの放題 大人3000円前後",
     "parking": "yes",
     "access": "東武伊勢崎線「加須」駅からバス20分",
-    "baby": "授乳室は園内2か所（ファミリー館内の赤ちゃんコーナー・西側の赤ちゃんハウス。どちらも給湯設備あり）。おむつ替え用ベビーベッドは園内各トイレ（ゴーストの館横を除く）と2つの赤ちゃん施設にあり。ベビーカーは中央入園ゲートで1台1日300円で貸出（保証金3,000円は返却時に返金、台数限りあり）。",
+    "baby": "授乳室は園内2か所（ファミリー館内の赤ちゃんコーナー・西側の赤ちゃんハウス。どちらも給湯設備あり）。おむつ替え用ベビーベッドは園内各トイレ（ゴーストの館横を除く）と2つの赤ちゃん施設にあり。ベビーカーは中央入園ゲートで1台1日300円で貸出（保証金3,000円は返却時に返金、台数限りあり）。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.musashinomura.co.jp/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/164649/",
@@ -11527,6 +11727,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.musashinomura.co.jp/faq/"
     }
   },
   {
@@ -11555,7 +11765,7 @@
     "access": "西武線「航空公園」駅から徒歩2分",
     "businessHoursNote": "常時開放（入園自由）",
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.parks.or.jp/tokorozawa-kokuu/",
     "desc": "日本で最初の飛行場の跡地にできた、県営では最大規模（約50ha）の公園。広い芝生広場や大型複合遊具のある子ども広場、ドッグラン、日本庭園があり、航空公園駅前には戦後初の国産旅客機YS-11が展示されている。",
     "tip": "園内の「所沢航空発祥記念館」はリニューアル工事のため2027年3月末（予定）まで休館中。西武新宿線の航空公園駅から徒歩すぐ。",
@@ -11642,6 +11852,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/search/detail/36328"
     }
   },
   {
@@ -11826,7 +12046,7 @@
     "strollerRental": true,
     "strollerRentalNote": "エントランスホールで無料貸出。",
     "strollerSourceUrl": "https://www.nat.museum.ibk.ed.jp/news/8698",
-    "strollerCheckedAt": "2026年11月3日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -11860,7 +12080,9 @@
       "rental": true,
       "rentalFee": "無料",
       "checkedAt": "2026年11月3日",
-      "sourceUrl": "https://www.nat.museum.ibk.ed.jp/news/8698"
+      "sourceUrl": "https://www.nat.museum.ibk.ed.jp/news/8698",
+      "rentalPlace": "エントランスホール",
+      "terrainNote": "館内利用。貸出用ベビーカーあり"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -12833,7 +13055,17 @@
     "kidsToiletNote": "多目的トイレにおむつ交換台・ベビーキープあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.kiryu.lg.jp/shisetsu/shimin/1010817/1011498.html"
+    "kidsToiletSourceUrl": "https://www.city.kiryu.lg.jp/shisetsu/shimin/1010817/1011498.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.kiryu.lg.jp/shisetsu/kouen/1005243.html"
+    }
   },
   {
     "region": "群馬",
@@ -12887,7 +13119,7 @@
       "火曜日（祝日の場合は翌平日、要確認）"
     ],
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://lunapark.maebashi-park.com/",
     "desc": "前橋公園の一角にある、乗り物1回10円からと全国有数の安さで知られる昭和29年開園の遊園地。国の登録有形文化財の電動木馬など懐かしい乗り物が並ぶ。",
     "tip": "専用駐車場（東口40台・西口12台）のほか、無料の前橋公園駐車場も利用できる。料金の安さが魅力で、未就学児の「初めての遊園地」にもぴったり。",
@@ -12944,12 +13176,12 @@
       "bento": "ask",
       "bentoNote": "外部からのお弁当持ち込み・飲食可能場所の公式案内を確認できず。来園前に公式サイトで確認してください。"
     },
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRental": true,
     "strollerRentalNote": "管理棟（売店）でベビーバギーのレンタルあり。",
     "strollerNote": "利用方法・料金・対象年齢は公式マップで確認できず。",
     "strollerSourceUrl": "https://lunapark.maebashi-park.com/facilities/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -12978,7 +13210,9 @@
       "rental": true,
       "rentalMemo": "管理棟（売店）でベビーバギーのレンタルあり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://lunapark.maebashi-park.com/facilities/"
+      "sourceUrl": "https://lunapark.maebashi-park.com/facilities/",
+      "rentalPlace": "売店（管理棟）",
+      "terrainNote": "園内マップにおむつ交換スペース表示あり。貸出利用は管理棟スタッフへ申出"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -12986,6 +13220,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://lunapark.maebashi-park.com/facilities/"
     }
   },
   {
@@ -13364,7 +13608,7 @@
       "年末年始（12/28〜1/4）"
     ],
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://yumepark.net/",
     "desc": "泥んこ遊びや工作など「自分の責任で自由に遊ぶ」がコンセプトの冒険遊び場（プレーパーク）。全天候広場や乳幼児向けスペース「ゆるり」など屋内施設もある。",
     "tip": "駐車場はないため電車での来園が基本。汚れてもいい服装で行くのがおすすめ。着替えを多めに準備すると安心。",
@@ -13421,6 +13665,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.yumepark.net/112_play/03_yururi/index.html"
     }
   },
   {
@@ -13448,7 +13702,7 @@
     "access": "JR南武線・東急田園都市線「溝の口」駅からバス「森林公園前」下車徒歩約3分（JR「久地」駅からは徒歩約30分、坂道あり）",
     "businessHoursNote": "常時開放（入園自由）",
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.pref.kanagawa.jp/docs/w5k/cnt/f507/p6354.html",
     "desc": "湿性植物園もあり自然観察にも向く。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -13523,6 +13777,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://higashitakane.com/qa/"
     }
   },
   {
@@ -13899,7 +14163,7 @@
     "access": "JR「中山」駅から徒歩15分",
     "businessHoursNote": "常時開放（入園自由）",
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.kanagawa-park.or.jp/shikinomori/",
     "desc": "田園風景が残る里山タイプの公園で虫探しにも良い。ベンチや広場も整っていて、ちょっとした息抜きに立ち寄りやすい。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -13983,6 +14247,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "県の公式資料（2022年頃）による。現況は要確認",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kanagawa-park.or.jp/shikinomori/"
     }
   },
   {
@@ -14229,7 +14503,7 @@
     "access": "JR「山手」駅から徒歩15分",
     "businessHoursNote": "常時開放（入園自由）",
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.hama-midorinokyokai.or.jp/park/negishi/about/outline.php",
     "desc": "旧競馬場の広い芝生広場がありボール遊びもしやすい。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -14307,6 +14581,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式ブログでレストハウス1階の個室型ベビーケアルームを確認。横浜市バリアフリー情報では授乳室なしと表示されており情報に相違あり。利用前に管理センターへ確認推奨",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/negishi/details/post-332.php"
     }
   },
   {
@@ -14442,7 +14726,17 @@
     "kidsToiletNote": "おむつ交換台・多目的トイレあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/05047.html"
+    "kidsToiletSourceUrl": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/05047.html",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/05047.html"
+    }
   },
   {
     "region": "神奈川",
@@ -14587,7 +14881,7 @@
     "access": "市営地下鉄「新横浜」駅から徒歩15分",
     "businessHoursNote": "常時開放（入園自由）",
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室なし（2026年11月15日確認）。",
     "officialUrl": "https://www.nissan-stadium.jp/shinyoko-park/index.php",
     "desc": "日産スタジアム隣接。広い芝生でのびのび遊べる。自然を感じながらのんびり過ごせる、地域に親しまれた公園。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -14666,7 +14960,17 @@
     "kidsToiletNote": "ベビーキープ・ベビーチェア・おむつ交換台あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/07109.html"
+    "kidsToiletSourceUrl": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/07109.html",
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/07109.html"
+    }
   },
   {
     "region": "神奈川",
@@ -14691,7 +14995,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "横浜市営地下鉄「三ツ沢上町」駅から徒歩約12分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室なし（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "競技場を中心に緑豊かな高台の公園。散歩やピクニックなど、その日の気分に合わせて過ごし方を選べる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -14771,7 +15075,17 @@
     "kidsToiletNote": "車いす対応トイレ・ベビーシート・ベビーチェアあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://chat.4nature.co.jp/park/mitsuzawa/about/outline.php"
+    "kidsToiletSourceUrl": "https://chat.4nature.co.jp/park/mitsuzawa/about/outline.php",
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/mitsuzawa/faq.php"
+    }
   },
   {
     "region": "神奈川",
@@ -15148,7 +15462,7 @@
     "strollerNote": "海岸沿いの景観公園。",
     "strollerRentalNote": "ベビーカーでの通行可能範囲・貸出について公式情報を確認できず。",
     "strollerSourceUrl": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000433.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -15177,6 +15491,11 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000433.html",
+      "terrainNote": "海岸沿いに起伏のある地形"
     }
   },
   {
@@ -15202,7 +15521,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "小田急線「相模大野」駅からバス",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "四季の花と大きな噴水広場が楽しめる公園。自然を感じながらのんびり過ごせる、地域に親しまれた公園。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -15292,6 +15611,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "自治体公式",
+      "note": "県公式イベント案内の記載。常設設備かは要確認",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.pref.kanagawa.jp/docs/m8u/sagamihara250316_inclusiveamusementpark.html"
     }
   },
   {
@@ -15523,7 +15852,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "JR「茅ヶ崎」駅北口からバス「芹沢入口」下車徒歩約5分",
-    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.kanagawa-park.or.jp/satoyama/",
     "desc": "田園と雑木林が残る里山エリア。虫取りに人気。ベンチや広場も整っていて、ちょっとした息抜きに立ち寄りやすい。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -15570,7 +15899,7 @@
     "strollerNote": "ベビーカーの通行条件は未確認。",
     "strollerRentalNote": "公園内散策用の車いす・けん引装置の貸出はあるが、ベビーカー貸出ではない。",
     "strollerSourceUrl": "https://www.kanagawa-park.or.jp/satoyama/guidance.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -15603,7 +15932,22 @@
     "kidsToiletNote": "パークセンターに「みんなのトイレ」あり。赤ちゃん休憩室におむつ交換台あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.kanagawa-park.or.jp/satoyama/parkcenter.html"
+    "kidsToiletSourceUrl": "https://www.kanagawa-park.or.jp/satoyama/parkcenter.html",
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kanagawa-park.or.jp/satoyama/parkcenter.html",
+      "terrainNote": "園内に坂道あり"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kanagawa-park.or.jp/satoyama/parkcenter.html"
+    }
   },
   {
     "region": "神奈川",
@@ -16658,7 +17002,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "小田急線・相模線「厚木」駅または相模線「社家」駅から徒歩約15分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "広い芝生とスポーツ施設が揃う総合公園。散歩やピクニックなど、その日の気分に合わせて過ごし方を選べる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -16727,7 +17071,17 @@
     "kidsToiletNote": "ベビーベッド・ベビーチェアあり。車いす対応トイレあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.ebina.kanagawa.jp/shisetsu/kouen/1005761.html"
+    "kidsToiletSourceUrl": "https://www.city.ebina.kanagawa.jp/shisetsu/kouen/1005761.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.ebina.kanagawa.jp/shisetsu/kouen/1005761.html"
+    }
   },
   {
     "region": "神奈川",
@@ -16950,7 +17304,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "JR「川崎」駅から徒歩15分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "市街地にある競技場併設の公園。アクセスが良い。遊具エリアもあるので、体を動かしたい日のお出かけ先にもなる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -17023,6 +17377,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.fujimi-park.com/guide/parkcenter.php"
     }
   },
   {
@@ -17246,7 +17610,7 @@
     "price": "大人400円程度／中学生以下 無料",
     "parking": "yes",
     "access": "JR「平塚」駅からバス",
-    "baby": "おむつ替えあり／ベビーカーOK",
+    "baby": "おむつ替えあり／ベビーカーOK。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://kana-garden.com",
     "desc": "県立の植物園で、約1,300品種のバラが咲く春・秋のローズフェスティバルが有名。四季の花畑の「フラワーゾーン」と、野菜の収穫や田植え・稲刈りを体験できる「アグリゾーン」があり、芝生広場ではボール遊びもできる。",
     "tip": "入園料は季節で変わり、未就学児は無料。休園日も季節で異なるので公式サイトで確認を。駐車場は有料（約350台）。平塚駅北口からバスで約20分、徒歩約5分。",
@@ -17334,6 +17698,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://kana-garden.com/faq/"
     }
   },
   {
@@ -17804,7 +18178,7 @@
       "年末年始（12/29〜1/1）"
     ],
     "verifiedAt": "2026年9月16日",
-    "baby": "おむつ替えトイレあり",
+    "baby": "おむつ替えトイレあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tokyo-park.or.jp/park/jindai/index.html",
     "desc": "バラ園と大きな温室がある都内屈指の植物公園。遊具や芝生の広場もあり、小さな子ども連れの散歩コースにも向いている。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -17883,6 +18257,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tokyo-park.or.jp/park/jindai/index.html"
     }
   },
   {
@@ -18592,7 +18976,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "東京メトロ「新中野」駅からバス",
-    "baby": "おむつ替えトイレあり",
+    "baby": "おむつ替えトイレあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "大型遊具のある比較的広めの区立公園。散歩やピクニックなど、その日の気分に合わせて過ごし方を選べる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -18665,6 +19049,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "中野区公式案内では園内総合体育館1階に授乳室あり。区の一覧では公園の授乳設備なしと掲載されており、施設内設備と公園全体の案内を区別",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.tokyo-nakano.lg.jp/kanko/machiaruki/heiwanomoripark.html"
     }
   },
   {
@@ -18986,7 +19380,7 @@
     "price": "大人400円程度／高校生以下 無料",
     "parking": "yes",
     "access": "東武東上線「鉢形」駅から徒歩30分",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.river-museum.jp/",
     "desc": "日本一の大水車と、荒川の源流から河口までを再現した屋外の大型模型が目印。館内には川下りを体験できるアドベンチャーシアターがあり、屋外には噴水広場やウォーターアスレチック「荒川わくわくランド」（4歳以上）などの水遊びエリアもある。",
     "tip": "水遊びエリアは2026年は11月14日までの営業。着替えがあると安心。月曜休館（祝日は開館）。",
@@ -19053,7 +19447,7 @@
     "strollerRentalNote": "埼玉県の公式子育てマップでは無料貸出と案内。",
     "strollerNote": "本館入口にベビーカーを用意。館内はスロープで移動可能。",
     "strollerSourceUrl": "https://www.river-museum.jp/about/barrier-free/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -19080,7 +19474,8 @@
       "useNote": "本館入口にベビーカーを用意",
       "terrainNote": "館内はスロープで移動可能",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.river-museum.jp/about/barrier-free/"
+      "sourceUrl": "https://www.river-museum.jp/about/barrier-free/",
+      "rentalPlace": "本館入口"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -19088,6 +19483,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.river-museum.jp/about/barrier-free/"
     }
   },
   {
@@ -19116,7 +19521,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "西武秩父線「西武秩父」駅からバス",
-    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）。授乳室なし（2026年11月15日確認）。",
     "officialUrl": "https://www.pref.saitama.lg.jp/shisetsu/koen/010.html",
     "overnightRecommended": true,
     "hotelArea": "chichibu",
@@ -19199,6 +19604,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/search/detail/13345"
     }
   },
   {
@@ -19313,7 +19728,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "JR「北戸田」駅から徒歩15分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室なし（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "広い芝生広場とサイクリングコースが人気。遊具や芝生の広場もあり、小さな子ども連れの散歩コースにも向いている。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -19393,7 +19808,17 @@
     "kidsToiletNote": "多目的トイレにおむつ交換台あり。ベビーチェアなし",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.toda.saitama.jp/soshiki/271/tosikei-barrierfree-douman-9.html"
+    "kidsToiletSourceUrl": "https://www.city.toda.saitama.jp/soshiki/271/tosikei-barrierfree-douman-9.html",
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.toda.saitama.jp/soshiki/271/tosikei-barrierfree-douman-9.html"
+    }
   },
   {
     "region": "埼玉",
@@ -19418,7 +19843,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "東武伊勢崎線「加須」駅からバス",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "大型遊具のある比較的新しい公園。自然を感じながらのんびり過ごせる、地域に親しまれた公園。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -19494,6 +19919,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/search/detail/13347"
     }
   },
   {
@@ -19519,7 +19954,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "東武アーバンパークライン「岩槻」駅から徒歩15分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室なし（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "お堀と緑に囲まれた歴史公園。散歩やピクニックなど、その日の気分に合わせて過ごし方を選べる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -19598,6 +20033,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/search/detail/33552"
     }
   },
   {
@@ -19623,7 +20068,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "東武伊勢崎線「羽生」駅からバス",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "水郷風景の中で遊べる広い公園。散歩やピクニックなど、その日の気分に合わせて過ごし方を選べる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -19707,7 +20152,17 @@
     "kidsToiletNote": "園内すべてのトイレに多機能トイレあり。ベビーケアルーム付き",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.parks.or.jp/suizokukan/guide/001/001305.html"
+    "kidsToiletSourceUrl": "https://www.parks.or.jp/suizokukan/guide/001/001305.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.parks.or.jp/suizokukan/guide/001/001305.html"
+    }
   },
   {
     "region": "埼玉",
@@ -20247,6 +20702,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.cue-net.or.jp/kouen/kasiwa/"
     }
   },
   {
@@ -20456,6 +20921,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.mobara.chiba.jp/promotion/0000006625.html"
     }
   },
   {
@@ -21831,7 +22306,7 @@
     "price": "大人1300円から／子供700円から",
     "parking": "yes",
     "access": "JR「渋川」駅からバス",
-    "baby": "おむつ替えあり／ベビーカーOK（起伏あり）",
+    "baby": "おむつ替えあり／ベビーカーOK（起伏あり）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.greenbokujo.jp",
     "overnightRecommended": true,
     "hotelArea": "ikaho",
@@ -21896,7 +22371,7 @@
     "strollerRentalNote": "ベビカルによる有料貸出あり。",
     "strollerNote": "ベビーカーで場内を回れるが、坂道が多い。事前登録・予約が必要で、台数は5台。",
     "strollerSourceUrl": "https://www.greenbokujo.jp/service/baby/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -21927,7 +22402,9 @@
       "terrainNote": "ベビーカーで場内を回れるが、坂道が多い",
       "slope": "many",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.greenbokujo.jp/service/baby/"
+      "sourceUrl": "https://www.greenbokujo.jp/service/baby/",
+      "rentalPlace": "入場ゲート（事前予約後）",
+      "rentalTarget": "生後7か月〜4歳頃・体重18kg以下"
     },
     "ageFit": {
       "0-1歳": "◎",
@@ -21935,6 +22412,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.greenbokujo.jp/service/baby"
     }
   },
   {
@@ -22059,7 +22546,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "JR「前橋」駅からバス",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "バラ園とスポーツ施設がそろう緑豊かな公園。遊具や芝生の広場もあり、小さな子ども連れの散歩コースにも向いている。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -22129,6 +22616,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.maebashi.gunma.jp/soshiki/kodomomiraibu/kodomoshisetsu/gyomu/3/1/3902.html"
     }
   },
   {
@@ -22406,7 +22903,7 @@
     "price": "大人400円程度／中学生以下 無料",
     "parking": "no",
     "access": "JR「武蔵小金井」駅からバス",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり、ミルク用のお湯なし（2026年11月15日確認）。",
     "officialUrl": "https://www.tatemonoen.jp/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/152127/"
@@ -22458,7 +22955,7 @@
     "strollerRentalNote": "無料貸出あり。貸出は5台、予約不可。",
     "strollerNote": "園内で利用可能だが、建造物内を見学する際は入口に置く必要がある。",
     "strollerSourceUrl": "https://www.tatemonoen.jp/about/faq.php",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -22483,7 +22980,9 @@
       "rentalNote": "予約不可",
       "useNote": "園内で利用可能だが、建造物内を見学する際は入口に置く必要がある",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.tatemonoen.jp/about/faq.php"
+      "sourceUrl": "https://www.tatemonoen.jp/about/faq.php",
+      "rentalPlace": "ビジターセンター内インフォメーション",
+      "rentalTarget": "生後1か月〜18kgまで"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -22491,6 +22990,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "no",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tatemonoen.jp/about/faq.php"
     }
   },
   {
@@ -23681,7 +24190,17 @@
     "kidsToiletNote": "管理事務所内におむつ替え用ベビーベッドあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://daishi-park.com/infomation/infomation-360/"
+    "kidsToiletSourceUrl": "https://daishi-park.com/infomation/infomation-360/",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://daishi-park.com/infomation/infomation-360/"
+    }
   },
   {
     "region": "神奈川",
@@ -23986,7 +24505,7 @@
     "price": "大人400円程度／高校生以下 無料",
     "parking": "yes",
     "access": "JR「本郷台」駅から徒歩2分",
-    "baby": "おむつ替えあり／ベビーカーOK",
+    "baby": "おむつ替えあり／ベビーカーOK。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.earthplaza.jp",
     "desc": "子どもが五感を使って遊べる「こどもファンタジー展示室」や、世界の国々の衣装や楽器、生活道具にふれられる「こどもの国際理解展示室」がある施設。世界の本や映像がそろう映像ライブラリーもある。",
     "tip": "常設展示室は小・中学生100円、未就学児は無料で、雨の日でも1日遊べる。授乳室あり。JR本郷台駅からすぐで、館内から電車を眺められるスポットもある。月曜休館（祝日は開館）。",
@@ -24038,7 +24557,7 @@
     "strollerRental": true,
     "strollerRentalNote": "館内で無料貸出あり。",
     "strollerSourceUrl": "https://www.earthplaza.jp/guide/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -24068,7 +24587,8 @@
       "rental": true,
       "rentalFee": "無料",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.earthplaza.jp/guide/faq/"
+      "sourceUrl": "https://www.earthplaza.jp/guide/faq/",
+      "terrainNote": "館内エレベーターあり"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -24076,6 +24596,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.earthplaza.jp/guide/faq/"
     }
   },
   {
@@ -24465,7 +24995,7 @@
     "strollerOk": "ask",
     "strollerNote": "公式案内では水田地帯の散策路や交通規制について案内。",
     "strollerSourceUrl": "https://www.town.kaisei.kanagawa.jp/info/19",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -24493,6 +25023,11 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.town.kaisei.kanagawa.jp/info/19",
+      "terrainNote": "あじさい水田周辺は未舗装・農道を含む"
     }
   },
   {
@@ -25340,7 +25875,17 @@
     "kidsToiletNote": "園内トイレに乳幼児用おむつ交換台あり。乳幼児用イスなし",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.chichibu.lg.jp/6109.html"
+    "kidsToiletSourceUrl": "https://www.city.chichibu.lg.jp/6109.html",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.chichibu.lg.jp/6109.html"
+    }
   },
   {
     "region": "埼玉",
@@ -25471,7 +26016,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "西武池袋線「飯能」駅からバス",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.town.kawajima.saitama.jp/2224.htm",
     "overnightRecommended": true,
     "hotelArea": "hanno",
@@ -25555,7 +26100,17 @@
     "kidsToiletNote": "併設の公共トイレにおむつ交換台あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.saitama-support.jp/map/baby/search/detail/15550"
+    "kidsToiletSourceUrl": "https://www.saitama-support.jp/map/baby/search/detail/15550",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "管理事務所内の授乳スペース・公共トイレのおむつ交換台。管理人不在時は利用できない場合あり",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/baby/search/detail/15550"
+    }
   },
   {
     "region": "埼玉",
@@ -25685,7 +26240,7 @@
     "strollerRentalNote": "インフォメーションで貸出あり。貸出は台数限定で予約可能。",
     "strollerNote": "ベビーカーで入園可能。階段・段差が多い館内の一部施設は利用不可。",
     "strollerSourceUrl": "https://metsa-hanno.com/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHours": {
       "mon": "10:00-17:00",
@@ -25731,7 +26286,9 @@
       "terrainNote": "階段・段差が多い館内の一部施設は利用不可",
       "stairs": "some",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://metsa-hanno.com/faq/"
+      "sourceUrl": "https://metsa-hanno.com/faq/",
+      "rentalFee": "最初の1時間250円・以降30分100円・12時間最大1500円",
+      "rentalMemo": "ベビカル"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -26123,7 +26680,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "JR「与野」駅から徒歩10分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室なし（2026年11月15日確認）。",
     "officialUrl": null,
     "desc": "桜の名所として知られる市街地の公園。散歩やピクニックなど、その日の気分に合わせて過ごし方を選べる。",
     "tip": "入園無料なので予定に組み込みやすい、駐車場もあるため車での立ち寄りもしやすい、屋外中心の公園なので晴れた日に訪れるのがおすすめ。",
@@ -26200,7 +26757,17 @@
     "kidsToiletNote": "多目的トイレ・女子トイレにおむつ交換台あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.saitama-support.jp/map/search/detail/16926"
+    "kidsToiletSourceUrl": "https://www.saitama-support.jp/map/search/detail/16926",
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "埼玉県公式子育てマップ",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.saitama-support.jp/map/search/detail/16926"
+    }
   },
   {
     "region": "埼玉",
@@ -26890,7 +27457,7 @@
     "price": "常設展示：大人600円・高校生300円・小中学生100円／プラネタリウム：大人600円・高校生300円・小中学生100円／セット：大人1000円・高校生490円・小中学生160円。展示・プラネタリウムは別料金。セット券あり。未就学児は無料（18歳以上の保護者の同伴が必要）",
     "parking": "yes",
     "access": "JR「千葉」駅から徒歩12分",
-    "baby": "おむつ替えあり／ベビーカーOK",
+    "baby": "おむつ替えあり／ベビーカーOK。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.kagakukanq.com",
     "desc": "複合施設「きぼーる」の7〜10階にある参加体験型の科学館で、約150の体験展示がある。県内最大のプラネタリウムは2025年1月にリニューアルし、1億個の星で天の川まで再現する。未就学児は無料（保護者同伴）。",
     "tip": "千葉市内の小・中学生は、土曜日に「ふれあいパスポート」で常設展示とプラネタリウム（一般投影）が無料。駐車場はきぼーるの有料駐車場を利用。授乳室あり。",
@@ -26984,6 +27551,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kagakukanq.com/guide/facilities/index.html"
     }
   },
   {
@@ -27336,7 +27913,7 @@
     "strollerOk": "ask",
     "strollerNote": "園内道路に一方通行・対面通行の区間あり",
     "strollerSourceUrl": "https://www.city.mito.lg.jp/site/shinrinkoen/6251.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -27367,6 +27944,11 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.mito.lg.jp/site/shinrinkoen/6251.html",
+      "terrainNote": "園内に起伏あり"
     }
   },
   {
@@ -27463,6 +28045,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.doho-park.com/ad/dohopark/index.html"
     }
   },
   {
@@ -28382,7 +28974,7 @@
     "price": "入場無料（体験・乗り物は別途）",
     "parking": "yes",
     "access": "JR「西那須野」駅からバス",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": null,
     "verifiedAt": "2026年9月16日",
     "bookingLinks": {
@@ -28482,6 +29074,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.senbonmatsu.com/bfree/"
     }
   },
   {
@@ -30079,7 +30681,7 @@
     "price": "入園無料（乗り物は個別料金）",
     "parking": "yes",
     "access": "JR「渋川」駅からバス",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.skyland89.jp",
     "desc": "標高460mの高台にある遊園地で、コースターやメリーゴーランドなど約20種類のアトラクションがある。高さ50mの観覧車からは上越の山々や関東平野を360度見渡せる。夏はマイナス30℃を体験できる氷の館や、水遊びができるちびっこウォーターランドも開く。",
     "tip": "2歳以下は入園無料で、駐車場も無料。乗り物を多く乗るなら、入園料込みの乗り放題「1DAYパス」がある。火曜休園（祝日の場合は翌日）。",
@@ -30223,6 +30825,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.skyland89.jp/faq/"
     }
   },
   {
@@ -30286,7 +30898,7 @@
       "sourceUrl": "https://www.city.kiryu.lg.jp/kankou/spot/1018177/1008781/1008835/1008790.html"
     },
     "strollerOk": "ask",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -30313,6 +30925,10 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "terrainNote": "園内に坂道・階段あり"
     }
   },
   {
@@ -31071,7 +31687,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "東京メトロ「辰巳」駅から徒歩10分",
-    "baby": "おむつ替えトイレあり",
+    "baby": "おむつ替えトイレあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tptc.co.jp/park/03_07",
     "desc": "砂町運河沿いの海上公園で、広い芝生広場やすべり台・ブランコなどの遊具、バーベキュー広場、ドッグランがある。園内には東京2020大会で水泳会場になった「東京アクアティクスセンター」もある。",
     "tip": "南側の辰巳の森緑道公園には、日本最大級のタコのすべり台やパンダのすべり台もある。駐車場は有料。東京メトロ有楽町線の辰巳駅が最寄り。",
@@ -31145,7 +31761,17 @@
     "kidsToiletNote": "バリアフリートイレ・おむつ交換台・ベビーキープまたはベビーチェア・授乳室あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.gotokyo.org/jp/spot/1171/index.html"
+    "kidsToiletSourceUrl": "https://www.gotokyo.org/jp/spot/1171/index.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tptc.co.jp/park/03_07"
+    }
   },
   {
     "region": "東京",
@@ -31579,7 +32205,7 @@
     "price": "入園無料",
     "parking": "yes",
     "access": "JR「大宮」駅から徒歩20分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "おむつ替えトイレあり／ベビーカーOK（公式の明記なし・屋外公園）。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.parks.or.jp/oomiya2-3/",
     "desc": "大宮公園の一部として1980年に開設された県営公園。ブランコやジャングルジムのあるチビッコ広場と、多目的広場や芝生広場があり、春は約520本の梅、初夏は菖蒲やあじさいが楽しめる。テニスコートや軟式野球場もある。",
     "tip": "駐車場は無料（第二・第三公園駐車場）。週末やイベント日は、早い時間に満車になりやすい。",
@@ -31617,7 +32243,7 @@
     "strollerOk": "ok",
     "strollerRentalNote": "埼玉県公式の大宮公園案内にはベビーカー貸出の記載があるが、大宮第二公園での貸出と確認できる記載ではないため、こちらには適用していない。",
     "strollerSourceUrl": "https://www.parks.or.jp/oomiya2-3/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -31641,7 +32267,10 @@
     "strollerDetail": {
       "useNote": "公式サイトに明記はないが、屋外の公園のため通行制限は通常ない（当サイトの判断）",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.parks.or.jp/oomiya2-3/"
+      "sourceUrl": "https://www.parks.or.jp/oomiya2-3/",
+      "rental": true,
+      "rentalFee": "無料",
+      "rentalPlace": "大宮公園事務所"
     },
     "strollerOkBasis": "estimated-outdoor-park",
     "ageFit": {
@@ -31650,6 +32279,17 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerRental": true,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.pref.saitama.lg.jp/omiya-park/shisetsu.html"
     }
   },
   {
@@ -32042,13 +32682,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
-      "diaperChange": "ask",
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
       "hotWater": "ask",
-      "note": "一般来館者向けの授乳・おむつ替え設備を確認できず。",
-      "status": "ask",
-      "basis": "公式根拠不足",
-      "checkedAt": "2026年11月11日"
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/welcome/welcome/museum.html"
     },
     "shop": {
       "status": "unknown",
@@ -32758,7 +33399,7 @@
     "price": "1日遊び放題1300円、土日祝は3〜5時間遊び放題1500円、0〜1歳無料",
     "parking": "yes",
     "access": "ゆりかもめ「お台場海浜公園」駅から徒歩2分",
-    "baby": "3歳までの専用コーナーあり／ベビーカー入店可",
+    "baby": "3歳までの専用コーナーあり／ベビーカー入店可。授乳室あり、おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://thekids.co.jp/",
     "desc": "エアースライダーやボールプール、ボルダリングなど体を動かせる遊具が揃う全天候型の室内遊び場。0歳から遊べる知育玩具も充実。",
     "tip": "お台場観光やショッピングと組み合わせやすい立地。買い物金額に応じた駐車場無料サービスあり。",
@@ -32846,7 +33487,17 @@
     "kidsToiletNote": "館内にベビーキープ・おむつ替え設備あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.odaiba-decks.com/family_guide/"
+    "kidsToiletSourceUrl": "https://www.odaiba-decks.com/family_guide/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.odaiba-decks.com/family_guide/"
+    }
   },
   {
     "region": "東京",
@@ -33424,7 +34075,7 @@
     "price": "観覧 高校生以上900円、小中学生300円、幼児無料",
     "parking": "yes",
     "access": "JR「西那須野」駅からバス約40分",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://tnap.jp/",
     "desc": "栃木県唯一の水族館。アマゾン川の巨大魚ピラルクーや那珂川の淡水魚を展示。無料の水遊び広場や釣り池も併設。",
     "tip": "水族館部分は雨でも安心。無料の水遊び広場も楽しみたいなら晴れた日がおすすめ。",
@@ -33484,7 +34135,7 @@
     "strollerRentalNote": "ベビーカー無料貸出あり。",
     "strollerNote": "台数限定・予約不可。ベビーカーの利用は「おもしろ魚館」内のみ。",
     "strollerSourceUrl": "https://tnap.jp/subcontents/faq.php",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -33512,7 +34163,8 @@
       "rentalFee": "無料",
       "useNote": "ベビーカーの利用は「おもしろ魚館」内のみ",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://tnap.jp/subcontents/faq.php"
+      "sourceUrl": "https://tnap.jp/subcontents/faq.php",
+      "rentalPlace": "おもしろ魚館インフォメーション"
     },
     "ageFit": {
       "0-1歳": "○",
@@ -33520,6 +34172,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tnap.jp/subcontents/faq.php"
     }
   },
   {
@@ -33552,7 +34214,7 @@
     "price": "メインデッキ 大人1500円／小中学生900円／4歳以上600円",
     "parking": "yes",
     "access": "都営大江戸線「赤羽橋」駅から徒歩5分",
-    "baby": "おむつ替えトイレあり",
+    "baby": "おむつ替えトイレあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tokyotower.co.jp/",
     "verifiedAt": "2026年10月13日",
     "bookingLinks": {
@@ -33617,7 +34279,7 @@
     "strollerRentalNote": "フットタウン1階インフォメーションで貸出。",
     "strollerNote": "新生児〜4歳未満・体重20kgまで。フットタウン全館・メインデッキで利用可能。トップデッキは別途確認が必要。",
     "strollerSourceUrl": "https://www.tokyotower.co.jp/access/child/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "genre": "おでかけスポット",
     "shop": {
@@ -33647,7 +34309,8 @@
       "rentalPlace": "フットタウン1階インフォメーション",
       "useNote": "フットタウン全館・メインデッキで利用可能",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.tokyotower.co.jp/access/child/"
+      "sourceUrl": "https://www.tokyotower.co.jp/access/child/",
+      "rentalTarget": "新生児〜4歳未満・20kgまで"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -33655,6 +34318,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tokyotower.co.jp/access/child/"
     }
   },
   {
@@ -33773,7 +34446,7 @@
     "strollerRentalNote": "ベビーカー貸出あり。",
     "strollerNote": "台数限定、当日スタッフへ申し出。4階にベビーカー置き場あり。",
     "strollerSourceUrl": "https://www.tokyo-skytree.jp/inquiry/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -33803,7 +34476,8 @@
       "rentalNote": "台数限定",
       "storage": "4階にベビーカー置き場あり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.tokyo-skytree.jp/inquiry/faq/"
+      "sourceUrl": "https://www.tokyo-skytree.jp/inquiry/faq/",
+      "rentalPlace": "来場当日に近くのスタッフへ確認"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -33811,6 +34485,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tokyo-skytree.jp/inquiry/faq/"
     }
   },
   {
@@ -34041,7 +34725,7 @@
     "price": "一般1000円程度／高校生以下・18歳未満無料",
     "parking": "no",
     "access": "JR「上野」駅から徒歩10分",
-    "baby": "おむつ替えトイレあり／ベビーカーOK",
+    "baby": "おむつ替えトイレあり／ベビーカーOK。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tnm.jp/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/154827/"
@@ -34087,7 +34771,7 @@
     "strollerRentalNote": "本館インフォメーションで貸出あり、台数限定。",
     "strollerNote": "ベビーカー持ち込み可能。展示室内でも利用できるが、混雑時は使用を断られる場合あり。",
     "strollerSourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=128&lang=ja",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -34112,7 +34796,8 @@
       "rentalNote": "台数限定",
       "useNote": "ベビーカー持ち込み可能。展示室内でも利用できるが、混雑時は使用を断られる場合あり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=128&lang=ja"
+      "sourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=128&lang=ja",
+      "rentalTarget": "2歳まで推奨"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -34120,6 +34805,16 @@
       "4-6歳": "△",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=2670&lang=ja"
     }
   },
   {
@@ -34900,7 +35595,7 @@
     "price": "大人500円／中高生300円／4歳以上200円",
     "parking": "yes",
     "access": "成田国際空港第2ターミナルから無料連絡バスあり",
-    "baby": "おむつ替えトイレあり",
+    "baby": "おむつ替えトイレあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.aeromuseum.or.jp/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/150227/"
@@ -35001,6 +35696,16 @@
       "4-6歳": "△",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.aeromuseum.or.jp/guide/"
     }
   },
   {
@@ -35514,7 +36219,7 @@
     "price": "入場料：大人2,000円・小学生1,000円・3歳〜未就学児1,000円／パークパスポート：大人3,700円・子ども2,500円。2026年9月〜11月の料金。駐車料金は車1,000円別途。WEBチケットは価格が異なる場合あり",
     "parking": "yes",
     "access": "北関東自動車道「桜川筑西IC」から車で約40分",
-    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.mobilityresort.jp/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/155452/"
@@ -35633,12 +36338,12 @@
     "businessHoursNote": "冬季定休日・施設点検休業日あり。レース・イベント日も営業内容が異なる",
     "businessHoursSourceUrl": "https://www.mr-motegi.jp/hours_m/",
     "businessHoursCheckedAt": "2026年11月9日",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerNote": "場内全域での利用可否は未確認。",
     "strollerRental": true,
     "strollerRentalNote": "公式FAQでベビーカーの有料貸出を確認。1日500円、対象は生後6か月〜36か月・体重15kg以下。",
     "strollerSourceUrl": "https://www.mobilityresort.jp/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -35675,7 +36380,8 @@
       "rentalTarget": "生後6か月〜36か月・体重15kg以下",
       "rentalMemo": "ベビーカーの有料貸出",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.mobilityresort.jp/"
+      "sourceUrl": "https://www.mobilityresort.jp/",
+      "rentalPlace": "インフォメーションセンター"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -35683,6 +36389,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.mr-motegi.jp/service_m/child.html"
     }
   },
   {
@@ -40352,7 +41068,7 @@
     "price": "入園料 大人800円／小学生200円（乗り物は別途、フリーパス大人1800円・小学生700円）",
     "parking": "yes",
     "access": "都電荒川線「荒川遊園地前」から徒歩3分",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.city.arakawa.tokyo.jp/yuuen/index.html",
     "desc": "都内唯一の区立遊園地。2022年に約30年ぶりの大規模リニューアル。観覧車やミニコースターの「のりもの広場」、ヤギ・ヒツジとふれあえる「どうぶつ広場」、雨の日でも遊べる屋内あそび場「わくわくパーク」がある。",
     "tip": "入園料が安く、アトラクションも未就学児向け中心なので小さな子ども連れでも安心。雨の日は屋内のわくわくパークが活躍する。",
@@ -40502,6 +41218,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.arakawa.tokyo.jp/yuuen/guide/"
     }
   },
   {
@@ -41642,7 +42368,7 @@
     "strollerRentalNote": "ベビーカーを有料貸出（1台1,000円）。",
     "strollerNote": "ジャングルバスへの持ち込みは不可で、案内所横の置き場を利用。",
     "strollerSourceUrl": "https://www.fujisafari.co.jp/faq/baby/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHoursNote": "営業時間：3/11〜10/31 9:00〜16:30／11/1〜11/30 9:00〜15:30／12/1〜3/10 10:00〜15:30。入園受付時間。日によって開園時刻・受付終了時刻が変わる場合があるため公式営業カレンダーを確認",
     "businessHoursSourceUrl": "https://www.fujisafari.co.jp/schedule/",
@@ -41676,7 +42402,8 @@
       "rentalFee": "1,000円",
       "storage": "ジャングルバスへの持ち込みは不可で、案内所横の置き場を利用",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.fujisafari.co.jp/faq/baby/"
+      "sourceUrl": "https://www.fujisafari.co.jp/faq/baby/",
+      "rentalPlace": "サファリショップ"
     },
     "ageFit": {
       "0-1歳": "○",
@@ -41684,6 +42411,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.fujisafari.co.jp/faq/baby/"
     }
   },
   {
@@ -41996,7 +42733,7 @@
     "strollerRentalNote": "貸出について公式記載なし。ベビーカーは無料で預かり。",
     "strollerNote": "公式案内でベビーカー・車いす等の補助器具を無料で預かる旨を確認。",
     "strollerSourceUrl": "https://www.hawaiians.co.jp/guide/rule/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "closedDays": [
       "2026年度全館休館日：2027年1月25日〜28日"
@@ -42029,7 +42766,9 @@
     "strollerDetail": {
       "storage": "ベビーカー・車いす等の補助器具を無料で預かる旨",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.hawaiians.co.jp/guide/rule/"
+      "sourceUrl": "https://www.hawaiians.co.jp/guide/rule/",
+      "rental": true,
+      "rentalPlace": "パーク内"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -42037,7 +42776,8 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
-    }
+    },
+    "strollerRental": true
   },
   {
     "region": "福島",
@@ -42495,7 +43235,7 @@
     "strollerRentalNote": "無料貸出あり。",
     "strollerNote": "ベビーカーで館内見学可能。地下展示室へは専用エレベーターを利用。",
     "strollerSourceUrl": "https://www.printing-museum.org/etc/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -42526,7 +43266,8 @@
       "useNote": "ベビーカーで館内見学可能",
       "terrainNote": "地下展示室へは専用エレベーターを利用",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.printing-museum.org/etc/faq/"
+      "sourceUrl": "https://www.printing-museum.org/etc/faq/",
+      "rentalPlace": "ミュージアムショップまたはチケットカウンターでスタッフへ申出"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -42908,10 +43649,10 @@
       "sourceUrl": "https://kids.rurubu.jp/article/35738/",
       "checkedAt": "2026年11月1日"
     },
-    "strollerOk": "ask",
+    "strollerOk": "partial",
     "strollerNote": "園内は起伏のある地形。",
     "strollerSourceUrl": "https://odawara-jigyo-kyokai.jp/wanpaku/wanpakuland.php",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "no",
@@ -43206,7 +43947,7 @@
     "price": "入場無料（東京湾アクアラインの通行料は別途）",
     "parking": "yes",
     "access": "東京湾アクアライン上（車のみでアクセス可能）",
-    "baby": "おむつ替えあり／ベビーカーOK",
+    "baby": "おむつ替えあり／ベビーカーOK。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.umihotaru.com/",
     "overnightRecommended": true,
     "hotelArea": "boso",
@@ -43250,7 +43991,7 @@
     "strollerRental": true,
     "strollerRentalNote": "公式総合インフォメーションでベビーカー貸出ありと案内。",
     "strollerSourceUrl": "https://www.umihotaru.com/guide/information/information/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "genre": "おでかけスポット",
     "shop": {
@@ -43283,7 +44024,9 @@
       "rental": true,
       "rentalMemo": "公式総合インフォメーションでベビーカー貸出あり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.umihotaru.com/guide/information/information/"
+      "sourceUrl": "https://www.umihotaru.com/guide/information/information/",
+      "rentalPlace": "総合インフォメーション",
+      "terrainNote": "館内エレベーターあり。展望デッキ等は屋外"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -43291,6 +44034,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.umihotaru.com/guide/information/information/"
     }
   },
   {
@@ -43695,7 +44448,7 @@
     },
     "strollerOk": "ask",
     "strollerSourceUrl": "https://www.sgp.or.jp/hananooka",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -43725,6 +44478,11 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.sgp.or.jp/hananooka",
+      "terrainNote": "広大な公苑。花畑など屋外エリアあり。坂道・階段・ベビーカー置き場の詳細は不明"
     }
   },
   {
@@ -43792,12 +44550,12 @@
       "minMinutes": 60,
       "maxMinutes": 90
     },
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerNote": "予約不可、当日空きがある場合のみ利用可能。園内全域での利用条件は明確な記載なし。",
     "strollerRental": true,
     "strollerRentalNote": "教育棟でベビーカー5台を貸出。",
     "strollerSourceUrl": "https://tbg.kahaku.go.jp/ennai/shisetsu.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -43827,7 +44585,9 @@
       "rentalCount": 5,
       "useNote": "予約不可、当日空きがある場合のみ利用可能",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://tbg.kahaku.go.jp/ennai/shisetsu.html"
+      "sourceUrl": "https://tbg.kahaku.go.jp/ennai/shisetsu.html",
+      "rentalFee": "無料",
+      "rentalPlace": "教育棟受付"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -45333,7 +46093,7 @@
     "price": "平日：大人1,600円・小学生1,000円・4歳以上500円／土日祝・シーズン：大人1,700円・小学生1,100円・4歳以上500円。昼の部の入園料。有料アトラクション・夜のグランイルミは別料金",
     "parking": "yes",
     "access": "伊豆急行線「伊豆高原駅」から東海バスで約10分",
-    "baby": "おむつ替えあり／無料遊具エリアは未就学児も遊びやすい",
+    "baby": "おむつ替えあり／無料遊具エリアは未就学児も遊びやすい。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.granpal.com/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/152181/"
@@ -45445,7 +46205,7 @@
     "strollerRentalNote": "公式FAQでベビーカー貸出あり。メインゲート付近で貸出。",
     "strollerNote": "台数限定・予約不可。",
     "strollerSourceUrl": "https://www.granpal.com/information/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "businessHoursNote": "営業時間：昼営業9:30〜16:00。最終受付15:30。夜間の伊豆高原グランイルミは別時間・別営業日です",
     "businessHoursSourceUrl": "https://www.granpal.com/information/open/",
@@ -45478,7 +46238,8 @@
       "rental": true,
       "rentalPlace": "メインゲート付近",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.granpal.com/information/faq/"
+      "sourceUrl": "https://www.granpal.com/information/faq/",
+      "rentalFee": "無料"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -45486,6 +46247,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.granpal.com/information/general/"
     }
   },
   {
@@ -45754,7 +46525,7 @@
     "price": "大人1200円から／小人(4歳〜小学生)600円から",
     "parking": "yes",
     "access": "伊豆箱根鉄道駿豆線「修善寺」駅から東海バスで約20分",
-    "baby": "おむつ替えあり／起伏ありベビーカーは一部注意",
+    "baby": "おむつ替えあり／起伏ありベビーカーは一部注意。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.nijinosato.com/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/161184/"
@@ -45816,7 +46587,7 @@
     "strollerRentalNote": "公式FAQでベビーカー貸出あり。1日200円、台数限定・予約不可。",
     "strollerNote": "自然を利用した園内にベビーカーで通りにくい場所・通行禁止場所あり。",
     "strollerSourceUrl": "https://www.nijinosato.com/faq/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "genre": "花の名所",
     "shop": {
@@ -45850,7 +46621,8 @@
       "terrainNote": "起伏ありベビーカーは一部注意",
       "slope": "many",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.nijinosato.com/faq/"
+      "sourceUrl": "https://www.nijinosato.com/faq/",
+      "rentalPlace": "イギリス村インフォメーションセンター"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -45858,6 +46630,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.nijinosato.com/faq/"
     }
   },
   {
@@ -48438,7 +49220,7 @@
     "price": "大人1500円から／4歳〜小学生750円から",
     "parking": "yes",
     "access": "箱根登山バス・伊豆箱根バス「箱根園」バス停すぐ",
-    "baby": "おむつ替えあり／ベビーカーOK",
+    "baby": "おむつ替えあり／ベビーカーOK。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.hakonenavi.jp/spot/1236",
     "overnightRecommended": true,
     "hotelArea": "hakone",
@@ -48506,7 +49288,7 @@
     "strollerRentalNote": "箱根園公式Q&Aで水族館にベビーカー貸出ありと明記。",
     "strollerNote": "台数限定。館内通路にはスロープあり。",
     "strollerSourceUrl": "https://www.jplowsan.pro/amuse/hakone-en/information/qanda.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -48534,7 +49316,8 @@
       "rentalMemo": "箱根園公式Q&Aで水族館にベビーカー貸出あり",
       "terrainNote": "館内通路にはスロープあり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.jplowsan.pro/amuse/hakone-en/information/qanda.html"
+      "sourceUrl": "https://www.jplowsan.pro/amuse/hakone-en/information/qanda.html",
+      "rentalPlace": "水族館"
     },
     "ageFit": {
       "0-1歳": "◎",
@@ -48542,6 +49325,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.jplowsan.pro/amuse/hakone-en/information/qanda.html"
     }
   },
   {
@@ -50108,7 +50901,17 @@
     "kidsToiletNote": "ベビーベッド・おむつ交換台あり。梅林内トイレにベビーシート、ベビーキープあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.odawara.kanagawa.jp/public-i/park/garden/"
+    "kidsToiletSourceUrl": "https://www.city.odawara.kanagawa.jp/public-i/park/garden/",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.odawara.kanagawa.jp/public-i/park/garden/"
+    }
   },
   {
     "region": "神奈川",
@@ -50238,7 +51041,7 @@
     "price": "平日：大人1,100円・小人700円／土休日：大人1,300円・小人900円／特定日：大人1,500円・小人1,100円。小人は3歳以上〜小学生。ワンデークーポンは平日大人3,500円・小人2,500円から。駐車料金・有料道路料金は別途",
     "parking": "yes",
     "access": "JR「御殿場」駅からバスで約40分",
-    "baby": "おむつ替えあり／屋内おもちゃエリアあり",
+    "baby": "おむつ替えあり／屋内おもちゃエリアあり。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.grinpa.com/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/152539/",
@@ -50342,6 +51145,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.grinpa.com/faq.html"
     }
   },
   {
@@ -50582,7 +51395,7 @@
     "price": "入場無料（買い物代は別途）",
     "parking": "yes",
     "access": "JR「御殿場」駅から無料シャトルバスで約10分",
-    "baby": "授乳室6箇所・おむつ替え・ベビーカー貸出あり",
+    "baby": "授乳室6箇所・おむつ替え・ベビーカー貸出あり。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.premiumoutlets.co.jp/gotemba/",
     "desc": "富士山を望む国内最大級のアウトレットモール。ヒルサイドのミニ遊園地（メリーゴーランド・観覧車）や屋外プレイグラウンド、レゴ・サンリオ等のキッズ向け店舗もあり、買い物と遊びを両立できる。授乳室・ベビーカー貸出など子連れ設備も充実。",
     "tip": "広大な敷地のため、目的のエリア（West／East／Hill Side）を絞って回るのがおすすめ。雨の日でも屋根付き通路があり楽しめる。",
@@ -50635,7 +51448,7 @@
     "strollerRentalNote": "コイン式。100円硬貨（返却時返金）。対象4か月〜48か月未満",
     "strollerNote": "場内にスロープ通路あり",
     "strollerSourceUrl": "https://www.premiumoutlets.co.jp/gotemba/kidscare/",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -50667,7 +51480,9 @@
       "terrainNote": "場内にスロープ通路あり",
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://www.premiumoutlets.co.jp/gotemba/kidscare/",
-      "useNote": "場内にスロープ通路あり"
+      "useNote": "場内にスロープ通路あり",
+      "rentalPlace": "WESTゾーンP2 1階・EASTゾーンP5 1階およびP7・HILL SIDE P4",
+      "rentalTarget": "生後4か月〜48か月未満"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -50675,6 +51490,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.premiumoutlets.co.jp/gotemba/kidscare/"
     }
   },
   {
@@ -50908,7 +51733,17 @@
     "kidsToiletNote": "おむつ替えシートあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_29983.html"
+    "kidsToiletSourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_29983.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_29983.html"
+    }
   },
   {
     "region": "山梨",
@@ -50933,7 +51768,7 @@
     "price": "大人1500円から／4歳〜小学生900円から（12〜3月は割引）",
     "parking": "yes",
     "access": "富士急行線「河口湖駅」から無料送迎バスあり",
-    "baby": "ベビーカーは屋外の自然地形エリアで一部不向き",
+    "baby": "ベビーカーは屋外の自然地形エリアで一部不向き。授乳室あり、おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://fujisan.ne.jp/pages/277/",
     "desc": "富士山麓・標高1000mの高原にある自然体験型テーマパーク。ツリーハウスやロープネットを使った「どんぐりコース」、ハーネスで空中散歩する「ロールグライダー」など、自然の地形を生かしたアトラクションが充実。愛犬同伴OKでドッグランも完備。",
     "tip": "標高が高く夏でも涼しい。犬と一緒に遊べるエリアが充実しているため、愛犬家のファミリーにもおすすめ。",
@@ -51037,6 +51872,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.subaruland.jp/qanda/"
     }
   },
   {
@@ -51905,7 +52750,17 @@
     "kidsToiletNote": "おむつ替えシートあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_30241.html"
+    "kidsToiletSourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_30241.html",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.pref.yamanashi.jp/shogai-fks/fks-map/detail/o_30241.html"
+    }
   },
   {
     "region": "山梨",
@@ -55523,7 +56378,7 @@
     "price": "入場無料。店舗ごとに商品・飲食料金が異なる。駐車場は買い物金額による割引あり",
     "parking": "yes",
     "access": "JR「軽井沢」駅から徒歩3分",
-    "baby": "授乳室・おむつ替えあり／ベビーカーOK",
+    "baby": "授乳室・おむつ替えあり／ベビーカーOK。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.karuizawa-psp.jp/",
     "overnightRecommended": true,
     "hotelArea": "karuizawa",
@@ -55561,7 +56416,7 @@
     "strollerRental": true,
     "strollerRentalNote": "コインロック式・100円返却式。生後2か月〜48か月、身長103cmまで・体重18kg以下。台数限定・予約不可",
     "strollerSourceUrl": "https://www.karuizawa-psp.jp/service/detail4/",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "genre": "おでかけスポット",
     "businessHours": {
@@ -55612,7 +56467,9 @@
       "rentalNote": "台数限定・予約不可",
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://www.karuizawa-psp.jp/service/detail4/",
-      "rentalMemo": "コインロック式・100円返却式。生後2か月〜48か月、身長103cmまで・体重18kg以下。台数限定・予約不可"
+      "rentalMemo": "コインロック式・100円返却式。生後2か月〜48か月、身長103cmまで・体重18kg以下。台数限定・予約不可",
+      "rentalPlace": "センターモール・ニューウエスト・イースト・ニューイースト・ガーデンモール・ツリーモール",
+      "terrainNote": "広い屋外型モール。各エリアに貸出場所あり"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -55624,7 +56481,17 @@
     "kidsToiletNote": "おむつ替えシートあり。多目的トイレ・ユニバーサルシート設置場所あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.karuizawa-psp.jp/service/detail4/"
+    "kidsToiletSourceUrl": "https://www.karuizawa-psp.jp/service/detail4/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.karuizawa-psp.jp/service/detail4/"
+    }
   },
   {
     "region": "長野",
@@ -57571,6 +58438,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kawaguchi-highwayoasis.com/asoboon/"
     }
   },
   {
@@ -58504,7 +59381,7 @@
     "price": "平日：大人950円・小学生300円・幼児無料／土日祝：大人1100円・小学生300円・幼児無料。朝風呂は平日大人850円・土日祝980円。岩盤浴は平日750円・土日祝950円（中学生以上）",
     "parking": "yes",
     "access": "JR「八王子みなみ野」「八王子」「橋本」「北野」各駅から無料シャトルバスあり",
-    "baby": "「ちびっこの湯」あり／小学生以下は保護者同伴、7歳以上・120cm以上の混浴不可",
+    "baby": "「ちびっこの湯」あり／小学生以下は保護者同伴、7歳以上・120cm以上の混浴不可。授乳室あり、おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://hachioji.ryusenjinoyu.com/",
     "stayTime": {
       "minMinutes": 150,
@@ -58577,7 +59454,17 @@
     "kidsToiletNote": "男女脱衣所におむつ台あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://hachioji.ryusenjinoyu.com/faq/"
+    "kidsToiletSourceUrl": "https://hachioji.ryusenjinoyu.com/faq/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://hachioji.ryusenjinoyu.com/facilities/"
+    }
   },
   {
     "region": "千葉",
@@ -59004,7 +59891,7 @@
     "price": "日帰りプール利用 大人3000円から〜（施設・季節により変動）",
     "parking": "yes",
     "access": "JR内房線「木更津」駅からバスあり／車の場合は館山自動車道「木更津南IC」から近い",
-    "baby": "水深40cmのキッズプールあり／おむつ替えあり",
+    "baby": "水深40cmのキッズプールあり／おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://mikazuki.co.jp/",
     "stayTime": {
       "minMinutes": 180,
@@ -59068,6 +59955,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.mikazuki.co.jp/ryugujo/ryugu/service/"
     }
   },
   {
@@ -60503,7 +61400,17 @@
     "kidsToiletNote": "男女脱衣所におむつ台あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://tsurugamine.ryusenjinoyu.com/faq/"
+    "kidsToiletSourceUrl": "https://tsurugamine.ryusenjinoyu.com/faq/",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tsurugamine.ryusenjinoyu.com/faq/"
+    }
   },
   {
     "region": "千葉",
@@ -61248,7 +62155,7 @@
     "price": "大人（中学生以上）1200円から／子供（4歳〜小学生）800円から／3歳以下無料",
     "parking": "yes",
     "access": "JR常磐線「佐貫」駅からタクシーで約30分",
-    "baby": "おむつ替えあり",
+    "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.ibaraido.co.jp/",
     "stayTime": {
       "minMinutes": 180,
@@ -61341,6 +62248,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.ibarakiguide.jp/spot.php?code=1423&mode=detail"
     }
   },
   {
@@ -61522,12 +62439,12 @@
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
-      "diaperChange": "ask",
+      "diaperChange": "yes",
       "hotWater": "ask",
-      "note": "乳幼児設備の公式記載を確認できず。",
-      "status": "ask",
-      "basis": "公式根拠不足",
-      "checkedAt": "2026年11月11日",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://fukasaku.com/"
     },
     "shop": {
@@ -63719,7 +64636,7 @@
     "price": "入園無料（駐車場・BBQ等の設備利用は有料）",
     "parking": "yes",
     "access": "シーサイドライン「海の公園柴口」「海の公園南口」「八景島」各駅から徒歩2分",
-    "baby": "車椅子対応トイレあり",
+    "baby": "車椅子対応トイレあり。授乳室あり、おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/",
     "stayTime": {
       "minMinutes": 120,
@@ -63806,7 +64723,17 @@
     "kidsToiletNote": "一部多目的トイレにベビーシートあり。授乳室あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/faq.php"
+    "kidsToiletSourceUrl": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/faq.php",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/faq.php"
+    }
   },
   {
     "region": "千葉",
@@ -63925,7 +64852,7 @@
     "price": "1日券1,800円／2歳以下無料。2026〜2027年シーズン。営業予定12月19日〜2027年4月4日。そり等の無料貸出あり。リフト券提示による割引あり",
     "parking": "yes",
     "access": "関越自動車道「沼田IC」から車で約35分／JR「沼田」駅から無料送迎バス（要予約）",
-    "baby": "スキー・スノーボードと分離された専用エリアのため小さな子でも安全",
+    "baby": "スキー・スノーボードと分離された専用エリアのため小さな子でも安全。授乳室あり、おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.tambara.co.jp/",
     "stayTime": {
       "minMinutes": 120,
@@ -64015,7 +64942,17 @@
     "kidsToiletNote": "リゾートセンター男女トイレにおむつ替えベビーシートあり。授乳室あり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.tambara.co.jp/winter/faq/"
+    "kidsToiletSourceUrl": "https://www.tambara.co.jp/winter/faq/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.tambara.co.jp/winter/faq/"
+    }
   },
   {
     "region": "群馬",
@@ -64045,7 +64982,7 @@
     "price": "雪遊び1日券：大人2,700円・子ども2,200円・シニア2,200円。2026〜2027年シーズン。早割販売あり。営業予定12月12日〜2027年3月31日",
     "parking": "yes",
     "access": "上信越自動車道「碓氷軽井沢IC」から車で約40分／軽井沢駅から毎日シャトルバスあり",
-    "baby": "授乳室・おむつ交換室あり／迷子防止リストバンド無料配布",
+    "baby": "授乳室・おむつ交換室あり／迷子防止リストバンド無料配布。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://karuizawa-snowpark.com/",
     "stayTime": {
       "minMinutes": 120,
@@ -64129,7 +65066,17 @@
     "kidsToiletNote": "女性用トイレにベビーキープあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://karuizawa-snowpark.com/contact/"
+    "kidsToiletSourceUrl": "https://karuizawa-snowpark.com/contact/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://karuizawa-snowpark.com/contact/"
+    }
   },
   {
     "region": "長野",
@@ -64472,7 +65419,7 @@
     "price": "120分制 子ども1900円から〜／大人900円から〜（年齢・時間帯により変動）",
     "parking": "yes",
     "access": "JR「さいたま新都心」駅東口から徒歩約5分",
-    "baby": "授乳室・ベビーカー置き場あり／乳幼児専用のあそびスペースあり",
+    "baby": "授乳室・ベビーカー置き場あり／乳幼児専用のあそびスペースあり。おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://kidokid.bornelund.co.jp/kanto/saitama",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/163629/"
@@ -64514,12 +65461,12 @@
       "コクーンシティの休館日に準ずる"
     ],
     "verifiedAt": "2026年10月13日",
-    "strollerOk": "ask",
+    "strollerOk": "partial",
     "strollerNote": "遊び場施設内での利用可否は別途確認が必要。",
     "strollerRental": true,
     "strollerRentalNote": "コクーンシティ公式案内でベビーカー貸出を確認。インフォメーション等で貸出、台数に限りあり。",
     "strollerSourceUrl": "https://www.cocooncity.jp/info/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -64560,6 +65507,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/saitamashintoshin/"
     }
   },
   {
@@ -64790,7 +65747,7 @@
     "price": "0歳無料／1歳から有料（時間制、詳細は公式サイト要確認）",
     "parking": "yes",
     "access": "JR「前橋」駅北口からバスで約7分",
-    "baby": "床・遊具がやわらかい素材で乳幼児も安心",
+    "baby": "床・遊具がやわらかい素材で乳幼児も安心。授乳室あり、おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.lirica.sc/shoplist/1080.html",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/spot0000041067/"
@@ -64869,6 +65826,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.lirica.sc/service/"
     }
   },
   {
@@ -65053,9 +66020,9 @@
       "bentoNote": "グランピング・BBQは食べ物・飲み物の持ち込み可。日帰りサウナはソフトドリンクのみ可。利用区分で条件が異なる（公式FAQより）",
       "sourceUrl": "https://nolla-naguri.jp/faq/"
     },
-    "strollerOk": "ask",
+    "strollerOk": "partial",
     "strollerSourceUrl": "https://nolla-naguri.jp/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -65075,6 +66042,11 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://nolla-naguri.jp/faq/",
+      "terrainNote": "駐車場からグランピング施設まではベビーカー利用可。テント入口に階段がある場合あり"
     }
   },
   {
@@ -65594,7 +66566,7 @@
     "price": "11月30日まで：大人1,200円・小人900円／12月1日以降：12〜2月は大人1,100円・小人700円、3〜11月は大人1,300円・小人900円。3歳以上が小人料金。2026年12月1日から大人料金を改定。サイト登録時は季節別料金にするのがおすすめ",
     "parking": "yes",
     "access": "富士宮駅から富士山駅行きバスで約30分／東名高速「富士IC」から車で約40分",
-    "baby": "ベビールームは入場券売り場の手前に2か所、場内に2か所（ベッド・給湯器あり。授乳スペース・おむつ交換台あり）。ベビーカーは1台1日500円で貸出（台数限りあり）。場内の主な通路は舗装されているが、坂道や起伏が多い。",
+    "baby": "ベビールームは入場券売り場の手前に2か所、場内に2か所（ベッド・給湯器あり。授乳スペース・おむつ交換台あり）。ベビーカーは1台1日500円で貸出（台数限りあり）。場内の主な通路は舗装されているが、坂道や起伏が多い。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.makaino.com/",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/151299/",
@@ -65685,7 +66657,17 @@
     },
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.makaino.com/faq/"
+    "kidsToiletSourceUrl": "https://www.makaino.com/faq/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.makaino.com/faq/"
+    }
   },
   {
     "region": "長野",
@@ -65994,7 +66976,7 @@
     "strollerOk": "ask",
     "strollerNote": "農園周辺が丘陵地帯であることを確認。",
     "strollerSourceUrl": "https://ja-yokosukahayama.or.jp/tourism/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
@@ -66021,7 +67003,8 @@
     "strollerDetail": {
       "slope": "some",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://ja-yokosukahayama.or.jp/tourism/"
+      "sourceUrl": "https://ja-yokosukahayama.or.jp/tourism/",
+      "terrainNote": "丘陵地帯の農園。周辺に道幅の狭い箇所ありとの公式注意あり"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -68004,7 +68987,17 @@
     "kidsToiletNote": "7階授乳室におむつ台あり。3・5・7階に多機能トイレあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://tokyo-toyosu.manyo.co.jp/faq/"
+    "kidsToiletSourceUrl": "https://tokyo-toyosu.manyo.co.jp/faq/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tokyo-toyosu.manyo.co.jp/faq/"
+    }
   },
   {
     "region": "神奈川",
@@ -68031,7 +69024,7 @@
     "price": "大人2000円から〜（時間帯・曜日により変動）",
     "parking": "yes",
     "access": "みなとみらい線「みなとみらい」駅から徒歩約5分／横浜駅西口から無料シャトルバスあり",
-    "baby": "離乳食持ち込み可",
+    "baby": "離乳食持ち込み可。授乳室なし、おむつ替え設備あり、ミルク用のお湯なし（2026年11月15日確認）。",
     "officialUrl": "https://www.manyo.co.jp/yokohama/",
     "stayTime": {
       "minMinutes": 180,
@@ -68081,7 +69074,7 @@
     "strollerRentalNote": "公式バリアフリー情報では貸出なし。ベビーカー置き場あり",
     "strollerNote": "館内利用可否は明確な記載なし。",
     "strollerSourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=609",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "strollerOk": "ask",
     "shop": {
@@ -68110,7 +69103,8 @@
     "strollerDetail": {
       "rental": false,
       "checkedAt": "2026年11月14日",
-      "sourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=609"
+      "sourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=609",
+      "terrainNote": "ベビーカー置き場あり"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -68118,6 +69112,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "hotWater": "no",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.welcome.city.yokohama.jp/accessibility/spot/details.php?sid=609"
     }
   },
   {
@@ -68322,7 +69326,17 @@
     "kidsToiletNote": "1階トイレ・脱衣室におむつ交換台。女性脱衣室に授乳室",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://opark.jp/faq/"
+    "kidsToiletSourceUrl": "https://opark.jp/faq/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://opark.jp/faq/"
+    }
   },
   {
     "region": "埼玉",
@@ -69336,9 +70350,9 @@
     "businessHoursNote": "要事前予約。いちご狩りは季節営業。営業状況は公式サイト・電話で確認",
     "businessHoursSourceUrl": "https://child-niwa.jimdofree.com/",
     "businessHoursCheckedAt": "2026年11月9日",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerSourceUrl": "https://www.city.chiba.jp/keizainosei/nosei/nosei/childnoniwa-map.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
@@ -71044,7 +72058,7 @@
     "price": "利用無料",
     "parking": "yes",
     "access": "小田急線「相武台前」駅からバス（一般道からは圏央道「相模原愛川IC」が便利）",
-    "baby": "授乳室・おむつ交換台あり／ベビーカーOK",
+    "baby": "授乳室・おむつ交換台あり／ベビーカーOK。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://zama.aeonmall.jp/",
     "verifiedAt": "2026年10月5日",
     "desc": "イオンモール座間の館内にある無料の木育キッズスペース「KIDS FIELD」。天然木のぬくもりを感じながら遊べる。フードコート内にも別のキッズスペースがあり、買い物や食事のついでに立ち寄りやすい。",
@@ -71091,7 +72105,7 @@
     "strollerRental": true,
     "strollerRentalNote": "館内ベビーカー貸出あり。2か月〜3歳・体重15kgまで",
     "strollerSourceUrl": "https://zama.aeonmall.jp/kids",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -71126,7 +72140,9 @@
       "rentalMemo": "館内ベビーカー貸出あり。2か月〜3歳・体重15kgまで",
       "useNote": "遊び場内の持ち込みは施設へ確認",
       "checkedAt": "2026年11月14日",
-      "sourceUrl": "https://zama.aeonmall.jp/kids"
+      "sourceUrl": "https://zama.aeonmall.jp/kids",
+      "rentalFee": "無料",
+      "rentalPlace": "1Fノースコート・3Fフードコート前"
     },
     "ageFit": {
       "0-1歳": "◎",
@@ -71134,6 +72150,16 @@
       "4-6歳": "◎",
       "低学年": "△",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://zama.aeonmall.jp/kids"
     }
   },
   {
@@ -71158,7 +72184,7 @@
     "price": "平日30分600円／休日30分700円（税込、保護者は無料）",
     "parking": "yes",
     "access": "JR京葉線「幕張豊砂」駅からすぐ",
-    "baby": "ベビー休憩室・おむつ交換台あり／ベビーカーOK",
+    "baby": "ベビー休憩室・おむつ交換台あり／ベビーカーOK。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://makuharishintoshin.aeonmall.jp/",
     "verifiedAt": "2026年9月20日",
     "desc": "イオンモール幕張新都心グランドモール1階ホビーコートにある有料の室内遊び場。大きなボールプールやすべり台があり、雨の日でも体を動かして遊べる。利用条件は身長125cm未満、3歳未満は保護者同伴。",
@@ -71189,7 +72215,7 @@
     "businessHoursCheckedAt": "2026年11月9日",
     "strollerOk": "ok",
     "strollerSourceUrl": "https://makuharishintoshin.aeonmall.jp/guide/equipment",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -71227,7 +72253,9 @@
       "rentalTarget": "生後2か月〜3歳0か月",
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://makuharishintoshin.aeonmall.jp/guide/equipment",
-      "rentalMemo": "館内ベビーカー貸出あり。生後2か月〜3歳0か月"
+      "rentalMemo": "館内ベビーカー貸出あり。生後2か月〜3歳0か月",
+      "rentalPlace": "館内各所",
+      "terrainNote": "モール共用部のベビーカー。店舗内の持込可否は別途確認"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -71235,6 +72263,16 @@
       "4-6歳": "◎",
       "低学年": "△",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://makuharishintoshin.aeonmall.jp/guide/equipment"
     }
   },
   {
@@ -71350,7 +72388,7 @@
     "price": "子供30分700円／60分1300円／90分1900円／120分2500円、大人500円（延長無料）",
     "parking": "yes",
     "access": "東急田園都市線「南町田グランベリーパーク駅」直結",
-    "baby": "おむつ交換台あり／ベビーカーOK",
+    "baby": "おむつ交換台あり／ベビーカーOK。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.gigo.co.jp/shops/minami-machida-kids",
     "verifiedAt": "2026年10月13日",
     "desc": "南町田グランベリーパーク2階にある有料の室内遊び場「キッズディスカバリー」。駅直結でアクセスがよく、隣接する鶴間公園の無料遊具エリア「森のあそびば」「星のあそびば」と組み合わせて1日過ごせる。",
@@ -71448,6 +72486,16 @@
       "4-6歳": "◎",
       "低学年": "△",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://gbp.minamimachida-grandberrypark.com/faq/"
     }
   },
   {
@@ -71586,7 +72634,7 @@
     "price": "有料（時間制・詳細は公式サイト要確認）",
     "parking": "yes",
     "access": "東北自動車道「羽生IC」からすぐ（イオンモール羽生内）",
-    "baby": "おむつ交換台あり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ交換台あり／ベビーカーは公式の明記なし（要確認）。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.fantasy.co.jp/chikyunoniwa/hanyu/",
     "verifiedAt": "2026年10月13日",
     "desc": "2025年7月にイオンモール羽生内にオープンした、地球・自然をテーマにした室内遊び場（埼玉県初出店）。火山・森・山・宇宙など9つのエリアに分かれ、ボールプールや知育玩具でのごっこ遊びなど0〜12歳の子どもが楽しめる。",
@@ -71658,6 +72706,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/hanyu/"
     }
   },
   {
@@ -71806,7 +72864,7 @@
     "price": "広場は入場無料（観覧車等の遊具は別途料金）",
     "parking": "yes",
     "access": "JR・東急・京急「蒲田」駅から徒歩約2分",
-    "baby": "おむつ交換台あり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "おむつ交換台あり／ベビーカーは公式の明記なし（要確認）。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://tokyu-plaza.com/kamata/facility/detail/16",
     "verifiedAt": "2026年10月13日",
     "desc": "東急プラザ蒲田の屋上にある無料の広場。都内で唯一現存する屋上観覧車「幸せの観覧車」や、東急電車を模した「エコライド」、空気膜遊具「風の丘」など、小さな子ども向けの小型アトラクションが揃う。屋上から東急池上線・多摩川線の電車も見える。",
@@ -71853,7 +72911,7 @@
     },
     "strollerOk": "ask",
     "strollerSourceUrl": "https://tokyu-plaza.com/kamata/facility/detail/16",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -71884,6 +72942,23 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "×"
+    },
+    "strollerRental": false,
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tokyu-plaza.com/kamata/facility/detail/16",
+      "rental": false
+    },
+    "strollerRentalNote": "ベビーカー貸出なし（公式案内）",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tokyu-plaza.com/kamata/facility/detail/16"
     }
   },
   {
@@ -71911,7 +72986,7 @@
     "price": "時間制・フリーパスあり（詳細は公式サイト要確認）",
     "parking": "yes",
     "access": "JR「南船橋」駅・京葉線「新習志野」駅から徒歩約10分",
-    "baby": "赤ちゃんスペースあり／おむつ交換台あり",
+    "baby": "赤ちゃんスペースあり／おむつ交換台あり。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://fantasyresort.jp/",
     "verifiedAt": "2026年9月20日",
     "desc": "三井ショッピングパークららぽーとTOKYO-BAY North Gate 4階にある大型の室内遊び場。ボールプールや砂場、コンビニごっこなど盛りだくさんのアトラクションで、1日中室内で遊べる。約440店舗のららぽーと内なので、買い物と組み合わせやすい。",
@@ -72000,6 +73075,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://fantasyresort.jp/funabashi/access/"
     }
   },
   {
@@ -72477,7 +73562,7 @@
     "price": "入場無料",
     "parking": "yes",
     "access": "東急田園都市線「青葉台」駅から徒歩約2分",
-    "baby": "おむつ交換台あり／ベビーカーOK",
+    "baby": "おむつ交換台あり／ベビーカーOK。授乳室あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": null,
     "verifiedAt": "2026年10月5日",
     "desc": "2002〜2008年に「スクエアパーク」として親しまれていた屋上を、17年ぶりに2025年4月にリニューアルした約1000平米の無料広場。人工芝エリアにハンモックのある「そらいろGREEN PARK」や、絵本が読める「あおぞら図書館」があり、駅徒歩2分の好立地で気軽に立ち寄れる。",
@@ -72510,7 +73595,7 @@
       "checkedAt": "2026年11月10日"
     },
     "strollerOk": "ok",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "nearby",
@@ -72549,7 +73634,11 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://www.aobadai-square.com/faq/",
       "rentalMemo": "South-1本館1階・South-2 1階にコインリターン式ベビーカー",
-      "useNote": "屋上広場への移動はエレベーターを利用"
+      "useNote": "屋上広場への移動はエレベーターを利用",
+      "rentalFee": "無料（コイン返却式）",
+      "rentalPlace": "South-1本館1F・South-2 3F",
+      "rentalTarget": "生後2〜24か月",
+      "rentalType": "AB"
     },
     "ageFit": {
       "0-1歳": "◎",
@@ -72559,7 +73648,17 @@
       "高学年": "△"
     },
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.aobadai-square.com/faq/"
+    "kidsToiletSourceUrl": "https://www.aobadai-square.com/faq/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.aobadai-square.com/service/"
+    }
   },
   {
     "region": "神奈川",
@@ -72585,7 +73684,7 @@
     "price": "時間制（詳細は公式サイト要確認）",
     "parking": "yes",
     "access": "東急田園都市線「たまプラーザ」駅直結",
-    "baby": "生後6〜18ヶ月の赤ちゃん専用「ベビーガーデン」あり／おむつ交換台あり",
+    "baby": "生後6〜18ヶ月の赤ちゃん専用「ベビーガーデン」あり／おむつ交換台あり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://kidokid.bornelund.co.jp/tamaplaza-terrace/",
     "verifiedAt": "2026年10月13日",
     "desc": "たまプラーザ駅直結、たまプラーザテラス ゲートプラザ ウィンドゲート1階にある室内遊び場「キドキド」。体を動かす「アクティブオーシャン」とごっこ遊び・組み立て遊びの「ディスカバリータウン」の2エリアに加え、赤ちゃん専用の「ベビーガーデン」もある。施設全体にベビー・キッズ向けの「ベビーテラス」も充実。",
@@ -72674,7 +73773,17 @@
     "kidsToiletNote": "店舗内にトイレ・授乳室・おむつ替えスペースあり。場外トイレは一時退場が必要",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://kidokid.bornelund.co.jp/tamaplaza-terrace/"
+    "kidsToiletSourceUrl": "https://kidokid.bornelund.co.jp/tamaplaza-terrace/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/tamaplaza-terrace/"
+    }
   },
   {
     "region": "神奈川",
@@ -72821,7 +73930,7 @@
     "price": "市内在住者は無料／市外在住者は有料（詳細は公式サイト要確認）",
     "parking": "unknown",
     "access": "JR高崎線・秩父鉄道「深谷」駅からバスまたは徒歩約20分（深谷公民館の東側）",
-    "baby": "授乳室・おむつ替え室あり／ベビーカーは公式の明記なし（要確認）",
+    "baby": "授乳室・おむつ替え室あり／ベビーカーは公式の明記なし（要確認）。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://fukaya.g-asuka.co.jp/",
     "verifiedAt": "2026年10月13日",
     "desc": "0歳から18歳までの子どもが利用できる、埼玉県内最大級の屋内あそび場。建物床面積約3,200平方メートルで、中心となる「アソビバ」は約900平方メートルの大空間。ネット遊具やトランポリンなどの大型遊具、音の鳴る遊具、デジタル遊具、ごっこ遊びコーナーがあり、深谷市イメージキャラクター「ふっかちゃん」の部屋も人気。初夏〜秋は屋外テラスの水遊びエリア「アビルバ」も開放される。",
@@ -72882,6 +73991,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://fukaya.g-asuka.co.jp/facility/"
     }
   },
   {
@@ -74064,7 +75183,7 @@
     "price": "入園無料（海水浴期間の海の家利用等は有料）",
     "parking": "yes",
     "access": "JR伊東線「伊豆多賀」駅から徒歩約8分",
-    "baby": "更衣室・温水シャワーあり（管理棟「うみえ〜る長浜」）／ベビーカーOK（公式の明記なし・屋外公園）",
+    "baby": "更衣室・温水シャワーあり（管理棟「うみえ〜る長浜」）／ベビーカーOK（公式の明記なし・屋外公園）。おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.city.atami.lg.jp/shisetsu/bunka/1002057/1002072.html",
     "verifiedAt": "2026年9月21日",
     "desc": "汀線約400mの人工海浜が広がる、熱海市多賀エリアの海浜公園。夏は海水浴場として賑わい、更衣室・温水シャワーを備えた管理棟「うみえ〜る長浜」やフードコートも充実。芝生広場や遊歩道もあり、小学生以下向けの大型遊具も新設されている。波が静かな穴場ビーチとしてファミリーに人気。",
@@ -74141,7 +75260,17 @@
     "kidsToiletNote": "多目的トイレ2か所。おむつ替えシートあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.city.atami.lg.jp/shisetsu/bunka/1002057/1002072.html"
+    "kidsToiletSourceUrl": "https://www.city.atami.lg.jp/shisetsu/bunka/1002057/1002072.html",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "自治体公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.atami.lg.jp/shisetsu/bunka/1002057/1002072.html"
+    }
   },
   {
     "region": "静岡",
@@ -76732,7 +77861,7 @@
     "price": "遊び放題プラン：平日と休日で変動（公式サイト要確認）。0〜1歳は多くの場合無料",
     "parking": "yes",
     "access": "小田急線・相鉄線・JR「海老名」駅から徒歩約3分（イオン海老名店3F）",
-    "baby": "3歳未満向け「ミルキッズひろば」あり／授乳室・おむつ替えスペース完備",
+    "baby": "3歳未満向け「ミルキッズひろば」あり／授乳室・おむつ替えスペース完備。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://fantasyresort.jp/ebina/",
     "verifiedAt": "2026年10月13日",
     "desc": "日本最大級をうたう全天候型の室内遊園地チェーン。海老名店は約4,000平方メートルの広さで、大人も滑れる大型スライダーやボールプール、エアー遊具の「ふわふわエリア」、電動カーに乗れる「キッズサーキット」、衣装を着て撮影できる「ファッションフォトスタジオ」、公園の砂場より衛生的な「サラサラすなば」などが揃う。海老名駅から徒歩3分とアクセスも良く、雨の日のおでかけ先として人気が高い。",
@@ -76815,6 +77944,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://fantasyresort.jp/ebina/access/"
     }
   },
   {
@@ -76845,7 +77984,7 @@
     "price": "遊び放題プラン：平日1200円、休日1700円、ハイシーズン1900円（0〜1歳無料）",
     "parking": "yes",
     "access": "JR「平塚」駅から徒歩約10分（OSC湘南シティC棟1F）",
-    "baby": "ベビールーム完備（ミルク用のお湯あり）／0歳から入場可",
+    "baby": "ベビールーム完備（ミルク用のお湯あり）／0歳から入場可。授乳室あり、おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://asobimare.jp/shonan/",
     "verifiedAt": "2026年10月13日",
     "desc": "茅ヶ崎市の隣、平塚市のショッピングモール「OSC湘南シティ」内にある大型室内遊園地。最大の目玉は年中雪遊びができる「スノータウン」で、長靴やソリの無料貸出しもある。ほかにふわふわ遊具やボルダリング、3種類のボールプール（ボール温泉・投げるんだー・ボールシュート）など体を動かせる遊具が充実。弁当持ち込み・再入場もできる遊び放題プランが人気。",
@@ -76927,6 +78066,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://asobimare.jp/shonan/faq/"
     }
   },
   {
@@ -77199,7 +78348,7 @@
     "strollerOk": "ask",
     "strollerRentalNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
     "strollerNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
@@ -77240,7 +78389,13 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
-    }
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.chichibu.lg.jp/6033.html",
+      "terrainNote": "エレベーターあり。多目的トイレに段差なし。1階・2階におむつ交換台あり"
+    },
+    "strollerSourceUrl": "https://www.city.chichibu.lg.jp/6033.html"
   },
   {
     "region": "群馬",
@@ -77365,16 +78520,16 @@
     "strollerOk": "ask",
     "strollerRentalNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
     "strollerNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
-      "diaperChange": "ask",
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
       "hotWater": "ask",
       "note": "赤ちゃん休憩室・おむつ交換台の情報は二次情報のみ。公式情報で裏付けできず。",
-      "status": "ask",
-      "basis": "公式根拠不足",
-      "checkedAt": "2026年11月11日",
+      "status": "ok",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.kezoji.com/"
     },
     "shop": {
@@ -77405,7 +78560,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
-    }
+    },
+    "strollerRental": true,
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://gunma-kanko.jp/spots/1",
+      "rental": true,
+      "rentalFee": "無料",
+      "terrainNote": "園内に段差・スロープありとの観光公式情報"
+    },
+    "strollerSourceUrl": "https://gunma-kanko.jp/spots/1"
   },
   {
     "region": "埼玉",
@@ -77474,13 +78638,14 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
-      "diaperChange": "ask",
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
       "hotWater": "ask",
-      "note": "市の公園情報で設備の明示を確認できず。",
-      "status": "ask",
-      "basis": "公式根拠不足",
-      "checkedAt": "2026年11月10日"
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "basis": "自治体公式",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.asaka.lg.jp/site/kosodate/akachastation2021.html"
     },
     "shop": {
       "status": "unknown",
@@ -78448,7 +79613,7 @@
     "strollerRentalNote": "指定管理者の公式サイトで公園案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "指定管理者の公式サイトで公園案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.kanagawaparks.com/umikaze/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
@@ -78489,6 +79654,11 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.kanagawaparks.com/umikaze/about.html",
+      "terrainNote": "親水護岸は階段状"
     }
   },
   {
@@ -79952,7 +81122,7 @@
     "strollerOk": "ask",
     "strollerRentalNote": "イオンモール幕張新都心の館内ベビーカー貸出。生後2か月〜3歳0か月",
     "strollerNote": "ベビーカー利用・貸出について確認できる公式情報なし。",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -79989,7 +81159,8 @@
       "rentalTarget": "2か月〜3歳",
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://makuharishintoshin.aeonmall.jp/guide/equipment",
-      "rentalMemo": "イオンモール幕張新都心の館内ベビーカー貸出。生後2か月〜3歳0か月"
+      "rentalMemo": "イオンモール幕張新都心の館内ベビーカー貸出。生後2か月〜3歳0か月",
+      "terrainNote": "モール共用部にベビーカー設置あり。トンデミ店内の持込可否は確認できず"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -80810,7 +81981,7 @@
     "closedDays": [
       "無休"
     ],
-    "baby": "トイレ3か所に乳幼児設備あり（市公式ページ）。授乳室・ベビーカー貸出は公式サイトに記載なし。",
+    "baby": "トイレ3か所に乳幼児設備あり（市公式ページ）。授乳室・ベビーカー貸出は公式サイトに記載なし。おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.city.sosa.lg.jp/page/dir001624.html",
     "verifiedAt": "2026年10月12日",
     "desc": "約5万平方mの敷地に、みはらしの丘・ふれあい広場・子供広場・多目的広場・桜の広場・水辺の広場の6エリアが約700mのウォーキングロードで結ばれた公園。みはらしの丘には全長50mのローラースライダーとザイルクライミング、子供広場にはアスレチックがある。",
@@ -80847,12 +82018,12 @@
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
-      "diaperChange": "ask",
+      "diaperChange": "yes",
       "hotWater": "ask",
       "note": "市公式で3か所のトイレに乳幼児設備付属と確認。おむつ交換台かどうかは明記なし。",
-      "status": "ask",
+      "status": "partial",
       "basis": "匝瑳市公式",
-      "checkedAt": "2026年11月11日",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.city.sosa.lg.jp/page/page001342.html"
     },
     "shop": {
@@ -80920,7 +82091,7 @@
     "closedDays": [
       "無休（12/30〜1/1は休業）"
     ],
-    "baby": "光と風の広場の湧水の小川、千駄堀池の噴水は水遊びにおすすめ（噴水は10:00-16:00の1時間毎、共に無料）",
+    "baby": "光と風の広場の湧水の小川、千駄堀池の噴水は水遊びにおすすめ（噴水は10:00-16:00の1時間毎、共に無料）。授乳室あり、おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/",
     "verifiedAt": "2026年9月26日",
     "desc": "松戸市のほぼ中央、約50万5000平方mの広大な自然公園。湧水の千駄堀池、大芝生の「光と風の広場」、野草園・自然生態園、縄文の森「森の工芸館」などがあり、松戸市立博物館も隣接。",
@@ -80948,7 +82119,7 @@
     "strollerRentalNote": "松戸市公式案内でベビーカー貸出を確認。パークセンターまたは各ゲートに問い合わせ。園内はベビーカー利用可能で、保護者が操作しストッパーを使用するよう案内あり。",
     "strollerNote": "松戸市公式案内でベビーカー貸出を確認。パークセンターまたは各ゲートに問い合わせ。園内はベビーカー利用可能で、保護者が操作しストッパーを使用するよう案内あり。",
     "strollerSourceUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/riyouannnai.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -80981,7 +82152,8 @@
       "rentalMemo": "松戸市公式案内でベビーカー貸出",
       "useNote": "園内はベビーカー利用可能で、保護者が操作しストッパーを使用するよう案内あり",
       "checkedAt": "2026年11月10日",
-      "sourceUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/riyouannnai.html"
+      "sourceUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/riyouannnai.html",
+      "rentalPlace": "各入口またはパークセンター"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -80989,6 +82161,16 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kouen_ryokuka/top/riyouannnai/babycar.html"
     }
   },
   {
@@ -81972,7 +83154,7 @@
     "closedDays": [
       "要確認"
     ],
-    "baby": "6ヵ月〜小学6年生対象の子ども専用施設。ちびっこゾーンにボールプール・滑り台の複合遊具あり",
+    "baby": "6ヵ月〜小学6年生対象の子ども専用施設。ちびっこゾーンにボールプール・滑り台の複合遊具あり。授乳室あり、おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://won-park.com/topics/news001/",
     "verifiedAt": "2026年9月26日",
     "desc": "2023年4月リニューアル。ちびっこゾーン（ボールプール等）、わんぱくゾーン（ボルダリング・エアホイール）、屋外あおぞらゾーン、ゆったりゾーン（カフェ・図書）の4ゾーン構成。保護者1名につき子ども3名まで入場可。",
@@ -82023,6 +83205,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://won-park.com/faq/"
     }
   },
   {
@@ -83198,7 +84390,7 @@
     "closedDays": [
       "南町田グランベリーパークに準ずる（1月1日、その他年2回）"
     ],
-    "baby": "ベビーカーは公式の明記なし（要確認）（商業施設内）",
+    "baby": "ベビーカーは公式の明記なし（要確認）（商業施設内）。授乳室あり、おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://green-summit.jp/",
     "verifiedAt": "2026年9月27日",
     "desc": "南町田グランベリーパーク内にあるアウトドアライフスタイルショップ。「外で遊ぶ」をテーマに、キックボードや海外で人気の「EzyRoller」などを店内サーキットで試乗体験できる。隣接するモンベル店舗には常設のカヤック体験用人工池・クライミングウォールもあり、親子でアウトドア体験ができるエリア。",
@@ -83267,6 +84459,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://gbp.minamimachida-grandberrypark.com/kidssite/"
     }
   },
   {
@@ -83446,7 +84648,7 @@
     "closedDays": [
       "木曜（祝日の場合は営業、8月は無休）"
     ],
-    "baby": "ベビーカー・車いす貸出あり",
+    "baby": "ベビーカー・車いす貸出あり。授乳室あり、おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.kidsdom.jp/",
     "verifiedAt": "2026年10月13日",
     "desc": "水と緑に囲まれたファミリー向けアミューズメントパーク。国内最長クラスのゴーカート、家族4人乗り4輪自転車のサイクリングコース、屋根付きローラースケートリンク、夏季限定のじゃぶじゃぶプールなど盛りだくさん。屋内アトラクションもあり雨の日も一部楽しめる。",
@@ -83498,7 +84700,7 @@
     "strollerRentalNote": "1日100円。2歳以下対象。入園口すぐのインフォメーションで貸出、予約不可・台数限定",
     "strollerNote": "公式FAQでベビーカー貸出ありと明記。1日100円、2歳以下対象、予約不可・台数限定。",
     "strollerSourceUrl": "https://kidsdom.jp/faq",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -83532,7 +84734,8 @@
       "rentalNote": "台数限定・予約不可",
       "rentalMemo": "1日100円。2歳以下対象。入園口すぐのインフォメーションで貸出、予約不可・台数限定",
       "checkedAt": "2026年11月14日",
-      "sourceUrl": "https://kidsdom.jp/faq"
+      "sourceUrl": "https://kidsdom.jp/faq",
+      "rentalPlace": "入園口すぐのインフォメーション"
     },
     "ageFit": {
       "0-1歳": "×",
@@ -83543,7 +84746,17 @@
     },
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://kidsdom.jp/faq"
+    "kidsToiletSourceUrl": "https://kidsdom.jp/faq",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://kidsdom.jp/faq"
+    }
   },
   {
     "region": "東京",
@@ -84016,6 +85229,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://ofurocafe-hareniwanoyu.com/kids-park/"
     }
   },
   {
@@ -84615,7 +85838,7 @@
       "月曜日(祝日の場合は翌日)",
       "年末年始(12/29〜1/3)"
     ],
-    "baby": "夢の島公園に隣接し、屋外の芝生広場やBBQ広場もある",
+    "baby": "夢の島公園に隣接し、屋外の芝生広場やBBQ広場もある。授乳室あり、おむつ替え設備あり、ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://www.yumenoshima.jp/",
     "verifiedAt": "2026年9月27日",
     "desc": "湾岸の夢の島公園内にある、3つの巨大ドームが連なる植物園。隣接する清掃工場の余熱を利用し、真冬でも熱帯・亜熱帯の植物約1,000種を鑑賞できる。世界最樹高クラスのダイオウヤシや世界最大の竹ゾウタケ、仏教三大聖樹、小笠原諸島の固有種など見どころが多い。",
@@ -84713,7 +85936,17 @@
     "kidsToiletNote": "バリアフリートイレあり。おむつ交換ベッド・授乳室mamaroあり",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.yumenoshima.jp/botanicalhall/barrierfree"
+    "kidsToiletSourceUrl": "https://www.yumenoshima.jp/botanicalhall/barrierfree",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.yumenoshima.jp/botanicalhall/barrierfree"
+    }
   },
   {
     "region": "千葉",
@@ -85223,7 +86456,7 @@
       "1階：毎月第3火曜（祝日の場合は翌平日）",
       "年末年始（12/29〜1/3）、臨時休館あり"
     ],
-    "baby": "1階に子ども体験ひろば「アソビバ！」あり。授乳室、全個室トイレにベビーチェア、貸出用ベビーカーあり（公式）",
+    "baby": "1階に子ども体験ひろば「アソビバ！」あり。授乳室、全個室トイレにベビーチェア、貸出用ベビーカーあり（公式）。おむつ替え設備あり（2026年11月15日確認）。",
     "officialUrl": "https://matsumoto-city-museum.jp/",
     "verifiedAt": "2026年10月13日",
     "desc": "2023年10月に松本城のすぐそばへ移転新築した「松本まるごと博物館」の中核施設。約11万点を超える資料を収蔵し、壮大なスケールの「城下町ジオラマ」が見どころ。国重要有形民俗文化財の七夕人形なども展示。1階の子ども体験ひろば「アソビバ!」は未就学児にも人気。",
@@ -85264,12 +86497,12 @@
       "sourceUrl": "https://matsumoto-city-museum.jp/rent",
       "checkedAt": "2026年11月10日"
     },
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRental": true,
     "strollerRentalNote": "貸出用ベビーカーあり。料金・対象年齢は公式案内に記載なし",
     "strollerNote": "館内にエレベーター・スロープあり",
     "strollerSourceUrl": "https://matsumoto-city-museum.jp/guide",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -85304,6 +86537,16 @@
       "4-6歳": "○",
       "低学年": "◎",
       "高学年": "◎"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://matsumoto-city-museum.jp/guide"
     }
   },
   {
@@ -86299,6 +87542,16 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "△"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://asolabo.space-innovation.co.jp/"
     }
   },
   {
@@ -86330,7 +87583,7 @@
     "parking": "yes",
     "access": "真岡鐵道「真岡」駅の近く、真岡市役所の斜向かい／電話0285-85-8002／駐車場は公式のアクセスページで要確認",
     "businessHoursNote": "平日9:00〜20:00／土日祝9:00〜18:00／休館：月曜日（祝日の場合は開館）、10月に約1週間の特別整理期間あり／もおかっ子ひろばは1時間クール制（9:30・11:00・13:00・14:30・16:00〜、各クール定員100名程度）",
-    "baby": "「赤ちゃんの駅」でおむつ替え・授乳が可能／子育て支援センター併設／館内フリーWi-Fiあり",
+    "baby": "「赤ちゃんの駅」でおむつ替え・授乳が可能／子育て支援センター併設／館内フリーWi-Fiあり。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://mokamonaca.jp/",
     "verifiedAt": "2026年9月28日",
     "desc": "図書館・子育て支援センター・屋内外のこども広場・地域交流センターを備えた複合施設。屋内型の「もおかっ子ひろば」には、アスレチック、トンネルやま、わくわくウォール、プロジェクター映像のデジタル遊具、ボール・クッションエリア、SL、木のおもちゃなどがある。",
@@ -86362,11 +87615,11 @@
       "sourceUrl": "https://mokamonaca.jp/",
       "checkedAt": "2026年10月31日"
     },
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRentalNote": "公式施設案内・アクセス情報を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "公式施設案内・アクセス情報を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://mokamonaca.jp/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -86394,6 +87647,21 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "△"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://mokamonaca.jp/faq/",
+      "terrainNote": "施設内にベビーカー置き場あり"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://mokamonaca.jp/faq/"
     }
   },
   {
@@ -88217,11 +89485,11 @@
       "minMinutes": 90,
       "maxMinutes": 150
     },
-    "strollerOk": "ask",
+    "strollerOk": "partial",
     "strollerRentalNote": "公式FAQでベビーカー置き場ありと確認。場内への持ち込み可否・貸出については明確な記載なし。",
     "strollerNote": "入場時にベビーカー置き場を利用",
     "strollerSourceUrl": "https://bandainamco-am.co.jp/kids/shimaguruland/index.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "unknown",
@@ -88258,6 +89526,16 @@
       "4-6歳": "×",
       "低学年": "×",
       "高学年": "×"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://bandainamco-am.co.jp/kids/shimaguruland/index.html"
     }
   },
   {
@@ -88784,7 +90062,7 @@
     "strollerRentalNote": "富士宮市公式案内で公園情報を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "富士宮市公式案内で公園情報を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.city.fujinomiya.lg.jp/1030300000/shisetsu/p000084.html",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -88825,6 +90103,11 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.city.fujinomiya.lg.jp/1030300000/shisetsu/p000084.html",
+      "terrainNote": "園内に起伏あり"
     }
   },
   {
@@ -89141,7 +90424,7 @@
     "strollerRentalNote": "貸出用ベビーカーなし",
     "strollerNote": "公式FAQで貸出用ベビーカーは用意していないと明記。館内での持ち込み利用可否は明確な記載なし。",
     "strollerSourceUrl": "https://www.numazu-deepsea.com/question/",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
@@ -89167,7 +90450,8 @@
     "strollerDetail": {
       "rental": false,
       "checkedAt": "2026年11月14日",
-      "sourceUrl": "https://www.numazu-deepsea.com/question/"
+      "sourceUrl": "https://www.numazu-deepsea.com/question/",
+      "terrainNote": "エレベーターあり。多目的トイレ館内1か所・館外1か所"
     },
     "ageFit": {
       "0-1歳": "○",
@@ -89200,7 +90484,7 @@
     "price": "入場無料（各店舗は別途）",
     "parking": "yes",
     "access": "JR東海道線「沼津」駅から車またはバス（要確認）",
-    "baby": "授乳室・おむつ替えあり／ベビーカーOK",
+    "baby": "授乳室・おむつ替えあり／ベビーカーOK。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://mitsui-shopping-park.com/lalaport/numazu/",
     "desc": "無料で使える屋内キッズスペース「こもりらのもり」（約300㎡）は、0歳・1〜2歳・3〜5歳の年齢別のエリアに分かれている。屋外の「うみの広場」には、水が噴き出すポップジェットや、5基のすべり台がつながった大型遊具（6〜12歳向け）がある。",
     "tip": "大型遊具の広場は10:00〜17:00の利用で、悪天候の日は使えないことがある。館内には授乳室・おむつ交換スペース、ミルクや離乳食をつくれるミニキッチンのある「こにわハウス」がある。フードコートは約1,100席。",
@@ -89239,7 +90523,7 @@
     "strollerRentalNote": "100円リターン式。生後4か月〜4歳（48か月）対象。台数限定・予約不可",
     "strollerNote": "館内各所にベビーカー貸出場所あり",
     "strollerSourceUrl": "https://mitsui-shopping-park.com/lalaport/numazu/service/wheelchair.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -89274,7 +90558,8 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://mitsui-shopping-park.com/lalaport/numazu/service/wheelchair.html",
       "useNote": "館内各所にベビーカー貸出場所あり",
-      "rentalFee": "100円（リターン式）"
+      "rentalFee": "100円（リターン式）",
+      "rentalPlace": "館内ベビーカー貸出場所"
     },
     "ageFit": {
       "0-1歳": "◎",
@@ -89284,7 +90569,17 @@
       "高学年": "△"
     },
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lalaport/numazu/service/wheelchair.html"
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lalaport/numazu/service/wheelchair.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://mitsui-shopping-park.com/lalaport/numazu/"
+    }
   },
   {
     "region": "静岡",
@@ -89347,7 +90642,7 @@
     "strollerRentalNote": "公式サイトで施設・サービス案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "公式サイトで施設・サービス案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.suntomoon.co.jp/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "yes",
@@ -89376,6 +90671,21 @@
       "4-6歳": "◎",
       "低学年": "○",
       "高学年": "△"
+    },
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.suntomoon.co.jp/",
+      "terrainNote": "館内にベビーカー利用可能な通路あり。貸出の現行条件は要確認"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式フロアガイド（2021年版PDF）による。最新状況は要確認。商業施設共用設備",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.suntomoon.co.jp/"
     }
   },
   {
@@ -91734,11 +93044,11 @@
       "bentoNote": "公式FAQで園内への飲食物の持ち込みは自由。ただし飲食店舗への外部飲食物の持ち込みは遠慮するよう案内",
       "sourceUrl": "https://www.namegata-fv.jp/faq/"
     },
-    "strollerOk": "ask",
+    "strollerOk": "partial",
     "strollerRentalNote": "公式サイトで施設・体験案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "公式サイトで施設・体験案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.namegata-fv.jp/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -91781,6 +93091,12 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
+    },
+    "strollerRental": false,
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.namegata-fv.jp/faq/",
+      "rental": false
     }
   },
   {
@@ -93666,20 +94982,20 @@
     },
     "priceSource": "www.chibacity-ta.or.jp",
     "priceCheckedAt": "2026年11月10日",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRentalNote": "千葉市観光協会の公式案内で施設情報を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "千葉市観光協会の公式案内で施設情報を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.chibacity-ta.or.jp/spots/e-atobeele",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
+      "nursingRoom": "yes",
       "diaperChange": "ask",
       "hotWater": "ask",
-      "note": "観光協会の施設案内で乳幼児設備の記載を確認できず。",
-      "status": "ask",
-      "basis": "観光協会公式・設備情報不足",
-      "checkedAt": "2026年11月11日",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.chibacity-ta.or.jp/spots/e-atobeele"
     },
     "shop": {
@@ -103152,7 +104468,7 @@
     "closedDays": [
       "月・金の競馬非開催日"
     ],
-    "baby": "キッズルーム横にトイレあり",
+    "baby": "キッズルーム横にトイレあり。授乳室あり（2026年11月15日確認）。",
     "officialUrl": "https://www.kawasaki-keiba.jp/guide/park/family/",
     "verifiedAt": "2026年10月8日",
     "desc": "競馬場の内馬場にある広い芝生広場。大型アスレチック遊具「ウチババーン」と、馬モチーフの「かわさきホースライダー」で遊べます。レジャーシートを広げてピクニックもできます。",
@@ -103194,13 +104510,13 @@
     "strollerCheckedAt": "2026年11月2日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
+      "nursingRoom": "yes",
       "diaperChange": "ask",
       "hotWater": "ask",
       "note": "内馬場に芝生広場・遊具、2号スタンド1階にキッズルームあり。乳幼児設備の場所・利用条件は個別確認が必要。",
       "status": "partial",
       "basis": "施設公式FAQ",
-      "checkedAt": "2026年11月11日",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.kawasaki-keiba.jp/guide/park/family/"
     },
     "shop": {
@@ -105996,7 +107312,7 @@
       "小学校の春・夏・冬休み期間は無休",
       "年末年始（12/29〜1/3）"
     ],
-    "baby": "授乳室・おむつ替えは要確認",
+    "baby": "授乳室・おむつ替えは要確認。ミルク用のお湯なし（2026年11月15日確認）。",
     "officialUrl": "https://www.shiden.yokohama/",
     "verifiedAt": "2026年10月24日",
     "desc": "1972年に廃止された横浜市電を保存・展示する施設。実際に走っていた市電7両を当時の姿で展示し、運転台や座席に座れる。市電の運転体験ができる「市電シミュレーター」（体験無料）や鉄道模型、横浜の街を再現した「ハマジオラマ」、歴史展示コーナーもある。",
@@ -106037,12 +107353,12 @@
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
-      "diaperChange": "ask",
-      "hotWater": "ask",
-      "note": "公式案内で授乳室・交換台の場所を確認できず。",
-      "status": "ask",
-      "basis": "公式根拠不足",
-      "checkedAt": "2026年11月10日",
+      "diaperChange": "yes",
+      "hotWater": "no",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.shiden.yokohama/"
     },
     "shop": {
@@ -106284,13 +107600,13 @@
     "strollerCheckedAt": "2026年11月14日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
+      "nursingRoom": "no",
       "diaperChange": "yes",
       "hotWater": "ask",
-      "note": "園内の多目的トイレにおむつ交換台ありとの施設紹介情報。授乳室は公式情報で確認できず。",
+      "note": "公式情報で確認（2026年11月15日）",
       "status": "partial",
-      "basis": "二次情報・公式未確認",
-      "checkedAt": "2026年11月11日",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://senyo.co.jp/"
     },
     "shop": {
@@ -106691,7 +108007,7 @@
     "strollerRentalNote": "セルフ式・コインリターン式。4か月～48か月未満、身長100cmまで。台数限定",
     "strollerNote": "キッズパーク内のベビーカー置き場あり",
     "strollerSourceUrl": "https://mitsui-shopping-park.com/lalaport/toyosu/service/toilet_kids.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "shop": {
       "status": "nearby",
@@ -106727,7 +108043,8 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://mitsui-shopping-park.com/lalaport/toyosu/service/toilet_kids.html",
       "rentalMemo": "セルフ式・コインリターン式。4か月～48か月未満、身長100cmまで。台数限定",
-      "rentalTarget": "4か月〜48か月未満・身長100cmまで"
+      "rentalTarget": "4か月〜48か月未満・身長100cmまで",
+      "rentalPlace": "ららぽーと豊洲1の各ポート・各階"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -106737,7 +108054,17 @@
       "高学年": "○"
     },
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lalaport/toyosu/service/toilet_kids.html"
+    "kidsToiletSourceUrl": "https://mitsui-shopping-park.com/lalaport/toyosu/service/toilet_kids.html",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "商業施設共用設備（店舗専用ではない）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://mitsui-shopping-park.com/lalaport/toyosu/service/babycar_self.html"
+    }
   },
   {
     "region": "東京",
@@ -106830,7 +108157,17 @@
     "kidsToiletNote": "ベビーコーナー・授乳室あり。トイレは施設外の同フロア",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://kidslandus.com/shop/tokyo-omori/"
+    "kidsToiletSourceUrl": "https://kidslandus.com/shop/tokyo-omori/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "hotWater": "ask",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://kidslandus.com/shop/tokyo-omori/"
+    }
   },
   {
     "region": "東京",
@@ -107160,7 +108497,7 @@
     "price": "1階「PARK」は無料（保護者同伴）",
     "parking": "yes",
     "access": "JR京浜東北線「鶴見」駅から徒歩約14分、京急「京急鶴見」駅から徒歩約11〜12分。駐車場あり（約537台、時間貸し。来店条件で無料時間あり）",
-    "baby": "1階「GARDEN」にベビーケアルーム・授乳室、おむつ替えシート、こども用トイレ、個室2部屋があると開業時に紹介された（現状は要確認）",
+    "baby": "1階「GARDEN」にベビーケアルーム・授乳室、おむつ替えシート、こども用トイレ、個室2部屋があると開業時に紹介された（現状は要確認）。ミルク用のお湯あり（2026年11月15日確認）。",
     "officialUrl": "https://tsurumi.licopa.jp/",
     "verifiedAt": "2026年10月24日",
     "desc": "旧イトーヨーカドー鶴見店を改装した地域密着型の商業施設。1階の吹き抜けに、雨でも遊べる全天候型の芝生広場「PARK」があり、ハイハイの赤ちゃんから遊べる遊具・小さな丘・すべり台（2025年に増設）が置かれている。靴を脱いで遊ぶ形式。",
@@ -107229,7 +108566,17 @@
       "高学年": "×"
     },
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://tsurumi.licopa.jp/access/"
+    "kidsToiletSourceUrl": "https://tsurumi.licopa.jp/access/",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "hotWater": "yes",
+      "basis": "施設公式",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "ok",
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://tsurumi.licopa.jp/access/"
+    }
   },
   {
     "region": "東京",
@@ -112726,13 +114073,13 @@
     "strollerCheckedAt": "2026年11月10日",
     "strollerSource": "official",
     "babyFacility": {
-      "nursingRoom": "ask",
+      "nursingRoom": "yes",
       "diaperChange": "ask",
       "hotWater": "ask",
-      "note": "公式サイトで託児サービスを確認。授乳室・おむつ交換台の場所は公式情報で確認できず。",
-      "status": "ask",
-      "basis": "施設公式・設備情報不足",
-      "checkedAt": "2026年11月11日",
+      "note": "公式情報で確認（2026年11月15日）",
+      "status": "partial",
+      "basis": "施設公式",
+      "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.saku-parada.jp/ski/"
     },
     "shop": {
@@ -112844,7 +114191,7 @@
     "strollerRentalNote": "公式サイトでスノーパーク・ベビー用品レンタルを確認。ウェアやブーツ等の貸出はあるが、ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "公式サイトでスノーパーク・ベビー用品レンタルを確認。ウェアやブーツ等の貸出はあるが、ベビーカー利用・貸出について明確な記載なし。",
     "strollerSourceUrl": "https://www.shirakabaresort.jp/snowpark/",
-    "strollerCheckedAt": "2026年11月10日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -112886,7 +114233,15 @@
     "kidsToiletNote": "ホテル内の多目的トイレにおむつ交換台・ベビーキープ・授乳スペースあり（スノーパーク内の設備とは区別が必要）",
     "kidsToiletCheckedAt": "2026年11月14日",
     "kidsToiletSource": "official",
-    "kidsToiletSourceUrl": "https://www.ikenotaira-hotel.co.jp/ikenotaira-hotel/lp/services-for-children/"
+    "kidsToiletSourceUrl": "https://www.ikenotaira-hotel.co.jp/ikenotaira-hotel/lp/services-for-children/",
+    "strollerRental": true,
+    "strollerDetail": {
+      "checkedAt": "2026年11月15日",
+      "sourceUrl": "https://www.shirakabaresort.jp/familyland/contact/faq.html",
+      "rental": true,
+      "rentalFee": "1日500円",
+      "rentalPlace": "森の遊園地ゲート・パターゴルフ場ゲート"
+    }
   },
   {
     "region": "長野",
@@ -114695,7 +116050,7 @@
     "strollerRentalNote": "公式FAQでベビーカーの預かり不可と明記。館内・リンクへの持ち込み可否やベビーカー貸出については明確な記載なし。",
     "strollerNote": "館内にエレベーターなし。ベビーカーの預かり不可。興行主催者によって対応が異なる場合あり",
     "strollerSourceUrl": "https://www.princehotels.co.jp/skate/shinyokohama/faq.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "ask",
@@ -114733,7 +116088,8 @@
       "storage": "ベビーカーの預かり不可",
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://www.princehotels.co.jp/skate/shinyokohama/faq.html",
-      "useNote": "館内にエレベーターなし。ベビーカーの預かり不可。興行主催者によって対応が異なる場合あり"
+      "useNote": "館内にエレベーターなし。ベビーカーの預かり不可。興行主催者によって対応が異なる場合あり",
+      "rental": false
     },
     "ageFit": {
       "0-1歳": "×",
@@ -114741,7 +116097,8 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "◎"
-    }
+    },
+    "strollerRental": false
   },
   {
     "region": "千葉",
@@ -116627,11 +117984,11 @@
     "businessHoursNote": "モビリティリゾートもてぎ内のアトラクション。施設全体の営業日・営業時間に準じるが、アトラクションごとの運行状況に注意",
     "businessHoursSourceUrl": "https://www.mr-motegi.jp/hours_m/",
     "businessHoursCheckedAt": "2026年11月9日",
-    "strollerOk": "ask",
+    "strollerOk": "ok",
     "strollerRentalNote": "モビリティリゾートもてぎ公式サイトでアトラクションの利用条件を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "コースはオフロード。ベビーカーでのコース内移動は想定されない",
     "strollerSourceUrl": "https://www.mr-motegi.jp/park/attractions/rindobike.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -116667,7 +118024,11 @@
     "strollerDetail": {
       "useNote": "コースはオフロード。ベビーカーでのコース内移動は想定されない",
       "checkedAt": "2026年11月14日",
-      "sourceUrl": "https://www.mr-motegi.jp/park/attractions/rindobike.html"
+      "sourceUrl": "https://www.mr-motegi.jp/park/attractions/rindobike.html",
+      "rental": true,
+      "rentalFee": "1日500円",
+      "rentalPlace": "インフォメーションセンター",
+      "rentalTarget": "生後6か月〜36か月・体重15kg以下"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -116675,7 +118036,8 @@
       "4-6歳": "◎",
       "低学年": "◎",
       "高学年": "○"
-    }
+    },
+    "strollerRental": true
   },
   {
     "region": "神奈川",
@@ -117967,11 +119329,11 @@
       "checkedAt": "2026年11月7日"
     },
     "verifiedAt": "2026年11月7日",
-    "strollerOk": "ask",
+    "strollerOk": "partial",
     "strollerRentalNote": "運営会社公式の施設案内を確認。ベビーカー利用・貸出について明確な記載なし。",
     "strollerNote": "ベビーカー置き場あり。パーク内利用可否は要確認",
     "strollerSourceUrl": "https://shelter.litpla.com/space/toylo_yokohama/",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -120145,7 +121507,7 @@
     "strollerRentalNote": "無料貸出。台数限定・先着順",
     "strollerNote": "階段がある場所にはリフターあり。混雑時は待ち時間が発生する場合あり",
     "strollerSourceUrl": "https://www.tokyomegaillumi.jp/faq.html",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -120191,7 +121553,8 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://www.tokyomegaillumi.jp/faq.html",
       "rentalMemo": "無料貸出。台数限定・先着順",
-      "useNote": "階段がある場所にはリフターあり。混雑時は待ち時間が発生する場合あり"
+      "useNote": "階段がある場所にはリフターあり。混雑時は待ち時間が発生する場合あり",
+      "rentalPlace": "来場時にスタッフへ申出"
     },
     "ageFit": {
       "0-1歳": "△",
@@ -120274,7 +121637,7 @@
     "strollerRentalNote": "生後1か月～3歳11か月、身長95cm以下・体重18kg以下。インフォメーションで貸出。本人確認書類が必要",
     "strollerNote": "公式施設案内でベビーカー貸出あり。対象は生後1か月〜3歳11か月、身長95cm・体重18kgまで。本人確認書類が必要。",
     "strollerSourceUrl": "https://www.nasu-gardenoutlet.com/information/",
-    "strollerCheckedAt": "2026年11月14日",
+    "strollerCheckedAt": "2026年11月15日",
     "strollerSource": "official",
     "babyFacility": {
       "nursingRoom": "yes",
@@ -120315,7 +121678,8 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://www.nasu-gardenoutlet.com/information/",
       "rentalMemo": "生後1か月～3歳11か月、身長95cm以下・体重18kg以下。インフォメーションで貸出。本人確認書類が必要",
-      "rentalPlace": "インフォメーション"
+      "rentalPlace": "インフォメーション",
+      "terrainNote": "屋外型施設。貸出ベビーカーはインフォメーション返却"
     },
     "ageFit": {
       "0-1歳": "△",
