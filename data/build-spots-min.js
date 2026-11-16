@@ -1,12 +1,14 @@
 // data/spots.json から、投稿フォーム用の軽量版 data/spots.min.json を作る。
-// 使い方: node scripts/build-spots-min.mjs
+// このファイルと同じ data フォルダを基準に動くので、どこから実行しても動きます。
+// 使い方: node data/build-spots-min.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
-const SRC = 'data/spots.json';
-const DST = 'data/spots.min.json';
+const SRC = fileURLToPath(new URL('./spots.json', import.meta.url));
+const DST = fileURLToPath(new URL('./spots.min.json', import.meta.url));
 
 const spots = JSON.parse(readFileSync(SRC, 'utf-8'));
-if (!Array.isArray(spots)) throw new Error(`${SRC} は配列である必要があります`);
+if (!Array.isArray(spots)) throw new Error('spots.json は配列である必要があります');
 
 const seen = new Set();
 const min = spots.map((s, i) => {
@@ -17,4 +19,4 @@ const min = spots.map((s, i) => {
 });
 
 writeFileSync(DST, JSON.stringify(min));
-console.log(`${DST}: ${min.length}件`);
+console.log(`spots.min.json: ${min.length}件`);
