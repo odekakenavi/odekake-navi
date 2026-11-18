@@ -19,6 +19,7 @@
 ├─ data/                  施設・ホテル・イベントのデータ
 │   ├─ spots.json           施設データ
 │   ├─ hotels.json          ホテルデータ
+│   ├─ transit_table.json   電車の所要時間表（ターミナル100駅→各施設。tools/build_transit_table.py で作成）
 │   └─ event-data.json      イベント特集用データ（merge-event-data.js で spots.json に反映）
 │
 ├─ tools/                 ページ生成・チェック用スクリプト（PCで実行）
@@ -27,6 +28,7 @@
 │   ├─ build-event-pages.js    イベント特集（/event/…）の生成
 │   ├─ merge-event-data.js     event-data.json を spots.json に反映
 │   ├─ check-data-blocks.js    データ整合チェック（ファイルは書き換えない）
+│   ├─ build_transit_table.py  電車の所要時間表の生成（Python3。駅データ.jp のCSVが必要）
 │   └─ archive/                一回きりの作業ファイル
 │
 ├─ backend/               サイトからは読まれない運用用コード
@@ -59,6 +61,30 @@ main に push すると GitHub Actions（`.github/workflows/pages.yml`）が次�
 node tools/check-site.js
 node tools/build-public.js --out _public && node tools/refresh-static-pages.js --public _public && node tools/check-site.js --public _public
 ```
+
+## 電車の所要時間（概算）
+
+カードに出る「電車で（目安）」は、時刻表ではなく概算です。
+
+**計算の流れ**（`index.html` の `deriveTransitMinutes`）
+
+1. 施設に `transitMinutesOverride` があれば、その値をそのまま使います。
+2. `data/transit_table.json` があり、その施設の行があれば、出発地に近いターミナル駅3つのうち最短を採用します。
+   所要時間 ＝ 出発地→ターミナルの概算（従来式）＋ 表の値（ターミナル→最寄り駅の乗車・乗換＋駅から徒歩/バス）
+3. 表が無い・施設が表に無い・出発地が現在地設定と合わないときは、従来の直線距離ベースの式（`estimateTransitMinutes`）に戻ります。
+
+**表の中身**（`data/transit_table.json`）
+
+- ターミナル100駅（東京・神奈川・埼玉・千葉・茨城・栃木・群馬の主要駅と、甲府・河口湖・熱海・三島・軽井沢）から各施設までの分数です。`hubs` が駅の一覧、`t` が施設の `slug` ごとの配列（0は到達不可）です。
+- 駅データ.jp の路線グラフを最短経路で解いています。乗換は1回6分、ターミナルでの待ちは5分を加算します。
+- 施設の最寄り駅は `access` の「駅名」と「徒歩○分／バス○分」から読み取ります。バスの記載がある場合は、バス時間＋待ち5分を加えます。
+- 最寄り駅が読み取れない施設（バス停・高速ICのみの記載など）は表に入らず、従来式で計算されます。
+
+**限界**
+
+- 無料版の駅データには新幹線の駅が入っていません。軽井沢・那須塩原・熱海など新幹線が便利な場所は、在来線の経路で出るため長めになります。
+- 特急・急行の停車駅や本数、時間帯による違いは反映されません。速度は路線種別ごとの値（`SPEED`）で、ハブ間の実際の所要時間と見比べて校正しています。中距離でおおむね±15%、短距離はやや短め、特急区間は長めに出ます。
+- 個別に直したい施設は、`transitMinutesOverride` に分数を入れてください。
 
 ## AI検索・クローラー対応
 
@@ -102,6 +128,18 @@ node tools/build-area-pages.js --index index.html --spots data/spots.json --site
 ```
 
 各スクリプトの詳しい使い方・オプションは、ファイル先頭のコメントを見てください。
+
+### 電車の所要時間表を作り直すとき
+
+施設の追加・最寄り駅（`access`）の変更をしたあと、または駅データを更新したときに実行します。
+
+```
+python3 tools/build_transit_table.py --data-dir <駅データのフォルダ> --spots data/spots.json --out data/transit_table.json
+```
+
+- `<駅データのフォルダ>` には、[駅データ.jp](https://ekidata.jp/) の `station*.csv`・`line*.csv`・`join*.csv`（あれば `company*.csv`）を入れます。CSVはリポジトリに入れず、手元に置いてください（利用規約は駅データ.jp で確認）。
+- 実行の最後に「ハブ ○○ / 100」「表あり ○○ 件」と、駅データに一致しなかった駅名が表示されます。一致しなかった駅名は `spots.json` の `access` の表記ゆれ・誤記の可能性があります。
+- 校正用に、ターミナル駅どうしの所要時間を見たいときは `--hub-matrix hub_matrix.json` を付けます。
 
 ## ライセンス
 
