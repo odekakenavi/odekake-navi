@@ -27,7 +27,7 @@
  *   --stations=PATH   駅データ（既定: tools/data/stations.csv / .geojson）
  *   --spots=PATH      施設データ（既定: site/data/spots.json → なければ data/spots.json）
  *   --out=DIR         出力先（既定: tools/out）
- *   --detour=1.3      道なり補正（直線距離×この値）
+ *   --detour=1.2      道なり補正（直線距離×この値。公式の徒歩分数253件との比較で1.2が最も合った）
  *   --speed=80        徒歩速度 m/分
  *   --max-dist=1200   直線距離がこれを超えたら「徒歩圏外」（分数は空欄）
  *   --check           点検だけ。新しい施設（walkMinutesEst が未設定）を一覧表示。何も書かない
@@ -38,7 +38,7 @@
  *
  * ■ spots.json に書く項目
  *   stationEst        最寄駅名（目安）
- *   walkMinutesEst    徒歩の目安分数（公式の徒歩分数とは別物。サイトでは「約〇分（目安）」と表示）
+ *   walkMinutesEst    徒歩の目安分数（公式の徒歩分数とは別物）。徒歩圏外は null（=計算済み・該当なし）
  *   walkMinutesManual 手で確認した分数。入れた施設はこのスクリプトが一切上書きしません
  *
  * ■ check 列の意味（accessの文章と座標のつき合わせ）
@@ -55,7 +55,7 @@ const path = require('path');
 // ---------- 引数 ----------
 const opt = {
   stations: null, spots: null, out: 'tools/out',
-  detour: 1.3, speed: 80, maxDist: 1200,
+  detour: 1.2, speed: 80, maxDist: 1200,
   apply: false, inPlace: false, onlyNew: false, check: false, strict: false,
 };
 const FLAGS = {
@@ -215,7 +215,7 @@ function resolveName(c) {
   if (resolveCache.has(c)) return resolveCache.get(c);
   const cc = cleanName(c);
   let r = byName.has(cc) ? cc : null;
-  if (!r) r = stationNames.find((n) => n.length >= 2 && cc.endsWith(n)) || null;
+  if (!r) r = stationNames.find((n) => n.length >= 3 && cc.endsWith(n)) || null; // 2文字駅名の末尾一致は誤検出しやすいので除外
   resolveCache.set(c, r);
   return r;
 }
@@ -236,7 +236,7 @@ const tolerance = (o) => Math.max(3, o * 0.5);
 //  ・--only-new / --check のときは walkMinutesEst が未設定の施設だけ
 function isTarget(s) {
   if (s.walkMinutesManual != null) return false;
-  if ((opt.onlyNew || opt.check) && s.walkMinutesEst != null) return false;
+  if ((opt.onlyNew || opt.check) && s.walkMinutesEst !== undefined) return false;
   return true;
 }
 
@@ -284,7 +284,7 @@ for (const s of spots) {
       const bestFit = named.reduce((a, b) => (Math.abs(a.est - official) <= Math.abs(b.est - official) ? a : b));
       check = Math.abs(bestFit.est - official) <= tolerance(official) ? 'OK' : 'DIFF';
     }
-  } else if (named.length && /徒歩|直結|すぐ|隣接/.test(String(s.access || ''))) {
+  } else if (named.length && /徒歩|直結|すぐ|隣接/.test(String(s.access || '')) && !/バス|タクシー|ゴンドラ|ロープウェイ|シャトル/.test(String(s.access || ''))) {
     const nearest = Math.min(...named.map((x) => x.dist));
     if (nearest > opt.maxDist) check = 'FAR';
   }
@@ -298,16 +298,18 @@ const problems = results.filter((r) => ['DIFF', 'FAR', 'UNKNOWN'].includes(r.che
 if (opt.check) {
   console.log(`点検対象（walkMinutesEst 未設定）: ${results.length}件 / 全${spots.length}件`);
   if (!results.length) console.log('新しい施設はありません。');
+  let shownNoCoords = 0;
   for (const r of results) {
     const t = r.top[0];
     if (r.status === 'no-coords') {
-      console.log(`  [座標なし] ${r.s.name}  ← 座標を入れると最寄駅を計算できます`);
+      if (shownNoCoords++ < 10) console.log(`  [座標なし] ${r.s.name}  ← 座標を入れると最寄駅を計算できます`);
       continue;
     }
     const near = t ? `${t.name} 約${Math.round(t.dist)}m / 目安${estMin(t.dist)}分` : '駅なし';
     const tag = r.status === 'far' ? '[徒歩圏外] ' : r.check && r.check !== 'OK' ? `[${r.check}] ` : '';
     console.log(`  ${tag}${r.s.name} | 最寄り: ${near}${r.official != null ? ` | 公式${r.official}分` : ''} | ${r.s.access || ''}`);
   }
+  if (shownNoCoords > 10) console.log(`  …座標なしはほか${shownNoCoords - 10}件`);
   console.log(`\n計算できる: ${missing.length}件 / 要確認(DIFF・FAR・UNKNOWN): ${problems.length}件 / 座標なし: ${noCoords.length}件`);
   if (missing.length) console.log('→ node tools/calc-station-walk.js --only-new --in-place で書き込めます');
   if (opt.strict && (missing.length || problems.length || noCoords.length)) process.exit(1);
@@ -322,7 +324,7 @@ const header = [
   'station1', 'line1', 'distance_m1', 'walk_min_est1',
   'station2', 'distance_m2', 'walk_min_est2',
   'station3', 'distance_m3', 'walk_min_est3',
-  'official_walk_min', 'access_station', 'access_station_walk_min_est', 'check', 'access',
+  'official_walk_min', 'access_station', 'access_station_distance_m', 'access_station_walk_min_est', 'check', 'access',
 ];
 const lines = [header.join(',')];
 const jsonOut = {};
@@ -339,7 +341,7 @@ for (const r of results) {
     r.s.slug, r.s.name, r.status,
     n1, t[0] ? t[0].line : '', d1, within ? m1 : '',
     n2, d2, m2, n3, d3, m3,
-    r.official ?? '', nm ? nm.name : '', nm ? nm.est : '', r.check || '', r.s.access || '',
+    r.official ?? '', nm ? nm.name : '', nm ? Math.round(nm.dist) : '', nm ? nm.est : '', r.check || '', r.s.access || '',
   ].map(csvCell).join(','));
 
   if (within) {
@@ -360,6 +362,7 @@ function detectIndent(text) {
 }
 function updatedSpots() {
   let changed = 0;
+  const resBySlug = new Map(results.map((r) => [r.s.slug, r]));
   const copy = spots.map((s) => {
     if (!isTarget(s)) return s;
     const j = jsonOut[s.slug];
@@ -368,7 +371,15 @@ function updatedSpots() {
       changed++;
       return { ...s, stationEst: j.station, walkMinutesEst: j.walkMinutesEst };
     }
-    // 徒歩圏外・座標なしになった施設に、古い目安が残らないようにする
+    const r = resBySlug.get(s.slug);
+    if (r && (r.status === 'far' || r.status === 'no-station')) {
+      // 徒歩圏外：計算済みの印として null を入れる（古い目安は消す）
+      if (s.walkMinutesEst === null && s.stationEst === undefined) return s;
+      changed++;
+      const { stationEst, ...rest } = s;
+      return { ...rest, walkMinutesEst: null };
+    }
+    // 座標なし：古い目安が残らないようにする（未計算のまま）
     if (s.stationEst != null || s.walkMinutesEst != null) {
       changed++;
       const { stationEst, walkMinutesEst, ...rest } = s;
