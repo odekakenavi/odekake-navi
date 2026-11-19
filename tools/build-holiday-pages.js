@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// おでかけナビ 年末年始・冬休み特集ページ生成ツール（/season/fuyuyasumi/ だけを作る）
-//   node tools/build-holiday-pages.js --out _build   … _build/season/fuyuyasumi/index.html を生成
+// おでかけナビ 年末年始・冬休み特集ページ生成ツール（/event/fuyuyasumi/ だけを作る）
+//   node tools/build-holiday-pages.js --out _build   … _build/event/fuyuyasumi/index.html を生成
 //   （--index index.html / --spots data/spots.json で入力の場所を変えられる）
 // 方針：
 //   ・施設データ(data/spots.json)の holidays に「年末年始」が付いた施設だけから作る。施設は追加しない。
@@ -192,7 +192,7 @@ function buildPage(cfg, spots, SLUGS) {
   const prefs = PREF_ORDER.filter(p => items.some(r => r.spot.region === p));
   const prefList = prefs.join('・');
   const prefText = prefs.length > 3 ? (prefs.some(p => NEARBY.includes(p)) ? '関東・近県' : '関東') : prefList;
-  const URL = `${SITE}season/${cfg.slug}/`;
+  const URL = `${SITE}event/${cfg.slug}/`;
   const title = cfg.title(prefText), desc = cfg.desc(prefText, n);
 
   const card = r => {
@@ -213,7 +213,7 @@ function buildPage(cfg, spots, SLUGS) {
   const ld2 = { '@context': 'https://schema.org', '@type': 'ItemList', name: cfg.ldName, numberOfItems: n, itemListElement: items.map((r, k) => ({ '@type': 'ListItem', position: k + 1, name: r.spot.name, url: SITE + r.slug + '/' })) };
   const pyJson = v => JSON.stringify(v).replace(/":/g, '": ').replace(/,"/g, ', "');
 
-  const nav = `<a class="season-nav-item current" href="${BASE}season/${cfg.slug}/">${cfg.navLabel}</a>`
+  const nav = `<a class="season-nav-item current" href="${BASE}event/${cfg.slug}/">${cfg.navLabel}</a>`
     + cfg.navExtra.map(([l, p]) => `<a class="season-nav-item" href="${BASE}${p}">${l}</a>`).join('')
     + `<a class="season-nav-item" href="${BASE}${cfg.seasonLink[1]}">${cfg.seasonLink[0]}</a>`;
   const chips = [['all', 'すべて'], ...cfg.groupChips.map(c => ['g' + c.g, c.label]), ['parking', '🚗 駐車場あり'], ['baby', '👶 0〜1歳から']]
@@ -273,7 +273,7 @@ ${groupHtml}
 const SLUGS = loadSlugOverrides(INDEX_PATH);
 const spots = JSON.parse(fs.readFileSync(SPOTS_PATH, 'utf8'));
 const r = buildPage(CFG, spots, SLUGS);
-const out = path.join(OUT_DIR, 'season', CFG.slug, 'index.html');
+const out = path.join(OUT_DIR, 'event', CFG.slug, 'index.html');
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, r.html);
 console.log(`${CFG.key}特集ページを生成しました: ${out}（${r.n}件・${r.groups.join(' / ')}）`);
