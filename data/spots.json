@@ -124324,5 +124324,908 @@
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
     "officialUrl": null
+  },
+  {
+    "region": "福島",
+    "name": "四季の里",
+    "slug": "fukushima/fukushima-city/shiki-no-sato",
+    "area": "福島市荒井",
+    "address": "福島県福島市荒井字上鷺西1-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ",
+      "雨"
+    ],
+    "duration": [
+      "半日",
+      "1日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入園無料",
+    "parking": "yes",
+    "access": "JR福島駅東口から福島交通バス（土湯温泉行き）で約30分「四季の里入口」下車徒歩7分（土日祝は徒歩1分）／東北道福島西ICから車約10分",
+    "businessHours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-21:00",
+      "holiday": "09:00-21:00"
+    },
+    "businessHoursNote": "体験施設は9:30〜16:30（るるぶ掲載、公式で要確認）",
+    "closedDays": [
+      "年末年始（12/28〜1/3）",
+      "2月に3日間休業あり"
+    ],
+    "desc": "約8haの広い農村公園。走り回れる芝生の広場、暑い時期に地下水で遊べる「じゃぶちゃぷ池」、高さ9mのザイルクライミング、バッテリーカーなどがある。こけしやガラスの絵付け体験、水車で発電する設備の見学もでき、園内製造のジェラートも食べられる。",
+    "tip": "入園は無料で、体験施設は有料。じゃぶちゃぷ池を使える期間は、公式で確認してから行くと安心。駐車場は248台。",
+    "stayTime": {
+      "minMinutes": 120,
+      "maxMinutes": 300
+    },
+    "parkingDetail": {
+      "priceLabel": "要確認",
+      "priceShort": "要確認",
+      "capacity": "248台",
+      "type": "駐車場",
+      "location": "敷地内",
+      "note": "248台（るるぶ掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://rurubu.jp/andmore/spot/80005080",
+      "sourceLabel": "るるぶ",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "静岡",
+    "name": "岩本山公園",
+    "slug": "shizuoka/fuji-city/iwamotoyama-park",
+    "area": "富士市岩本",
+    "address": "静岡県富士市岩本字花木立1605",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "price": "入園無料",
+    "parking": "yes",
+    "access": "JR富士駅からコミュニティバス「こうめ」（日曜・祝日は運休）で約35分／東名富士ICから車約20分",
+    "businessHours": {
+      "mon": "入園自由",
+      "tue": "入園自由",
+      "wed": "入園自由",
+      "thu": "入園自由",
+      "fri": "入園自由",
+      "sat": "入園自由",
+      "sun": "入園自由",
+      "holiday": "入園自由"
+    },
+    "businessHoursNote": "第1・第2駐車場は8:30〜21:00、第3駐車場は24時間利用可（るるぶ掲載）",
+    "closedDays": [
+      "無休"
+    ],
+    "desc": "標高193mの岩本山の山頂を整備した公園。富士山や駿河湾、伊豆半島、南アルプスまで見渡せる展望台が3か所あり、芝生広場や遊具、バードサンクチュアリもある。2〜3月は梅、3月下旬〜4月上旬は桜の名所。",
+    "tip": "駐車場は約290台あって無料。ふもとからの道は山道なので、バスで行くときは運行日（日曜・祝日は運休）を確認すると安心。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 180
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "約286台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "普通286〜293台（掲載により異なる、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.pref.shizuoka.jp/kurashikankyo/shizenkankyo/sakura/1057743/1058356/1058358.html",
+      "sourceLabel": "静岡県",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "静岡",
+    "name": "竜洋海洋公園",
+    "slug": "shizuoka/iwata/ryuyo-kaiyo-park",
+    "area": "磐田市駒場",
+    "address": "静岡県磐田市駒場6866-27",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日",
+      "1日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入園無料（スポーツ施設・プールは別途有料）",
+    "parking": "yes",
+    "access": "東名高速浜松ICから国道1号・浜松バイパス経由で車約25分／JR磐田駅から無料シャトルバス約30分（土日のみ運行）",
+    "businessHours": {
+      "mon": "常時開園",
+      "tue": "常時開園",
+      "wed": "常時開園",
+      "thu": "常時開園",
+      "fri": "常時開園",
+      "sat": "常時開園",
+      "sun": "常時開園",
+      "holiday": "常時開園"
+    },
+    "businessHoursNote": "スポーツ施設により異なる",
+    "closedDays": [
+      "無休（スポーツ施設により異なる）"
+    ],
+    "desc": "遠州灘に面した公園。小高い丘「竜洋富士」を中心に、丸太やネットを使った木製アスレチックや、丘の頂上から一気にすべるローラーすべり台がある。緩やかなすべり台やブランコ、大きな砂場のある「幼児広場」もあり、夏は児童プールや流れるプールも開く。",
+    "tip": "幼児広場があるので、小さな子連れでも遊びやすい。プールは夏季限定で、開設期間と料金は公式で確認すると安心。駐車場は無料で約320台。",
+    "stayTime": {
+      "minMinutes": 90,
+      "maxMinutes": 240
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "320台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "320台（るるぶ・静岡新聞アットエス掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://rurubu.jp/andmore/spot/80125762",
+      "sourceLabel": "るるぶ",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "下東公園（ライオン公園）",
+    "slug": "saitama/niiza/shimohigashi-park",
+    "area": "新座市東北",
+    "address": "埼玉県新座市東北2-2-9",
+    "genre": "公園",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "無料",
+    "parking": "ask",
+    "access": "東武東上線志木駅から徒歩約11分",
+    "businessHours": {
+      "mon": "入園自由",
+      "tue": "入園自由",
+      "wed": "入園自由",
+      "thu": "入園自由",
+      "fri": "入園自由",
+      "sat": "入園自由",
+      "sun": "入園自由",
+      "holiday": "入園自由"
+    },
+    "desc": "住宅街にある、四方を道路に囲まれた広めの公園。地域の子どもたちには「ライオン公園」と呼ばれて親しまれている。",
+    "tip": "ベビーカーで入れて、食事の持ち込みもできる（いこーよ掲載）。遊具の種類や設備は現地で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "静岡",
+    "name": "蓮華寺池公園",
+    "slug": "shizuoka/fujieda/renge-ji-ike-park",
+    "area": "藤枝市若王子",
+    "address": "静岡県藤枝市若王子474-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "price": "無料",
+    "parking": "yes",
+    "access": "JR藤枝駅から徒歩約15分",
+    "businessHours": {
+      "mon": "24時間",
+      "tue": "24時間",
+      "wed": "24時間",
+      "thu": "24時間",
+      "fri": "24時間",
+      "sat": "24時間",
+      "sun": "24時間",
+      "holiday": "24時間"
+    },
+    "officialUrl": "https://www.city.fujieda.shizuoka.jp/kanko/spot/1465453183505.html",
+    "desc": "藤枝市の中心部にある、池を中心にした広い公園。春は桜と藤、夏は蓮、秋は紅葉と、季節の花や木が楽しめる。公園は24時間開放されている。",
+    "tip": "無料の駐車場は約500台。4〜5月の藤まつり期間中は駐車場が有料になる（2026年は普通車500円）。例年、冬は無料のイルミネーションがある（2025年は17:00〜20:30、2月末まで）。隣接する藤枝市郷土博物館・文学館とあわせて回れる。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 150
+    },
+    "parkingDetail": {
+      "priceLabel": "無料（藤まつり期間中は有料）",
+      "priceShort": "無料",
+      "capacity": "約500台",
+      "type": "無料駐車場",
+      "location": "公園内",
+      "note": "第1・第2駐車場は6:30〜21:00。藤まつり期間中は普通車500円（静岡新聞アットエス掲載）",
+      "available": true,
+      "sourceUrl": "https://www.at-s.com/event/article/120613",
+      "sourceLabel": "静岡新聞アットエス",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "静岡",
+    "name": "明治なるほどファクトリー東海",
+    "slug": "shizuoka/fujieda/meiji-naruhodo-factory-tokai",
+    "area": "藤枝市小石川町",
+    "address": "静岡県藤枝市小石川町4-22-1 明治東海工場内",
+    "genre": "工場見学",
+    "ages": [
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "見学無料。要予約（完全予約制）。4歳未満は入場不可",
+    "parking": "yes",
+    "access": "JR西焼津駅から徒歩約25分（車で約10分）／東名焼津ICから車約15分",
+    "businessHours": {
+      "mon": "09:00",
+      "tue": "09:00",
+      "wed": "09:00",
+      "thu": "09:00",
+      "fri": "09:00",
+      "sat": "定休日",
+      "sun": "定休日",
+      "holiday": "定休日"
+    },
+    "businessHoursNote": "見学は月〜金の1日3回（9:00〜／11:00〜／13:30〜、長期休暇中は14:00開始）。所要は約70〜90分",
+    "closedDays": [
+      "土曜日・日曜日・祝日",
+      "工場休業日",
+      "年末年始"
+    ],
+    "officialUrl": "https://www.meiji.co.jp/learned/factory/toukai/visit.html",
+    "desc": "明治の東海工場に併設された見学施設。チョコレートやグミの製造を、映像やクイズ、エアシャワー体験などを通して学べる。製品の試食もある。",
+    "tip": "予約は2〜10名でのWEB予約のみで、1名では参加できない。予約は見学日の28日前の午前8時から受け付ける。見学は4歳以上で、中学生以下は保護者の同伴が必要。",
+    "stayTime": {
+      "minMinutes": 70,
+      "maxMinutes": 90
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "15台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "15台（るるぶ掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://rurubu.jp/andmore/spot/80089415",
+      "sourceLabel": "るるぶ",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "静岡",
+    "name": "ディスカバリーパーク焼津 天文科学館（ときめき遊星館）",
+    "slug": "shizuoka/yaizu/discovery-park",
+    "area": "焼津市田尻",
+    "address": "静岡県焼津市田尻2968-1",
+    "genre": "博物館・科学館",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "展示・体験室：大人（16歳以上）300円／子ども（4歳以上16歳未満）100円。プラネタリウム：大人600円／子ども200円。3歳以下は無料",
+    "parking": "yes",
+    "access": "JR焼津駅からしずてつジャストライン（一色和田浜線）で約25分「横須賀ディスカバリーパーク前」下車／東名焼津IC・吉田ICから車約25分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-17:00",
+      "wed": "09:00-17:00",
+      "thu": "09:00-17:00",
+      "fri": "09:00-17:00",
+      "sat": "10:00-19:00",
+      "sun": "10:00-19:00",
+      "holiday": "10:00-19:00"
+    },
+    "closedDays": [
+      "月曜日（祝休日の場合は翌日）",
+      "年末年始"
+    ],
+    "officialUrl": "http://www.discoverypark.jp/",
+    "desc": "焼津の海岸にある天文科学館。静岡県最大級の口径80cmの天体望遠鏡や、2024年3月にリニューアルしたプラネタリウム、季節ごとにテーマが変わる体験型の科学展示がある。屋上や隣接する田尻浜海岸から、富士山や伊豆半島、駿河湾を見渡せる。",
+    "tip": "駐車場は無料で約280台。松林に囲まれた自然公園が周辺にあり、散策もできる。",
+    "stayTime": {
+      "minMinutes": 90,
+      "maxMinutes": 180
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "280台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "280台（静岡新聞アットエス掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.at-s.com/spot/article/138428",
+      "sourceLabel": "静岡新聞アットエス",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "静岡",
+    "name": "ターントクルこども館",
+    "slug": "shizuoka/yaizu/turntokuru",
+    "area": "焼津市栄町",
+    "address": "静岡県焼津市栄町5丁目1-1",
+    "genre": "室内遊び場",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "1階「やいづえほんと」は無料。2・3階の焼津おもちゃ美術館は有料（料金は要確認）",
+    "parking": "ask",
+    "access": "要確認",
+    "desc": "2021年開館の複合型子育て支援施設。1階の「やいづえほんと」は無料で、約7,000冊の絵本を読める。2・3階の焼津おもちゃ美術館は、地元の木材を使った木のおもちゃの遊び場で、「ヒノキのたまごプール」などがある。1階にはカフェも併設されている。",
+    "tip": "営業時間や休館日、おもちゃ美術館の料金は、公式で確認してから行くと安心。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 180
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "福島",
+    "name": "鶴ヶ城公園",
+    "slug": "fukushima/aizuwakamatsu/tsuruga-castle-park",
+    "area": "会津若松市追手町",
+    "address": "福島県会津若松市追手町1-1",
+    "genre": "城・歴史",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "price": "公園は入場無料。天守閣は大人410円・子ども150円、茶室麟閣は210円、共通券520円",
+    "parking": "yes",
+    "access": "JR会津若松駅からまちなか周遊バスで「鶴ヶ城入口」下車徒歩約5分／磐越道会津若松ICから車約15分",
+    "businessHours": {
+      "mon": "24時間",
+      "tue": "24時間",
+      "wed": "24時間",
+      "thu": "24時間",
+      "fri": "24時間",
+      "sat": "24時間",
+      "sun": "24時間",
+      "holiday": "24時間"
+    },
+    "businessHoursNote": "天守閣・茶室麟閣は8:30〜17:00（最終入場16:30）",
+    "closedDays": [
+      "無休"
+    ],
+    "desc": "会津若松のシンボル、鶴ヶ城（若松城）のある公園。公園内は無料で散策でき、天守閣は有料で入れる。",
+    "tip": "駐車場は364台で有料（普通車200円／60分、以降100円／60分）。天守閣の階段が多いので、小さな子連れはベビーカーを置く場所を事前に確認すると安心。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 180
+    },
+    "parkingDetail": {
+      "priceLabel": "普通車200円／60分、以降100円／60分",
+      "priceShort": "200円／60分",
+      "capacity": "364台",
+      "type": "有料駐車場",
+      "location": "公園周辺",
+      "note": "364台（ウォーカープラス掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.walkerplus.com/spot/ar0207s46994/map.html",
+      "sourceLabel": "ウォーカープラス",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "福島",
+    "name": "こどもの秘密基地 木育の森 もくれん",
+    "slug": "fukushima/aizuwakamatsu/mokuren",
+    "area": "会津若松市大町",
+    "address": "福島県会津若松市大町2-9-9",
+    "genre": "室内遊び場",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "JR会津若松駅から車で約2分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-14:00",
+      "wed": "09:00-14:00",
+      "thu": "09:00-14:00",
+      "fri": "09:00-14:00",
+      "sat": "09:00-14:00",
+      "sun": "09:00-14:00",
+      "holiday": "09:00-14:00"
+    },
+    "businessHoursNote": "利用時間は60分（会員は90分）。予約不要。いこーよ掲載の時間で、別の掲載では9:00〜18:00の記載もあるため公式で要確認。イベントなどで臨時休館あり",
+    "closedDays": [
+      "月曜日",
+      "年末年始",
+      "創立記念日（7/18〜20）"
+    ],
+    "desc": "会津若松市の子育て支援センターとして、2025年に移転オープンした屋内遊び場。乳幼児期の五感を刺激する「木質」のおもちゃを中心にそろえている。0歳から小学生まで遊べる。",
+    "tip": "最新の開館状況は、施設のInstagramか電話（0242-23-7178）で確認できる。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "長野",
+    "name": "平成記念かざこし子どもの森公園",
+    "slug": "nagano/iida/kazakoshi-kodomo-no-mori",
+    "area": "飯田市丸山町",
+    "address": "長野県飯田市丸山町4-5500-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日",
+      "1日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入場無料",
+    "parking": "yes",
+    "access": "JR飯田駅から徒歩約25分／中央道飯田ICから車約15分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "08:30-18:00",
+      "wed": "08:30-18:00",
+      "thu": "08:30-18:00",
+      "fri": "08:30-18:00",
+      "sat": "08:30-18:00",
+      "sun": "08:30-18:00",
+      "holiday": "08:30-18:00"
+    },
+    "businessHoursNote": "施設の開館時間は9:00〜17:00",
+    "closedDays": [
+      "月曜日（祝日の場合は翌日）",
+      "年末年始"
+    ],
+    "desc": "南アルプスを望む「原体験の森」がコンセプトの体験型公園。トンガリ屋根が目印の大型複合遊具「とんがりとりで」には30種類以上の遊びがあり、幼児向けの遊具もある。噴水のある「どんど水遊び広場」や、料理・木工・陶芸ができる工房もある。",
+    "tip": "駐車場は無料で約205台。水遊び広場は夏向けなので、使える期間は公式で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 120,
+      "maxMinutes": 300
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "205台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "205台（ウォーカープラス掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.walkerplus.com/spot/ar0420s64729/map.html",
+      "sourceLabel": "ウォーカープラス",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "長野",
+    "name": "飯田市立動物園",
+    "slug": "nagano/iida/iida-zoo",
+    "area": "飯田市扇町",
+    "address": "長野県飯田市扇町33",
+    "genre": "動物園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入園無料。豆汽車は大人100円・小人50円、電動遊具は50円",
+    "parking": "ask",
+    "access": "JR飯田駅から徒歩約15分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-16:30",
+      "wed": "09:00-16:30",
+      "thu": "09:00-16:30",
+      "fri": "09:00-16:30",
+      "sat": "09:00-16:30",
+      "sun": "09:00-16:30",
+      "holiday": "09:00-16:30"
+    },
+    "closedDays": [
+      "月曜日（祝日の場合は翌日）",
+      "祝日の翌日",
+      "年末年始"
+    ],
+    "desc": "小動物を中心にした動物園。南アルプスを背景に飼育されるカモシカや、日本ではここだけのカンムリサケビドリを見られる。ミニ列車（豆汽車）などの遊具もある。",
+    "tip": "入園無料で、駅から歩いて行ける。おむつ交換台あり。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 150
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "長野",
+    "name": "大王わさび農場",
+    "slug": "nagano/azumino/daio-wasabi-farm",
+    "area": "安曇野市穂高",
+    "address": "長野県安曇野市穂高3640",
+    "genre": "牧場",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入場無料（駐車場も無料）。わさびソフトは390円",
+    "parking": "yes",
+    "access": "JR大糸線穂高駅からタクシー約10分（徒歩約30分）",
+    "businessHours": {
+      "mon": "08:00-17:00",
+      "tue": "08:00-17:00",
+      "wed": "08:00-17:00",
+      "thu": "08:00-17:00",
+      "fri": "08:00-17:00",
+      "sat": "08:00-17:00",
+      "sun": "08:00-17:00",
+      "holiday": "08:00-17:00"
+    },
+    "businessHoursNote": "12〜2月は9:00〜16:00",
+    "closedDays": [
+      "無休"
+    ],
+    "desc": "日本一広いとされるわさび農場。約15haの敷地を、湧水の流れるわさび田や水車小屋を眺めながら散策できる。わさびソフトやわさびコロッケなどの食べ歩きもできる。",
+    "tip": "園内は水辺が多いので、小さな子連れは手をつないで歩くと安心。冬は営業時間が短くなる。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 120
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "長野",
+    "name": "国営アルプスあづみの公園 堀金・穂高地区",
+    "slug": "nagano/azumino/alps-azumino-horigane",
+    "area": "安曇野市堀金烏川",
+    "address": "長野県安曇野市堀金烏川33-4",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ",
+      "雨"
+    ],
+    "duration": [
+      "半日",
+      "1日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ],
+    "price": "有料（入園料は公式で要確認。過去の国の資料では大人410円・小人80円・シルバー210円）",
+    "parking": "yes",
+    "access": "長野道安曇野ICから車約20分／JR穂高駅からあづみ野周遊バスで約13分（運行日は要確認）",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:30-16:00",
+      "wed": "09:30-16:00",
+      "thu": "09:30-16:00",
+      "fri": "09:30-16:00",
+      "sat": "09:30-16:00",
+      "sun": "09:30-16:00",
+      "holiday": "09:30-16:00"
+    },
+    "businessHoursNote": "11〜2月は9:30〜16:00、3〜10月は9:30〜17:00。イルミネーション期間中は21:00まで",
+    "closedDays": [
+      "月曜日（祝日の場合は翌日）",
+      "年末年始",
+      "4/27〜5/6・7/20〜8/31は無休"
+    ],
+    "officialUrl": "http://www.azumino.go.jp/",
+    "desc": "北アルプスを望む国営公園の堀金・穂高地区。学校風の「テーマ展示館」には、川を輪切りにしたような大水槽のある理科教室、クラフト体験ができる芸術教室、そば打ち体験ができる社会化教室などがあり、雨の日も遊べる。",
+    "tip": "広い公園なので、ベビーカーの貸出や授乳室の有無は公式で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 120,
+      "maxMinutes": 300
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "静岡",
+    "name": "みつかわ夢の丘公園",
+    "slug": "shizuoka/fukuroi/mitsukawa-yume-no-oka",
+    "area": "袋井市大谷",
+    "address": "静岡県袋井市大谷1149-131",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "無料",
+    "parking": "yes",
+    "access": "東名高速袋井ICから車で約15分",
+    "businessHours": {
+      "mon": "終日利用可",
+      "tue": "終日利用可",
+      "wed": "終日利用可",
+      "thu": "終日利用可",
+      "fri": "終日利用可",
+      "sat": "終日利用可",
+      "sun": "終日利用可",
+      "holiday": "終日利用可"
+    },
+    "desc": "2018年3月にオープンした公園。「わんぱく広場」「健康広場」「芝ソリエリア」「多目的広場」の4エリアに分かれ、わんぱく広場には6〜12歳向けの大型アスレチックがある。全面芝生で、約50mの芝すべりも楽しめる。",
+    "tip": "駐車場は無料で127台（おもいやり駐車場16台）。小さな子は大型アスレチックで遊びにくいので、芝生で遊ぶと安心。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 180
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "127台",
+      "type": "無料駐車場",
+      "location": "公園内",
+      "note": "第1駐車場127台・おもいやり駐車場16台（なっぷ掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.nap-camp.com/mag/88574",
+      "sourceLabel": "なっぷ",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "静岡",
+    "name": "原野谷川親水公園",
+    "slug": "shizuoka/fukuroi/harunoyagawa-park",
+    "area": "袋井市愛野",
+    "address": "静岡県袋井市愛野3164-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "無料",
+    "parking": "yes",
+    "access": "JR袋井駅から徒歩約15分／東名高速袋井ICから車約15分",
+    "businessHours": {
+      "mon": "終日利用可",
+      "tue": "終日利用可",
+      "wed": "終日利用可",
+      "thu": "終日利用可",
+      "fri": "終日利用可",
+      "sat": "終日利用可",
+      "sun": "終日利用可",
+      "holiday": "終日利用可"
+    },
+    "closedDays": [
+      "無休"
+    ],
+    "desc": "原野谷川沿いの水辺の公園。湿性植物生態園、芝生の広場、バーベキューサイト、遊具エリア「チビッコ王国」がある。人気は「冒険の池」で、ロープを使ってイカダで対岸へ渡れる。",
+    "tip": "近くを新幹線が走るので、電車好きの子にも向く。バーベキューサイトは予約不要で、空いていれば使える（なっぷ掲載）。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 150
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
   }
 ]
