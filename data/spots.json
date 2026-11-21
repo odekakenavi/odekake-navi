@@ -122647,7 +122647,7 @@
       "sun": "10:00-17:45",
       "holiday": "10:00-17:45"
     },
-    "businessHoursNote": "宇宙劇場は金曜のみ19:45まで、展望ロビーは20:00まで（るるぶ掲載）",
+    "businessHoursNote": "宇宙劇場は月〜木が16:15まで（最終入館15:30）、金曜が19:45まで（最終入館19:00）、土日祝が17:45まで。展示ゾーンは17:45まで、展望ロビーは20:00まで（ウォーカープラス・トラベルコ掲載、公式で要確認）",
     "closedDays": [
       "月曜日（祝日の場合は翌日）",
       "機器の保守点検日"
@@ -122660,7 +122660,29 @@
       "maxMinutes": 180
     },
     "strollerOk": "ask",
-    "verifiedAt": "2026年11月21日"
+    "verifiedAt": "2026年11月21日",
+    "parkingDetail": {
+      "priceLabel": "専用駐車場なし",
+      "priceShort": "なし",
+      "capacity": null,
+      "type": "なし",
+      "location": "近隣",
+      "note": "専用の駐車場はない（ウォーカープラス・るるぶ掲載）。近隣の駐車場を利用",
+      "available": false,
+      "sourceUrl": "https://summer.walkerplus.com/odekake/detail/ar0207s300106/map.html",
+      "sourceLabel": "ウォーカープラス",
+      "checkedAt": "2026-11-21"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "掲載サイト情報",
+      "note": "ウォーカープラス掲載（授乳室◯・おむつ交換台◯）。公式で要確認",
+      "status": "ok",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://summer.walkerplus.com/odekake/detail/ar0207s300106/data.html"
+    },
+    "baby": "授乳室・おむつ交換台あり（掲載サイト情報）"
   },
   {
     "region": "福島",
@@ -122699,7 +122721,7 @@
     ],
     "officialUrl": null,
     "desc": "開成山公園の近くにある育児の総合拠点。1階プレイルームの大型複合遊具やボールプール、3階テラスの三輪車やフラフープ、4階のボルダリングなどで遊べる。約1万冊の子育て図書コーナーもある。",
-    "tip": "天気がよければ屋外のニコニコひろばの芝生でも遊べる。お弁当などの飲食は1階の談話コーナーや3階休憩コーナーで。対象年齢や利用ルールは公式で確認してから行くと安心。",
+    "tip": "天気がよければ屋外のニコニコひろばの芝生でも遊べる。お弁当などの飲食は1階の談話コーナーや3階休憩コーナーで。対象年齢や利用ルールは公式で確認してから行くと安心。 1階のファミリーひろばは就学前のお子さんと保護者が対象。2階の一時預かり（4か月〜就学前、4時間30分まで500円、月3回まで）は事前の利用登録と申請が必要（郡山市の案内、令和5年度版のため最新は公式で要確認）。",
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 180
@@ -122717,7 +122739,17 @@
       "sourceLabel": "るるぶ",
       "checkedAt": "2026-11-21"
     },
-    "verifiedAt": "2026年11月21日"
+    "verifiedAt": "2026年11月21日",
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "basis": "自治体公式・設備情報不足",
+      "status": "ask",
+      "note": "郡山市の案内（令和5年度版）に授乳室・おむつ替えの記載は確認できなかった。公式で要確認",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.city.koriyama.lg.jp/uploaded/attachment/61362.pdf"
+    },
+    "baby": "授乳室・おむつ替え・ベビーカーの情報は未確認（公式で要確認）"
   },
   {
     "region": "福島",
@@ -122925,7 +122957,19 @@
       "minMinutes": 90,
       "maxMinutes": 240
     },
-    "strollerOk": "ask"
+    "strollerOk": "ask",
+    "parkingDetail": {
+      "priceLabel": "専用駐車場なし",
+      "priceShort": "なし",
+      "capacity": null,
+      "type": "近隣の有料駐車場",
+      "location": "近隣",
+      "note": "専用の駐車場はない（るるぶ・ウォーカープラス掲載）。市が無料駐車サービス券を進呈する取り組みを2025年に発表しており、現在の内容は公式で要確認",
+      "available": false,
+      "sourceUrl": "https://www.city.fukushima.fukushima.jp/material/files/group/1/press07050783.pdf",
+      "sourceLabel": "福島市の発表（2025年）",
+      "checkedAt": "2026-11-21"
+    }
   },
   {
     "region": "福島",
@@ -122972,7 +123016,7 @@
     "officialUrl": "https://www.pref.fukushima.lg.jp/site/infra/azuma.html",
     "verifiedAt": "2026年11月21日",
     "desc": "約100haの広大な運動公園。アスレチックのある「トリムの森」や変わり種自転車が楽しめる「サイクルスポーツ広場」があり、春は桜、秋は約500mのイチョウ並木が楽しめる。無料駐車場が敷地内に15か所ある。",
-    "tip": "あづま総合体育館の軽運動室は、小学生以下と保護者が無料で使える（トランポリンやボルダリングボードなど。定員20名で札を配布、未就学児は大人の付き添いが必須）。利用時間は県公式で確認すると安心。",
+    "tip": "あづま総合体育館の軽運動室は、小学生以下と保護者が無料で使える（トランポリンやボルダリングボードなど。定員20名で札を配布、未就学児は大人の付き添いが必須）。利用時間は県公式で確認すると安心。 トリムの森には子育て家庭向けの優先駐車スペース「ファミたん」（2区画）がある。軽運動室は9:00〜21:00（土日祝と春夏冬休み期間は17:00まで入れ替え制）で、火曜は休み。",
     "stayTime": {
       "minMinutes": 90,
       "maxMinutes": 300
@@ -122981,15 +123025,25 @@
     "parkingDetail": {
       "priceLabel": "無料",
       "priceShort": "無料",
-      "capacity": "15か所",
+      "capacity": "約2,618台",
       "type": "無料駐車場",
-      "location": "敷地内",
-      "note": "敷地内に無料駐車場15か所（ナップキャンプ掲載、公式で要確認）",
+      "location": "敷地内（15か所）",
+      "note": "県の案内で駐車場は合計2,618台。大駐車場は1,014台（無料、ウェザーニュース掲載）。トリムの森には、妊婦や子育て家庭向けの優先駐車スペース「ファミたん」が2区画ある（福島県、2026年1月現在）",
       "available": true,
-      "sourceUrl": "https://www.nap-camp.com/mag/?p=88793",
-      "sourceLabel": "ナップキャンプ",
+      "sourceUrl": "https://www.pref.fukushima.lg.jp/site/infra/azuma.html",
+      "sourceLabel": "福島県",
       "checkedAt": "2026-11-21"
-    }
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "basis": "自治体公式・設備情報不足",
+      "note": "福島県の案内でトイレの記載はあるが、授乳室・おむつ替えの有無は確認できていない",
+      "status": "ask",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.pref.fukushima.lg.jp/site/infra/azuma.html"
+    },
+    "baby": "授乳室・おむつ替えは未確認（公式で要確認）"
   },
   {
     "region": "福島",
@@ -123012,7 +123066,7 @@
       "半日"
     ],
     "price": "1人300円（1歳未満・誕生日の方・障がい者手帳をお持ちの方は無料）。繁忙期以外の平日は600円で終日出入り自由のフリーパスあり",
-    "parking": "ask",
+    "parking": "yes",
     "access": "JR常磐線泉駅から新常磐交通バスで約15分「小名浜案内所」下車徒歩7分",
     "businessHours": {
       "mon": "10:00-17:40",
@@ -123035,8 +123089,30 @@
       "maxMinutes": 100
     },
     "verifiedAt": "2026年11月21日",
-    "strollerOk": "ask",
-    "officialUrl": null
+    "strollerOk": "ok",
+    "officialUrl": null,
+    "parkingDetail": {
+      "priceLabel": "道の駅登録の発表（2025年）",
+      "priceShort": "要確認",
+      "capacity": null,
+      "type": "駐車場",
+      "location": "敷地内",
+      "note": "道の駅の駐車場を使う。24時間利用可で、妊婦向けの屋根付き駐車場を新設予定との発表あり（2025年）",
+      "available": true,
+      "sourceUrl": "https://zaikei.co.jp/releases/2792243/",
+      "sourceLabel": "道の駅登録の発表（2025年）",
+      "checkedAt": "2026-11-21"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "掲載サイト情報",
+      "note": "いこーよ掲載（授乳室あり・おむつ交換台あり・ベビーカーOK）。道の駅の情報ではベビーベッドもある。公式で要確認",
+      "status": "ok",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://iko-yo.net/facilities/6644/coupon"
+    },
+    "baby": "授乳室・おむつ交換台あり（掲載サイト情報）"
   },
   {
     "region": "福島",
@@ -123214,7 +123290,17 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "basis": "掲載サイト情報",
+      "note": "ウォーカープラス掲載で授乳室あり。託児室（生後6か月〜3歳未満、1時間600円）は浜松市の広報で確認",
+      "status": "partial",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.walkerplus.com/spot/ar0622s455696/data.html"
+    },
+    "baby": "授乳室あり（掲載サイト情報）／おむつ替えは未確認"
   },
   {
     "region": "静岡",
@@ -123255,7 +123341,7 @@
       "sun": "08:30-17:00",
       "holiday": "08:30-17:00"
     },
-    "businessHoursNote": "7・8月は8:30〜18:00",
+    "businessHoursNote": "4〜5月または7・8月は延長の掲載あり（掲載により異なる）。花の美術館は火曜13:00閉館",
     "closedDays": [
       "年末年始（12/29〜1/3）",
       "花の美術館は毎週火曜は午後閉園"
@@ -123268,7 +123354,29 @@
       "maxMinutes": 300
     },
     "verifiedAt": "2026年11月21日",
-    "strollerOk": "ask"
+    "strollerOk": "ask",
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "約1,800台",
+      "type": "無料駐車場",
+      "location": "公園内",
+      "note": "約1,800台（北約390台・西約840台・南約210台・その他約360台）。静岡新聞アットエス・ウォーカープラス掲載、公式で要確認",
+      "available": true,
+      "sourceUrl": "https://www.at-s.com/spot/article/138517",
+      "sourceLabel": "静岡新聞アットエス",
+      "checkedAt": "2026-11-21"
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "basis": "二次情報のみ",
+      "note": "多目的トイレと水遊び場（期間限定）の記載はあるが、授乳室・おむつ替え・ベビーカー貸出の有無は確認できていない",
+      "status": "ask",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.at-s.com/spot/article/138517"
+    },
+    "baby": "多目的トイレあり／授乳室・おむつ替えは未確認（公式で要確認）"
   },
   {
     "region": "静岡",
@@ -123379,8 +123487,8 @@
     "region": "長野",
     "name": "ながのこども館 ながノビ！",
     "slug": "nagano/nagano-city/naganobi",
-    "area": "長野市上松（城山公園内）",
-    "address": "長野県長野市上松（城山公園内）",
+    "area": "長野市上松",
+    "address": "長野県長野市上松2-4-5",
     "genre": "室内遊び場",
     "ages": [
       "0-1歳",
@@ -123421,20 +123529,32 @@
       "maxMinutes": 180
     },
     "parkingDetail": {
-      "priceLabel": "城山公園駐車場で2時間無料の割引認証",
-      "priceShort": "2時間無料",
+      "priceLabel": "長野市「おでかけスポット」",
+      "priceShort": "要確認",
       "capacity": null,
-      "type": "提携駐車場",
-      "location": "城山公園",
-      "note": "年末年始・GW・お盆などの混雑期は割引認証の対象外（長野市の案内）",
+      "type": "駐車場",
+      "location": "敷地内",
+      "note": "城山公園駐車場を使う。割引は長野市の案内による",
       "available": true,
-      "sourceUrl": "https://www.city.nagano.nagano.jp/n202500/contents/p006195.html",
-      "sourceLabel": "長野市",
+      "sourceUrl": "https://www.city.nagano.nagano.jp/documents/32/16_odekakesupotto1.pdf",
+      "sourceLabel": "長野市「おでかけスポット」",
       "checkedAt": "2026-11-21"
     },
     "verifiedAt": "2026年11月21日",
-    "strollerOk": "ask",
-    "officialUrl": null
+    "strollerOk": "ok",
+    "officialUrl": null,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "自治体公式",
+      "note": "長野市の案内で授乳室・親子トイレ・おむつ交換スペースを確認",
+      "status": "ok",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.city.nagano.nagano.jp/documents/32/16_odekakesupotto1.pdf"
+    },
+    "baby": "授乳室・おむつ交換スペース・親子トイレあり（長野市の案内）",
+    "kidsToilet": "yes",
+    "kidsToiletNote": "親子トイレあり（長野市の案内）"
   },
   {
     "region": "長野",
@@ -123483,7 +123603,29 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "parkingDetail": {
+      "priceLabel": "長野市「おでかけスポット」",
+      "priceShort": "無料",
+      "capacity": null,
+      "type": "駐車場",
+      "location": "敷地内",
+      "note": "長野市の案内で駐車場は無料。台数は未確認",
+      "available": true,
+      "sourceUrl": "https://www.city.nagano.nagano.jp/documents/32/17_odekakesupotto2.pdf",
+      "sourceLabel": "長野市「おでかけスポット」",
+      "checkedAt": "2026-11-21"
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "basis": "自治体公式",
+      "note": "長野市の案内でおむつ交換スペースを確認。授乳室は確認できていない",
+      "status": "partial",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.city.nagano.nagano.jp/documents/32/17_odekakesupotto2.pdf"
+    },
+    "baby": "おむつ交換スペースあり（長野市の案内）／授乳室は未確認"
   },
   {
     "region": "長野",
@@ -123532,7 +123674,19 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "parkingDetail": {
+      "priceLabel": "長野市「おでかけスポット」",
+      "priceShort": "無料",
+      "capacity": null,
+      "type": "駐車場",
+      "location": "敷地内",
+      "note": "公園内にあり、公園の駐車場は無料",
+      "available": true,
+      "sourceUrl": "https://www.city.nagano.nagano.jp/documents/32/17_odekakesupotto2.pdf",
+      "sourceLabel": "長野市「おでかけスポット」",
+      "checkedAt": "2026-11-21"
+    }
   },
   {
     "region": "長野",
@@ -124019,7 +124173,7 @@
       "半日"
     ],
     "price": "無料",
-    "parking": "ask",
+    "parking": "yes",
     "access": "JR武蔵境駅・三鷹駅、京王線調布駅からバスで15〜20分「天文台前」または「天文台裏」下車",
     "businessHours": {
       "mon": "10:00-17:00",
@@ -124044,7 +124198,29 @@
       "maxMinutes": 120
     },
     "verifiedAt": "2026年11月21日",
-    "strollerOk": "ask"
+    "strollerOk": "ask",
+    "parkingDetail": {
+      "priceLabel": "隣接する国立天文台の有料駐車場を利用（3時間500円、以降1時間ごと200円）",
+      "priceShort": "3時間500円",
+      "capacity": null,
+      "type": "駐車場",
+      "location": "敷地内",
+      "note": "専用駐車場はなく、国立天文台の有料駐車場を使う（アソビュー掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.asoview.com/note/8110/",
+      "sourceLabel": "アソビュー",
+      "checkedAt": "2026-11-21"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "basis": "自治体公式",
+      "note": "三鷹市のリーフレットの館内図に授乳室が示されている。おむつ替えは確認できていない",
+      "status": "partial",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.city.mitaka.lg.jp/ehon/assets/en_leaf_2020.pdf"
+    },
+    "baby": "授乳室あり（三鷹市のリーフレット）／おむつ替えは未確認"
   },
   {
     "region": "東京",
@@ -124152,7 +124328,35 @@
       "maxMinutes": 180
     },
     "verifiedAt": "2026年11月21日",
-    "strollerOk": "ask"
+    "strollerOk": "partial",
+    "parkingDetail": {
+      "priceLabel": "専用駐車場なし",
+      "priceShort": "なし",
+      "capacity": null,
+      "type": "なし",
+      "location": "近隣",
+      "note": "専用の駐車場はない（公式）。障害のある方で車での来場を希望する場合は事前に相談",
+      "available": false,
+      "sourceUrl": "https://www.ghibli-museum.jp/info",
+      "sourceLabel": "ジブリ美術館公式",
+      "checkedAt": "2026-11-21"
+    },
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "basis": "二次情報のみ",
+      "note": "授乳室・おむつ替えは確認できていない（ウォーカープラスに授乳室の項目はあるが有無は不明）。公式で要確認",
+      "status": "ask",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://www.walkerplus.com/spot/ar0313s199888/data.html"
+    },
+    "baby": "授乳室・おむつ替えは未確認（公式で要確認）。ベビーカーは館内に入れず置場に置く",
+    "strollerDetail": {
+      "rental": false,
+      "useNote": "ベビーカーはベビーカー置場に置いてから館内へ（抱っこひもがあると便利）。ローソンチケットの案内",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://l-tike.com/ghibli/info.html"
+    }
   },
   {
     "region": "埼玉",
@@ -124175,7 +124379,7 @@
     "duration": [
       "半日"
     ],
-    "price": "要確認（プラネタリウムは入場無料との掲載）",
+    "price": "無料（いこーよ掲載、公式で要確認）",
     "parking": "yes",
     "access": "西武池袋線ひばりヶ丘駅北口から西武バス（志木駅南口行き）で約20分「児童センター前」下車すぐ",
     "businessHours": {
@@ -124195,7 +124399,7 @@
       "年末年始"
     ],
     "desc": "2階建ての児童館。広いプレイルームや、おえかきコーナー、工作スペース、変身コーナーなどがあり、天気に関係なく遊べる。プラネタリウムもある。",
-    "tip": "プラネタリウムは土日の11:00と14:00、学校の長期休みの平日15:00の投影で、各回定員97名の先着順（ウォーカープラス掲載）。駐車場は約29台。",
+    "tip": "プラネタリウムは土日の11:00と14:00、学校の長期休みの平日15:00の投影で、各回定員97名の先着順（ウォーカープラス掲載）。駐車場は約29台。 口コミでは、2階は幼児専用で、食事の持ち込みもできるとのこと（公式の記載ではないので要確認）。",
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 150
@@ -124214,7 +124418,17 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "basis": "二次情報のみ",
+      "note": "授乳室・おむつ替えは確認できていない（新座市の案内・いこーよに記載なし）",
+      "status": "ask",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://iko-yo.net/facilities/3962/coupon"
+    },
+    "baby": "授乳室・おむつ替えは未確認（公式で要確認）"
   },
   {
     "region": "東京",
@@ -124764,9 +124978,9 @@
     "duration": [
       "半日"
     ],
-    "price": "1階「やいづえほんと」は無料。2・3階の焼津おもちゃ美術館は有料（料金は要確認）",
-    "parking": "ask",
-    "access": "要確認",
+    "price": "1階「やいづえほんと」は無料。2・3階の焼津おもちゃ美術館は一般大人1,000円／小学生500円／未就学児（1歳以上）500円／1歳未満無料（ナップキャンプ掲載、公式で要確認）",
+    "parking": "yes",
+    "access": "JR焼津駅南口から徒歩約8分／東名焼津ICから車約10分",
     "desc": "2021年開館の複合型子育て支援施設。1階の「やいづえほんと」は無料で、約7,000冊の絵本を読める。2・3階の焼津おもちゃ美術館は、地元の木材を使った木のおもちゃの遊び場で、「ヒノキのたまごプール」などがある。1階にはカフェも併設されている。",
     "tip": "営業時間や休館日、おもちゃ美術館の料金は、公式で確認してから行くと安心。",
     "stayTime": {
@@ -124775,7 +124989,20 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "parkingDetail": {
+      "priceLabel": "1日1回2時間無料、以降30分ごとに50円",
+      "priceShort": "2時間無料",
+      "capacity": "30台",
+      "type": "有料駐車場（一部無料）",
+      "location": "敷地内",
+      "note": "こども館駐車場30台。利用者は1日1回2時間無料、以降30分ごとに50円（ナップキャンプ掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.nap-camp.com/mag/79319",
+      "sourceLabel": "ナップキャンプ",
+      "checkedAt": "2026-11-21"
+    },
+    "businessHoursNote": "やいづえほんと9:00〜19:00、焼津おもちゃ美術館10:00〜16:00（ナップキャンプ掲載、公式で要確認）"
   },
   {
     "region": "福島",
@@ -124866,15 +125093,15 @@
     "access": "JR会津若松駅から車で約2分",
     "businessHours": {
       "mon": "定休日",
-      "tue": "09:00-14:00",
-      "wed": "09:00-14:00",
-      "thu": "09:00-14:00",
-      "fri": "09:00-14:00",
-      "sat": "09:00-14:00",
-      "sun": "09:00-14:00",
-      "holiday": "09:00-14:00"
+      "tue": "09:00-18:00",
+      "wed": "09:00-18:00",
+      "thu": "09:00-18:00",
+      "fri": "09:00-18:00",
+      "sat": "09:00-18:00",
+      "sun": "09:00-18:00",
+      "holiday": "09:00-18:00"
     },
-    "businessHoursNote": "利用時間は60分（会員は90分）。予約不要。いこーよ掲載の時間で、別の掲載では9:00〜18:00の記載もあるため公式で要確認。イベントなどで臨時休館あり",
+    "businessHoursNote": "施設の掲載（ホイシル、2026年6月更新）では9:00〜18:00。いこーよでは9:00〜14:00（利用60分）の記載もあり、公式で要確認。予約不要。臨時休館あり",
     "closedDays": [
       "月曜日",
       "年末年始",
@@ -124888,7 +125115,17 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "ask",
+      "basis": "二次情報のみ",
+      "note": "授乳室・おむつ替えは確認できていない（いこーよ・施設の掲載に記載なし）。電話0242-23-7178で確認できる",
+      "status": "ask",
+      "checkedAt": "2026年11月21日",
+      "sourceUrl": "https://iko-yo.net/facilities/20818"
+    },
+    "baby": "授乳室・おむつ替えは未確認（公式で要確認）"
   },
   {
     "region": "長野",
@@ -124982,7 +125219,7 @@
       "秋"
     ],
     "price": "入園無料。豆汽車は大人100円・小人50円、電動遊具は50円",
-    "parking": "ask",
+    "parking": "no",
     "access": "JR飯田駅から徒歩約15分",
     "businessHours": {
       "mon": "定休日",
@@ -125000,14 +125237,26 @@
       "年末年始"
     ],
     "desc": "小動物を中心にした動物園。南アルプスを背景に飼育されるカモシカや、日本ではここだけのカンムリサケビドリを見られる。ミニ列車（豆汽車）などの遊具もある。",
-    "tip": "入園無料で、駅から歩いて行ける。おむつ交換台あり。",
+    "tip": "入園無料で、駅から歩いて行ける。おむつ交換台あり。 動物園エリアでのエサやり体験は200円、こども遊具エリアには豆汽車やバッテリーカーがある（ウォーカープラス掲載）。",
     "stayTime": {
       "minMinutes": 60,
       "maxMinutes": 150
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "parkingDetail": {
+      "priceLabel": "専用駐車場の記載なし",
+      "priceShort": "なし",
+      "capacity": null,
+      "type": "なし",
+      "location": "近隣",
+      "note": "ウォーカープラスでは駐車場なしと掲載。JR飯田駅から徒歩約10〜15分。公式で要確認",
+      "available": false,
+      "sourceUrl": "https://summer.walkerplus.com/odekake/detail/ar0420s14706/map.html",
+      "sourceLabel": "ウォーカープラス",
+      "checkedAt": "2026-11-21"
+    }
   },
   {
     "region": "長野",
