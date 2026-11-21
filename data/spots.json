@@ -125227,5 +125227,967 @@
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
     "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "入間市博物館 ALIT",
+    "slug": "saitama/iruma/alit",
+    "area": "入間市二本木",
+    "address": "埼玉県入間市二本木100",
+    "genre": "博物館・科学館",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "有料（金額は公式で要確認）",
+    "parking": "yes",
+    "access": "西武池袋線入間市駅からバスで約20分／圏央道入間ICから車約5分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-17:00",
+      "wed": "09:00-17:00",
+      "thu": "09:00-17:00",
+      "fri": "09:00-17:00",
+      "sat": "09:00-17:00",
+      "sun": "09:00-17:00",
+      "holiday": "09:00-17:00"
+    },
+    "businessHoursNote": "入館は16:30まで",
+    "closedDays": [
+      "月曜日（祝日の場合は翌日）",
+      "第4火曜日（祝日を除く）",
+      "祝日の翌日（土・日・祝を除く）",
+      "年末年始"
+    ],
+    "desc": "狭山茶の主産地にある、「お茶の博物館」とも呼ばれる総合博物館。常設展示室は「入間の自然」「入間の歴史」「茶の世界」「こども科学室」の4分野で、千利休の茶室や煎茶道の茶室の再現もある。",
+    "tip": "「こども科学室」があるので、子どもが体験しながら学べる。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 120
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "入間市児童センター アイクス",
+    "slug": "saitama/iruma/aikusu",
+    "area": "入間市",
+    "address": "埼玉県入間市（入間市児童センター アイクス）",
+    "genre": "室内遊び場",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "西武池袋線入間市駅南口から徒歩約15分／圏央道入間ICから車約10分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-18:00",
+      "wed": "09:00-18:00",
+      "thu": "09:00-18:00",
+      "fri": "09:00-18:00",
+      "sat": "09:00-18:00",
+      "sun": "09:00-18:00",
+      "holiday": "09:00-18:00"
+    },
+    "closedDays": [
+      "月曜日・祝日（こどもの日とハッピーマンデーは開館。月曜が祝日の場合は翌日休）"
+    ],
+    "desc": "おもちゃ図書館、幼児室、遊戯室、天体観測室などがある児童センター。プラネタリウムが楽しめる。",
+    "tip": "住所の番地は確認できていないので、行く前に公式で確認すると安心。近くにエミパーク彩の森入間（徒歩約6分）がある。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 150
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "千葉",
+    "name": "我孫子市鳥の博物館",
+    "slug": "chiba/abiko/bird-museum",
+    "area": "我孫子市高野山",
+    "address": "千葉県我孫子市高野山234-3",
+    "genre": "博物館・科学館",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "一般300円／高校・大学生200円／中学生以下・70歳以上（証明書提示）は無料",
+    "parking": "yes",
+    "access": "JR我孫子駅から阪東バスで約10分「我孫子市役所前」下車徒歩5分（土日祝は博物館経由のバスあり）／常磐道柏ICから車約25分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:30-16:30",
+      "wed": "09:30-16:30",
+      "thu": "09:30-16:30",
+      "fri": "09:30-16:30",
+      "sat": "09:30-16:30",
+      "sun": "09:30-16:30",
+      "holiday": "09:30-16:30"
+    },
+    "businessHoursNote": "入館は16:00まで",
+    "closedDays": [
+      "月曜日（祝日の場合は開館し、直後の平日休館）",
+      "年末年始",
+      "館内整理日"
+    ],
+    "officialUrl": "http://www.bird-mus.abiko.chiba.jp/",
+    "desc": "日本で初めて鳥だけを扱った博物館として1990年に開館。手賀沼の四季を再現したジオラマや、世界の鳥約300種の剥製、始祖鳥の化石の復元展示がある。",
+    "tip": "中学生以下は無料。白樺文学館や杉村楚人冠記念館との共通券もある。駐車場は無料で、普通車46台。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 120
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "46台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "普通車46台・大型バス4台（るるぶ掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://rurubu.jp/andmore/spot/80009781",
+      "sourceLabel": "るるぶ",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "東京",
+    "name": "アキシマエンシス（昭島市郷土資料室・アキシマクジラ）",
+    "slug": "tokyo/akishima/akishimaensis",
+    "area": "昭島市つつじが丘",
+    "address": "東京都昭島市つつじが丘3-3-15 アキシマエンシス",
+    "genre": "博物館・科学館",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認（企画展は入場無料の掲載あり）",
+    "parking": "ask",
+    "access": "JR青梅線昭島駅・中神駅から徒歩約10分／Aバス（北ルート）「アキシマエンシス」下車すぐ",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "10:00-20:00",
+      "wed": "10:00-20:00",
+      "thu": "10:00-20:00",
+      "fri": "10:00-20:00",
+      "sat": "10:00-18:00",
+      "sun": "10:00-18:00",
+      "holiday": "10:00-18:00"
+    },
+    "businessHoursNote": "郷土資料室の時間（2023年掲載、公式で要確認）",
+    "closedDays": [
+      "月曜日（祝日の場合は翌平日）",
+      "12/29〜1/4"
+    ],
+    "desc": "市民図書館や郷土資料室などが入る教育福祉総合センター。約200万年前の「アキシマクジラ」の原寸大（13.5m）のレプリカが展示されている。郷土資料室は、クジラの物語を大迫力の映像で見られるデジタルミュージアムになっている。",
+    "tip": "クジラが大好きな子に向く。展示や企画展の内容は公式で確認してから行くと安心。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 120
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "東京",
+    "name": "多摩川自由ひろば",
+    "slug": "tokyo/komae/tamagawa-jiyu-hiroba",
+    "area": "狛江市猪方",
+    "address": "東京都狛江市猪方4-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "無料",
+    "parking": "ask",
+    "access": "小田急線和泉多摩川駅から（徒歩分数は要確認）",
+    "businessHours": {
+      "mon": "入退場自由",
+      "tue": "入退場自由",
+      "wed": "入退場自由",
+      "thu": "入退場自由",
+      "fri": "入退場自由",
+      "sat": "入退場自由",
+      "sun": "入退場自由",
+      "holiday": "入退場自由"
+    },
+    "closedDays": [
+      "無休"
+    ],
+    "desc": "多摩サイクリングロード沿いの、きれいに整備された多摩川の広場。遊具はないが、ボール遊び（硬球は不可）や走り回って遊べる。",
+    "tip": "遊具はないので、ボールや縄跳びなどを持っていくと遊びやすい。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 120
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "東京",
+    "name": "供養塚児童公園",
+    "slug": "tokyo/komae/kuyozuka-park",
+    "area": "狛江市駒井町",
+    "address": "東京都狛江市駒井町3-3-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "無料",
+    "parking": "ask",
+    "access": "小田急線和泉多摩川駅から徒歩約14分",
+    "strollerOk": "ok",
+    "desc": "多摩川の河川敷の少し北にある住宅地の公園。すべり台とブランコが2基ずつあり、砂場には柵がある。四方を道路に囲まれた独立した敷地で、住宅地の公園としては比較的大きい。",
+    "tip": "ベビーカーで入れて、食事の持ち込みもできる（いこーよ掲載）。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "エミパーク和光樹林（埼玉県営和光樹林公園）",
+    "slug": "saitama/wako/emipark-wako-jurin",
+    "area": "和光市広沢",
+    "address": "埼玉県和光市広沢",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "要確認",
+    "parking": "yes",
+    "access": "東武東上線和光市駅から南へ約1.3km",
+    "officialUrl": "https://www.pref.saitama.lg.jp/a1105/910-20091204-111.html",
+    "desc": "約20haの県営公園。多目的に使える広場やジョギングコースがあり、幼児向けの複合遊具もある。公園内に和光市総合体育館がある。桜も多く、お花見にも人気。",
+    "tip": "駐車場は公園と体育館の利用者向け。とても広いので、シートを広げてお弁当を食べる人が多い。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 180
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "埼玉",
+    "name": "鈴森公園",
+    "slug": "saitama/wako/suzumori-park",
+    "area": "和光市本町",
+    "address": "埼玉県和光市本町18",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "東武東上線和光市駅から徒歩約6分",
+    "desc": "和光市駅から徒歩6分の、緑に囲まれた広々とした公園。スプリング遊具があり、小さな子の公園デビューに向く。ベンチがあり、見守りやすい。",
+    "tip": "駅の近くで、郵便局やお店が周辺にあるので、お出かけやお買い物のついでに寄りやすい。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "難波田城公園",
+    "slug": "saitama/fujimi/nanbata-castle-park",
+    "area": "富士見市下南畑",
+    "address": "埼玉県富士見市下南畑568-1",
+    "genre": "城・歴史",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ",
+      "雨"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "無料（難波田城資料館も無料）",
+    "parking": "ask",
+    "access": "東武東上線志木駅東口から東武バス（富士見高校行き）で「興禅寺入口」下車徒歩3分／鶴瀬駅西口から市内循環バス（富士見高校行き）終点下車徒歩10分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-17:00",
+      "wed": "09:00-17:00",
+      "thu": "09:00-17:00",
+      "fri": "09:00-17:00",
+      "sat": "09:00-17:00",
+      "sun": "09:00-17:00",
+      "holiday": "09:00-17:00"
+    },
+    "businessHoursNote": "資料館は9:00〜17:00。公園は4〜9月は9:00〜18:00、10〜3月は9:00〜17:00",
+    "closedDays": [
+      "月曜日（祝日は開館）",
+      "祝日の翌日（土・日・祝を除く）",
+      "12/27〜1/5"
+    ],
+    "desc": "中世の城跡を復元した「城跡ゾーン」と、市内の古民家を移築復元した「古民家ゾーン」からなる歴史公園。中央の難波田城資料館では、富士見市の歴史や民俗を学べる。毎週土日祝には、昔の暮らしを体験するイベントやガイドツアーがある。",
+    "tip": "茅葺きの古民家がある。体験イベントは土日祝に開かれるので、行く前に内容を確認すると安心。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 150
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "水子貝塚公園（縄文ふれあい広場）",
+    "slug": "saitama/fujimi/mizuko-kaizuka-park",
+    "area": "富士見市水子",
+    "address": "埼玉県富士見市水子",
+    "genre": "公園",
+    "ages": [
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "要確認",
+    "desc": "縄文時代前期の貝塚が国の史跡になっている公園。約4万㎡の敷地の中央に芝生の広場が広がり、復元された竪穴住居5軒と、骨組みだけの竪穴住居2軒がある。周りにはクリやクヌギなどの縄文の森が再現されている。",
+    "tip": "隣接する水子貝塚資料館とあわせて回れる。住所の番地は確認できていないので、公式で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 120
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "福岡中央公園",
+    "slug": "saitama/fujimino/fukuoka-chuo-park",
+    "area": "ふじみ野市上野台",
+    "address": "埼玉県ふじみ野市上野台三丁目",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "無料",
+    "parking": "ask",
+    "access": "東武東上線上福岡駅から徒歩約8分",
+    "desc": "ふじみ野市で大きな公園のひとつ。春は桜の名所で、ライトアップも行われる。夏は噴水で子どもたちが水遊びをする。遊具は図書館側にあり、ブランコやすべり台などがそろっている。",
+    "tip": "夏の水遊びは噴水の部分で行う。使える期間は公式で確認してから行くと安心。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 120
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "茨城",
+    "name": "道の駅 グランテラス筑西",
+    "slug": "ibaraki/chikusei/granterrace-chikusei",
+    "area": "筑西市川澄",
+    "address": "茨城県筑西市川澄1850",
+    "genre": "おでかけスポット",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ",
+      "雨"
+    ],
+    "duration": [
+      "半日",
+      "1日"
+    ],
+    "price": "入場無料。ボーネルンドの室内遊び場は子ども100円・保護者100円（6か月〜未就学児対象）",
+    "parking": "yes",
+    "access": "北関東道桜川筑西ICから国道50号で約15分",
+    "businessHours": {
+      "mon": "09:00-18:00",
+      "tue": "09:00-18:00",
+      "wed": "09:00-18:00",
+      "thu": "09:00-18:00",
+      "fri": "09:00-18:00",
+      "sat": "09:00-18:00",
+      "sun": "09:00-18:00",
+      "holiday": "09:00-18:00"
+    },
+    "businessHoursNote": "6〜8月は9:00〜19:00。ボーネルンドの室内遊び場は9:00〜17:00",
+    "closedDays": [
+      "第3水曜日（店舗により異なる）",
+      "1/1・1/2"
+    ],
+    "officialUrl": "https://granterrace-chikusei.com/",
+    "desc": "約4.8haの北関東最大級の道の駅。広い芝生広場やスラックライン、スプリング遊具などの屋外の遊び場と、6か月〜未就学児が遊べるボーネルンドの室内遊び場がある。農産物直売所やレストラン、フードコートもそろう。",
+    "tip": "雨の日は室内遊び場、晴れの日は芝生広場と使い分けられる。ベビーベッドがある。駐車場は無料で約360台。",
+    "stayTime": {
+      "minMinutes": 120,
+      "maxMinutes": 300
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "約360台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "361台（茨城県の資料。大型車43台を含む、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://www.pref.ibaraki.jp/eigyo/tokyo/pr/documents/r0109-16-ibarakiroadstation.pdf",
+      "sourceLabel": "茨城県",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
+  },
+  {
+    "region": "茨城",
+    "name": "県西総合公園（ヒロサワ県西総合公園）",
+    "slug": "ibaraki/chikusei/kensei-park",
+    "area": "筑西市桑山",
+    "address": "茨城県筑西市桑山2818",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日",
+      "1日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "要確認",
+    "desc": "筑西市のほぼ中央にある総合公園。大型遊具が人気の子ども広場や、大きな池のそばのアスレチック広場がある。夏季のみ使えるじゃぶじゃぶ池や、屋根付き野外炉があるバーベキュー広場もある。春には桜がきれい。",
+    "tip": "ジョギングやウォーキングに使える1周約2kmのマラソンコースがある。じゃぶじゃぶ池は夏季のみ。",
+    "stayTime": {
+      "minMinutes": 90,
+      "maxMinutes": 240
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "大瀬もみの木児童公園",
+    "slug": "saitama/yashio/oose-minoki-park",
+    "area": "八潮市大瀬",
+    "address": "埼玉県八潮市大字大瀬1664-1",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "無料",
+    "parking": "ask",
+    "access": "つくばエクスプレス八潮駅から徒歩約25分",
+    "strollerOk": "ok",
+    "desc": "住宅街にある公園。公園の名前にもなっているもみの木がシンボル。小さな子向けと大きな子でも遊べる2つの複合遊具と、奥に広がる芝生がある。",
+    "tip": "ベビーカーで入れて、食事の持ち込みもできる（いこーよ掲載）。駅からは少し遠い。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "八潮市立資料館",
+    "slug": "saitama/yashio/shiryokan",
+    "area": "八潮市南後谷",
+    "address": "埼玉県八潮市南後谷763-50",
+    "genre": "博物館・科学館",
+    "ages": [
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "要確認",
+    "businessHours": {
+      "mon": "09:00-17:00",
+      "tue": "09:00-17:00",
+      "wed": "09:00-17:00",
+      "thu": "09:00-17:00",
+      "fri": "09:00-17:00",
+      "sat": "09:00-17:00",
+      "sun": "09:00-17:00",
+      "holiday": "09:00-17:00"
+    },
+    "businessHoursNote": "民家は15:45まで、展示室は17:00まで（museum.or.jp掲載）。休館日は公式で要確認",
+    "desc": "八潮市の歴史や文化を学べる資料館。考古、歴史、民俗の資料を展示し、講座や見学会も開いている。民家の見学もできる。",
+    "tip": "休館日や料金を確認できていないので、行く前に公式で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "神奈川",
+    "name": "鶴ケ台公園",
+    "slug": "kanagawa/ayase/tsurugadai-park",
+    "area": "綾瀬市深谷中",
+    "address": "神奈川県綾瀬市深谷中7-2272-22",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "無料",
+    "parking": "ask",
+    "access": "要確認",
+    "strollerOk": "ok",
+    "desc": "住宅街にある比較的広めの公園。スプリング遊具やスイング遊具、砂場、ブランコ、すべり台のある複合遊具がそろっている。水飲み・手洗い場もある。",
+    "tip": "近所の公園としての紹介なので、規模や設備は現地で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "officialUrl": null
+  },
+  {
+    "region": "神奈川",
+    "name": "サンバード公園",
+    "slug": "kanagawa/ayase/sunbird-park",
+    "area": "綾瀬市深谷上",
+    "address": "神奈川県綾瀬市深谷上8-4729-16",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "要確認",
+    "strollerOk": "ok",
+    "desc": "住宅街にある、十分な広さのある新しい公園（2000年以降に整備）。すべり台があり、水飲み・手洗い場もある。",
+    "tip": "近所の公園としての紹介なので、規模や設備は現地で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 90
+    },
+    "verifiedAt": "2026年11月21日",
+    "officialUrl": null
+  },
+  {
+    "region": "千葉",
+    "name": "手賀沼親水広場・水の館",
+    "slug": "chiba/abiko/teganuma-shinsui-hiroba",
+    "area": "我孫子市高野山新田",
+    "address": "千葉県我孫子市高野山新田193",
+    "genre": "公園",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入場無料（水の館内の有料施設は、中学生以下無料・高校生以上1回100円の掲載あり。内容は公式で要確認）",
+    "parking": "yes",
+    "access": "JR我孫子駅南口から市役所行きバスなどで「市役所」下車徒歩約5分／常磐道柏ICから車約40分",
+    "businessHours": {
+      "mon": "09:00-17:00",
+      "tue": "09:00-17:00",
+      "wed": "09:00-17:00",
+      "thu": "09:00-17:00",
+      "fri": "09:00-17:00",
+      "sat": "09:00-17:00",
+      "sun": "09:00-17:00",
+      "holiday": "09:00-17:00"
+    },
+    "businessHoursNote": "水の館の時間。あびこ農産物直売所「あびこん」は9:30〜18:00（11〜3月は17:30）",
+    "closedDays": [
+      "水の館は毎月第4水曜日（祝日にあたる場合は第3水曜日）",
+      "年末年始（12/29〜1/4）"
+    ],
+    "desc": "手賀沼の湖畔にある親水広場。「水の館」の1階には新鮮な野菜が並ぶ農産物直売所とレストランがあり、展望室からの眺めも楽しめる。子どもが遊べる広場も人気。",
+    "tip": "駐車場は無料で、第1駐車場39台・第2駐車場72台・多目的広場駐車場144台がある。鳥の博物館とあわせて回れる。",
+    "stayTime": {
+      "minMinutes": 45,
+      "maxMinutes": 120
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "第1駐車場39台・第2駐車場72台・多目的広場駐車場144台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "合計255台（まるちば掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://maruchiba.jp/spot/detail_10032.html",
+      "sourceLabel": "まるちば",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "埼玉",
+    "name": "上福岡歴史民俗資料館",
+    "slug": "saitama/fujimino/kamifukuoka-rekishi-minzoku",
+    "area": "ふじみ野市長宮",
+    "address": "埼玉県ふじみ野市長宮1-2-11",
+    "genre": "博物館・科学館",
+    "ages": [
+      "4-6歳",
+      "低学年",
+      "高学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "要確認",
+    "parking": "ask",
+    "access": "上福岡駅東口から徒歩約20分、またはふじみん号Aコースで「福岡小学校」下車徒歩1分",
+    "businessHours": {
+      "mon": "定休日",
+      "tue": "09:00-16:30",
+      "wed": "09:00-16:30",
+      "thu": "09:00-16:30",
+      "fri": "09:00-16:30",
+      "sat": "09:00-16:30",
+      "sun": "09:00-16:30",
+      "holiday": "09:00-16:30"
+    },
+    "closedDays": [
+      "月曜日（祝日にかさなる時も）",
+      "年末年始"
+    ],
+    "desc": "ふじみ野市の歴史や民俗を紹介する資料館。福岡河岸の様子や船の模型、市内で見つかった縄文時代の家の模型などの展示がある。",
+    "tip": "新河岸川の舟運で栄えた福岡河岸の歴史にふれられる。福岡小学校や長宮氷川神社の近く。料金や詳しい展示は公式で確認すると安心。",
+    "stayTime": {
+      "minMinutes": 30,
+      "maxMinutes": 75
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask",
+    "officialUrl": null
+  },
+  {
+    "region": "福島",
+    "name": "ふくしま児童公園 SFCももりんパーク",
+    "slug": "fukushima/fukushima-city/momorin-park",
+    "area": "福島市桜木町",
+    "address": "福島県福島市桜木町7-36",
+    "genre": "遊園地・テーマパーク",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "seasons": [
+      "春",
+      "夏",
+      "秋"
+    ],
+    "price": "入園無料。大型遊具100円、中型遊具50円、小型遊具30円、豆自動車50円（無料の遊具は3種類）",
+    "parking": "yes",
+    "access": "福島駅から福島交通の市内循環バスで約10分「福島市役所前」下車徒歩5分／東北道福島西ICから国道115号経由で約15分",
+    "businessHours": {
+      "mon": "09:30-16:30",
+      "tue": "定休日",
+      "wed": "09:30-16:30",
+      "thu": "09:30-16:30",
+      "fri": "09:30-16:30",
+      "sat": "09:30-16:30",
+      "sun": "09:30-16:30",
+      "holiday": "09:30-16:30"
+    },
+    "businessHoursNote": "11〜3月は16:00まで。小学校の夏休み期間は無休",
+    "closedDays": [
+      "火曜日"
+    ],
+    "strollerOk": "ok",
+    "desc": "約7,800㎡の敷地に、約30種類の有料遊具と3種類の無料遊具が並ぶ市の児童公園。ウサギのキャラクター「ももりん」が人気で、ももりんジェットやわくわくトレインなどの大型遊具、SLの展示や豆自動車などがある。",
+    "tip": "遊園地に近い雰囲気だが、遊具は30〜100円と手頃。テーブル付きのベンチがあり、お弁当を持って行ける。授乳室とおむつ交換台あり。駐車場は無料で24台。",
+    "stayTime": {
+      "minMinutes": 90,
+      "maxMinutes": 240
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "24台",
+      "type": "無料駐車場",
+      "location": "敷地内",
+      "note": "24台（るるぶ掲載、公式で要確認）",
+      "available": true,
+      "sourceUrl": "https://rurubu.jp/andmore/spot/80122642",
+      "sourceLabel": "るるぶ",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "officialUrl": null
+  },
+  {
+    "region": "福島",
+    "name": "ももRabiキッズパーク（道の駅ふくしま内）",
+    "slug": "fukushima/fukushima-city/momorabi-kids-park",
+    "area": "福島市大笹生",
+    "address": "福島県福島市大笹生字月崎1-1（道の駅ふくしま内）",
+    "genre": "室内遊び場",
+    "ages": [
+      "0-1歳",
+      "2-3歳",
+      "4-6歳",
+      "低学年"
+    ],
+    "weather": [
+      "雨",
+      "晴れ"
+    ],
+    "duration": [
+      "半日"
+    ],
+    "price": "無料",
+    "parking": "yes",
+    "access": "東北道福島西ICから車約10分（道の駅ふくしま内）",
+    "businessHours": {
+      "mon": "10:00-16:30",
+      "tue": "10:00-16:30",
+      "wed": "10:00-16:30",
+      "thu": "10:00-16:30",
+      "fri": "10:00-16:30",
+      "sat": "10:00-16:30",
+      "sun": "10:00-16:30",
+      "holiday": "10:00-16:30"
+    },
+    "businessHoursNote": "入替制：第1部10:00〜11:30／第2部12:30〜14:00／第3部15:00〜16:30（福島県の案内、2026年7月更新）",
+    "closedDays": [
+      "なし（メンテナンスのための臨時休館あり）"
+    ],
+    "officialUrl": "https://www.pref.fukushima.lg.jp/sec/21055a/okunaikodomoasobiba.html",
+    "desc": "県産木材をふんだんに使った、全天候型の屋内こども遊び場（約500㎡）。東北最大級の木製大型遊具「モッキンガム」は立体迷路のような作りで、体につきにくいホワイトサンドの屋内砂場や、果物の収穫ごっこができるおもちゃのエリアもある。",
+    "tip": "小学生以下と保護者が対象で、必ず保護者の同伴が必要。入替制なので、部の時間を確認してから行くと安心。駐車場は道の駅ふくしまと共用で317台。",
+    "stayTime": {
+      "minMinutes": 60,
+      "maxMinutes": 90
+    },
+    "parkingDetail": {
+      "priceLabel": "無料",
+      "priceShort": "無料",
+      "capacity": "317台",
+      "type": "無料駐車場",
+      "location": "道の駅ふくしまと共用",
+      "note": "317台（福島県の案内）",
+      "available": true,
+      "sourceUrl": "https://www.pref.fukushima.lg.jp/sec/21055a/okunaikodomoasobiba.html",
+      "sourceLabel": "福島県",
+      "checkedAt": "2026-11-21"
+    },
+    "verifiedAt": "2026年11月21日",
+    "strollerOk": "ask"
   }
 ]
