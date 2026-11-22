@@ -26,6 +26,9 @@
 │   ├─ build-static-pages.js   施設ページ・地域ページの生成
 │   ├─ build-area-pages.js     複数市区町村をまとめたエリア特集の生成
 │   ├─ build-event-pages.js    イベント特集（/event/…）の生成
+│   ├─ build-holiday-pages.js  年末年始・冬休み特集（/event/fuyuyasumi/）の生成
+│   ├─ build-feature-pages.js  目的別（/purpose/…）・雨の日・無料・赤ちゃん向けの特集の生成
+│   ├─ site-header.js          静的ページ共通のヘッダー・☰メニュー・イベントの並び順（上の build-*.js が読み込む。同じ tools/ に置く）
 │   ├─ merge-event-data.js     event-data.json を spots.json に反映
 │   ├─ check-data-blocks.js    データ整合チェック（ファイルは書き換えない）
 │   ├─ build_transit_table.py  電車の所要時間表の生成（Python3。駅データ.jp のCSVが必要）
@@ -61,6 +64,29 @@ main に push すると GitHub Actions（`.github/workflows/pages.yml`）が次�
 node tools/check-site.js
 node tools/build-public.js --out _public && node tools/refresh-static-pages.js --public _public && node tools/check-site.js --public _public
 ```
+
+## 静的ページの共通部分（ヘッダー・予約リンク・共有URL）
+
+**共通ヘッダー（`tools/site-header.js`）**
+
+- 施設・地域・季節・エリア・イベント・年末年始・目的別などの静的ページは、すべてアプリ本体と同じロゴ付きヘッダーを使います（左に☰メニュー、右に×＝トップへ戻る、🔗共有）。
+- ☰メニューの中身は静的ページへの普通のリンクです（都道府県・エリア特集・目的・季節/条件・イベント）。リンクを増やすときは `SITE_HEADER_LINKS`、イベントを増やすときは `EVENT_NAV` を編集します。ヘッダーの見た目を直すときも `site-header.js` だけです。
+- イベントの並び順（特集ページ上部の切り替えチップと☰メニュー）は `EVENT_NAV` で決まります。アプリのハンバーガーメニューと同じく、1月ごろのイベント（いちご狩り）から季節順です。
+- `build-static-pages.js` / `build-area-pages.js` / `build-event-pages.js` / `build-holiday-pages.js` / `build-feature-pages.js` は `site-header.js` を読み込みます。**同じ `tools/` に置いてください**（欠けるとページ生成が止まります）。
+- 公開URLのベース（`/odekake-navi/`）は `site-header.js` の先頭の `BASE` です。
+
+**予約リンクのアフィリエイト変換**
+
+- 静的な施設ページの「予約情報」は、アソビュー!・じゃらんのURLをバリューコマース経由に変換して出します（`build-static-pages.js` の `VC_SID` / `VC_PIDS`）。値は `index.html` 側のもの（`VC_SID` / `VC_PID`）と**必ずそろえてください**。
+- `data/spots.json` の `bookingLinks` には、変換前の素のURLを入れます（バリューコマースのURLを直接入れない）。
+- リンクには `rel="sponsored nofollow noopener"` と `[PR]` の注記を付けています。
+
+**共有URLの動き**
+
+- 施設ページ（`/chiba/sodegaura/tokyo-doitsumura/` など）を人が開くと、アプリの `?spot=施設名`（トップからたどったときと同じ詳細画面）に自動で切り替わります。
+- 検索エンジンやSNS・LINEのプレビュー用のボットには、これまで通り静的HTMLを見せます（検索結果・リンクプレビュー用）。
+- 静的HTMLのまま確認したいときは、URLの末尾に `?static=1` を付けます。
+- 地域・エリア・特集ページは切り替えません。
 
 ## 電車の所要時間（概算）
 
