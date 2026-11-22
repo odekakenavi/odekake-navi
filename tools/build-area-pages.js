@@ -35,7 +35,7 @@ function grab(lines, name) {
   return lines.slice(i, j + 1).join('\n');
 }
 const tl = fs.readFileSync(STATIC_TOOL, 'utf8').split('\n');
-const helperCode = ['SITE', 'BASE', 'esc', 'pyJson', 'cmp', 'CSS_REGION', 'FOOTER', 'head', 'breadcrumbLd', 'itemListLd']
+const helperCode = ['SITE', 'BASE', 'esc', 'pyJson', 'cmp', 'CSS_REGION', 'FOOTER', 'SITE_HEADER_CSS', 'SITE_HEADER_LINKS', 'SITE_HEADER', 'head', 'breadcrumbLd', 'itemListLd']
   .map(n => grab(tl, n)).join('\n') +
   '\nthis.__h = { SITE, BASE, esc, cmp, CSS_REGION, FOOTER, head, breadcrumbLd, itemListLd };';
 const hsb = {}; vm.createContext(hsb); vm.runInContext(helperCode, hsb);
