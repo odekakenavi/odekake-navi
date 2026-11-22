@@ -35,10 +35,11 @@ function grab(lines, name) {
   return lines.slice(i, j + 1).join('\n');
 }
 const tl = fs.readFileSync(STATIC_TOOL, 'utf8').split('\n');
-const helperCode = ['SITE', 'BASE', 'esc', 'pyJson', 'cmp', 'CSS_REGION', 'FOOTER', 'SITE_HEADER_CSS', 'SITE_HEADER_LINKS', 'SITE_HEADER', 'head', 'breadcrumbLd', 'itemListLd']
+const helperCode = ['SITE', 'BASE', 'esc', 'pyJson', 'cmp', 'CSS_REGION', 'FOOTER', 'head', 'breadcrumbLd', 'itemListLd']
   .map(n => grab(tl, n)).join('\n') +
   '\nthis.__h = { SITE, BASE, esc, cmp, CSS_REGION, FOOTER, head, breadcrumbLd, itemListLd };';
-const hsb = {}; vm.createContext(hsb); vm.runInContext(helperCode, hsb);
+const sh = require(path.resolve(path.dirname(STATIC_TOOL), 'site-header.js')); // 共通ヘッダー（tools/site-header.js）
+const hsb = { SITE_HEADER_CSS: sh.SITE_HEADER_CSS, SITE_HEADER: sh.SITE_HEADER }; vm.createContext(hsb); vm.runInContext(helperCode, hsb);
 const { SITE, BASE, esc, cmp, CSS_REGION, FOOTER, head, breadcrumbLd, itemListLd } = hsb.__h;
 
 // ------------------------------------------------------------------ 施設のURL(slug)を、index.html（圧縮形式でも可）から取り出す

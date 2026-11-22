@@ -16,6 +16,7 @@ const vm = require('vm');
 
 const SITE = 'https://odekakenavi.github.io/odekake-navi/';
 const BASE = '/odekake-navi/';
+const { SITE_HEADER_CSS, SITE_HEADER, EVENT_NAV } = require('./site-header.js'); // 共通ヘッダー（ロゴ・☰・×）
 const argv = process.argv.slice(2);
 const arg = (name, def) => { const i = argv.indexOf('--' + name); return i >= 0 && argv[i + 1] ? argv[i + 1] : def; };
 const OUT_DIR = arg('out', '_build');
@@ -357,7 +358,10 @@ function buildPage(cfg, spots, SLUGS) {
   const ld2 = { '@context': 'https://schema.org', '@type': 'ItemList', name: cfg.ldName, numberOfItems: n, itemListElement: items.map((r, k) => ({ '@type': 'ListItem', position: k + 1, name: r.spot.name, url: SITE + r.slug + '/' })) };
   const pyJson = v => JSON.stringify(v).replace(/":/g, '": ').replace(/,"/g, ', "');
 
-  const nav = Object.values(EVENTS).filter(e => !e.draft || e === cfg).map(e => `<a class="season-nav-item${e === cfg ? ' current' : ''}" href="${BASE}event/${e.slug}/">${e.navLabel}</a>`).join('') + `<a class="season-nav-item" href="${BASE}${cfg.seasonLink[1]}">${cfg.seasonLink[0]}</a>`;
+  const bySlug = Object.fromEntries(Object.values(EVENTS).map(e => [e.slug, e]));
+  // 並び順はアプリのメニューと同じ（1月のイベントから）。下書き（draft）の特集は、そのページ自身のとき以外は出さない
+  const nav = EVENT_NAV.filter(([slug]) => !bySlug[slug] || !bySlug[slug].draft || bySlug[slug] === cfg)
+    .map(([slug, label]) => `<a class="season-nav-item${bySlug[slug] === cfg ? ' current' : ''}" href="${BASE}event/${slug}/">${label}</a>`).join('') + `<a class="season-nav-item" href="${BASE}${cfg.seasonLink[1]}">${cfg.seasonLink[0]}</a>`;
   const chips = [['all', 'すべて'], ...cfg.groupChips.map(c => ['g' + c.g, c.label]), ['parking', '🚗 駐車場あり'], ['baby', '👶 0〜1歳から']]
     .map(([k, l]) => `<button type="button" data-filter="${k}" aria-pressed="${k === 'all' ? 'true' : 'false'}">${l}</button>`).join('');
 
@@ -381,10 +385,10 @@ function buildPage(cfg, spots, SLUGS) {
 <script type="application/ld+json">${pyJson(ld1)}</script>
 <script type="application/ld+json">${pyJson(ld2)}</script>
 
-<style>${CSS}</style>
+<style>${CSS}${SITE_HEADER_CSS}</style>
 </head>
 <body>
-<header class="site"><a href="${BASE}">🧭 おでかけナビ</a></header>
+${SITE_HEADER}
 <div class="wrap">
 <nav class="breadcrumb"><a href="${SITE}">おでかけナビ</a> ／ ${esc(cfg.breadcrumb)}</nav>
 ${period ? `<div class="period-badge">${period}</div>` : ''}

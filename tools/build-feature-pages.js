@@ -16,6 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const { main } = require('./build-static-pages.js');
+const { SITE_HEADER_CSS, SITE_HEADER } = require('./site-header.js'); // 共通ヘッダー（ロゴ・☰・×）
 
 const SITE = 'https://odekakenavi.github.io/odekake-navi/';
 const argv = process.argv.slice(2);
@@ -143,6 +144,7 @@ function head({ title, description, url }) {
 <link rel="manifest" href="${SITE}manifest.webmanifest">
 <style>
 ${CSS}
+${SITE_HEADER_CSS}
 </style>
 </head>
 `;
@@ -202,9 +204,7 @@ function listPage({ path: pagePath, title, description, h1, lead, crumbs, rows, 
     itemListElement: rows.slice().sort((a, b) => (a.spot.name < b.spot.name ? -1 : 1)).map((r, i) => ({ '@type': 'ListItem', position: i + 1, name: r.spot.name, url: SITE + r.slug + '/' })) });
   const crumbHtml = crumbs.map((c, i) => (i < crumbs.length - 1 ? `<a href="${c[1]}">${esc(c[0])}</a>` : esc(c[0]))).join(' ／ ');
   return head({ title, description, url }) + `<body>
-<header class="site-header">
-<a href="${SITE}">🧭 おでかけナビ</a>
-</header>
+${SITE_HEADER}
 <nav class="breadcrumb">
 ${crumbHtml}</nav>
 ${breadcrumbLd(crumbs.map((c, i) => [c[0], i < crumbs.length - 1 ? c[1] : undefined]))}
@@ -254,9 +254,7 @@ PURPOSES.forEach(p => {
   const title = '目的から探す｜子連れお出かけスポット特集｜おでかけナビ';
   const description = `動物園・水族館・公園・室内遊び場など、行きたい場所の種類から子連れお出かけスポットを探せます。現在${rows.length}件を掲載。`;
   files.set('purpose/index.html', head({ title, description, url }) + `<body>
-<header class="site-header">
-<a href="${SITE}">🧭 おでかけナビ</a>
-</header>
+${SITE_HEADER}
 <nav class="breadcrumb">
 <a href="${SITE}">おでかけナビ</a> ／ 目的から探す</nav>
 ${breadcrumbLd([['おでかけナビ', SITE], ['目的から探す', null]])}
