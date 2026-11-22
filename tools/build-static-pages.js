@@ -348,6 +348,12 @@ function facilityPage(row) {
     geo: (typeof s.lat === 'number' && typeof s.lng === 'number') ? { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lng } : undefined, // 座標が未確認の施設には geo を出さない
     sameAs: s.officialUrl || undefined };
   let h = head(title, description, url, [ld1, ld2], CSS_FAC);
+  // 人間がこのページを開いたら、トップからたどった時と同じアプリ画面（?spot=）に切り替える。
+  // クローラー・リンクプレビュー用のbotにはこの静的HTMLをそのまま見せる（SEO・OGP用）。
+  // 静的版をそのまま見たいときは URL の末尾に ?static=1 を付ける。
+  const appUrl = BASE + '?spot=' + encodeURIComponent(s.name);
+  const toApp = `<script>(function(){try{if(/bot|crawl|spider|slurp|facebookexternalhit|line-poker|twitterbot|slackbot|discordbot|preview/i.test(navigator.userAgent||''))return;if(location.search.indexOf('static=1')!==-1)return;location.replace(${JSON.stringify(appUrl)});}catch(e){}})();</script>\n`;
+  h = h.replace('</head>', toApp + '</head>');
   h += `<nav class="breadcrumb">
   <a href="${BASE}">おでかけナビ</a> ／ <a href="${BASE}${row.prefSlug}/">${esc(row.prefFull)}</a> ／ <a href="${BASE}${row.prefSlug}/${row.citySlug}/">${esc(row.city)}</a> ／ ${esc(s.name)}
 </nav>
