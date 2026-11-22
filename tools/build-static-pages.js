@@ -131,6 +131,15 @@ function loadAppAny(indexPath) {
 
 // ------------------------------------------------------------------ 共通ヘルパー
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+// バリューコマース（アフィリエイト）変換。index.html の withAffiliateParam と同じ値・同じ形式。
+// 値を変えるときは index.html 側（VC_SID / VC_PID / VC_PID_JALAN）と必ずそろえること。
+const VC_SID = '3781559';
+const VC_PIDS = { asoview: '892714260', jalan: '892711274' };
+function affUrl(url, key) {
+  const pid = VC_PIDS[key];
+  if (!pid || !url || /valuecommerce\.com/i.test(url)) return url;
+  return `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=${VC_SID}&pid=${pid}&vc_url=${encodeURIComponent(url)}`;
+}
 // Python の json.dumps(ensure_ascii=False) と同じ書式（区切りは ", " と ": "）
 function pyJson(v) {
   if (v === null) return 'null';
@@ -370,7 +379,9 @@ function facilityPage(row) {
   h += parts.join('');
   const BK = { asoview: 'あそびゅー！', jalan: 'じゃらん' };
   const bl = s.bookingLinks ? Object.keys(s.bookingLinks).filter(k => BK[k] && s.bookingLinks[k]) : [];
-  const booking = bl.length ? `<div class="detail-block"><h2>🎟️ 予約情報</h2><ul>${bl.map(k => `<li><a href="${esc(s.bookingLinks[k])}" target="_blank" rel="noopener nofollow">${BK[k]}で見る</a></li>`).join('')}</ul></div>` : '';
+  // アプリと同じく、チケット直通URL（asoviewTicket）があればそちらを優先
+  const rawLink = k => (k === 'asoview' && s.bookingLinks.asoviewTicket) ? s.bookingLinks.asoviewTicket : s.bookingLinks[k];
+  const booking = bl.length ? `<div class="detail-block"><h2>🎟️ 予約情報</h2><p class="pr-note">[PR] 提携リンクを含みます（購入・予約されると運営者に紹介料が入る場合があります。ご利用者様の負担額は変わりません）</p><ul>${bl.map(k => `<li><a href="${esc(affUrl(rawLink(k), k))}" target="_blank" rel="sponsored nofollow noopener">${BK[k]}で見る</a></li>`).join('')}</ul></div>` : '';
   h += '\n' + booking;
   const rl = relatedPageLinks(row);
   if (rl.length) h += `\n<div class="detail-block"><h2>🔗 関連ページ</h2><div class="related-links">${rl.map(([href, label]) => `<a href="${href}">${esc(label)}</a>`).join('')}</div></div>`;
