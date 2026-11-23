@@ -32822,7 +32822,20 @@
       "sourceUrl": "http://watergarden.hasunuma.co.jp/",
       "checkedAt": "2026-11-14"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "トドラーキッズスペース",
+        "minAge": 2,
+        "maxCm": 119,
+        "note": "2歳以上で身長120cm未満が対象（いこーよ掲載、公式で要確認）"
+      },
+      {
+        "name": "スプラッシュシェイカー",
+        "note": "小学生以上が対象（身長の基準は未確認。公式で要確認）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "茨城",
@@ -37991,7 +38004,34 @@
     "walkMinutesEst": 7,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "未来遊戯ガンガンナー",
+        "minCm": 90,
+        "note": "身長90cm以上。110cm未満は年齢にかかわらず16歳以上の付添が必要"
+      },
+      {
+        "name": "爆裂！蚊取り大作戦",
+        "minCm": 110,
+        "note": "身長110cm以上"
+      },
+      {
+        "name": "銭湯クイズどんぶらQ",
+        "note": "身長制限なし。120cm未満は年齢にかかわらず16歳以上の付添が必要"
+      },
+      {
+        "name": "八尺様 ザ・ライド",
+        "minCm": 110,
+        "note": "身長110cm以上。怨霊フェスのチケットのみ利用可能（期間限定企画）"
+      },
+      {
+        "name": "太鼓の達人 ドーンとでっかいお祭りだドン",
+        "minAge": 4,
+        "note": "4歳以上。小学生未満は13歳以上の付添が必要"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -54872,7 +54912,20 @@
       "checkedAt": "2026年11月2日",
       "sourceUrl": "https://www.tobuzoo.com/faq/pool/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "急流すべり",
+        "minCm": 120,
+        "note": "身長120cm以上。定員1〜2名で親子でも利用可（東武動物公園の公式発表より）"
+      },
+      {
+        "name": "タイガースプラッシュ",
+        "minCm": 120,
+        "note": "身長120cm以上。75m・70m・60mの3コースのスパイラルスライダー（東武動物公園の公式発表より）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -56645,7 +56698,22 @@
       "sourceUrl": "https://www.princehotels.co.jp/pool/oiso/faq/"
     },
     "kidsToiletNote": "ベビールームあり。ファミリーパラソルNエリアの男女トイレにベビーシートあり",
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "ウォータースライダー",
+        "minCm": 120,
+        "minAge": 6,
+        "note": "身長120cm以上かつ6歳以上。120cm未満または6歳未満は利用不可"
+      },
+      {
+        "name": "キッズウォーターパラダイス",
+        "maxCm": 124,
+        "minAge": 3,
+        "note": "3歳〜小学生以下の125cm未満が対象"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -56770,7 +56838,20 @@
       "sourceUrl": "https://www.romannomori.co.jp/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "フィールドアスレチック",
+        "minAge": 7,
+        "note": "7歳以上が対象（掲載情報。公式で要確認）"
+      },
+      {
+        "name": "おもしろ自転車",
+        "minAge": 4,
+        "note": "4歳以上（掲載情報。公式で要確認）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "茨城",
@@ -58343,7 +58424,15 @@
       "sourceLabel": "県公式",
       "checkedAt": "2026-11-14"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "ウォータースライダー（チューブ・直線・スパイラル）",
+        "minCm": 120,
+        "note": "身長120cm以上かつ小学生以上。120cm未満または小学生未満は利用不可。風速10m超で運転見合わせ"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -60911,7 +61000,20 @@
       "sourceUrl": "https://www.makaino.com/news/%E3%81%94%E6%9D%A5%E5%A0%B4%E3%81%AE%E3%81%8A%E5%AE%A2%E6%A7%98%E3%81%B8-3/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "引き馬体験（一人乗り）",
+        "minCm": 90,
+        "note": "身長90cm以上、体重80kgまで。90cm未満は大人と一緒の親子乗り（体重は合計80kgまで）"
+      },
+      {
+        "name": "E-BIKE貸出",
+        "minCm": 154,
+        "note": "公道を走行。身長154cm以上の方に推奨（日帰り貸出）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "長野",
@@ -73881,7 +73983,15 @@
       "sourceUrl": "https://www.kandu.co.jp/terms/"
     },
     "stationEst": "海浜幕張",
-    "walkMinutesEst": 14
+    "walkMinutesEst": 14,
+    "rideLimits": [
+      {
+        "name": "お仕事体験",
+        "minAge": 3,
+        "note": "3歳以上。中学生以下は16歳以上の保護者の同伴が必要（公式の利用案内）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -74076,7 +74186,22 @@
       "terrainNote": "モール共用部にベビーカー設置あり。トンデミ店内の持込可否は確認できず"
     },
     "stationEst": "海浜幕張",
-    "walkMinutesEst": 14
+    "walkMinutesEst": 14,
+    "rideLimits": [
+      {
+        "name": "トンデミ（メインエリア）",
+        "minCm": 110,
+        "note": "身長110cm以上かつ体重20〜120kg（身長は190cmまで）。小学生以下は保護者（高校生不可）の付き添いが必要",
+        "maxCm": 190
+      },
+      {
+        "name": "キッズエリア",
+        "minAge": 3,
+        "maxCm": 120,
+        "note": "3歳以上で身長120cm以下が対象"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -75707,7 +75832,21 @@
       "sourceUrl": "https://www.tondemi.com/rule"
     },
     "stationEst": "平和島",
-    "walkMinutesEst": 9
+    "walkMinutesEst": 9,
+    "rideLimits": [
+      {
+        "name": "トンデミ（メインエリア）",
+        "minCm": 110,
+        "note": "身長110cm以上かつ体重20〜120kg。小学生以下は保護者（高校生不可）の付き添いが必要"
+      },
+      {
+        "name": "キッズエリア",
+        "minAge": 2,
+        "maxCm": 120,
+        "note": "2歳以上で身長120cm以下が対象"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -76711,7 +76850,19 @@
       "sourceUrl": "https://mrjump.jp/"
     },
     "stationEst": "馬橋",
-    "walkMinutesEst": 14
+    "walkMinutesEst": 14,
+    "rideLimits": [
+      {
+        "name": "トランポリン（メインゾーン）",
+        "minAge": 5,
+        "note": "お誕生日を迎えた5歳から利用可。3歳〜未就学児は別枠（保護者同伴）の掲載もあり、公式で要確認"
+      },
+      {
+        "name": "サムライトライアル（①②）",
+        "note": "中学生以上限定。③〜⑥は5歳以上"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -77676,7 +77827,23 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "小田急多摩センター",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "rideLimits": [
+      {
+        "name": "トランポリン",
+        "maxCm": 160,
+        "note": "身長160cmまで"
+      },
+      {
+        "name": "ソニックブラストサバイバル／ニンジャウォーリアーズ エクストリームステージ／ドリフトトリッカー",
+        "note": "体重100kgまで（身長の制限は規約になし）"
+      },
+      {
+        "name": "全遊具共通",
+        "note": "未就学児は遊具を利用できない（保護者・同伴者としての入場は可）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -81971,7 +82138,19 @@
     "walkMinutesEst": null,
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/151233/"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "初島アドベンチャー SARUTOBI",
+        "minAge": 5,
+        "note": "5歳以上（アソビュー掲載。公式で要確認）"
+      },
+      {
+        "name": "アドベンチャーアイランドVOTAN",
+        "note": "未就学児は保護者同伴が必須。小学生も同伴を推奨（公式）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "静岡",
@@ -83409,7 +83588,45 @@
       "sourceUrl": "https://www.csc.or.jp/faq/",
       "rentalMemo": "簡易型B型・約10台・200円/日"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "サイクルコースター",
+        "minCm": 100,
+        "note": "身長100cm以上。100cm未満は保護者同伴でも利用不可"
+      },
+      {
+        "name": "伊豆MTBコース",
+        "minCm": 120,
+        "note": "身長120cm以上。120cm未満は保護者同伴でも利用不可。運動靴・ヘルメット着用が必要"
+      },
+      {
+        "name": "5キロサーキット",
+        "minCm": 140,
+        "note": "身長140cm以上。運動靴・ヘルメット着用が必要"
+      },
+      {
+        "name": "サイクルモノレール",
+        "minCm": 130,
+        "note": "身長130cm未満は同伴者と一緒に乗れば利用可。定員2名（無料の幼児も1名に数える）"
+      },
+      {
+        "name": "水上自転車",
+        "minCm": 130,
+        "note": "身長130cm未満は、ペダルに足が届く同伴者と一緒に乗れば利用可。定員3名"
+      },
+      {
+        "name": "サイクルUFO",
+        "minCm": 130,
+        "note": "身長130cm以上。保護者同伴なら130cm未満も可"
+      },
+      {
+        "name": "サイクルゴーランド",
+        "minCm": 100,
+        "note": "身長100cm未満は保護者同伴で利用可"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "静岡",
@@ -107841,7 +108058,15 @@
       "sun": "10:00-20:00",
       "holiday": "10:00-20:00"
     },
-    "businessHoursNote": "夏休み・冬休み期間は変動する場合あり"
+    "businessHoursNote": "夏休み・冬休み期間は変動する場合あり",
+    "rideLimits": [
+      {
+        "name": "HADO",
+        "minAge": 5,
+        "note": "5歳以上。身長・運動能力の制限なし。5〜6歳は保護者同伴"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -108753,7 +108978,19 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://trampoland.com/faq"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "トランポリン（一般エリア）",
+        "note": "小学生以上が対象"
+      },
+      {
+        "name": "園児さんエリア",
+        "minAge": 3,
+        "note": "3歳以上〜小学生未満の専用エリア。保護者は無料で付き添い可。3歳未満は利用不可"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "栃木",
@@ -116228,7 +116465,15 @@
       "sourceLabel": "掲載サイト情報（公式未確認）",
       "checkedAt": "2026-11-21"
     },
-    "stationEst": "葛西"
+    "stationEst": "葛西",
+    "rideLimits": [
+      {
+        "name": "ポニー乗馬",
+        "maxAge": 12,
+        "note": "小学生以下が対象（江戸川区の案内）。身長・体重の基準は確認できず"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -116324,7 +116569,15 @@
       "checkedAt": "2026-11-21"
     },
     "stationEst": "篠崎",
-    "walkMinutesEst": 15
+    "walkMinutesEst": 15,
+    "rideLimits": [
+      {
+        "name": "ポニー乗馬（ひき馬体験）",
+        "maxAge": 12,
+        "note": "小学校6年生までが対象。身長・体重の基準は確認できず"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -117744,7 +117997,15 @@
       "checkedAt": "2026-11-21"
     },
     "stationEst": "板橋区役所前",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "rideLimits": [
+      {
+        "name": "トランポリン（全エリア）",
+        "minAge": 3,
+        "note": "3歳から利用可（3歳未満は不可）。3歳以上の未就学児は専用エリアまたは専用時間のみ。店舗により異なるため公式で要確認"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
