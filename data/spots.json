@@ -7328,7 +7328,16 @@
       "sourceUrl": "https://kitasuna.ario.jp/mamakids/facility/"
     },
     "stationEst": "南砂町",
-    "walkMinutesEst": 18
+    "walkMinutesEst": 18,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -30061,7 +30070,20 @@
     "walkMinutesEst": 2,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象は保護者同伴の0〜12歳（小学生まで）。1歳まで無料（掲載情報。公式で要確認）"
+      },
+      {
+        "name": "ゴーカート",
+        "note": "5歳未満は保護者の同乗が必要。乗物券が別途必要（1台2名まで）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -30536,7 +30558,16 @@
       "sourceUrl": "https://kidspark.hapipiland.com/guide/"
     },
     "stationEst": "横浜",
-    "walkMinutesEst": 1
+    "walkMinutesEst": 1,
+    "rideLimits": [
+      {
+        "name": "キッズパーク",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0〜12歳（推奨は0〜8歳）。小学生以下は保護者同伴。18時以降は年齢制限なしのフォトタイム（開業時の案内に基づくため、公式で要確認）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -30622,7 +30653,15 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "浅草",
-    "walkMinutesEst": 2
+    "walkMinutesEst": 2,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 10,
+        "note": "対象年齢は0歳〜10歳（小学4年生）まで（miniブランド）。0歳は無料。保護者（18歳以上）の同伴が必須"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -30733,7 +30772,16 @@
       "sourceUrl": "https://www.odaiba-decks.com/family_guide/"
     },
     "stationEst": "台場",
-    "walkMinutesEst": 7
+    "walkMinutesEst": 7,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳。保護者（20歳以上、または親権者）の同伴が必須。3歳以下専用のこぎつねコーナーあり（お台場店）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -30933,7 +30981,15 @@
       "sourceUrl": "https://bandainamco-am.co.jp/kids/asobiparkplus/faq/"
     },
     "stationEst": "みなとみらい",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "note": "対象は6か月から（0歳は6か月以上）。小田原店の案内に基づく。上限年齢・身長制限は確認できず。公式で要確認"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "茨城",
@@ -53970,7 +54026,15 @@
     },
     "kidsToiletNote": "ベビーコーナー・授乳室あり",
     "stationEst": "上熊谷",
-    "walkMinutesEst": 7
+    "walkMinutesEst": 7,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -59982,7 +60046,16 @@
       "sourceUrl": "https://kidokid.bornelund.co.jp/saitamashintoshin/"
     },
     "stationEst": "大宮",
-    "walkMinutesEst": 15
+    "walkMinutesEst": 15,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -66495,7 +66568,22 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/hanyu/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "キッズガーデン",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳"
+      },
+      {
+        "name": "ベビーガーデン",
+        "minAge": 0,
+        "maxAge": 2,
+        "note": "0歳〜2歳専用のエリア"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -66812,7 +66900,16 @@
       "年末年始"
     ],
     "stationEst": "京成船橋",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳。保護者の同伴が必須（中学生は保護者がいれば入場可との掲載あり）。3歳以下専用のミルキッズエリアあり"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -67208,7 +67305,16 @@
       "useNote": "店舗内にベビーカー置き場あり"
     },
     "stationEst": "みなとみらい",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -67432,7 +67538,16 @@
       "sourceUrl": "https://kidokid.bornelund.co.jp/tamaplaza-terrace/"
     },
     "stationEst": "たまプラーザ",
-    "walkMinutesEst": 2
+    "walkMinutesEst": 2,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -67531,7 +67646,16 @@
     },
     "kidsToiletNote": "店舗内に授乳室・おむつ替え設備あり。館内3階にもベビールームあり",
     "stationEst": "辻堂",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -71252,7 +71376,16 @@
     "walkMinutesEst": 4,
     "closedDays": [
       "無休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳。保護者の同伴が必須（中学生は保護者がいれば入場可との掲載あり）。3歳以下専用のミルキッズエリアあり"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -74080,7 +74213,22 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "海浜幕張",
-    "walkMinutesEst": 14
+    "walkMinutesEst": 14,
+    "rideLimits": [
+      {
+        "name": "キッズガーデン",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳"
+      },
+      {
+        "name": "ベビーガーデン",
+        "minAge": 0,
+        "maxAge": 2,
+        "note": "0歳〜2歳専用のエリア"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -76670,7 +76818,15 @@
       "useNote": "入口付近にベビーカー置き場あり"
     },
     "stationEst": "鴨宮",
-    "walkMinutesEst": 15
+    "walkMinutesEst": 15,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "note": "対象は6か月から（0歳は6か月以上）。上限年齢・身長制限は確認できず。公式で要確認"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -80974,7 +81130,16 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://kosodateswitch.metro.tokyo.lg.jp/shop/641"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳。保護者の同伴が必須（中学生は保護者がいれば入場可との掲載あり）。3歳以下専用のミルキッズエリアあり"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -97928,7 +98093,15 @@
       "sourceUrl": "https://kidslandus.com/shop/tokyo-omori/"
     },
     "stationEst": "大森",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 10,
+        "note": "対象年齢は0歳〜10歳（小学4年生）まで（miniブランド）。0歳は無料。保護者（18歳以上）の同伴が必須"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -100856,7 +101029,15 @@
     },
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -101556,7 +101737,15 @@
     "walkMinutesEst": 8,
     "closedDays": [
       "横浜ワールドポーターズ休館日"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "全アクティビティ共通",
+        "minAge": 6,
+        "note": "小学生以上が対象。小学生未満はアクティビティを体験できない（20歳以上の保護者同伴なら入場のみ可）。アクティビティごとに身長・体重の制限あり（店舗の公式ページで要確認）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -101848,7 +102037,15 @@
     "walkMinutesEst": 3,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -101944,7 +102141,15 @@
     "walkMinutesEst": 7,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -102036,7 +102241,15 @@
     "walkMinutesEst": null,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -102131,7 +102344,15 @@
     "walkMinutesEst": 4,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "群馬",
@@ -102225,7 +102446,15 @@
     "walkMinutesEst": null,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "茨城",
@@ -102318,7 +102547,15 @@
     "walkMinutesEst": null,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "茨城",
@@ -102411,7 +102648,15 @@
     "walkMinutesEst": null,
     "closedDays": [
       "不定休"
-    ]
+    ],
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -105955,7 +106200,15 @@
     },
     "kidsToiletNote": "授乳室・ベビーコーナーあり。トイレの詳細は未確認",
     "stationEst": "河辺",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "埼玉",
@@ -106051,7 +106304,15 @@
     },
     "kidsToiletNote": "トイレ・ベビーコーナー・授乳室あり。子ども用便座は公式情報未確認",
     "stationEst": "南古谷",
-    "walkMinutesEst": 10
+    "walkMinutesEst": 10,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -107305,7 +107566,22 @@
     },
     "kidsToiletNote": "店内にベビールーム。おむつ交換ベッド・給湯器・授乳スペースあり。トイレは途中退出して利用",
     "stationEst": "南柏",
-    "walkMinutesEst": 13
+    "walkMinutesEst": 13,
+    "rideLimits": [
+      {
+        "name": "キッズガーデン",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳"
+      },
+      {
+        "name": "ベビーガーデン",
+        "minAge": 0,
+        "maxAge": 2,
+        "note": "0歳〜2歳専用のエリア"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -107584,7 +107860,15 @@
     },
     "kidsToiletNote": "授乳室・ベビーコーナーあり。トイレの詳細は未確認",
     "stationEst": "本厚木",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -107680,7 +107964,15 @@
       "source": null
     },
     "kidsToiletNote": "授乳室・ベビーコーナーあり。トイレの詳細は未確認",
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -107772,7 +108064,15 @@
     },
     "kidsToiletNote": "授乳室・ベビーコーナーあり。トイレの詳細は未確認",
     "stationEst": "ユーカリが丘",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "神奈川",
@@ -107968,7 +108268,16 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "センター北",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳。保護者（20歳以上、または親権者）の同伴が必須。3歳以下専用のこぎつねコーナーあり（お台場店）"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -109285,7 +109594,22 @@
       "checkedAt": "2026-11-14"
     },
     "kidsToiletNote": "遊び場内でのおむつ替えは禁止。施設外の指定場所を利用。トイレ利用時は一時退出が必要",
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "rideLimits": [
+      {
+        "name": "キッズガーデン",
+        "minAge": 0,
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳"
+      },
+      {
+        "name": "ベビーガーデン",
+        "minAge": 0,
+        "maxAge": 2,
+        "note": "0歳〜2歳専用のエリア"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "千葉",
@@ -120550,7 +120874,15 @@
       "sourceUrl": "https://iko-yo.net/facilities/176070",
       "sourceLabel": "いこーよ（公式未確認）",
       "checkedAt": "2026-11-21"
-    }
+    },
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 10,
+        "note": "対象年齢は0歳〜10歳（小学4年生）まで（miniブランド）。0歳は無料。保護者（18歳以上）の同伴が必須"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "東京",
@@ -123742,7 +124074,15 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null
+    "officialUrl": null,
+    "rideLimits": [
+      {
+        "name": "施設全体",
+        "maxAge": 12,
+        "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
+      }
+    ],
+    "rideLimitsCheckedAt": "2026-11-23"
   },
   {
     "region": "長野",
