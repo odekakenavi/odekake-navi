@@ -15,10 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # ===== 1) 組み立てとチェック（ここで失敗したら公開されない）=====
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,6 +26,11 @@ jobs:
       # ① データの自動チェック。spots.json / hotels.json などが壊れていたらここで止まり、公開されない（いまのサイトはそのまま）。
       - name: Check data
         run: node tools/check-site.js
+      # 新しく追加された施設の座標と最寄駅を照合して警告を出す（公開は止めない）。駅データ tools/data/stations.csv を置くまでは自動でスキップ。
+      - name: Check nearest station (warning only)
+        if: ${{ hashFiles('tools/data/stations.*') != '' }}
+        run: node tools/calc-station-walk.js --check
+        continue-on-error: true
       # リポジトリの置き場所（site/area など）から、公開用の形（_public/）を組み立てる。重なり・不足があればここで止まり、公開されない。
       - name: Assemble public site
         run: node tools/build-public.js --out _public
@@ -38,8 +41,18 @@ jobs:
       - name: Check public site
         run: node tools/check-site.js --public _public
       - uses: actions/configure-pages@v5
+      # 公開用ファイル一式を「github-pages」という名前で保存する（次のdeployジョブが受け取る）。
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _public
+
+  # ===== 2) 公開（buildが成功したときだけ動く）=====
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
