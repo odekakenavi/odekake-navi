@@ -1942,7 +1942,8 @@ var odkCmpUi={diff:false,hl:new Set()};
 ".odk-cmp-head .row button{min-width:28px;height:28px;font-size:12px;padding:0 3px}",
 ".odk-cmp-4 th,.odk-cmp-4 td{font-size:11px;padding:5px 3px}.odk-cmp-4 .lb{width:56px;min-width:56px;max-width:56px;font-size:10px}.odk-cmp-4 .odk-cmp-head .nm{font-size:10.5px}",
 ".odk-cmp-ctl{margin:4px 0}.odk-cmp-ctl .odk-cmp-btn{min-height:34px;padding:6px 10px;font-size:12px}.odk-cmp-hl{margin:2px 0 8px;gap:5px;flex-wrap:nowrap}.odk-cmp-hl button{padding:5px 8px;font-size:11.5px;white-space:nowrap}",
-".odk-cmp-wrap{overflow:visible;overflow:clip;max-height:none;overscroll-behavior:auto}"
+".odk-cmp-wrap{overflow:visible;overflow:clip;max-height:none;overscroll-behavior:auto}",
+".odk-cmp-table .lb,.odk-cmp-table .g{position:static;left:auto}.odk-cmp-table thead th,.odk-cmp-table thead .lb{position:sticky;left:auto;top:calc(-1 * max(28px,calc(16px + env(safe-area-inset-top))))}"
 ].join("");document.head.appendChild(st)}catch(e){}})();
 
 function odkCmpSave(){try{localStorage.setItem(ODK_CMP_KEY,JSON.stringify([...state.compareSet]))}catch(e){}}
