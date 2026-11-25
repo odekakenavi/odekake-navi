@@ -1899,7 +1899,7 @@ document.body.appendChild(ov)}
 
 /* ===== ODK-CMP: スポット比較の強化（最大4件・比較リスト・違いだけ表示） ===== */
 var ODK_CMP_MAX=4,ODK_CMP_KEY="odekakeCompareV1";
-var odkCmpUi={diff:false,view:"",hl:new Set()};
+var odkCmpUi={diff:false,hl:new Set()};
 (function(){try{var st=document.createElement("style");st.id="odkCmpCss";st.textContent=[
 ".card-quick-btn[data-quick=compare].on{background:#E3F1F7;border-color:var(--sun)}",
 ".fi-cmp{border:1.5px solid var(--line);background:var(--paper);color:var(--ink-soft);border-radius:8px;padding:6px 8px;font-size:11.5px;font-weight:800;cursor:pointer;font-family:inherit;min-height:34px}.fi-cmp.on{border-color:var(--sun);color:var(--sun);background:#E3F1F7}",
@@ -1942,21 +1942,7 @@ var odkCmpUi={diff:false,view:"",hl:new Set()};
 ".odk-cmp-head .row button{min-width:28px;height:28px;font-size:12px;padding:0 3px}",
 ".odk-cmp-4 th,.odk-cmp-4 td{font-size:11px;padding:5px 3px}.odk-cmp-4 .lb{width:56px;min-width:56px;max-width:56px;font-size:10px}.odk-cmp-4 .odk-cmp-head .nm{font-size:10.5px}",
 ".odk-cmp-ctl{margin:4px 0}.odk-cmp-ctl .odk-cmp-btn{min-height:34px;padding:6px 10px;font-size:12px}.odk-cmp-hl{margin:2px 0 8px;gap:5px;flex-wrap:nowrap}.odk-cmp-hl button{padding:5px 8px;font-size:11.5px;white-space:nowrap}",
-".odk-cmp-view{display:flex;align-items:center;gap:6px;margin:4px 0 8px;font-size:11.5px;color:var(--ink-soft)}",
-".odk-cmp-view button{min-height:38px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:0 16px;font-size:13px;font-weight:800;font-family:inherit;cursor:pointer}",
-".odk-cmp-view button.on{background:var(--sun);border-color:var(--sun);color:#fff}",
-".odk-cmp-view .hint{margin-left:auto;font-weight:700}",
-".odk-cmp-wrap{overscroll-behavior:contain;touch-action:pan-x pan-y;max-height:68vh;max-height:68dvh}",
-".odk-cmp-wrap.odk-cmp-slide{--cw:clamp(120px,calc((100vw - 68px) / 2.35),190px);scroll-snap-type:x proximity;scroll-padding-left:68px}",
-".odk-cmp-slide .odk-cmp-table{table-layout:fixed}",
-".odk-cmp-slide .odk-cmp-table th,.odk-cmp-slide .odk-cmp-table td{font-size:13px;padding:9px 8px;line-height:1.55}",
-".odk-cmp-slide .odk-cmp-table thead th{scroll-snap-align:start}",
-".odk-cmp-slide .odk-cmp-table .lb{width:68px;min-width:68px;max-width:68px;padding:9px 6px;font-size:11px;box-shadow:2px 0 4px rgba(0,0,0,.1)}",
-".odk-cmp-slide .odk-cmp-head{gap:5px}",
-".odk-cmp-slide .odk-cmp-head .card-thumb{width:48px;height:48px;min-width:48px;font-size:28px}",
-".odk-cmp-slide .odk-cmp-head .card-thumb img{width:48px;height:48px}",
-".odk-cmp-slide .odk-cmp-head .nm{font-size:13px;-webkit-line-clamp:4}",
-".odk-cmp-slide .odk-cmp-head .row button{min-width:40px;height:36px;font-size:14px}"
+".odk-cmp-wrap{overflow:visible;overflow:clip;max-height:none;overscroll-behavior:auto}"
 ].join("");document.head.appendChild(st)}catch(e){}})();
 
 function odkCmpSave(){try{localStorage.setItem(ODK_CMP_KEY,JSON.stringify([...state.compareSet]))}catch(e){}}
@@ -2034,10 +2020,8 @@ var sr=btn("odk-cmp-btn","🔍 スポットを探す",function(){closeFn();windo
 sheet.appendChild(btn("detail-close-bottom","閉じる",closeFn));return}
 var ctl=h("div","odk-cmp-ctl");var sw=h("label","odk-cmp-sw");var cb=document.createElement("input");cb.type="checkbox";cb.checked=odkCmpUi.diff;cb.onchange=function(){odkCmpUi.diff=cb.checked;renderCompareSheet()};sw.appendChild(cb);sw.appendChild(document.createTextNode("違いだけ表示"));ctl.appendChild(sw);
 ctl.appendChild(btn("odk-cmp-btn","クリア",function(){window.odkConfirm("比較リストをクリアしますか？\n（行きたい・プラン・記録には影響しません）",{ok:"クリア"}).then(function(ok){if(!ok)return;odkCmpClear();renderCompareSheet();odkToastSafe("比較リストをクリアしました")})}));sheet.appendChild(ctl);
-var cmpView=odkCmpUi.view||(spots.length>=3?"slide":"fit");
-var vw=h("div","odk-cmp-view");vw.appendChild(document.createTextNode("表示："));[["fit","全体"],["slide","スライド"]].forEach(function(p){var b=btn(cmpView===p[0]?"on":"",p[1],function(){odkCmpUi.view=p[0];renderCompareSheet()});b.setAttribute("aria-pressed",cmpView===p[0]?"true":"false");vw.appendChild(b)});if(cmpView==="slide")vw.appendChild(h("span","hint","← 左右にスライド →"));sheet.appendChild(vw);
 var hl=h("div","odk-cmp-hl");hl.appendChild(document.createTextNode("強調："));[["rain","☔ 雨の日"],["parking","🚗 駐車場"],["stroller","👶 ベビーカー"]].forEach(function(p){var b=btn(odkCmpUi.hl.has(p[0])?"on":"",p[1],function(){if(odkCmpUi.hl.has(p[0]))odkCmpUi.hl.delete(p[0]);else odkCmpUi.hl.add(p[0]);renderCompareSheet()});b.setAttribute("aria-pressed",odkCmpUi.hl.has(p[0])?"true":"false");hl.appendChild(b)});sheet.appendChild(hl);
-var slide=cmpView==="slide";var wrap=h("div","odk-cmp-wrap"+(slide?" odk-cmp-slide":""));var table=h("table","odk-cmp-table");var cg=h("colgroup");var c0=h("col");c0.style.width=slide?"68px":"64px";cg.appendChild(c0);spots.forEach(function(){var c=h("col");if(slide)c.style.width="var(--cw)";cg.appendChild(c)});table.appendChild(cg);table.style.minWidth="0";if(slide){table.style.width="calc(68px + "+spots.length+" * var(--cw))"}else if(spots.length>=4){table.classList.add("odk-cmp-4");c0.style.width="56px"}var thead=h("thead");var hr=h("tr");hr.appendChild(h("th","lb"));
+var wrap=h("div","odk-cmp-wrap");var table=h("table","odk-cmp-table");var cg=h("colgroup");var c0=h("col");c0.style.width="64px";cg.appendChild(c0);spots.forEach(function(){cg.appendChild(h("col"))});table.appendChild(cg);table.style.minWidth="0";if(spots.length>=4){table.classList.add("odk-cmp-4");c0.style.width="56px"}var thead=h("thead");var hr=h("tr");hr.appendChild(h("th","lb"));
 spots.forEach(function(sp){var th=h("th");var hd=h("div","odk-cmp-head");var th1=h("div","card-thumb");th1.innerHTML=spotThumbHTML(sp);hd.appendChild(th1);hd.appendChild(btn("nm",sp.name,function(){closeFn();openDetail(sp)}));var row=h("div","row");var fav=state.favorites.has(sp.name);var fb=btn(fav?"on":"",fav?"❤️":"♡",function(){toggleSet("favorites",sp.name);renderCompareSheet();odkToastSafe(state.favorites.has(sp.name)?"❤️ 行きたいに追加しました":"行きたいから外しました")});fb.setAttribute("aria-label",sp.name+(fav?"を行きたいから外す":"を行きたいに追加"));row.appendChild(fb);var xb=btn("","×",function(){toggleCompareSpot(sp.name);renderCompareSheet()});xb.setAttribute("aria-label",sp.name+"を比較から外す");row.appendChild(xb);hd.appendChild(row);th.appendChild(hd);hr.appendChild(th)});
 thead.appendChild(hr);table.appendChild(thead);var tb=h("tbody");var total=0,shown=0;
 odkCmpGroups().forEach(function(grp){var rowsHtml=[];grp.rows.forEach(function(r){total++;var vals=spots.map(function(sp){try{return r.f(sp)}catch(e){return odkCmpU()}});var same=vals.every(function(v){return v.t===vals[0].t&&(v.href||"")===(vals[0].href||"")});if(odkCmpUi.diff&&same)return;shown++;var tr=h("tr");tr.appendChild(h("th","lb",r.l));vals.forEach(function(v){var td=odkCmpCell(v);if(r.hl&&odkCmpUi.hl.has(r.hl)&&v.s==="yes")td.classList.add("hl");tr.appendChild(td)});rowsHtml.push(tr)});
