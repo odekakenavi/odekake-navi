@@ -1384,7 +1384,18 @@
       "sourceUrl": "https://www.yomiuriland.com/"
     },
     "stationEst": "京王よみうりランド",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "closedDays": [
+      "不定休（公式カレンダーで確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "運営者確認",
+      "note": "授乳室・おむつ替えあり（運営者確認 2026年11月25日。公式サイトでは確認できず、複数の紹介サイトでは園内のベビールームを紹介）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日"
+    }
   },
   {
     "region": "東京",
@@ -4292,9 +4303,11 @@
       "roof": "none",
       "location": "園内各エリアに駐車可能。車で園内を移動できる",
       "note": "土日祝・大型連休・イルミネーション時期は入退園渋滞に注意",
-      "sourceUrl": "https://t-doitsumura.co.jp/access/",
+      "sourceUrl": "https://t-doitsumura.co.jp/hour-fee/",
       "sourceLabel": "施設公式",
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-25",
+      "priceLabel": "乗用車：通常1,000円。繁忙期（GW 5/2〜5/6、イルミネーション期間 2026/10/31〜12/31）は1,500円。2027/1/1〜4/4は1,000円",
+      "priceShort": "1,000円〜"
     },
     "strollerDetail": {
       "rental": true,
@@ -4314,7 +4327,9 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://t-doitsumura.co.jp/park-guide/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "kidsToilet": true,
+    "kidsToiletNote": "子ども用トイレあり（運営者確認 2026年11月25日。公式サイトでは記載を確認できず）"
   },
   {
     "region": "千葉",
@@ -10120,6 +10135,15 @@
       "sat": "10:00-17:00",
       "sun": "10:00-17:00",
       "holiday": "10:00-17:00"
+    },
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "赤ちゃん休憩所（レッツゴー！レオランド内）に授乳スペース2室・おむつ替え台あり（公式 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.seibuen-amusement-park.jp/facility-service/index.html"
     }
   },
   {
@@ -11376,7 +11400,16 @@
     "closedDays": [
       "冬季休園（1月中旬〜2月末）",
       "その他営業カレンダーによる休園日"
-    ]
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳室はキングスコートエリア内（給湯設備あり）。おむつ替えは園内数ヶ所のトイレにベビーベッドあり（公式Q&A 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.nasuhai.co.jp/qa"
+    }
   },
   {
     "region": "栃木",
@@ -32004,7 +32037,7 @@
     "holidays": [
       "年末年始"
     ],
-    "price": "入園料：大人1,900〜2,300円・小人1,200〜1,600円／フリーパス：大人4,700円・小人3,700円。営業日区分A・B・Cで入園料が変動。小人は3歳〜小学生、シニアは65歳以上。ナイトフリーパスは別設定",
+    "price": "入園料：大人1,900円〜2,300円・小人（3歳〜小学生）1,200円〜1,600円／フリーパス：大人4,700円・小人（3歳〜小学生）3,700円。営業日区分A・B・Cで入園料が変動。シニアは65歳以上。ナイトフリーパスは別設定",
     "parking": "yes",
     "access": "JR中央本線「相模湖」駅からバス約8分",
     "baby": "おむつ替えトイレあり／ベビーカーOK（一部坂道）",
@@ -32180,7 +32213,7 @@
     },
     "strollerOk": "ok",
     "strollerRental": true,
-    "businessHoursNote": "2026年11月は休園日設定あり。季節・イベントにより営業時間が変動。最終入園は閉園30分前",
+    "businessHoursNote": "2026年11月は休園日設定あり。季節・イベントにより営業時間が変動。最終入園は閉園30分前。営業カレンダー：https://www.sagamiko-resort.jp/calender/",
     "shop": {
       "status": "yes",
       "note": "園内にレストラン・売店あり。",
@@ -32212,7 +32245,21 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.sagamiko-resort.jp/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "closedDays": [
+      "不定休（営業カレンダーで確認）"
+    ],
+    "kidsToilet": true,
+    "kidsToiletNote": "子ども用トイレがあるとの情報（運営者確認 2026年11月25日。公式サイトでは記載を確認できず・現地表記は要確認）",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "売店内に授乳室・おむつ替えスペースあり（公式FAQ 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.sagamiko-resort.jp/faq/index.html"
+    }
   },
   {
     "region": "神奈川",
