@@ -504,7 +504,16 @@
       "sourceUrl": "https://www.kidzania.jp/guide/infant"
     },
     "stationEst": "豊洲",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "施設内に授乳室・こども専用トイレ・おむつ交換台あり（キッザニア公式FAQ 2026年11月25日確認。乳幼児エリア・ミルクハウスの利用は公式の「乳幼児の過ごし方」で確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.kidzania.jp/guide/faq"
+    }
   },
   {
     "region": "東京",
@@ -1057,7 +1066,7 @@
     "kidsToilet": "partial",
     "kidsToiletNote": "ディスカバリープラザのトイレにキッズ用トイレがあります（2018年リニューアル時の公式発表）。口コミにも「トイレによっては子ども用トイレ・便座あり」の記載。全トイレにはないため要確認",
     "parkingDetail": {
-      "priceLabel": "地下駐車場1日1,800円",
+      "priceLabel": "ピューロランド地下駐車場：1日1,800円（約80台）。提携駐車場：1時間300円（15時間利用券1,500円）",
       "capacity": "約80台",
       "hours": "営業日の6:00〜閉館30分後",
       "type": "地下駐車場",
@@ -1066,7 +1075,8 @@
       "note": "正午で地下駐車場の入庫案内終了。高さ2.1m・長さ4.8m・幅2.0m以内",
       "sourceUrl": "https://www.puroland.jp/access/",
       "sourceLabel": "施設公式",
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-25",
+      "priceShort": "1,800円"
     },
     "strollerDetail": {
       "useNote": "ベビーセンター内はスペースの都合でベビーカー持ち込み不可",
@@ -1075,7 +1085,16 @@
       "sourceUrl": "https://www.puroland.jp/guide/babycenter/"
     },
     "stationEst": "小田急多摩センター",
-    "walkMinutesEst": 7
+    "walkMinutesEst": 7,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "既存データ",
+      "note": "1階ベビーセンターにファミリー授乳室1室・女性専用の個室授乳室4室、おむつ交換台あり（既存の記載に基づく。公式での再確認は未実施）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.puroland.jp/"
+    }
   },
   {
     "region": "東京",
@@ -1746,7 +1765,11 @@
       "sourceUrl": "https://www.wbstudiotour.jp/plan-your-visit/help-center/accessibility/"
     },
     "stationEst": "豊島園",
-    "walkMinutesEst": 10
+    "walkMinutesEst": 10,
+    "closedDays": [
+      "不定休（営業日・営業時間は日により異なる。公式の運営カレンダーで確認）",
+      "直近の休館日：2027年1/12〜1/13、2/24（公式 2026年11月25日確認）"
+    ]
   },
   {
     "region": "東京",
@@ -2830,7 +2853,12 @@
     "walkMinutesEst": 12,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "closedDays": [
+      "年中無休（臨時休館・営業時間は公式サイトで確認）"
+    ],
+    "kidsToilet": "partial",
+    "kidsToiletNote": "横浜市公式観光情報で「子ども用トイレまたはベビーキープあり」と案内（2026年11月25日確認）。子ども用トイレの有無・場所までは確認できていない"
   },
   {
     "region": "神奈川",
@@ -4927,9 +4955,12 @@
     "kidsToiletNote": "園内の「キッズハウス」（アジアゾーン）にお子様トイレがあります（公式サイトより）。他のトイレは未確認",
     "parkingDetail": {
       "location": "施設敷地内の駐車場",
-      "note": "料金・台数・利用時間は公式情報の追加確認が必要",
-      "sourceUrl": "https://www.tobuws.co.jp/",
-      "checkedAt": "2026-11-14"
+      "note": "精算はチケットブース近くの精算機でお帰りの前に支払う。入庫時の駐車券なし",
+      "sourceUrl": "https://www.tobuws.co.jp/ticket/",
+      "checkedAt": "2026-11-25",
+      "priceLabel": "普通車800円（普通車・二輪車以外 1,500円、二輪車は無料）",
+      "priceShort": "800円",
+      "sourceLabel": "施設公式"
     },
     "strollerDetail": {
       "rental": true,
@@ -4942,6 +4973,18 @@
     "walkMinutesEst": 3,
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/09383cc3540060222/"
+    },
+    "closedDays": [
+      "不定休（公式サイトの営業時間ページで確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "ask",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "ウェルカムスクウェア内の売店「メルカドⅡ」にベビールーム（ベッド設置）あり。授乳室の記載は公式で確認できず（公式FAQ 2026年11月25日確認）",
+      "status": "partial",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.tobuws.co.jp/faq/"
     }
   },
   {
@@ -5713,7 +5756,10 @@
       "sourceUrl": "https://tokyo-joypolis.com/qa/index.html"
     },
     "stationEst": "お台場海浜公園",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "closedDays": [
+      "公式に定休日の記載なし。臨時休館は公式カレンダーで確認"
+    ]
   },
   {
     "region": "東京",
@@ -6449,7 +6495,16 @@
       "sourceUrl": "https://www.tokyo-dome.co.jp/en/guide/child.html"
     },
     "stationEst": "後楽園",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "アトラクションズエリアのジオポリス1階とバイキングゾーン1階に「ベビールーム」あり（授乳・おむつ替え）。利用時間はアトラクションズの営業時間に準ずる。ラクーア3階・後楽園ホールビル1階にもあり（東京ドームシティ公式 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.tokyo-dome.co.jp/zh-CHT/guide/child.html"
+    }
   },
   {
     "region": "東京",
@@ -6609,7 +6664,19 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.summerland.co.jp/guide/facility/dome-information/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "closedDays": [
+      "シーズン営業。営業日・休園日は日により異なる（公式の営業カレンダーで確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "ベビールームがアドベンチャードーム・アドベンチャーラグーン・ファンファンタウンにあり、授乳専用給湯器あり（授乳室は女性のみ利用可）。男女トイレにおむつ替えシートも設置（公式サイト 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.summerland.co.jp/guide/facility/baby-room/"
+    }
   },
   {
     "region": "東京",
@@ -11508,10 +11575,12 @@
       "type": "屋外",
       "roof": "none",
       "location": "施設敷地内",
-      "note": "料金・台数・利用時間の公式記載を今回確認できず。推測しない",
-      "sourceUrl": "https://edowonderland.net/access/",
-      "sourceLabel": "施設公式",
-      "checkedAt": "2026-11-14"
+      "note": "料金は栃木県観光物産協会の公式観光情報（2026年8月更新）で確認。施設公式サイトでは料金の記載を確認できていない",
+      "sourceUrl": "https://www.tochigiji.or.jp/spot/s5693",
+      "sourceLabel": "栃木県観光物産協会（公式観光情報）",
+      "checkedAt": "2026-11-25",
+      "priceLabel": "乗用車800円、オートバイ400円、バス・マイクロバス1,300円（約2,000台）",
+      "priceShort": "800円"
     },
     "strollerDetail": {
       "rental": true,
@@ -24204,7 +24273,19 @@
       "rentalFee": "最初の1時間250円・以降30分100円・12時間最大1500円",
       "rentalMemo": "ベビカル"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳室はパークのインフォメーション・コケムス1F・エンマの劇場裏のナーシングステーションにあり、授乳室に給湯器あり（公式FAQ 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://metsa-hanno.com/faq/"
+    },
+    "closedDays": [
+      "不定休（公式サイトのお知らせ・営業カレンダーで確認）"
+    ]
   },
   {
     "region": "埼玉",
@@ -28010,11 +28091,25 @@
       "roof": "none",
       "location": "施設隣接",
       "note": "土日祝の混雑時は臨時駐車場を利用。高速道路側は上信越道上り線から利用可能",
-      "sourceUrl": "https://www.laranfujioka.com/access",
-      "sourceLabel": "施設運営者公式",
-      "checkedAt": "2026-11-14"
+      "sourceUrl": "https://www.laranfujioka.com/about",
+      "sourceLabel": "施設公式",
+      "checkedAt": "2026-11-25",
+      "priceLabel": "一般駐車場は無料。高速バス利用者向けの有料駐車場は1日600円（第一）／500円（第二）",
+      "priceShort": "無料"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "ベビールームに個室授乳室・ベビーベッド・ミルク用温水器あり。利用は9:00〜17:00（公式 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.laranfujioka.com/babyroom"
+    },
+    "closedDays": [
+      "休業日なし（藤岡市の設置管理条例）。店舗・メルヘンプラザごとに休みや天候休園あり"
+    ]
   },
   {
     "region": "群馬",
@@ -29592,7 +29687,9 @@
     "closedDays": [
       "公園部分は無休",
       "施設は月曜（祝日の場合は翌日）・12/31・1/1・点検日"
-    ]
+    ],
+    "kidsToilet": true,
+    "kidsToiletNote": "プールエリアのロッカー棟（男女更衣室内）に、リニューアルで子ども用トイレを新設（埼玉県公園緑地協会の公式お知らせ 2026年11月25日確認）"
   },
   {
     "region": "埼玉",
@@ -30626,7 +30723,7 @@
     "parking": "yes",
     "access": "浅草エキミセ4F（東武線・地下鉄各線「浅草」駅直結）",
     "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）",
-    "officialUrl": "https://kidslandus.com/",
+    "officialUrl": "https://kidslandus.com/shop/tokyo-asakusa/",
     "desc": "スーパージャングルジムやセルフ写真館、乗り物コーナーなどが揃う屋内遊び場。対象は小学4年生までの子どもとその保護者。",
     "tip": "駅直結でアクセス抜群。2025年にリニューアルオープンしたばかりで設備がきれい。",
     "bookingLinks": {
@@ -30694,7 +30791,16 @@
         "note": "対象年齢は0歳〜10歳（小学4年生）まで（miniブランド）。0歳は無料。保護者（18歳以上）の同伴が必須"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "公式の店舗ページの遊具・設備一覧に「授乳室」あり（2026年11月25日確認）。場所や設備の詳細は未記載",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://kidslandus.com/shop/tokyo-asakusa/"
+    }
   },
   {
     "region": "東京",
@@ -33169,10 +33275,12 @@
       "capacity": "公園全体約800台",
       "type": "かみね公園共用駐車場",
       "location": "公園内に複数駐車場。動物園正門40台・公園南220台・頂上150台・見晴らし60台・公園北330台",
-      "note": "レジャーランド専用台数ではない",
+      "note": "レジャーランド専用台数ではない。無料の記載は日立市観光物産協会の観光情報（https://www.kankou-hitachi.jp/spot.php?mode=detail&genre=4&code=13）で2026年11月25日確認",
       "sourceUrl": "https://www.city.hitachi.lg.jp/citypromotion/1018000/1018003/1018016/1018028.html",
       "sourceLabel": "自治体公式",
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-25",
+      "priceLabel": "無料（かみね公園内の駐車場、約800台）",
+      "priceShort": "無料"
     },
     "strollerDetail": {
       "terrainNote": "坂道あり",
@@ -34026,7 +34134,16 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳室あり（利用はスタッフに声かけ）。おむつ替えベッドはバリアフリートイレで利用可。トリックアートの館のみ別室を用意（公式FAQ・ご利用案内 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.trick-art.jp/faq/"
+    }
   },
   {
     "region": "栃木",
@@ -34275,7 +34392,16 @@
           "holiday": "10:00-16:30"
         }
       }
-    ]
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "オフィシャルホテルの案内",
+      "note": "授乳室は総合案内所横とおもちゃのお城横の2か所。おむつ替えは授乳室・縁日広場横・観覧車下・おもちゃのお城横・渓流横・臨時ゲートなどのトイレ（おもちゃ王国のオフィシャルホテル、ホテルグリーンプラザ軽井沢のFAQ 2026年11月25日確認。おもちゃ王国自身の公式ページでは未確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.hgp.co.jp/karuizawa/plan/babyplan/"
+    }
   },
   {
     "region": "群馬",
@@ -38282,7 +38408,7 @@
       "holiday": "11:00-22:00"
     },
     "closedDays": [
-      "木曜日（祝日・繁忙期は営業）"
+      "木曜日（祝日・GW・お盆・年末年始などの繁忙期は営業。公式の営業カレンダーで確認）"
     ],
     "verifiedAt": "2026年10月13日",
     "image": "img/spots/kanagawa-yokohama-naka-cosmoworld.jpg",
@@ -38350,7 +38476,16 @@
       "年末年始"
     ],
     "stationEst": "みなとみらい",
-    "walkMinutesEst": 8
+    "walkMinutesEst": 8,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "ワンダーアミューズ・ゾーン2階の赤ちゃん休憩室に授乳室・おむつ交換台あり（お湯は休憩室になく、1階コスモコートか管理事務所で用意）。ベビーシートは各ゾーンの女性トイレ・バリアフリートイレなどに設置（公式ゲストサービス 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://cosmoworld.jp/service/"
+    }
   },
   {
     "region": "神奈川",
@@ -38690,7 +38825,7 @@
     ],
     "walletLevel": 1,
     "price": "入園無料（フリーパス 大人6000円から〜／小学生4400円から〜、日により変動）",
-    "parking": "unknown",
+    "parking": "yes",
     "access": "富士急行線「富士急ハイランド駅」からすぐ",
     "baby": "おむつ替えあり／トーマスランドなど小さな子ども向けエリアあり",
     "officialUrl": "https://www.fujiq.jp/",
@@ -38909,7 +39044,28 @@
       "sourceUrl": "https://www.fujiq.jp/service/list/index.html"
     },
     "stationEst": "富士急ハイランド",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "parkingDetail": {
+      "location": "フジヤマ駐車場（第一・第三）／ええじゃないか駐車場（第二）",
+      "priceLabel": "入庫から90分以内は無料。以降は日により料金が異なる（公式の月別料金表で確認）。イベント日などは前払い・90分無料なしの場合あり",
+      "priceShort": "90分無料",
+      "note": "第二駐車場は高さ2.1m以上は入庫不可。車中泊不可",
+      "sourceUrl": "https://www.fujiq.jp/ticket/packing0320.html",
+      "sourceLabel": "施設公式",
+      "checkedAt": "2026-11-25"
+    },
+    "closedDays": [
+      "不定休（公式の月別料金表・営業スケジュールで確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "トーマスランドに授乳室とお子様向けトイレあり（公式 2026年11月25日確認）。ほかのエリアは未確認",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.fujiq.jp/area/thomas/index.html"
+    }
   },
   {
     "region": "静岡",
@@ -39389,7 +39545,16 @@
         "end": "2027-01-28",
         "reason": "2026年度の全館休館日"
       }
-    ]
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "お子さま向けプールゾーン「ワイワイオハナ」（ベビープール「天使の水場」近く）に授乳室・おむつ替えスペースあり。パーク内にミルク用のお湯も用意（公式FAQ・公式サイト 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.hawaiians.co.jp/guide/faq/"
+    }
   },
   {
     "region": "福島",
@@ -41668,7 +41833,19 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.pal2.co.jp/map"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳室は園内3か所（センターハウス1階・レイクサイドゾーン〈急流すべり付近〉・モンテゾーンのテイクアウトショップ横）。お湯サービスあり（公式 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://pal2.co.jp/papamama"
+    },
+    "closedDays": [
+      "不定休（平日に休園日が多い。公式の営業カレンダーで確認）"
+    ]
   },
   {
     "region": "山梨",
@@ -54003,7 +54180,7 @@
     "parking": "yes",
     "access": "イオン熊谷店3F（秩父鉄道「上熊谷」駅から徒歩約6分）",
     "baby": "授乳室・おむつ替え台あり／離乳食持ち込み可",
-    "officialUrl": "https://kidslandus.com/",
+    "officialUrl": "https://kidslandus.com/shop/saitama-kumagaya/",
     "verifiedAt": "2026年10月13日",
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/156927/",
@@ -54081,7 +54258,16 @@
         "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "公式の店舗ページの遊具・設備一覧に「授乳室」あり（2026年11月25日確認）。場所や設備の詳細は未記載",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://kidslandus.com/shop/saitama-kumagaya/"
+    }
   },
   {
     "region": "東京",
@@ -54356,7 +54542,16 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "南町田グランベリーパーク",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "babyFacility": {
+      "nursingRoom": "no",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "公式の「小さいお子様連れのお客様へ」に専用の授乳室の記載はなく、授乳ケープの貸出と、5階食事処でのお湯サービス（調乳・離乳食の温め）あり。おむつ交換台は5階多目的トイレ内と6階女性脱衣所内の2か所。女性大浴場にベビーバスあり（公式 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.manyo.co.jp/machida/child/"
+    }
   },
   {
     "region": "東京",
@@ -54897,11 +55092,13 @@
     "parkingDetail": {
       "type": "ホテル・スパ共用駐車場",
       "location": "施設敷地内",
-      "note": "日帰りスパ利用者・宿泊者の条件は公式情報で要確認。料金・台数・時間は公式で確認できず",
+      "note": "日帰りの無料時間は千葉県公式観光サイト（ちば観光ナビ）で確認。超過料金は旅行サイトで300円・400円と食い違い（改定の可能性）。施設公式サイトでは料金を確認できていない",
       "available": true,
-      "sourceUrl": "https://mikazuki.co.jp/",
-      "sourceLabel": "施設公式（確認できた範囲）",
-      "checkedAt": "2026-11-14"
+      "sourceUrl": "https://maruchiba.jp/spot/detail_12553.html",
+      "sourceLabel": "千葉県公式観光サイト（ちば観光ナビ）",
+      "checkedAt": "2026-11-25",
+      "priceLabel": "日帰り利用は5時間まで無料。超過分は1時間ごとに加算（300円〜400円の情報があり、改定されている可能性。公式で確認）。宿泊は無料",
+      "priceShort": "5時間無料"
     },
     "babyFacility": {
       "nursingRoom": "yes",
@@ -54912,7 +55109,10 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.mikazuki.co.jp/ryugujo/ryugu/service/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "closedDays": [
+      "不定休（年に数回メンテナンスによる休館あり。公式のお知らせで確認）"
+    ]
   },
   {
     "region": "埼玉",
@@ -55036,7 +55236,19 @@
         "note": "身長120cm以上。75m・70m・60mの3コースのスパイラルスライダー（東武動物公園の公式発表より）"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "closedDays": [
+      "夏季のみ営業・不定休（公式のプール営業日カレンダーで確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設発表（報道・公式のお知らせ）",
+      "note": "2026年のリニューアルで、プールエリア内に授乳・おむつ替えができる「屋外型ベビーケアルーム」を新設（東武動物公園の発表を報じた記事、公式のお知らせ 2026年11月25日確認）。冷房完備の更衣室も新設",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://iko-yo.net/facilities/201/news/77859"
+    }
   },
   {
     "region": "神奈川",
@@ -56824,7 +57036,16 @@
         "note": "3歳〜小学生以下の125cm未満が対象"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳・おむつ替えができるベビールームはプールセンター内の多目的スペースにあり、プール場内では救護室を利用。おむつ替えは「ファミリーパラソルNエリア」の男女トイレ内のベビーシートも利用可（公式FAQ 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.princehotels.co.jp/pool/oiso/faq/"
+    }
   },
   {
     "region": "千葉",
@@ -58129,13 +58350,19 @@
     "parkingDetail": {
       "type": "施設駐車場",
       "location": "施設敷地内",
-      "note": "台数・料金は公式で確認できず（第三者情報の200台は公式確認ができないため不採用）",
+      "note": "公式サイトに「200台（無料）」と記載（2026年11月25日確認）。東戸塚駅・上大岡駅・上永谷駅から無料送迎バスあり",
       "available": true,
       "sourceUrl": "https://www.gokurakuyu.ne.jp/tempo/serigaya/",
-      "sourceLabel": "施設公式（確認できた範囲）",
-      "checkedAt": "2026-11-14"
+      "sourceLabel": "施設公式",
+      "checkedAt": "2026-11-25",
+      "priceLabel": "無料（200台）",
+      "priceShort": "無料",
+      "capacity": "200台"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "closedDays": [
+      "公式に定休日の記載なし。臨時休館は公式のお知らせで案内"
+    ]
   },
   {
     "region": "神奈川",
@@ -66577,7 +66804,7 @@
       "holiday": "10:00-20:00"
     },
     "closedDays": [
-      "イオンモール羽生の休館日に準ずる"
+      "イオンモール羽生の休館日に準ずる（公式）"
     ],
     "stayTime": {
       "minMinutes": 90,
@@ -66610,9 +66837,9 @@
       "nursingRoom": "yes",
       "diaperChange": "yes",
       "basis": "施設公式",
-      "note": "公式情報で確認（2026年11月15日）",
+      "note": "施設内に「ベビールーム」あり（おむつ交換ベッド・給湯器・授乳スペース）。施設内でのおむつ替えはベビールームで（公式サイト 2026年11月25日確認）",
       "status": "ok",
-      "checkedAt": "2026年11月15日",
+      "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/hanyu/"
     },
     "walkMinutesEst": null,
@@ -67361,7 +67588,16 @@
         "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "キドキド場内に授乳室とおむつ替えスペースあり。館内には給湯設備のある赤ちゃん休憩室とキッズトイレもある（ボーネルンド公式の店舗ページ 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/markis-minatomirai/"
+    }
   },
   {
     "region": "神奈川",
@@ -67702,7 +67938,16 @@
         "note": "対象年齢は6か月〜12歳まで（0歳は6か月から）。保護者（扶養者または20歳以上の方）の同伴が必須。13歳以上のみ・子どものみの入場は不可。身長制限の記載なし"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "ベビーガーデン内に授乳室とおむつ替えコーナーあり（ボーネルンド公式ブログ 2026年11月25日確認）。授乳室にウォーターサーバーはなく、館内3Fのベビールームを利用。おむつ交換室は感染症対策で一時利用停止していた時期がある（2022年）ため、現在の利用可否は店舗で確認",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://kidokid.bornelund.co.jp/terracemall-shonan/blog/5814/"
+    }
   },
   {
     "region": "埼玉",
@@ -69254,7 +69499,7 @@
     "parking": "no",
     "access": "JR「港南台」駅からバスまたは徒歩",
     "baby": "未就学児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "http://k-log.jp/",
     "verifiedAt": "2026年11月19日",
     "desc": "横浜市内18区に1館ずつ整備されている「こどもログハウス」の港南区版で、「どんぐりハウス」の愛称で親しまれる木造2階建ての無料施設。らせん滑り台やネット階段、のぼり棒、地下迷路など木のぬくもりを感じる遊具が揃い、読書コーナーや工作コーナーもある。天候を気にせず遊べる、地域に根ざした穴場の室内遊び場。",
     "tip": "利用対象は主に小学生・中学生（就学前の幼児は保護者同伴で利用可）。毎月第3火曜と年末年始が休館日なので事前確認がおすすめ。",
@@ -69345,7 +69590,7 @@
     "parking": "no",
     "access": "横浜市営地下鉄「踊場」駅から徒歩約5分",
     "baby": "授乳スペース・おむつ替え台完備",
-    "officialUrl": null,
+    "officialUrl": "https://log.chiiki-support.jp/guide.html",
     "verifiedAt": "2026年10月13日",
     "desc": "「ニャンぱく砦」の愛称で親しまれる戸塚区のこどもログハウス。図書コーナーやブロック、幼児用すべり台のある「静かなスペース」、折り紙やお絵描きコーナー、遊具コーナーがある。「えほんおはなし会」や2〜3歳向け「親子たいそう」など定期イベントも豊富で、授乳・おむつ替えスペースも完備しているため乳児連れでも利用しやすい。",
     "tip": "定期的なイベントが多いので、訪問前に開催予定をチェックすると楽しみが増える。",
@@ -69427,7 +69672,7 @@
     "parking": "no",
     "access": "京急「井土ヶ谷」駅から神奈中バス井11系統で終点「南永田団地」下車、徒歩3分",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://minami-rsk.sakura.ne.jp/house/",
     "verifiedAt": "2026年10月13日",
     "desc": "「わんぱくハウス」の愛称で親しまれる南区のこどもログハウス。吊り輪やスパイラルスライダーで活発に遊べる「プレイルーム」、ソフト積み木のある「積み木の部屋」、図鑑や絵本、エレクトーンがある「静かな部屋」など、動と静のスペースがバランスよく揃う。手作りの温かみあるおもちゃも多く、口コミ評価も高い。",
     "tip": "季節のイベントやクリスマス会なども開催されるので、地域の子育て情報とあわせてチェックするのがおすすめ。",
@@ -69509,7 +69754,7 @@
     "parking": "no",
     "access": "詳細は公式サイトで要確認",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://www.tsuzuki-koryu.org/loghouse/",
     "verifiedAt": "2026年10月13日",
     "desc": "「かもいけランド」の愛称で親しまれる都筑区のこどもログハウス。らせん滑り台やネット登り、のぼり棒に加え、「スペースキューブ」「子どもエレベーター」といったユニークな遊具、伝声管もある。読書や工作ができるスペース、かくれんぼや鬼ごっこができる小屋裏・地下迷路もあり、遊びのバリエーションが豊富。",
     "tip": "平成6年開設と歴史のある施設で、地域で長く親しまれている。",
@@ -69590,7 +69835,7 @@
     "parking": "no",
     "access": "詳細は公式サイトで要確認",
     "baby": "就学前の子どもは平日午前中の利用がおすすめ（保護者同伴）",
-    "officialUrl": null,
+    "officialUrl": "https://kawashima-log.hodogaya-kumin.com/",
     "verifiedAt": "2026年10月13日",
     "desc": "「アドベンチャーハウス」の愛称で親しまれる保土ケ谷区のこどもログハウス。ネット階段や吊り橋、のぼり棒など活発に体を動かせるエリアと、絵本・塗り絵・ままごとなど静かに遊べるコーナーを備える。遊具の難易度がやや高めで、小学生に人気が高い一方、小さな子は保護者がそばで見守るのがおすすめ。",
     "tip": "土曜午前は小学生で賑わいやすいため、小さな子は平日午前中の利用が狙い目。",
@@ -69677,7 +69922,7 @@
     "parking": "no",
     "access": "最寄りバス停・駅から徒歩圏内（詳細は区役所HPで要確認）",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://beleco.moon.bindcloud.jp/shirahatap_loghouse/shirahatalog_guide.html",
     "verifiedAt": "2026年11月19日",
     "desc": "「ピッコロ」の愛称で親しまれる鶴見区のこどもログハウス。主に寺尾・寺尾第二・生麦第二地区の子どもたちが自由に集い、木のぬくもりを感じながら遊べる屋内公園施設。近隣の地区センターやコミュニティハウスと連携したイベントも行われている。",
     "tip": "地域密着型の運営で、自治会・地区センターと連携したイベントも豊富。",
@@ -69835,7 +70080,7 @@
     "parking": "no",
     "access": "京急線「日ノ出町」駅・「黄金町」駅から徒歩圏内",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://sakainotani.nkrsk.info/",
     "verifiedAt": "2026年11月19日",
     "desc": "西区の境之谷公園内にある無料のこどもログハウス。木のぬくもりを感じられる遊具や工作コーナーがあり、雨の日でも子どもたちが体を動かして遊べる屋内公園施設。",
     "tip": "周辺は住宅街で落ち着いた立地。地域の子育てイベントも開催されることがある。",
@@ -69924,7 +70169,7 @@
     "parking": "no",
     "access": "JR・市営地下鉄「桜木町」駅から徒歩圏内",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://www.nakakumin.com/logge/smartphone/guide.html",
     "verifiedAt": "2026年11月19日",
     "desc": "中区の柏葉公園内にある無料のこどもログハウス。野毛山公園にも近く、動物園見学やお散歩と組み合わせて立ち寄りやすい。木造の遊具や読書コーナーを備えた屋内公園施設。",
     "tip": "野毛山動物園とセットで訪れると、雨の日でも一日楽しめる。",
@@ -70174,7 +70419,7 @@
     "parking": "no",
     "access": "京急線「京急富岡」駅から徒歩圏内",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://www.woodcraft-npo.jp/log-house/",
     "verifiedAt": "2026年10月13日",
     "desc": "金沢区の富岡八幡公園内にある無料のこどもログハウス。木造の遊具や読書・工作コーナーを備え、地域の子どもたちの遊び場として親しまれている屋内公園施設。",
     "tip": "隣接する富岡八幡宮や海の公園と組み合わせて一日お出かけコースにするのもおすすめ。",
@@ -70501,7 +70746,7 @@
     "parking": "no",
     "access": "東急田園都市線「市が尾」駅・「あざみ野」駅からバス・徒歩",
     "baby": "幼児は保護者同伴で利用可",
-    "officialUrl": null,
+    "officialUrl": "https://yokohama-shisetsu.com/log/use/",
     "verifiedAt": "2026年9月21日",
     "desc": "青葉区の美しが丘公園内にある無料のこどもログハウス。木造の遊具や工作・読書コーナーを備え、地域の子育て世代に親しまれている屋内公園施設。",
     "tip": "周辺は閑静な住宅街。公園の広場でも合わせて遊べる。",
@@ -71414,15 +71659,15 @@
       "nursingRoom": "yes",
       "diaperChange": "yes",
       "basis": "施設公式",
-      "note": "公式情報で確認（2026年11月15日）",
+      "note": "授乳室・おむつ替え室・ベビーベッドあり。多目的トイレあり（公式サイト 2026年11月25日確認）",
       "status": "ok",
-      "checkedAt": "2026年11月15日",
+      "checkedAt": "2026年11月25日",
       "sourceUrl": "https://fantasyresort.jp/ebina/access/"
     },
     "stationEst": "海老名",
     "walkMinutesEst": 4,
     "closedDays": [
-      "無休"
+      "年中無休（営業カレンダーで確認）"
     ],
     "rideLimits": [
       {
@@ -74065,7 +74310,19 @@
       "sourceUrl": "https://kosodateswitch.metro.tokyo.lg.jp/shop/14036"
     },
     "stationEst": "浅草",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳室は2か所（3階キッズスペースに1部屋、マリオンクレープ前に2部屋〈女性専用〉）。おむつ替えは園内7か所（公式FAQ 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.hanayashiki.net/faq/"
+    },
+    "closedDays": [
+      "不定休（公式サイトの営業時間ページで確認）"
+    ]
   },
   {
     "region": "千葉",
@@ -74171,7 +74428,16 @@
         "note": "3歳以上。中学生以下は16歳以上の保護者の同伴が必要（公式の利用案内）"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳用個室と調乳用のお湯を使える授乳室がマジック・ビレッジにあり、おむつ交換台は多目的トイレと一部の男女トイレに設置。ベビーキープは全トイレに設置（公式パークマップ 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.kandu.co.jp/park-map/"
+    }
   },
   {
     "region": "千葉",
@@ -74230,7 +74496,7 @@
       "holiday": "10:00-20:00"
     },
     "closedDays": [
-      "イオンモール幕張新都心の休館日に準ずる"
+      "イオンモール幕張新都心の休館日に準ずる（公式）"
     ],
     "businessHoursNote": "10:00〜20:00（最終受付19:00）",
     "strollerOk": "ask",
@@ -74275,7 +74541,16 @@
         "note": "0歳〜2歳専用のエリア"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "おむつ交換ベッド・給湯器・授乳スペースのあるベビールームあり。バリアフリートイレとベビーチェア付きトイレが店内にある（公式サイト 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/makuharishintoshin/"
+    }
   },
   {
     "region": "千葉",
@@ -81186,7 +81461,19 @@
         "note": "対象年齢は0歳〜12歳。保護者の同伴が必須（中学生は保護者がいれば入場可との掲載あり）。3歳以下専用のミルキッズエリアあり"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "closedDays": [
+      "年中無休（イオン武蔵村山南店が臨時休業の場合は当店も休み。営業カレンダーで確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "施設公式",
+      "note": "授乳室・おむつ替え室・ベビーベッドあり（公式サイト 2026年11月25日確認）",
+      "status": "ok",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://fantasyresort.jp/musashimurayama/access/"
+    }
   },
   {
     "region": "埼玉",
@@ -101580,7 +101867,8 @@
     "closedDays": [
       "元日",
       "不定休（公式サイトで告知）"
-    ]
+    ],
+    "officialUrl": "https://playec.jp/"
   },
   {
     "region": "埼玉",
@@ -107585,10 +107873,10 @@
     "babyFacility": {
       "nursingRoom": "yes",
       "diaperChange": "yes",
-      "note": "店舗内ベビールームに授乳スペース・おむつ交換ベッド・給湯器あり。施設内で授乳・おむつ替えを行う案内あり。",
+      "basis": "施設公式",
+      "note": "店内におむつ交換ベッド・給湯器・授乳スペースを備えたベビールームあり。施設内でのおむつ替え・授乳はベビールームを利用（公式サイト 2026年11月25日確認）",
       "status": "ok",
-      "basis": "運営会社公式",
-      "checkedAt": "2026年11月11日",
+      "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.fantasy.co.jp/chikyunoniwa/kashiwa/"
     },
     "shop": {
@@ -107628,7 +107916,10 @@
         "note": "0歳〜2歳専用のエリア"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "closedDays": [
+      "イオンモール柏の休館日に準ずる（公式）"
+    ]
   },
   {
     "region": "千葉",
@@ -109613,7 +109904,7 @@
     "babyFacility": {
       "nursingRoom": "yes",
       "diaperChange": "yes",
-      "note": "イオンモール東久留米の共用設備を利用。3階キッズ売場の赤ちゃん休憩室に授乳スペース・おむつ替え・粉ミルク用のお湯あり。店舗専用設備ではない。",
+      "note": "イオンモール東久留米の共用設備を利用。3階キッズ売場の赤ちゃん休憩室に授乳スペース・おむつ替え・粉ミルク用のお湯あり。店舗専用設備ではない。ちきゅうのにわ公式では「店内でのおむつ替えはご遠慮ください」と案内（2026年11月25日確認）。",
       "status": "ok",
       "basis": "東京都子育て支援公式・商業施設公式資料",
       "checkedAt": "2026年11月11日",
@@ -109656,7 +109947,10 @@
         "note": "0歳〜2歳専用のエリア"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "closedDays": [
+      "イオンモール東久留米の休館日に準ずる（公式）"
+    ]
   },
   {
     "region": "千葉",
@@ -124121,7 +124415,7 @@
     },
     "verifiedAt": "2026年11月21日",
     "strollerOk": "ask",
-    "officialUrl": null,
+    "officialUrl": "https://kidslandus.com/shop/shizuoka-hamamatsu/",
     "rideLimits": [
       {
         "name": "施設全体",
@@ -124129,7 +124423,16 @@
         "note": "対象年齢は0歳〜12歳（小学6年生）まで。0歳は無料。保護者（18歳以上）の同伴が必須。身長制限の記載なし"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "ask",
+      "basis": "施設公式",
+      "note": "公式の店舗ページの遊具・設備一覧に「授乳室」あり（2026年11月25日確認）。場所や設備の詳細は未記載",
+      "status": "partial",
+      "checkedAt": "2026年11月25日",
+      "sourceUrl": "https://kidslandus.com/shop/shizuoka-hamamatsu/"
+    }
   },
   {
     "region": "長野",
