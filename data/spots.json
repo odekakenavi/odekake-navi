@@ -120,7 +120,8 @@
       "sourceUrl": "https://www.tokyo-zoo.net/ueno/visitor-info/infant-care/index.html"
     },
     "stationEst": "根津",
-    "walkMinutesEst": 8
+    "walkMinutesEst": 8,
+    "address": "東京都台東区上野公園9-83"
   },
   {
     "region": "東京",
@@ -153,7 +154,7 @@
       "holidayAM": "▲ 混雑しやすい",
       "holidayPM": "▲ 混雑しやすい"
     },
-    "price": "大人2600円〜／小中学生1300円〜／幼児（4歳以上）800円〜。日付・時期により変動。特別展・有料イベントは別料金",
+    "price": "大人2600円〜／小学生1300円〜／中学生1300円〜／幼児800円〜（4歳以上）。日付・時期により変動。特別展・有料イベントは別料金",
     "parking": "yes",
     "access": "東京メトロ有楽町線「東池袋」駅から徒歩約3分（JR・東京メトロ・西武線・東武線「池袋」駅からは徒歩約8分）",
     "baby": "ベビールームは本館2階（授乳用個室・おむつ替えベッド・ミルク用のお湯）。水族館内でのベビーカー貸出はなく、本館入口にベビーカー置場あり（貸出はサンシャインシティ内のアルパ等）。館内は2フロアで、上下階は優先エレベーターを利用。混雑時はベビーカーで進みにくいことも。",
@@ -244,10 +245,12 @@
     "parkingDetail": {
       "type": "サンシャインシティ共用駐車場",
       "location": "サンシャインシティ内",
-      "note": "水族館入場料合計2,000円以上で1時間無料、条件により2時間無料。対象条件・併用制限あり",
+      "note": "水族館入場料合計2,000円以上で1時間無料、条件により2時間無料。対象条件・併用制限あり。料金・台数は観光情報サイト（ウォーカープラス）の掲載で、公式での確認は未了",
       "sourceUrl": "https://sunshinecity.jp/aquarium/information/faq.html",
       "sourceLabel": "施設公式FAQ",
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-14",
+      "priceLabel": "30分400円",
+      "capacity": "約1,800台（サンシャインシティ共用）"
     },
     "strollerDetail": {
       "rental": false,
@@ -261,6 +264,10 @@
     "walkMinutesEst": 5,
     "holidays": [
       "年末年始"
+    ],
+    "address": "東京都豊島区東池袋3-1 サンシャインシティ ワールドインポートマートビル屋上",
+    "closedDays": [
+      "原則年中無休（臨時休館日あり）"
     ]
   },
   {
@@ -403,7 +410,8 @@
     ],
     "closedDays": [
       "無休"
-    ]
+    ],
+    "address": "東京都墨田区押上1-1-2 東京スカイツリータウン・ソラマチ5・6階"
   },
   {
     "region": "東京",
@@ -1537,7 +1545,8 @@
       "sourceUrl": "https://www.tokyo-zoo.net/tama/visitor-info/infant-care/index.html"
     },
     "stationEst": "程久保",
-    "walkMinutesEst": 9
+    "walkMinutesEst": 9,
+    "address": "東京都日野市程久保7-1-1"
   },
   {
     "region": "埼玉",
@@ -2425,9 +2434,14 @@
       "source": "web:news.livedoor.com/article/detail/31211172/, castel.jp/p/2349"
     },
     "parkingDetail": {
-      "location": "施設周辺の駐車場案内は追加確認が必要",
-      "sourceUrl": "https://www.tobuzoo.com/",
-      "checkedAt": "2026-11-14"
+      "priceLabel": "普通車1,000円（土日祝1,500円）、バス2,500円",
+      "capacity": "約2,500台",
+      "type": "施設駐車場",
+      "location": "西ゲート（動物園）側",
+      "note": "料金・台数は観光情報サイト（るるぶ）の掲載で、公式での確認は未了",
+      "sourceUrl": "https://rurubu.jp/andmore/spot/80009161",
+      "sourceLabel": "観光情報サイト（るるぶ）・公式未確認",
+      "checkedAt": "2026-11-27"
     },
     "strollerDetail": {
       "rental": true,
@@ -2440,7 +2454,8 @@
       "sourceUrl": "https://www.tobuzoo.com/servicelist/facility/"
     },
     "stationEst": "東武動物公園",
-    "walkMinutesEst": 13
+    "walkMinutesEst": 13,
+    "address": "埼玉県南埼玉郡宮代町須賀110"
   },
   {
     "region": "埼玉",
@@ -2586,7 +2601,7 @@
     "duration": [
       "半日"
     ],
-    "price": "こども動物園 大人410円程度／子供無料〜低額",
+    "price": "大人500円（高校生以上）／小学生以下無料／中学生以下無料。年間パスポートは大人1,500円",
     "parking": "yes",
     "access": "西武新宿線「狭山市」駅からバス約15分",
     "baby": "ベビーカーは無料で貸出（5台のみ、車いすは1台）。授乳室・おむつ交換台あり。公式の園内マップに「救護室・授乳室」の表示がある。園内には車いす・ベビーカー以外の乗り物（自転車・ストライダー・スクーターなど）は持ち込めない。",
@@ -2669,7 +2684,8 @@
       "sourceUrl": "https://parks.or.jp/chikozan/guide/000/000861.html"
     },
     "stationEst": "狭山市",
-    "walkMinutesEst": 11
+    "walkMinutesEst": 11,
+    "address": "埼玉県狭山市柏原864-1"
   },
   {
     "region": "神奈川",
@@ -3121,7 +3137,7 @@
       "holidayAM": "▲ 混雑しやすい",
       "holidayPM": "▲ 混雑しやすい"
     },
-    "price": "大人2800円／高校生1800円／小・中学生1300円／幼児（3歳以上）900円",
+    "price": "大人2800円／高校生1800円／小学生1300円／中学生1300円／幼児900円（3歳以上）",
     "parking": "no",
     "access": "小田急線「片瀬江ノ島」駅から徒歩3分",
     "baby": "授乳室は館内2か所（1F入場口奥・2F総合案内近く。女性専用で調乳用の熱湯と電子レンジあり）。1F出口横に男性も入れるベビーケアルームと個室授乳室「mamaro」もあり。おむつ替えシートは各多目的トイレ等に設置。ベビーカーは1台300円で貸出（B型・7か月〜2歳頃、予約不可）。館内はスロープ・エレベーターで移動でき、イルカショー会場にベビーカー置き場あり。",
@@ -3227,7 +3243,8 @@
       "年末年始"
     ],
     "stationEst": "片瀬江ノ島",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "神奈川県藤沢市片瀬海岸2-19-1"
   },
   {
     "region": "神奈川",
@@ -4074,7 +4091,8 @@
     "walkMinutesEst": 9,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "千葉県鴨川市東町1464-18"
   },
   {
     "region": "千葉",
@@ -4771,7 +4789,16 @@
     "holidays": [
       "年末年始"
     ],
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "茨城県東茨城郡大洗町磯浜町8252-3",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "掲載情報（授乳室・多目的トイレのベビーベッドの記載）",
+      "note": "授乳室は3階に1か所、ベビーケアルーム「mamaro」が2か所。多目的トイレ6か所にベビーベッドあり。",
+      "status": "ok",
+      "checkedAt": "2026年11月26日"
+    }
   },
   {
     "region": "栃木",
@@ -4881,7 +4908,19 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://nasu-oukoku.com/?page_id=2750"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県那須郡那須町大島1042-1",
+    "closedDays": [
+      "主に水曜日（休園日は公式の営業日カレンダーで要確認）"
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "観光情報サイト（いこーよ・アソビュー）掲載・公式未確認",
+      "note": "授乳室・おむつ交換台ありとの掲載。公式での確認は未了です。",
+      "status": "partial",
+      "checkedAt": "2026年11月27日"
+    }
   },
   {
     "region": "栃木",
@@ -5015,7 +5054,7 @@
       "holidayAM": "△ やや混雑",
       "holidayPM": "△ やや混雑"
     },
-    "price": "大人2900円から（マイカー入園料込み目安）",
+    "price": "大人3,200円（中学生以上）／子ども1,600円（3歳〜小学生）。65歳以上2,800円。バス等は別料金。子ども料金は観光情報サイトの掲載で公式未確認",
     "parking": "yes",
     "access": "上信電鉄「上州富岡」駅からバス約20分（車が便利）",
     "baby": "授乳室は第1駐車場の総合案内所・売店マルシェ・無料休憩所内にあり、お湯は総合案内所・レストランサバンナ・オークウッドで頼める。おむつ交換は総合案内所と売店マルシェの男女トイレ、無料休憩所の授乳室で可能。ベビーカーは総合案内所（4台）と売店（2台）で1回100円で貸出。サファリのバス（飼育体験・フルコース・エサやり・サファリバス）にはベビーカーを載せられない。ウォーキングサファリゾーンでは売店のベビーカーを借りられる。",
@@ -5046,9 +5085,9 @@
       "checkedAt": "2026年10月12日"
     },
     "familyPrice": {
-      "yen": 8600,
+      "yen": 9600,
       "type": "est",
-      "note": "大人2,900円×2＋子ども（大人の約半額1,400円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
+      "note": "大人3,200円×2＋子ども1,600円×2＋幼児（0〜2歳）は無料。子ども料金は観光情報サイト掲載で公式未確認"
     },
     "businessHours": {
       "mon": "09:30-17:00",
@@ -5104,7 +5143,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://safari.co.jp/faq/faq_tax/infants/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県富岡市岡本1"
   },
   {
     "region": "東京",
@@ -5335,7 +5375,8 @@
       "sourceUrl": "https://www.tokyo-zoo.net/inokashira/visitor-info/infant-care/index.html"
     },
     "stationEst": "吉祥寺",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "東京都武蔵野市御殿山1-17-6"
   },
   {
     "region": "東京",
@@ -5362,7 +5403,7 @@
       "minMinutes": 90,
       "maxMinutes": 150
     },
-    "price": "大人（高校生以上）1350円／小・中学生600円／幼児（4歳以上）300円／65歳以上1200円",
+    "price": "大人1350円（高校生以上）／小学生600円／中学生600円／幼児300円（4歳以上）／65歳以上1200円",
     "parking": "yes",
     "access": "京急線「鮫洲」駅から徒歩8分",
     "baby": "授乳スペースは個室2か所（テーブルとイスのみ。入口スタッフに声をかけると案内してもらえる）。ミルク用のお湯はイルカルームの調乳機を利用。おむつ替えシートは男女トイレと多目的トイレにあり。貸出用ベビーカーはなし。ベビーカーのまま入館でき、各階の移動はエレベーター（ゴールデンウィーク・お盆などの大型連休は持込不可）。",
@@ -5448,7 +5489,8 @@
       "sourceUrl": "https://www.aquarium.gr.jp/guide/baby"
     },
     "stationEst": "大森海岸",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "address": "東京都品川区勝島3-2-1"
   },
   {
     "region": "東京",
@@ -5481,7 +5523,7 @@
       "holidayAM": "▲ 混雑しやすい",
       "holidayPM": "▲ 混雑しやすい"
     },
-    "price": "大人2800円／小中学生1300円／幼児（4歳以上）800円。当日・前売共通。アトラクション・有料プログラムは別料金",
+    "price": "大人2800円／小学生1300円／中学生1300円／幼児800円（4歳以上）。当日・前売共通。アトラクション・有料プログラムは別料金",
     "parking": "yes",
     "access": "JR・京急「品川」駅から徒歩2分",
     "baby": "おむつ替え・授乳室あり／ベビーカーOK",
@@ -5574,7 +5616,8 @@
       "sourceUrl": "https://www.aqua-park.jp/aqua/faq/index.html"
     },
     "stationEst": "品川",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "東京都港区高輪4-10-30 品川プリンスホテル内"
   },
   {
     "region": "東京",
@@ -8041,7 +8084,7 @@
     "duration": [
       "1日"
     ],
-    "price": "大人800円／高校生300円／小・中学生200円／小学生未満 無料（毎週土曜は小・中・高校生無料）",
+    "price": "大人800円／高校生300円／小学生200円／中学生200円／小学生未満無料（毎週土曜は小・中・高校生無料）",
     "parking": "yes",
     "access": "相鉄線「鶴ケ峰」駅などからバス15分",
     "baby": "授乳スペースは園内6か所（正門横のコインロッカー室・オージーヒルグリルレストラン・アマゾンセンター・ころこロッジ・サバンナテラス・北門）。おむつ交換台は園内の全トイレに設置。ミルク用のお湯は正門以外の授乳室にあり（正門は総合窓口で声をかけるとお湯をもらえる）。ベビーカーは正門レンタルコーナー（北門開放日は北門も）で600円で貸出（B型・生後7か月〜4歳頃、体重18kg・身長100cmまで）。",
@@ -8170,7 +8213,8 @@
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/details/2019/post-1657.php",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "神奈川県横浜市旭区上白根町1175-1"
   },
   {
     "region": "神奈川",
@@ -8284,7 +8328,8 @@
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/nogeyama/rental.php"
     },
     "stationEst": "日ノ出町",
-    "walkMinutesEst": 7
+    "walkMinutesEst": 7,
+    "address": "神奈川県横浜市西区老松町63-10"
   },
   {
     "region": "神奈川",
@@ -8946,7 +8991,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人400円／小中学生100円",
+    "price": "大人400円／小学生100円／中学生100円",
     "parking": "yes",
     "access": "JR相模線「上溝」駅からバス",
     "baby": "授乳室は2名分の女性専用で、受付に申し出て利用（授乳室と館内の各トイレにおむつ交換台あり）。ベビーカーの貸出はないが、ベビーカーで入館でき、館内はスロープで回れる。無料駐車場あり（99台）。ミルク用のお湯はスタッフに声をかけると対応してもらえるとの情報あり（公式で要確認）。",
@@ -9031,7 +9076,8 @@
     "holidays": [
       "年末年始"
     ],
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "神奈川県相模原市中央区水郷田名1-5-1"
   },
   {
     "region": "神奈川",
@@ -9157,7 +9203,7 @@
       "minMinutes": 120,
       "maxMinutes": 180
     },
-    "price": "大人700円／中学生以下 無料",
+    "price": "大人800円（高校生以上）／小学生以下無料／中学生以下無料",
     "parking": "yes",
     "access": "モノレール「動物公園」駅から徒歩4分",
     "businessHours": {
@@ -9184,9 +9230,9 @@
       "asoview": "https://www.asoview.com/base/159690/"
     },
     "familyPrice": {
-      "yen": 1400,
+      "yen": 1600,
       "type": "calc",
-      "note": "大人700円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
+      "note": "大人800円×2＋小学生0円×2＋幼児0円×1（中学生以下は無料）"
     },
     "food": {
       "lunch": "園内にレストランあり。",
@@ -9338,7 +9384,8 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://zounokuni.com/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県市原市山小川937"
   },
   {
     "region": "千葉",
@@ -9570,7 +9617,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人430円／中学生以下 無料",
+    "price": "大人440円／小人110円／未就学児無料。観賞植物園・バラ園は無料。料金は観光情報サイトの掲載（2026年3月時点）で、公式の最新料金は要確認",
     "parking": "yes",
     "access": "JR「本八幡」駅からバス20分",
     "businessHours": {
@@ -9608,9 +9655,9 @@
       "checkedAt": "2026年10月12日"
     },
     "familyPrice": {
-      "yen": 860,
+      "yen": 1100,
       "type": "calc",
-      "note": "大人430円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
+      "note": "大人440円×2＋小人110円×2＋幼児0円×1（未就学児は無料）。観光情報サイト掲載の料金で公式未確認"
     },
     "image": "img/spots/chiba-ichikawa-ichikawa-zoological-and-botanical-gardens.jpg",
     "imageCredit": "📷 四葉亭四迷 / CC BY-SA 4.0 / Wikimedia Commons",
@@ -9651,7 +9698,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.city.ichikawa.lg.jp/site/zoo/6709.html"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県市川市大町284-1"
   },
   {
     "region": "千葉",
@@ -10236,7 +10284,7 @@
     "seasons": [
       "夏"
     ],
-    "price": "大人510円／中学生以下 無料",
+    "price": "大人900円（高校生以上）／小学生200円／中学生200円／未就学児無料",
     "parking": "yes",
     "access": "東武東上線「森林公園」駅からバス15分",
     "baby": "授乳室は園内3か所（中央売店休憩所・東園レストラン休憩所・こどもの城内）。ベビーベッドは女子トイレ内（一部は多目的トイレ内）。ベビーカーは1日500円でキリン売店・こどもの城・レストランガゼボで貸出（生後7か月〜4歳・体重17kgまで、申込用紙の記入が必要、台数限りあり・予約不可）。園内は広く起伏もあるため、抱っこ紐があると安心。",
@@ -10298,9 +10346,9 @@
       "checkedAt": "2026年10月12日"
     },
     "familyPrice": {
-      "yen": 1020,
+      "yen": 2200,
       "type": "calc",
-      "note": "大人510円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
+      "note": "大人900円×2＋小学生200円×2＋幼児0円×1（未就学児は無料）"
     },
     "genre": "動物園",
     "strollerOk": "ok",
@@ -10337,7 +10385,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.parks.or.jp/sczoo/faq/000/000459.html"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県東松山市岩殿554"
   },
   {
     "region": "埼玉",
@@ -10470,7 +10519,7 @@
       "minMinutes": 90,
       "maxMinutes": 150
     },
-    "price": "大人730円／小中学生310円",
+    "price": "大人730円／小学生310円／中学生310円",
     "parking": "yes",
     "access": "東武伊勢崎線「羽生」駅からバス20分",
     "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
@@ -10560,7 +10609,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.parks.or.jp/suizokukan/faq/001/001314.html"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県羽生市三田ヶ谷751-1（羽生水郷公園内）"
   },
   {
     "region": "埼玉",
@@ -11085,7 +11135,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人510円／中学生以下 無料",
+    "price": "大人520円（高校生以上）／小人100円（4歳〜中学生）／3歳以下・65歳以上無料。大人は510円とする掲載もあり公式で要確認",
     "parking": "yes",
     "access": "JR「日立」駅からバス10分",
     "baby": "授乳室は入園口すぐのふれあいプラザかみね1階と、同じ建物の2階（エレファントカフェ内）の2か所。ベビーカーは入園口ゲートで1回200円で貸出。無料のコインロッカーはふれあいプラザ2階。トイレ内におむつ替え用ベビーベッドあり。スロープ・エレベーターもあり。",
@@ -11098,9 +11148,9 @@
     },
     "verifiedAt": "2026年10月13日",
     "familyPrice": {
-      "yen": 1020,
+      "yen": 1240,
       "type": "calc",
-      "note": "大人510円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
+      "note": "大人520円×2＋小人100円×2＋幼児0円×1（3歳以下は無料）。大人料金は510円とする掲載もあり公式未確認"
     },
     "businessHours": {
       "mon": "定休日",
@@ -11163,7 +11213,8 @@
       "note": "日曜・祝日等は駐車場間の無料周回バス運行あり",
       "sourceUrl": "https://www.city.hitachi.lg.jp/zoo/1004402.html",
       "sourceLabel": "日立市公式",
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-14",
+      "priceLabel": "無料"
     },
     "strollerDetail": {
       "rental": true,
@@ -11178,7 +11229,8 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "茨城県日立市宮田町5-2-22"
   },
   {
     "region": "茨城",
@@ -11954,7 +12006,8 @@
       "火曜日（祝日の場合は営業の場合あり）",
       "年末年始",
       "臨時休園日"
-    ]
+    ],
+    "address": "群馬県桐生市宮本町3-8-12"
   },
   {
     "region": "群馬",
@@ -12109,7 +12162,7 @@
     "region": "神奈川",
     "name": "カワスイ 川崎水族館",
     "slug": "kanagawa/kawasaki-saiwai/kawasu-kawasaki-aquarium",
-    "area": "川崎市幸区",
+    "area": "川崎市川崎区",
     "lat": 35.529565,
     "lng": 139.696656,
     "ages": [
@@ -12195,7 +12248,8 @@
       "sourceUrl": "https://kawa-sui.com/shops/8"
     },
     "stationEst": "川崎",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "神奈川県川崎市川崎区日進町1-11 川崎ルフロン9・10階"
   },
   {
     "region": "神奈川",
@@ -12805,7 +12859,8 @@
       "sourceUrl": "https://www.city.kawasaki.jp/530/soshiki/10-3-7-0-0.html"
     },
     "stationEst": "新川崎",
-    "walkMinutesEst": 10
+    "walkMinutesEst": 10,
+    "address": "神奈川県川崎市幸区南加瀬4-35-1"
   },
   {
     "region": "神奈川",
@@ -20104,7 +20159,7 @@
     "seasons": [
       "夏"
     ],
-    "price": "大人1200円から（乗り物別途）",
+    "price": "大人1,600円（中学生以上）／小人800円（3歳〜小学生）。乗り物は別料金",
     "parking": "yes",
     "access": "JR「宇都宮」駅からバス",
     "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）",
@@ -20116,10 +20171,9 @@
     "desc": "動物園と遊園地がひとつになった施設で、キリンやゾウに園内で買ったエサを直接あげられる。「なかよしランド」では乗馬や小動物とのふれあいができ、遊園地には高さ30mの観覧車など家族で乗れる乗り物が14種類ある。夏はちびっこプールも開く。",
     "tip": "入園料で動物園と遊園地の両方に入れる（乗り物は別料金）。子ども料金は3歳から。駐車場は無料（1,000台）。授乳室・おむつ替えあり。",
     "familyPrice": {
-      "yen": null,
-      "type": "official",
-      "note": "料金の記載が不十分で目安を出せません。最新の料金は公式サイトでご確認ください",
-      "officialUrl": "https://www.utsunomiya-zoo.com/"
+      "yen": 4800,
+      "type": "calc",
+      "note": "大人1,600円×2＋小人800円×2＋幼児0円×1（3歳未満は無料と仮定）。乗り物は別料金"
     },
     "food": {
       "lunch": "園内にレストラン・売店あり。",
@@ -20200,15 +20254,25 @@
     "parkingDetail": {
       "type": "施設駐車場",
       "location": "施設敷地内",
-      "note": "料金・台数・利用時間は公式情報で確認できず",
-      "sourceUrl": "https://www.utsunomiya-zoo.com/",
-      "sourceLabel": "施設公式",
-      "checkedAt": "2026-11-14"
+      "note": "料金・台数は観光情報サイト（ジョルダン・まっぷる）の掲載で、公式での確認は未了。利用時間は確認できず",
+      "sourceUrl": "https://sp.jorudan.co.jp/zoo_aqua/spot_12845.html",
+      "sourceLabel": "観光情報サイト（ジョルダン・まっぷる）・公式未確認",
+      "checkedAt": "2026-11-14",
+      "priceLabel": "無料",
+      "capacity": "約1,000台（大型バス約70台）"
     },
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "観光情報サイト（まっぷる）掲載・公式未確認",
+      "note": "授乳室・おむつ替えシート・ベビーカー貸出ありとの掲載。公式での確認は未了です。",
+      "status": "partial",
+      "checkedAt": "2026年11月27日"
+    }
   },
   {
     "region": "栃木",
@@ -27072,7 +27136,7 @@
     "duration": [
       "半日"
     ],
-    "price": "中学生以上2300円／4歳以上1100円（掲載時点の目安・変更される場合あり）",
+    "price": "大人2300円（中学生以上）／子ども1100円（4歳以上）（掲載時点の目安・変更される場合あり）",
     "parking": "yes",
     "access": "東武鬼怒川線「鬼怒川温泉」駅から日光江戸村行きバスで「おさるの学校前」下車すぐ（無料駐車場あり）",
     "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）",
@@ -27112,12 +27176,12 @@
       "source": "food.lunch"
     },
     "parkingDetail": {
+      "priceLabel": "無料",
       "type": "施設駐車場",
-      "location": "施設敷地内",
-      "note": "料金・台数・利用時間の公式情報を確認できず",
-      "sourceUrl": "https://www.osaruland.jp",
-      "sourceLabel": "施設公式（詳細未確認）",
-      "checkedAt": "2026-11-14"
+      "note": "無料との掲載（ゆこゆこ・ベルトラ）。台数・利用時間は確認できず、公式での確認は未了",
+      "sourceUrl": "https://www.yukoyuko.net/onsen/spot/s0002103",
+      "sourceLabel": "観光情報サイト（ゆこゆこ等）・公式未確認",
+      "checkedAt": "2026-11-27"
     },
     "stationEst": "新高徳",
     "walkMinutesEst": 13,
@@ -31446,7 +31510,7 @@
     "seasons": [
       "夏"
     ],
-    "price": "観覧 高校生以上900円、小中学生300円、幼児無料",
+    "price": "観覧：大人900円（高校生以上）／小学生300円／中学生300円／幼児無料",
     "parking": "yes",
     "access": "JR「西那須野」駅からバス約40分",
     "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
@@ -31546,7 +31610,8 @@
     "walkMinutesEst": null,
     "bookingLinks": {
       "asoview": "https://www.asoview.com/base/163157/"
-    }
+    },
+    "address": "栃木県大田原市佐良土2686"
   },
   {
     "region": "東京",
@@ -33067,7 +33132,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人(中学生以上)2000円／子ども(3歳〜小学生)1000円／3歳未満無料",
+    "price": "大人2000円（中学生以上）／子ども1000円（3歳〜小学生）／3歳未満無料",
     "parking": "yes",
     "access": "常磐自動車道「土浦北IC」から車で約20分",
     "baby": "おむつ替えトイレあり",
@@ -33586,7 +33651,7 @@
       "半日",
       "1日"
     ],
-    "price": "大人(中学生以上)3200円／子ども(3歳〜小学生)1900円（入園料。サファリカー・ライオンバス等は別料金）",
+    "price": "大人3200円（中学生以上）／子ども1900円（3歳〜小学生）（入園料。サファリカー・ライオンバス等は別料金）",
     "parking": "yes",
     "access": "東北自動車道「那須IC」から車で約15分",
     "baby": "おむつ替えトイレあり／ベビーカーは車内観覧のため不要",
@@ -33644,7 +33709,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "http://www.nasusafari.com/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県那須郡那須町高久乙3523"
   },
   {
     "region": "栃木",
@@ -33665,7 +33731,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人(中学生以上)2300円／子ども(3歳〜小学生)1200円",
+    "price": "大人2300円（中学生以上）／子ども1200円（3歳〜小学生）",
     "parking": "yes",
     "access": "東北自動車道「那須IC」から車で約10分",
     "baby": "おむつ替えトイレあり",
@@ -33747,7 +33813,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.nasumonkey.com/guide/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県那須郡那須町高久甲6146"
   },
   {
     "region": "栃木",
@@ -39091,7 +39158,7 @@
     ],
     "overnightRecommended": true,
     "hotelArea": "gotemba",
-    "price": "大人3,200円・4歳〜中学生2,000円・3歳以下無料。MySAFARI会員の事前購入料金は大人2,700円・子ども1,700円",
+    "price": "大人3,200円／子ども2,000円（4歳〜中学生）／3歳以下無料。MySAFARI会員の事前購入料金は大人2,700円・子ども1,700円",
     "parking": "yes",
     "access": "JR「御殿場駅」からバスで約35分",
     "baby": "おむつ替え・授乳室あり／マイカーでの周遊なら車内で過ごせる",
@@ -39222,7 +39289,8 @@
           "holiday": "10:00-15:30"
         }
       }
-    ]
+    ],
+    "address": "静岡県裾野市須山藤原2255-27"
   },
   {
     "region": "静岡",
@@ -39330,7 +39398,8 @@
       "sourceUrl": "https://k-hana-tori.com/qa/"
     },
     "stationEst": "掛川",
-    "walkMinutesEst": 13
+    "walkMinutesEst": 13,
+    "address": "静岡県掛川市南西郷1517"
   },
   {
     "region": "静岡",
@@ -39684,7 +39753,8 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "福島県いわき市小名浜字辰巳町50"
   },
   {
     "region": "東京",
@@ -39791,7 +39861,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://seibutuen.jp/guidance/information_c.html"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "東京都足立区保木間2-17-1"
   },
   {
     "region": "東京",
@@ -39885,7 +39956,8 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "西葛西",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "address": "東京都江戸川区北葛西3-2-1"
   },
   {
     "region": "東京",
@@ -41442,7 +41514,8 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "静岡県伊東市富戸1317-13"
   },
   {
     "region": "長野",
@@ -41543,7 +41616,8 @@
     "holidays": [
       "年末年始"
     ],
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "長野県下高井郡山ノ内町平穏6845"
   },
   {
     "region": "静岡",
@@ -41653,7 +41727,8 @@
     "walkMinutesEst": 3,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "静岡県賀茂郡東伊豆町奈良本1253-10"
   },
   {
     "region": "静岡",
@@ -42696,7 +42771,7 @@
       "minMinutes": 90,
       "maxMinutes": 150
     },
-    "price": "大人（中学生以上）2,500円・小人（4歳〜小学生）1,250円。団体料金・障がい者割引あり",
+    "price": "大人2,500円（中学生以上）／小人1,250円（4歳〜小学生）。団体料金・障がい者割引あり",
     "parking": "yes",
     "access": "伊豆急行線「伊豆急下田」駅からバス約7分",
     "baby": "おむつ替えあり／ベビーカーOK",
@@ -42773,6 +42848,11 @@
         "end": "2026-12-18",
         "reason": "休館日"
       }
+    ],
+    "address": "静岡県下田市3-22-31",
+    "closedDays": [
+      "原則無休（12月に館内整備のため4日間休館）",
+      "2026年は12/15〜12/18が休館"
     ]
   },
   {
@@ -42880,7 +42960,8 @@
     "walkMinutesEst": null,
     "closedDays": [
       "無休"
-    ]
+    ],
+    "address": "静岡県賀茂郡河津町浜406-2"
   },
   {
     "region": "静岡",
@@ -43241,7 +43322,16 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.mitosea.com/infomation/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "静岡県沼津市内浦長浜3-1",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "観光情報サイト掲載・公式未確認",
+      "note": "授乳室2か所との掲載（観光情報サイト mapple）。おむつ替えは既存の掲載情報より。公式で最新情報をご確認ください。",
+      "status": "partial",
+      "checkedAt": "2026年11月26日"
+    }
   },
   {
     "region": "静岡",
@@ -43462,7 +43552,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://izu-animal-kingdom.com/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "静岡県賀茂郡東伊豆町稲取3344"
   },
   {
     "region": "静岡",
@@ -43892,7 +43983,8 @@
     "walkMinutesEst": null,
     "closedDays": [
       "無休"
-    ]
+    ],
+    "address": "静岡県賀茂郡河津町梨本359"
   },
   {
     "region": "静岡",
@@ -45555,7 +45647,8 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "神奈川県足柄下郡箱根町元箱根139"
   },
   {
     "region": "神奈川",
@@ -47994,7 +48087,7 @@
       "minMinutes": 60,
       "maxMinutes": 90
     },
-    "price": "大人420円／小中学生200円／幼児無料。20名以上の団体は大人340円・小中学生170円。2027年4月1日から大人470円・小中学生220円に改定予定",
+    "price": "大人420円／小学生200円／中学生200円／幼児無料。20名以上の団体は大人340円・小学生170円・中学生170円。2027年4月1日から大人470円・小学生220円・中学生220円に改定予定",
     "parking": "yes",
     "access": "東富士五湖道路「山中湖IC」から車で約5分",
     "baby": "おむつ替えあり／ベビーカーは公式の明記なし（要確認）",
@@ -48046,13 +48139,24 @@
       "capacity": "普通車約100台（目安）",
       "type": "公園共用駐車場（さかな公園内）",
       "location": "さかな公園内・水族館に隣接",
-      "note": "満車時は入口付近・周辺道路での駐停車を控える。料金・駐車場利用時間は公式記載なし",
+      "note": "満車時は入口付近・周辺道路での駐停車を控える。駐車場利用時間は公式記載なし。料金は観光情報サイト（ウォーカープラス）で無料と掲載（公式記載なし）",
       "available": true,
       "sourceUrl": "https://www.morinonakano-suizokukan.com/pg6407641.html",
       "sourceLabel": "施設公式",
-      "checkedAt": "2026-11-14"
+      "checkedAt": "2026-11-14",
+      "priceLabel": "無料",
+      "priceShort": "無料"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "山梨県南都留郡忍野村忍草3098-1 さかな公園内",
+    "babyFacility": {
+      "nursingRoom": "yes",
+      "diaperChange": "yes",
+      "basis": "二次情報（ウォーカープラス）・公式未確認",
+      "note": "授乳室・おむつ交換台ありとの掲載。公式での確認は未了です。",
+      "status": "partial",
+      "checkedAt": "2026年11月26日"
+    }
   },
   {
     "region": "山梨",
@@ -50551,7 +50655,8 @@
       "note": "草津温泉街の飲食店：徒歩圏内にあります。",
       "source": "food.nearbyLunch"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県吾妻郡草津町草津286"
   },
   {
     "region": "群馬",
@@ -52312,7 +52417,7 @@
     "duration": [
       "半日"
     ],
-    "price": "施設により異なる（要事前確認）",
+    "price": "大人300円／小学生100円／中学生100円／未就学児無料",
     "parking": "yes",
     "access": "中禅寺湖畔、JR・東武「日光」駅から東武バスで中禅寺温泉方面へ",
     "baby": "授乳室・おむつ替えは公式情報なし（未確認）／ベビーカーは屋外部分のみ",
@@ -53942,7 +54047,8 @@
     "walkMinutesEst": null,
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/11363ee4570112113/"
-    }
+    },
+    "address": "埼玉県秩父郡長瀞町長瀞2209-6"
   },
   {
     "region": "埼玉",
@@ -54057,7 +54163,8 @@
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県さいたま市緑区大字大崎3156-1"
   },
   {
     "region": "埼玉",
@@ -72491,8 +72598,8 @@
     "name": "ラウンドワンスタジアム朝霞店",
     "slug": "saitama/asaka/round1-asaka",
     "area": "朝霞市膝折町",
-    "lat": 35.8085,
-    "lng": 139.593,
+    "lat": 35.790313,
+    "lng": 139.579688,
     "genre": "室内遊び場",
     "ages": [
       "2-3歳",
@@ -74793,7 +74900,7 @@
       "holidayAM": "△ やや混雑",
       "holidayPM": "△ やや混雑"
     },
-    "price": "大人500円／高校生300円／小・中学生200円／小学生未満 無料（毎週土曜は高校生以下無料）",
+    "price": "大人500円／高校生300円／小学生200円／中学生200円／小学生未満無料（毎週土曜は高校生以下無料）",
     "parking": "yes",
     "access": "京急本線「金沢文庫」駅西口からバス約10分「夏山坂上」下車、徒歩6分（土日祝は直通バスあり）",
     "businessHours": {
@@ -74901,7 +75008,8 @@
       "sourceUrl": "https://www.hama-midorinokyokai.or.jp/zoo/kanazawa/rental.php",
       "useNote": "園内に急坂あり。ルートにより移動負担が異なる"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "神奈川県横浜市金沢区釜利谷東5-15-1"
   },
   {
     "region": "神奈川",
@@ -77455,7 +77563,7 @@
       "holidayAM": "△ やや混雑",
       "holidayPM": "△ やや混雑"
     },
-    "price": "大人(中学生以上)500円、子ども(3歳以上)300円",
+    "price": "大人500円（中学生以上）／子ども300円（3歳以上）",
     "parking": "yes",
     "access": "小田急「町田」駅北口からバスで約20分「薬師池」下車すぐ、または小田急「鶴川」駅からバスで約10分終点下車徒歩4分／東名高速「横浜町田」ICから約30分",
     "businessHoursNote": "10:00〜16:00（入園券販売は閉園30分前まで）",
@@ -77545,7 +77653,8 @@
     },
     "strollerRental": false,
     "kidsToiletNote": "授乳室兼カームダウンスペースあり。利用時はスタッフへ声かけ",
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "東京都町田市金井町733-1"
   },
   {
     "region": "東京",
@@ -77856,7 +77965,8 @@
       "sourceUrl": "https://www.tokyo-zoo.net/kasai/visitor-info/infant-care/index.html"
     },
     "stationEst": "葛西臨海公園",
-    "walkMinutesEst": 1
+    "walkMinutesEst": 1,
+    "address": "東京都江戸川区臨海町6-2-3"
   },
   {
     "region": "千葉",
@@ -83086,7 +83196,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人（高校生以上）2200円／小・中学生1200円／幼児（4歳以上）600円（65歳以上200円引）",
+    "price": "大人2200円（高校生以上）／小学生1200円／中学生1200円／幼児600円（4歳以上）／65歳以上は200円引",
     "parking": "no",
     "access": "JR「沼津」駅南口からバス約15分「沼津港」下車、徒歩すぐ",
     "baby": "館内1か所・館外1か所の多目的トイレにおむつ替え台あり。授乳室は公式FAQに記載なし。／貸出用ベビーカーはなし",
@@ -101400,7 +101510,7 @@
       "minMinutes": 60,
       "maxMinutes": 120
     },
-    "price": "3歳以上800円（2歳以下無料）、再入場OK。小学生以下は100円引きの前売りあり",
+    "price": "大人・子ども一律800円（3歳以上）。2歳以下無料、再入場OK。小学生以下は100円引きの前売りあり",
     "parking": "yes",
     "access": "JR東海道本線「平塚」駅南口から徒歩約10分",
     "businessHoursNote": "10:00〜19:00。該当日が祝日・夏休み・冬休みなどの場合は営業することあり",
@@ -101589,7 +101699,7 @@
       "minMinutes": 60,
       "maxMinutes": 120
     },
-    "price": "3歳以上800円／2歳以下無料。障がい者手帳所持者は本人400円。レシート提示で再入場可能。現金のみ",
+    "price": "大人・子ども一律800円（3歳以上）。2歳以下無料。障がい者手帳所持者は本人400円。レシート提示で再入場可能。現金のみ",
     "parking": "yes",
     "access": "イオンタウン吉川美南 東街区1F（レモネードキッズ横）",
     "businessHoursNote": "10:00〜19:00。2026年7月18日オープン",
@@ -101686,7 +101796,7 @@
       "minMinutes": 60,
       "maxMinutes": 120
     },
-    "price": "入場800円。2歳以下無料。おやつ1つ100円",
+    "price": "大人・子ども一律800円。2歳以下無料。おやつ1つ100円",
     "parking": "yes",
     "access": "JR「稲毛」駅東口から京成バス「ヴィルフォーレ稲毛」下車徒歩約3分",
     "businessHoursNote": "10:00〜19:00（最終受付18:30）",
@@ -101893,7 +102003,7 @@
     "duration": [
       "半日"
     ],
-    "price": "3歳以上800円（2歳以下無料）、再入場OK",
+    "price": "大人・子ども一律800円（3歳以上）。2歳以下無料、再入場OK",
     "parking": "yes",
     "access": "JR高崎線「北上尾」駅東口から徒歩約3〜4分",
     "baby": "授乳室・おむつ替えは公式情報なし（未確認）",
@@ -109352,7 +109462,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人（高校生以上）1,650円／小人（4歳〜中学生）1,100円／3歳以下無料（アプリ会員割引・市民割引・前売券あり）",
+    "price": "大人1,650円（高校生以上）／小人1,100円（4歳〜中学生）／3歳以下無料（アプリ会員割引・市民割引・前売券あり）",
     "parking": "yes",
     "access": "常磐道千代田石岡ICから約35分／東関東道潮来ICから約50分／JR常磐線土浦駅から車またはバスで約50分。駐車場無料",
     "baby": "3歳以下は無料。詳細は要確認",
@@ -109453,7 +109563,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人（13歳以上）45分1,980円〜（入場時に1オーダー制）／小人（4〜12歳）990円（時間無制限・おやつ体験ガチャ付き）／3歳以下無料（20歳以上の同伴者が必要）。平日90分パックなどあり",
+    "price": "大人1,980円〜（13歳以上・45分・入場時に1オーダー制）／小人990円（4〜12歳・時間無制限・おやつ体験ガチャ付き）／3歳以下無料（20歳以上の同伴者が必要）。平日90分パックなどあり",
     "parking": "yes",
     "access": "ゆりかもめ「お台場海浜公園」駅方面（デックス東京ビーチ 5階）。デックスの駐車場550台（30分300円・土日祝400円）",
     "baby": "デックス東京ビーチ5階の店舗。館内共用設備として授乳スペース・おむつ替え・粉ミルク用のお湯を利用可能。店舗内設備ではない。",
@@ -123162,7 +123272,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人（高校生以上）500円／中学生以下は無料／70歳以上は無料（浜松市公式。年間フリーパス1,500円）",
+    "price": "大人500円（高校生以上）／小学生以下無料／中学生以下無料／70歳以上は無料（浜松市公式。年間フリーパス1,500円）",
     "parking": "yes",
     "access": "JR浜松駅北口バスターミナル1番のりばから遠鉄バス「舘山寺温泉」行きで約40〜45分、「動物園」下車すぐ／東名舘山寺スマートICから約3分",
     "businessHours": {
