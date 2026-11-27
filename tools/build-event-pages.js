@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// おでかけナビ イベント特集ページ生成ツール（/event/halloween/ と /event/christmas/ だけを作る）
-//   node tools/build-event-pages.js --out _build     … _build/event/{halloween,christmas}/index.html を生成
-//   node tools/build-event-pages.js --only christmas … 1つだけ生成
+// おでかけナビ イベント特集ページ生成ツール
+//   node tools/build-event-pages.js                  … site/event/{イベント名}/index.html を生成
+//   node tools/build-event-pages.js --out _build     … _build/event/{イベント名}/index.html を生成
+//   node tools/build-event-pages.js --only illumination … 1つだけ生成
 //   node tools/build-event-pages.js --drafts          … 下書き枠（draft: true）も生成（公開前の確認用）
 //   （--index index.html / --spots data/spots.json で入力の場所を変えられる）
 // 方針：
@@ -19,7 +20,7 @@ const BASE = '/odekake-navi/';
 const { SITE_HEADER_CSS, SITE_HEADER, EVENT_NAV } = require('./site-header.js'); // 共通ヘッダー（ロゴ・☰・×）
 const argv = process.argv.slice(2);
 const arg = (name, def) => { const i = argv.indexOf('--' + name); return i >= 0 && argv[i + 1] ? argv[i + 1] : def; };
-const OUT_DIR = arg('out', '_build');
+const OUT_DIR = arg('out', 'site');
 const INDEX_PATH = arg('index', 'index.html');
 const SPOTS_PATH = arg('spots', 'data/spots.json');
 const ONLY = arg('only', null);
