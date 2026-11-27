@@ -31,6 +31,9 @@ jobs:
         if: ${{ hashFiles('tools/data/stations.*') != '' }}
         run: node tools/calc-station-walk.js --check
         continue-on-error: true
+      # イベント特集ページを生成（site/event/{イベント名}/index.html）
+      - name: Generate event pages
+        run: node tools/build-event-pages.js --out site
       # リポジトリの置き場所（site/area など）から、公開用の形（_public/）を組み立てる。重なり・不足があればここで止まり、公開されない。
       - name: Assemble public site
         run: node tools/build-public.js --out _public
