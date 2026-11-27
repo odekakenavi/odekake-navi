@@ -1940,6 +1940,7 @@ var clr=h("button","odk-cmp-btn","クリア");clr.type="button";clr.onclick=func
 var go=h("button","odk-cmp-btn go","比較する");go.type="button";go.disabled=n<2;go.onclick=odkCmpOpen;act.appendChild(go);el.appendChild(act)}
 
 /* ---- 比較項目（データがなければ「不明」。推測で補わない） ---- */
+function odkCmpPriceNow(sp){var p=sp&&sp.price?String(sp.price):"";var r={p:p,tag:""};try{var ei=sp.eventInfo||{},today=jstToday();for(var k in ei){var i=ei[k];if(!i||i.tentative||!i.start||!i.end||today<i.start||today>i.end)continue;var m=p.match(new RegExp(k+"期間[（(][^）)]*[）)]は(.+)$"));if(m){r.p=m[1];r.tag="（"+k+"期間）";return r}}}catch(e){}return r}
 function odkCmpU(){return{t:"不明",s:"unknown"}}
 function odkCmpInfo(t){return t?{t:String(t),s:"info"}:odkCmpU()}
 function odkCmpFac(sp,label){var list=[];try{list=kidsFacilityList(sp)}catch(e){}var it=list.find(function(x){return x.lb===label});if(!it)return odkCmpU();if(it.state==="yes")return{t:it.text||"あり",s:"yes"};if(it.state==="no")return{t:it.text&&it.text!=="なし"?it.text:"なし",s:"no"};if(it.state==="check")return{t:it.text||"要確認",s:"check"};return odkCmpU()}
@@ -1954,8 +1955,8 @@ function odkCmpGroups(){return[
 {l:"対象年齢",f:function(sp){return odkCmpInfo(ageRangeLabel(sp))}},
 {l:"営業時間",f:function(sp){var t=businessHoursSummaryLabel(sp);return odkCmpInfo(t&&t.replace(/^(営業|利用)時間\s*/,""))}},
 {l:"定休日",f:function(sp){return odkCmpInfo(Array.isArray(sp.closedDays)&&sp.closedDays.length?sp.closedDays.join("・"):"")}},
-{l:"大人料金",f:function(sp){if(!sp.price)return odkCmpU();var b=parsePriceBreakdown(sp.price);if(b.adult!==void 0)return odkCmpInfo(odkCmpYen(b.adult));return parsePriceYen(sp.price)===0?odkCmpInfo("無料"):odkCmpU()}},
-{l:"子ども料金",f:function(sp){if(!sp.price)return odkCmpU();var b=parsePriceBreakdown(sp.price),p=[];if(b.elementary!==void 0)p.push("小学生 "+odkCmpYen(b.elementary));if(b.child!==void 0)p.push("子ども "+odkCmpYen(b.child));if(b.infant!==void 0)p.push("幼児 "+odkCmpYen(b.infant));return p.length?odkCmpInfo(p.join("／")):(parsePriceYen(sp.price)===0?odkCmpInfo("無料"):odkCmpU())}},
+{l:"大人料金",f:function(sp){if(!sp.price)return odkCmpU();var c=odkCmpPriceNow(sp),b=parsePriceBreakdown(c.p);if(b.adult!==void 0)return odkCmpInfo(odkCmpYen(b.adult)+c.tag);return parsePriceYen(sp.price)===0?odkCmpInfo("無料"):odkCmpU()}},
+{l:"子ども料金",f:function(sp){if(!sp.price)return odkCmpU();var c=odkCmpPriceNow(sp),b=parsePriceBreakdown(c.p),p=[];if(b.elementary!==void 0)p.push("小学生 "+odkCmpYen(b.elementary));if(b.child!==void 0)p.push("子ども "+odkCmpYen(b.child));if(b.infant!==void 0)p.push("幼児 "+odkCmpYen(b.infant));return p.length?odkCmpInfo(p.join("／")+c.tag):(parsePriceYen(sp.price)===0?odkCmpInfo("無料"):odkCmpU())}},
 {l:"無料・有料",f:function(sp){if(!sp.price)return odkCmpU();if(isPartialFreePrice(sp.price))return odkCmpInfo("一部無料");var y=parsePriceYen(sp.price);if(y===0)return{t:"無料",s:"yes"};if(y===null||y===void 0)return odkCmpU();return odkCmpInfo("有料")}},
 {l:"屋内・屋外",hl:"rain",f:function(sp){var w=odkCmpWeather(sp);if(w.r&&!w.s)return{t:"屋内中心",s:"yes"};if(w.s&&!w.r)return odkCmpInfo("屋外中心");if(w.r&&w.s)return odkCmpInfo("屋内・屋外どちらも");return odkCmpU()}},
 {l:"雨の日",hl:"rain",f:function(sp){var w=odkCmpWeather(sp);if(w.r)return{t:"利用しやすい（データ上）",s:"yes"};if(w.s)return{t:"晴れの日向き（データ上）",s:"check"};return odkCmpU()}}]},
