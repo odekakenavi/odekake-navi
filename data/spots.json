@@ -521,7 +521,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.kidzania.jp/guide/faq"
-    }
+    },
+    "address": "東京都江東区豊洲2丁目4-9 アーバンドックららぽーと豊洲1ノースポート3階"
   },
   {
     "region": "東京",
@@ -1102,7 +1103,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.puroland.jp/"
-    }
+    },
+    "address": "東京都多摩市落合1丁目31"
   },
   {
     "region": "東京",
@@ -1422,7 +1424,8 @@
       "note": "授乳室・おむつ替えあり（運営者確認 2026年11月25日。公式サイトでは確認できず、複数の紹介サイトでは園内のベビールームを紹介）",
       "status": "ok",
       "checkedAt": "2026年11月25日"
-    }
+    },
+    "address": "東京都稲城市矢野口4015-1"
   },
   {
     "region": "東京",
@@ -1778,7 +1781,8 @@
     "closedDays": [
       "不定休（営業日・営業時間は日により異なる。公式の運営カレンダーで確認）",
       "直近の休館日：2027年1/12〜1/13、2/24（公式 2026年11月25日確認）"
-    ]
+    ],
+    "address": "東京都練馬区春日町1-1-7"
   },
   {
     "region": "東京",
@@ -2874,7 +2878,8 @@
       "年中無休（臨時休館・営業時間は公式サイトで確認）"
     ],
     "kidsToilet": "partial",
-    "kidsToiletNote": "横浜市公式観光情報で「子ども用トイレまたはベビーキープあり」と案内（2026年11月25日確認）。子ども用トイレの有無・場所までは確認できていない"
+    "kidsToiletNote": "横浜市公式観光情報で「子ども用トイレまたはベビーキープあり」と案内（2026年11月25日確認）。子ども用トイレの有無・場所までは確認できていない",
+    "address": "神奈川県横浜市金沢区八景島"
   },
   {
     "region": "神奈川",
@@ -3620,7 +3625,8 @@
       "sourceUrl": "https://www.tokyodisneyresort.jp/tdr/guide/baby/babycar.html"
     },
     "stationEst": "東京ディズニーランド・ステーション",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "千葉県浦安市舞浜"
   },
   {
     "region": "千葉",
@@ -3789,7 +3795,8 @@
       "sourceUrl": "https://www.tokyodisneyresort.co.jp/tdr/guide/baby/babycar.html"
     },
     "stationEst": "東京ディズニーシー・ステーション",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "address": "千葉県浦安市舞浜"
   },
   {
     "region": "千葉",
@@ -3812,7 +3819,7 @@
     "duration": [
       "1日"
     ],
-    "price": "大人（中学生以上）1800円／小人（4歳～小学6年生）900円",
+    "price": "大人1800円（中学生以上）／小人900円（4歳〜小学6年生）",
     "parking": "yes",
     "access": "JR「君津」駅からバス約40分",
     "baby": "ベビールームは「まきば案内所横」と「山の上案内所横」の2か所（ベビーベッド、仕切られた授乳室、流し台、電子レンジあり。ミルク用のお湯は、まきばは電気ポット・山の上は給湯器。授乳室は男性不可）。ベビーカーは各案内所で受付してレンタル（20台、A型、1日1,000円、生後1か月〜48か月・体重20kgまで。台数限りあり）。園内は坂道が多く、ベビーカーが不向きな場所もあるので抱っこ紐があると安心。",
@@ -3947,7 +3954,8 @@
       "sourceUrl": "https://www.motherfarm.co.jp/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県富津市田倉940-3"
   },
   {
     "region": "千葉",
@@ -4375,7 +4383,8 @@
     },
     "walkMinutesEst": null,
     "kidsToilet": true,
-    "kidsToiletNote": "子ども用トイレあり（運営者確認 2026年11月25日。公式サイトでは記載を確認できず）"
+    "kidsToiletNote": "子ども用トイレあり（運営者確認 2026年11月25日。公式サイトでは記載を確認できず）",
+    "address": "千葉県袖ケ浦市永吉419"
   },
   {
     "region": "千葉",
@@ -5024,7 +5033,8 @@
       "status": "partial",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.tobuws.co.jp/faq/"
-    }
+    },
+    "address": "栃木県日光市鬼怒川温泉大原209-1"
   },
   {
     "region": "群馬",
@@ -5802,7 +5812,8 @@
     "walkMinutesEst": 5,
     "closedDays": [
       "公式に定休日の記載なし。臨時休館は公式カレンダーで確認"
-    ]
+    ],
+    "address": "東京都港区台場1丁目6-1 デックス東京ビーチ3〜5階"
   },
   {
     "region": "東京",
@@ -6547,7 +6558,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.tokyo-dome.co.jp/zh-CHT/guide/child.html"
-    }
+    },
+    "address": "東京都文京区後楽1丁目3-61"
   },
   {
     "region": "東京",
@@ -9931,7 +9943,7 @@
       "秋",
       "冬"
     ],
-    "price": "大人1500円から／子供800円から",
+    "price": "平日：大人1,600円（中学生以上）・子ども800円（4歳以上）・65歳以上1,200円／土日祝：大人1,800円・子ども900円・65歳以上1,400円。4歳未満無料",
     "parking": "yes",
     "access": "JR「成田」駅からバス30分",
     "baby": "授乳室は園内3か所、ベビーベッドは3か所に計4台（公式の料金ページ）。ベビーカーは有料レンタル（500円＋保証金1,000円。台数限りあり）。ミルク用のお湯はインフォメーションセンターに声をかけるともらえる。トロッコ列車やふれんZOO広場などはベビーカーを外に置いて入る。",
@@ -9962,9 +9974,9 @@
       "checkedAt": "2026年10月12日"
     },
     "familyPrice": {
-      "yen": 5400,
+      "yen": 4800,
       "type": "calc",
-      "note": "大人1,500円×2＋小学生800円×2＋幼児800円×1（幼児も子ども料金と仮定）"
+      "note": "平日料金：大人1,600円×2＋子ども800円×2＋幼児0円×1（4歳未満は無料）。土日祝は大人1,800円・子ども900円。観光情報サイト（まるちば等）掲載で公式未確認"
     },
     "businessHours": {
       "mon": "09:30-16:30",
@@ -10003,10 +10015,12 @@
       "type": "屋外",
       "roof": "none",
       "location": "牧場敷地内",
-      "note": "駐車料金・台数・利用時間の公式記載を今回確認できず。料金を推測しない",
-      "sourceUrl": "https://www.yumebokujo.com/access.html",
-      "sourceLabel": "施設公式",
-      "checkedAt": "2026-11-14"
+      "note": "料金・台数は観光情報サイト（まるちば）の掲載で、公式での確認は未了。大型車・二輪は料金が掲載により異なる",
+      "sourceUrl": "https://maruchiba.jp/spot/detail_10146.html",
+      "sourceLabel": "観光情報サイト（まるちば）・公式未確認",
+      "checkedAt": "2026-11-27",
+      "priceLabel": "普通車1,000円",
+      "capacity": "約1,000台"
     },
     "strollerRental": true,
     "strollerDetail": {
@@ -10040,7 +10054,8 @@
       "sourceUrl": "https://www.walkerplus.com/spot/ar0312s07580/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県成田市名木730-3"
   },
   {
     "region": "埼玉",
@@ -10259,7 +10274,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.seibuen-amusement-park.jp/facility-service/index.html"
-    }
+    },
+    "address": "埼玉県所沢市山口2964"
   },
   {
     "region": "埼玉",
@@ -11528,7 +11544,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.nasuhai.co.jp/qa"
-    }
+    },
+    "address": "栃木県那須郡那須町高久乙3375"
   },
   {
     "region": "栃木",
@@ -11778,7 +11795,8 @@
       "sourceUrl": "https://www.park-tochigi.com/tochinoki/faq"
     },
     "stationEst": "西川田",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "address": "栃木県宇都宮市西川田4丁目1-1 栃木県総合運動公園内"
   },
   {
     "region": "群馬",
@@ -12156,7 +12174,8 @@
       "sourceUrl": "https://lunapark.maebashi-park.com/facilities/"
     },
     "stationEst": "中央前橋",
-    "walkMinutesEst": 18
+    "walkMinutesEst": 18,
+    "address": "群馬県前橋市大手町3丁目16-3"
   },
   {
     "region": "神奈川",
@@ -20806,7 +20825,8 @@
       "sourceUrl": "https://www.walkerplus.com/spot/ar0310s07577/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県渋川市金井2844-1"
   },
   {
     "region": "群馬",
@@ -24349,7 +24369,8 @@
     },
     "closedDays": [
       "不定休（公式サイトのお知らせ・営業カレンダーで確認）"
-    ]
+    ],
+    "address": "埼玉県飯能市宮沢327-6 メッツァ"
   },
   {
     "region": "埼玉",
@@ -24623,7 +24644,8 @@
       "note": "一般的な傾向。食事・買い物・レジャーを兼ねた休日利用が集中しやすい",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県日高市下大谷沢546"
   },
   {
     "region": "埼玉",
@@ -26939,7 +26961,8 @@
     "walkMinutesEst": null,
     "closedDays": [
       "無休"
-    ]
+    ],
+    "address": "栃木県那須塩原市千本松799"
   },
   {
     "region": "栃木",
@@ -27526,7 +27549,8 @@
       "note": "一般的な傾向。那須高原の観光牧場で休日の家族連れ利用が中心",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県那須郡那須町湯本579"
   },
   {
     "region": "栃木",
@@ -28539,7 +28563,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.skyland89.jp/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県渋川市金井2843-3"
   },
   {
     "region": "群馬",
@@ -32430,7 +32455,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.sagamiko-resort.jp/faq/index.html"
-    }
+    },
+    "address": "神奈川県相模原市緑区若柳1634"
   },
   {
     "region": "神奈川",
@@ -33356,7 +33382,8 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "茨城県日立市宮田町5-2-22"
   },
   {
     "region": "茨城",
@@ -34468,7 +34495,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.hgp.co.jp/karuizawa/plan/babyplan/"
-    }
+    },
+    "address": "群馬県吾妻郡嬬恋村大前細原2277"
   },
   {
     "region": "群馬",
@@ -34490,7 +34518,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人650円程度（要確認）",
+    "price": "大人1,000円（中学生以上）／子供700円（4歳以上）／3歳以下無料。ワンちゃん700円。前売りは大人900円・小学生630円",
     "parking": "yes",
     "access": "関越自動車道「赤城IC」から車で約15分",
     "baby": "おむつ替えトイレあり／ベビーカーは公式の明記なし（要確認）",
@@ -34502,9 +34530,9 @@
     "desc": "犬と人とのふれあいをテーマにしたコミュニティパーク。日本最大級のドッグランもある。",
     "tip": "犬好き家族におすすめ。愛犬連れでも楽しめる。",
     "familyPrice": {
-      "yen": 1900,
-      "type": "est",
-      "note": "大人650円×2＋子ども（大人の約半額300円と仮定）×2＋幼児は無料と仮定。子ども料金は要確認"
+      "yen": 3400,
+      "type": "calc",
+      "note": "大人1,000円×2＋子供700円×2＋幼児0円×1（3歳以下は無料）。運営元催行の販売ページ（アソビュー）掲載の通常料金"
     },
     "food": {
       "lunch": "園内にドッグカフェあり。",
@@ -34570,7 +34598,8 @@
       "sourceUrl": "https://www.meiken-bokujou.com/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県前橋市富士見町石井2252-1"
   },
   {
     "region": "群馬",
@@ -34633,7 +34662,8 @@
     "parkingDetail": {
       "checkedAt": "2026-11-14"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県太田市藪塚町3320"
   },
   {
     "region": "東京",
@@ -38069,15 +38099,16 @@
     "kidsToilet": "partial",
     "kidsToiletNote": "子供用トイレは園内2か所：もぐもぐハウス1階、わくわくハウス2階（荒川区公式FAQより。便器・洗面台が子ども用サイズ）",
     "parkingDetail": {
-      "capacity": "114台（第三者駐車場情報。公式未確認）",
-      "type": "地下・自走式駐車場",
+      "capacity": "114台",
+      "type": "地下駐車場",
       "roof": "covered",
       "location": "遊園地隣接",
-      "note": "公式の料金・利用時間は未確認",
+      "note": "地下駐車場（高さ2.1mまで）。台数は区の公式パンフレット、料金は観光情報サイト（ウォーカープラス・るるぶ）の掲載",
       "available": true,
-      "sourceUrl": "https://www.city.arakawa.tokyo.jp/yuuen/index.html",
-      "sourceLabel": "公式情報未確認",
-      "checkedAt": "2026-11-14"
+      "sourceUrl": "https://www.city.arakawa.tokyo.jp/documents/227/0315_pamphlet.pdf",
+      "sourceLabel": "荒川区公式パンフレット・観光情報サイト",
+      "checkedAt": "2026-11-27",
+      "priceLabel": "30分100円（1日最大500円。土日祝・学校の休み期間は1時間300円）"
     },
     "strollerDetail": {
       "rental": true,
@@ -38095,7 +38126,8 @@
       "sourceUrl": "https://www.city.arakawa.tokyo.jp/yuuen/guide/"
     },
     "stationEst": "荒川遊園地前",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "東京都荒川区西尾久6-35-11"
   },
   {
     "region": "東京",
@@ -38327,7 +38359,8 @@
         "note": "4歳以上。小学生未満は13歳以上の付添が必要"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "address": "東京都豊島区東池袋3丁目1-3 サンシャインシティ・ワールドインポートマートビル2階"
   },
   {
     "region": "神奈川",
@@ -38552,7 +38585,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://cosmoworld.jp/service/"
-    }
+    },
+    "address": "神奈川県横浜市中区新港2丁目8-1"
   },
   {
     "region": "神奈川",
@@ -39132,7 +39166,8 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.fujiq.jp/area/thomas/index.html"
-    }
+    },
+    "address": "山梨県富士吉田市新西原5丁目6-1"
   },
   {
     "region": "静岡",
@@ -43783,7 +43818,8 @@
       "sourceUrl": "https://www.town.kannami.shizuoka.jp/soshiki/1013/1/2/745.html",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "静岡県田方郡函南町丹那349"
   },
   {
     "region": "静岡",
@@ -47249,7 +47285,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.grinpa.com/faq.html"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "静岡県裾野市須山藤原2427"
   },
   {
     "region": "静岡",
@@ -48762,7 +48799,8 @@
       "毎週月曜日（月曜日が祝日の場合は翌日）",
       "11月11日〜翌年4月17日（冬季休園）"
     ],
-    "businessHoursNote": "開園期間は4/18〜11/10。年によって開園日が変わる場合あり"
+    "businessHoursNote": "開園期間は4/18〜11/10。年によって開園日が変わる場合あり",
+    "address": "山梨県北杜市大泉町西井出8240-1"
   },
   {
     "region": "山梨",
@@ -56314,7 +56352,8 @@
       "sourceUrl": "https://kanagawa-hattoribokujou.com/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "神奈川県愛甲郡愛川町半原6087"
   },
   {
     "region": "茨城",
@@ -56338,7 +56377,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人（中学生以上）1200円から／3歳以上700円から",
+    "price": "大人1200円から（中学生以上）／子ども700円から（3歳以上）",
     "parking": "yes",
     "access": "常磐自動車道「石岡小美玉スマートIC」から車で約10分",
     "baby": "おむつ替えあり／ベビーカーOK",
@@ -56429,7 +56468,8 @@
       "sourceUrl": "https://dacho.co.jp/faq/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "茨城県石岡市半の木14052"
   },
   {
     "region": "神奈川",
@@ -57314,7 +57354,7 @@
       "半日",
       "1日"
     ],
-    "price": "大人（中学生以上）1200円から／子供（4歳〜小学生）800円から／3歳以下無料",
+    "price": "大人1200円から（中学生以上）／子供800円から（4歳〜小学生）／3歳以下無料",
     "parking": "yes",
     "access": "JR常磐線「佐貫」駅からタクシーで約30分",
     "baby": "おむつ替えあり。授乳室あり（2026年11月15日確認）。",
@@ -57416,7 +57456,8 @@
       "sourceUrl": "https://www.ibaraido.co.jp/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "茨城県稲敷市上君山2060-1"
   },
   {
     "region": "茨城",
@@ -58074,7 +58115,8 @@
       "sourceUrl": "https://www.pref.saitama.lg.jp/kogen-bokujo/shisetsu/fureaibokujyou.html",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県秩父郡東秩父村坂本2949-1"
   },
   {
     "region": "栃木",
@@ -58174,7 +58216,8 @@
       "sourceUrl": "https://www.shinrinno.jp/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県那須郡那須町豊原乙627-114"
   },
   {
     "region": "群馬",
@@ -58305,7 +58348,8 @@
       "sourceUrl": "https://www.kouzubokujyo.or.jp/information/price.html",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県甘楽郡下仁田町南野牧250"
   },
   {
     "region": "千葉",
@@ -61221,7 +61265,8 @@
       "sourceUrl": "https://www.yuyakekoyake.jp/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "東京都八王子市上恩方町2030"
   },
   {
     "region": "山梨",
@@ -61467,7 +61512,8 @@
         "note": "公道を走行。身長154cm以上の方に推奨（日帰り貸出）"
       }
     ],
-    "rideLimitsCheckedAt": "2026-11-23"
+    "rideLimitsCheckedAt": "2026-11-23",
+    "address": "静岡県富士宮市内野1327"
   },
   {
     "region": "長野",
@@ -64177,7 +64223,8 @@
       "sourceUrl": "http://www.enoboku.com/",
       "checkedAt": "2026-11-16"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県上尾市畔吉736-1"
   },
   {
     "region": "千葉",
@@ -74429,7 +74476,8 @@
     },
     "closedDays": [
       "不定休（公式サイトの営業時間ページで確認）"
-    ]
+    ],
+    "address": "東京都台東区浅草2丁目28-1"
   },
   {
     "region": "千葉",
@@ -79264,7 +79312,8 @@
       "sat": "00:00-24:00",
       "sun": "00:00-24:00",
       "holiday": "00:00-24:00"
-    }
+    },
+    "address": "千葉県市川市大町358"
   },
   {
     "region": "埼玉",
