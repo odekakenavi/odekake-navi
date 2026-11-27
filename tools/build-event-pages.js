@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// おでかけナビ イベント特集ページ生成ツール
-//   node tools/build-event-pages.js                  … site/event/{イベント名}/index.html を生成
-//   node tools/build-event-pages.js --out _build     … _build/event/{イベント名}/index.html を生成
-//   node tools/build-event-pages.js --only illumination … 1つだけ生成
+// おでかけナビ イベント特集ページ生成ツール（/event/halloween/ と /event/christmas/ だけを作る）
+//   node tools/build-event-pages.js --out _build     … _build/event/{halloween,christmas}/index.html を生成
+//   node tools/build-event-pages.js --only christmas … 1つだけ生成
 //   node tools/build-event-pages.js --drafts          … 下書き枠（draft: true）も生成（公開前の確認用）
 //   （--index index.html / --spots data/spots.json で入力の場所を変えられる）
+//   ・external: true の特集（イルミネーション）は生成しない。どうしても作る時だけ --include-external を付ける。
 // 方針：
 //   ・施設データ(data/spots.json)の events / eventInfo[イベント名] だけから作る。施設は追加しない。
 //   ・施設ページのURLは spots.json の slug 項目を使う（無ければ index.html の SLUG_OVERRIDES）。どちらにも無い施設はエラーで止める。
@@ -20,7 +20,7 @@ const BASE = '/odekake-navi/';
 const { SITE_HEADER_CSS, SITE_HEADER, EVENT_NAV } = require('./site-header.js'); // 共通ヘッダー（ロゴ・☰・×）
 const argv = process.argv.slice(2);
 const arg = (name, def) => { const i = argv.indexOf('--' + name); return i >= 0 && argv[i + 1] ? argv[i + 1] : def; };
-const OUT_DIR = arg('out', 'site');
+const OUT_DIR = arg('out', '_build');
 const INDEX_PATH = arg('index', 'index.html');
 const SPOTS_PATH = arg('spots', 'data/spots.json');
 const ONLY = arg('only', null);
@@ -106,6 +106,7 @@ const EVENTS = {
     groupChips: [],
     order: ['東京ドイツ村', 'よみうりランド', 'さがみ湖MORI MORI', 'あしかがフラワーパーク', '東京ドームシティアトラクションズ'],
     ctaText: '🧭 おでかけナビでイルミネーション施設を絞り込んで探す', ctaParam: 'illumination',
+    external: true, // 「関東の子連れイルミネーション40選！」版（別ツールで作成）を公開しているため、このスクリプトでは生成しない。ナビのリンクだけ使う。
   },
   strawberry: {
     key: 'いちご狩り', slug: 'ichigo-gari', periodOverride: '2026年12月〜2027年5月ごろ', tentativeLabel: '例年の時期あり・今年の営業は各園で確認', emoji: '🍓', navLabel: '🍓 いちご狩り',
@@ -419,7 +420,7 @@ ${groupHtml}
 
 const SLUGS = loadSlugOverrides(INDEX_PATH);
 const spots = JSON.parse(fs.readFileSync(SPOTS_PATH, 'utf8'));
-Object.values(EVENTS).filter(e => ONLY ? e.slug === ONLY : (DRAFTS || !e.draft)).forEach(cfg => {
+Object.values(EVENTS).filter(e => (ONLY ? e.slug === ONLY : (DRAFTS || !e.draft)) && (!e.external || argv.includes('--include-external'))).forEach(cfg => {
   const r = buildPage(cfg, spots, SLUGS);
   const out = path.join(OUT_DIR, 'event', cfg.slug, 'index.html');
   fs.mkdirSync(path.dirname(out), { recursive: true });
