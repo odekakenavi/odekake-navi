@@ -438,7 +438,7 @@
       "holidayAM": "✕ 大変混雑",
       "holidayPM": "✕ 大変混雑"
     },
-    "price": "時間帯・年齢により4000〜6000円から",
+    "price": "大人2300〜2700円（16歳以上）／子ども3800〜5500円（3〜15歳）。第1部（9〜15時）・第2部（16〜21時）と平日・休日で変動。2歳以下は無料（体験には参加不可）。ホリデーシーズン等は別料金の場合あり",
     "parking": "yes",
     "access": "東京メトロ有楽町線・ゆりかもめ「豊洲」駅から徒歩約8分",
     "baby": "授乳室あり／対象年齢が3歳〜のためベビーカー利用は少なめ",
@@ -463,10 +463,9 @@
       "checkedAt": "2026年10月12日"
     },
     "familyPrice": {
-      "yen": null,
-      "type": "official",
-      "note": "料金の目安は出せません。最新の料金は公式サイトでご確認ください",
-      "officialUrl": "https://www.kidzania.jp/tokyo/"
+      "yen": 16000,
+      "type": "calc",
+      "note": "下限（平日第2部）：大人2,300円×2＋子ども3,800円×2＋幼児3,800円×1／上限（休日第1部）：大人2,700円×2＋子ども5,500円×3（3歳以上は子ども料金）。JTB前売券・公式お知らせの掲載で、ホリデーシーズン等はさらに変動"
     },
     "verifiedAt": "2026年10月14日",
     "image": "img/spots/tokyo-koto-kidzania.jpg",
@@ -741,7 +740,8 @@
       "sourceUrl": "https://www.kahaku.go.jp/riyou/kannai-guide/accessibility.html"
     },
     "stationEst": "上野",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "東京都台東区上野公園7-20"
   },
   {
     "region": "東京",
@@ -3004,7 +3004,8 @@
       "sourceUrl": "https://www.yokohama-anpanman.jp/qa/"
     },
     "stationEst": "新高島",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "神奈川県横浜市西区みなとみらい6-2-9"
   },
   {
     "region": "神奈川",
@@ -3108,7 +3109,8 @@
       "sourceUrl": "https://www.cupnoodles-museum.jp/ja/yokohama/guide/faq/"
     },
     "stationEst": "馬車道",
-    "walkMinutesEst": 10
+    "walkMinutesEst": 10,
+    "address": "神奈川県横浜市中区新港2-3-4"
   },
   {
     "region": "神奈川",
@@ -5933,7 +5935,8 @@
       "sourceUrl": "https://www.miraikan.jst.go.jp/visit/accessibility/"
     },
     "stationEst": "東京国際クルーズターミナル",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "東京都江東区青海2丁目3-6"
   },
   {
     "region": "東京",
@@ -6031,7 +6034,8 @@
       "sourceUrl": "https://www.mizunokagaku.jp/pdf/riyoannai.pdf"
     },
     "stationEst": "東京ビッグサイト",
-    "walkMinutesEst": 8
+    "walkMinutesEst": 8,
+    "address": "東京都江東区有明3-1-8"
   },
   {
     "region": "東京",
@@ -6199,7 +6203,8 @@
       "毎月第3火曜日",
       "第3火曜日の翌日（祝日の場合は直後の平日）",
       "年末年始（12/29〜1/3）"
-    ]
+    ],
+    "address": "東京都豊島区西池袋2-37-8"
   },
   {
     "region": "東京",
@@ -6280,7 +6285,8 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "とうきょうスカイツリー",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "東京都墨田区横川4-6-6"
   },
   {
     "region": "東京",
@@ -6362,7 +6368,8 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "高松",
-    "walkMinutesEst": 14
+    "walkMinutesEst": 14,
+    "address": "東京都立川市泉町1156-1"
   },
   {
     "region": "東京",
@@ -6959,7 +6966,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.tamarokuto.or.jp/qanda/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "東京都西東京市芝久保町5-10-64"
   },
   {
     "region": "東京",
@@ -8074,7 +8082,8 @@
       "sourceUrl": "https://www.tokyorinkai-koen.jp/universal/"
     },
     "stationEst": "有明",
-    "walkMinutesEst": 1
+    "walkMinutesEst": 1,
+    "address": "東京都江東区有明3丁目8-35 管理センター 本部棟"
   },
   {
     "region": "神奈川",
@@ -8579,7 +8588,8 @@
       "火曜日（祝日の場合は開館する場合あり）",
       "年末年始",
       "臨時休館日"
-    ]
+    ],
+    "address": "神奈川県川崎市多摩区長尾2-8-1"
   },
   {
     "region": "神奈川",
@@ -10796,7 +10806,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.musashinomura.co.jp/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県加須市志多見1700-1"
   },
   {
     "region": "埼玉",
@@ -11129,7 +11140,8 @@
       "rentalPlace": "エントランスホール",
       "terrainNote": "館内利用。貸出用ベビーカーあり"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "茨城県坂東市大崎700"
   },
   {
     "region": "茨城",
@@ -11335,7 +11347,8 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "つくば",
-    "walkMinutesEst": 7
+    "walkMinutesEst": 7,
+    "address": "茨城県つくば市吾妻2-9"
   },
   {
     "region": "栃木",
@@ -21124,7 +21137,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.pref.gunma.jp/site/giw/617214.html"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "群馬県桐生市新里町鶴ヶ谷460-1"
   },
   {
     "region": "東京",
@@ -21346,7 +21360,8 @@
       "sourceUrl": "https://www.tatemonoen.jp/about/faq.php"
     },
     "stationEst": "花小金井",
-    "walkMinutesEst": 18
+    "walkMinutesEst": 18,
+    "address": "東京都小金井市桜町3-7-1"
   },
   {
     "region": "東京",
@@ -21630,7 +21645,8 @@
     },
     "kidsToiletNote": "バリアフリートイレ・おむつ交換台・ベビーキープまたはベビーチェアあり",
     "stationEst": "四谷三丁目",
-    "walkMinutesEst": 1
+    "walkMinutesEst": 1,
+    "address": "東京都新宿区四谷3-10"
   },
   {
     "region": "東京",
@@ -21817,7 +21833,8 @@
     },
     "kidsToiletNote": "バリアフリートイレ・おむつ交換台・授乳室あり。子ども用便器は未確認",
     "stationEst": "お台場海浜公園",
-    "walkMinutesEst": 9
+    "walkMinutesEst": 9,
+    "address": "東京都江東区有明2-3-5 有明水再生センター5階"
   },
   {
     "region": "東京",
@@ -23585,7 +23602,8 @@
     },
     "kidsToiletNote": "1階ロビー・企画展示室前・駐車場の「みんなのトイレ」におむつ交換台・ベビーチェアあり",
     "stationEst": "土呂",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "埼玉県さいたま市北区土呂町2-24-3"
   },
   {
     "region": "埼玉",
@@ -25519,7 +25537,8 @@
       "sourceUrl": "https://www.kagakukanq.com/guide/facilities/index.html"
     },
     "stationEst": "葭川公園",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "千葉県千葉市中央区中央4-5-1 きぼーる"
   },
   {
     "region": "千葉",
@@ -28197,7 +28216,8 @@
     },
     "closedDays": [
       "休業日なし（藤岡市の設置管理条例）。店舗・メルヘンプラザごとに休みや天候休園あり"
-    ]
+    ],
+    "address": "群馬県藤岡市中1131-8"
   },
   {
     "region": "群馬",
@@ -32199,7 +32219,8 @@
       "sourceUrl": "https://www.tnm.jp/modules/r_free_page/index.php?id=2670&lang=ja"
     },
     "stationEst": "鶯谷",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "東京都台東区上野公園13-9"
   },
   {
     "region": "神奈川",
@@ -32593,7 +32614,8 @@
     "walkMinutesEst": null,
     "closedDays": [
       "成人の日の翌日から11日間（冬季休館）"
-    ]
+    ],
+    "address": "神奈川県足柄下郡箱根町仙石原940-48"
   },
   {
     "region": "神奈川",
@@ -33944,7 +33966,8 @@
       "3月第2火曜日",
       "6月第2火曜日",
       "12月第2火曜日"
-    ]
+    ],
+    "address": "栃木県那須郡那須町高久丙1185-4"
   },
   {
     "region": "栃木",
@@ -34028,7 +34051,8 @@
     "walkMinutesEst": null,
     "closedDays": [
       "不定休（公式サイトで月ごとに告知）"
-    ]
+    ],
+    "address": "栃木県那須郡那須町高久丙270"
   },
   {
     "region": "栃木",
@@ -34125,7 +34149,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://sgm-nasu.com/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県那須郡那須町高久丙1790"
   },
   {
     "region": "栃木",
@@ -35942,7 +35967,8 @@
     "walkMinutesEst": null,
     "holidays": [
       "年末年始"
-    ]
+    ],
+    "address": "栃木県那須郡那須町高久甲4588-10"
   },
   {
     "region": "群馬",
@@ -37714,7 +37740,8 @@
       "sourceLabel": "自治体公式",
       "checkedAt": "2026-11-14"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "埼玉県川口市上青木3-12-18 SKIPシティ内"
   },
   {
     "region": "神奈川",
@@ -38223,7 +38250,8 @@
         "end": "2027-01-14",
         "reason": "休館日"
       }
-    ]
+    ],
+    "address": "東京都江東区豊洲6-1-16"
   },
   {
     "region": "東京",
@@ -38902,7 +38930,8 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.oya909.co.jp/access/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県宇都宮市大谷町909"
   },
   {
     "region": "山梨",
@@ -40357,7 +40386,8 @@
       "sourceUrl": "https://www.nihonminkaen.jp/faq.html"
     },
     "stationEst": "向ヶ丘遊園",
-    "walkMinutesEst": 13
+    "walkMinutesEst": 13,
+    "address": "神奈川県川崎市多摩区枡形7丁目1番1号"
   },
   {
     "region": "神奈川",
@@ -40665,7 +40695,8 @@
       "sourceUrl": "https://www.nature-kawasaki.jp/faq.html"
     },
     "stationEst": "向ヶ丘遊園",
-    "walkMinutesEst": 16
+    "walkMinutesEst": 16,
+    "address": "神奈川県川崎市多摩区枡形7丁目1番2号"
   },
   {
     "region": "千葉",
@@ -41769,7 +41800,7 @@
     "region": "静岡",
     "name": "浜名湖パルパル",
     "slug": "shizuoka/hamamatsu/pal2",
-    "area": "浜松市西区舘山寺町",
+    "area": "浜松市中央区舘山寺町",
     "lat": 34.764511,
     "lng": 137.617327,
     "genre": "遊園地・テーマパーク",
@@ -41955,7 +41986,8 @@
     },
     "closedDays": [
       "不定休（平日に休園日が多い。公式の営業カレンダーで確認）"
-    ]
+    ],
+    "address": "静岡県浜松市中央区舘山寺町1891"
   },
   {
     "region": "山梨",
@@ -42779,7 +42811,11 @@
       "sat": "09:30-16:00",
       "sun": "09:30-16:00",
       "holiday": "09:30-16:00"
-    }
+    },
+    "address": "静岡県伊東市富戸1090",
+    "closedDays": [
+      "年中無休（天候により休園する場合あり）"
+    ]
   },
   {
     "region": "静岡",
@@ -44212,7 +44248,8 @@
       "sourceUrl": "https://www.teddynet.co.jp/izu/qa/"
     },
     "stationEst": "伊豆高原",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "静岡県伊東市八幡野1064-2"
   },
   {
     "region": "静岡",
@@ -45241,7 +45278,8 @@
     "walkMinutesEst": null,
     "bookingLinks": {
       "asoview": "https://www.asoview.com/spot/09383cc3540060321/"
-    }
+    },
+    "address": "栃木県日光市柄倉465"
   },
   {
     "region": "静岡",
@@ -46372,7 +46410,8 @@
       "sourceUrl": "https://odawaracastle.com/info/"
     },
     "stationEst": "小田原",
-    "walkMinutesEst": 9
+    "walkMinutesEst": 9,
+    "address": "神奈川県小田原市城内6-1"
   },
   {
     "region": "神奈川",
@@ -47983,7 +48022,8 @@
     "holidays": [
       "年末年始"
     ],
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "山梨県南都留郡富士河口湖町船津字剣丸尾6663-1"
   },
   {
     "region": "山梨",
@@ -48506,7 +48546,7 @@
       "半日"
     ],
     "price": "大人1900円／小学生1400円／幼児（3歳以上）1100円。通行手形。忍者ショー・からくり屋敷・忍者アスレチック込み。有料アトラクションは別料金",
-    "parking": "unknown",
+    "parking": "yes",
     "access": "東富士五湖道路「山中湖IC」から車で約6分",
     "baby": "庭園エリアはベビーカーOK／アスレチックは対象年齢あり",
     "officialUrl": "https://www.yamanashi-kankou.jp/kankou/spot/shinobi_oshino.html",
@@ -48561,7 +48601,21 @@
       "checkedAt": "2026年11月10日",
       "sourceUrl": "https://www.oshinoninja.com/faq/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "山梨県南都留郡忍野村忍草2845",
+    "businessHoursNote": "営業時間：平日10:00〜16:00、土日祝9:00〜17:00（山梨県公式観光サイトの掲載。営業状況は公式サイトで要確認）",
+    "closedDays": [
+      "不定休（営業状況は公式サイトで確認）"
+    ],
+    "parkingDetail": {
+      "capacity": "普通車100台・バス4台",
+      "type": "施設駐車場",
+      "available": true,
+      "note": "台数は山梨県公式観光サイトの掲載。料金・利用時間は確認できず",
+      "sourceUrl": "https://www.yamanashi-kankou.jp/kankou/spot/shinobi_oshino.html",
+      "sourceLabel": "山梨県公式観光サイト",
+      "checkedAt": "2026-11-28"
+    }
   },
   {
     "region": "山梨",
@@ -51301,7 +51355,8 @@
     },
     "kidsToiletNote": "親子トイレ・多目的トイレにベビーベッドあり",
     "stationEst": "北中込",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "address": "長野県佐久市岩村田1931-1"
   },
   {
     "region": "長野",
@@ -53701,7 +53756,8 @@
     },
     "kidsToiletNote": "ベビーベッド・ベビーチェア対応トイレ、おむつ交換台、授乳室あり",
     "stationEst": "日立",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "茨城県日立市幸町1-21-1"
   },
   {
     "region": "茨城",
@@ -54299,7 +54355,8 @@
     },
     "kidsToiletNote": "授乳室内におむつ交換台あり",
     "stationEst": "岩槻",
-    "walkMinutesEst": 10
+    "walkMinutesEst": 10,
+    "address": "埼玉県さいたま市岩槻区本町6-1-1"
   },
   {
     "region": "埼玉",
@@ -74500,7 +74557,7 @@
     "duration": [
       "半日"
     ],
-    "price": "大人（16歳以上）2000〜2500円／小人（3〜15歳）3250〜4500円／シニア（55歳以上）1000円／3歳未満無料。日程・時間帯により変動。Short Stay Passは別料金",
+    "price": "大人2000〜2500円（16歳以上）／小人3250〜4500円（3〜15歳）／シニア1000円（55歳以上）／3歳未満無料。日程・時間帯により変動。Short Stay Passは別料金",
     "parking": "yes",
     "access": "JR「幕張豊砂」駅から徒歩すぐ",
     "baby": "3歳から参加できる仕事体験アクティビティが約30種類。レストラン席は休憩スペースとしても利用可（混雑時は子ども優先）。",
@@ -74592,7 +74649,11 @@
       "status": "ok",
       "checkedAt": "2026年11月25日",
       "sourceUrl": "https://www.kandu.co.jp/park-map/"
-    }
+    },
+    "address": "千葉県千葉市美浜区豊砂1-5 イオンモール幕張新都心 エキマエ3階",
+    "closedDays": [
+      "不定休（公式サイトで確認）"
+    ]
   },
   {
     "region": "千葉",
@@ -76296,7 +76357,9 @@
     "access": "東北自動車道「宇都宮」ICから車で約12分／JR宇都宮駅西口からバスで約30分「資料館入口」下車、徒歩約5分（大谷資料館東側隣接）",
     "businessHoursNote": "オーヤBBQ 11:00〜17:00（最終受付15:00）／オーヤイシティ 10:00〜17:00（最終受付16:30）。営業日・時間は時期により変動するため公式Instagramで要確認",
     "closedDays": [
-      "不定休（公式Instagram・お知らせで要確認）"
+      "3〜10月は火・水曜（祝日を除く）",
+      "11〜12月は土日祝のみ営業、1〜2月は休業",
+      "春休み・GW・夏休み・秋休みは全日営業（栃ナビ掲載。最新は公式Instagramで要確認）"
     ],
     "baby": "授乳室・おむつ替えは公式情報なし（未確認）",
     "officialUrl": "https://cobble.jp/",
@@ -76351,16 +76414,17 @@
       "checkedAt": "2026年11月14日"
     },
     "parkingDetail": {
-      "capacity": "台数に限りあり",
+      "capacity": "専用駐車場70台（満車時は臨時駐車場）",
       "type": "施設専用駐車場・臨時駐車場",
       "location": "大谷資料館東側に隣接",
-      "note": "専用駐車場満車時はスタッフに声をかけ、臨時駐車場の案内を受ける。台数・料金は未掲載",
+      "note": "専用駐車場満車時はスタッフに声をかけ、臨時駐車場の案内を受ける。台数は栃ナビの掲載、料金は未掲載",
       "available": true,
       "sourceUrl": "https://cobble.jp/pages/access",
       "sourceLabel": "施設公式",
       "checkedAt": "2026-11-14"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "栃木県宇都宮市大谷町909"
   },
   {
     "region": "東京",
@@ -77115,7 +77179,7 @@
       "holidayAM": "△ やや混雑",
       "holidayPM": "△ やや混雑"
     },
-    "price": "入場料500円（小学生300円）＋保全料300円（小学生100円）",
+    "price": "大人800円（入場料500円＋保全料300円）／小学生400円（入場料300円＋保全料100円）／未就学児無料",
     "parking": "yes",
     "access": "館山自動車道「木更津北」ICから車で約15分／JR内房線「木更津」駅からタクシーで約20分、またはバスで約30分",
     "businessHoursNote": "10:00〜17:00（ダイニングは11:00〜L.O.16:00）",
@@ -77199,7 +77263,8 @@
       "checkedAt": "2026年11月14日",
       "sourceUrl": "https://kurkkufields.jp/map/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県木更津市矢那2503"
   },
   {
     "region": "神奈川",
@@ -78050,7 +78115,7 @@
       "holidayAM": "△ やや混雑",
       "holidayPM": "△ やや混雑"
     },
-    "price": "大人900円、小・中学生300円、幼児(3歳以上)200円、シニア(70歳以上)500円",
+    "price": "大人900円／小学生300円／中学生300円／幼児200円（3歳以上）／シニア500円（70歳以上）",
     "parking": "yes",
     "access": "JR「五井」駅から車で約25分、または小湊バスで約25分「山倉」下車徒歩20分／JR「八幡宿」駅から車で約30分／館山道「市原」ICから約15分",
     "businessHoursNote": "9:30〜16:00（土日祝〜16:30）、11〜2月は〜15:30（土日祝〜16:00）",
@@ -78145,7 +78210,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://kidsdom.jp/faq"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県市原市山倉1487"
   },
   {
     "region": "東京",
@@ -78270,7 +78336,8 @@
       "sourceUrl": "https://www.edo-tokyo-museum.or.jp/information/accessibility/"
     },
     "stationEst": "両国",
-    "walkMinutesEst": 2
+    "walkMinutesEst": 2,
+    "address": "東京都墨田区横網1-4-1"
   },
   {
     "region": "東京",
@@ -79763,7 +79830,8 @@
       "sourceUrl": "https://matsumoto-city-museum.jp/guide"
     },
     "stationEst": "北松本",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "address": "長野県松本市大手3丁目2-21"
   },
   {
     "region": "長野",
