@@ -6121,7 +6121,8 @@
       "sourceUrl": "https://art-play.or.jp/ttm/faq/"
     },
     "stationEst": "四谷三丁目",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "東京都新宿区四谷4-20 四谷ひろば内"
   },
   {
     "region": "東京",
@@ -7071,7 +7072,8 @@
       "sourceUrl": "https://www.seibu-la.co.jp/nettaikan/faq.html"
     },
     "stationEst": "高島平",
-    "walkMinutesEst": 7
+    "walkMinutesEst": 7,
+    "address": "東京都板橋区高島平8-29-2"
   },
   {
     "region": "東京",
@@ -8798,7 +8800,8 @@
       "sourceUrl": "https://www.mhi.com/jp/company/overview/museum/minatomirai/about_museum/faq.html"
     },
     "stationEst": "みなとみらい",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "神奈川県横浜市西区みなとみらい3-3-1 KDX横浜みなとみらいタワー"
   },
   {
     "region": "神奈川",
@@ -14624,7 +14627,8 @@
     },
     "kidsToiletNote": "おむつ交換用ベビーベッドあり",
     "stationEst": "本厚木",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "神奈川県厚木市中町1-1-3 厚木シティプラザ7階"
   },
   {
     "region": "神奈川",
@@ -15041,7 +15045,8 @@
       "sourceUrl": "https://nh.kanagawa-museum.jp/visit/barrierfree.html"
     },
     "stationEst": "入生田",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "address": "神奈川県小田原市入生田499"
   },
   {
     "region": "神奈川",
@@ -21751,7 +21756,8 @@
       "checkedAt": "2026-11-16"
     },
     "stationEst": "竹橋",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "東京都千代田区北の丸公園2-1"
   },
   {
     "region": "東京",
@@ -22844,7 +22850,8 @@
       "sourceUrl": "https://www.earthplaza.jp/guide/faq/"
     },
     "stationEst": "本郷台",
-    "walkMinutesEst": 5
+    "walkMinutesEst": 5,
+    "address": "神奈川県横浜市栄区小菅ヶ谷1-2-1"
   },
   {
     "region": "神奈川",
@@ -25124,7 +25131,7 @@
       "minMinutes": 90,
       "maxMinutes": 150
     },
-    "price": "大人600円程度／高校生以下 無料",
+    "price": "大人900円（一般）／大学生500円／高校生以下無料。料金は観光情報サイトの掲載で公式未確認",
     "parking": "yes",
     "access": "京成線「京成佐倉」駅からバス",
     "baby": "おむつ替えあり／ベビーカーOK",
@@ -25133,9 +25140,9 @@
     "tip": "じっくり回ると半日〜1日かかる広さ。駐車場あり。京成佐倉駅から徒歩約15分、またはバスで約5分。月曜休館（祝日の場合は翌日）。",
     "verifiedAt": "2026年10月13日",
     "familyPrice": {
-      "yen": 1200,
+      "yen": 1800,
       "type": "calc",
-      "note": "大人600円×2＋小学生0円×2＋幼児0円×1（幼児は無料と仮定）"
+      "note": "大人900円×2＋高校生以下0円×3（高校生以下は無料）。観光情報サイト掲載の料金で公式未確認"
     },
     "businessHours": {
       "mon": "定休日",
@@ -25201,7 +25208,8 @@
       "sourceUrl": "https://www.rekihaku.ac.jp/information/facilities/"
     },
     "stationEst": "京成佐倉",
-    "walkMinutesEst": 15
+    "walkMinutesEst": 15,
+    "address": "千葉県佐倉市城内町117"
   },
   {
     "region": "千葉",
@@ -30411,7 +30419,8 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "京橋",
-    "walkMinutesEst": 4
+    "walkMinutesEst": 4,
+    "address": "東京都品川区西五反田7丁目22番17号 TOCビル3階"
   },
   {
     "region": "東京",
@@ -32957,7 +32966,7 @@
       "minMinutes": 60,
       "maxMinutes": 120
     },
-    "price": "大人500円／中高生300円／4歳以上200円",
+    "price": "大人900円／中高生400円／小人300円（4歳〜小学生）／3歳以下無料。2025年10月1日に改定",
     "parking": "yes",
     "access": "成田国際空港第2ターミナルから無料連絡バスあり",
     "baby": "おむつ替えトイレあり。授乳室あり（2026年11月15日確認）。",
@@ -32977,9 +32986,9 @@
     ],
     "verifiedAt": "2026年10月13日",
     "familyPrice": {
-      "yen": 1600,
+      "yen": 2400,
       "type": "calc",
-      "note": "大人500円×2＋小学生200円×2＋幼児200円×1（幼児料金あり）"
+      "note": "大人900円×2＋小学生300円×2＋幼児300円×1（4歳以上は小人料金）。2025年10月改定後の料金（成田国際空港公式サイト・報道で確認）"
     },
     "businessHours": {
       "mon": "定休日",
@@ -33055,7 +33064,8 @@
       "checkedAt": "2026年11月15日",
       "sourceUrl": "https://www.aeromuseum.or.jp/guide/"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "千葉県山武郡芝山町岩山111-3"
   },
   {
     "region": "千葉",
@@ -37645,7 +37655,8 @@
       "sourceUrl": "https://planetarium.konicaminolta.jp/faq/"
     },
     "stationEst": "東池袋",
-    "walkMinutesEst": 6
+    "walkMinutesEst": 6,
+    "address": "東京都豊島区東池袋3丁目1-3 サンシャインシティ ワールドインポートマートビル屋上"
   },
   {
     "region": "埼玉",
@@ -40128,7 +40139,8 @@
       "rentalPlace": "ミュージアムショップまたはチケットカウンターでスタッフへ申出"
     },
     "stationEst": "江戸川橋",
-    "walkMinutesEst": 11
+    "walkMinutesEst": 11,
+    "address": "東京都文京区水道1-3-3 TOPPAN小石川ビル"
   },
   {
     "region": "東京",
@@ -40219,7 +40231,8 @@
       "checkedAt": "2026-11-14"
     },
     "stationEst": "清澄白河",
-    "walkMinutesEst": 3
+    "walkMinutesEst": 3,
+    "address": "東京都江東区白河1-3-28"
   },
   {
     "region": "東京",
@@ -42221,7 +42234,8 @@
     "closedDays": [
       "原則火曜日・水曜日（営業日・臨時休館日は月ごとに告知）"
     ],
-    "verifiedAt": "2026年11月19日"
+    "verifiedAt": "2026年11月19日",
+    "address": "山梨県南都留郡富士河口湖町河口3077-20"
   },
   {
     "region": "山梨",
@@ -42443,7 +42457,8 @@
       "sourceUrl": "https://www.togakushi-ninja.com/facility",
       "useNote": "からくり屋敷内に階段・迷路あり"
     },
-    "walkMinutesEst": null
+    "walkMinutesEst": null,
+    "address": "長野県長野市戸隠3688-12"
   },
   {
     "region": "長野",
@@ -46320,7 +46335,8 @@
     },
     "kidsToiletNote": "女性用・多目的トイレにベビーシートあり。3階に授乳室・ベビーベッドあり",
     "stationEst": "風祭",
-    "walkMinutesEst": 2
+    "walkMinutesEst": 2,
+    "address": "神奈川県小田原市風祭245"
   },
   {
     "region": "神奈川",
@@ -48137,7 +48153,8 @@
       "checkedAt": "2026-11-16"
     },
     "stationEst": "金手",
-    "walkMinutesEst": 12
+    "walkMinutesEst": 12,
+    "address": "山梨県甲府市愛宕町358-1"
   },
   {
     "region": "山梨",
@@ -79296,7 +79313,8 @@
       "sourceUrl": "https://www.yumenoshima.jp/botanicalhall/barrierfree"
     },
     "stationEst": "新木場",
-    "walkMinutesEst": 2
+    "walkMinutesEst": 2,
+    "address": "東京都江東区夢の島2-1-2"
   },
   {
     "region": "千葉",
